@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<map>
+  <int name="inputSmoothing" value="5" />
+  <int name="mouseMode" value="1" />
+  <int name="panFromEdge" value="1" />
+  <int name="penButtonMode" value="11" />
+  <int name="penType" value="11" />
+  <int name="reopenLastDoc" value="1" />
+  <int name="ruleColor" value="1342177535" />
+  <int name="scrollerLocation" value="1" />
+  <int name="showAdvPrefs" value="1" />
+  <int name="singleTouchMode" value="1" />
+  <int name="strokeCounter" value="1018" />
+  <int name="touchUI" value="1" />
+  <int name="uiTheme" value="2" />
+  <float name="marginLeft" value="0" />
+  <float name="pageHeight" value="1998" />
+  <float name="pageWidth" value="1616" />
+  <float name="preScale" value="0.96" />
+  <float name="xRuling" value="30" />
+  <float name="yRuling" value="30" />
+  <string name="currFolder" value="/home/luca/Desktop" />
+  <string name="docTags" value="" />
+  <string name="docTitle" value="" />
+  <string name="fileExt" value="html" />
+  <string name="lastURL" value="" />
+  <string name="mainWindowGeometry" value="AdnQywABAAAAAAAAAAAAAAAABVUAAALsAAAAAAAAAAAAAAVVAAAC7AAAAAAAAA==" />
+  <string name="mainWindowState" value="AAAA/wAAAAD9AAAAAQAAAAAAAAEAAAAC0/wCAAAAAfsAAAAYAGIAbwBvAGsAbQBhAHIAawBEAG8AYwBrAAAAAC0AAALTAAAAQgD///8AAAVWAAACwgAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAABAAAAEAB0AG8AbwBsAEIAYQByADABAAAAAP////8AAAAAAAAAAA==" />
+  <string name="recentDocs" value="/home/luca/Desktop/machine_learning.html:::/home/luca/Desktop/apr 29 11.01AM.html:::/home/luca/Desktop/apr 26 1.59PM.html" />
+  <string name="syncFolder" value="" />
+  <string name="syncPass" value="" />
+  <string name="syncServer" value="" />
+  <string name="syncUser" value="" />
+  <string name="toolBars" value="docTitle,separator,penColor,penWidth,actionPan,stretch,actionSave,separator,actionDraw,actionErase,actionSelect,actionInsert_Space,separator,undoRedoBtn,separator,actionCut,actionCopy,actionPaste,separator,actionShow_Bookmarks,action_Previous_Page,action_Next_Page,separator,actionOverflow_Menu" />
+  <string name="toolModes" value="14 18 25" />
+  <pen color="4278190080" width="1.4" pressure="2" drawunder="false" snaptogrid="false" />
+  <pen color="4294901760" width="1.4" pressure="2" drawunder="false" snaptogrid="false" />
+  <pen color="4278255360" width="1.4" pressure="2" drawunder="false" snaptogrid="false" />
+  <pen color="4278190335" width="1.4" pressure="2" drawunder="false" snaptogrid="false" />
+  <pen color="4278190080" width="2.4" pressure="2" drawunder="false" snaptogrid="false" />
+  <pen color="4294901760" width="2.4" pressure="2" drawunder="false" snaptogrid="false" />
+  <pen color="4278255360" width="2.4" pressure="2" drawunder="false" snaptogrid="false" />
+  <pen color="4278190335" width="2.4" pressure="2" drawunder="false" snaptogrid="false" />
+</map>
