@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="wheel_emulation" mtime="1463833145" type="bool" value="false"/>
-	<entry name="wheel_emulation_button" mtime="1463833141" type="int" value="1"/>
-	<entry name="device_type" mtime="1463833172" type="string">
-		<stringvalue>mouse</stringvalue>
-	</entry>
-</gconf>

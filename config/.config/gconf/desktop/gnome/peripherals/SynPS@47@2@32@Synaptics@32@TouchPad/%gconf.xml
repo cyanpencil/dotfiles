@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="off" mtime="1463833174" type="int" value="0"/>
-	<entry name="device_type" mtime="1463833172" type="string">
-		<stringvalue>touchpad</stringvalue>
-	</entry>
-</gconf>
