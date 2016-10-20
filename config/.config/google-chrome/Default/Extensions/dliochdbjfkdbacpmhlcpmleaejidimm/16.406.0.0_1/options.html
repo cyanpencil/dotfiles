@@ -1,0 +1,356 @@
+<html ng-app="optionsController" ng-controller="OptionsCtrl" ng-csp xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>
+    Google Cast extension options
+  </title>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet"/>
+  <link href="options.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="angular.js"></script>
+  <script type="text/javascript" src="background_script.js"></script>
+</head>
+<body id="options"
+    ng-class="{'scrolling-disabled': isChromekeySetupActive}">
+  <div class="fixed-top">
+    <header>
+      <img id="cast-icon" src="data/icon48.png" alt="Cast" ng-dblclick="doubleClicks = doubleClicks + 1">
+      <h1 class="top-title">
+        <angular-message desc="Options page header" key="options_title">
+          Google Cast extension options
+        </angular-message>
+      </h1>
+    </header>
+  </div>
+  <div class="options-sections">
+    <section class="setup-section">
+      <h3>
+        <angular-message desc="Label for section about Cast devices" key="options_devices">
+          Cast devices
+        </angular-message>
+      </h3>
+      <div>
+        <a href="cast_setup/setup.html">
+          <angular-message desc="Link to set up a new Cast device" key="options_setup_link">
+            Set up a new Cast device
+          </angular-message>
+        </a>
+      </div>
+      <div>
+        <a href="cast_setup/devices.html">
+          <angular-message desc="Link to manage Cast devices" key="options_devices_link">
+            Manage Cast devices
+          </angular-message>
+        </a>
+      </div>
+    </section>
+    <section>
+      <h3>
+        <angular-message desc="Label for section about selecting quality of tab casting" key="options_tab_proj_quality">
+          Tab casting quality
+        </angular-message>
+      </h3>
+      <span ng-repeat="q in qualityLevels" class="controlled-setting-with-label">
+        <input ng-disabled="isMirroring" type="radio" ng-model="model.quality" value="{{q.id}}" id="ql-{{q.id}}"/>
+        <label for="ql-{{q.id}}">{{q.name}}</label>
+      </span>
+    </section>
+    <span class="controlled-setting-with-label">
+      <input ng-model="sendUsage" type="checkbox" id="sendUsage">
+        <angular-message desc="Label for sending usage statistics" key="options_send_usage">
+          Automatically send Cast extension usage statistics to Google.
+        </angular-message>
+      </input>
+    </span>
+    <div class="fixed-bottom" ng-show="showStopCasting">
+      <div>
+        <angular-message desc="Note about when changes take effect" key="options_change_effect">
+          Your changes will take effect the next time you cast a tab.
+        </angular-message>
+      </div>
+      <button ng-click="stopCasting()" id="stopCasting">
+        <angular-message desc="Button to stop casting immediately" key="options_stop_casting">
+          Stop casting now
+        </angular-message>
+      </button>
+    </div>
+  </div>
+  <div class="options-sections" ng-show="!isStable">
+    <section>
+      <h3>
+        <angular-message desc="Label for casting to Hangouts section" key="options_tab_castouts">
+          Cast to Hangouts
+        </angular-message>
+      </h3>
+      <p>
+        <angular-message desc="Description of what the cast to Hangouts feature allows a user to do" key="options_castouts_description">
+          Present your tabs, windows, or desktop to a Hangout.
+        </angular-message>
+        <angular-message ng-show="!!userEmail" desc="Message shown for cast to Hangouts when the user is signed in to Chrome" key="options_castouts_signed_in">
+          You're signed into Chrome as <strong>{{userEmail}}</strong> and will cast to Hangouts with that account.
+        </angular-message>
+        <angular-message ng-show="!userEmail" desc="Message shown for cast to Hangouts when the user is not signed in to Chrome" key="options_castouts_signed_out">
+          You must <a ng-click="triggerSignIn()" href="" id="triggerSignIn">sign in</a> to Chrome to use this feature.
+        </angular-message>
+        <a href="https://support.google.com/chromecast/answer/6320939">
+          <angular-message desc="Link to learn more about the cast to Hangouts feature" key="options_castouts_learn_more">
+            Learn more
+          </angular-message>
+        </a>
+      </p>
+      <div ng-show="isDasherUser">
+        <p>
+          <input ng-model="manualHangoutsEnabled" type="checkbox" id="manualHangoutsEnabled">
+            <angular-message desc="Label for enabling box to enter hangout names/IDs manually" key="options_castouts_manual_entry">
+              Find Hangouts by meeting name or ID
+            </angular-message>
+          </input>
+        </p>
+        <div ng-show="manualHangoutsEnabled">
+          <p>
+            <angular-message desc="Description of default Hangout domain function" key="options_default_hangout_domain_description">
+              You may specify a default domain in which to join Hangouts. Custom Hangout names entered without a domain will use this domain.
+            </angular-message>
+          </p>
+          <p>
+            <angular-message desc="Label for default Hangout domain" key="options_default_hangout_domain">
+              Default domain for Hangouts:
+            </angular-message>
+            <input ng-model="defaultDomain" type="text" id="defaultDomain" placeholder="none" style="text-align: center;"></input>
+          </p>
+        </div>
+      </div>
+      <!-- Only show the server version for dev settings or double clicks even after full release. -->
+      <div ng-show="!!userEmail && (showDevSettings || doubleClicks > 1)">
+        <p>
+          <angular-message desc="Label for Hangouts version" key="options_hangout_version">
+            Hangouts server API version:
+          </angular-message>
+          <input ng-model="hangoutsVersion" type="text" id="hangoutsVersion" placeholder="none" style="text-align: center;"></input>
+        </p>
+        <div ng-show="hangoutsVersionChanged">
+          <div>
+            <angular-message desc="Description about when Hangouts version change will be activated" key="options_hangouts_version_changed_description">
+              The new Hangouts version will be used after reloading.
+            </angular-message>
+          </div>
+          <button ng-click="reload()" id="reload">
+            <angular-message desc="Button to reload immediately" key="options_reload">
+              Reload now
+            </angular-message>
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div ng-show="showDevSettings || doubleClicks > 1" class="options-sections">
+    <section>
+      <h3>
+        <angular-message desc="Developer settings session title" key="options_developer_settings_sesison_title">
+          Developer Settings
+        </angular-message>
+      </h3>
+      <p>
+        <button ng-click="enableLogWindow()" id="enableLogWindow">Enable Log Window</button>
+      </p>
+      <p>
+        <angular-message desc="Label for additional receiver IPs" key="options_additional_receiver_ips">
+          Additional receiver IPs:
+        </angular-message>
+        <br/>
+        <div ng-repeat="id in fixedDeviceIps">
+          {{id}}
+          <a ng-click="removeFixedIpReceiver(id)" href="" id="removeFixedIpReceiver">
+            <angular-message desc="Label for receiver IP deletion" key="options_receiver_ip_deletion">
+              delete
+            </angular-message>
+          </a>
+        </div>
+        <form ng-submit="addFixedIpReceiver()" id="addFixedIpReceiver">
+          <input ng-model="newReceiverIp" type="text" size="30" id="newReceiverIp"/>
+          <input type="submit" value="add"/>
+        </form>
+      </p>
+    </section>
+  </div>
+  <div ng-show="showDevSettings" class="options-sections">
+    <section>
+      <h3>
+        <angular-message desc="Label for custom mirroring settings section" key="options_custom_mirroring_settings">
+          Custom mirroring settings
+        </angular-message>
+      </h3>
+      <table border="0">
+        <tr><td colspan=3><b>
+          <angular-message desc="Warning for tab casting quality setting" key="options_tab_casting_quality_warning">
+            Recommended for advanced users only.  Setting Tab Casting Quality will reset these values.
+          </angular-message>
+        </b></td></tr>
+        <tr>
+          <td>
+            <angular-message desc="Label for min bitrate" key="options_min_bitrate">
+              Minimum bitrate:
+            </angular-message>
+          </td>
+          <td>
+            <input ng-model="minVideoBitrate" min="100" max="10000" type="number" size="3" id="minVideoBitrate">kbps
+            (min {{globalMinVideoBitrate}})</input>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <angular-message desc="Label for max bitrate" key="options_max_bitrate">
+              Maximum bitrate:
+            </angular-message>
+          </td>
+          <td>
+            <input ng-model="maxVideoBitrate" min="100" max="10000" type="number" size="3" id="maxVideoBitrate">kbps
+            (max {{globalMaxVideoBitrate}})</input>
+          </td>
+        </tr>
+        <tr ng-show="isInternal">
+          <td>
+            <angular-message desc="Label for min latency" key="options_min_latency">
+              Minimum latency:
+            </angular-message>
+          </td>
+          <td>
+            <input ng-model="minLatency" min="10" max="1000" type="number" size="3" id="minLatency">ms
+            (min 10)</input>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <angular-message desc="Label for max latency" key="options_max_latency">
+              Maximum latency:
+            </angular-message>
+          </td>
+          <td>
+            <input ng-model="maxLatency" min="10" max="1000" type="number" size="3" id="maxLatency">ms
+            (max 1000)</input>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <angular-message desc="Label for max capture frame rate" key="options_max_capture_frame_rate">
+              Maximum capture frame rate:
+            </angular-message>
+          </td>
+          <td>
+            <input ng-model="maxFrameRate" type="number" min="1" max="1000" size="3" id="maxFrameRate">fps</input>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <angular-message desc="Label for image resolution" key="options_image_resolution">
+              Resolution:
+            </angular-message>
+          </td>
+          <td>
+            <label ng-repeat="r in videoResolutions">
+              <input ng-model="$parent.videoResolution" type="radio" value="{{r.name}}" id="{{r.name}}"/>
+              {{r.displayName}}
+            </label>
+          </td>
+          <td>
+            <label ng-repeat="r in resolutionPolicies">
+              <input ng-model="$parent.resolutionPolicy" type="radio" value="{{r.name}}" id="{{r.name}}"/>
+              {{r.displayName}}
+            </label>
+          </td>
+        </tr>
+        <tr ng-show="showAutoThrottlingOption">
+          <td>
+            <angular-message desc="enable auto throttling label" key="autoThrottlingEnabled">
+              Enable frame size/rate auto-throttling:
+            </angular-message>
+          </td>
+          <td>
+            <input ng-model="autoThrottlingEnabled" type="checkbox" id="autoThrottlingEnabled">
+          </td>
+        </tr>
+        <tr ng-show="isInternal">
+          <td>
+            <angular-message desc="Label for pacing target" key="options_pacing_target">
+              Packets per batch (target):
+            </angular-message>
+          </td>
+          <td>
+            <input ng-model="pacerTarget" type="number" min="1" max="1000" size="3" id="pacingTarget">packets</input>
+          </td>
+        </tr>
+        <tr ng-show="isInternal">
+          <td>
+            <angular-message desc="Label for pacing max" key="options_pacing_max">
+              Packets per batch (max):
+            </angular-message>
+          </td>
+          <td>
+            <input ng-model="pacerMax" type="number" min="1" max="1000" size="3" id="pacingMax">packets</input>
+          </td>
+        </tr>
+        <tr ng-show="isInternal">
+          <td>
+            <angular-message desc="Label for DSCP" key="options_dscp">
+              DSCP:
+            </angular-message>
+          </td>
+          <td>
+            <input ng-model="isDSCPEnabled" type="checkbox" id="isDSCPEnabled">
+          </td>
+        </tr>
+        <tr ng-show="isInternal">
+          <td>
+            <angular-message desc="Label for media streaming mode" key="options_media_streaming_mode">
+              Media Streaming Mode:
+            </angular-message>
+          </td>
+          <td>
+            <input ng-model="isMediaStreamingModeEnabled" type="checkbox" id="isMediaStreamingModeEnabled">
+          </td>
+        </tr>
+        <tr ng-show="isInternal">
+          <td>
+            <angular-message desc="disable background scan label" key="options_disable_scan">
+              Disable Background Scan:
+            </angular-message>
+          </td>
+          <td>
+            <input ng-model="isScanDisabled" type="checkbox" id="isScanDisabled">
+          </td>
+        </tr>
+        <tr ng-show="isInternal">
+          <td>
+            <angular-message desc="disable background scan label" key="options_non_blocking_io">
+              Enables Non-Blocking IO on Windows:
+            </angular-message>
+          </td>
+          <td>
+            <input ng-model="isNonBlockingIOEnabled" type="checkbox" id="isNonBlockingIOEnabled">
+          </td>
+        </tr>
+      </table>
+    </section>
+  </div>
+  <div ng-show="!isStable" class="options-sections">
+    <section>
+      <h3>
+        <angular-message desc="Label for cloud settings section" key="options_tab_cloud_settings">
+          Cloud Settings
+        </angular-message>
+      </h3>
+      <p>
+        <span ng-show="!!userEmail">
+          <input ng-model="isCloudEnabled" type="checkbox" id="isCloudEnabled">
+          <label for="isCloudEnabled">
+            <angular-message desc="Label for enabling cloud features" key="options_enable_cloud">
+            Enable Cloud Features
+            </angular-message>
+          </label>
+        </span>
+        <angular-message ng-show="!userEmail" desc="Message shown for enabling cloud features if the user is not signed in to Chrome" key="options_enable_cloud_signed_out">
+          You must <a ng-click="triggerSignIn()" href="">sign in</a> to Chrome to use cloud features.
+        </angular-message>
+      </p>
+    </section>
+  </div>
+</body>
+</html>

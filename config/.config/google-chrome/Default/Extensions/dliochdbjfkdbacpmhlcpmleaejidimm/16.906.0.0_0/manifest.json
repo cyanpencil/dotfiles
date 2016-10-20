@@ -1,0 +1,8 @@
+{
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDQLCNDWvw9vr8ysajVZ/xrCERGJe2mEolWTVo3rKQzqWkoXPa7G6tqM8IvKcPqbzeQPft7FzlrqzrdsX0+njc0ejRDXskawsP1IuGmzGj4PT5TV84fMco6ImGnIYipgDL1CrsMBBRZopaeeKvejlbW2z27VL5ZzPPVIPyp1b55rwIDAQAB",
+   "manifest_version": 2,
+   "minimum_chrome_version": "37",
+   "name": "Google Cast (Beta)",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "16.906.0.0"
+}

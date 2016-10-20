@@ -1,0 +1,1221 @@
+{
+   "1104234694810969409": {
+      "message": "デバイスにキャストできません。"
+   },
+   "1189144544819350763": {
+      "message": "このタブ（オーディオ）のキャスト先..."
+   },
+   "1206604611937086300": {
+      "message": "キャスト デバイス"
+   },
+   "1213957982723875920": {
+      "message": "ご利用のネットワークの説明として最も近いのは次のうちどれですか？"
+   },
+   "130855611855008194": {
+      "message": "このサイトのキャスト アイコンをクリックすると、高画質でキャストできます。"
+   },
+   "1313855295453056101": {
+      "message": "最大キャプチャ フレームレート:"
+   },
+   "1318160328466758792": {
+      "message": "再試行"
+   },
+   "1403598074357445300": {
+      "message": "最高（720p 高ビットレート）"
+   },
+   "1443898800503846063": {
+      "message": "Chrome は古いバージョンです"
+   },
+   "1588576801511256206": {
+      "message": "予期しないハングアウト エラーが発生しました。"
+   },
+   "1696531255551038655": {
+      "message": "参加人数が足りないため、ハングアウトは非アクティブになりました。"
+   },
+   "1717149362663359343": {
+      "message": "$V2_APP_DOMAIN$ をキャスト",
+      "placeholders": {
+         "V2_APP_DOMAIN": {
+            "content": "$1"
+         }
+      }
+   },
+   "1877856983727558507": {
+      "message": "このタブをキャスト（オーディオに最適化）"
+   },
+   "1878364533704855528": {
+      "message": "上記で送信するよう選択した情報に加えて、お使いの Chrome のバージョン、オペレーティング システムのバージョン、Cast 拡張機能のオプション、ミラーリングのパフォーマンス統計情報、通信チャンネルの診断ログが送信されます。お寄せいただいたフィードバックは、問題の診断と拡張機能の改善に使用されます。送信していただいた個人情報は、直接の送信、他の情報に付随しての送信を問わず、Google のプライバシー ポリシーに従って保護されます。このフィードバックを送信すると、Google がその内容を Google のプロダクトまたはサービスの改善のため使用することについて同意したことになります。"
+   },
+   "1942272259363289202": {
+      "message": "デベロッパーの設定"
+   },
+   "2009563581399507712": {
+      "message": "動画の滑らかさ:"
+   },
+   "2016072788708608077": {
+      "message": "Cast 拡張機能のログを添付する - このログは問題のデバッグに役立ちます。チェックボックスをオンにしてご協力をお願いします。"
+   },
+   "2076488708707463944": {
+      "message": "デバイス検出"
+   },
+   "2076769487302164340": {
+      "message": "キャスト中:"
+   },
+   "2081143677025752994": {
+      "message": "閉じる"
+   },
+   "2083306153840951484": {
+      "message": "（必須）"
+   },
+   "2159130950882492111": {
+      "message": "キャンセル"
+   },
+   "2242261874100835789": {
+      "message": "バッチあたりのパケット（最大）:"
+   },
+   "232164743503663377": {
+      "message": "キャストの操作性について、ぜひご意見をお聞かせください。"
+   },
+   "2377419936291389581": {
+      "message": "悪い"
+   },
+   "2438859709710567679": {
+      "message": "タブ/デスクトップ プロジェクションの品質"
+   },
+   "2456043080471762298": {
+      "message": "削除"
+   },
+   "2517473004427269018": {
+      "message": "セッションが 1 分を超えました。今回のエクスペリエンスについてご意見・ご感想をお聞かせください。何か問題が生じた場合は、Cast 拡張機能のログと外部ログのチェックボックスをオンにして情報提供にご協力をお願いします。"
+   },
+   "2554687737930512120": {
+      "message": "デバイスからログを取得できませんでした。"
+   },
+   "2588174729923512180": {
+      "message": "再生中:"
+   },
+   "2618451236056129793": {
+      "message": "ハングアウトへのキャストのセットアップがタイムアウトになりました。go/castouts-dogfood#TOC-Known-Issues をご覧ください。"
+   },
+   "2638991638737993114": {
+      "message": "変更内容は、次回タブをキャストするときに有効になります。"
+   },
+   "2673108145745625398": {
+      "message": "Chrome では接続されたデバイスを検出できませんでした。"
+   },
+   "2697071986776077166": {
+      "message": "クラウド機能を使用するには、Chrome に$START_LINK$ログイン$END_LINK$する必要があります。",
+      "placeholders": {
+         "END_LINK": {
+            "content": "$1"
+         },
+         "START_LINK": {
+            "content": "$2"
+         }
+      }
+   },
+   "2697071986776077166_ph": {
+      "message": "\u003C/a>\u003Ca ng-click=\"triggerSignIn()\" href=\"\">"
+   },
+   "2741789927660626901": {
+      "message": "上級ユーザーにのみおすすめします。[タブ キャストの品質] を設定すると、これらの値がリセットされます。"
+   },
+   "2807800733729323332": {
+      "message": "はい"
+   },
+   "2880373984418075735": {
+      "message": "最小待ち時間:"
+   },
+   "2884726392788153618": {
+      "message": "予期しないエラーが発生しました。以下をお試しください:\u003Cul>\u003Cli>もう一度キャストしてみる\u003C/li>\u003Cli>ネットワーク接続を確認する\u003C/li>\u003C/ul>"
+   },
+   "2932348398128569497": {
+      "message": "このタブをキャスト"
+   },
+   "2942203478948533213": {
+      "message": "別のデバイスを選択してください。"
+   },
+   "3181069857560875169": {
+      "message": "カスタム ミラーリング設定"
+   },
+   "3188239202899052784": {
+      "message": "匿名の使用情報を Google と共有して、Cast の機能向上へのご協力をお願いします。Google ではお客様のプライバシー保護を最優先事項としています。この設定の変更は [オプション] でいつでも行えます。"
+   },
+   "3202350311251778009": {
+      "message": "Google Cast 拡張機能を使用すると、Chrome ブラウザでコンテンツを探して Chromecast デバイスで再生できるようになります。\nCast に最適化されたサイトには、お使いのパソコンを動画を検索したり再生を制御したりするためのリモートして使用し、Chromecast を使ってテレビで動画を再生できる新しいオプションが表示されます。\nChrome 内のタブをテレビにキャストして、サイトや写真、さらには動画をご家庭のお好きなテレビ画面でご覧いただくこともできます。ただし、この機能はまだベータ版であり、お使いいただくには処理が速いパソコンと Wi-Fi ネットワークが必要です。\nこの拡張機能を使用するには Chromecast ハードウェアが必要になります。詳しくは、http://google.com/chromecast をご覧ください。\nこの拡張機能をインストールすると、Google 利用規約とプライバシー ポリシー（https://www.google.com/intl/ja/policies/）に同意したことになります。"
+   },
+   "3203240389500117801": {
+      "message": "ハングアウト名を入力"
+   },
+   "3254351313955764967": {
+      "message": "技術的な問題が発生しました。数分後にもう一度お試しください。"
+   },
+   "3278102219211539720": {
+      "message": "このタブをキャスト"
+   },
+   "3374149466144554646": {
+      "message": "今すぐキャストを停止"
+   },
+   "3400233096253425149": {
+      "message": "ハングアウトにキャスト"
+   },
+   "3485206350043289145": {
+      "message": "最新のアップデートを使用するには、Chrome ブラウザを終了し、もう一度起動してください。"
+   },
+   "3542042671420335679": {
+      "message": "いいえ"
+   },
+   "3577676426589935803": {
+      "message": "追加レシーバー IP:"
+   },
+   "3593576714633990163": {
+      "message": "Cast のミラーリングをお試しいただきありがとうございます。"
+   },
+   "3594579793458243987": {
+      "message": "ご意見をお聞かせください"
+   },
+   "3630200699826211171": {
+      "message": "$_EXTERNALDEVICENAME_$ のログを取得しています。",
+      "placeholders": {
+         "_EXTERNALDEVICENAME_": {
+            "content": "$1"
+         }
+      }
+   },
+   "3630200699826211171_ph": {
+      "message": "{{externalDeviceName}}"
+   },
+   "3633167042592070329": {
+      "message": "お送りいただいたフィードバックは、Google Cast の改善に役立てさせていただきます。フィードバックについて個別に回答を差し上げることはできかねますが、Chromecast に関連した問題について Google に直接お問い合わせいただくことができます。詳しくは、$START_LINK$こちらのページ$END_LINK$をご覧ください。",
+      "placeholders": {
+         "END_LINK": {
+            "content": "$1"
+         },
+         "START_LINK": {
+            "content": "$2"
+         }
+      }
+   },
+   "3633167042592070329_ph": {
+      "message": "\u003C/a>\u003Ca href=\"https://support.google.com/chromecast/troubleshooter/2995236?ref_topic=2994245\">"
+   },
+   "3634893929360744610": {
+      "message": "高画質キャスト"
+   },
+   "3658695798711423870": {
+      "message": "名前を確認してから、もう一度お試しください。"
+   },
+   "3681271501407987946": {
+      "message": "高（720p）"
+   },
+   "3695617262415720740": {
+      "message": "最大ビットレート:"
+   },
+   "3844709005265884931": {
+      "message": "たまに引っかかる"
+   },
+   "3873469728089727547": {
+      "message": "デバイスがワイヤレス アクセス ポイントの近くにあることを確認してください。\u003C/br>確認できたら、もう一度お試しください。"
+   },
+   "3885666702463386029": {
+      "message": "（デバイスが見つからない場合）"
+   },
+   "3894950702316166331": {
+      "message": "読み込んでいます..."
+   },
+   "3996247341169314250": {
+      "message": "その他"
+   },
+   "4014224501758376361": {
+      "message": "$RECEIVER_NAME$ にキャストしています",
+      "placeholders": {
+         "RECEIVER_NAME": {
+            "content": "$1"
+         }
+      }
+   },
+   "4072556140582099509": {
+      "message": "画面やウィンドウをキャスト"
+   },
+   "4076870975160614320": {
+      "message": "解像度:"
+   },
+   "4089994756445820175": {
+      "message": "バグまたはエラー"
+   },
+   "4102291180899400833": {
+      "message": "非アクティブなハングアウトの接続を解除しました。"
+   },
+   "4157951843472785441": {
+      "message": "このサイトをキャストするには Chrome を更新してください。"
+   },
+   "4187599066116404890": {
+      "message": "OK"
+   },
+   "4223394109936547558": {
+      "message": "OK"
+   },
+   "4224760847878375792": {
+      "message": "滑らか"
+   },
+   "4272010402571776761": {
+      "message": "悪い"
+   },
+   "4324962226715124466": {
+      "message": "許容範囲内"
+   },
+   "4511372876817255492": {
+      "message": "デバイスへの接続中にエラーが発生しました。"
+   },
+   "4563873836363331434": {
+      "message": "プロセッサ:"
+   },
+   "4584454172263179470": {
+      "message": "大変滑らか"
+   },
+   "4585326301657856848": {
+      "message": "Cast の機能向上への協力"
+   },
+   "464916539454098167": {
+      "message": "OK"
+   },
+   "4687947362658561907": {
+      "message": "選択したデバイスはオフラインになっています。"
+   },
+   "4741643884742469674": {
+      "message": "音質:"
+   },
+   "4816591726282520264": {
+      "message": "$START_STRONG$$_USEREMAIL_$$END_STRONG$ として Chrome にログインしています。このアカウントでハングアウトにキャストします。",
+      "placeholders": {
+         "END_STRONG": {
+            "content": "$1"
+         },
+         "START_STRONG": {
+            "content": "$2"
+         },
+         "_USEREMAIL_": {
+            "content": "$3"
+         }
+      }
+   },
+   "4816591726282520264_ph": {
+      "message": "\u003C/strong>\u003Cstrong>{{userEmail}}"
+   },
+   "4822504808490979258": {
+      "message": "Cast 拡張機能の使用統計データを自動的に Google に送信する"
+   },
+   "482442943064110817": {
+      "message": "許容範囲内 - FM"
+   },
+   "48395364426353647": {
+      "message": "ハングアウト名を解決できませんでした。"
+   },
+   "4848910232094031059": {
+      "message": "会議の名前または ID でハングアウトを検索"
+   },
+   "4865676252029097872": {
+      "message": "フィードバックを送信できません。しばらくしてからもう一度お試しください。"
+   },
+   "4906762558811440847": {
+      "message": "新しいキャスト デバイスをセットアップ"
+   },
+   "5056298333685549098": {
+      "message": "$V2_APP_DOMAIN$ のキャスト先...",
+      "placeholders": {
+         "V2_APP_DOMAIN": {
+            "content": "$1"
+         }
+      }
+   },
+   "5107389855082704624": {
+      "message": "デバイスのログを添付する - このログは問題のデバッグに役立ちます。チェックボックスをオンにしてご協力をお願いします"
+   },
+   "5163000733818237380": {
+      "message": "画面やウィンドウのキャスト先..."
+   },
+   "5202323856319464688": {
+      "message": "お使いのデバイスからログを取得できません。"
+   },
+   "5229573508420009298": {
+      "message": "（省略可）キャストしたコンテンツ/URL"
+   },
+   "5284888875943777523": {
+      "message": "新しいバージョンのハングアウトは再読み込み後に使用されます。"
+   },
+   "5339913305209531244": {
+      "message": "Cast デバイスは見つかりませんでした。"
+   },
+   "5382938928138155999": {
+      "message": "ハングアウトに参加する際に既定ドメインを指定できます。ドメインを指定せずに入力したカスタム ハングアウト名ではこのドメインが使用されます。"
+   },
+   "5385436389563925676": {
+      "message": "PC と Chromecast が同じ Wi-Fi ネットワークに接続している"
+   },
+   "5395332831907227403": {
+      "message": "画質:"
+   },
+   "5477887796261084791": {
+      "message": "DSCP:"
+   },
+   "5590598097041702454": {
+      "message": "キャスト中..."
+   },
+   "5671949584911040143": {
+      "message": "その他のコメント:"
+   },
+   "57055743185823882": {
+      "message": "キャストしているウィンドウのサイズを変更すると、デバイスが不安定になる恐れがあります。"
+   },
+   "5728295142929105913": {
+      "message": "フィードバック（ログを添付）を送信してから、もう一度お試しください。"
+   },
+   "5745355507138230213": {
+      "message": "良い"
+   },
+   "5750542272329616142": {
+      "message": "上記で送信するよう選択した情報に加えて、お使いの Chrome のバージョン、オペレーティング システムのバージョン、Cast 拡張機能のオプション、ミラーリングのパフォーマンス統計情報、通信チャンネルの診断ログが送信されます。お寄せいただいたフィードバックは、問題の診断と拡張機能の改善に使用されます。送信していただいた個人情報は、直接の送信、他の情報に付随しての送信を問わず、Google のプライバシー ポリシーに従って保護されます。このフィードバックを送信すると、Google がその内容を Google の製品またはサービスの改善のため使用することについて同意したことになります。$END_BOLD$",
+      "placeholders": {
+         "END_BOLD": {
+            "content": "$1"
+         }
+      }
+   },
+   "5750542272329616142_ph": {
+      "message": "\u003C/b>"
+   },
+   "5773074680866649953": {
+      "message": "ハングアウトへのキャストを初期化しました。"
+   },
+   "578821942116253728": {
+      "message": "メディアをキャプチャできません。"
+   },
+   "5823878688587296398": {
+      "message": "該当せず"
+   },
+   "5849296180435940955": {
+      "message": "詳細"
+   },
+   "6018881802001125637": {
+      "message": "フィードバックを送信しています..."
+   },
+   "6039331491778328245": {
+      "message": "良い - DVD"
+   },
+   "6046507125919556913": {
+      "message": "このタブのキャスト先..."
+   },
+   "6118473811359442709": {
+      "message": "聞き取り不能"
+   },
+   "6142008190583061028": {
+      "message": "クラウド設定"
+   },
+   "6214031582604719501": {
+      "message": "デバイス リストに戻る"
+   },
+   "6236792503803747284": {
+      "message": "標準（480p）"
+   },
+   "6295154563386647404": {
+      "message": "フィードバックを送信できませんでした。再試行しています（$ATTEMPT_NUMBER$ 回目）...",
+      "placeholders": {
+         "ATTEMPT_NUMBER": {
+            "content": "$1"
+         }
+      }
+   },
+   "6392731103614271560": {
+      "message": "Chromecast や、Google Cast に対応しているその他のデバイスにコンテンツを送信します。"
+   },
+   "6514896123802924361": {
+      "message": "フィードバックを送信"
+   },
+   "6529598361108234608": {
+      "message": "この機能を使用するには、Chrome に$START_LINK$ログイン$END_LINK$する必要があります。",
+      "placeholders": {
+         "END_LINK": {
+            "content": "$1"
+         },
+         "START_LINK": {
+            "content": "$2"
+         }
+      }
+   },
+   "6529598361108234608_ph": {
+      "message": "\u003C/a>\u003Ca ng-click=\"triggerSignIn()\" href=\"\" id=\"triggerSignIn\">"
+   },
+   "6585975561839203683": {
+      "message": "試していない"
+   },
+   "6604600094360523853": {
+      "message": "Google Cast についてのご意見・ご感想（フィードバック）"
+   },
+   "6750793691943336560": {
+      "message": "ハングアウトへのキャストを有効にするには、ログインし、権限の確認メッセージが表示されたら同意してください。権限の確認メッセージは他のウィンドウの後ろに隠れている場合があります。"
+   },
+   "6807464445011823029": {
+      "message": "自動（最大: 1080p、5 Mbps）"
+   },
+   "6988652234001902672": {
+      "message": "フィードバックを送信していただきありがとうございます。"
+   },
+   "6997602168024654529": {
+      "message": "わからない"
+   },
+   "7008828272760191653": {
+      "message": "視聴不能"
+   },
+   "7019403272859304206": {
+      "message": "$START_STRONG$$_USEREMAIL_$$END_STRONG$ としてキャスト中",
+      "placeholders": {
+         "END_STRONG": {
+            "content": "$1"
+         },
+         "START_STRONG": {
+            "content": "$2"
+         },
+         "_USEREMAIL_": {
+            "content": "$3"
+         }
+      }
+   },
+   "7019403272859304206_ph": {
+      "message": "\u003C/strong>\u003Cstrong>{{userEmail}}"
+   },
+   "7028436125721806572": {
+      "message": "ミラーリング品質の詳細"
+   },
+   "7029426286291560071": {
+      "message": "大変良い"
+   },
+   "7053128562708856478": {
+      "message": "固まる"
+   },
+   "7075073555752965346": {
+      "message": "警告 - 詳細なログが有効になっています。以下のログには、URL その他扱いに注意を要する情報が含まれることがあります。ログの内容を確認したうえで送信してください。"
+   },
+   "7155593134764035664": {
+      "message": "バッチあたりのパケット（ターゲット）:"
+   },
+   "7344649529753624682": {
+      "message": "$V2_APP_DOMAIN$ をキャスト",
+      "placeholders": {
+         "V2_APP_DOMAIN": {
+            "content": "$1"
+         }
+      }
+   },
+   "7433190838776121209": {
+      "message": "クラウド機能を有効にする"
+   },
+   "7435898358826649826": {
+      "message": "メディア コンテンツをキャプチャできません。もう一度お試しください。"
+   },
+   "7467295073121579516": {
+      "message": "接続できませんでした。"
+   },
+   "7484752158248863804": {
+      "message": "キャストを停止"
+   },
+   "7496142106423617391": {
+      "message": "キャスト デバイスを管理"
+   },
+   "7552710358338304275": {
+      "message": "ハングアウトの既定ドメイン:"
+   },
+   "7661531377295243900": {
+      "message": "デバイスを再起動してください。それでも問題が解決しない場合は、メーカーにお問い合わせください。"
+   },
+   "7786163844034528352": {
+      "message": "Google Cast についてのフィードバック"
+   },
+   "780135806192376347": {
+      "message": "機能のリクエスト"
+   },
+   "7824803162979416790": {
+      "message": "PC と Chromecast が別の Wi-Fi ネットワークに接続している（例: 2.4GHz と 5GHz）"
+   },
+   "7864119253243497594": {
+      "message": "デバイスがオンラインになっていることを確認してください。"
+   },
+   "7867182504906675090": {
+      "message": "タブ キャストの品質"
+   },
+   "7885431863671390745": {
+      "message": "Cast 拡張機能の使用統計データを自動的に Google に送信する"
+   },
+   "7911160566398057890": {
+      "message": "Windows でノンブロッキング IO を有効にします。"
+   },
+   "7911416166208830577": {
+      "message": "ヘルプ"
+   },
+   "801495004830452095": {
+      "message": "$_EXTERNALDEVICENAME_$ のログを取得しました。",
+      "placeholders": {
+         "_EXTERNALDEVICENAME_": {
+            "content": "$1"
+         }
+      }
+   },
+   "801495004830452095_ph": {
+      "message": "{{externalDeviceName}}"
+   },
+   "8023322445192355344": {
+      "message": "Hangouts server API のバージョン:"
+   },
+   "8025420827457681102": {
+      "message": "Windows/Mac の設定アプリケーションで Chromecast は表示されますか？"
+   },
+   "8130895852484727514": {
+      "message": "一部のデバイスに接続できませんでした（エラー $ERROR$）",
+      "placeholders": {
+         "ERROR": {
+            "content": "$1"
+         }
+      }
+   },
+   "8189622236075700665": {
+      "message": "フィードバックを破棄してもよろしいですか？"
+   },
+   "8190621044561219027": {
+      "message": "最小ビットレート:"
+   },
+   "819996403327805209": {
+      "message": "詳細"
+   },
+   "8242882361224206357": {
+      "message": "何について報告されますか？"
+   },
+   "8254879137669712236": {
+      "message": "フレームサイズ / フレームレートの自動スロットリングを有効にする:"
+   },
+   "8288732448265345962": {
+      "message": "キャンセル"
+   },
+   "8304164664901068767": {
+      "message": "Google Cast 拡張機能を使用すると、Chrome ブラウザでコンテンツを探して Chromecast デバイスで再生できるようになります。\nこのチャンネルは Google Cast 拡張機能の *BETA* チャンネルです。つまり、近日リリース予定の API や機能を一般公開に先立っていち早く利用したいデベロッパーや上級ユーザーを対象としています。通常は安定した Google Cast 拡張機能をインストールしてください（https://chrome.google.com/webstore/detail/google-cast/boadgeojelhgndaghljhdicfkmllpafd）。Beta チャンネルは多くの場合、安定性が低くより多くのバグを含んでいます。\nこの拡張機能をインストールすると、Google 利用規約とプライバシー ポリシー（https://www.google.com/intl/ja/policies/）に同意したことになります。"
+   },
+   "8314352943658679563": {
+      "message": "ハングアウトへのキャストが無効になっています。現時点では @google.com にのみ対応しています。"
+   },
+   "8351230089123629067": {
+      "message": "グラフィック カード/GPU:"
+   },
+   "8432562579042371182": {
+      "message": "オプション"
+   },
+   "8436497523209458720": {
+      "message": "フィードバックを送信..."
+   },
+   "8444501525238416559": {
+      "message": "最大待ち時間:"
+   },
+   "845494741086179740": {
+      "message": "PC は有線で接続し、Chromecast は Wi-Fi で接続している"
+   },
+   "8491974984518503778": {
+      "message": "今すぐ再読み込み"
+   },
+   "8500110749168055241": {
+      "message": "粗く、途切れがち"
+   },
+   "8700054488486244094": {
+      "message": "Google Cast 拡張機能のオプション"
+   },
+   "872641383564597641": {
+      "message": "デバイスへの接続が失われました。"
+   },
+   "8745478539067058731": {
+      "message": "タブ、ウィンドウ、デスクトップをハングアウトに表示します。"
+   },
+   "8808326359642865369": {
+      "message": "（テスト）"
+   },
+   "8847227464712783239": {
+      "message": "選択したデバイスには問題があります"
+   },
+   "8879729374562274188": {
+      "message": "この操作中にエラーが発生しました。"
+   },
+   "8887833628383960193": {
+      "message": "大変良い - HD"
+   },
+   "8906884849462126639": {
+      "message": "バックグラウンド スキャンの無効化:"
+   },
+   "8948441291106678529": {
+      "message": "Google Cast 拡張機能のオプション"
+   },
+   "897566596634286067": {
+      "message": "こちらにフィードバックの入力をお願いします（必須）。"
+   },
+   "8998179362936748717": {
+      "message": "OK"
+   },
+   "9021642677831414701": {
+      "message": "メディア ストリーミング モード:"
+   },
+   "9039563863590019196": {
+      "message": "ウィンドウのサイズは変更できません"
+   },
+   "9059560719840598868": {
+      "message": "フィードバックを送信"
+   },
+   "9120942669794506861": {
+      "message": "特殊な VPN、プロキシ、ファイアウォール、NAS ソフトウェアをインストールしていますか？"
+   },
+   "MSG_CAPTURE_ERROR": {
+      "message": "578821942116253728"
+   },
+   "MSG_CAPTURE_ERROR_DESCRIPTION": {
+      "message": "7435898358826649826"
+   },
+   "MSG_CASTOUTS_DISABLED": {
+      "message": "8314352943658679563"
+   },
+   "MSG_CASTOUTS_INITIALIZED": {
+      "message": "5773074680866649953"
+   },
+   "MSG_CASTOUTS_TIMED_OUT": {
+      "message": "2618451236056129793"
+   },
+   "MSG_CHROME_TOO_OLD_FOR_V2": {
+      "message": "1443898800503846063"
+   },
+   "MSG_CHROME_TOO_OLD_FOR_V2_DESCRIPTION": {
+      "message": "4157951843472785441"
+   },
+   "MSG_DEVICE_CHANNEL_ERROR": {
+      "message": "4511372876817255492"
+   },
+   "MSG_DEVICE_CHANNEL_ERROR_DESCRIPTION": {
+      "message": "8130895852484727514"
+   },
+   "MSG_GC_BETA_EXTENSION_DESCRIPTION": {
+      "message": "8304164664901068767"
+   },
+   "MSG_GC_CANCEL_BUTTON": {
+      "message": "8288732448265345962"
+   },
+   "MSG_GC_CASTING": {
+      "message": "5590598097041702454"
+   },
+   "MSG_GC_CASTING_LABEL": {
+      "message": "4014224501758376361"
+   },
+   "MSG_GC_CAST_APP": {
+      "message": "5056298333685549098"
+   },
+   "MSG_GC_CAST_APP_OPTION": {
+      "message": "7344649529753624682"
+   },
+   "MSG_GC_CAST_ENTIRE_SCREEN": {
+      "message": "5163000733818237380"
+   },
+   "MSG_GC_CAST_TAB": {
+      "message": "6046507125919556913"
+   },
+   "MSG_GC_CAST_TAB_AUDIO": {
+      "message": "1189144544819350763"
+   },
+   "MSG_GC_CAST_THIS_APP": {
+      "message": "1717149362663359343"
+   },
+   "MSG_GC_CAST_THIS_TAB": {
+      "message": "3278102219211539720"
+   },
+   "MSG_GC_DEVICE_BAD": {
+      "message": "8847227464712783239"
+   },
+   "MSG_GC_DEVICE_BAD_RESOLUTION": {
+      "message": "7661531377295243900"
+   },
+   "MSG_GC_DEVICE_CONNECTION_CHECK_ONLINE": {
+      "message": "7864119253243497594"
+   },
+   "MSG_GC_DEVICE_CONNECTION_ERROR_FIXING": {
+      "message": "3873469728089727547"
+   },
+   "MSG_GC_DEVICE_CONNECTION_LOST": {
+      "message": "872641383564597641"
+   },
+   "MSG_GC_DEVICE_NOT_ONLINE": {
+      "message": "4687947362658561907"
+   },
+   "MSG_GC_DEVICE_NOT_ONLINE_RESOLUTION": {
+      "message": "2942203478948533213"
+   },
+   "MSG_GC_DEVICE_UNABLE_TO_CAST": {
+      "message": "1104234694810969409"
+   },
+   "MSG_GC_DEVICE_UNABLE_TO_CAST_RESOLUTION": {
+      "message": "2884726392788153618"
+   },
+   "MSG_GC_DISMISS_BUTTON": {
+      "message": "2081143677025752994"
+   },
+   "MSG_GC_ENTER_HANGOUT_NAME": {
+      "message": "3203240389500117801"
+   },
+   "MSG_GC_EXTENSION_DESCRIPTION": {
+      "message": "3202350311251778009"
+   },
+   "MSG_GC_EXTENSION_SHORT_DESCRIPTION": {
+      "message": "6392731103614271560"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_ACCEPTABLE": {
+      "message": "482442943064110817"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_GOOD": {
+      "message": "5745355507138230213"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_PERFECT": {
+      "message": "7029426286291560071"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_POOR": {
+      "message": "4272010402571776761"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_UNINTELLIGIBLE": {
+      "message": "6118473811359442709"
+   },
+   "MSG_GC_FEEDBACK_DISCARD_CONFIRMATION": {
+      "message": "8189622236075700665"
+   },
+   "MSG_GC_FEEDBACK_DISCLAIMER": {
+      "message": "1878364533704855528"
+   },
+   "MSG_GC_FEEDBACK_NA": {
+      "message": "5823878688587296398"
+   },
+   "MSG_GC_FEEDBACK_PAGE_TITLE": {
+      "message": "7786163844034528352"
+   },
+   "MSG_GC_FEEDBACK_RESENDING": {
+      "message": "6295154563386647404"
+   },
+   "MSG_GC_FEEDBACK_SENDING": {
+      "message": "6018881802001125637"
+   },
+   "MSG_GC_FEEDBACK_SEND_FAIL": {
+      "message": "4865676252029097872"
+   },
+   "MSG_GC_FEEDBACK_SEND_SUCCESS": {
+      "message": "6988652234001902672"
+   },
+   "MSG_GC_FEEDBACK_TYPE_BUG_OR_ERROR": {
+      "message": "4089994756445820175"
+   },
+   "MSG_GC_FEEDBACK_TYPE_DISCOVERY": {
+      "message": "2076488708707463944"
+   },
+   "MSG_GC_FEEDBACK_TYPE_FEATURE_REQUEST": {
+      "message": "780135806192376347"
+   },
+   "MSG_GC_FEEDBACK_TYPE_OTHER": {
+      "message": "3996247341169314250"
+   },
+   "MSG_GC_FEEDBACK_TYPE_PROJECTION_QUALITY": {
+      "message": "2438859709710567679"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_ACCEPTABLE": {
+      "message": "4324962226715124466"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_FREEZES": {
+      "message": "7053128562708856478"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_GOOD": {
+      "message": "6039331491778328245"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_GREAT": {
+      "message": "8887833628383960193"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_JERKY": {
+      "message": "8500110749168055241"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_PERFECT": {
+      "message": "4584454172263179470"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_POOR": {
+      "message": "2377419936291389581"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_SMOOTH": {
+      "message": "4224760847878375792"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_STUTTER": {
+      "message": "3844709005265884931"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_UNWATCHABLE": {
+      "message": "7008828272760191653"
+   },
+   "MSG_GC_GENERIC_ERROR": {
+      "message": "8879729374562274188"
+   },
+   "MSG_GC_LEARN_MORE_LINK": {
+      "message": "5849296180435940955"
+   },
+   "MSG_GC_MIRROR_QUALITY_AUTO": {
+      "message": "6807464445011823029"
+   },
+   "MSG_GC_MIRROR_QUALITY_HIGH": {
+      "message": "3681271501407987946"
+   },
+   "MSG_GC_MIRROR_QUALITY_HIGHEST": {
+      "message": "1403598074357445300"
+   },
+   "MSG_GC_MIRROR_QUALITY_LOW": {
+      "message": "6236792503803747284"
+   },
+   "MSG_GC_OK_BUTTON": {
+      "message": "4223394109936547558"
+   },
+   "MSG_GC_OPTIONS_PAGE_TITLE": {
+      "message": "8700054488486244094"
+   },
+   "MSG_GC_RETRY_BUTTON": {
+      "message": "1318160328466758792"
+   },
+   "MSG_GC_SHARE_YOUR_THOUGHTS": {
+      "message": "3594579793458243987"
+   },
+   "MSG_GC_SHARE_YOUR_THOUGHTS_DESCRIPTION": {
+      "message": "232164743503663377"
+   },
+   "MSG_GC_STOP_CASTING": {
+      "message": "7484752158248863804"
+   },
+   "MSG_GC_SUBMIT_FEEDBACK": {
+      "message": "6514896123802924361"
+   },
+   "MSG_HANGOUT_ERROR": {
+      "message": "1588576801511256206"
+   },
+   "MSG_HANGOUT_ERROR_DESCRIPTION": {
+      "message": "5728295142929105913"
+   },
+   "MSG_HANGOUT_INACTIVE": {
+      "message": "4102291180899400833"
+   },
+   "MSG_HANGOUT_INACTIVE_DESCRIPTION": {
+      "message": "1696531255551038655"
+   },
+   "MSG_HANGOUT_INVALID": {
+      "message": "48395364426353647"
+   },
+   "MSG_HANGOUT_INVALID_DESCRIPTION": {
+      "message": "3658695798711423870"
+   },
+   "MSG_LOAD_FAILED": {
+      "message": "3254351313955764967"
+   },
+   "MSG_UPDATE_REQUIRED": {
+      "message": "3485206350043289145"
+   },
+   "MSG_WEBRTC_CONNECTION_ERROR": {
+      "message": "7467295073121579516"
+   },
+   "MSG_WINDOW_RESIZE_UNSUPPORTED": {
+      "message": "9039563863590019196"
+   },
+   "MSG_WINDOW_RESIZE_UNSUPPORTED_DESCRIPTION": {
+      "message": "57055743185823882"
+   },
+   "autoThrottlingEnabled": {
+      "message": "8254879137669712236"
+   },
+   "auto_stats_collection_description": {
+      "message": "3188239202899052784"
+   },
+   "auto_stats_collection_dismiss": {
+      "message": "8998179362936748717"
+   },
+   "auto_stats_collection_title": {
+      "message": "4585326301657856848"
+   },
+   "cast_feedback_audio_quality": {
+      "message": "4741643884742469674"
+   },
+   "cast_feedback_comments": {
+      "message": "5671949584911040143"
+   },
+   "cast_feedback_description_required_label": {
+      "message": "897566596634286067"
+   },
+   "cast_feedback_discovery_did_not_try": {
+      "message": "6585975561839203683"
+   },
+   "cast_feedback_discovery_network": {
+      "message": "1213957982723875920"
+   },
+   "cast_feedback_discovery_network_wifi_diff_networks": {
+      "message": "7824803162979416790"
+   },
+   "cast_feedback_discovery_network_wifi_same": {
+      "message": "5385436389563925676"
+   },
+   "cast_feedback_discovery_network_wifi_wired": {
+      "message": "845494741086179740"
+   },
+   "cast_feedback_discovery_no": {
+      "message": "3542042671420335679"
+   },
+   "cast_feedback_discovery_not_sure": {
+      "message": "6997602168024654529"
+   },
+   "cast_feedback_discovery_setup": {
+      "message": "8025420827457681102"
+   },
+   "cast_feedback_discovery_vpn": {
+      "message": "9120942669794506861"
+   },
+   "cast_feedback_discovery_yes": {
+      "message": "2807800733729323332"
+   },
+   "cast_feedback_general_description": {
+      "message": "3633167042592070329"
+   },
+   "cast_feedback_gpu": {
+      "message": "8351230089123629067"
+   },
+   "cast_feedback_mirroring_cancel": {
+      "message": "2159130950882492111"
+   },
+   "cast_feedback_mirroring_disclaimer": {
+      "message": "5750542272329616142"
+   },
+   "cast_feedback_mirroring_ok": {
+      "message": "4187599066116404890"
+   },
+   "cast_feedback_mirroring_submit": {
+      "message": "9059560719840598868"
+   },
+   "cast_feedback_processor": {
+      "message": "4563873836363331434"
+   },
+   "cast_feedback_quality_details": {
+      "message": "7028436125721806572"
+   },
+   "cast_feedback_request": {
+      "message": "2517473004427269018"
+   },
+   "cast_feedback_required_parens": {
+      "message": "2083306153840951484"
+   },
+   "cast_feedback_thankyou": {
+      "message": "3593576714633990163"
+   },
+   "cast_feedback_title": {
+      "message": "6604600094360523853"
+   },
+   "cast_feedback_topic": {
+      "message": "8242882361224206357"
+   },
+   "cast_feedback_url": {
+      "message": "5229573508420009298"
+   },
+   "cast_feedback_video_quality": {
+      "message": "5395332831907227403"
+   },
+   "cast_feedback_video_smoothness": {
+      "message": "2009563581399507712"
+   },
+   "cast_popup_back_to_list": {
+      "message": "6214031582604719501"
+   },
+   "cast_popup_cast_audio": {
+      "message": "1877856983727558507"
+   },
+   "cast_popup_cast_screen": {
+      "message": "4072556140582099509"
+   },
+   "cast_popup_cast_screen_experimental": {
+      "message": "8808326359642865369"
+   },
+   "cast_popup_cast_tab": {
+      "message": "2932348398128569497"
+   },
+   "cast_popup_casting_to": {
+      "message": "2076769487302164340"
+   },
+   "cast_popup_device_missing": {
+      "message": "3885666702463386029"
+   },
+   "cast_popup_feedback_link": {
+      "message": "8436497523209458720"
+   },
+   "cast_popup_help_link": {
+      "message": "7911416166208830577"
+   },
+   "cast_popup_high_quality_video": {
+      "message": "3634893929360744610"
+   },
+   "cast_popup_high_quality_video_details": {
+      "message": "130855611855008194"
+   },
+   "cast_popup_high_quality_video_dismiss": {
+      "message": "464916539454098167"
+   },
+   "cast_popup_loading": {
+      "message": "3894950702316166331"
+   },
+   "cast_popup_options_link": {
+      "message": "8432562579042371182"
+   },
+   "cast_popup_playing_on": {
+      "message": "2588174729923512180"
+   },
+   "castouts_user_email_info": {
+      "message": "7019403272859304206"
+   },
+   "donge_no_cast_device_found": {
+      "message": "5339913305209531244"
+   },
+   "goog_cast_feedback_fine_logs_warning": {
+      "message": "7075073555752965346"
+   },
+   "goog_cast_feedback_get_external_logs_error": {
+      "message": "2554687737930512120"
+   },
+   "goog_cast_feedback_got_external_logs": {
+      "message": "801495004830452095"
+   },
+   "goog_cast_feedback_mirroring_external_logs_button": {
+      "message": "5107389855082704624"
+   },
+   "goog_cast_feedback_mirroring_external_logs_error_device_not_found": {
+      "message": "2673108145745625398"
+   },
+   "goog_cast_feedback_mirroring_external_logs_error_device_not_supported": {
+      "message": "5202323856319464688"
+   },
+   "goog_cast_feedback_mirroring_logs_button": {
+      "message": "2016072788708608077"
+   },
+   "goog_cast_feedback_retrieving_external_logs": {
+      "message": "3630200699826211171"
+   },
+   "options_additional_receiver_ips": {
+      "message": "3577676426589935803"
+   },
+   "options_castouts_description": {
+      "message": "8745478539067058731"
+   },
+   "options_castouts_in_progress": {
+      "message": "6750793691943336560"
+   },
+   "options_castouts_learn_more": {
+      "message": "819996403327805209"
+   },
+   "options_castouts_manual_entry": {
+      "message": "4848910232094031059"
+   },
+   "options_castouts_signed_in": {
+      "message": "4816591726282520264"
+   },
+   "options_castouts_signed_out": {
+      "message": "6529598361108234608"
+   },
+   "options_change_effect": {
+      "message": "2638991638737993114"
+   },
+   "options_custom_mirroring_settings": {
+      "message": "3181069857560875169"
+   },
+   "options_default_hangout_domain": {
+      "message": "7552710358338304275"
+   },
+   "options_default_hangout_domain_description": {
+      "message": "5382938928138155999"
+   },
+   "options_developer_settings_sesison_title": {
+      "message": "1942272259363289202"
+   },
+   "options_devices": {
+      "message": "1206604611937086300"
+   },
+   "options_devices_link": {
+      "message": "7496142106423617391"
+   },
+   "options_disable_scan": {
+      "message": "8906884849462126639"
+   },
+   "options_dscp": {
+      "message": "5477887796261084791"
+   },
+   "options_enable_cloud": {
+      "message": "7433190838776121209"
+   },
+   "options_enable_cloud_signed_out": {
+      "message": "2697071986776077166"
+   },
+   "options_hangout_version": {
+      "message": "8023322445192355344"
+   },
+   "options_hangouts_version_changed_description": {
+      "message": "5284888875943777523"
+   },
+   "options_image_resolution": {
+      "message": "4076870975160614320"
+   },
+   "options_max_bitrate": {
+      "message": "3695617262415720740"
+   },
+   "options_max_capture_frame_rate": {
+      "message": "1313855295453056101"
+   },
+   "options_max_latency": {
+      "message": "8444501525238416559"
+   },
+   "options_media_streaming_mode": {
+      "message": "9021642677831414701"
+   },
+   "options_min_bitrate": {
+      "message": "8190621044561219027"
+   },
+   "options_min_latency": {
+      "message": "2880373984418075735"
+   },
+   "options_non_blocking_io": {
+      "message": "7911160566398057890"
+   },
+   "options_pacing_max": {
+      "message": "2242261874100835789"
+   },
+   "options_pacing_target": {
+      "message": "7155593134764035664"
+   },
+   "options_receiver_ip_deletion": {
+      "message": "2456043080471762298"
+   },
+   "options_reload": {
+      "message": "8491974984518503778"
+   },
+   "options_send_usage": {
+      "message": "7885431863671390745"
+   },
+   "options_setup_link": {
+      "message": "4906762558811440847"
+   },
+   "options_stop_casting": {
+      "message": "3374149466144554646"
+   },
+   "options_tab_casting_quality_warning": {
+      "message": "2741789927660626901"
+   },
+   "options_tab_castouts": {
+      "message": "3400233096253425149"
+   },
+   "options_tab_cloud_settings": {
+      "message": "6142008190583061028"
+   },
+   "options_tab_proj_quality": {
+      "message": "7867182504906675090"
+   },
+   "options_title": {
+      "message": "8948441291106678529"
+   },
+   "stats_collect_prompt_option": {
+      "message": "4822504808490979258"
+   }
+}

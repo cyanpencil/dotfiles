@@ -1,0 +1,1221 @@
+{
+   "1104234694810969409": {
+      "message": "Imeshindwa kutuma kwa kifaa."
+   },
+   "1189144544819350763": {
+      "message": "Tuma kichupo hiki (sauti) kwa..."
+   },
+   "1206604611937086300": {
+      "message": "Vifaa vya Kutuma"
+   },
+   "1213957982723875920": {
+      "message": "Ni gani kati ya zifuatazo inaelezea mtandao wako vizuri?"
+   },
+   "130855611855008194": {
+      "message": "Pata hali bora ya kutuma kwa kubofya ikoni ya kutuma katika tovuti hii."
+   },
+   "1313855295453056101": {
+      "message": "Kiwango cha juu cha upigaji picha cha kasi ya picha:"
+   },
+   "1318160328466758792": {
+      "message": "Jaribu tena"
+   },
+   "1403598074357445300": {
+      "message": "Ubora wa Juu Mno (mwendo kasi wa biti 720p)"
+   },
+   "1443898800503846063": {
+      "message": "Toleo hili la Chrome limepitwa na wakati"
+   },
+   "1588576801511256206": {
+      "message": "Hitilafu isiyotarajiwa ya Hangout."
+   },
+   "1696531255551038655": {
+      "message": "Hakukuwa na idadi ya kutosha ya washiriki katika Hangout ili iendelee kutumika."
+   },
+   "1717149362663359343": {
+      "message": "Tuma $V2_APP_DOMAIN$",
+      "placeholders": {
+         "V2_APP_DOMAIN": {
+            "content": "$1"
+         }
+      }
+   },
+   "1877856983727558507": {
+      "message": "Tuma kichupo hiki (boresha kwa ajili ya kusikiliza)"
+   },
+   "1878364533704855528": {
+      "message": "Toleo lako la Chrome, toleo la mfumo wa uendeshaji, chaguo za viendelezi vya Google Cast, takwimu za uakisi wa utendaji, na kumbukumbu ya uchunguzi wa vituo vya mawasiliano vitawasilishwa ikiwa ni pamoja na maelezo yoyote utakayochagua kujumuisha hapo juu. Maoni haya hutumika kuchunguza matatizo na kuboresha kiendelezi. Maelezo yoyote ya binafsi unayowasilisha, yawe kwa wazi au bila kukusudia yatalindwa kwa mujibu wa sera zetu za faragha. Kwa kuwasilisha maoni haya, unakubali kuwa Google inaweza kutumia maoni unayotoa kuboresha bidhaa au huduma yoyote ya Google."
+   },
+   "1942272259363289202": {
+      "message": "Mipangilio ya Msanidi Programu"
+   },
+   "2009563581399507712": {
+      "message": "Ulaini wa Video:"
+   },
+   "2016072788708608077": {
+      "message": "Ambatisha kumbukumbu za kiendelezi cha Cast - Tafadhali teua hii kwa sababu inatusaidia kutatua matatizo"
+   },
+   "2076488708707463944": {
+      "message": "Upelelezi wa Kifaa"
+   },
+   "2076769487302164340": {
+      "message": "Inatuma kwa"
+   },
+   "2081143677025752994": {
+      "message": "Ondoa"
+   },
+   "2083306153840951484": {
+      "message": "(lazima ijazwe)"
+   },
+   "2159130950882492111": {
+      "message": "Ghairi"
+   },
+   "2242261874100835789": {
+      "message": "Pakiti kwa kila bechi (upeo):"
+   },
+   "232164743503663377": {
+      "message": "Tungependa kusikia kuhusu hali yako ya matumizi ya kutuma!"
+   },
+   "2377419936291389581": {
+      "message": "Mbaya"
+   },
+   "2438859709710567679": {
+      "message": "Ubora wa Makadirio ya Kichupo/Eneo-kazi"
+   },
+   "2456043080471762298": {
+      "message": "futa"
+   },
+   "2517473004427269018": {
+      "message": "Kwa kuwa kipindi chako kilikuwa zaidi ya dakika moja, tungependa utoe maoni kwa timu yetu kuhusu matumizi yako. Kama kuna jambo lolote ambalo halikuenda vizuri, tafadhali bofya visanduku ili uambatishe kiendelezi cha Cast na kumbukumbu za Nje."
+   },
+   "2554687737930512120": {
+      "message": "Haiwezi kurejesha kumbukumbu kutoka kwenye kifaa."
+   },
+   "2588174729923512180": {
+      "message": "Inacheza kwenye"
+   },
+   "2618451236056129793": {
+      "message": "Muda wa usanidi wa Kutuma kwenye Hangouts umekwisha. Angalia go/castouts-dogfood#TOC-Known-Issues"
+   },
+   "2638991638737993114": {
+      "message": "Mabadiliko yako yataanza kutumika wakati mwingine utakapotuma kichupo."
+   },
+   "2673108145745625398": {
+      "message": "Chrome haikupata kifaa kilichounganishwa."
+   },
+   "2697071986776077166": {
+      "message": "Lazima $START_LINK$uingie katika akaunti$END_LINK$ kwenye Chrome ili utumie vipengele vya wingu.",
+      "placeholders": {
+         "END_LINK": {
+            "content": "$1"
+         },
+         "START_LINK": {
+            "content": "$2"
+         }
+      }
+   },
+   "2697071986776077166_ph": {
+      "message": "\u003C/a>\u003Ca ng-click=\"triggerSignIn()\" href=\"\">"
+   },
+   "2741789927660626901": {
+      "message": "Inapendekezwa kwa watumiaji mahiri pekee. Kuweka Ubora wa Kutuma wa Kichupo kutaweka thamani hizi upya."
+   },
+   "2807800733729323332": {
+      "message": "Ndiyo"
+   },
+   "2880373984418075735": {
+      "message": "Kiwango cha chini cha muda wa kurejesha majibu:"
+   },
+   "2884726392788153618": {
+      "message": "Hitilafu fulani imetokea. Tafadhali jaribu yafuatayo:\u003Cul>Jaribu kutuma tena\u003C/ li> \u003Cli>Thibitisha muunganisho wa mtandao wako\u003C/li>\u003C/ul>"
+   },
+   "2932348398128569497": {
+      "message": "Tuma kichupo hiki"
+   },
+   "2942203478948533213": {
+      "message": "Tafadhali chagua kifaa tofauti."
+   },
+   "3181069857560875169": {
+      "message": "Mipangilio maalum ya uakisi"
+   },
+   "3188239202899052784": {
+      "message": "Ungependa kuboresha Cast zaidi kwa kushiriki maelezo ya matumizi yasiyotambulishwa na Google? Faragha yako ni muhimu kwetu, na unaweza kubadilisha mpangilio huu katika \"Options\" wakati wowote."
+   },
+   "3202350311251778009": {
+      "message": "Kiendelezi cha Google Cast hukuwezesha kutafuta na kucheza maudhui kwenye kifaa chako cha Chromecast kutoka kivinjari chako cha Chrome. \nUnapotumia tovuti zilizoboreshwa kwa ajili ya Cast, utaona chaguo mpya ambazo zinakuruhusu kucheza video kwenye runinga yako kupitia Chromecast - ukitumia kompyuta yako kama kidhibiti cha mbali kuvinjari video na kudhibiti kucheza. Unaweza pia kutuma vichupo vyako vyovyote katika Chrome kwenye runinga yako, ili ufurahie tovuti, picha, au hata video kwenye skrini bora kabisa nyumbani mwako. Kumbuka kwamba kipengele hiki bado kipo katika hali ya beta, na kinahitaji kompyuta na mtandao wa Wi-Fi ulio na kasi.\nMaunzi ya Chromecast yanahitajika ili kutumia kiendelezi hiki. Ili kupata maelezo zaidi, tembelea http://google.com/chromecast. Kwa kusakinisha bidhaa hii, unakubaliana na Sheria na Masharti ya Google na Sera ya Faragha yaliyoko https://www.google.com/intl/en/policies/."
+   },
+   "3203240389500117801": {
+      "message": "Andika jina la Hangout"
+   },
+   "3254351313955764967": {
+      "message": "Lo! Inaonekana tunakabiliwa na tatizo la kiufundi. Tafadhali jaribu tena baada ya dakika chache."
+   },
+   "3278102219211539720": {
+      "message": "Tuma kichupo hiki"
+   },
+   "3374149466144554646": {
+      "message": "Acha kutuma sasa"
+   },
+   "3400233096253425149": {
+      "message": "Tuma kwenye Hangout"
+   },
+   "3485206350043289145": {
+      "message": "Toleo jipya linahitaji uondoke kwenye kivinjari cha Chrome na ukifungue tena."
+   },
+   "3542042671420335679": {
+      "message": "La"
+   },
+   "3577676426589935803": {
+      "message": "IP za nyongeza za kipokezi:"
+   },
+   "3593576714633990163": {
+      "message": "Asante kwa kujaribu uakisi wa Cast."
+   },
+   "3594579793458243987": {
+      "message": "Shiriki mawazo yako"
+   },
+   "3630200699826211171": {
+      "message": "Inajumuisha kumbukumbu kutoka $_EXTERNALDEVICENAME_$.",
+      "placeholders": {
+         "_EXTERNALDEVICENAME_": {
+            "content": "$1"
+         }
+      }
+   },
+   "3630200699826211171_ph": {
+      "message": "{{externalDeviceName}}"
+   },
+   "3633167042592070329": {
+      "message": "Maoni yako hutusaidia kuboresha Google Cast na tunashukuru. Kumbuka kuwa hatuna uwezo wa kutoa majibu ya binafsi kwa masuala ya maoni yaliyowasilishwa. Kama unataka kuwasiliana na Google moja kwa moja kuhusu masuala yanayohusiana na Chromecast, tafadhali rejelea $START_LINK$ukurasa huu$END_LINK$ kwa maelezo.",
+      "placeholders": {
+         "END_LINK": {
+            "content": "$1"
+         },
+         "START_LINK": {
+            "content": "$2"
+         }
+      }
+   },
+   "3633167042592070329_ph": {
+      "message": "\u003C/a>\u003Ca href=\"https://support.google.com/chromecast/troubleshooter/2995236?ref_topic=2994245\">"
+   },
+   "3634893929360744610": {
+      "message": "Utumaji wa ubora wa juu"
+   },
+   "3658695798711423870": {
+      "message": "Tafadhali kagua jina kisha ujaribu tena."
+   },
+   "3681271501407987946": {
+      "message": "Ubora wa Juu (720p)"
+   },
+   "3695617262415720740": {
+      "message": "Kiwango cha juu cha mwendo kasi wa biti:"
+   },
+   "3844709005265884931": {
+      "message": "Kigugumizi hapa na pale"
+   },
+   "3873469728089727547": {
+      "message": "Tafadhali hakikisha kifaa chako kipo karibu na sehemu yako ya kufikia intaneti isiyotumia waya.\u003C/br>Kisha jaribu tena."
+   },
+   "3885666702463386029": {
+      "message": "(Kifaa hakipo?)"
+   },
+   "3894950702316166331": {
+      "message": "Inapakia..."
+   },
+   "3996247341169314250": {
+      "message": "Nyingine"
+   },
+   "4014224501758376361": {
+      "message": "Tuma kwa $RECEIVER_NAME$",
+      "placeholders": {
+         "RECEIVER_NAME": {
+            "content": "$1"
+         }
+      }
+   },
+   "4072556140582099509": {
+      "message": "Tuma skrini/dirisha"
+   },
+   "4076870975160614320": {
+      "message": "Ubora:"
+   },
+   "4089994756445820175": {
+      "message": "Hitilafu"
+   },
+   "4102291180899400833": {
+      "message": "Hangout ambayo haitumiki imeondolewa."
+   },
+   "4157951843472785441": {
+      "message": "Pata toleo jipya la Chrome ili utume tovuti hii."
+   },
+   "4187599066116404890": {
+      "message": "SAWA!"
+   },
+   "4223394109936547558": {
+      "message": "Sawa"
+   },
+   "4224760847878375792": {
+      "message": "Laini"
+   },
+   "4272010402571776761": {
+      "message": "Mbaya"
+   },
+   "4324962226715124466": {
+      "message": "Inakubalika"
+   },
+   "4511372876817255492": {
+      "message": "Haikuweza kuunganisha kwenye kifaa."
+   },
+   "4563873836363331434": {
+      "message": "Kichakataji:"
+   },
+   "4584454172263179470": {
+      "message": "Bora"
+   },
+   "4585326301657856848": {
+      "message": "Saidia ili kuboresha Cast"
+   },
+   "464916539454098167": {
+      "message": "Nimeelewa!"
+   },
+   "4687947362658561907": {
+      "message": "Kifaa kilichochaguliwa hakipo mtandaoni tena."
+   },
+   "4741643884742469674": {
+      "message": "Ubora wa Sauti:"
+   },
+   "4816591726282520264": {
+      "message": "Umeingia katika Chrome kama $START_STRONG$$_USEREMAIL_$$END_STRONG$ na utatuma kwenye Hangout ukitumia akaunti hiyo.",
+      "placeholders": {
+         "END_STRONG": {
+            "content": "$1"
+         },
+         "START_STRONG": {
+            "content": "$2"
+         },
+         "_USEREMAIL_": {
+            "content": "$3"
+         }
+      }
+   },
+   "4816591726282520264_ph": {
+      "message": "\u003C/strong>\u003Cstrong>{{userEmail}}"
+   },
+   "4822504808490979258": {
+      "message": "Tuma takwimu za matumizi ya kiendelezi cha Cast kwa Google"
+   },
+   "482442943064110817": {
+      "message": "Inakubalika - FM"
+   },
+   "48395364426353647": {
+      "message": "Jina la Hangout halikuweza kutatuliwa."
+   },
+   "4848910232094031059": {
+      "message": "Tafuta Hangout kwa jina la mkutano au kitambulisho"
+   },
+   "4865676252029097872": {
+      "message": "Imeshindwa kutuma maoni. Tafadhali jaribu tena baadaye."
+   },
+   "4906762558811440847": {
+      "message": "Sanidi kifaa kipya cha Kutuma"
+   },
+   "5056298333685549098": {
+      "message": "Tuma $V2_APP_DOMAIN$ kwa...",
+      "placeholders": {
+         "V2_APP_DOMAIN": {
+            "content": "$1"
+         }
+      }
+   },
+   "5107389855082704624": {
+      "message": "Ambatisha kumbukumbu za kifaa - Tafadhali teua hii kwa sababu inatusaidia kutatua matatizo"
+   },
+   "5163000733818237380": {
+      "message": "Tuma skrini/dirisha kwenye..."
+   },
+   "5202323856319464688": {
+      "message": "Kifaa ulichokuwa ukitumia hakitoi kumbukumbu."
+   },
+   "5229573508420009298": {
+      "message": "(Hiari) Ulikuwa ukituma maudhui/URL gani?"
+   },
+   "5284888875943777523": {
+      "message": "Toleo jipya la Hangouts litatumika baada ya kupakia upya."
+   },
+   "5339913305209531244": {
+      "message": "Hakuna vifaa vya Cast vilivyopatikana."
+   },
+   "5382938928138155999": {
+      "message": "Unaweza kubainisha kikoa chaguo-msingi ambako utajiunga kwenye Hangout. Majina maalum ya Hangout yanayowekwa bila kikoa yatatumia kikoa hiki."
+   },
+   "5385436389563925676": {
+      "message": "Kompyuta na Chromecast kwenye mtandao mmoja wa Wi-Fi"
+   },
+   "5395332831907227403": {
+      "message": "Ubora wa Video:"
+   },
+   "5477887796261084791": {
+      "message": "DSCP:"
+   },
+   "5590598097041702454": {
+      "message": "Inatuma..."
+   },
+   "5671949584911040143": {
+      "message": "Maoni ya ziada:"
+   },
+   "57055743185823882": {
+      "message": "Kurekebisha ukubwa wa dirisha unalotuma huenda kukafanya kifaa chako kisiwe thabiti."
+   },
+   "5728295142929105913": {
+      "message": "Tafadhali wasilisha maoni (ambatisha kumbukumbu) kisha ujaribu tena."
+   },
+   "5745355507138230213": {
+      "message": "Nzuri"
+   },
+   "5750542272329616142": {
+      "message": "Toleo lako la Chrome, toleo la mfumo wa uendeshaji, chaguo za viendelezi vya Google Cast, takwimu za uakisi wa utendaji, na kumbukumbu ya uchunguzi wa vituo vya mawasiliano zitawasilishwa ikiwa ni nyongeza ya maelezo yoyote utakayochagua kujumuisha hapo juu. Maoni haya hutumika kuchunguza matatizo na kuboresha kiendelezi. Maelezo yoyote ya binafsi unayowasilisha, yawe kwa wazi au bila kukusudia yatalindwa kwa mujibu wa sera zetu za faragha. Kwa kuwasilisha maoni haya, unakubali kuwa Google inaweza kutumia maoni unayotoa kuboresha bidhaa au huduma yoyote ya Google.$END_BOLD$",
+      "placeholders": {
+         "END_BOLD": {
+            "content": "$1"
+         }
+      }
+   },
+   "5750542272329616142_ph": {
+      "message": "\u003C/b>"
+   },
+   "5773074680866649953": {
+      "message": "Kutuma kwenye Hangouts kumeanzishwa bila tatizo!"
+   },
+   "578821942116253728": {
+      "message": "Haikuweza kunakili media."
+   },
+   "5823878688587296398": {
+      "message": "Haitumiki"
+   },
+   "5849296180435940955": {
+      "message": "Pata maelezo zaidi"
+   },
+   "6018881802001125637": {
+      "message": "Inatuma maoni..."
+   },
+   "6039331491778328245": {
+      "message": "DVD - Nzuri"
+   },
+   "6046507125919556913": {
+      "message": "Tuma kichupo hiki kwa..."
+   },
+   "6118473811359442709": {
+      "message": "Inakanganya"
+   },
+   "6142008190583061028": {
+      "message": "Mipangilio ya Wingu"
+   },
+   "6214031582604719501": {
+      "message": "Rudi kwenye orodha ya vifaa"
+   },
+   "6236792503803747284": {
+      "message": "Ubora Wastani (480p)"
+   },
+   "6295154563386647404": {
+      "message": "Ilishindwa kutuma maoni. Inajaribu tena (hili ni jaribio la #$ATTEMPT_NUMBER$)...",
+      "placeholders": {
+         "ATTEMPT_NUMBER": {
+            "content": "$1"
+         }
+      }
+   },
+   "6392731103614271560": {
+      "message": "Tuma maudhui kwenye Chromecast yako na vifaa vingine vinavyotumia Google Cast."
+   },
+   "6514896123802924361": {
+      "message": "Wasilisha Maoni"
+   },
+   "6529598361108234608": {
+      "message": "Lazima $START_LINK$uingie katika akaunti$END_LINK$ kwenye Chrome ili utumie kipengele hiki.",
+      "placeholders": {
+         "END_LINK": {
+            "content": "$1"
+         },
+         "START_LINK": {
+            "content": "$2"
+         }
+      }
+   },
+   "6529598361108234608_ph": {
+      "message": "\u003C/a>\u003Ca ng-click=\"triggerSignIn()\" href=\"\" id=\"triggerSignIn\">"
+   },
+   "6585975561839203683": {
+      "message": "Sikujaribu"
+   },
+   "6604600094360523853": {
+      "message": "Maoni ya Google Cast"
+   },
+   "6750793691943336560": {
+      "message": "Ili kuwasha kutuma skrini kwenye Hangouts tafadhali ingia katika akaunti na ukubali ruhusa unapoulizwa. Ombi la ruhusa huenda likawa limejificha nyuma ya madirisha mengine."
+   },
+   "6807464445011823029": {
+      "message": "Otomatiki (upeo: 1080p, Mbps 5)"
+   },
+   "6988652234001902672": {
+      "message": "Asante kwa kutuma maoni."
+   },
+   "6997602168024654529": {
+      "message": "Sina uhakika"
+   },
+   "7008828272760191653": {
+      "message": "Haitazamiki"
+   },
+   "7019403272859304206": {
+      "message": "Unatuma kama $START_STRONG$$_USEREMAIL_$$END_STRONG$",
+      "placeholders": {
+         "END_STRONG": {
+            "content": "$1"
+         },
+         "START_STRONG": {
+            "content": "$2"
+         },
+         "_USEREMAIL_": {
+            "content": "$3"
+         }
+      }
+   },
+   "7019403272859304206_ph": {
+      "message": "\u003C/strong>\u003Cstrong>{{userEmail}}"
+   },
+   "7028436125721806572": {
+      "message": "Maelezo ya ubora wa uakisi"
+   },
+   "7029426286291560071": {
+      "message": "Bora"
+   },
+   "7053128562708856478": {
+      "message": "Hufanya safu zisisonge"
+   },
+   "7075073555752965346": {
+      "message": "Onyo - Uwekaji kumbukumbu za kina umewashwa; kumbukumbu hapo chini zinaweza kujumuisha URL au maelezo mengine nyeti. Tafadhali kagua na uhakikishe kuwa una uhuru wa kuwasilisha maelezo haya."
+   },
+   "7155593134764035664": {
+      "message": "Pakiti kwa kila bechi (lengo):"
+   },
+   "7344649529753624682": {
+      "message": "Tuma $V2_APP_DOMAIN$",
+      "placeholders": {
+         "V2_APP_DOMAIN": {
+            "content": "$1"
+         }
+      }
+   },
+   "7433190838776121209": {
+      "message": "Washa Vipengele vya Wingu"
+   },
+   "7435898358826649826": {
+      "message": "Haikuweza kunakili maudhui ya media. Tafadhali jaribu tena."
+   },
+   "7467295073121579516": {
+      "message": "Hatuwezi kuunganisha."
+   },
+   "7484752158248863804": {
+      "message": "Acha kutuma"
+   },
+   "7496142106423617391": {
+      "message": "Dhibiti vifaa vya Kutuma"
+   },
+   "7552710358338304275": {
+      "message": "Kikoa chaguo-msingi kwa Hangout:"
+   },
+   "7661531377295243900": {
+      "message": "Tafadhali washa tena kifaa chako. Kama kufanya hivyo hakusuluhishi tatizo, wasiliana na mtengenezaji."
+   },
+   "7786163844034528352": {
+      "message": "Maoni ya Google Cast"
+   },
+   "780135806192376347": {
+      "message": "Ombi la Kipengee"
+   },
+   "7824803162979416790": {
+      "message": "Kompyuta na Chromecast ziko kwenye mitandao tofauti ya Wi-Fi (k.m. GHZ 2.4 dhidi ya. GHza 5)"
+   },
+   "7864119253243497594": {
+      "message": "Tafadhali hakikisha kwamba kifaa chako kiko mtandaoni."
+   },
+   "7867182504906675090": {
+      "message": "Ubora wa utumaji wa kichupo"
+   },
+   "7885431863671390745": {
+      "message": "Tuma takwimu za matumizi ya kiendelezi cha Cast kwa Google kiotomatiki."
+   },
+   "7911160566398057890": {
+      "message": "Washa IO Isiyozuia kwenye Windows:"
+   },
+   "7911416166208830577": {
+      "message": "Usaidizi"
+   },
+   "801495004830452095": {
+      "message": "Imejumuisha kumbukumbu kutoka $_EXTERNALDEVICENAME_$.",
+      "placeholders": {
+         "_EXTERNALDEVICENAME_": {
+            "content": "$1"
+         }
+      }
+   },
+   "801495004830452095_ph": {
+      "message": "{{externalDeviceName}}"
+   },
+   "8023322445192355344": {
+      "message": "Toleo la API la seva ya Hangouts:"
+   },
+   "8025420827457681102": {
+      "message": "Je, unaweza kuona Chromecast yako kwenye programu ya usanidi ya Windows/Mac?"
+   },
+   "8130895852484727514": {
+      "message": "Imeshindwa kuunganisha kwenye baadhi ya vifaa. (hitilafu $ERROR$)",
+      "placeholders": {
+         "ERROR": {
+            "content": "$1"
+         }
+      }
+   },
+   "8189622236075700665": {
+      "message": "Ungependa kutupa maoni?"
+   },
+   "8190621044561219027": {
+      "message": "Kiwango cha chini cha mwendo kasi wa biti:"
+   },
+   "819996403327805209": {
+      "message": "Pata maelezo zaidi"
+   },
+   "8242882361224206357": {
+      "message": "Je, unatoa maoni kuhusu nini?"
+   },
+   "8254879137669712236": {
+      "message": "Washa kipengele cha ukabaji kiotomatiki wa ukubwa/kiwango cha fremu:"
+   },
+   "8288732448265345962": {
+      "message": "Ghairi"
+   },
+   "8304164664901068767": {
+      "message": "Kiendelezi cha Google Cast hukuwezesha kutafuta na kucheza maudhui kwenye kifaa chako cha Chromecast kutoka kivinjari chako cha Chrome. \nHiki ni kituo cha *BETA* cha kiendelezi cha Google Cast. Kinanuiwa wasanidi programu na watumiaji mahiri ambao wanataka ufikiaji wa mapema kwa API na vipengele vipya kabla havijatolewa kwa umma. Watumiaji wengi lazima wasakinishe kiendelezi thabiti cha Google Cast (https://chrome.google.com/webstore/detail/google-cast/boadgeojelhgndaghljhdicfkmllpafd). Kituo cha beta mara nyingi hauwa si thabiti sana na kina hitilafu nyingi. Kwa kusakinisha bidhaa hii, unakubaliana na Sheria na Masharti ya Google na Sera ya Faragha yaliyoko https://www.google.com/intl/en/policies/."
+   },
+   "8314352943658679563": {
+      "message": "Kutuma kwenye Hangouts kumezimwa. Ni @google.com pekee inayoweza kutumiwa kwa wakati huu"
+   },
+   "8351230089123629067": {
+      "message": "Kadi ya Graphics/GPU:"
+   },
+   "8432562579042371182": {
+      "message": "Chaguo"
+   },
+   "8436497523209458720": {
+      "message": "Tuma maoni..."
+   },
+   "8444501525238416559": {
+      "message": "Kiwango cha juu cha muda wa kurejesha majibu:"
+   },
+   "845494741086179740": {
+      "message": "Kompyuta imeunganishwa kwa waya na Chromecast iko kwenye Wi-Fi"
+   },
+   "8491974984518503778": {
+      "message": "Pakia upya sasa"
+   },
+   "8500110749168055241": {
+      "message": "Siyo thabiti"
+   },
+   "8700054488486244094": {
+      "message": "Chaguo za kiendelezi cha Google Cast"
+   },
+   "872641383564597641": {
+      "message": "Muunganisho wa kifaa umepotea."
+   },
+   "8745478539067058731": {
+      "message": "Wasilisha vichupo, madirisha au eneo-kazi katika Hangout."
+   },
+   "8808326359642865369": {
+      "message": "(majaribio)"
+   },
+   "8847227464712783239": {
+      "message": "Kifaa kilichochaguliwa kimeharibika"
+   },
+   "8879729374562274188": {
+      "message": "Shughuli hii ilipata hitilafu."
+   },
+   "8887833628383960193": {
+      "message": "HD - Bora"
+   },
+   "8906884849462126639": {
+      "message": "Zima Uchanganuzi wa Chini Chini:"
+   },
+   "8948441291106678529": {
+      "message": "Chaguzi za kiendelezi cha Google Cast"
+   },
+   "897566596634286067": {
+      "message": "Tafadhali ingiza maoni yako hapa (inahitajika)."
+   },
+   "8998179362936748717": {
+      "message": "Sawa"
+   },
+   "9021642677831414701": {
+      "message": "Hali ya Kutiririsha Maudhui:"
+   },
+   "9039563863590019196": {
+      "message": "Huwezi kurekebisha ukubwa wa dirisha"
+   },
+   "9059560719840598868": {
+      "message": "Tuma Maoni"
+   },
+   "9120942669794506861": {
+      "message": "Je, una VPN, proksi, kinga-mtandao yoyote maalum, au programu ya NAS iliyosakinishwa?"
+   },
+   "MSG_CAPTURE_ERROR": {
+      "message": "578821942116253728"
+   },
+   "MSG_CAPTURE_ERROR_DESCRIPTION": {
+      "message": "7435898358826649826"
+   },
+   "MSG_CASTOUTS_DISABLED": {
+      "message": "8314352943658679563"
+   },
+   "MSG_CASTOUTS_INITIALIZED": {
+      "message": "5773074680866649953"
+   },
+   "MSG_CASTOUTS_TIMED_OUT": {
+      "message": "2618451236056129793"
+   },
+   "MSG_CHROME_TOO_OLD_FOR_V2": {
+      "message": "1443898800503846063"
+   },
+   "MSG_CHROME_TOO_OLD_FOR_V2_DESCRIPTION": {
+      "message": "4157951843472785441"
+   },
+   "MSG_DEVICE_CHANNEL_ERROR": {
+      "message": "4511372876817255492"
+   },
+   "MSG_DEVICE_CHANNEL_ERROR_DESCRIPTION": {
+      "message": "8130895852484727514"
+   },
+   "MSG_GC_BETA_EXTENSION_DESCRIPTION": {
+      "message": "8304164664901068767"
+   },
+   "MSG_GC_CANCEL_BUTTON": {
+      "message": "8288732448265345962"
+   },
+   "MSG_GC_CASTING": {
+      "message": "5590598097041702454"
+   },
+   "MSG_GC_CASTING_LABEL": {
+      "message": "4014224501758376361"
+   },
+   "MSG_GC_CAST_APP": {
+      "message": "5056298333685549098"
+   },
+   "MSG_GC_CAST_APP_OPTION": {
+      "message": "7344649529753624682"
+   },
+   "MSG_GC_CAST_ENTIRE_SCREEN": {
+      "message": "5163000733818237380"
+   },
+   "MSG_GC_CAST_TAB": {
+      "message": "6046507125919556913"
+   },
+   "MSG_GC_CAST_TAB_AUDIO": {
+      "message": "1189144544819350763"
+   },
+   "MSG_GC_CAST_THIS_APP": {
+      "message": "1717149362663359343"
+   },
+   "MSG_GC_CAST_THIS_TAB": {
+      "message": "3278102219211539720"
+   },
+   "MSG_GC_DEVICE_BAD": {
+      "message": "8847227464712783239"
+   },
+   "MSG_GC_DEVICE_BAD_RESOLUTION": {
+      "message": "7661531377295243900"
+   },
+   "MSG_GC_DEVICE_CONNECTION_CHECK_ONLINE": {
+      "message": "7864119253243497594"
+   },
+   "MSG_GC_DEVICE_CONNECTION_ERROR_FIXING": {
+      "message": "3873469728089727547"
+   },
+   "MSG_GC_DEVICE_CONNECTION_LOST": {
+      "message": "872641383564597641"
+   },
+   "MSG_GC_DEVICE_NOT_ONLINE": {
+      "message": "4687947362658561907"
+   },
+   "MSG_GC_DEVICE_NOT_ONLINE_RESOLUTION": {
+      "message": "2942203478948533213"
+   },
+   "MSG_GC_DEVICE_UNABLE_TO_CAST": {
+      "message": "1104234694810969409"
+   },
+   "MSG_GC_DEVICE_UNABLE_TO_CAST_RESOLUTION": {
+      "message": "2884726392788153618"
+   },
+   "MSG_GC_DISMISS_BUTTON": {
+      "message": "2081143677025752994"
+   },
+   "MSG_GC_ENTER_HANGOUT_NAME": {
+      "message": "3203240389500117801"
+   },
+   "MSG_GC_EXTENSION_DESCRIPTION": {
+      "message": "3202350311251778009"
+   },
+   "MSG_GC_EXTENSION_SHORT_DESCRIPTION": {
+      "message": "6392731103614271560"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_ACCEPTABLE": {
+      "message": "482442943064110817"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_GOOD": {
+      "message": "5745355507138230213"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_PERFECT": {
+      "message": "7029426286291560071"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_POOR": {
+      "message": "4272010402571776761"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_UNINTELLIGIBLE": {
+      "message": "6118473811359442709"
+   },
+   "MSG_GC_FEEDBACK_DISCARD_CONFIRMATION": {
+      "message": "8189622236075700665"
+   },
+   "MSG_GC_FEEDBACK_DISCLAIMER": {
+      "message": "1878364533704855528"
+   },
+   "MSG_GC_FEEDBACK_NA": {
+      "message": "5823878688587296398"
+   },
+   "MSG_GC_FEEDBACK_PAGE_TITLE": {
+      "message": "7786163844034528352"
+   },
+   "MSG_GC_FEEDBACK_RESENDING": {
+      "message": "6295154563386647404"
+   },
+   "MSG_GC_FEEDBACK_SENDING": {
+      "message": "6018881802001125637"
+   },
+   "MSG_GC_FEEDBACK_SEND_FAIL": {
+      "message": "4865676252029097872"
+   },
+   "MSG_GC_FEEDBACK_SEND_SUCCESS": {
+      "message": "6988652234001902672"
+   },
+   "MSG_GC_FEEDBACK_TYPE_BUG_OR_ERROR": {
+      "message": "4089994756445820175"
+   },
+   "MSG_GC_FEEDBACK_TYPE_DISCOVERY": {
+      "message": "2076488708707463944"
+   },
+   "MSG_GC_FEEDBACK_TYPE_FEATURE_REQUEST": {
+      "message": "780135806192376347"
+   },
+   "MSG_GC_FEEDBACK_TYPE_OTHER": {
+      "message": "3996247341169314250"
+   },
+   "MSG_GC_FEEDBACK_TYPE_PROJECTION_QUALITY": {
+      "message": "2438859709710567679"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_ACCEPTABLE": {
+      "message": "4324962226715124466"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_FREEZES": {
+      "message": "7053128562708856478"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_GOOD": {
+      "message": "6039331491778328245"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_GREAT": {
+      "message": "8887833628383960193"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_JERKY": {
+      "message": "8500110749168055241"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_PERFECT": {
+      "message": "4584454172263179470"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_POOR": {
+      "message": "2377419936291389581"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_SMOOTH": {
+      "message": "4224760847878375792"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_STUTTER": {
+      "message": "3844709005265884931"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_UNWATCHABLE": {
+      "message": "7008828272760191653"
+   },
+   "MSG_GC_GENERIC_ERROR": {
+      "message": "8879729374562274188"
+   },
+   "MSG_GC_LEARN_MORE_LINK": {
+      "message": "5849296180435940955"
+   },
+   "MSG_GC_MIRROR_QUALITY_AUTO": {
+      "message": "6807464445011823029"
+   },
+   "MSG_GC_MIRROR_QUALITY_HIGH": {
+      "message": "3681271501407987946"
+   },
+   "MSG_GC_MIRROR_QUALITY_HIGHEST": {
+      "message": "1403598074357445300"
+   },
+   "MSG_GC_MIRROR_QUALITY_LOW": {
+      "message": "6236792503803747284"
+   },
+   "MSG_GC_OK_BUTTON": {
+      "message": "4223394109936547558"
+   },
+   "MSG_GC_OPTIONS_PAGE_TITLE": {
+      "message": "8700054488486244094"
+   },
+   "MSG_GC_RETRY_BUTTON": {
+      "message": "1318160328466758792"
+   },
+   "MSG_GC_SHARE_YOUR_THOUGHTS": {
+      "message": "3594579793458243987"
+   },
+   "MSG_GC_SHARE_YOUR_THOUGHTS_DESCRIPTION": {
+      "message": "232164743503663377"
+   },
+   "MSG_GC_STOP_CASTING": {
+      "message": "7484752158248863804"
+   },
+   "MSG_GC_SUBMIT_FEEDBACK": {
+      "message": "6514896123802924361"
+   },
+   "MSG_HANGOUT_ERROR": {
+      "message": "1588576801511256206"
+   },
+   "MSG_HANGOUT_ERROR_DESCRIPTION": {
+      "message": "5728295142929105913"
+   },
+   "MSG_HANGOUT_INACTIVE": {
+      "message": "4102291180899400833"
+   },
+   "MSG_HANGOUT_INACTIVE_DESCRIPTION": {
+      "message": "1696531255551038655"
+   },
+   "MSG_HANGOUT_INVALID": {
+      "message": "48395364426353647"
+   },
+   "MSG_HANGOUT_INVALID_DESCRIPTION": {
+      "message": "3658695798711423870"
+   },
+   "MSG_LOAD_FAILED": {
+      "message": "3254351313955764967"
+   },
+   "MSG_UPDATE_REQUIRED": {
+      "message": "3485206350043289145"
+   },
+   "MSG_WEBRTC_CONNECTION_ERROR": {
+      "message": "7467295073121579516"
+   },
+   "MSG_WINDOW_RESIZE_UNSUPPORTED": {
+      "message": "9039563863590019196"
+   },
+   "MSG_WINDOW_RESIZE_UNSUPPORTED_DESCRIPTION": {
+      "message": "57055743185823882"
+   },
+   "autoThrottlingEnabled": {
+      "message": "8254879137669712236"
+   },
+   "auto_stats_collection_description": {
+      "message": "3188239202899052784"
+   },
+   "auto_stats_collection_dismiss": {
+      "message": "8998179362936748717"
+   },
+   "auto_stats_collection_title": {
+      "message": "4585326301657856848"
+   },
+   "cast_feedback_audio_quality": {
+      "message": "4741643884742469674"
+   },
+   "cast_feedback_comments": {
+      "message": "5671949584911040143"
+   },
+   "cast_feedback_description_required_label": {
+      "message": "897566596634286067"
+   },
+   "cast_feedback_discovery_did_not_try": {
+      "message": "6585975561839203683"
+   },
+   "cast_feedback_discovery_network": {
+      "message": "1213957982723875920"
+   },
+   "cast_feedback_discovery_network_wifi_diff_networks": {
+      "message": "7824803162979416790"
+   },
+   "cast_feedback_discovery_network_wifi_same": {
+      "message": "5385436389563925676"
+   },
+   "cast_feedback_discovery_network_wifi_wired": {
+      "message": "845494741086179740"
+   },
+   "cast_feedback_discovery_no": {
+      "message": "3542042671420335679"
+   },
+   "cast_feedback_discovery_not_sure": {
+      "message": "6997602168024654529"
+   },
+   "cast_feedback_discovery_setup": {
+      "message": "8025420827457681102"
+   },
+   "cast_feedback_discovery_vpn": {
+      "message": "9120942669794506861"
+   },
+   "cast_feedback_discovery_yes": {
+      "message": "2807800733729323332"
+   },
+   "cast_feedback_general_description": {
+      "message": "3633167042592070329"
+   },
+   "cast_feedback_gpu": {
+      "message": "8351230089123629067"
+   },
+   "cast_feedback_mirroring_cancel": {
+      "message": "2159130950882492111"
+   },
+   "cast_feedback_mirroring_disclaimer": {
+      "message": "5750542272329616142"
+   },
+   "cast_feedback_mirroring_ok": {
+      "message": "4187599066116404890"
+   },
+   "cast_feedback_mirroring_submit": {
+      "message": "9059560719840598868"
+   },
+   "cast_feedback_processor": {
+      "message": "4563873836363331434"
+   },
+   "cast_feedback_quality_details": {
+      "message": "7028436125721806572"
+   },
+   "cast_feedback_request": {
+      "message": "2517473004427269018"
+   },
+   "cast_feedback_required_parens": {
+      "message": "2083306153840951484"
+   },
+   "cast_feedback_thankyou": {
+      "message": "3593576714633990163"
+   },
+   "cast_feedback_title": {
+      "message": "6604600094360523853"
+   },
+   "cast_feedback_topic": {
+      "message": "8242882361224206357"
+   },
+   "cast_feedback_url": {
+      "message": "5229573508420009298"
+   },
+   "cast_feedback_video_quality": {
+      "message": "5395332831907227403"
+   },
+   "cast_feedback_video_smoothness": {
+      "message": "2009563581399507712"
+   },
+   "cast_popup_back_to_list": {
+      "message": "6214031582604719501"
+   },
+   "cast_popup_cast_audio": {
+      "message": "1877856983727558507"
+   },
+   "cast_popup_cast_screen": {
+      "message": "4072556140582099509"
+   },
+   "cast_popup_cast_screen_experimental": {
+      "message": "8808326359642865369"
+   },
+   "cast_popup_cast_tab": {
+      "message": "2932348398128569497"
+   },
+   "cast_popup_casting_to": {
+      "message": "2076769487302164340"
+   },
+   "cast_popup_device_missing": {
+      "message": "3885666702463386029"
+   },
+   "cast_popup_feedback_link": {
+      "message": "8436497523209458720"
+   },
+   "cast_popup_help_link": {
+      "message": "7911416166208830577"
+   },
+   "cast_popup_high_quality_video": {
+      "message": "3634893929360744610"
+   },
+   "cast_popup_high_quality_video_details": {
+      "message": "130855611855008194"
+   },
+   "cast_popup_high_quality_video_dismiss": {
+      "message": "464916539454098167"
+   },
+   "cast_popup_loading": {
+      "message": "3894950702316166331"
+   },
+   "cast_popup_options_link": {
+      "message": "8432562579042371182"
+   },
+   "cast_popup_playing_on": {
+      "message": "2588174729923512180"
+   },
+   "castouts_user_email_info": {
+      "message": "7019403272859304206"
+   },
+   "donge_no_cast_device_found": {
+      "message": "5339913305209531244"
+   },
+   "goog_cast_feedback_fine_logs_warning": {
+      "message": "7075073555752965346"
+   },
+   "goog_cast_feedback_get_external_logs_error": {
+      "message": "2554687737930512120"
+   },
+   "goog_cast_feedback_got_external_logs": {
+      "message": "801495004830452095"
+   },
+   "goog_cast_feedback_mirroring_external_logs_button": {
+      "message": "5107389855082704624"
+   },
+   "goog_cast_feedback_mirroring_external_logs_error_device_not_found": {
+      "message": "2673108145745625398"
+   },
+   "goog_cast_feedback_mirroring_external_logs_error_device_not_supported": {
+      "message": "5202323856319464688"
+   },
+   "goog_cast_feedback_mirroring_logs_button": {
+      "message": "2016072788708608077"
+   },
+   "goog_cast_feedback_retrieving_external_logs": {
+      "message": "3630200699826211171"
+   },
+   "options_additional_receiver_ips": {
+      "message": "3577676426589935803"
+   },
+   "options_castouts_description": {
+      "message": "8745478539067058731"
+   },
+   "options_castouts_in_progress": {
+      "message": "6750793691943336560"
+   },
+   "options_castouts_learn_more": {
+      "message": "819996403327805209"
+   },
+   "options_castouts_manual_entry": {
+      "message": "4848910232094031059"
+   },
+   "options_castouts_signed_in": {
+      "message": "4816591726282520264"
+   },
+   "options_castouts_signed_out": {
+      "message": "6529598361108234608"
+   },
+   "options_change_effect": {
+      "message": "2638991638737993114"
+   },
+   "options_custom_mirroring_settings": {
+      "message": "3181069857560875169"
+   },
+   "options_default_hangout_domain": {
+      "message": "7552710358338304275"
+   },
+   "options_default_hangout_domain_description": {
+      "message": "5382938928138155999"
+   },
+   "options_developer_settings_sesison_title": {
+      "message": "1942272259363289202"
+   },
+   "options_devices": {
+      "message": "1206604611937086300"
+   },
+   "options_devices_link": {
+      "message": "7496142106423617391"
+   },
+   "options_disable_scan": {
+      "message": "8906884849462126639"
+   },
+   "options_dscp": {
+      "message": "5477887796261084791"
+   },
+   "options_enable_cloud": {
+      "message": "7433190838776121209"
+   },
+   "options_enable_cloud_signed_out": {
+      "message": "2697071986776077166"
+   },
+   "options_hangout_version": {
+      "message": "8023322445192355344"
+   },
+   "options_hangouts_version_changed_description": {
+      "message": "5284888875943777523"
+   },
+   "options_image_resolution": {
+      "message": "4076870975160614320"
+   },
+   "options_max_bitrate": {
+      "message": "3695617262415720740"
+   },
+   "options_max_capture_frame_rate": {
+      "message": "1313855295453056101"
+   },
+   "options_max_latency": {
+      "message": "8444501525238416559"
+   },
+   "options_media_streaming_mode": {
+      "message": "9021642677831414701"
+   },
+   "options_min_bitrate": {
+      "message": "8190621044561219027"
+   },
+   "options_min_latency": {
+      "message": "2880373984418075735"
+   },
+   "options_non_blocking_io": {
+      "message": "7911160566398057890"
+   },
+   "options_pacing_max": {
+      "message": "2242261874100835789"
+   },
+   "options_pacing_target": {
+      "message": "7155593134764035664"
+   },
+   "options_receiver_ip_deletion": {
+      "message": "2456043080471762298"
+   },
+   "options_reload": {
+      "message": "8491974984518503778"
+   },
+   "options_send_usage": {
+      "message": "7885431863671390745"
+   },
+   "options_setup_link": {
+      "message": "4906762558811440847"
+   },
+   "options_stop_casting": {
+      "message": "3374149466144554646"
+   },
+   "options_tab_casting_quality_warning": {
+      "message": "2741789927660626901"
+   },
+   "options_tab_castouts": {
+      "message": "3400233096253425149"
+   },
+   "options_tab_cloud_settings": {
+      "message": "6142008190583061028"
+   },
+   "options_tab_proj_quality": {
+      "message": "7867182504906675090"
+   },
+   "options_title": {
+      "message": "8948441291106678529"
+   },
+   "stats_collect_prompt_option": {
+      "message": "4822504808490979258"
+   }
+}

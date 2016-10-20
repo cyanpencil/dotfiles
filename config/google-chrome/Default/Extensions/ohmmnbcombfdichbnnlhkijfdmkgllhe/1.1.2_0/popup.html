@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>UVa Quick Access Tool</title>
+    	<script type="text/javascript" src="jquery.min.js"></script>
+    	<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	
+	<body>
+		<div id="header">
+			<h1>UVa Quick Access Tool</h1>
+		</div><!--end header-->
+		
+		<div id="content">
+			<div>
+				<fieldset id="quickSubmitForm"  style="float:left">
+					<legend>Quick Submit / Search Problem</legend>
+					<form id="submitForm" action="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=25&amp;page=save_submission" method="post" enctype="multipart/form-data" target="_blank">
+						<table width="420px">
+							<tr>
+								<th width="75%"></th>
+								<th width=""></th>
+							</tr>
+							<tr>
+								<td align='left' colspan='2'>
+									<input type="text" size="10" maxlength="10" name="localid" value="" placeholder="Problem ID" id="problemNumber"/>
+									<input type="radio" name="language" value="1" /> ANSI C
+									<input type="radio" name="language" value="2" /> JAVA
+									<input type="radio" name="language" value="3" checked="true" /> C++
+									<input type="radio" name="language" value="4" /> PASCAL
+                                    <input type="radio" name="language" value="5" /> C++11
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<textarea name="code" rows="3" cols='38' placeholder="Paste your code here..."></textarea>
+								</td>
+								<td align='center'>
+									<input type="submit" value="Submit"/>
+									<input type="reset" value="Reset"/>
+								</td>
+							</tr>
+							
+						</table>
+					</form>
+				</fieldset><!--end quickSubmitForm-->
+				
+				<fieldset id="problemDetails">
+					<legend>Problem Details</legend>
+					<h2 id="ptitle"></h2>
+					<table width='100%'>
+						<tr>
+							<th width='60%'></th>
+							<th width='11%'></th>
+							<th width=''></th>
+						</tr>
+						<tr>
+							<td>
+								<strong>Time Limit: <span id="ptl" style="float:right"></span><br/></strong>
+								Best Runtime: <span id="pbrun" style="float:right"></span><br/>
+								Distinct Accepted: <span id="pndacu" style="float:right"></span><br/>
+								[<a id="pstat" href="http://uva.onlinejudge.org/" target="_blank">statistics</a>]
+									[<a id="pdis" href="http://online-judge.uva.es/board/" target="_blank">discuss</a>]
+									[<a id="pgoo" href="http://www.google.com/search?btnG=1&pws=0&q=uva%20tool" target="_blank">google</a>]
+							</td>
+							<td></td>
+							<td>
+								<font color="#00AA00">AC: <span id="pnac" style="float:right"></span><br/></font>
+								<font color="#FF0000">WA: <span id="pnwa" style="float:right"></span><br/></font>
+								<font color="#0000FF">TLE: <span id="pntle" style="float:right"></span><br/></font>
+								<font color="#00AAAA">RE: <span id="pnre" style="float:right"></span></font>
+							</td>
+						</tr>
+					</table>
+				</fieldset><!--end problemDetails-->
+			</div>
+			
+			<div id="liveJudge">
+				<table class="judgeTable" id="liveJudgeTable" width="640px">
+					<caption>
+						UVa Online Judge - Live submissions
+						<span class="leftCaption">
+							<a href="http://umt.boocode.com/" target="_blank">View more submissions</a>
+						</span>
+					</caption>
+					<thead>
+						<tr>
+							<th width='10%'>#</th>
+							<th width='7%'></th>
+							<th width=''>Problem</th>
+							<th width='25%'>Name (Username)</th>
+							<th width='7%'></th>
+							<th width='7%'>Lang</th>
+							<th width='7%'>Time</th>
+							<th width='7%'>Rank</th>
+							<th width='10%'>SubTime</th>
+						</tr>
+					</thead>
+					<tbody id="liveJudgeBody"></tbody>
+				</table>
+			</div><!--end liveJudge-->
+			
+			<div id="userJudge">
+				<table class="judgeTable" id="userJudgeTable" width="640px">
+					<caption>
+						UVa Online Judge - Specific user's submissions
+						<span class="leftCaption">
+							Username: <input id="username" type="text" placeholder="Enter here" />
+						</span>
+					</caption>
+					<thead>
+						<tr>
+							<th width='10%'>#</th>
+							<th width='7%'></th>
+							<th width=''>Problem</th>
+							<th width='20%'>Name (Username)</th>
+							<th width='7%'></th>
+							<th width='7%'>Lang</th>
+							<th width='7%'>Time</th>
+							<th width='7%'>Rank</th>
+							<th width='10%'>SubTime</th>
+						</tr>
+					</thead>
+					<tbody id="userJudgeBody"></tbody>
+				</table>
+			</div><!--end userJudge-->
+		</div><!--end content-->
+		
+		<div id="footer">
+			<hr />
+			[<a href="http://uva.onlinejudge.org/" target="_blank">UVa</a>] 
+				[<a href="http://online-judge.uva.es/board/" target="_blank">4rum</a>] 
+				[<a href="http://uhunt.felix-halim.net/" target="_blank">uHunt</a>]
+                [<a href="http://www.udebug.com/" target="_blank">uDebug</a>]
+				[<a href="http://uvatoolkit.com/" target="_blank">Toolkit</a>] 
+				[<a href="http://umt.boocode.com/" target="_blank">UMT</a>] 
+			<span style="float:right">UVa Quick Access Tool 1.1.2 / Copyright &copy; 2013 - <a href="http://lamphanviet.com/" target="_blank">lamphanviet</a></span>
+		</div><!--end footer-->
+		<script type="text/javascript" src="popup.js"></script>
+	</body>
+</html>

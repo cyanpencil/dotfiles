@@ -1,0 +1,1221 @@
+{
+   "1104234694810969409": {
+      "message": "ወደ መሣሪያ መውሰድ አልተቻለም።"
+   },
+   "1189144544819350763": {
+      "message": "ይህንን ትር (ድምጽ) ወደሚከተለው ውሰድ..."
+   },
+   "1206604611937086300": {
+      "message": "የCast መሣሪያዎች"
+   },
+   "1213957982723875920": {
+      "message": "ከሚከተሉት ውስጥ የትኛውን ነው የእርስዎን አውታረ መረብ በደንብ የሚገልጸው?"
+   },
+   "130855611855008194": {
+      "message": "በዚህ ጣቢያ ላይ ያለውን የውሰድ አዶውን ጠቅ በማድረግ ምርጥ የመውሰድ ተሞክሮውን ያግኙ።"
+   },
+   "1313855295453056101": {
+      "message": "ከፍተኛ የቀረጻ ክፈፍ ፍጥነት፦"
+   },
+   "1318160328466758792": {
+      "message": "እንደገና ሞክር"
+   },
+   "1403598074357445300": {
+      "message": "እጅግ በጣም ከፍተኛ (720p ከፍተኛ የምት መጠን)"
+   },
+   "1443898800503846063": {
+      "message": "Chrome ጊዜው አልፎበታል"
+   },
+   "1588576801511256206": {
+      "message": "ያልተጠበቀ Hangouts ስህተት።"
+   },
+   "1696531255551038655": {
+      "message": "ንቁ እንደሆነ ለመቆየት በHangout ውስጥ በቂ ተሳታፊዎች አልነበሩም።"
+   },
+   "1717149362663359343": {
+      "message": "$V2_APP_DOMAIN$ን ይውሰዱ",
+      "placeholders": {
+         "V2_APP_DOMAIN": {
+            "content": "$1"
+         }
+      }
+   },
+   "1877856983727558507": {
+      "message": "ይህንን ትር ይውሰዱ (ለድምጽ ያመቻቹ)"
+   },
+   "1878364533704855528": {
+      "message": "የእርስዎ የChrome ስሪት፣ የስርዓተ ክወና ስሪት፣ የCast ቅጥያ አማራጮች፣ የተንጸባረቀ አፈጻጸም ስታቲስቲክስ፣ እና የግንኙነት ሰርጥ ምርመራ ምዝግብ ማስታወሻዎች ከላይ ለማካተት ከመረጡት ማንኛውም መረጃ በተጨማሪነት ይገባሉ። ይህ ግብረመልስ ችግሮችን ለመመርመር እና ቅጥያው እንዲሻሻል ለማገዝ ስራ ይውላል። የሚያስገቡት ማንኛውም የግል መረጃ፣ በግልጽም ይሁን በአጋጣሚ፣ በግላዊነት መመሪያዎቻችን መሠረት ይጠበቃል። ይህን ግብረመልስ በማስገባት Google እርስዎ የሚያቀርቡትን ግብረመልስ ተጠቅሞ ማንኛውም የGoogle ምርት ወይም አገልግሎት ለማሻሻል ሊጠቀም እንደሚችል ተስማምተዋል።"
+   },
+   "1942272259363289202": {
+      "message": "የገንቢ ቅንብሮች"
+   },
+   "2009563581399507712": {
+      "message": "የቪዲዮ ለስላሳነት፦"
+   },
+   "2016072788708608077": {
+      "message": "የCast ቅጥያ ምዝግብ ማስታወሻዎችን ያያይዙ - ይሄ ችግሮች እንድንፈታ የሚያግዝ እንደመሆኑ መጠን እባክዎ ይህንን ያረጋግጡ"
+   },
+   "2076488708707463944": {
+      "message": "የመሳሪያ ግኝት"
+   },
+   "2076769487302164340": {
+      "message": "ወደዚህ በመውሰድ ላይ፦"
+   },
+   "2081143677025752994": {
+      "message": "አሰናብት"
+   },
+   "2083306153840951484": {
+      "message": "(የሚያስፈልግ)"
+   },
+   "2159130950882492111": {
+      "message": "ይቅር"
+   },
+   "2242261874100835789": {
+      "message": "እሽጎች በጥቅል (ከፍተኛ)፦"
+   },
+   "232164743503663377": {
+      "message": "ስለመውሰድ ልምድዎ መስማት እንፈልጋለን!"
+   },
+   "2377419936291389581": {
+      "message": "ደካማ"
+   },
+   "2438859709710567679": {
+      "message": "የትር/ዴስክቶፕ የማሳየት ጥራት"
+   },
+   "2456043080471762298": {
+      "message": "ሰርዝ"
+   },
+   "2517473004427269018": {
+      "message": "የመጨረሻው ክፍለ ጊዜዎ ከአንድ ደቂቃ በላይ የቆየ እንደመሆኑ፣ ስለነበረዎት ተሞክሮ ለቡድናችን ግብረመልስ እንዲያቀርቡ እንፈልጋለን። የሆነ ችግር ከነበር የCast ቅጥያውን እና ውጫዊ ምዝግብ ማስታወሻዎቹን ለማያያዝ እባክዎ ሳጥኖቹን ጠቅ ያድርጉ።"
+   },
+   "2554687737930512120": {
+      "message": "ከመሣሪያው ላይ ምዝግብ ማስታወሻዎችን ሰርስሮ ማውጣት አልተቻለም።"
+   },
+   "2588174729923512180": {
+      "message": "እየተጫወተ ያለው በ፦"
+   },
+   "2618451236056129793": {
+      "message": "ወደ Hangouts መውሰድን ማዋቀር ጊዜው አልፎበታል። go/castouts-dogfood#TOC-Known-Issuesን ይመልከቱ"
+   },
+   "2638991638737993114": {
+      "message": "የእርስዎ ለውጦች አንድ ትር በሚወስዱበት የሚቀጥለው ጊዜ ላይ ይተገበራሉ።"
+   },
+   "2673108145745625398": {
+      "message": "Chrome የተገናኘ መሣሪያ ሊያገኝ አልቻለም።"
+   },
+   "2697071986776077166": {
+      "message": "የደመና ባህሪያትን ለመጠቀም ወደ Chrome $START_LINK$መግባት$END_LINK$ አለብዎት።",
+      "placeholders": {
+         "END_LINK": {
+            "content": "$1"
+         },
+         "START_LINK": {
+            "content": "$2"
+         }
+      }
+   },
+   "2697071986776077166_ph": {
+      "message": "\u003C/a>\u003Ca ng-click=\"triggerSignIn()\" href=\"\">"
+   },
+   "2741789927660626901": {
+      "message": "ለላቁ ተጠቃሚዎች ብቻ የሚመከሩ። የትር መውሰድ ጥራትን ማቀናበር እነዚህን እሴቶች ዳግም ያስጀምራቸዋል።"
+   },
+   "2807800733729323332": {
+      "message": "አዎ"
+   },
+   "2880373984418075735": {
+      "message": "ዝቅተኛ ተዳፋኝነት፦"
+   },
+   "2884726392788153618": {
+      "message": "ያልተጠበቀ ስህተት ተከስቷል። እባክዎ የሚከተሉትን ይሞክሩ፦ \u003Cul>\u003Cli>እንደገና ለመውሰድ ይሞክሩ\u003C/li>\u003Cli>የእርስዎ አውታረ መረብ ግንኙነት ያረጋግጡ\u003C/li>\u003C/ul>"
+   },
+   "2932348398128569497": {
+      "message": "ይህንን ትር ይውሰዱ"
+   },
+   "2942203478948533213": {
+      "message": "እባክዎ የተለየ መሣሪያ ይምረጡ።"
+   },
+   "3181069857560875169": {
+      "message": "ብጁ ማንጸባረቂያ ቅንብሮች"
+   },
+   "3188239202899052784": {
+      "message": "Castን ከGoogle ጋር ስም-አልባ የአጠቃቀም መረጃ በማጋራት የበለጠ ለማድረግ ይፈልጋሉን? ግላዊነትዎ ለኛ አስፈላጊ ነው፣ እና ይህን ቅንጅት ሁልጊዜ በ\u003C\u003Cአማራጮች>> ውስጥ መለወጥ ይችላሉ።"
+   },
+   "3202350311251778009": {
+      "message": "የGoogle Cast ቅጥያው ከChrome አሳሽዎ ሆነው ይዘት እንዲያገኙ እና በእርስዎ የChromecast መሣሪያ ላይ እንዲያጫውቱ ያስችልዎታል።\nለውሰድ የተመቻቹ ጣቢያዎች ላይ ሲሆኑ ቪድዮ በChromecast በኩል በእርስዎ ቴሌቪዥን ላይ እንዲያጫውቱ የሚያስችልዎ አዲስ አማራጮችን ያያሉ - ቪድዮዎችን ለማሰስ እና መልሶ ማጫወትን ለመቆጣጠር የእርስዎን ኮምፒውተር እንደ የርቀት መቆጣጠሪያ በመጠቀም።\nእንዲሁም በChrome ውስጥ ያሉ ማንኛቸውም ትሮችዎን ወደ ቴሌቪዥንዎ መውሰድ ይችላሉ፣ ይህም በቤትዎ ውስጥ ባለው ምርጡ ማያ ገጽ አማካኝነት በጣቢያዎች፣ በፎቶዎች እንዲሁም በቪድዮ እንዲደሰቱ ያስችልዎታል። ይህ ባህሪ አሁንም በቅድመ-ይሁንታ ላይ እንዳለ እና ፈጣን ኮምፒውተር እና የWi-Fi አውታረ መረብ እንደሚያስፈልገው ልብ ይበሉ።\nይህን ቅጥያ ለመጠቀም የChromecast ሃርድዌር ያስፈልጋል። ተጨማሪ ለማወቅ http://google.com/chromecast ን ይጎብኙ።\nይህን ንጥል በመጫን በhttps://www.google.com/intl/en/policies/ ላይ ባለው የGoogle አገልግሎት ውል እና ግላዊነት መመሪያ ተስማምተዋል።"
+   },
+   "3203240389500117801": {
+      "message": "የHangout ስም ያስገቡ"
+   },
+   "3254351313955764967": {
+      "message": "ኧረ ወይኔ፣ ቴክኒካዊ ችግሮች እያጋጠሙን ያለ ይመስላል። እባክዎ ከትንሽ ደቂቃዎች በኋላ እንደገና ይሞክሩ።"
+   },
+   "3278102219211539720": {
+      "message": "ይህንን ትር ይውሰዱ"
+   },
+   "3374149466144554646": {
+      "message": "መውሰድ አሁን አቁም"
+   },
+   "3400233096253425149": {
+      "message": "ወደ Hangouts ውሰድ"
+   },
+   "3485206350043289145": {
+      "message": "የቅርብ ጊዜ ዝማኔ የChrome አሳሹን እንዲዘጉ እና እንደገና እንዲያስጀምሩት ይፈልጋል።"
+   },
+   "3542042671420335679": {
+      "message": "አይ"
+   },
+   "3577676426589935803": {
+      "message": "ተጨማሪ የተቀባይ አይፒዎች፦"
+   },
+   "3593576714633990163": {
+      "message": "Cast ነጸብራቅ ስለሞከሩ እናመሰግናለን።"
+   },
+   "3594579793458243987": {
+      "message": "ሐሳብዎን ያጋሩ"
+   },
+   "3630200699826211171": {
+      "message": "ከ$_EXTERNALDEVICENAME_$ የተካተቱ ምዝግብ ማስታወሻዎች።",
+      "placeholders": {
+         "_EXTERNALDEVICENAME_": {
+            "content": "$1"
+         }
+      }
+   },
+   "3630200699826211171_ph": {
+      "message": "{{externalDeviceName}}"
+   },
+   "3633167042592070329": {
+      "message": "ግብረመልስዎ Google Castን እንድናሻሽለው ያግዘናል፣ እና እናመሰግናለን። ለገባ የግብረመልስ ጉዳዮች በግል ምላሽ መስጠት የማንችል መሆናችን ልብ ይበሉ። ከChromecast ጋር ለተያያዙ ችግሮች Googleን በቀጥታ ማግኘት የሚፈልጉ ከሆኑ እባክዎ ዝርዝሮችን ለማግኘት $START_LINK$ይህን ገጽ$END_LINK$ ይመልከቱ።",
+      "placeholders": {
+         "END_LINK": {
+            "content": "$1"
+         },
+         "START_LINK": {
+            "content": "$2"
+         }
+      }
+   },
+   "3633167042592070329_ph": {
+      "message": "\u003C/a>\u003Ca href=\"https://support.google.com/chromecast/troubleshooter/2995236?ref_topic=2994245\">"
+   },
+   "3634893929360744610": {
+      "message": "በከፍተኛ ጥራት መውሰድ"
+   },
+   "3658695798711423870": {
+      "message": "እባክዎ ስሙን ይፈትሹ እና እንደገና ይሞክሩ።"
+   },
+   "3681271501407987946": {
+      "message": "ከፍተኛ (720p)"
+   },
+   "3695617262415720740": {
+      "message": "ከፍተኛ የቢት ፍጥነት፦"
+   },
+   "3844709005265884931": {
+      "message": "አለፍ አለፍ እያለ የሚመጣ መንቀጥቀጥ"
+   },
+   "3873469728089727547": {
+      "message": "እባክዎ መሣሪያዎ ለገመድ አልባ የመዳረሻ ነጥብዎ ቅርብ መሆኑን ያረጋግጡ።\u003C/br>ከዚያ እንደገና ይሞክሩ።"
+   },
+   "3885666702463386029": {
+      "message": "(መሣሪያ ይጎድላል?)"
+   },
+   "3894950702316166331": {
+      "message": "በመጫን ላይ..."
+   },
+   "3996247341169314250": {
+      "message": "ሌላ"
+   },
+   "4014224501758376361": {
+      "message": "ወደ $RECEIVER_NAME$ በመውሰድ ላይ",
+      "placeholders": {
+         "RECEIVER_NAME": {
+            "content": "$1"
+         }
+      }
+   },
+   "4072556140582099509": {
+      "message": "ማያ ገጽ/መስኮትን ውሰድ"
+   },
+   "4076870975160614320": {
+      "message": "የምስል ጥራት፦"
+   },
+   "4089994756445820175": {
+      "message": "ሳንካ ወይም ስህተት"
+   },
+   "4102291180899400833": {
+      "message": "ንቁ ያልሆነ Hangout ግንኙነቱ ተቋርጧል።"
+   },
+   "4157951843472785441": {
+      "message": "ይህንን ጣቢያ ለመውሰድ Chromeን ያዘምኑ።"
+   },
+   "4187599066116404890": {
+      "message": "እሺ!"
+   },
+   "4223394109936547558": {
+      "message": "እሺ"
+   },
+   "4224760847878375792": {
+      "message": "ለስላሳ"
+   },
+   "4272010402571776761": {
+      "message": "ደካማ"
+   },
+   "4324962226715124466": {
+      "message": "ደህና"
+   },
+   "4511372876817255492": {
+      "message": "ከመሣሪያ ጋር መገናኘት አልተሳካም።"
+   },
+   "4563873836363331434": {
+      "message": "አንጎለ ኮምፒውተር፦"
+   },
+   "4584454172263179470": {
+      "message": "በጣም አሪፍ"
+   },
+   "4585326301657856848": {
+      "message": "ውሰድን ለማሻሻል ያግዙ"
+   },
+   "464916539454098167": {
+      "message": "ገባኝ!"
+   },
+   "4687947362658561907": {
+      "message": "የተመረጠው መሣሪያ ከአሁን በኋላ መስመር ላይ የለም።"
+   },
+   "4741643884742469674": {
+      "message": "የድምጽ ጥራት፦"
+   },
+   "4816591726282520264": {
+      "message": "እንደ $START_STRONG$$_USEREMAIL_$$END_STRONG$ ሆነው ወደ Chrome ገብተዋል፣ እና በዚህ መለያ ወደ Hangouts ይወስዳሉ።",
+      "placeholders": {
+         "END_STRONG": {
+            "content": "$1"
+         },
+         "START_STRONG": {
+            "content": "$2"
+         },
+         "_USEREMAIL_": {
+            "content": "$3"
+         }
+      }
+   },
+   "4816591726282520264_ph": {
+      "message": "\u003C/strong>\u003Cstrong>{{userEmail}}"
+   },
+   "4822504808490979258": {
+      "message": "የCast ቅጥያ የአጠቃቀም ስታትስቲክስ በራስ-ሰር ለGoogle ይላኩ"
+   },
+   "482442943064110817": {
+      "message": "ደህና - ኤፍ ኤም"
+   },
+   "48395364426353647": {
+      "message": "የHangout ስም ሊተው አይችልም።"
+   },
+   "4848910232094031059": {
+      "message": "Hangouts በ ስብሰባ ስም ወይም መታወቂያ ፈልግ"
+   },
+   "4865676252029097872": {
+      "message": "ግብረመልስ መላክ አልተቻለም። እባክዎ ቆይተው እንደገና ይሞክሩ።"
+   },
+   "4906762558811440847": {
+      "message": "አዲስ የCast መሣሪያ ያዋቅሩ"
+   },
+   "5056298333685549098": {
+      "message": "$V2_APP_DOMAIN$ን ውሰድ ወደ...",
+      "placeholders": {
+         "V2_APP_DOMAIN": {
+            "content": "$1"
+         }
+      }
+   },
+   "5107389855082704624": {
+      "message": "የመሳሪያ ምዝግብ ማስታወሻዎችን ያያይዙ - ይሄ ችግሮች እንድንፈታ የሚያግዝ እንደመሆኑ መጠን እባክዎ ይህንን ያረጋግጡ"
+   },
+   "5163000733818237380": {
+      "message": "ማያ ገጽ/መስኮትን ውሰድ ወደ..."
+   },
+   "5202323856319464688": {
+      "message": "ሲጠቀሙበት የነበረው መሣሪያ ምዝግብ ማስታወሻዎችን አያቀርብም።"
+   },
+   "5229573508420009298": {
+      "message": "(ከተፈለገ) ምን ይዘት/ዩአርኤል ነው ሲወስዱ የነበሩት?"
+   },
+   "5284888875943777523": {
+      "message": "አዲሱ የHangouts ስሪት ዳግም ከተጫነ በኋላ ጥቅም ላይ ይውላል።"
+   },
+   "5339913305209531244": {
+      "message": "ምንም የCast መሣሪያዎች አልተገኙም።"
+   },
+   "5382938928138155999": {
+      "message": "Hangoutsን የሚቀላቀሉበት ነባሪ ጎራ ሊገልጹ ይችላሉ። ያለጎራ የገቡ ብጁ የHangout ስሞች ይህን ጎራ ነው የሚጠቀሙት።"
+   },
+   "5385436389563925676": {
+      "message": "ፒሲ እና Chromecast በተመሳሳይ የWi-Fi አውታረ መረብ ላይ ናቸው"
+   },
+   "5395332831907227403": {
+      "message": "የቪዲዮ ጥራት፦"
+   },
+   "5477887796261084791": {
+      "message": "DSCP፦"
+   },
+   "5590598097041702454": {
+      "message": "በመውሰድ ላይ..."
+   },
+   "5671949584911040143": {
+      "message": "ተጨማሪ አስተያየቶች፦"
+   },
+   "57055743185823882": {
+      "message": "እየወሰዱ ያሉትን መስኮት እንደገና መጠኑን ማመጣጠን የእርስዎን መሣሪያ እንዳይረጋጋ ያደርገዋል።"
+   },
+   "5728295142929105913": {
+      "message": "እባክዎ ግብረ መልስ ያስገቡ (ምዝግቦች ዓባሪ ተያይዘዋል) እና እንደገና ይሞክሩ።"
+   },
+   "5745355507138230213": {
+      "message": "ጥሩ"
+   },
+   "5750542272329616142": {
+      "message": "ከላይ ለማካተት ከመረጡት ማንኛውም መረጃ በተጨማሪ የእርስዎ የChrome ስሪት፣ የስርዓተ ክወና ስሪት፣ የCast ቅጥያ አማራጮች፣ የተንጸባረቀ አፈጻጸም ስታቲስቲክስ፣ እና የግንኙነት ሰርጥ ምርመራ ምዝግብ ማስታወሻዎች ይገባሉ። ይህ ግብረመልስ ችግሮችን ለመመርመር እና ቅጥያውን ማሻሻል ላይ እንዲያግዝ ስራ ላይ የሚውል ነው። ማንኛውም በግልጽም ሆነ በአጋጣሚ የሚያስገቡት የግል መረጃ በግላዊነት መመሪያዎቻችን መሠረት ይጠበቃል። ይህን ግብረመልስ በማስገባትዎ Google ማንኛውም የGoogle ምርት ወይም አገልግሎት ለማሻሻል የሚያቀርቡትን ግብረመልስ ሊጠቀም እንደሚችል ተስማምተዋል።$END_BOLD$",
+      "placeholders": {
+         "END_BOLD": {
+            "content": "$1"
+         }
+      }
+   },
+   "5750542272329616142_ph": {
+      "message": "\u003C/b>"
+   },
+   "5773074680866649953": {
+      "message": "ወደ Hangouts መውሰድ በተሳካ ሁኔታ ተጀምሯል!"
+   },
+   "578821942116253728": {
+      "message": "ማህደረመረጃውን መቅረጽ አልተሳካም።"
+   },
+   "5823878688587296398": {
+      "message": "የለም"
+   },
+   "5849296180435940955": {
+      "message": "ተጨማሪ ለመረዳት"
+   },
+   "6018881802001125637": {
+      "message": "ግብረመልስ በመላክ ላይ..."
+   },
+   "6039331491778328245": {
+      "message": "ጥሩ - ዲቪዲ"
+   },
+   "6046507125919556913": {
+      "message": "ይህንን ትር ወደሚከተለው ውሰድ..."
+   },
+   "6118473811359442709": {
+      "message": "አይገባም"
+   },
+   "6142008190583061028": {
+      "message": "የደመና ቅንብሮች"
+   },
+   "6214031582604719501": {
+      "message": "ወደ የመሣሪያ ዝርዝር ተመለስ"
+   },
+   "6236792503803747284": {
+      "message": "መደበኛ (480p)"
+   },
+   "6295154563386647404": {
+      "message": "ግብረመልስ መላክ አልተሳካም። ዳግም በመሞከር ላይ (ይሄ ሙከራ #$ATTEMPT_NUMBER$ ነው)...",
+      "placeholders": {
+         "ATTEMPT_NUMBER": {
+            "content": "$1"
+         }
+      }
+   },
+   "6392731103614271560": {
+      "message": "ይዘትዎን ለእርስዎ Chromecast እና Google Castን ለሚደግፉ መሣሪያዎች ይላኩ።"
+   },
+   "6514896123802924361": {
+      "message": "ግብረ መልስ ያስገቡ"
+   },
+   "6529598361108234608": {
+      "message": "ይህን ባህሪ ለመጠቀም ወደ Chrome $START_LINK$መግባት$END_LINK$ አለብዎት።",
+      "placeholders": {
+         "END_LINK": {
+            "content": "$1"
+         },
+         "START_LINK": {
+            "content": "$2"
+         }
+      }
+   },
+   "6529598361108234608_ph": {
+      "message": "\u003C/a>\u003Ca ng-click=\"triggerSignIn()\" href=\"\" id=\"triggerSignIn\">"
+   },
+   "6585975561839203683": {
+      "message": "አልሞከርኩትም"
+   },
+   "6604600094360523853": {
+      "message": "Google Cast ግብረመልስ"
+   },
+   "6750793691943336560": {
+      "message": "ወደ Hangouts መውሰድን ለማንቃት እባክዎ በመለያ ይግቡና ሲጠየቁ ፍቃዶቹን ይቀበሉ። የፍቃዶች ጥያቄው ከሌሎች መስኮቶች ጀርባ ሊደበቅ ይችላል።"
+   },
+   "6807464445011823029": {
+      "message": "ራስ-ሰር (ከፍተኛ፦ 1080p፣ 5 ሜ/ሰ)"
+   },
+   "6988652234001902672": {
+      "message": "ግብረመልስ ስለላኩ እናመሰግናለን።"
+   },
+   "6997602168024654529": {
+      "message": "እርግጠኛ አይደለሁም"
+   },
+   "7008828272760191653": {
+      "message": "በጭራሽ ሊታይ አይችልም"
+   },
+   "7019403272859304206": {
+      "message": "እንደ $START_STRONG$$_USEREMAIL_$$END_STRONG$ ሆኖ በመውሰድ ላይ",
+      "placeholders": {
+         "END_STRONG": {
+            "content": "$1"
+         },
+         "START_STRONG": {
+            "content": "$2"
+         },
+         "_USEREMAIL_": {
+            "content": "$3"
+         }
+      }
+   },
+   "7019403272859304206_ph": {
+      "message": "\u003C/strong>\u003Cstrong>{{userEmail}}"
+   },
+   "7028436125721806572": {
+      "message": "የማንጸባረቅ ጥራት ዝርዝሮች"
+   },
+   "7029426286291560071": {
+      "message": "በጣም አሪፍ"
+   },
+   "7053128562708856478": {
+      "message": "ይታሰራል"
+   },
+   "7075073555752965346": {
+      "message": "ማስጠንቀቂያ - ዝርዝር ምዝግብ ማስታወሻ መያዝ ነቅቷል፤ ከታች ያሉት የምዝግብ ማስታወሻዎች ዩአርኤሎች ወይም ሌላ ትብነት ያለው መረጃ ሊይዙ ይችላሉ። እባክዎ ይከልሱና ይህን መረጃ ማስገባትዎ ቅር እንደማይልዎ ያረጋግጡ።"
+   },
+   "7155593134764035664": {
+      "message": "እሽጎች በጥቅል (ዒላማ)፦"
+   },
+   "7344649529753624682": {
+      "message": "$V2_APP_DOMAIN$ን ይውሰዱ",
+      "placeholders": {
+         "V2_APP_DOMAIN": {
+            "content": "$1"
+         }
+      }
+   },
+   "7433190838776121209": {
+      "message": "የደመና ባህሪያትን አንቃ"
+   },
+   "7435898358826649826": {
+      "message": "የማህደረመረጃ ይዘቶችን መቅረጽ አልተቻለም። እባክዎ እንደገና ይሞክሩ።"
+   },
+   "7467295073121579516": {
+      "message": "ለማገናኘት አልቻልንም።"
+   },
+   "7484752158248863804": {
+      "message": "መውሰድ አቁም"
+   },
+   "7496142106423617391": {
+      "message": "የCast መሣሪያዎችን ያቀናብሩ"
+   },
+   "7552710358338304275": {
+      "message": "ነባሪ የHangouts ጎራ፦"
+   },
+   "7661531377295243900": {
+      "message": "እባክዎ የእርስዎን መሣሪያ ዳግም ያስጀምሩት። ይሄ ችግሩን ካልፈታው አምራቹን ያግኙ።"
+   },
+   "7786163844034528352": {
+      "message": "Google Cast ግብረመልስ"
+   },
+   "780135806192376347": {
+      "message": "የባህሪ ጥያቄ"
+   },
+   "7824803162979416790": {
+      "message": "ፒሲ እና Chromecast በተለያዩ የWi-Fi አውታረ መረቦች ላይ ናቸው (ለምሳሌ፦ 2.4GHz እና 5GHz)"
+   },
+   "7864119253243497594": {
+      "message": "እባክዎ የእርስዎ መሣሪያ መስመር ላይ መሆኑን ያረጋግጡ።"
+   },
+   "7867182504906675090": {
+      "message": "የትር መውሰድ ጥራት"
+   },
+   "7885431863671390745": {
+      "message": "የCast ቅጥያ አጠቃቀም ስታቲስቲክስ በራስ-ሰር ለGoogle ላክ።"
+   },
+   "7911160566398057890": {
+      "message": "Windows ላይ የማያግድ አይ/ኦን ያነቃል፦"
+   },
+   "7911416166208830577": {
+      "message": "እገዛ"
+   },
+   "801495004830452095": {
+      "message": "ከ$_EXTERNALDEVICENAME_$ የተካተቱ ምዝግብ ማስታወሻዎች።",
+      "placeholders": {
+         "_EXTERNALDEVICENAME_": {
+            "content": "$1"
+         }
+      }
+   },
+   "801495004830452095_ph": {
+      "message": "{{externalDeviceName}}"
+   },
+   "8023322445192355344": {
+      "message": "የHangouts አገልጋይ ኤፒአይ ስሪት፦"
+   },
+   "8025420827457681102": {
+      "message": "የእርስዎን Chromecast ከWindows/Mac ማዋቀሪያ መተግበሪያው ሆነው ማየት ይችላሉ?"
+   },
+   "8130895852484727514": {
+      "message": "አንዳንድ መሣሪያዎችን ማገናኘት አልተቻለም። (ስህተት $ERROR$)",
+      "placeholders": {
+         "ERROR": {
+            "content": "$1"
+         }
+      }
+   },
+   "8189622236075700665": {
+      "message": "ግብረመልሱን ማስወገድ ይፈልጋሉ?"
+   },
+   "8190621044561219027": {
+      "message": "አነስተኛ የቢት ፍጥነት፦"
+   },
+   "819996403327805209": {
+      "message": "ተጨማሪ ለመረዳት"
+   },
+   "8242882361224206357": {
+      "message": "ስለምንድነው ግብረመልስ የሚያቀርቡት?"
+   },
+   "8254879137669712236": {
+      "message": "የክፍለ ገጸ ድር/ተመን ራስሰር መቆጣጠሪያን አንቃ፦"
+   },
+   "8288732448265345962": {
+      "message": "ይቅር"
+   },
+   "8304164664901068767": {
+      "message": "የGoogle Cast ቅጥያው ከChrome አሳሽዎ ሆነው ይዘት እንዲያገኙ እና በእርስዎ የChromecast መሣሪያ ላይ እንዲያጫውቱ ያስችልዎታል።\nይህ የGoogle Cast ቅጥያ *የቅድመ ይሁንታ* ሰርጥ ነው። የታቀደው ለገንቢዎች እና ወደፊት የሚመጡ APIዎች ቀደም ያለ መዳረሻና በይፋ ከመለቀቁ አስቀድሞ ለባህሪያት መደረሻን ለሚፈልጉ የላቁ ተጠቃሚዎች ነው። አብዛኛዎቹ ተጠቃሚዎች የተረጋጋ የGoogle Cast ቅጥያ (https://chrome.google.com/webstore/detail/google-cast/boadgeojelhgndaghljhdicfkmllpafd) መጫን አለባቸው ። የቅድመ ይሁንታ ስርጡ አብዛኛውን ጊዜ ያልተረጋጋ ሲሆን ብዙ ሳንካዎችንም ያካትታል።\nይህን ንጥል በመጫን በhttps://www.google.com/intl/en/policies/ ላይ ባለው የGoogle አገልግሎት ውል እና ግላዊነት መመሪያ ተስማምተዋል።"
+   },
+   "8314352943658679563": {
+      "message": "ወደ Hangouts መውሰድ ተሰናክሏል። በዚህ ጊዜ @google.com ብቻ ነው የሚደገፈው"
+   },
+   "8351230089123629067": {
+      "message": "ግራፊክስ ካርድ/ጂፒዩ፦"
+   },
+   "8432562579042371182": {
+      "message": "አማራጮች"
+   },
+   "8436497523209458720": {
+      "message": "የተጠቃሚ አስተያየት ላክ..."
+   },
+   "8444501525238416559": {
+      "message": "ከፍተኛ ተዳፋኝነት፦"
+   },
+   "845494741086179740": {
+      "message": "ፒሲ በገመድ ተያይዟል እና Chromecast በWi-Fi ላይ ነው"
+   },
+   "8491974984518503778": {
+      "message": "አሁን ዳግም ይጫኑ"
+   },
+   "8500110749168055241": {
+      "message": "ይንቀጠቀጣል"
+   },
+   "8700054488486244094": {
+      "message": "የGoogle Cast የቅጥያ አማራጮች"
+   },
+   "872641383564597641": {
+      "message": "ከመሣሪያው ጋር የነበረው ግንኙነት ጠፍቷል።"
+   },
+   "8745478539067058731": {
+      "message": "የእርስዎን ትሮች፣ መስኮቶች ወይም ዴስክቶፕ በአንድ Hangout ላይ ያቅርቧቸው።"
+   },
+   "8808326359642865369": {
+      "message": "(የሙከራ)"
+   },
+   "8847227464712783239": {
+      "message": "የተመረጠው መሣሪያ ችግር አለበት"
+   },
+   "8879729374562274188": {
+      "message": "ይህ እንቅስቃሴ አንድ ችግር አጋጥሞታል።"
+   },
+   "8887833628383960193": {
+      "message": "አሪፍ - ከፍተኛ ጥራት"
+   },
+   "8906884849462126639": {
+      "message": "የበስተጀርባ ቅኝትን አሰናክል፦"
+   },
+   "8948441291106678529": {
+      "message": "Google Cast የቅጥያ አማራጮች"
+   },
+   "897566596634286067": {
+      "message": "እባክዎ ግብረመልስዎ እዚህ ያስገቡ (ያስፈልጋል)።"
+   },
+   "8998179362936748717": {
+      "message": "እሺ"
+   },
+   "9021642677831414701": {
+      "message": "የማህደረ መረጃ መልቀቅ ሁኔታ፦"
+   },
+   "9039563863590019196": {
+      "message": "መስኮቶችን ዳግመኛ ማመጣጠን አይደገፍም"
+   },
+   "9059560719840598868": {
+      "message": "ግብረመልስ ላክ"
+   },
+   "9120942669794506861": {
+      "message": "ማንኛውም ልዩ VPN፣ ተኪ፣ ኬላ ወይም የNAS ሶፍትዌር ጭነዋል?"
+   },
+   "MSG_CAPTURE_ERROR": {
+      "message": "578821942116253728"
+   },
+   "MSG_CAPTURE_ERROR_DESCRIPTION": {
+      "message": "7435898358826649826"
+   },
+   "MSG_CASTOUTS_DISABLED": {
+      "message": "8314352943658679563"
+   },
+   "MSG_CASTOUTS_INITIALIZED": {
+      "message": "5773074680866649953"
+   },
+   "MSG_CASTOUTS_TIMED_OUT": {
+      "message": "2618451236056129793"
+   },
+   "MSG_CHROME_TOO_OLD_FOR_V2": {
+      "message": "1443898800503846063"
+   },
+   "MSG_CHROME_TOO_OLD_FOR_V2_DESCRIPTION": {
+      "message": "4157951843472785441"
+   },
+   "MSG_DEVICE_CHANNEL_ERROR": {
+      "message": "4511372876817255492"
+   },
+   "MSG_DEVICE_CHANNEL_ERROR_DESCRIPTION": {
+      "message": "8130895852484727514"
+   },
+   "MSG_GC_BETA_EXTENSION_DESCRIPTION": {
+      "message": "8304164664901068767"
+   },
+   "MSG_GC_CANCEL_BUTTON": {
+      "message": "8288732448265345962"
+   },
+   "MSG_GC_CASTING": {
+      "message": "5590598097041702454"
+   },
+   "MSG_GC_CASTING_LABEL": {
+      "message": "4014224501758376361"
+   },
+   "MSG_GC_CAST_APP": {
+      "message": "5056298333685549098"
+   },
+   "MSG_GC_CAST_APP_OPTION": {
+      "message": "7344649529753624682"
+   },
+   "MSG_GC_CAST_ENTIRE_SCREEN": {
+      "message": "5163000733818237380"
+   },
+   "MSG_GC_CAST_TAB": {
+      "message": "6046507125919556913"
+   },
+   "MSG_GC_CAST_TAB_AUDIO": {
+      "message": "1189144544819350763"
+   },
+   "MSG_GC_CAST_THIS_APP": {
+      "message": "1717149362663359343"
+   },
+   "MSG_GC_CAST_THIS_TAB": {
+      "message": "3278102219211539720"
+   },
+   "MSG_GC_DEVICE_BAD": {
+      "message": "8847227464712783239"
+   },
+   "MSG_GC_DEVICE_BAD_RESOLUTION": {
+      "message": "7661531377295243900"
+   },
+   "MSG_GC_DEVICE_CONNECTION_CHECK_ONLINE": {
+      "message": "7864119253243497594"
+   },
+   "MSG_GC_DEVICE_CONNECTION_ERROR_FIXING": {
+      "message": "3873469728089727547"
+   },
+   "MSG_GC_DEVICE_CONNECTION_LOST": {
+      "message": "872641383564597641"
+   },
+   "MSG_GC_DEVICE_NOT_ONLINE": {
+      "message": "4687947362658561907"
+   },
+   "MSG_GC_DEVICE_NOT_ONLINE_RESOLUTION": {
+      "message": "2942203478948533213"
+   },
+   "MSG_GC_DEVICE_UNABLE_TO_CAST": {
+      "message": "1104234694810969409"
+   },
+   "MSG_GC_DEVICE_UNABLE_TO_CAST_RESOLUTION": {
+      "message": "2884726392788153618"
+   },
+   "MSG_GC_DISMISS_BUTTON": {
+      "message": "2081143677025752994"
+   },
+   "MSG_GC_ENTER_HANGOUT_NAME": {
+      "message": "3203240389500117801"
+   },
+   "MSG_GC_EXTENSION_DESCRIPTION": {
+      "message": "3202350311251778009"
+   },
+   "MSG_GC_EXTENSION_SHORT_DESCRIPTION": {
+      "message": "6392731103614271560"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_ACCEPTABLE": {
+      "message": "482442943064110817"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_GOOD": {
+      "message": "5745355507138230213"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_PERFECT": {
+      "message": "7029426286291560071"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_POOR": {
+      "message": "4272010402571776761"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_UNINTELLIGIBLE": {
+      "message": "6118473811359442709"
+   },
+   "MSG_GC_FEEDBACK_DISCARD_CONFIRMATION": {
+      "message": "8189622236075700665"
+   },
+   "MSG_GC_FEEDBACK_DISCLAIMER": {
+      "message": "1878364533704855528"
+   },
+   "MSG_GC_FEEDBACK_NA": {
+      "message": "5823878688587296398"
+   },
+   "MSG_GC_FEEDBACK_PAGE_TITLE": {
+      "message": "7786163844034528352"
+   },
+   "MSG_GC_FEEDBACK_RESENDING": {
+      "message": "6295154563386647404"
+   },
+   "MSG_GC_FEEDBACK_SENDING": {
+      "message": "6018881802001125637"
+   },
+   "MSG_GC_FEEDBACK_SEND_FAIL": {
+      "message": "4865676252029097872"
+   },
+   "MSG_GC_FEEDBACK_SEND_SUCCESS": {
+      "message": "6988652234001902672"
+   },
+   "MSG_GC_FEEDBACK_TYPE_BUG_OR_ERROR": {
+      "message": "4089994756445820175"
+   },
+   "MSG_GC_FEEDBACK_TYPE_DISCOVERY": {
+      "message": "2076488708707463944"
+   },
+   "MSG_GC_FEEDBACK_TYPE_FEATURE_REQUEST": {
+      "message": "780135806192376347"
+   },
+   "MSG_GC_FEEDBACK_TYPE_OTHER": {
+      "message": "3996247341169314250"
+   },
+   "MSG_GC_FEEDBACK_TYPE_PROJECTION_QUALITY": {
+      "message": "2438859709710567679"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_ACCEPTABLE": {
+      "message": "4324962226715124466"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_FREEZES": {
+      "message": "7053128562708856478"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_GOOD": {
+      "message": "6039331491778328245"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_GREAT": {
+      "message": "8887833628383960193"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_JERKY": {
+      "message": "8500110749168055241"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_PERFECT": {
+      "message": "4584454172263179470"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_POOR": {
+      "message": "2377419936291389581"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_SMOOTH": {
+      "message": "4224760847878375792"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_STUTTER": {
+      "message": "3844709005265884931"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_UNWATCHABLE": {
+      "message": "7008828272760191653"
+   },
+   "MSG_GC_GENERIC_ERROR": {
+      "message": "8879729374562274188"
+   },
+   "MSG_GC_LEARN_MORE_LINK": {
+      "message": "5849296180435940955"
+   },
+   "MSG_GC_MIRROR_QUALITY_AUTO": {
+      "message": "6807464445011823029"
+   },
+   "MSG_GC_MIRROR_QUALITY_HIGH": {
+      "message": "3681271501407987946"
+   },
+   "MSG_GC_MIRROR_QUALITY_HIGHEST": {
+      "message": "1403598074357445300"
+   },
+   "MSG_GC_MIRROR_QUALITY_LOW": {
+      "message": "6236792503803747284"
+   },
+   "MSG_GC_OK_BUTTON": {
+      "message": "4223394109936547558"
+   },
+   "MSG_GC_OPTIONS_PAGE_TITLE": {
+      "message": "8700054488486244094"
+   },
+   "MSG_GC_RETRY_BUTTON": {
+      "message": "1318160328466758792"
+   },
+   "MSG_GC_SHARE_YOUR_THOUGHTS": {
+      "message": "3594579793458243987"
+   },
+   "MSG_GC_SHARE_YOUR_THOUGHTS_DESCRIPTION": {
+      "message": "232164743503663377"
+   },
+   "MSG_GC_STOP_CASTING": {
+      "message": "7484752158248863804"
+   },
+   "MSG_GC_SUBMIT_FEEDBACK": {
+      "message": "6514896123802924361"
+   },
+   "MSG_HANGOUT_ERROR": {
+      "message": "1588576801511256206"
+   },
+   "MSG_HANGOUT_ERROR_DESCRIPTION": {
+      "message": "5728295142929105913"
+   },
+   "MSG_HANGOUT_INACTIVE": {
+      "message": "4102291180899400833"
+   },
+   "MSG_HANGOUT_INACTIVE_DESCRIPTION": {
+      "message": "1696531255551038655"
+   },
+   "MSG_HANGOUT_INVALID": {
+      "message": "48395364426353647"
+   },
+   "MSG_HANGOUT_INVALID_DESCRIPTION": {
+      "message": "3658695798711423870"
+   },
+   "MSG_LOAD_FAILED": {
+      "message": "3254351313955764967"
+   },
+   "MSG_UPDATE_REQUIRED": {
+      "message": "3485206350043289145"
+   },
+   "MSG_WEBRTC_CONNECTION_ERROR": {
+      "message": "7467295073121579516"
+   },
+   "MSG_WINDOW_RESIZE_UNSUPPORTED": {
+      "message": "9039563863590019196"
+   },
+   "MSG_WINDOW_RESIZE_UNSUPPORTED_DESCRIPTION": {
+      "message": "57055743185823882"
+   },
+   "autoThrottlingEnabled": {
+      "message": "8254879137669712236"
+   },
+   "auto_stats_collection_description": {
+      "message": "3188239202899052784"
+   },
+   "auto_stats_collection_dismiss": {
+      "message": "8998179362936748717"
+   },
+   "auto_stats_collection_title": {
+      "message": "4585326301657856848"
+   },
+   "cast_feedback_audio_quality": {
+      "message": "4741643884742469674"
+   },
+   "cast_feedback_comments": {
+      "message": "5671949584911040143"
+   },
+   "cast_feedback_description_required_label": {
+      "message": "897566596634286067"
+   },
+   "cast_feedback_discovery_did_not_try": {
+      "message": "6585975561839203683"
+   },
+   "cast_feedback_discovery_network": {
+      "message": "1213957982723875920"
+   },
+   "cast_feedback_discovery_network_wifi_diff_networks": {
+      "message": "7824803162979416790"
+   },
+   "cast_feedback_discovery_network_wifi_same": {
+      "message": "5385436389563925676"
+   },
+   "cast_feedback_discovery_network_wifi_wired": {
+      "message": "845494741086179740"
+   },
+   "cast_feedback_discovery_no": {
+      "message": "3542042671420335679"
+   },
+   "cast_feedback_discovery_not_sure": {
+      "message": "6997602168024654529"
+   },
+   "cast_feedback_discovery_setup": {
+      "message": "8025420827457681102"
+   },
+   "cast_feedback_discovery_vpn": {
+      "message": "9120942669794506861"
+   },
+   "cast_feedback_discovery_yes": {
+      "message": "2807800733729323332"
+   },
+   "cast_feedback_general_description": {
+      "message": "3633167042592070329"
+   },
+   "cast_feedback_gpu": {
+      "message": "8351230089123629067"
+   },
+   "cast_feedback_mirroring_cancel": {
+      "message": "2159130950882492111"
+   },
+   "cast_feedback_mirroring_disclaimer": {
+      "message": "5750542272329616142"
+   },
+   "cast_feedback_mirroring_ok": {
+      "message": "4187599066116404890"
+   },
+   "cast_feedback_mirroring_submit": {
+      "message": "9059560719840598868"
+   },
+   "cast_feedback_processor": {
+      "message": "4563873836363331434"
+   },
+   "cast_feedback_quality_details": {
+      "message": "7028436125721806572"
+   },
+   "cast_feedback_request": {
+      "message": "2517473004427269018"
+   },
+   "cast_feedback_required_parens": {
+      "message": "2083306153840951484"
+   },
+   "cast_feedback_thankyou": {
+      "message": "3593576714633990163"
+   },
+   "cast_feedback_title": {
+      "message": "6604600094360523853"
+   },
+   "cast_feedback_topic": {
+      "message": "8242882361224206357"
+   },
+   "cast_feedback_url": {
+      "message": "5229573508420009298"
+   },
+   "cast_feedback_video_quality": {
+      "message": "5395332831907227403"
+   },
+   "cast_feedback_video_smoothness": {
+      "message": "2009563581399507712"
+   },
+   "cast_popup_back_to_list": {
+      "message": "6214031582604719501"
+   },
+   "cast_popup_cast_audio": {
+      "message": "1877856983727558507"
+   },
+   "cast_popup_cast_screen": {
+      "message": "4072556140582099509"
+   },
+   "cast_popup_cast_screen_experimental": {
+      "message": "8808326359642865369"
+   },
+   "cast_popup_cast_tab": {
+      "message": "2932348398128569497"
+   },
+   "cast_popup_casting_to": {
+      "message": "2076769487302164340"
+   },
+   "cast_popup_device_missing": {
+      "message": "3885666702463386029"
+   },
+   "cast_popup_feedback_link": {
+      "message": "8436497523209458720"
+   },
+   "cast_popup_help_link": {
+      "message": "7911416166208830577"
+   },
+   "cast_popup_high_quality_video": {
+      "message": "3634893929360744610"
+   },
+   "cast_popup_high_quality_video_details": {
+      "message": "130855611855008194"
+   },
+   "cast_popup_high_quality_video_dismiss": {
+      "message": "464916539454098167"
+   },
+   "cast_popup_loading": {
+      "message": "3894950702316166331"
+   },
+   "cast_popup_options_link": {
+      "message": "8432562579042371182"
+   },
+   "cast_popup_playing_on": {
+      "message": "2588174729923512180"
+   },
+   "castouts_user_email_info": {
+      "message": "7019403272859304206"
+   },
+   "donge_no_cast_device_found": {
+      "message": "5339913305209531244"
+   },
+   "goog_cast_feedback_fine_logs_warning": {
+      "message": "7075073555752965346"
+   },
+   "goog_cast_feedback_get_external_logs_error": {
+      "message": "2554687737930512120"
+   },
+   "goog_cast_feedback_got_external_logs": {
+      "message": "801495004830452095"
+   },
+   "goog_cast_feedback_mirroring_external_logs_button": {
+      "message": "5107389855082704624"
+   },
+   "goog_cast_feedback_mirroring_external_logs_error_device_not_found": {
+      "message": "2673108145745625398"
+   },
+   "goog_cast_feedback_mirroring_external_logs_error_device_not_supported": {
+      "message": "5202323856319464688"
+   },
+   "goog_cast_feedback_mirroring_logs_button": {
+      "message": "2016072788708608077"
+   },
+   "goog_cast_feedback_retrieving_external_logs": {
+      "message": "3630200699826211171"
+   },
+   "options_additional_receiver_ips": {
+      "message": "3577676426589935803"
+   },
+   "options_castouts_description": {
+      "message": "8745478539067058731"
+   },
+   "options_castouts_in_progress": {
+      "message": "6750793691943336560"
+   },
+   "options_castouts_learn_more": {
+      "message": "819996403327805209"
+   },
+   "options_castouts_manual_entry": {
+      "message": "4848910232094031059"
+   },
+   "options_castouts_signed_in": {
+      "message": "4816591726282520264"
+   },
+   "options_castouts_signed_out": {
+      "message": "6529598361108234608"
+   },
+   "options_change_effect": {
+      "message": "2638991638737993114"
+   },
+   "options_custom_mirroring_settings": {
+      "message": "3181069857560875169"
+   },
+   "options_default_hangout_domain": {
+      "message": "7552710358338304275"
+   },
+   "options_default_hangout_domain_description": {
+      "message": "5382938928138155999"
+   },
+   "options_developer_settings_sesison_title": {
+      "message": "1942272259363289202"
+   },
+   "options_devices": {
+      "message": "1206604611937086300"
+   },
+   "options_devices_link": {
+      "message": "7496142106423617391"
+   },
+   "options_disable_scan": {
+      "message": "8906884849462126639"
+   },
+   "options_dscp": {
+      "message": "5477887796261084791"
+   },
+   "options_enable_cloud": {
+      "message": "7433190838776121209"
+   },
+   "options_enable_cloud_signed_out": {
+      "message": "2697071986776077166"
+   },
+   "options_hangout_version": {
+      "message": "8023322445192355344"
+   },
+   "options_hangouts_version_changed_description": {
+      "message": "5284888875943777523"
+   },
+   "options_image_resolution": {
+      "message": "4076870975160614320"
+   },
+   "options_max_bitrate": {
+      "message": "3695617262415720740"
+   },
+   "options_max_capture_frame_rate": {
+      "message": "1313855295453056101"
+   },
+   "options_max_latency": {
+      "message": "8444501525238416559"
+   },
+   "options_media_streaming_mode": {
+      "message": "9021642677831414701"
+   },
+   "options_min_bitrate": {
+      "message": "8190621044561219027"
+   },
+   "options_min_latency": {
+      "message": "2880373984418075735"
+   },
+   "options_non_blocking_io": {
+      "message": "7911160566398057890"
+   },
+   "options_pacing_max": {
+      "message": "2242261874100835789"
+   },
+   "options_pacing_target": {
+      "message": "7155593134764035664"
+   },
+   "options_receiver_ip_deletion": {
+      "message": "2456043080471762298"
+   },
+   "options_reload": {
+      "message": "8491974984518503778"
+   },
+   "options_send_usage": {
+      "message": "7885431863671390745"
+   },
+   "options_setup_link": {
+      "message": "4906762558811440847"
+   },
+   "options_stop_casting": {
+      "message": "3374149466144554646"
+   },
+   "options_tab_casting_quality_warning": {
+      "message": "2741789927660626901"
+   },
+   "options_tab_castouts": {
+      "message": "3400233096253425149"
+   },
+   "options_tab_cloud_settings": {
+      "message": "6142008190583061028"
+   },
+   "options_tab_proj_quality": {
+      "message": "7867182504906675090"
+   },
+   "options_title": {
+      "message": "8948441291106678529"
+   },
+   "stats_collect_prompt_option": {
+      "message": "4822504808490979258"
+   }
+}

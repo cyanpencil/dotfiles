@@ -1,0 +1,29 @@
+{
+   "background": {
+      "scripts": [ "js/background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "icon.48.png",
+      "default_popup": "popup.html"
+   },
+   "content_scripts": [ {
+      "js": [ "js/contentScript.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_start"
+   } ],
+   "description": "Blacklist is a very simple website blocker designed for personal use.",
+   "homepage_url": "http://rahulgi.github.com/Blacklist",
+   "icons": {
+      "128": "icon.128.png",
+      "16": "icon.16.png",
+      "48": "icon.48.png"
+   },
+   "incognito": "split",
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDGiNj/mt/x9iNvEd+YRO9+XwjJmQrZfOymD8QX94RJoNOH2qAruLlow9W209Xm/CRINa8YWGONvBTvbHfxUXCFEF/jdnvNp1GdeLUQ3EQH5FEr945K8vUK6BNhhS4yANY7qhdNGe6mmMCWy0jHmiWSHa+Z/anLIvnviuXTOSBf4wIDAQAB",
+   "manifest_version": 2,
+   "name": "Blacklist",
+   "permissions": [ "*://*/*", "tabs", "storage", "webRequest", "webRequestBlocking", "webNavigation" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.93",
+   "web_accessible_resources": [ "blockedSite.html" ]
+}

@@ -1,0 +1,124 @@
+body {
+	min-width: 700px;
+	min-height: 200px;
+	overflow-x: hidden;
+	background: #F7FFF8;
+	font-size: 0.975em;
+}
+a { text-decoration: none; color: inherit; color: #1C6B8C; }
+hr { padding: 0px; margin: 2px 0px 0px 0px; }
+h1 { font-size: 1.2em; }
+h2 {
+	font-size: 1.2em;
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+}
+
+#header {
+}
+
+#content {
+}
+
+#footer { font-size: 0.8em; }
+
+fieldset {
+	margin: 0px 3px 5px 0px;
+	padding-bottom: 0px;
+	padding-right: 0px;
+	font-size: 0.8em;
+}
+fieldset legend {
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+#quickSubmitForm {
+	width: 360px;
+	min-height: 120px;
+}
+
+#problemDetails {
+	width: 250px;
+	min-height: 120px;
+}
+
+#username {
+	font-size: 0.8em;
+}
+
+.judgeTable {
+	width: 100%;
+	border-collapse: collapse;
+	border: 2px solid #B9C9FE;
+	font-size: 0.8em;
+	color: #333333;
+	background: #FFFFFF;
+	table-layout: fixed;
+	margin: 5px 5px 10px 0px;
+}
+.judgeTable caption {
+	margin: 0px;
+	padding: 0px 10px;
+	text-align: left;
+	font-size: 1em;
+	font-weight: bold;
+	color: white;
+	background: #2B2D2E;
+	font-family: Tahoma;
+}
+.judgeTable td {
+	color: #000000;
+	border: 1px solid #F9FFFA;
+	padding: 0.3em;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+	padding: 0.2em 0.5em 0.2em 0.5em;
+}
+.judgeTable thead th, .judgeTable tfoot th {
+	border: transparent;
+	font-size: 1em;
+	font-weight: bold;
+	color: #333333;
+	/*background: #C5BA85;*/
+	background:#B9C9FE;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	padding: 0.1em 0.3em;
+}
+.judgeTable td a {
+	background: transparent;
+	color: #6B0000;
+	text-decoration: none;
+}
+.judgeTable td a:hover {
+	background: transparent;
+	color: #B70000;
+	text-decoration: underline;
+}
+.judgeTable tbody tr {
+	background: #E8EDFF;
+}
+.judgeTable tbody tr:hover {
+	color: #333444;
+	background: #CDFFBB;
+	font-weight: bold;
+}
+.judgeTable .leftCaption {
+	float:right;
+	margin: 2px 2px;
+	font-size:0.9em;
+	text-align:right;
+}
+.judgeTable .leftCaption a {
+	margin: 2px 2px;
+	text-decoration:none;
+	color: #FFFFFF;
+}
+.judgeTable .leftCaption a:hover {
+	color: #E1D5A6;
+}

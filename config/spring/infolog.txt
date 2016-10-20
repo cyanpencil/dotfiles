@@ -1,0 +1,1097 @@
+[ParseCmdLine] command-line args: "spring"
+Using configuration source: "/home/luca/.config/spring/springsettings.cfg"
+============== <User Config> ==============
+CamMode = 1
+CrossSize = 6
+InputTextGeo = 0.26 0.73 0.02 0.028
+LastSelectedMap = Quad Core
+LastSelectedMod = Kernel Panic 4.6
+LastSelectedScript = Kernel Panic AI
+LastSelectedSetting = 3DTrees
+MaxSounds = 96
+MouseDragScrollThreshold = 0
+UnitIconDist = 500
+UnitLodDist = 500
+snd_volmaster = 100
+============== </User Config> ==============
+Available log sections: SkyBox, UnitScript, Font, LuaSocket, Net, KeyBindings, CSMFGroundTextures, CregSerializer, RoamMeshDrawer, GameServer, BumpWater, DynWater, OBJParser, ArchiveScanner, ModelRenderContainer, CrashHandler, FarTextureHandler, Shader, Model, Path, Texture, GroundMoveType, Piece, AutohostInterface, Sound, VFS, DecalsDrawerGL4
+Enabled log sections: Sound(Notice)
+Enable or disable log sections using the LogSections configuration key
+  or the SPRING_LOG_SECTIONS environment variable (both comma separated).
+  Use "none" to disable the default log sections.
+LogOutput initialized.
+Spring 101.0
+Build Environment: boost-106000, GNU libstdc++ version 20160501
+Compiler Version:  gcc-6.1.1 20160501
+Operating System:  Linux 4.6.2-1-ARCH #1 SMP PREEMPT Wed Jun 8 08:40:59 CEST 2016 x86_64
+Word Size:         64-bit (native mode)
+         CPU Clock: std::chrono::high_resolution_clock
+Physical CPU Cores: 2
+ Logical CPU Cores: 4
+[CMyMath::Init] CPU SSE mask: 127, flags:
+	SSE 1.0:  1,  SSE 2.0:  1
+	SSE 3.0:  1, SSSE 3.0:  1
+	SSE 4.1:  1,  SSE 4.2:  1
+	SSE 4.0A: 0,  SSE 5.0A: 0
+	using streflop SSE FP-math mode, CPU supports SSE instructions
+[CrashHandler] Core dumps enabled, not installing signal handler
+[CrashHandler] see /proc/sys/kernel/core_pattern where it gets written
+Supported Video modes on Display 1 x:0 y:0 1366x768:
+	640x360, 680x384, 720x405, 640x480, 864x486, 960x540, 1024x576, 800x600, 1280x720, 1024x768, 1366x768
+SDL version:  linked 2.0.4; compiled 2.0.4
+GL version:   3.0 Mesa 11.2.2
+GL vendor:    Intel Open Source Technology Center
+GL renderer:  Mesa DRI Intel(R) Sandybridge Mobile 
+GLSL version: 1.30
+GLEW version: 1.13.0
+Video RAM:    unknown
+SwapInterval: 1
+FBO::maxSamples: 4
+GL info:
+	haveARB: 0, haveGLSL: 0, ATI hacks: 0
+	FBO support: 1, NPOT-texture support: 1, 24bit Z-buffer support: 1
+	maximum texture size: 8192, compress MIP-map textures: 0
+	maximum SmoothPointSize: 255, maximum vec4 varying/attributes: 32/16
+	maximum drawbuffers: 8, maximum recommended indices/vertices: 3000/3000
+	number of UniformBufferBindings: 42 (64kB)
+VSync disabled
+[InitOpenGL] video mode set to 1366x768:24bit @60Hz 
+[WatchDogInstall] Installed (HangTimeout: 10sec)
+[WatchDog] registering controls for thread [main]
+[ThreadPool::SetThreadCount][1] #wanted=2 #current=1 #max=2
+[ThreadPool::SetThreadCount][2] #threads=1
+Using read-write data directory: /home/luca/.config/spring/
+Using read-only data directory: /usr/share/spring/
+Scanning: /usr/share/spring/maps
+Scanning: /usr/share/spring/base
+Scanning: /usr/share/spring/games
+[f=-000001] [Sound] OpenAL info:
+[f=-000001] [Sound]   Available Devices:
+[f=-000001] [Sound]               Audio interno Stereo analogico
+[f=-000001] [Sound]   Device:     OpenAL Soft
+[f=-000001] [Sound]   Vendor:         OpenAL Community
+[f=-000001] [Sound]   Version:        1.1 ALSOFT 1.17.2
+[f=-000001] [Sound]   Renderer:       OpenAL Soft
+[f=-000001] [Sound]   AL Extensions:  AL_EXT_ALAW AL_EXT_BFORMAT AL_EXT_DOUBLE AL_EXT_EXPONENT_DISTANCE AL_EXT_FLOAT32 AL_EXT_IMA4 AL_EXT_LINEAR_DISTANCE AL_EXT_MCFORMATS AL_EXT_MULAW AL_EXT_MULAW_BFORMAT AL_EXT_MULAW_MCFORMATS AL_EXT_OFFSET AL_EXT_source_distance_model AL_LOKI_quadriphonic AL_SOFT_block_alignment AL_SOFT_buffer_samples AL_SOFT_buffer_sub_data AL_SOFT_deferred_updates AL_SOFT_direct_channels AL_SOFT_loop_points AL_SOFT_MSADPCM AL_SOFT_source_latency AL_SOFT_source_length
+[f=-000001] [Sound]   ALC Extensions: ALC_ENUMERATE_ALL_EXT ALC_ENUMERATION_EXT ALC_EXT_CAPTURE ALC_EXT_DEDICATED ALC_EXT_disconnect ALC_EXT_EFX ALC_EXT_thread_local_context ALC_SOFTX_device_clock ALC_SOFT_HRTF ALC_SOFT_loopback ALC_SOFT_pause_device
+[f=-000001] [Sound]   EFX Enabled: yes
+[f=-000001] [Sound]   Max Sounds: 96
+[f=-000001] [WatchDog] registering controls for thread [audio]
+[f=-000001] Joysticks found: 0
+[f=-000001] [ThreadPool::SetThreadCount][1] #wanted=2 #current=2 #max=2
+[f=-000001] [ThreadPool::SetThreadCount][2] #threads=1
+[f=-000001] [Threading] Main thread CPU affinity mask set: 14
+[f=-000001] [InitOpenGL] video mode set to 1366x768:24bit @60Hz 
+[f=-000001] Hosting on: localhost:8452
+[f=-000001] Connecting to local server
+[f=-000001] [AddGameSetupArchivesToVFS] using map: Quad Core
+[f=-000001] Warning: Opening socket on loopback address. Other users will not be able to connect!
+[f=-000001] Binding UDP socket to IP (v6) ::1 (localhost) port 8452
+[f=-000001] [UDPListener] successfully bound socket on port 8452
+[f=-000001] PreGame::StartServer: 8 ms
+[f=-000001] [AddGameSetupArchivesToVFS] using map: Quad Core
+[f=-000001] [AddGameSetupArchivesToVFS] using game: Kernel Panic 4.6 (archive: Kernel_Panic_4.6.sd7)
+[f=-000001] Recording demo to: /home/luca/.config/spring/demos/20160725_231007_Quad Core_101.sdfz
+[f=-000001] PreGame::GameDataReceived: 16 ms
+[f=-000001] [PreGame::UpdateClientNet] user number 0 (team 0, allyteam 0)
+[f=-000001] [LuaIntro] Searching for new Widgets
+[f=-000001] [LuaIntro] Scanning: LuaIntro/Addons/
+[f=-000001] [LuaIntro] Scanning: LuaIntro/Widgets/
+[f=-000001] [LuaIntro] Scanning: LuaIntro/SystemAddons/
+[f=-000001] [LuaIntro] Scanning: LuaIntro/SystemWidgets/
+[f=-000001] [LuaIntro] Scanning: LuaIntro/chili/
+[f=-000001] [LuaIntro] Found new widget "SpringLogo"
+[f=-000001] [LuaIntro] Found new widget "LoadTexture"
+[f=-000001] [LuaIntro] Found new widget "Circuit Growth"
+[f=-000001] [LuaIntro] Found new widget "LoadProgress"
+[f=-000001] [LuaIntro] Found new widget "Main"
+[f=-000001] [LuaIntro] Found new widget "Music"
+[f=-000001] [LuaIntro] Loading widgets   <>=vfs  **=raw  ()=unknown
+[f=-000001] [LuaIntro] Loading widget:      Circuit Growth         <circuitgrowth.lua>
+[f=-000001] [LuaIntro] Loading widget:      LoadProgress           <loadprogress.lua>
+[f=-000001] [LuaIntro] LuaIntro v1.0 (Lua 5.1)
+[f=-000001] LoadingScreen: single-threaded
+[f=-000001] [WatchDog] registering controls for thread [load]
+[f=-000001] Parsing Map Information
+[f=-000001] Loading SMF
+[f=-000001] Loading Map (25 MB)
+[f=-000001] Loading Radar Icons
+[f=-000001] Loading GameData Definitions
+[f=-000001] Loading all definitions:  24ms
+[f=-000001] Game::LoadDefs (GameData): 60 ms
+[f=-000001] Loading Sound Definitions
+[f=-000001] [Sound]  parsed 6 sounds from gamedata/sounds.lua
+[f=-000001] Game::LoadDefs (Sound): 36 ms
+[f=-000001] Creating Smooth Height Mesh
+[f=-000001] SmoothHeightMesh::MakeSmoothMesh: 11 ms
+[f=-000001] Creating QuadField & CEGs
+[f=-000001] [CDamageArrayHandler] number of ArmorDefs: 13
+[f=-000001] [RegisterAssimpModelFormats] supported Assimp model formats: *.3ds;*.blend;*.dae;*.lwo;
+[f=-000001] Creating Unit Textures
+[f=-000001] Creating Sky
+[f=-000001] Loading Weapon Definitions
+[f=-000001] Warning: WeaponDefs: Unknown tag "guided" in "fakebugcannon"
+[f=-000001] Warning: WeaponDefs: Unknown tag "nogroundattack" in "fakebugcannon"
+[f=-000001] Warning: WeaponDefs: Unknown tag "smokedelay" in "fakebugcannon"
+[f=-000001] Warning: WeaponDefs: Unknown tag "tracking" in "fakebugcannon"
+[f=-000001] Warning: WeaponDefs: Unknown tag "guided" in "flowmissile"
+[f=-000001] Warning: WeaponDefs: Unknown tag "guided" in "geometric"
+[f=-000001] Warning: WeaponDefs: Unknown tag "smokedelay" in "geometric"
+[f=-000001] Warning: WeaponDefs: Unknown tag "guided" in "nx"
+[f=-000001] Warning: WeaponDefs: Unknown tag "tracking" in "nx"
+[f=-000001] Warning: WeaponDefs: Unknown tag "guided" in "spark"
+[f=-000001] Loading Unit Definitions
+[f=-000001] Loading Feature Definitions
+[f=-000001] [IPathManager::GetInstance] using DEFAULT path-manager
+[f=-000001] Initializing Map Features
+[f=-000001] Creating ShadowHandler & DecalHandler
+[f=-000001] Warning: [Init] GPU does not support either ARB or GLSL shaders for shadow rendering
+[f=-000001] Creating GroundDrawer
+[f=-000001] Loading Map Tiles
+[f=-000001] Loading Square Textures
+[f=-000001] CSMFGroundTextures::ConvolveHeightMap: 0 ms
+[f=-000001] Switching to ROAM Mesh Rendering
+[f=-000001] Creating TreeDrawer
+[f=-000001] Error: [CreateProgramObject] Tried to create "treeNearDefShaderARB" a ARB shader program on hardware w/o support for it!
+[f=-000001] Error: [CreateShaderObject] Tried to create a shader ("ARB/treeNS.vp") on hardware that does not support them!
+[f=-000001] Creating ProjectileDrawer & UnitDrawer
+[f=-000001] Creating Projectile Textures
+[f=-000001] Creating Water
+[f=-000001] Game::LoadInterface (Camera&Mouse): 22 ms
+[f=-000001] Game::LoadInterface (Console): 0 ms
+[f=-000001] InfoTexture: legacy
+[f=-000001] Loading LuaRules
+[f=-000001] Loaded SYNCED gadget:  Color Wars!         <colorwars.lua>
+[f=-000001] Loaded SYNCED gadget:  Force LUA UI        <luaui_force.lua>
+[f=-000001] Loaded SYNCED gadget:  Game Over           <game_over.lua>
+[f=-000001] Loaded SYNCED gadget:  Hand autobuild      <hand_autobuild.lua>
+[f=-000001] Loaded SYNCED gadget:  Has Taken The Lead  <taken_the_lead.lua>
+[f=-000001] Loaded SYNCED gadget:  Kernel Panic K.O.T.H.  <koth.lua>
+[f=-000001] Loaded SYNCED gadget:  Kernel Panic S.O.S.  <sos.lua>
+[f=-000001] Loaded SYNCED gadget:  Pre-placed Minifacs  <preplaced.lua>
+[f=-000001] Loaded SYNCED gadget:  Spawn               <game_spawn.lua>
+[f=-000001] Loaded SYNCED gadget:  Spawn Units         <spawn_units.lua>
+[f=-000001] Loaded SYNCED gadget:  Start Point Remover Gadget  <init_start_point_remover_gadget.lua>
+[f=-000001] Loaded SYNCED gadget:  kpunittypes.lua     <kpunittypes.lua>
+[f=-000001] Loaded SYNCED gadget:  new_cmd_id.lua      <new_cmd_id.lua>
+[f=-000001] Loaded SYNCED gadget:  Touhou Build        <touhou_build.lua>
+[f=-000001] Loaded SYNCED gadget:  Metal To Geo converter  <metaltogeo.lua>
+[f=-000001] Loaded SYNCED gadget:  set Alpha Threshold  <set_alpha_threshold.lua>
+[f=-000001] Loaded SYNCED gadget:  Pseudo Orders       <pseudo_orders.lua>
+[f=-000001] Loaded SYNCED gadget:  Burrow              <burrow.lua>
+[f=-000001] Loaded SYNCED gadget:  UnitAutoHold        <autohold.lua>
+[f=-000001] Loaded SYNCED gadget:  Airstrike           <airstrike.lua>
+[f=-000001] Loaded SYNCED gadget:  Area Denial         <areadenial.lua>
+[f=-000001] Loaded SYNCED gadget:  Bombard             <bug_bombard.lua>
+[f=-000001] Loaded SYNCED gadget:  Infection           <infection.lua>
+[f=-000001] Loaded SYNCED gadget:  Kernel boost        <kernelboost.lua>
+[f=-000001] Loaded SYNCED gadget:  LuaCOB              <luacob.lua>
+[f=-000001] Loaded SYNCED gadget:  Network Arc Effect  <network_arceffect.lua>
+[f=-000001] Loaded SYNCED gadget:  Network Buffer      <network_buffer.lua>
+[f=-000001] Loaded SYNCED gadget:  Network Build       <network_build.lua>
+[f=-000001] Loaded SYNCED gadget:  Special Attack      <specialattack.lua>
+[f=-000001] Loaded SYNCED gadget:  Launcher            <launcher.lua>
+[f=-000001] Loaded SYNCED gadget:  Network Dispatch    <network_dispatch.lua>
+[f=-000001] Loaded SYNCED gadget:  Network Enter       <network_enter.lua>
+[f=-000001] Loaded SYNCED gadget:  Flow Speed          <network_flowspeed.lua>
+[f=-000001] Loaded SYNCED gadget:  Network Reflectorshield  <network_reflectorshield.lua>
+[f=-000001] Loaded SYNCED gadget:  Armor Bonus         <armor_bonus.lua>
+[f=-000001] Loaded SYNCED gadget:  Kernel Panic O.N.S.  <ons.lua>
+[f=-000001] Loaded SYNCED gadget:  Invasion AI         <kpai_invasion.lua>
+[f=-000001] Loaded SYNCED gadget:  Kernel Panic AI     <kpai.lua>
+[f=-000001] Loaded SYNCED gadget:  Fair KPAI           <kpai_fair.lua>
+[f=-000001] Loaded SYNCED gadget:  Regenerative AI     <regenai.lua>
+[f=-000001] Loaded SYNCED gadget:  Evilless            <evilless.lua>
+[f=-000001] Loaded SYNCED gadget:  Shoot'n'Run         <shoot_n_run.lua>
+[f=-000001] Loaded SYNCED gadget:  Lua hotfixes        <hotfixes.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Color Wars!         <colorwars.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Force LUA UI        <luaui_force.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Game Over           <game_over.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Hand autobuild      <hand_autobuild.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Has Taken The Lead  <taken_the_lead.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Kernel Panic K.O.T.H.  <koth.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Kernel Panic S.O.S.  <sos.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Pre-placed Minifacs  <preplaced.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Spawn Units         <spawn_units.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Start Point Remover Gadget  <init_start_point_remover_gadget.lua>
+[f=-000001] Loaded UNSYNCED gadget:  kpunittypes.lua     <kpunittypes.lua>
+[f=-000001] Loaded UNSYNCED gadget:  new_cmd_id.lua      <new_cmd_id.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Touhou Build        <touhou_build.lua>
+[f=-000001] Loaded UNSYNCED gadget:  set Alpha Threshold  <set_alpha_threshold.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Pseudo Orders       <pseudo_orders.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Burrow              <burrow.lua>
+[f=-000001] Loaded UNSYNCED gadget:  UnitAutoHold        <autohold.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Airstrike           <airstrike.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Area Denial         <areadenial.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Bombard             <bug_bombard.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Infection           <infection.lua>
+[f=-000001] Loaded UNSYNCED gadget:  LuaCOB              <luacob.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Network Arc Effect  <network_arceffect.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Network Buffer      <network_buffer.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Network Build       <network_build.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Special Attack      <specialattack.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Launcher            <launcher.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Network Dispatch    <network_dispatch.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Network Enter       <network_enter.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Network Reflectorshield  <network_reflectorshield.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Armor Bonus         <armor_bonus.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Kernel Panic O.N.S.  <ons.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Invasion AI         <kpai_invasion.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Kernel Panic AI     <kpai.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Fair KPAI           <kpai_fair.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Regenerative AI     <regenai.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Evilless            <evilless.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Shoot'n'Run         <shoot_n_run.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Lua hotfixes        <hotfixes.lua>
+[f=-000001] Loading LuaGaia
+[f=-000001] Loading LuaUI
+[f=-000001] LuaUI Entry Point: "luaui.lua"
+[f=-000001] LuaUI Access Lock: disabled
+[f=-000001] LuaSocket Enabled: yes
+[f=-000001] Using LUAUI_DIRNAME = LuaUI/
+[f=-000001] Reloading GUI config from file: LuaUI/ctrlpanel.txt
+[f=-000001] LuaUI: bound F11 to the widget selector
+[f=-000001] LuaUI: bound CTRL+F11 to tweak mode
+[f=-000001] Reloading GUI config from file: LuaUI/Widgets/KP_CtrlPanel.txt
+[f=-000001] LuaUI v0.3
+[f=-000001] [LoadFinalize] finalizing PFS
+[f=-000001] [Path] [PathEstimator::ReadFile] hash=3226269434
+[f=-000001] Reading Estimate PathCosts [8]
+[f=-000001] [Path] [PathEstimator::ReadFile] hash=3226269458
+[f=-000001] Reading Estimate PathCosts [32]
+[f=-000001] [LoadFinalize] finalized PFS (116ms, checksum e885e695)
+[f=-000001] Loading Skirmish AIs
+[f=-000001] Error: [CreateProgramObject] Tried to create "DecalShaderARB" a ARB shader program on hardware w/o support for it!
+[f=-000001] Error: [CreateProgramObject] Tried to create "DecalShaderGLSL" a GLSL shader program on hardware w/o support for it!
+[f=-000001] Loaded DecalsDrawer: Legacy
+[f=-000001] Removing, Hide commands
+[f=-000001] Removing, Keep Morpheds Selected
+[f=-000001] Removing, Kernel Panic Build Bar
+[f=-000001] Removing, Kernel Panic Console Commands
+[f=-000001] Removing, Kernel Panic MidKnight's tooltip background
+[f=-000001] Removing, Kernel Panic autospam
+[f=-000001] Removing, Write GameState
+[f=-000001] Removing, Kernel Panic Default Commands
+[f=-000001] Removing, Kernel Panic Geos Highlight
+[f=-000001] Removing, TeamDiedMessages
+[f=-000001] Removing, Kernel Panic Automatic Tip Dispenser
+[f=-000001] Removing, Kernel Panic Tooltip
+[f=-000001] The line below may complain about 'w' being nil, that is normal, and a result of my closing all widgets.
+[f=-000001] Error: LuaUI::RunCallIn: error = 2, DrawScreenEffects, [Internal Lua error: Call failure] [string "LuaUI/widgets.lua"]:1302: attempt to index local 'w' (a nil value)
+[f=-000001] GameID: 2f809657309cd276e604649be43654ea
+[f=-000001] Connection attempt from UnnamedPlayer
+[f=-000001]  -> Version: 101.0
+[f=-000001]  -> Connection established (given id 0)
+[f=-000001] Skirmish AI "AI: Kernel Panic AI" (ID:0, Short-Name:"Kernel Panic AI", Version:"") took over control of team 1
+[f=-000001] Player UnnamedPlayer finished loading and is now ingame
+[f=-000001] Warning: kernel: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=-000001] Warning: [CheckPieceNormals] piece "body" of model "objects3d/holenew.s3o" has 756 (of 756) null-normals! It will either be rendered fully black or with black splotches!
+[f=-000001] Warning: [CheckPieceNormals] piece "nanoarm" of model "objects3d/holenew.s3o" has 72 (of 72) null-normals! It will either be rendered fully black or with black splotches!
+[f=-000001] Warning: [CheckPieceNormals] piece "nanomover" of model "objects3d/holenew.s3o" has 36 (of 36) null-normals! It will either be rendered fully black or with black splotches!
+[f=-000001] Warning: hole: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=-000001] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole outside script execution
+[f=-000001] 
+[f=-000001] Kernel Panic AI
+[f=-000001] 
+[f=0000001] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole outside script execution
+[f=0000004] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole (in scripts/hole.cob:Activate at 1f3)
+[f=0000008] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole (in scripts/hole.cob:Activate at 1f3)
+[f=0000012] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole (in scripts/hole.cob:Activate at 1f3)
+[f=0000016] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole (in scripts/hole.cob:Activate at 1f3)
+[f=0000020] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole (in scripts/hole.cob:Activate at 1f3)
+[f=0000024] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole (in scripts/hole.cob:Activate at 1f3)
+[f=0000028] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole (in scripts/hole.cob:Activate at 1f3)
+[f=0000032] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole (in scripts/hole.cob:Activate at 1f3)
+[f=0000036] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole (in scripts/hole.cob:Activate at 1f3)
+[f=0000040] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole (in scripts/hole.cob:Activate at 1f3)
+[f=0000044] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole (in scripts/hole.cob:Activate at 1f3)
+[f=0000048] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole (in scripts/hole.cob:Activate at 1f3)
+[f=0000052] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole (in scripts/hole.cob:Activate at 1f3)
+[f=0000056] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole (in scripts/hole.cob:Activate at 1f3)
+[f=0000060] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole (in scripts/hole.cob:Activate at 1f3)
+[f=0000064] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole (in scripts/hole.cob:Activate at 1f3)
+[f=0000068] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole (in scripts/hole.cob:Activate at 1f3)
+[f=0000072] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole (in scripts/hole.cob:Activate at 1f3)
+[f=0000076] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole (in scripts/hole.cob:Activate at 1f3)
+[f=0000080] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole (in scripts/hole.cob:Activate at 1f3)
+[f=0000084] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole (in scripts/hole.cob:Activate at 1f3)
+[f=0000088] [UnitScript] Error: CobError: Unknown set constant 103 11555 of type hole (in scripts/hole.cob:Activate at 1f3)
+[f=0000093] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000093] [UnitScript] Error: CobError: Unknown set constant 103 3711 of type trojan outside script execution
+[f=0000093] [UnitScript] Error: CobError: Unknown set constant 103 3711 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000094] [UnitScript] Error: CobError: Unknown set constant 103 3711 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000095] [UnitScript] Error: CobError: Unknown set constant 103 3711 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000096] [UnitScript] Error: CobError: Unknown set constant 103 3711 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000097] [UnitScript] Error: CobError: Unknown set constant 103 3711 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000098] [UnitScript] Error: CobError: Unknown set constant 103 3711 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000099] [UnitScript] Error: CobError: Unknown set constant 103 3711 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000100] [UnitScript] Error: CobError: Unknown set constant 103 3711 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000101] [UnitScript] Error: CobError: Unknown set constant 103 3711 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000102] [UnitScript] Error: CobError: Unknown set constant 103 3711 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000103] [UnitScript] Error: CobError: Unknown set constant 103 3711 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000104] [UnitScript] Error: CobError: Unknown set constant 103 3711 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000105] [UnitScript] Error: CobError: Unknown set constant 103 3711 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000106] [UnitScript] Error: CobError: Unknown set constant 103 3711 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000120] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000120] [UnitScript] Error: CobError: Unknown set constant 103 27783 of type trojan outside script execution
+[f=0000120] [UnitScript] Error: CobError: Unknown set constant 103 27783 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000121] [UnitScript] Error: CobError: Unknown set constant 103 27783 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000122] [UnitScript] Error: CobError: Unknown set constant 103 27783 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000123] [UnitScript] Error: CobError: Unknown set constant 103 27783 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000124] [UnitScript] Error: CobError: Unknown set constant 103 27783 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000125] [UnitScript] Error: CobError: Unknown set constant 103 27783 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000126] [UnitScript] Error: CobError: Unknown set constant 103 27783 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000127] [UnitScript] Error: CobError: Unknown set constant 103 27783 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000128] [UnitScript] Error: CobError: Unknown set constant 103 27783 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000129] [UnitScript] Error: CobError: Unknown set constant 103 27783 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000130] [UnitScript] Error: CobError: Unknown set constant 103 27783 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000131] [UnitScript] Error: CobError: Unknown set constant 103 27783 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000132] [UnitScript] Error: CobError: Unknown set constant 103 27783 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000133] [UnitScript] Error: CobError: Unknown set constant 103 27783 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000134] [UnitScript] Error: CobError: Unknown set constant 103 27783 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000135] [UnitScript] Error: CobError: Unknown set constant 103 27783 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000136] [UnitScript] Error: CobError: Unknown set constant 103 27783 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000150] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000150] [UnitScript] Error: CobError: Unknown set constant 103 14980 of type trojan outside script execution
+[f=0000150] [UnitScript] Error: CobError: Unknown set constant 103 14980 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000151] [UnitScript] Error: CobError: Unknown set constant 103 14980 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000152] [UnitScript] Error: CobError: Unknown set constant 103 14980 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000153] [UnitScript] Error: CobError: Unknown set constant 103 14980 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000154] [UnitScript] Error: CobError: Unknown set constant 103 14980 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000155] [UnitScript] Error: CobError: Unknown set constant 103 14980 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000156] [UnitScript] Error: CobError: Unknown set constant 103 14980 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000157] [UnitScript] Error: CobError: Unknown set constant 103 14980 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000158] [UnitScript] Error: CobError: Unknown set constant 103 14980 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000159] [UnitScript] Error: CobError: Unknown set constant 103 14980 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000160] [UnitScript] Error: CobError: Unknown set constant 103 14980 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000161] [UnitScript] Error: CobError: Unknown set constant 103 14980 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000162] [UnitScript] Error: CobError: Unknown set constant 103 14980 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000163] [UnitScript] Error: CobError: Unknown set constant 103 14980 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000164] [UnitScript] Error: CobError: Unknown set constant 103 14980 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000165] [UnitScript] Error: CobError: Unknown set constant 103 14980 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000166] [UnitScript] Error: CobError: Unknown set constant 103 14980 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000180] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000180] [UnitScript] Error: CobError: Unknown set constant 103 9027 of type trojan outside script execution
+[f=0000180] [UnitScript] Error: CobError: Unknown set constant 103 9027 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000181] [UnitScript] Error: CobError: Unknown set constant 103 9027 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000182] [UnitScript] Error: CobError: Unknown set constant 103 9027 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000183] [UnitScript] Error: CobError: Unknown set constant 103 9027 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000184] [UnitScript] Error: CobError: Unknown set constant 103 9027 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000185] [UnitScript] Error: CobError: Unknown set constant 103 9027 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000186] [UnitScript] Error: CobError: Unknown set constant 103 9027 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000187] [UnitScript] Error: CobError: Unknown set constant 103 9027 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000188] [UnitScript] Error: CobError: Unknown set constant 103 9027 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000189] [UnitScript] Error: CobError: Unknown set constant 103 9027 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000190] [UnitScript] Error: CobError: Unknown set constant 103 9027 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000191] [UnitScript] Error: CobError: Unknown set constant 103 9027 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000192] [UnitScript] Error: CobError: Unknown set constant 103 9027 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000193] [UnitScript] Error: CobError: Unknown set constant 103 9027 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000194] [UnitScript] Error: CobError: Unknown set constant 103 9027 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000195] [UnitScript] Error: CobError: Unknown set constant 103 9027 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000196] [UnitScript] Error: CobError: Unknown set constant 103 9027 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000197] [UnitScript] Error: CobError: Unknown set constant 103 9027 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000210] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000210] [UnitScript] Error: CobError: Unknown set constant 103 2940 of type trojan outside script execution
+[f=0000210] [UnitScript] Error: CobError: Unknown set constant 103 2940 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000211] [UnitScript] Error: CobError: Unknown set constant 103 2940 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000212] [UnitScript] Error: CobError: Unknown set constant 103 2940 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000213] [UnitScript] Error: CobError: Unknown set constant 103 2940 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000214] [UnitScript] Error: CobError: Unknown set constant 103 2940 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000215] [UnitScript] Error: CobError: Unknown set constant 103 2940 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000216] [UnitScript] Error: CobError: Unknown set constant 103 2940 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000217] [UnitScript] Error: CobError: Unknown set constant 103 2940 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000218] [UnitScript] Error: CobError: Unknown set constant 103 2940 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000219] [UnitScript] Error: CobError: Unknown set constant 103 2940 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000220] [UnitScript] Error: CobError: Unknown set constant 103 2940 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000221] [UnitScript] Error: CobError: Unknown set constant 103 2940 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000222] [UnitScript] Error: CobError: Unknown set constant 103 2940 of type trojan (in scripts/trojan.cob:Create at 1b)
+[f=0000240] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000240] [UnitScript] Error: CobError: Unknown set constant 103 28129 of type trojan outside script execution
+[f=0000270] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000270] [UnitScript] Error: CobError: Unknown set constant 103 3472 of type trojan outside script execution
+[f=0000300] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000300] [UnitScript] Error: CobError: Unknown set constant 103 24471 of type trojan outside script execution
+[f=0000330] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000330] [UnitScript] Error: CobError: Unknown set constant 103 8820 of type trojan outside script execution
+[f=0000360] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000360] [UnitScript] Error: CobError: Unknown set constant 103 6634 of type trojan outside script execution
+[f=0000390] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000390] [UnitScript] Error: CobError: Unknown set constant 103 13263 of type trojan outside script execution
+[f=0000420] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000420] [UnitScript] Error: CobError: Unknown set constant 103 30109 of type trojan outside script execution
+[f=0000450] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000450] [UnitScript] Error: CobError: Unknown set constant 103 16070 of type trojan outside script execution
+[f=0000480] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000480] [UnitScript] Error: CobError: Unknown set constant 103 24875 of type trojan outside script execution
+[f=0000510] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000510] [UnitScript] Error: CobError: Unknown set constant 103 1232 of type trojan outside script execution
+[f=0000540] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000540] [UnitScript] Error: CobError: Unknown set constant 103 20420 of type trojan outside script execution
+[f=0000570] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000570] [UnitScript] Error: CobError: Unknown set constant 103 14257 of type trojan outside script execution
+[f=0000600] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000600] [UnitScript] Error: CobError: Unknown set constant 103 9976 of type trojan outside script execution
+[f=0000630] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000630] [UnitScript] Error: CobError: Unknown set constant 103 11587 of type trojan outside script execution
+[f=0000660] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000660] [UnitScript] Error: CobError: Unknown set constant 103 12049 of type trojan outside script execution
+[f=0000690] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000690] [UnitScript] Error: CobError: Unknown set constant 103 25641 of type trojan outside script execution
+[f=0000720] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000720] [UnitScript] Error: CobError: Unknown set constant 103 11754 of type trojan outside script execution
+[f=0000750] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000750] [UnitScript] Error: CobError: Unknown set constant 103 20854 of type trojan outside script execution
+[f=0000780] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000780] [UnitScript] Error: CobError: Unknown set constant 103 26080 of type trojan outside script execution
+[f=0000810] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000810] [UnitScript] Error: CobError: Unknown set constant 103 22872 of type trojan outside script execution
+[f=0000840] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000840] [UnitScript] Error: CobError: Unknown set constant 103 1497 of type trojan outside script execution
+[f=0000870] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000870] [UnitScript] Error: CobError: Unknown set constant 103 18922 of type trojan outside script execution
+[f=0000900] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000900] [UnitScript] Error: CobError: Unknown set constant 103 21795 of type trojan outside script execution
+[f=0000930] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000930] [UnitScript] Error: CobError: Unknown set constant 103 20731 of type trojan outside script execution
+[f=0000960] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000960] [UnitScript] Error: CobError: Unknown set constant 103 18733 of type trojan outside script execution
+[f=0000990] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000990] [UnitScript] Error: CobError: Unknown set constant 103 7720 of type trojan outside script execution
+[f=0001020] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001020] [UnitScript] Error: CobError: Unknown set constant 103 15367 of type trojan outside script execution
+[f=0001050] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001050] [UnitScript] Error: CobError: Unknown set constant 103 164 of type trojan outside script execution
+[f=0001080] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001080] [UnitScript] Error: CobError: Unknown set constant 103 30635 of type trojan outside script execution
+[f=0001110] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001110] [UnitScript] Error: CobError: Unknown set constant 103 12799 of type trojan outside script execution
+[f=0001140] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001140] [UnitScript] Error: CobError: Unknown set constant 103 23877 of type trojan outside script execution
+[f=0001170] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001170] [UnitScript] Error: CobError: Unknown set constant 103 16457 of type trojan outside script execution
+[f=0001200] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001200] [UnitScript] Error: CobError: Unknown set constant 103 28598 of type trojan outside script execution
+[f=0001230] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001230] [UnitScript] Error: CobError: Unknown set constant 103 162 of type trojan outside script execution
+[f=0001260] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001260] [UnitScript] Error: CobError: Unknown set constant 103 14822 of type trojan outside script execution
+[f=0001290] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001290] [UnitScript] Error: CobError: Unknown set constant 103 16020 of type trojan outside script execution
+[f=0001320] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001320] [UnitScript] Error: CobError: Unknown set constant 103 31870 of type trojan outside script execution
+[f=0001350] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001350] [UnitScript] Error: CobError: Unknown set constant 103 15872 of type trojan outside script execution
+[f=0001380] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001380] [UnitScript] Error: CobError: Unknown set constant 103 28502 of type trojan outside script execution
+[f=0001410] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001410] [UnitScript] Error: CobError: Unknown set constant 103 17544 of type trojan outside script execution
+[f=0001440] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001440] [UnitScript] Error: CobError: Unknown set constant 103 21420 of type trojan outside script execution
+[f=0001470] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001470] [UnitScript] Error: CobError: Unknown set constant 103 3397 of type trojan outside script execution
+[f=0001500] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001500] [UnitScript] Error: CobError: Unknown set constant 103 2896 of type trojan outside script execution
+[f=0001530] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001530] [UnitScript] Error: CobError: Unknown set constant 103 30598 of type trojan outside script execution
+[f=0001560] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001560] [UnitScript] Error: CobError: Unknown set constant 103 1301 of type trojan outside script execution
+[f=0001590] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001590] [UnitScript] Error: CobError: Unknown set constant 103 21726 of type trojan outside script execution
+[f=0001620] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001620] [UnitScript] Error: CobError: Unknown set constant 103 29536 of type trojan outside script execution
+[f=0001650] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001650] [UnitScript] Error: CobError: Unknown set constant 103 31620 of type trojan outside script execution
+[f=0001680] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001680] [UnitScript] Error: CobError: Unknown set constant 103 28682 of type trojan outside script execution
+[f=0001710] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001710] [UnitScript] Error: CobError: Unknown set constant 103 27577 of type trojan outside script execution
+[f=0001740] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001740] [UnitScript] Error: CobError: Unknown set constant 103 17108 of type trojan outside script execution
+[f=0001770] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001770] [UnitScript] Error: CobError: Unknown set constant 103 5111 of type trojan outside script execution
+[f=0001800] Warning: trojan: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0001800] [UnitScript] Error: CobError: Unknown set constant 103 19469 of type trojan outside script execution
+[f=0001819] Spring Direct Launch 2: I am about to write "Kernel_Panic_script.txt"
+[f=0001819] Spring Direct Launch 2: I have now written "Kernel_Panic_script.txt"
+[f=0001819] Spring Direct Launch 2: Wanting to reload "Kernel_Panic_script.txt"
+[f=0001819] 
+
+<<BEGIN DUMPING TRIMMED>>
+
+
+[f=0001819] 
+
+
+
+
+
+[GAME]
+{
+	GameType=Kernel Panic 4.6;
+	Mapname=Dual Core;
+
+	[MODOPTIONS]
+	{
+	FullScript=script.sav;
+
+		
+		nowalls=1;
+		nospecials=0;
+		ons=0;
+		sos=0;
+		colorwars=0;
+		preplaced=0;
+		homf=0;
+		
+		GameMode=1;
+			
+			
+			
+			
+		ghostedbuildings=1;
+		fixedallies=0;
+		MaxUnits=512;
+		MinSpeed=0.1;
+		MaxSpeed=10;
+
+		
+		StartMetal=1024;
+		StartEnergy=1024;
+		LauncherName=Spring Direct Launch 2 widget;
+		LauncherVersion=2.8;
+		DateTime=Monday 25 July 2016 at 23:11:14;
+	}
+
+	OnlyLocal=1;
+	
+	HostPort=0;
+	IsHost=1;
+
+	StartPosType=0;
+	MyPlayerNum=0;
+	MyPlayerName=Player;
+	NumPlayers=1;
+	NumUsers=2;
+	NumTeams=2;
+	NumAllyTeams=2;
+
+	
+	[PLAYER0]
+	{
+		name=Player;
+		Team=1;
+		Spectator=0;
+	}
+
+	
+	[AI0]
+	{
+		Name=Fair KPAI (Enemy #1);
+		ShortName=Fair KPAI;
+		
+		Team=0;
+		Host=0;
+	}
+
+	
+	[TEAM0]
+	{
+		TeamLeader=0;
+		AllyTeam=1;
+		Handicap=0;
+		Side=Network;
+		RGBColor=0.73591721 0.1686275 1;
+		AIDLL=Fair KPAI;
+	}
+	[TEAM1]
+	{
+		TeamLeader=0;
+		AllyTeam=0;
+		Handicap=0;
+		Side=System;
+		RGBColor=0.57923877 1 0.37254906;
+	}
+
+	
+	[ALLYTEAM0]
+	{
+		NumAllies=0;
+	}
+	[ALLYTEAM1]
+	{
+		NumAllies=0;
+	}
+
+	
+	NumRestrictions=0;
+	[RESTRICT]
+	{
+	}
+}
+
+[f=0001819] 
+
+<<END DUMPING TRIMMED>>
+
+
+[f=0001819] Making infolog.txt copy into infolog.bak.txt
+[f=0001819] Spring Direct Launch 2: Ok, calling Spring.Restart("","[GAME]{..}") now!
+[f=0001819] [ReloadOrRestart] Spring "/usr/bin/spring" should be reloading
+[f=0001819] Spring Direct Launch 2: Just called Spring.Restart("","[GAME]{..}")
+[f=0001819] Spring Direct Launch 2: Wait, we shouldn't be here, should have restarted or crashed or quitted by now.
+[f=0001819] [ThreadPool::SetThreadCount][1] #wanted=0 #current=2 #max=2
+[f=0001819] [ThreadPool::SetThreadCount][2] #threads=0
+[f=0001819] [ThreadPool::SetThreadCount][1] #wanted=2 #current=1 #max=2
+[f=0001819] [ThreadPool::SetThreadCount][2] #threads=1
+[f=0001819] [KillLua][1]
+[f=0001819] [KillLua][2]
+[f=0001819] [KillLua][3]
+[f=0001819] [KillLua][4]
+[f=0001819] [~CGame]1]
+[f=0001819] [KillLua][1]
+[f=0001819] [KillLua][2]
+[f=0001819] [KillLua][3]
+[f=0001819] [KillLua][4]
+[f=0001819] [KillMisc][1]
+[f=0001819] [KillMisc][2]
+[f=0001819] [KillRendering][1]
+[f=0001819] [KillInterface][1]
+[f=0001819] [KillInterface][2]
+[f=0001819] [KillSimulation][1]
+[f=0001819] [KillSimulation][2]
+[f=0001819] [CCollisionHandler] dis-/continuous tests: 0/332965
+[f=0001819] [KillSimulation][3]
+[f=0001819] [~CPathCache(16x16)] cacheHits=0 hitPercentage=0% numHashColls=0 maxCacheSize=0
+[f=0001819] [~CPathCache(16x16)] cacheHits=0 hitPercentage=0% numHashColls=0 maxCacheSize=0
+[f=0001819] [~CPathCache(64x64)] cacheHits=0 hitPercentage=0% numHashColls=0 maxCacheSize=0
+[f=0001819] [~CPathCache(64x64)] cacheHits=135 hitPercentage=47% numHashColls=0 maxCacheSize=153
+[f=0001819] Statistics for RectangleOptimizer: 0%
+[f=0001819] Statistics for RectangleOptimizer: 0%
+[f=0001819] LosHandler stats: total instances=4; shared=0%; from cache=25%
+[f=0001819] [KillSimulation][4]
+[f=0001819] [~CGame][2]
+[f=0001819] [~CGame][3]
+[f=0001819] Statistics for local connection:
+Received: 3443 bytes
+Sent: 19133 bytes
+
+[f=0001819] Writing demo: /home/luca/.config/spring/demos/20160725_231007_Quad Core_101.sdfz
+[f=0001819] Using read-write data directory: /home/luca/.config/spring/
+[f=0001819] Using read-only data directory: /usr/share/spring/
+[f=0001819] Scanning: /usr/share/spring/maps
+[f=0001819] Scanning: /usr/share/spring/base
+[f=0001819] Scanning: /usr/share/spring/games
+[f=0001819] [WatchDog] deregistering controls for thread [audio]
+[f=0001819] [Sound] OpenAL info:
+[f=0001819] [Sound]   Available Devices:
+[f=0001819] [Sound]               Audio interno Stereo analogico
+[f=0001819] [Sound]   Device:     OpenAL Soft
+[f=0001819] [Sound]   Vendor:         OpenAL Community
+[f=0001819] [Sound]   Version:        1.1 ALSOFT 1.17.2
+[f=0001819] [Sound]   Renderer:       OpenAL Soft
+[f=0001819] [Sound]   AL Extensions:  AL_EXT_ALAW AL_EXT_BFORMAT AL_EXT_DOUBLE AL_EXT_EXPONENT_DISTANCE AL_EXT_FLOAT32 AL_EXT_IMA4 AL_EXT_LINEAR_DISTANCE AL_EXT_MCFORMATS AL_EXT_MULAW AL_EXT_MULAW_BFORMAT AL_EXT_MULAW_MCFORMATS AL_EXT_OFFSET AL_EXT_source_distance_model AL_LOKI_quadriphonic AL_SOFT_block_alignment AL_SOFT_buffer_samples AL_SOFT_buffer_sub_data AL_SOFT_deferred_updates AL_SOFT_direct_channels AL_SOFT_loop_points AL_SOFT_MSADPCM AL_SOFT_source_latency AL_SOFT_source_length
+[f=0001819] [Sound]   ALC Extensions: ALC_ENUMERATE_ALL_EXT ALC_ENUMERATION_EXT ALC_EXT_CAPTURE ALC_EXT_DEDICATED ALC_EXT_disconnect ALC_EXT_EFX ALC_EXT_thread_local_context ALC_SOFTX_device_clock ALC_SOFT_HRTF ALC_SOFT_loopback ALC_SOFT_pause_device
+[f=0001819] [Sound]   EFX Enabled: yes
+[f=0001819] [Sound]   Max Sounds: 96
+[f=0001819] [WatchDog] registering controls for thread [audio]
+[f=-000001] Hosting on: localhost:0
+[f=-000001] Connecting to local server
+[f=-000001] [AddGameSetupArchivesToVFS] using map: Dual Core
+[f=-000001] PreGame::StartServer: 10 ms
+[f=-000001] [AddGameSetupArchivesToVFS] using map: Dual Core
+[f=-000001] [AddGameSetupArchivesToVFS] using game: Kernel Panic 4.6 (archive: Kernel_Panic_4.6.sd7)
+[f=-000001] Recording demo to: /home/luca/.config/spring/demos/20160725_231115_Dual Core_101.sdfz
+[f=-000001] PreGame::GameDataReceived: 20 ms
+[f=-000001] [PreGame::UpdateClientNet] user number 0 (team 1, allyteam 0)
+[f=-000001] [LuaIntro] Searching for new Widgets
+[f=-000001] [LuaIntro] Scanning: LuaIntro/Addons/
+[f=-000001] [LuaIntro] Scanning: LuaIntro/Widgets/
+[f=-000001] [LuaIntro] Scanning: LuaIntro/SystemAddons/
+[f=-000001] [LuaIntro] Scanning: LuaIntro/SystemWidgets/
+[f=-000001] [LuaIntro] Scanning: LuaIntro/chili/
+[f=-000001] [LuaIntro] Found new widget "SpringLogo"
+[f=-000001] [LuaIntro] Found new widget "LoadTexture"
+[f=-000001] [LuaIntro] Found new widget "Circuit Growth"
+[f=-000001] [LuaIntro] Found new widget "LoadProgress"
+[f=-000001] [LuaIntro] Found new widget "Main"
+[f=-000001] [LuaIntro] Found new widget "Music"
+[f=-000001] [LuaIntro] Loading widgets   <>=vfs  **=raw  ()=unknown
+[f=-000001] [LuaIntro] Loading widget:      Circuit Growth         <circuitgrowth.lua>
+[f=-000001] [LuaIntro] Loading widget:      LoadProgress           <loadprogress.lua>
+[f=-000001] [LuaIntro] LuaIntro v1.0 (Lua 5.1)
+[f=-000001] LoadingScreen: single-threaded
+[f=-000001] [WatchDog] registering controls for thread [load]
+[f=-000001] Parsing Map Information
+[f=-000001] Loading SMF
+[f=-000001] Loading Map (12 MB)
+[f=-000001] Loading Radar Icons
+[f=-000001] Loading GameData Definitions
+[f=-000001] Loading all definitions:  23ms
+[f=-000001] Game::LoadDefs (GameData): 69 ms
+[f=-000001] Loading Sound Definitions
+[f=-000001] [Sound]  parsed 6 sounds from gamedata/sounds.lua
+[f=-000001] Game::LoadDefs (Sound): 48 ms
+[f=-000001] Creating Smooth Height Mesh
+[f=-000001] SmoothHeightMesh::MakeSmoothMesh: 5 ms
+[f=-000001] Creating QuadField & CEGs
+[f=-000001] [CDamageArrayHandler] number of ArmorDefs: 13
+[f=-000001] [RegisterAssimpModelFormats] supported Assimp model formats: *.3ds;*.blend;*.dae;*.lwo;
+[f=-000001] Creating Unit Textures
+[f=-000001] Creating Sky
+[f=-000001] Loading Weapon Definitions
+[f=-000001] Warning: WeaponDefs: Unknown tag "guided" in "fakebugcannon"
+[f=-000001] Warning: WeaponDefs: Unknown tag "nogroundattack" in "fakebugcannon"
+[f=-000001] Warning: WeaponDefs: Unknown tag "smokedelay" in "fakebugcannon"
+[f=-000001] Warning: WeaponDefs: Unknown tag "tracking" in "fakebugcannon"
+[f=-000001] Warning: WeaponDefs: Unknown tag "guided" in "flowmissile"
+[f=-000001] Warning: WeaponDefs: Unknown tag "guided" in "geometric"
+[f=-000001] Warning: WeaponDefs: Unknown tag "smokedelay" in "geometric"
+[f=-000001] Warning: WeaponDefs: Unknown tag "guided" in "nx"
+[f=-000001] Warning: WeaponDefs: Unknown tag "tracking" in "nx"
+[f=-000001] Warning: WeaponDefs: Unknown tag "guided" in "spark"
+[f=-000001] Loading Unit Definitions
+[f=-000001] Loading Feature Definitions
+[f=-000001] [IPathManager::GetInstance] using DEFAULT path-manager
+[f=-000001] Initializing Map Features
+[f=-000001] Creating ShadowHandler & DecalHandler
+[f=-000001] Creating GroundDrawer
+[f=-000001] Loading Map Tiles
+[f=-000001] Loading Square Textures
+[f=-000001] CSMFGroundTextures::ConvolveHeightMap: 0 ms
+[f=-000001] Switching to ROAM Mesh Rendering
+[f=-000001] Creating TreeDrawer
+[f=-000001] Error: [CreateProgramObject] Tried to create "treeNearDefShaderARB" a ARB shader program on hardware w/o support for it!
+[f=-000001] Error: [CreateShaderObject] Tried to create a shader ("ARB/treeNS.vp") on hardware that does not support them!
+[f=-000001] Creating ProjectileDrawer & UnitDrawer
+[f=-000001] Creating Projectile Textures
+[f=-000001] Creating Water
+[f=-000001] Game::LoadInterface (Camera&Mouse): 19 ms
+[f=-000001] Game::LoadInterface (Console): 5 ms
+[f=-000001] InfoTexture: legacy
+[f=-000001] Loading LuaRules
+[f=-000001] Loaded SYNCED gadget:  Color Wars!         <colorwars.lua>
+[f=-000001] Loaded SYNCED gadget:  Force LUA UI        <luaui_force.lua>
+[f=-000001] Loaded SYNCED gadget:  Game Over           <game_over.lua>
+[f=-000001] Loaded SYNCED gadget:  Hand autobuild      <hand_autobuild.lua>
+[f=-000001] Loaded SYNCED gadget:  Has Taken The Lead  <taken_the_lead.lua>
+[f=-000001] Loaded SYNCED gadget:  Kernel Panic K.O.T.H.  <koth.lua>
+[f=-000001] Loaded SYNCED gadget:  Kernel Panic S.O.S.  <sos.lua>
+[f=-000001] Loaded SYNCED gadget:  Pre-placed Minifacs  <preplaced.lua>
+[f=-000001] Loaded SYNCED gadget:  Spawn               <game_spawn.lua>
+[f=-000001] Loaded SYNCED gadget:  Spawn Units         <spawn_units.lua>
+[f=-000001] Loaded SYNCED gadget:  Start Point Remover Gadget  <init_start_point_remover_gadget.lua>
+[f=-000001] Loaded SYNCED gadget:  kpunittypes.lua     <kpunittypes.lua>
+[f=-000001] Loaded SYNCED gadget:  new_cmd_id.lua      <new_cmd_id.lua>
+[f=-000001] Loaded SYNCED gadget:  Touhou Build        <touhou_build.lua>
+[f=-000001] Loaded SYNCED gadget:  Metal To Geo converter  <metaltogeo.lua>
+[f=-000001] Loaded SYNCED gadget:  set Alpha Threshold  <set_alpha_threshold.lua>
+[f=-000001] Loaded SYNCED gadget:  Pseudo Orders       <pseudo_orders.lua>
+[f=-000001] Loaded SYNCED gadget:  Burrow              <burrow.lua>
+[f=-000001] Loaded SYNCED gadget:  UnitAutoHold        <autohold.lua>
+[f=-000001] Loaded SYNCED gadget:  Airstrike           <airstrike.lua>
+[f=-000001] Loaded SYNCED gadget:  Area Denial         <areadenial.lua>
+[f=-000001] Loaded SYNCED gadget:  Bombard             <bug_bombard.lua>
+[f=-000001] Loaded SYNCED gadget:  Infection           <infection.lua>
+[f=-000001] Loaded SYNCED gadget:  Kernel boost        <kernelboost.lua>
+[f=-000001] Loaded SYNCED gadget:  LuaCOB              <luacob.lua>
+[f=-000001] Loaded SYNCED gadget:  Network Arc Effect  <network_arceffect.lua>
+[f=-000001] Loaded SYNCED gadget:  Network Buffer      <network_buffer.lua>
+[f=-000001] Loaded SYNCED gadget:  Network Build       <network_build.lua>
+[f=-000001] Loaded SYNCED gadget:  Special Attack      <specialattack.lua>
+[f=-000001] Loaded SYNCED gadget:  Launcher            <launcher.lua>
+[f=-000001] Loaded SYNCED gadget:  Network Dispatch    <network_dispatch.lua>
+[f=-000001] Loaded SYNCED gadget:  Network Enter       <network_enter.lua>
+[f=-000001] Loaded SYNCED gadget:  Flow Speed          <network_flowspeed.lua>
+[f=-000001] Loaded SYNCED gadget:  Network Reflectorshield  <network_reflectorshield.lua>
+[f=-000001] Loaded SYNCED gadget:  Armor Bonus         <armor_bonus.lua>
+[f=-000001] Loaded SYNCED gadget:  Kernel Panic O.N.S.  <ons.lua>
+[f=-000001] Loaded SYNCED gadget:  Invasion AI         <kpai_invasion.lua>
+[f=-000001] Loaded SYNCED gadget:  Kernel Panic AI     <kpai.lua>
+[f=-000001] Loaded SYNCED gadget:  Fair KPAI           <kpai_fair.lua>
+[f=-000001] Loaded SYNCED gadget:  Regenerative AI     <regenai.lua>
+[f=-000001] Loaded SYNCED gadget:  Evilless            <evilless.lua>
+[f=-000001] Loaded SYNCED gadget:  Shoot'n'Run         <shoot_n_run.lua>
+[f=-000001] Loaded SYNCED gadget:  Lua hotfixes        <hotfixes.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Color Wars!         <colorwars.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Force LUA UI        <luaui_force.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Game Over           <game_over.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Hand autobuild      <hand_autobuild.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Has Taken The Lead  <taken_the_lead.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Kernel Panic K.O.T.H.  <koth.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Kernel Panic S.O.S.  <sos.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Pre-placed Minifacs  <preplaced.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Spawn Units         <spawn_units.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Start Point Remover Gadget  <init_start_point_remover_gadget.lua>
+[f=-000001] Loaded UNSYNCED gadget:  kpunittypes.lua     <kpunittypes.lua>
+[f=-000001] Loaded UNSYNCED gadget:  new_cmd_id.lua      <new_cmd_id.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Touhou Build        <touhou_build.lua>
+[f=-000001] Loaded UNSYNCED gadget:  set Alpha Threshold  <set_alpha_threshold.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Pseudo Orders       <pseudo_orders.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Burrow              <burrow.lua>
+[f=-000001] Loaded UNSYNCED gadget:  UnitAutoHold        <autohold.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Airstrike           <airstrike.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Area Denial         <areadenial.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Bombard             <bug_bombard.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Infection           <infection.lua>
+[f=-000001] Loaded UNSYNCED gadget:  LuaCOB              <luacob.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Network Arc Effect  <network_arceffect.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Network Buffer      <network_buffer.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Network Build       <network_build.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Special Attack      <specialattack.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Launcher            <launcher.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Network Dispatch    <network_dispatch.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Network Enter       <network_enter.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Network Reflectorshield  <network_reflectorshield.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Armor Bonus         <armor_bonus.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Kernel Panic O.N.S.  <ons.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Invasion AI         <kpai_invasion.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Kernel Panic AI     <kpai.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Fair KPAI           <kpai_fair.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Regenerative AI     <regenai.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Evilless            <evilless.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Shoot'n'Run         <shoot_n_run.lua>
+[f=-000001] Loaded UNSYNCED gadget:  Lua hotfixes        <hotfixes.lua>
+[f=-000001] Loading LuaGaia
+[f=-000001] Loading LuaUI
+[f=-000001] LuaUI Entry Point: "luaui.lua"
+[f=-000001] LuaUI Access Lock: disabled
+[f=-000001] LuaSocket Enabled: yes
+[f=-000001] Using LUAUI_DIRNAME = LuaUI/
+[f=-000001] Reloading GUI config from file: LuaUI/ctrlpanel.txt
+[f=-000001] LuaUI: bound F11 to the widget selector
+[f=-000001] LuaUI: bound CTRL+F11 to tweak mode
+[f=-000001] Reloading GUI config from file: LuaUI/Widgets/KP_CtrlPanel.txt
+[f=-000001] LuaUI v0.3
+[f=-000001] [LoadFinalize] finalizing PFS
+[f=-000001] [Path] [PathEstimator::ReadFile] hash=3308075242
+[f=-000001] PathCosts: creating PE8 cache with 4 PF threads (10 MB)
+[f=-000001] PathCosts: precached 1 of 2048 blocks
+[f=-000001] PathCosts: writing
+[f=-000001] [Path] [PathEstimator::WriteFile] hash=3308075242
+[f=-000001] PathCosts: written
+[f=-000001] [Path] [PathEstimator::ReadFile] hash=3308075266
+[f=-000001] PathCosts: creating PE32 cache with 4 PF threads (6 MB)
+[f=-000001] PathCosts: precached 1 of 128 blocks
+[f=-000001] PathCosts: writing
+[f=-000001] [Path] [PathEstimator::WriteFile] hash=3308075266
+[f=-000001] PathCosts: written
+[f=-000001] [LoadFinalize] finalized PFS (600ms, checksum ad99f34c)
+[f=-000001] Loading Skirmish AIs
+[f=-000001] Error: [CreateProgramObject] Tried to create "DecalShaderARB" a ARB shader program on hardware w/o support for it!
+[f=-000001] Error: [CreateProgramObject] Tried to create "DecalShaderGLSL" a GLSL shader program on hardware w/o support for it!
+[f=-000001] Loaded DecalsDrawer: Legacy
+[f=-000001] GameID: 73809657a619fe431698e833441f7e86
+[f=-000001] Connection attempt from Player
+[f=-000001]  -> Version: 101.0
+[f=-000001]  -> Connection established (given id 0)
+[f=-000001] Skirmish AI "Fair KPAI (Enemy #1)" (ID:0, Short-Name:"Fair KPAI", Version:"") took over control of team 0
+[f=-000001] Player Player finished loading and is now ingame
+[f=-000001] Warning: carrier: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=-000001] Warning: kernel: weapon1: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=-000001] Fair KPAI
+[f=-000001] 
+[f=-000001] 
+[f=0000064] [UnitScript] Error: CobError: Unknown set constant 103 25323 of type gateway outside script execution
+[f=0000077] [UnitScript] Error: CobError: Unknown set constant 103 29972 of type gateway outside script execution
+[f=0000106] [UnitScript] Error: CobError: Unknown set constant 103 9524 of type gateway outside script execution
+[f=0000122] [UnitScript] Error: CobError: Unknown set constant 103 30349 of type gateway outside script execution
+[f=0000151] [UnitScript] Error: CobError: Unknown set constant 103 9370 of type gateway outside script execution
+[f=0000167] [UnitScript] Error: CobError: Unknown set constant 103 12238 of type gateway outside script execution
+[f=0000182] [UnitScript] Error: CobError: Unknown set constant 103 23598 of type gateway outside script execution
+[f=0000211] [UnitScript] Error: CobError: Unknown set constant 103 8434 of type gateway outside script execution
+[f=0000228] [UnitScript] Error: CobError: Unknown set constant 103 1533 of type gateway outside script execution
+[f=0000257] [UnitScript] Error: CobError: Unknown set constant 103 16490 of type gateway outside script execution
+[f=0000287] [UnitScript] Error: CobError: Unknown set constant 103 24052 of type gateway outside script execution
+[f=0000302] [UnitScript] Error: CobError: Unknown set constant 103 19946 of type gateway outside script execution
+[f=0000331] [UnitScript] Error: CobError: Unknown set constant 103 31283 of type gateway outside script execution
+[f=0000361] [UnitScript] Error: CobError: Unknown set constant 103 31512 of type gateway outside script execution
+[f=0000391] [UnitScript] Error: CobError: Unknown set constant 103 4561 of type gateway outside script execution
+[f=0000407] [UnitScript] Error: CobError: Unknown set constant 103 7109 of type gateway outside script execution
+[f=0000436] [UnitScript] Error: CobError: Unknown set constant 103 24273 of type gateway outside script execution
+[f=0000441] Warning: byte: weapon2: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000453] [UnitScript] Error: CobError: Unknown set constant 103 24276 of type gateway outside script execution
+[f=0000466] Warning: byte: weapon2: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000467] [UnitScript] Error: CobError: Unknown set constant 103 16730 of type gateway outside script execution
+[f=0000495] Warning: byte: weapon2: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000496] [UnitScript] Error: CobError: Unknown set constant 103 7037 of type gateway outside script execution
+[f=0000513] [UnitScript] Error: CobError: Unknown set constant 103 17367 of type gateway outside script execution
+[f=0000526] Warning: byte: weapon2: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000527] [UnitScript] Error: CobError: Unknown set constant 103 13360 of type gateway outside script execution
+[f=0000543] [UnitScript] Error: CobError: Unknown set constant 103 26347 of type gateway outside script execution
+[f=0000556] Warning: byte: weapon2: Neither AimFromWeapon nor QueryWeapon defined or returned invalid pieceids
+[f=0000557] [UnitScript] Error: CobError: Unknown set constant 103 19158 of type gateway outside script execution
+[f=0000586] [UnitScript] Error: CobError: Unknown set constant 103 23999 of type gateway outside script execution
+[f=0000602] [UnitScript] Error: CobError: Unknown set constant 103 29870 of type gateway outside script execution
+[f=0000631] [UnitScript] Error: CobError: Unknown set constant 103 17171 of type gateway outside script execution
+[f=0000647] [UnitScript] Error: CobError: Unknown set constant 103 24471 of type gateway outside script execution
+[f=0000662] [UnitScript] Error: CobError: Unknown set constant 103 22763 of type gateway outside script execution
+[f=0000691] [UnitScript] Error: CobError: Unknown set constant 103 3761 of type gateway outside script execution
+[f=0000721] [UnitScript] Error: CobError: Unknown set constant 103 13395 of type gateway outside script execution
+[f=0000751] [UnitScript] Error: CobError: Unknown set constant 103 4511 of type gateway outside script execution
+[f=0000767] [UnitScript] Error: CobError: Unknown set constant 103 14692 of type gateway outside script execution
+[f=0000782] [UnitScript] Error: CobError: Unknown set constant 103 16194 of type gateway outside script execution
+[f=0000811] [UnitScript] Error: CobError: Unknown set constant 103 30883 of type gateway outside script execution
+[f=0000827] [UnitScript] Error: CobError: Unknown set constant 103 84 of type gateway outside script execution
+[f=0000856] [UnitScript] Error: CobError: Unknown set constant 103 31498 of type gateway outside script execution
+[f=0000872] [UnitScript] Error: CobError: Unknown set constant 103 22248 of type gateway outside script execution
+[f=0000901] [UnitScript] Error: CobError: Unknown set constant 103 27684 of type gateway outside script execution
+[f=0000931] [UnitScript] Error: CobError: Unknown set constant 103 10631 of type gateway outside script execution
+[f=0000947] [UnitScript] Error: CobError: Unknown set constant 103 20140 of type gateway outside script execution
+[f=0000976] [UnitScript] Error: CobError: Unknown set constant 103 9109 of type gateway outside script execution
+[f=0001006] [UnitScript] Error: CobError: Unknown set constant 103 4356 of type gateway outside script execution
+[f=0001036] [UnitScript] Error: CobError: Unknown set constant 103 30970 of type gateway outside script execution
+[f=0001052] [UnitScript] Error: CobError: Unknown set constant 103 16017 of type gateway outside script execution
+[f=0001081] [UnitScript] Error: CobError: Unknown set constant 103 10610 of type gateway outside script execution
+[f=0001111] [UnitScript] Error: CobError: Unknown set constant 103 21130 of type gateway outside script execution
+[f=0001141] [UnitScript] Error: CobError: Unknown set constant 103 19377 of type gateway outside script execution
+[f=0001171] [UnitScript] Error: CobError: Unknown set constant 103 31940 of type gateway outside script execution
+[f=0001187] [UnitScript] Error: CobError: Unknown set constant 103 22086 of type gateway outside script execution
+[f=0001202] [UnitScript] Error: CobError: Unknown set constant 103 18338 of type gateway outside script execution
+[f=0001231] [UnitScript] Error: CobError: Unknown set constant 103 1671 of type gateway outside script execution
+[f=0001247] [UnitScript] Error: CobError: Unknown set constant 103 4130 of type gateway outside script execution
+[f=0001276] [UnitScript] Error: CobError: Unknown set constant 103 2570 of type gateway outside script execution
+[f=0001292] [UnitScript] Error: CobError: Unknown set constant 103 13161 of type gateway outside script execution
+[f=0001321] [UnitScript] Error: CobError: Unknown set constant 103 20689 of type gateway outside script execution
+[f=0001337] [UnitScript] Error: CobError: Unknown set constant 103 25895 of type gateway outside script execution
+[f=0001366] [UnitScript] Error: CobError: Unknown set constant 103 12894 of type gateway outside script execution
+[f=0001382] [UnitScript] Error: CobError: Unknown set constant 103 13513 of type gateway outside script execution
+[f=0001411] [UnitScript] Error: CobError: Unknown set constant 103 25142 of type gateway outside script execution
+[f=0001441] [UnitScript] Error: CobError: Unknown set constant 103 3938 of type gateway outside script execution
+[f=0001471] [UnitScript] Error: CobError: Unknown set constant 103 9680 of type gateway outside script execution
+[f=0001487] [UnitScript] Error: CobError: Unknown set constant 103 6217 of type gateway outside script execution
+[f=0001502] [UnitScript] Error: CobError: Unknown set constant 103 4451 of type gateway outside script execution
+[f=0001517] [UnitScript] Error: CobError: Unknown set constant 103 9859 of type gateway outside script execution
+[f=0001532] [UnitScript] Error: CobError: Unknown set constant 103 69 of type gateway outside script execution
+[f=0001561] [UnitScript] Error: CobError: Unknown set constant 103 8876 of type gateway outside script execution
+[f=0001577] [UnitScript] Error: CobError: Unknown set constant 103 12003 of type gateway outside script execution
+[f=0001592] [UnitScript] Error: CobError: Unknown set constant 103 8578 of type gateway outside script execution
+[f=0001621] [UnitScript] Error: CobError: Unknown set constant 103 1790 of type gateway outside script execution
+[f=0001637] [UnitScript] Error: CobError: Unknown set constant 103 13564 of type gateway outside script execution
+[f=0001652] [UnitScript] Error: CobError: Unknown set constant 103 11667 of type gateway outside script execution
+[f=0001681] [UnitScript] Error: CobError: Unknown set constant 103 16655 of type gateway outside script execution
+[f=0001697] [UnitScript] Error: CobError: Unknown set constant 103 29846 of type gateway outside script execution
+[f=0001726] [UnitScript] Error: CobError: Unknown set constant 103 18718 of type gateway outside script execution
+[f=0001756] [UnitScript] Error: CobError: Unknown set constant 103 30163 of type gateway outside script execution
+[f=0001772] [UnitScript] Error: CobError: Unknown set constant 103 11649 of type gateway outside script execution
+[f=0001801] [UnitScript] Error: CobError: Unknown set constant 103 2097 of type gateway outside script execution
+[f=0001817] [UnitScript] Error: CobError: Unknown set constant 103 5395 of type gateway outside script execution
+[f=0001832] [UnitScript] Error: CobError: Unknown set constant 103 6079 of type gateway outside script execution
+[f=0001861] [UnitScript] Error: CobError: Unknown set constant 103 7766 of type gateway outside script execution
+[f=0001891] [UnitScript] Error: CobError: Unknown set constant 103 12888 of type gateway outside script execution
+[f=0001907] [UnitScript] Error: CobError: Unknown set constant 103 14791 of type gateway outside script execution
+[f=0001936] [UnitScript] Error: CobError: Unknown set constant 103 27540 of type gateway outside script execution
+[f=0001966] [UnitScript] Error: CobError: Unknown set constant 103 27338 of type gateway outside script execution
+[f=0001982] [UnitScript] Error: CobError: Unknown set constant 103 1394 of type gateway outside script execution
+[f=0002011] [UnitScript] Error: CobError: Unknown set constant 103 4329 of type gateway outside script execution
+[f=0002041] [UnitScript] Error: CobError: Unknown set constant 103 25657 of type gateway outside script execution
+[f=0002071] [UnitScript] Error: CobError: Unknown set constant 103 31039 of type gateway outside script execution
+[f=0002101] [UnitScript] Error: CobError: Unknown set constant 103 14965 of type gateway outside script execution
+[f=0002117] [UnitScript] Error: CobError: Unknown set constant 103 30685 of type gateway outside script execution
+[f=0002146] [UnitScript] Error: CobError: Unknown set constant 103 1386 of type gateway outside script execution
+[f=0002176] [UnitScript] Error: CobError: Unknown set constant 103 9977 of type gateway outside script execution
+[f=0002206] [UnitScript] Error: CobError: Unknown set constant 103 9121 of type gateway outside script execution
+[f=0002222] [UnitScript] Error: CobError: Unknown set constant 103 6541 of type gateway outside script execution
+[f=0002237] [UnitScript] Error: CobError: Unknown set constant 103 30471 of type gateway outside script execution
+[f=0002266] [UnitScript] Error: CobError: Unknown set constant 103 1054 of type gateway outside script execution
+[f=0002283] [UnitScript] Error: CobError: Unknown set constant 103 19371 of type gateway outside script execution
+[f=0002312] [UnitScript] Error: CobError: Unknown set constant 103 12186 of type gateway outside script execution
+[f=0002342] [UnitScript] Error: CobError: Unknown set constant 103 16270 of type gateway outside script execution
+[f=0002357] [UnitScript] Error: CobError: Unknown set constant 103 1887 of type gateway outside script execution
+[f=0002386] [UnitScript] Error: CobError: Unknown set constant 103 18507 of type gateway outside script execution
+[f=0002403] [UnitScript] Error: CobError: Unknown set constant 103 13654 of type gateway outside script execution
+[f=0002418] [UnitScript] Error: CobError: Unknown set constant 103 9033 of type gateway outside script execution
+[f=0002432] [UnitScript] Error: CobError: Unknown set constant 103 17374 of type gateway outside script execution
+[f=0002448] [UnitScript] Error: CobError: Unknown set constant 103 22068 of type gateway outside script execution
+[f=0002463] [UnitScript] Error: CobError: Unknown set constant 103 2236 of type gateway outside script execution
+[f=0002492] [UnitScript] Error: CobError: Unknown set constant 103 10114 of type gateway outside script execution
+[f=0002508] [UnitScript] Error: CobError: Unknown set constant 103 28833 of type gateway outside script execution
+[f=0002537] [UnitScript] Error: CobError: Unknown set constant 103 25602 of type gateway outside script execution
+[f=0002567] [UnitScript] Error: CobError: Unknown set constant 103 6319 of type gateway outside script execution
+[f=0002582] [UnitScript] Error: CobError: Unknown set constant 103 23726 of type gateway outside script execution
+[f=0002598] [UnitScript] Error: CobError: Unknown set constant 103 11687 of type gateway outside script execution
+[f=0002613] [UnitScript] Error: CobError: Unknown set constant 103 25373 of type gateway outside script execution
+[f=0002627] [UnitScript] Error: CobError: Unknown set constant 103 21153 of type gateway outside script execution
+[f=0002643] [UnitScript] Error: CobError: Unknown set constant 103 10424 of type gateway outside script execution
+[f=0002658] [UnitScript] Error: CobError: Unknown set constant 103 31220 of type gateway outside script execution
+[f=0002673] [UnitScript] Error: CobError: Unknown set constant 103 293 of type gateway outside script execution
+[f=0002687] [UnitScript] Error: CobError: Unknown set constant 103 1734 of type gateway outside script execution
+[f=0002703] [UnitScript] Error: CobError: Unknown set constant 103 29394 of type gateway outside script execution
+[f=0002717] [UnitScript] Error: CobError: Unknown set constant 103 3166 of type gateway outside script execution
+[f=0002733] [UnitScript] Error: CobError: Unknown set constant 103 5968 of type gateway outside script execution
+[f=0002748] [UnitScript] Error: CobError: Unknown set constant 103 18899 of type gateway outside script execution
+[f=0002763] [UnitScript] Error: CobError: Unknown set constant 103 22399 of type gateway outside script execution
+[f=0002792] [UnitScript] Error: CobError: Unknown set constant 103 1965 of type gateway outside script execution
+[f=0002822] [UnitScript] Error: CobError: Unknown set constant 103 25032 of type gateway outside script execution
+[f=0002837] [UnitScript] Error: CobError: Unknown set constant 103 15268 of type gateway outside script execution
+[f=0002866] [UnitScript] Error: CobError: Unknown set constant 103 25453 of type gateway outside script execution
+[f=0002896] [UnitScript] Error: CobError: Unknown set constant 103 8326 of type gateway outside script execution
+[f=0002912] [UnitScript] Error: CobError: Unknown set constant 103 28952 of type gateway outside script execution
+[f=0002927] [UnitScript] Error: CobError: Unknown set constant 103 15377 of type gateway outside script execution
+[f=0002942] [UnitScript] Error: CobError: Unknown set constant 103 9091 of type gateway outside script execution
+[f=0002971] [UnitScript] Error: CobError: Unknown set constant 103 28878 of type gateway outside script execution
+[f=0003001] [UnitScript] Error: CobError: Unknown set constant 103 22262 of type gateway outside script execution
+[f=0003017] [UnitScript] Error: CobError: Unknown set constant 103 12311 of type gateway outside script execution
+[f=0003046] [UnitScript] Error: CobError: Unknown set constant 103 1267 of type gateway outside script execution
+[f=0003062] [UnitScript] Error: CobError: Unknown set constant 103 29348 of type gateway outside script execution
+[f=0003091] [UnitScript] Error: CobError: Unknown set constant 103 18900 of type gateway outside script execution
+[f=0003107] [UnitScript] Error: CobError: Unknown set constant 103 29471 of type gateway outside script execution
+[f=0003122] [UnitScript] Error: CobError: Unknown set constant 103 6015 of type gateway outside script execution
+[f=0003137] [UnitScript] Error: CobError: Unknown set constant 103 3675 of type gateway outside script execution
+[f=0003166] [UnitScript] Error: CobError: Unknown set constant 103 20698 of type gateway outside script execution
+[f=0003196] [UnitScript] Error: CobError: Unknown set constant 103 17397 of type gateway outside script execution
+[f=0003212] [UnitScript] Error: CobError: Unknown set constant 103 30363 of type gateway outside script execution
+[f=0003222] [QuitAction] user exited to system
+[f=0003223] [SpringApp::ShutDown][1]
+[f=0003223] [ThreadPool::SetThreadCount][1] #wanted=0 #current=2 #max=2
+[f=0003223] [ThreadPool::SetThreadCount][2] #threads=0
+[f=0003223] [SpringApp::ShutDown][2]
+[f=0003223] [KillLua][1]
+[f=0003223] [KillLua][2]
+[f=0003223] [KillLua][3]
+[f=0003223] [KillLua][4]
+[f=0003223] [~CGame]1]
+[f=0003223] [KillLua][1]
+[f=0003223] [KillLua][2]
+[f=0003223] [KillLua][3]
+[f=0003223] [KillLua][4]
+[f=0003223] [KillMisc][1]
+[f=0003223] [KillMisc][2]
+[f=0003223] [KillRendering][1]
+[f=0003223] [KillInterface][1]
+[f=0003223] [KillInterface][2]
+[f=0003223] [KillSimulation][1]
+[f=0003223] [KillSimulation][2]
+[f=0003223] [CCollisionHandler] dis-/continuous tests: 0/532137
+[f=0003223] [KillSimulation][3]
+[f=0003223] [~CPathCache(16x8)] cacheHits=0 hitPercentage=0% numHashColls=0 maxCacheSize=0
+[f=0003223] [~CPathCache(16x8)] cacheHits=0 hitPercentage=0% numHashColls=0 maxCacheSize=0
+[f=0003223] [~CPathCache(64x32)] cacheHits=0 hitPercentage=0% numHashColls=0 maxCacheSize=0
+[f=0003223] [~CPathCache(64x32)] cacheHits=572 hitPercentage=52% numHashColls=0 maxCacheSize=153
+[f=0003223] Statistics for RectangleOptimizer: 0%
+[f=0003223] Statistics for RectangleOptimizer: 0%
+[f=0003223] LosHandler stats: total instances=6; shared=0%; from cache=17%
+[f=0003223] [KillSimulation][4]
+[f=0003223] [~CGame][2]
+[f=0003223] [~CGame][3]
+[f=0003223] [SpringApp::ShutDown][3]
+[f=0003223] Statistics for local connection:
+Received: 8485 bytes
+Sent: 36443 bytes
+
+[f=0003223] Writing demo: /home/luca/.config/spring/demos/20160725_231115_Dual Core_101.sdfz
+[f=0003223] [SpringApp::ShutDown][4]
+[f=0003223] [WatchDog] deregistering controls for thread [audio]
+[f=0003223] [SpringApp::ShutDown][5]
+[f=0003223] [SpringApp::ShutDown][6]
+[f=0003223] [SpringApp::ShutDown][7]
+[LuaSocket] Dumping luasocket rules:
+[LuaSocket] TCP_CONNECT ALLOW * -1
+[LuaSocket] TCP_LISTEN  ALLOW * -1
+[LuaSocket] UDP_LISTEN  ALLOW * -1
+[SpringApp::ShutDown][8]
+[WatchDog] deregistering controls for thread [main]
+[WatchDog::Uninstall][1] hangDetectorThread=0x3a5e040
+[WatchDog::Uninstall][2]
+[WatchDog::Uninstall][3]
+[SpringApp::ShutDown][9]
+[SpringApp::Run] exitCode=0

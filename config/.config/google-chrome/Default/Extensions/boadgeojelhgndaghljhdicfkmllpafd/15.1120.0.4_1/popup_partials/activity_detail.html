@@ -1,0 +1,53 @@
+<div class="activity-control">
+  <div class="transparent-overlay" ng-show="sharedState.selectingMirrorQuality" ng-click="sharedState.selectingMirrorQuality = false"></div>
+
+  <div class="activity-control-to-devices" ng-click="changeDevice()">
+    &lsaquo;&nbsp;
+    <angular-message desc="Link to return to the list of devices" key="cast_popup_back_to_list">
+      Back to device list
+    </angular-message>
+  </div>
+  <hr/>
+
+  <div ng-if="hasActivityIssue" ng-include="'popup_partials/issue_banner.html'"></div>
+
+  <div ng-class="{'activity-detail': true, dimmed: isLaunching}" ng-click="isLaunching || showOriginalTab()">
+    <div class="activity-title-in-control">
+      <img class="activity-icon" ng-src="{{selectedActivity.iconUrl}}"/>
+      <div class="activity-title-text" title="{{selectedActivity.title}}"
+           ng-bind="selectedActivity.title"></div>
+    </div>
+    <div class="activity-status">
+      <span ng-if="selectedActivity.activityType.lastIndexOf('mirror_') == 0">
+        <angular-message desc="Status about where the tab is being cast." key="cast_popup_casting_to">
+          Casting to
+        </angular-message>
+      </span>
+      <span ng-if="selectedActivity.activityType.lastIndexOf('mirror_') != 0">
+        <angular-message desc="Status about where the tab or app is playing its content" key="cast_popup_playing_on">
+          Playing on
+        </angular-message>
+      </span>
+      <span class="device-name" ng-bind="selectedActivity.receiver.name"></span>
+    </div>
+  </div>
+  <table ng-class="{'buttons-50pct': true, dimmed: isLaunching}">
+    <tbody>
+      <tr>
+        <td class="button" ng-click="isLaunching || playOrPause()" ng-show="showPlayPause">
+          <img ng-src="{{playPauseIcon}}"/></td>
+        <td class="button" ng-click="isLaunching || muteOrUmute()" ng-show="showMuteUnmute">
+          <img ng-src="{{muteUnmuteIcon}}"/></td>
+        <td class="button" ng-click="sharedState.selectingMirrorQuality = true" ng-show="showMirrorQuality">
+          <img ng-src="{{mirrorQualityIcon}}"/></td>
+        <td class="button" width="{{largeButtonWidth}}" ng-click="isLaunching || doCastAction()" ng-show="showCastAction" ng-bind-html="castActionLabel"></td>
+        <td class="button" width="{{largeButtonWidth}}" ng-click="isLaunching || stopActivity()" ng-show="selectedActivity.allowStop">{{stopLabel}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="mirror-quality-selection" ng-show="!isLaunching && sharedState.selectingMirrorQuality">
+    <div ng-repeat="mirrorQuality in mirrorQualities" ng-class="{'checkable-option':true, checked:settings.mirrorQualityId == mirrorQuality.id}"  ng-click="settings.mirrorQualityId = mirrorQuality.id; updateSettings(); sharedState.selectingMirrorQuality = false">{{mirrorQuality.name}}
+    </div>
+  </div>
+</div>

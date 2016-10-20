@@ -1,0 +1,1221 @@
+{
+   "1104234694810969409": {
+      "message": "기기로 전송할 수 없습니다."
+   },
+   "1189144544819350763": {
+      "message": "탭(오디오) 전송 대상:"
+   },
+   "1206604611937086300": {
+      "message": "Cast 기기"
+   },
+   "1213957982723875920": {
+      "message": "다음 중 사용 중인 네트워크를 가장 잘 설명하는 항목은 무엇입니까?"
+   },
+   "130855611855008194": {
+      "message": "이 사이트의 전송 아이콘을 클릭하여 최상의 전송 환경을 경험하세요."
+   },
+   "1313855295453056101": {
+      "message": "최대 캡처 프레임 속도:"
+   },
+   "1318160328466758792": {
+      "message": "다시 시도"
+   },
+   "1403598074357445300": {
+      "message": "초고화질(720p 하이 비트레이트)"
+   },
+   "1443898800503846063": {
+      "message": "Chrome 버전이 낮음"
+   },
+   "1588576801511256206": {
+      "message": "예기치 않은 행아웃 오류"
+   },
+   "1696531255551038655": {
+      "message": "행아웃 참가자가 충분하지 않아 행아웃이 비활성화되었습니다."
+   },
+   "1717149362663359343": {
+      "message": "$V2_APP_DOMAIN$ 전송",
+      "placeholders": {
+         "V2_APP_DOMAIN": {
+            "content": "$1"
+         }
+      }
+   },
+   "1877856983727558507": {
+      "message": "이 탭 전송(오디오에 최적화)"
+   },
+   "1878364533704855528": {
+      "message": "Chrome 버전, 운영체제 버전, Cast 확장 프로그램 옵션, 미러링 실적 통계, 커뮤니케이션 채널 진단 로그와 위에서 포함하도록 선택한 모든 정보가 제출됩니다. 이 의견은 문제 진단과 확장 프로그램 개선을 위해 사용됩니다. 명시적으로 또는 부수적으로 제출된 모든 개인정보는 Google 개인정보취급방침에 따라 보호됩니다. 이 의견을 제출하면 Google에서 제품 또는 서비스 개선을 위해 제공된 의견을 사용하도록 동의하는 것으로 간주됩니다."
+   },
+   "1942272259363289202": {
+      "message": "개발자 설정"
+   },
+   "2009563581399507712": {
+      "message": "동영상의 흐름:"
+   },
+   "2016072788708608077": {
+      "message": "Cast 확장 프로그램 로그 첨부 - 문제를 디버그할 수 있도록 이 확인란을 선택해 주세요."
+   },
+   "2076488708707463944": {
+      "message": "기기 검색"
+   },
+   "2076769487302164340": {
+      "message": "전송 중:"
+   },
+   "2081143677025752994": {
+      "message": "닫기"
+   },
+   "2083306153840951484": {
+      "message": "(필수)"
+   },
+   "2159130950882492111": {
+      "message": "취소"
+   },
+   "2242261874100835789": {
+      "message": "배치당 패킷(최대):"
+   },
+   "232164743503663377": {
+      "message": "여러분의 전송 경험을 공유해 주세요!"
+   },
+   "2377419936291389581": {
+      "message": "나쁨"
+   },
+   "2438859709710567679": {
+      "message": "탭/데스크톱 프로젝션 품질"
+   },
+   "2456043080471762298": {
+      "message": "삭제"
+   },
+   "2517473004427269018": {
+      "message": "세션을 1분 이상 지속하신 분들을 대상으로 사용 경험에 대한 의견을 받고 있습니다. 문제가 발생했다면 상자를 클릭하여 Cast 확장 프로그램 및 외부 로그를 첨부해 주시기 바랍니다."
+   },
+   "2554687737930512120": {
+      "message": "기기에서 로그를 검색할 수 없습니다."
+   },
+   "2588174729923512180": {
+      "message": "재생 중:"
+   },
+   "2618451236056129793": {
+      "message": "행아웃에 전송을 설정하는 데 시간이 초과하였습니다. go/castouts-dogfood#TOC-Known-Issues를 참조하세요."
+   },
+   "2638991638737993114": {
+      "message": "변경사항은 다음에 탭을 전송할 때 적용됩니다."
+   },
+   "2673108145745625398": {
+      "message": "Chrome에서 연결된 기기를 찾지 못했습니다."
+   },
+   "2697071986776077166": {
+      "message": "클라우드 기능을 사용하려면 Chrome에 $START_LINK$로그인$END_LINK$해야 합니다.",
+      "placeholders": {
+         "END_LINK": {
+            "content": "$1"
+         },
+         "START_LINK": {
+            "content": "$2"
+         }
+      }
+   },
+   "2697071986776077166_ph": {
+      "message": "\u003C/a>\u003Ca ng-click=\"triggerSignIn()\" href=\"\">"
+   },
+   "2741789927660626901": {
+      "message": "고급 사용자에게만 권장됩니다. 탭 전송 품질을 설정하면 다음 값이 재설정됩니다."
+   },
+   "2807800733729323332": {
+      "message": "예"
+   },
+   "2880373984418075735": {
+      "message": "최소 대기시간:"
+   },
+   "2884726392788153618": {
+      "message": "예기치 않은 오류가 발생했습니다. 다음을 시도해 보세요.\u003Cul>\u003Cli>다시 전송\u003C/li>\u003Cli>네트워크 연결 확인\u003C/li>\u003C/ul>"
+   },
+   "2932348398128569497": {
+      "message": "이 탭 전송"
+   },
+   "2942203478948533213": {
+      "message": "다른 기기를 선택하세요."
+   },
+   "3181069857560875169": {
+      "message": "맞춤 미러링 설정"
+   },
+   "3188239202899052784": {
+      "message": "익명 사용 정보를 Google에 제공하여 Cast를 개선하는 데 참여하시겠습니까? Google은 사용자의 개인정보를 소중하게 생각하며, 언제든지 이 설정을 '옵션'으로 변경할 수 있습니다."
+   },
+   "3202350311251778009": {
+      "message": "Google Cast 확장 프로그램을 사용하면 Chrome 브라우저에서 Chromecast 기기에 있는 콘텐츠를 찾아서 재생할 수 있습니다.\nCast에 최적화된 사이트를 방문하면 Chromecast를 통해 TV에서 동영상을 재생할 수 있는 새로운 옵션이 표시되며, 컴퓨터를 리모컨처럼 활용하여 동영상을 탐색하고 재생을 제어할 수 있습니다.\n또한 Chrome의 원하는 탭을 TV로 전송하여 가정에서 최고의 화질로 사이트, 사진, 심지어 동영상까지 즐길 수 있습니다. 단, 이 기능은 아직 베타 버전이며 고성능 컴퓨터와 Wi-Fi 네트워크가 필요합니다.\n이 확장 프로그램을 사용하려면 Chromecast 하드웨어가 필요합니다. 자세한 정보를 확인하려면 http://google.com/chromecast 페이지를 방문하세요.\n이 항목을 설치하면 Google 서비스 약관 및 개인정보취급방침(https://www.google.com/intl/ko/policies/)에 동의하게 됩니다."
+   },
+   "3203240389500117801": {
+      "message": "행아웃 이름 입력"
+   },
+   "3254351313955764967": {
+      "message": "기술적 문제가 발생한 것 같습니다. 몇 분 후에 다시 시도해 주세요."
+   },
+   "3278102219211539720": {
+      "message": "이 탭 전송"
+   },
+   "3374149466144554646": {
+      "message": "지금 전송 중지"
+   },
+   "3400233096253425149": {
+      "message": "행아웃으로 전송"
+   },
+   "3485206350043289145": {
+      "message": "최신 업데이트를 사용하려면 Chrome 브라우저를 종료하고 다시 시작해야 합니다."
+   },
+   "3542042671420335679": {
+      "message": "아니요"
+   },
+   "3577676426589935803": {
+      "message": "추가 수신기 IP:"
+   },
+   "3593576714633990163": {
+      "message": "Cast 미러링을 이용해 주셔서 감사합니다."
+   },
+   "3594579793458243987": {
+      "message": "의견 공유"
+   },
+   "3630200699826211171": {
+      "message": "$_EXTERNALDEVICENAME_$의 로그 포함",
+      "placeholders": {
+         "_EXTERNALDEVICENAME_": {
+            "content": "$1"
+         }
+      }
+   },
+   "3630200699826211171_ph": {
+      "message": "{{externalDeviceName}}"
+   },
+   "3633167042592070329": {
+      "message": "보내주신 의견은 Google Cast를 개선하는 데 유용하게 사용됩니다. 문제와 관련하여 보내주신 의견에 대한 개별적인 답변은 제공해 드릴 수 없습니다. Chromecast와 관련된 문제에 대해 Google에 직접 문의하려면 $START_LINK$이 페이지$END_LINK$에서 자세한 내용을 확인하시기 바랍니다.",
+      "placeholders": {
+         "END_LINK": {
+            "content": "$1"
+         },
+         "START_LINK": {
+            "content": "$2"
+         }
+      }
+   },
+   "3633167042592070329_ph": {
+      "message": "\u003C/a>\u003Ca href=\"https://support.google.com/chromecast/troubleshooter/2995236?ref_topic=2994245\">"
+   },
+   "3634893929360744610": {
+      "message": "고화질 전송"
+   },
+   "3658695798711423870": {
+      "message": "이름을 확인하고 다시 시도해 주세요."
+   },
+   "3681271501407987946": {
+      "message": "고화질(720p)"
+   },
+   "3695617262415720740": {
+      "message": "최대 전송률:"
+   },
+   "3844709005265884931": {
+      "message": "자주 멈춤"
+   },
+   "3873469728089727547": {
+      "message": "기기가 무선 액세스 포인트에 가까이 있는지 확인한 후\u003C/br>다시 시도해 주세요."
+   },
+   "3885666702463386029": {
+      "message": "(기기 찾기 도움말)"
+   },
+   "3894950702316166331": {
+      "message": "로드 중..."
+   },
+   "3996247341169314250": {
+      "message": "기타"
+   },
+   "4014224501758376361": {
+      "message": "$RECEIVER_NAME$(으)로 전송 중",
+      "placeholders": {
+         "RECEIVER_NAME": {
+            "content": "$1"
+         }
+      }
+   },
+   "4072556140582099509": {
+      "message": "화면/창 전송"
+   },
+   "4076870975160614320": {
+      "message": "해상도:"
+   },
+   "4089994756445820175": {
+      "message": "버그 또는 오류"
+   },
+   "4102291180899400833": {
+      "message": "행아웃이 비활성화되어 연결 해제됨"
+   },
+   "4157951843472785441": {
+      "message": "이 사이트를 전송하려면 Chrome을 업데이트하세요."
+   },
+   "4187599066116404890": {
+      "message": "확인"
+   },
+   "4223394109936547558": {
+      "message": "확인"
+   },
+   "4224760847878375792": {
+      "message": "원활함"
+   },
+   "4272010402571776761": {
+      "message": "나쁨"
+   },
+   "4324962226715124466": {
+      "message": "양호함"
+   },
+   "4511372876817255492": {
+      "message": "기기 연결 실패"
+   },
+   "4563873836363331434": {
+      "message": "프로세서:"
+   },
+   "4584454172263179470": {
+      "message": "완벽함"
+   },
+   "4585326301657856848": {
+      "message": "Cast 개선 참여"
+   },
+   "464916539454098167": {
+      "message": "확인"
+   },
+   "4687947362658561907": {
+      "message": "선택한 기기가 더 이상 온라인 상태가 아닙니다."
+   },
+   "4741643884742469674": {
+      "message": "음질:"
+   },
+   "4816591726282520264": {
+      "message": "$START_STRONG$$_USEREMAIL_$$END_STRONG$ 계정으로 Chrome에 로그인했으며 이 계정을 사용하여 행아웃에 전송합니다.",
+      "placeholders": {
+         "END_STRONG": {
+            "content": "$1"
+         },
+         "START_STRONG": {
+            "content": "$2"
+         },
+         "_USEREMAIL_": {
+            "content": "$3"
+         }
+      }
+   },
+   "4816591726282520264_ph": {
+      "message": "\u003C/strong>\u003Cstrong>{{userEmail}}"
+   },
+   "4822504808490979258": {
+      "message": "Cast 확장 프로그램 사용 통계를 자동으로 Google에 전송"
+   },
+   "482442943064110817": {
+      "message": "양호함 - FM"
+   },
+   "48395364426353647": {
+      "message": "잘못된 행아웃 이름"
+   },
+   "4848910232094031059": {
+      "message": "회의 이름이나 ID로 행아웃 찾기"
+   },
+   "4865676252029097872": {
+      "message": "의견을 보낼 수 없습니다. 나중에 다시 시도해 주세요."
+   },
+   "4906762558811440847": {
+      "message": "새 Cast 기기 설정"
+   },
+   "5056298333685549098": {
+      "message": "$V2_APP_DOMAIN$ 전송 대상:",
+      "placeholders": {
+         "V2_APP_DOMAIN": {
+            "content": "$1"
+         }
+      }
+   },
+   "5107389855082704624": {
+      "message": "기기 로그 첨부 - 문제를 디버그할 수 있도록 이 체크박스를 선택해 주세요."
+   },
+   "5163000733818237380": {
+      "message": "화면/창 전송 대상..."
+   },
+   "5202323856319464688": {
+      "message": "사용했던 기기가 로그를 제공하지 않습니다."
+   },
+   "5229573508420009298": {
+      "message": "(선택사항) 어떤 콘텐츠/URL을 전송하셨습니까?"
+   },
+   "5284888875943777523": {
+      "message": "새로고침하면 새 행아웃 버전이 사용됩니다."
+   },
+   "5339913305209531244": {
+      "message": "Cast 기기를 찾을 수 없습니다."
+   },
+   "5382938928138155999": {
+      "message": "행아웃 참여 시 이용할 기본 도메인을 지정할 수 있습니다. 도메인 없이 입력된 맞춤 행아웃 이름은 이 도메인을 사용합니다."
+   },
+   "5385436389563925676": {
+      "message": "PC와 Chromecast가 동일한 Wi-Fi 네트워크에 있음"
+   },
+   "5395332831907227403": {
+      "message": "동영상 품질:"
+   },
+   "5477887796261084791": {
+      "message": "DSCP:"
+   },
+   "5590598097041702454": {
+      "message": "전송 중..."
+   },
+   "5671949584911040143": {
+      "message": "추가 의견"
+   },
+   "57055743185823882": {
+      "message": "전송 중인 창의 크기를 조정하면 기기가 불안정해질 수 있습니다."
+   },
+   "5728295142929105913": {
+      "message": "의견을 제출하고(로그 첨부) 다시 시도해 주세요."
+   },
+   "5745355507138230213": {
+      "message": "좋음"
+   },
+   "5750542272329616142": {
+      "message": "Chrome 버전, 운영체제 버전, Cast 확장 프로그램 옵션, 미러링 실적 통계, 커뮤니케이션 채널 진단 로그와 위에서 포함하도록 선택한 모든 정보가 제출됩니다. 이 의견은 문제 진단과 확장 프로그램 개선을 위해 사용됩니다. 명시적으로 또는 부수적으로 제출되는 모든 개인정보는 Google 개인정보취급방침에 따라 보호됩니다. 이 의견을 제출하면  Google에서 제품 또는 서비스 개선을 위해 제공된 의견을 사용하는 데에 동의하는 것으로 간주됩니다.$END_BOLD$",
+      "placeholders": {
+         "END_BOLD": {
+            "content": "$1"
+         }
+      }
+   },
+   "5750542272329616142_ph": {
+      "message": "\u003C/b>"
+   },
+   "5773074680866649953": {
+      "message": "행아웃에 전송이 설치되었습니다."
+   },
+   "578821942116253728": {
+      "message": "미디어 캡처 실패"
+   },
+   "5823878688587296398": {
+      "message": "해당 사항 없음"
+   },
+   "5849296180435940955": {
+      "message": "자세히 알아보기"
+   },
+   "6018881802001125637": {
+      "message": "의견을 보내는 중..."
+   },
+   "6039331491778328245": {
+      "message": "좋음 - DVD"
+   },
+   "6046507125919556913": {
+      "message": "탭 전송 대상:"
+   },
+   "6118473811359442709": {
+      "message": "알아들을 수 없음"
+   },
+   "6142008190583061028": {
+      "message": "클라우드 설정"
+   },
+   "6214031582604719501": {
+      "message": "기기 목록으로 돌아가기"
+   },
+   "6236792503803747284": {
+      "message": "표준 화질(480p)"
+   },
+   "6295154563386647404": {
+      "message": "의견을 보내지 못했습니다. $ATTEMPT_NUMBER$차 재시도 중...",
+      "placeholders": {
+         "ATTEMPT_NUMBER": {
+            "content": "$1"
+         }
+      }
+   },
+   "6392731103614271560": {
+      "message": "Chromecast 및 Google Cast를 지원하는 기타 기기에 콘텐츠를 전송합니다."
+   },
+   "6514896123802924361": {
+      "message": "의견 보내기"
+   },
+   "6529598361108234608": {
+      "message": "이 기능을 사용하려면 Chrome에 $START_LINK$로그인$END_LINK$해야 합니다.",
+      "placeholders": {
+         "END_LINK": {
+            "content": "$1"
+         },
+         "START_LINK": {
+            "content": "$2"
+         }
+      }
+   },
+   "6529598361108234608_ph": {
+      "message": "\u003C/a>\u003Ca ng-click=\"triggerSignIn()\" href=\"\" id=\"triggerSignIn\">"
+   },
+   "6585975561839203683": {
+      "message": "사용해 보지 않음"
+   },
+   "6604600094360523853": {
+      "message": "Google Cast에 대한 의견"
+   },
+   "6750793691943336560": {
+      "message": "행아웃으로 전송을 사용 설정하려면 로그인하고, 메시지가 표시되면 권한을 수락합니다. 권한 메시지가 다른 창 뒤에 숨겨져 있을 수도 있습니다."
+   },
+   "6807464445011823029": {
+      "message": "자동(최대: 1080p, 5Mbps)"
+   },
+   "6988652234001902672": {
+      "message": "의견을 보내 주셔서 감사합니다."
+   },
+   "6997602168024654529": {
+      "message": "잘 모르겠음"
+   },
+   "7008828272760191653": {
+      "message": "볼 수 없음"
+   },
+   "7019403272859304206": {
+      "message": "$START_STRONG$$_USEREMAIL_$$END_STRONG$을(를) 통해 전송",
+      "placeholders": {
+         "END_STRONG": {
+            "content": "$1"
+         },
+         "START_STRONG": {
+            "content": "$2"
+         },
+         "_USEREMAIL_": {
+            "content": "$3"
+         }
+      }
+   },
+   "7019403272859304206_ph": {
+      "message": "\u003C/strong>\u003Cstrong>{{userEmail}}"
+   },
+   "7028436125721806572": {
+      "message": "미러링 품질 세부정보"
+   },
+   "7029426286291560071": {
+      "message": "완벽함"
+   },
+   "7053128562708856478": {
+      "message": "정지됨"
+   },
+   "7075073555752965346": {
+      "message": "경고 - 자세한 로깅이 사용 설정되었으며 아래의 로그에 URL 또는 기타 민감한 정보가 포함될 수 있습니다. 정보를 제출해도 되는지 검토하고 확인하시기 바랍니다."
+   },
+   "7155593134764035664": {
+      "message": "배치당 패킷(타겟):"
+   },
+   "7344649529753624682": {
+      "message": "$V2_APP_DOMAIN$ 전송",
+      "placeholders": {
+         "V2_APP_DOMAIN": {
+            "content": "$1"
+         }
+      }
+   },
+   "7433190838776121209": {
+      "message": "클라우드 기능 사용"
+   },
+   "7435898358826649826": {
+      "message": "미디어 콘텐츠를 캡처할 수 없습니다. 다시 시도해 주세요."
+   },
+   "7467295073121579516": {
+      "message": "연결할 수 없음"
+   },
+   "7484752158248863804": {
+      "message": "전송 중지"
+   },
+   "7496142106423617391": {
+      "message": "Cast 기기 관리"
+   },
+   "7552710358338304275": {
+      "message": "행아웃 기본 도메인:"
+   },
+   "7661531377295243900": {
+      "message": "기기를 다시 부팅하세요. 그래도 문제가 해결되지 않으면 제조업체에 문의하시기 바랍니다."
+   },
+   "7786163844034528352": {
+      "message": "Google Cast에 대한 의견"
+   },
+   "780135806192376347": {
+      "message": "기능 요청"
+   },
+   "7824803162979416790": {
+      "message": "PC와 Chromecast가 서로 다른 Wi-Fi 네트워크(예: 2.4GHz와 5GHz)에 있음"
+   },
+   "7864119253243497594": {
+      "message": "기기가 온라인 상태인지 확인하세요."
+   },
+   "7867182504906675090": {
+      "message": "탭 전송 품질"
+   },
+   "7885431863671390745": {
+      "message": "Cast 확장 프로그램 사용 통계를 자동으로 Google에 전송합니다."
+   },
+   "7911160566398057890": {
+      "message": "Windows에서 비차단 IO 사용 설정:"
+   },
+   "7911416166208830577": {
+      "message": "도움말"
+   },
+   "801495004830452095": {
+      "message": "$_EXTERNALDEVICENAME_$의 로그가 포함됨",
+      "placeholders": {
+         "_EXTERNALDEVICENAME_": {
+            "content": "$1"
+         }
+      }
+   },
+   "801495004830452095_ph": {
+      "message": "{{externalDeviceName}}"
+   },
+   "8023322445192355344": {
+      "message": "행아웃 서버 API 버전:"
+   },
+   "8025420827457681102": {
+      "message": "Windows/Mac 설정 애플리케이션에서 Chromecast를 볼 수 있습니까?"
+   },
+   "8130895852484727514": {
+      "message": "일부 기기에 연결할 수 없습니다($ERROR$ 오류).",
+      "placeholders": {
+         "ERROR": {
+            "content": "$1"
+         }
+      }
+   },
+   "8189622236075700665": {
+      "message": "의견을 삭제하시겠습니까?"
+   },
+   "8190621044561219027": {
+      "message": "최소 전송률:"
+   },
+   "819996403327805209": {
+      "message": "자세히 알아보기"
+   },
+   "8242882361224206357": {
+      "message": "무엇에 대한 의견을 제공하시겠습니까?"
+   },
+   "8254879137669712236": {
+      "message": "프레임 크기/속도 자동 조절 사용:"
+   },
+   "8288732448265345962": {
+      "message": "취소"
+   },
+   "8304164664901068767": {
+      "message": "Google Cast 확장 프로그램을 사용하면 Chrome 브라우저에서 Chromecast 기기에 있는 콘텐츠를 찾아서 재생할 수 있습니다.\nGoogle Cast 확장 프로그램의 *베타* 채널로, 정식 출시에 앞서 곧 출시될 최신 API 및 기능을 미리 사용하길 원하는 개발자나 고급 사용자를 위한 버전입니다. 일반 사용자는 안정적인 Google Cast 확장 프로그램(https://chrome.google.com/webstore/detail/google-cast/boadgeojelhgndaghljhdicfkmllpafd)을 설치하는 것이 좋습니다. 베타 채널은 불안정하거나 버그가 발생하는 경우가 더 많습니다.\n이 항목을 설치하면 Google 서비스 약관 및 개인정보취급방침(https://www.google.com/intl/ko/policies/)에 동의하게 됩니다."
+   },
+   "8314352943658679563": {
+      "message": "행아웃에 전송이 사용 중지되었습니다. 현재 @google.com만 지원됩니다."
+   },
+   "8351230089123629067": {
+      "message": "그래픽 카드/GPU:"
+   },
+   "8432562579042371182": {
+      "message": "옵션"
+   },
+   "8436497523209458720": {
+      "message": "의견 보내기..."
+   },
+   "8444501525238416559": {
+      "message": "최대 대기시간:"
+   },
+   "845494741086179740": {
+      "message": "PC는 유선 네트워크에, Chromecast는 Wi-Fi에 연결되어 있음"
+   },
+   "8491974984518503778": {
+      "message": "지금 새로고침"
+   },
+   "8500110749168055241": {
+      "message": "일정하지 않음"
+   },
+   "8700054488486244094": {
+      "message": "Google Cast 확장 프로그램 옵션"
+   },
+   "872641383564597641": {
+      "message": "기기와의 연결이 끊어졌습니다."
+   },
+   "8745478539067058731": {
+      "message": "행아웃에 탭, 창 또는 바탕화면을 전송합니다."
+   },
+   "8808326359642865369": {
+      "message": "(실험용)"
+   },
+   "8847227464712783239": {
+      "message": "선택한 기기에 결함이 있습니다."
+   },
+   "8879729374562274188": {
+      "message": "오류가 발생했습니다."
+   },
+   "8887833628383960193": {
+      "message": "훌륭함 - HD"
+   },
+   "8906884849462126639": {
+      "message": "백그라운드 검사 사용 중지:"
+   },
+   "8948441291106678529": {
+      "message": "Google Cast 확장 프로그램 옵션"
+   },
+   "897566596634286067": {
+      "message": "여기에 의견을 입력하세요(필수)."
+   },
+   "8998179362936748717": {
+      "message": "확인"
+   },
+   "9021642677831414701": {
+      "message": "미디어 스트리밍 모드:"
+   },
+   "9039563863590019196": {
+      "message": "창 크기 조정은 지원되지 않습니다."
+   },
+   "9059560719840598868": {
+      "message": "의견 보내기"
+   },
+   "9120942669794506861": {
+      "message": "특별히 설치한 VPN, 프록시, 방화벽 또는 NAS 소프트웨어가 있습니까?"
+   },
+   "MSG_CAPTURE_ERROR": {
+      "message": "578821942116253728"
+   },
+   "MSG_CAPTURE_ERROR_DESCRIPTION": {
+      "message": "7435898358826649826"
+   },
+   "MSG_CASTOUTS_DISABLED": {
+      "message": "8314352943658679563"
+   },
+   "MSG_CASTOUTS_INITIALIZED": {
+      "message": "5773074680866649953"
+   },
+   "MSG_CASTOUTS_TIMED_OUT": {
+      "message": "2618451236056129793"
+   },
+   "MSG_CHROME_TOO_OLD_FOR_V2": {
+      "message": "1443898800503846063"
+   },
+   "MSG_CHROME_TOO_OLD_FOR_V2_DESCRIPTION": {
+      "message": "4157951843472785441"
+   },
+   "MSG_DEVICE_CHANNEL_ERROR": {
+      "message": "4511372876817255492"
+   },
+   "MSG_DEVICE_CHANNEL_ERROR_DESCRIPTION": {
+      "message": "8130895852484727514"
+   },
+   "MSG_GC_BETA_EXTENSION_DESCRIPTION": {
+      "message": "8304164664901068767"
+   },
+   "MSG_GC_CANCEL_BUTTON": {
+      "message": "8288732448265345962"
+   },
+   "MSG_GC_CASTING": {
+      "message": "5590598097041702454"
+   },
+   "MSG_GC_CASTING_LABEL": {
+      "message": "4014224501758376361"
+   },
+   "MSG_GC_CAST_APP": {
+      "message": "5056298333685549098"
+   },
+   "MSG_GC_CAST_APP_OPTION": {
+      "message": "7344649529753624682"
+   },
+   "MSG_GC_CAST_ENTIRE_SCREEN": {
+      "message": "5163000733818237380"
+   },
+   "MSG_GC_CAST_TAB": {
+      "message": "6046507125919556913"
+   },
+   "MSG_GC_CAST_TAB_AUDIO": {
+      "message": "1189144544819350763"
+   },
+   "MSG_GC_CAST_THIS_APP": {
+      "message": "1717149362663359343"
+   },
+   "MSG_GC_CAST_THIS_TAB": {
+      "message": "3278102219211539720"
+   },
+   "MSG_GC_DEVICE_BAD": {
+      "message": "8847227464712783239"
+   },
+   "MSG_GC_DEVICE_BAD_RESOLUTION": {
+      "message": "7661531377295243900"
+   },
+   "MSG_GC_DEVICE_CONNECTION_CHECK_ONLINE": {
+      "message": "7864119253243497594"
+   },
+   "MSG_GC_DEVICE_CONNECTION_ERROR_FIXING": {
+      "message": "3873469728089727547"
+   },
+   "MSG_GC_DEVICE_CONNECTION_LOST": {
+      "message": "872641383564597641"
+   },
+   "MSG_GC_DEVICE_NOT_ONLINE": {
+      "message": "4687947362658561907"
+   },
+   "MSG_GC_DEVICE_NOT_ONLINE_RESOLUTION": {
+      "message": "2942203478948533213"
+   },
+   "MSG_GC_DEVICE_UNABLE_TO_CAST": {
+      "message": "1104234694810969409"
+   },
+   "MSG_GC_DEVICE_UNABLE_TO_CAST_RESOLUTION": {
+      "message": "2884726392788153618"
+   },
+   "MSG_GC_DISMISS_BUTTON": {
+      "message": "2081143677025752994"
+   },
+   "MSG_GC_ENTER_HANGOUT_NAME": {
+      "message": "3203240389500117801"
+   },
+   "MSG_GC_EXTENSION_DESCRIPTION": {
+      "message": "3202350311251778009"
+   },
+   "MSG_GC_EXTENSION_SHORT_DESCRIPTION": {
+      "message": "6392731103614271560"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_ACCEPTABLE": {
+      "message": "482442943064110817"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_GOOD": {
+      "message": "5745355507138230213"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_PERFECT": {
+      "message": "7029426286291560071"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_POOR": {
+      "message": "4272010402571776761"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_UNINTELLIGIBLE": {
+      "message": "6118473811359442709"
+   },
+   "MSG_GC_FEEDBACK_DISCARD_CONFIRMATION": {
+      "message": "8189622236075700665"
+   },
+   "MSG_GC_FEEDBACK_DISCLAIMER": {
+      "message": "1878364533704855528"
+   },
+   "MSG_GC_FEEDBACK_NA": {
+      "message": "5823878688587296398"
+   },
+   "MSG_GC_FEEDBACK_PAGE_TITLE": {
+      "message": "7786163844034528352"
+   },
+   "MSG_GC_FEEDBACK_RESENDING": {
+      "message": "6295154563386647404"
+   },
+   "MSG_GC_FEEDBACK_SENDING": {
+      "message": "6018881802001125637"
+   },
+   "MSG_GC_FEEDBACK_SEND_FAIL": {
+      "message": "4865676252029097872"
+   },
+   "MSG_GC_FEEDBACK_SEND_SUCCESS": {
+      "message": "6988652234001902672"
+   },
+   "MSG_GC_FEEDBACK_TYPE_BUG_OR_ERROR": {
+      "message": "4089994756445820175"
+   },
+   "MSG_GC_FEEDBACK_TYPE_DISCOVERY": {
+      "message": "2076488708707463944"
+   },
+   "MSG_GC_FEEDBACK_TYPE_FEATURE_REQUEST": {
+      "message": "780135806192376347"
+   },
+   "MSG_GC_FEEDBACK_TYPE_OTHER": {
+      "message": "3996247341169314250"
+   },
+   "MSG_GC_FEEDBACK_TYPE_PROJECTION_QUALITY": {
+      "message": "2438859709710567679"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_ACCEPTABLE": {
+      "message": "4324962226715124466"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_FREEZES": {
+      "message": "7053128562708856478"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_GOOD": {
+      "message": "6039331491778328245"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_GREAT": {
+      "message": "8887833628383960193"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_JERKY": {
+      "message": "8500110749168055241"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_PERFECT": {
+      "message": "4584454172263179470"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_POOR": {
+      "message": "2377419936291389581"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_SMOOTH": {
+      "message": "4224760847878375792"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_STUTTER": {
+      "message": "3844709005265884931"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_UNWATCHABLE": {
+      "message": "7008828272760191653"
+   },
+   "MSG_GC_GENERIC_ERROR": {
+      "message": "8879729374562274188"
+   },
+   "MSG_GC_LEARN_MORE_LINK": {
+      "message": "5849296180435940955"
+   },
+   "MSG_GC_MIRROR_QUALITY_AUTO": {
+      "message": "6807464445011823029"
+   },
+   "MSG_GC_MIRROR_QUALITY_HIGH": {
+      "message": "3681271501407987946"
+   },
+   "MSG_GC_MIRROR_QUALITY_HIGHEST": {
+      "message": "1403598074357445300"
+   },
+   "MSG_GC_MIRROR_QUALITY_LOW": {
+      "message": "6236792503803747284"
+   },
+   "MSG_GC_OK_BUTTON": {
+      "message": "4223394109936547558"
+   },
+   "MSG_GC_OPTIONS_PAGE_TITLE": {
+      "message": "8700054488486244094"
+   },
+   "MSG_GC_RETRY_BUTTON": {
+      "message": "1318160328466758792"
+   },
+   "MSG_GC_SHARE_YOUR_THOUGHTS": {
+      "message": "3594579793458243987"
+   },
+   "MSG_GC_SHARE_YOUR_THOUGHTS_DESCRIPTION": {
+      "message": "232164743503663377"
+   },
+   "MSG_GC_STOP_CASTING": {
+      "message": "7484752158248863804"
+   },
+   "MSG_GC_SUBMIT_FEEDBACK": {
+      "message": "6514896123802924361"
+   },
+   "MSG_HANGOUT_ERROR": {
+      "message": "1588576801511256206"
+   },
+   "MSG_HANGOUT_ERROR_DESCRIPTION": {
+      "message": "5728295142929105913"
+   },
+   "MSG_HANGOUT_INACTIVE": {
+      "message": "4102291180899400833"
+   },
+   "MSG_HANGOUT_INACTIVE_DESCRIPTION": {
+      "message": "1696531255551038655"
+   },
+   "MSG_HANGOUT_INVALID": {
+      "message": "48395364426353647"
+   },
+   "MSG_HANGOUT_INVALID_DESCRIPTION": {
+      "message": "3658695798711423870"
+   },
+   "MSG_LOAD_FAILED": {
+      "message": "3254351313955764967"
+   },
+   "MSG_UPDATE_REQUIRED": {
+      "message": "3485206350043289145"
+   },
+   "MSG_WEBRTC_CONNECTION_ERROR": {
+      "message": "7467295073121579516"
+   },
+   "MSG_WINDOW_RESIZE_UNSUPPORTED": {
+      "message": "9039563863590019196"
+   },
+   "MSG_WINDOW_RESIZE_UNSUPPORTED_DESCRIPTION": {
+      "message": "57055743185823882"
+   },
+   "autoThrottlingEnabled": {
+      "message": "8254879137669712236"
+   },
+   "auto_stats_collection_description": {
+      "message": "3188239202899052784"
+   },
+   "auto_stats_collection_dismiss": {
+      "message": "8998179362936748717"
+   },
+   "auto_stats_collection_title": {
+      "message": "4585326301657856848"
+   },
+   "cast_feedback_audio_quality": {
+      "message": "4741643884742469674"
+   },
+   "cast_feedback_comments": {
+      "message": "5671949584911040143"
+   },
+   "cast_feedback_description_required_label": {
+      "message": "897566596634286067"
+   },
+   "cast_feedback_discovery_did_not_try": {
+      "message": "6585975561839203683"
+   },
+   "cast_feedback_discovery_network": {
+      "message": "1213957982723875920"
+   },
+   "cast_feedback_discovery_network_wifi_diff_networks": {
+      "message": "7824803162979416790"
+   },
+   "cast_feedback_discovery_network_wifi_same": {
+      "message": "5385436389563925676"
+   },
+   "cast_feedback_discovery_network_wifi_wired": {
+      "message": "845494741086179740"
+   },
+   "cast_feedback_discovery_no": {
+      "message": "3542042671420335679"
+   },
+   "cast_feedback_discovery_not_sure": {
+      "message": "6997602168024654529"
+   },
+   "cast_feedback_discovery_setup": {
+      "message": "8025420827457681102"
+   },
+   "cast_feedback_discovery_vpn": {
+      "message": "9120942669794506861"
+   },
+   "cast_feedback_discovery_yes": {
+      "message": "2807800733729323332"
+   },
+   "cast_feedback_general_description": {
+      "message": "3633167042592070329"
+   },
+   "cast_feedback_gpu": {
+      "message": "8351230089123629067"
+   },
+   "cast_feedback_mirroring_cancel": {
+      "message": "2159130950882492111"
+   },
+   "cast_feedback_mirroring_disclaimer": {
+      "message": "5750542272329616142"
+   },
+   "cast_feedback_mirroring_ok": {
+      "message": "4187599066116404890"
+   },
+   "cast_feedback_mirroring_submit": {
+      "message": "9059560719840598868"
+   },
+   "cast_feedback_processor": {
+      "message": "4563873836363331434"
+   },
+   "cast_feedback_quality_details": {
+      "message": "7028436125721806572"
+   },
+   "cast_feedback_request": {
+      "message": "2517473004427269018"
+   },
+   "cast_feedback_required_parens": {
+      "message": "2083306153840951484"
+   },
+   "cast_feedback_thankyou": {
+      "message": "3593576714633990163"
+   },
+   "cast_feedback_title": {
+      "message": "6604600094360523853"
+   },
+   "cast_feedback_topic": {
+      "message": "8242882361224206357"
+   },
+   "cast_feedback_url": {
+      "message": "5229573508420009298"
+   },
+   "cast_feedback_video_quality": {
+      "message": "5395332831907227403"
+   },
+   "cast_feedback_video_smoothness": {
+      "message": "2009563581399507712"
+   },
+   "cast_popup_back_to_list": {
+      "message": "6214031582604719501"
+   },
+   "cast_popup_cast_audio": {
+      "message": "1877856983727558507"
+   },
+   "cast_popup_cast_screen": {
+      "message": "4072556140582099509"
+   },
+   "cast_popup_cast_screen_experimental": {
+      "message": "8808326359642865369"
+   },
+   "cast_popup_cast_tab": {
+      "message": "2932348398128569497"
+   },
+   "cast_popup_casting_to": {
+      "message": "2076769487302164340"
+   },
+   "cast_popup_device_missing": {
+      "message": "3885666702463386029"
+   },
+   "cast_popup_feedback_link": {
+      "message": "8436497523209458720"
+   },
+   "cast_popup_help_link": {
+      "message": "7911416166208830577"
+   },
+   "cast_popup_high_quality_video": {
+      "message": "3634893929360744610"
+   },
+   "cast_popup_high_quality_video_details": {
+      "message": "130855611855008194"
+   },
+   "cast_popup_high_quality_video_dismiss": {
+      "message": "464916539454098167"
+   },
+   "cast_popup_loading": {
+      "message": "3894950702316166331"
+   },
+   "cast_popup_options_link": {
+      "message": "8432562579042371182"
+   },
+   "cast_popup_playing_on": {
+      "message": "2588174729923512180"
+   },
+   "castouts_user_email_info": {
+      "message": "7019403272859304206"
+   },
+   "donge_no_cast_device_found": {
+      "message": "5339913305209531244"
+   },
+   "goog_cast_feedback_fine_logs_warning": {
+      "message": "7075073555752965346"
+   },
+   "goog_cast_feedback_get_external_logs_error": {
+      "message": "2554687737930512120"
+   },
+   "goog_cast_feedback_got_external_logs": {
+      "message": "801495004830452095"
+   },
+   "goog_cast_feedback_mirroring_external_logs_button": {
+      "message": "5107389855082704624"
+   },
+   "goog_cast_feedback_mirroring_external_logs_error_device_not_found": {
+      "message": "2673108145745625398"
+   },
+   "goog_cast_feedback_mirroring_external_logs_error_device_not_supported": {
+      "message": "5202323856319464688"
+   },
+   "goog_cast_feedback_mirroring_logs_button": {
+      "message": "2016072788708608077"
+   },
+   "goog_cast_feedback_retrieving_external_logs": {
+      "message": "3630200699826211171"
+   },
+   "options_additional_receiver_ips": {
+      "message": "3577676426589935803"
+   },
+   "options_castouts_description": {
+      "message": "8745478539067058731"
+   },
+   "options_castouts_in_progress": {
+      "message": "6750793691943336560"
+   },
+   "options_castouts_learn_more": {
+      "message": "819996403327805209"
+   },
+   "options_castouts_manual_entry": {
+      "message": "4848910232094031059"
+   },
+   "options_castouts_signed_in": {
+      "message": "4816591726282520264"
+   },
+   "options_castouts_signed_out": {
+      "message": "6529598361108234608"
+   },
+   "options_change_effect": {
+      "message": "2638991638737993114"
+   },
+   "options_custom_mirroring_settings": {
+      "message": "3181069857560875169"
+   },
+   "options_default_hangout_domain": {
+      "message": "7552710358338304275"
+   },
+   "options_default_hangout_domain_description": {
+      "message": "5382938928138155999"
+   },
+   "options_developer_settings_sesison_title": {
+      "message": "1942272259363289202"
+   },
+   "options_devices": {
+      "message": "1206604611937086300"
+   },
+   "options_devices_link": {
+      "message": "7496142106423617391"
+   },
+   "options_disable_scan": {
+      "message": "8906884849462126639"
+   },
+   "options_dscp": {
+      "message": "5477887796261084791"
+   },
+   "options_enable_cloud": {
+      "message": "7433190838776121209"
+   },
+   "options_enable_cloud_signed_out": {
+      "message": "2697071986776077166"
+   },
+   "options_hangout_version": {
+      "message": "8023322445192355344"
+   },
+   "options_hangouts_version_changed_description": {
+      "message": "5284888875943777523"
+   },
+   "options_image_resolution": {
+      "message": "4076870975160614320"
+   },
+   "options_max_bitrate": {
+      "message": "3695617262415720740"
+   },
+   "options_max_capture_frame_rate": {
+      "message": "1313855295453056101"
+   },
+   "options_max_latency": {
+      "message": "8444501525238416559"
+   },
+   "options_media_streaming_mode": {
+      "message": "9021642677831414701"
+   },
+   "options_min_bitrate": {
+      "message": "8190621044561219027"
+   },
+   "options_min_latency": {
+      "message": "2880373984418075735"
+   },
+   "options_non_blocking_io": {
+      "message": "7911160566398057890"
+   },
+   "options_pacing_max": {
+      "message": "2242261874100835789"
+   },
+   "options_pacing_target": {
+      "message": "7155593134764035664"
+   },
+   "options_receiver_ip_deletion": {
+      "message": "2456043080471762298"
+   },
+   "options_reload": {
+      "message": "8491974984518503778"
+   },
+   "options_send_usage": {
+      "message": "7885431863671390745"
+   },
+   "options_setup_link": {
+      "message": "4906762558811440847"
+   },
+   "options_stop_casting": {
+      "message": "3374149466144554646"
+   },
+   "options_tab_casting_quality_warning": {
+      "message": "2741789927660626901"
+   },
+   "options_tab_castouts": {
+      "message": "3400233096253425149"
+   },
+   "options_tab_cloud_settings": {
+      "message": "6142008190583061028"
+   },
+   "options_tab_proj_quality": {
+      "message": "7867182504906675090"
+   },
+   "options_title": {
+      "message": "8948441291106678529"
+   },
+   "stats_collect_prompt_option": {
+      "message": "4822504808490979258"
+   }
+}

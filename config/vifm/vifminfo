@@ -1,0 +1,107 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/home/luca/
+	..
+1475451326
+'b
+	/home/luca/bin/
+	..
+1475451326
+'h
+	/home/luca/
+	..
+1475451326
+'z
+	/home/luca/.config/vifm
+	..
+1475451326
+
+# Bookmarks:
+
+# TUI:
+al
+q0
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/home/luca
+	calibre
+3
+d/home/luca/calibre
+	..
+0
+d/home/luca
+	comp
+4
+d/home
+	luca
+2
+d/home/luca
+	comp
+4
+d/home/luca/comp
+	..
+0
+d/home/luca
+	uni
+8
+d/home/luca/uni
+	..
+0
+d/home/luca
+	uni
+8
+d/home/luca/uni
+	progetti
+1
+d
+
+# Right window history (oldest to newest):
+D/home/luca
+	..
+0
+D
+
+# Command line history (oldest to newest):
+:previw
+:set c
+:help
+:ls
+:lsview
+:set lsview false
+:set lsview False
+:set lsview no
+:set lsview 0
+:set lsview true
+:set lsview True
+:help set
+:q
+
+# Search history (oldest to newest):
+
+# Prompt history (oldest to newest):
+
+# Local filter history (oldest to newest):
+
+# Registers:
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+
+# State:
+f
+i1
+[.1
+[F
+F
+I1
+].1
+]F
+s0

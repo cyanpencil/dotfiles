@@ -1,0 +1,30 @@
+<html ng-app="optionsWebController" ng-controller="WebOptionsCtrl" ng-csp xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>
+    Google Cast extension web options
+  </title>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet"/>
+  <link href="options.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="angular.js"></script>
+  <script type="text/javascript" src="background_script.js"></script>
+</head>
+<body id="options">
+  <div ng-show="!completed" class="options-sections">
+    <section>
+      <h3>
+        <angular-message desc="Label for casting to Hangouts enable interstitial" key="options_castouts_in_progress">
+          To enable casting to Hangouts please sign in and accept permissions when prompted.
+          The permissions prompt may be hidden behind other windows.
+        </angular-message>
+      </h3>
+    </section>
+  </div>
+  <div ng-show="completed" class="options-sections">
+    <section>
+      <h3>
+        {{castoutsStatus}}
+      </h3>
+    </section>
+  </div>
+</body>
+</html>

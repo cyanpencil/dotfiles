@@ -1,0 +1,1221 @@
+{
+   "1104234694810969409": {
+      "message": "Predvajanje v napravo ni mogoče."
+   },
+   "1189144544819350763": {
+      "message": "Predvajaj vsebino tega zavihka (zvok) na ..."
+   },
+   "1206604611937086300": {
+      "message": "Naprave za predvajanje"
+   },
+   "1213957982723875920": {
+      "message": "Kaj od tega najbolje opiše vaše omrežje?"
+   },
+   "130855611855008194": {
+      "message": "S klikom ikone za predvajanje na tem spletnem mestu boste omogočili predvajanje najvišje kakovosti."
+   },
+   "1313855295453056101": {
+      "message": "Največje število sličic v sekundi pri snemanju:"
+   },
+   "1318160328466758792": {
+      "message": "Poskusi znova"
+   },
+   "1403598074357445300": {
+      "message": "Zelo visoka (720p, velik bitna hitrost)"
+   },
+   "1443898800503846063": {
+      "message": "Chrome je zastarel"
+   },
+   "1588576801511256206": {
+      "message": "Nepričakovana napaka pogovorov Hangouts."
+   },
+   "1696531255551038655": {
+      "message": "Pogovor Hangout je imel premalo udeležencev, da bi ostal aktiven."
+   },
+   "1717149362663359343": {
+      "message": "Predvajaj $V2_APP_DOMAIN$",
+      "placeholders": {
+         "V2_APP_DOMAIN": {
+            "content": "$1"
+         }
+      }
+   },
+   "1877856983727558507": {
+      "message": "Predvajaj vsebino tega zavihka (optimiziraj za zvočni način)"
+   },
+   "1878364533704855528": {
+      "message": "Poslani bodo različica Chroma, različica operacijskega sistema, možnosti razširitve za Google Cast, statistični podatki o učinkovitosti delovanja zrcaljenja in diagnostični dnevniki komunikacijskega kanala ter morebitni podatki, ki jih zgoraj izberete za pošiljanje. Te podatke uporabljamo za diagnosticiranje težav in da vam pomagamo izboljšati razširitev. Vsi osebni podatki, ki jih izrecno ali naključno pošljete, bodo varovani v skladu z našimi pravilniki o zasebnosti. S pošiljanjem teh povratnih informacij potrjujete, da se strinjate, da jih lahko Google uporabi za izboljšanje katerega koli Googlovega izdelka ali storitve."
+   },
+   "1942272259363289202": {
+      "message": "Nastavitve za razvijalce"
+   },
+   "2009563581399507712": {
+      "message": "Tekoče predvajanje videoposnetka:"
+   },
+   "2016072788708608077": {
+      "message": "Priloži dnevnike razširitve Cast – Označite to, ker nam tako pomagate odpraviti napake"
+   },
+   "2076488708707463944": {
+      "message": "Odkrivanje naprav"
+   },
+   "2076769487302164340": {
+      "message": "Predvajanje v napravi"
+   },
+   "2081143677025752994": {
+      "message": "Opusti"
+   },
+   "2083306153840951484": {
+      "message": "(obvezno)"
+   },
+   "2159130950882492111": {
+      "message": "Prekliči"
+   },
+   "2242261874100835789": {
+      "message": "Število paketov na serijo (največ):"
+   },
+   "232164743503663377": {
+      "message": "Zaupajte nam svojo izkušnjo s predvajanjem."
+   },
+   "2377419936291389581": {
+      "message": "Slab"
+   },
+   "2438859709710567679": {
+      "message": "Kakovost projekcije zavihka/namizja"
+   },
+   "2456043080471762298": {
+      "message": "izbriši"
+   },
+   "2517473004427269018": {
+      "message": "Ker je vaša seja trajala več kot minuto, vas prosimo, da naši skupini pošljete povratne informacije o svoji izkušnji. Če je prišlo do kakršnih koli težav, kliknite polja, da priložite dnevnike razširitve Cast in zunanje dnevnike."
+   },
+   "2554687737930512120": {
+      "message": "Ni mogoče pridobiti dnevnikov iz naprave."
+   },
+   "2588174729923512180": {
+      "message": "Predvajanje v:"
+   },
+   "2618451236056129793": {
+      "message": "Časovna omejitev nastavitve predvajanja v pogovorih Hangouts je potekla. Oglejte si go/castouts-dogfood#TOC-Known-Issues."
+   },
+   "2638991638737993114": {
+      "message": "Spremembe bodo uveljavljene, ko boste naslednjič predvajali vsebino zavihka."
+   },
+   "2673108145745625398": {
+      "message": "Chrome ni našel povezane naprave."
+   },
+   "2697071986776077166": {
+      "message": "Če želite uporabljati storitve v oblaku, se morate $START_LINK$prijaviti$END_LINK$ v Chrome.",
+      "placeholders": {
+         "END_LINK": {
+            "content": "$1"
+         },
+         "START_LINK": {
+            "content": "$2"
+         }
+      }
+   },
+   "2697071986776077166_ph": {
+      "message": "\u003C/a>\u003Ca ng-click=\"triggerSignIn()\" href=\"\">"
+   },
+   "2741789927660626901": {
+      "message": "Priporočeno samo za napredne uporabnike. Z nastavitvijo kakovosti predvajanja zavihkov bodo te vrednosti ponastavljene."
+   },
+   "2807800733729323332": {
+      "message": "Da"
+   },
+   "2880373984418075735": {
+      "message": "Najmanjša zakasnitev:"
+   },
+   "2884726392788153618": {
+      "message": "Nepričakovana napaka. Poskusite s tema ukrepoma:\u003Cul>\u003Cli>Znova poskusite predvajanje\u003C/li>\u003Cli>Preverite omrežno povezavo\u003C/li>\u003C/ul>"
+   },
+   "2932348398128569497": {
+      "message": "Predvajaj vsebino tega zavihka"
+   },
+   "2942203478948533213": {
+      "message": "Izberite drugo napravo."
+   },
+   "3181069857560875169": {
+      "message": "Nastavitve zrcaljenja po meri"
+   },
+   "3188239202899052784": {
+      "message": "Ali želite izboljšati Google Cast s pošiljanjem anonimnih podatkov o uporabi Googlu? Vaša zasebnost je za nas pomembna in to nastavitev lahko vedno spremenite v razdelku »Možnosti«."
+   },
+   "3202350311251778009": {
+      "message": "Z razširitvijo za Google Cast lahko v napravi Chromecast poiščete in predvajate vsebino iz brskalnika Chrome.\nPri uporabi spletnih mest, prilagojenih za Cast, boste imeli na voljo nove možnosti za predvajanje videoposnetkov na televizorju prek Chromecasta. Kot daljinski upravljalnik za iskanje videoposnetkov in upravljanje predvajanja boste lahko uporabljali računalnik.\nNa televizorju lahko predvajate tudi zavihke iz Chroma ter tako uživate v spletnih mestih, fotografijah in celo videoposnetkih na vašem najboljšem zaslonu. Ta funkcija je še vedno v različici beta ter potrebuje zmogljiv računalnik in hitro omrežje Wi-Fi.\nČe želite uporabljati to razširitev, potrebujete strojno opremo Chromecast. Za več informacij obiščite http://google.com/chromecast.\nČe namestite ta izdelek, se strinjate z Googlovimi pogoji storitve in pravilnikom o zasebnosti na https://www.google.com/intl/sl/policies/."
+   },
+   "3203240389500117801": {
+      "message": "Vnesite ime pogovora Hangout"
+   },
+   "3254351313955764967": {
+      "message": "Ojoj, videti je, da imamo tehnične težave. Poskusite znova čez nekaj minut."
+   },
+   "3278102219211539720": {
+      "message": "Predvajaj vsebino tega zavihka"
+   },
+   "3374149466144554646": {
+      "message": "Ustavi predvajanje"
+   },
+   "3400233096253425149": {
+      "message": "Predvajanje v pogovorih Hangouts"
+   },
+   "3485206350043289145": {
+      "message": "Zaradi nedavne posodobitve morate zapreti brskalnik Chrome in ga znova zagnati."
+   },
+   "3542042671420335679": {
+      "message": "Ne"
+   },
+   "3577676426589935803": {
+      "message": "Naslovi IP dodatnih sprejemnikov:"
+   },
+   "3593576714633990163": {
+      "message": "Hvala, ker ste poskusili zrcaljenje z Google Castom."
+   },
+   "3594579793458243987": {
+      "message": "Izmenjujte svoje zamisli"
+   },
+   "3630200699826211171": {
+      "message": "Vključno z dnevniki iz naprave $_EXTERNALDEVICENAME_$.",
+      "placeholders": {
+         "_EXTERNALDEVICENAME_": {
+            "content": "$1"
+         }
+      }
+   },
+   "3630200699826211171_ph": {
+      "message": "{{externalDeviceName}}"
+   },
+   "3633167042592070329": {
+      "message": "Hvala za povratne informacije, saj lahko z njimi izboljšamo Google Cast. Na poslane povratne informacije o težavah ne moremo osebno odgovoriti. Če se želite glede težav s Chromecastom obrniti neposredno na Google, najdete podrobnosti na $START_LINK$tej strani$END_LINK$.",
+      "placeholders": {
+         "END_LINK": {
+            "content": "$1"
+         },
+         "START_LINK": {
+            "content": "$2"
+         }
+      }
+   },
+   "3633167042592070329_ph": {
+      "message": "\u003C/a>\u003Ca href=\"https://support.google.com/chromecast/troubleshooter/2995236?ref_topic=2994245\">"
+   },
+   "3634893929360744610": {
+      "message": "Predvajanje videoposnetkov visoke kakovosti"
+   },
+   "3658695798711423870": {
+      "message": "Preverite ime in poskusite znova."
+   },
+   "3681271501407987946": {
+      "message": "Visoka (720p)"
+   },
+   "3695617262415720740": {
+      "message": "Največja bitna hitrost:"
+   },
+   "3844709005265884931": {
+      "message": "Občasno trzne"
+   },
+   "3873469728089727547": {
+      "message": "Preverite, ali je naprava blizu brezžične dostopne točke.\u003C/br>Nato poskusite znova."
+   },
+   "3885666702463386029": {
+      "message": "(Ni naprave za Google Cast?)"
+   },
+   "3894950702316166331": {
+      "message": "Nalaganje ..."
+   },
+   "3996247341169314250": {
+      "message": "Drugo"
+   },
+   "4014224501758376361": {
+      "message": "Predvajanje v napravi $RECEIVER_NAME$",
+      "placeholders": {
+         "RECEIVER_NAME": {
+            "content": "$1"
+         }
+      }
+   },
+   "4072556140582099509": {
+      "message": "Predvajanje zaslona/okna"
+   },
+   "4076870975160614320": {
+      "message": "Ločljivost:"
+   },
+   "4089994756445820175": {
+      "message": "Napaka"
+   },
+   "4102291180899400833": {
+      "message": "Neaktivni pogovor Hangout je bil prekinjen."
+   },
+   "4157951843472785441": {
+      "message": "Posodobite Chrome, če želite predvajati to spletno mesto."
+   },
+   "4187599066116404890": {
+      "message": "V redu."
+   },
+   "4223394109936547558": {
+      "message": "V redu"
+   },
+   "4224760847878375792": {
+      "message": "Tekoč"
+   },
+   "4272010402571776761": {
+      "message": "Slab"
+   },
+   "4324962226715124466": {
+      "message": "Sprejemljiv"
+   },
+   "4511372876817255492": {
+      "message": "Vzpostavljanje povezave z napravo ni uspelo."
+   },
+   "4563873836363331434": {
+      "message": "Procesor:"
+   },
+   "4584454172263179470": {
+      "message": "Odličen"
+   },
+   "4585326301657856848": {
+      "message": "Pomagajte izboljšati Google Cast"
+   },
+   "464916539454098167": {
+      "message": "Razumem."
+   },
+   "4687947362658561907": {
+      "message": "Izbrana naprava ni več povezana."
+   },
+   "4741643884742469674": {
+      "message": "Kakovost zvoka:"
+   },
+   "4816591726282520264": {
+      "message": "V Chrome ste prijavljeni kot $START_STRONG$$_USEREMAIL_$$END_STRONG$ in boste predvajali v pogovorih Hangouts s tem računom.",
+      "placeholders": {
+         "END_STRONG": {
+            "content": "$1"
+         },
+         "START_STRONG": {
+            "content": "$2"
+         },
+         "_USEREMAIL_": {
+            "content": "$3"
+         }
+      }
+   },
+   "4816591726282520264_ph": {
+      "message": "\u003C/strong>\u003Cstrong>{{userEmail}}"
+   },
+   "4822504808490979258": {
+      "message": "Samodejno pošiljanje statističnih podatkov o uporabi razširitve Google Cast Googlu"
+   },
+   "482442943064110817": {
+      "message": "Sprejemljiv – FM"
+   },
+   "48395364426353647": {
+      "message": "Imena pogovora Hangout ni bilo mogoče razrešiti."
+   },
+   "4848910232094031059": {
+      "message": "Iskanje pogovorov Hangouts glede na ime sestanka ali ID"
+   },
+   "4865676252029097872": {
+      "message": "Povratnih informacij ni mogoče poslati. Poskusite znova pozneje."
+   },
+   "4906762558811440847": {
+      "message": "Nastavljanje nove naprave za predvajanje"
+   },
+   "5056298333685549098": {
+      "message": "Predvajanje $V2_APP_DOMAIN$ v ...",
+      "placeholders": {
+         "V2_APP_DOMAIN": {
+            "content": "$1"
+         }
+      }
+   },
+   "5107389855082704624": {
+      "message": "Priloži dnevnike naprave – Označite to, ker nam tako pomagate odpraviti napake"
+   },
+   "5163000733818237380": {
+      "message": "Predvajanje zaslona/okna v …"
+   },
+   "5202323856319464688": {
+      "message": "Naprava, ki ste jo uporabljali, ne omogoča dnevnikov."
+   },
+   "5229573508420009298": {
+      "message": "(izbirno) Katero vsebino/URL ste predvajali?"
+   },
+   "5284888875943777523": {
+      "message": "Nova različica pogovorov Hangouts bo uporabljena po vnovičnem nalaganju."
+   },
+   "5339913305209531244": {
+      "message": "Naprav za Google Cast ni bilo mogoče najti."
+   },
+   "5382938928138155999": {
+      "message": "Navedete lahko privzeto domeno, v kateri se boste pridružili pogovorom Hangouts. Imena pogovorov Hangouts po meri, vnesena brez domene, bodo uporabljala to domeno."
+   },
+   "5385436389563925676": {
+      "message": "Računalnik in Chromecast v istem omrežju Wi-Fi"
+   },
+   "5395332831907227403": {
+      "message": "Kakovost videoposnetka:"
+   },
+   "5477887796261084791": {
+      "message": "DSCP:"
+   },
+   "5590598097041702454": {
+      "message": "Predvajanje ..."
+   },
+   "5671949584911040143": {
+      "message": "Dodatni komentarji:"
+   },
+   "57055743185823882": {
+      "message": "S spreminjanjem velikosti okna, ki ga predvajate, lahko povzročite nestabilno delovanje naprave."
+   },
+   "5728295142929105913": {
+      "message": "Pošljite povratne informacije (priložite dnevnike) in poskusite znova."
+   },
+   "5745355507138230213": {
+      "message": "Dober"
+   },
+   "5750542272329616142": {
+      "message": "Poleg podatkov, ki jih izberete zgoraj, se pošljejo različica Chroma, različica operacijskega sistema, možnosti razširitve Cast, statistični podatki o izvajanju zrcaljenja in diagnostični dnevniki komunikacijskih kanalov. Te povratne informacije uporabljamo za diagnosticiranje težav in izboljšanje razširitve. Če namerno ali nenamerno pošljete katere koli osebne podatke, jih varujemo v skladu z našimi pravilniki o zasebnosti. Če pošljete te povratne informacije, se strinjate, da lahko Google poslane informacije uporabi za izboljšanje katerega koli svojega izdelka ali storitve.$END_BOLD$",
+      "placeholders": {
+         "END_BOLD": {
+            "content": "$1"
+         }
+      }
+   },
+   "5750542272329616142_ph": {
+      "message": "\u003C/b>"
+   },
+   "5773074680866649953": {
+      "message": "Predvajanje v pogovorih Hangouts je uspešno inicializirano."
+   },
+   "578821942116253728": {
+      "message": "Napaka pri zajemanju predstavnosti."
+   },
+   "5823878688587296398": {
+      "message": "Ni na voljo"
+   },
+   "5849296180435940955": {
+      "message": "Več o tem"
+   },
+   "6018881802001125637": {
+      "message": "Pošiljanje povratnih informacij …"
+   },
+   "6039331491778328245": {
+      "message": "Dober – DVD"
+   },
+   "6046507125919556913": {
+      "message": "Predvajaj vsebino tega zavihka na ..."
+   },
+   "6118473811359442709": {
+      "message": "Nerazumljiv"
+   },
+   "6142008190583061028": {
+      "message": "Nastavitve za oblak"
+   },
+   "6214031582604719501": {
+      "message": "Nazaj na seznam naprav"
+   },
+   "6236792503803747284": {
+      "message": "Standardna (480p)"
+   },
+   "6295154563386647404": {
+      "message": "Povratnih informacij ni bilo mogoče poslati. Vnovičen poskus (št. $ATTEMPT_NUMBER$) …",
+      "placeholders": {
+         "ATTEMPT_NUMBER": {
+            "content": "$1"
+         }
+      }
+   },
+   "6392731103614271560": {
+      "message": "Pošiljajte vsebino v Chromecast in druge naprave, ki podpirajo Google Cast."
+   },
+   "6514896123802924361": {
+      "message": "Pošljite povratne informacije"
+   },
+   "6529598361108234608": {
+      "message": "Če želite uporabljati to funkcijo, se morate $START_LINK$prijaviti$END_LINK$ v Chrome.",
+      "placeholders": {
+         "END_LINK": {
+            "content": "$1"
+         },
+         "START_LINK": {
+            "content": "$2"
+         }
+      }
+   },
+   "6529598361108234608_ph": {
+      "message": "\u003C/a>\u003Ca ng-click=\"triggerSignIn()\" href=\"\" id=\"triggerSignIn\">"
+   },
+   "6585975561839203683": {
+      "message": "Nisem poskusil(a)"
+   },
+   "6604600094360523853": {
+      "message": "Povratne informacije za Google Cast"
+   },
+   "6750793691943336560": {
+      "message": "Če želite omogočiti predvajanje v pogovorih Hangouts, se prijavite in ob pozivu sprejmite dovoljenja. Poziv za dovoljenja je morda skrit za drugimi okni."
+   },
+   "6807464445011823029": {
+      "message": "Samodejno (največ: 1080p, 5 Mb/s)"
+   },
+   "6988652234001902672": {
+      "message": "Hvala, ker ste poslali povratne informacije."
+   },
+   "6997602168024654529": {
+      "message": "Ne vem"
+   },
+   "7008828272760191653": {
+      "message": "Ni mogoče gledati"
+   },
+   "7019403272859304206": {
+      "message": "Predvajali boste kot $START_STRONG$$_USEREMAIL_$$END_STRONG$",
+      "placeholders": {
+         "END_STRONG": {
+            "content": "$1"
+         },
+         "START_STRONG": {
+            "content": "$2"
+         },
+         "_USEREMAIL_": {
+            "content": "$3"
+         }
+      }
+   },
+   "7019403272859304206_ph": {
+      "message": "\u003C/strong>\u003Cstrong>{{userEmail}}"
+   },
+   "7028436125721806572": {
+      "message": "Podrobnosti o kakovosti zrcaljenja"
+   },
+   "7029426286291560071": {
+      "message": "Odličen"
+   },
+   "7053128562708856478": {
+      "message": "Zmrzne"
+   },
+   "7075073555752965346": {
+      "message": "Opozorilo: Omogočeno je podrobno zapisovanje v dnevnik. Dnevniki lahko vključujejo URL-je ali druge občutljive podatke. Preglejte te podatke in se prepričajte, ali je pošiljanje za vas sprejemljivo."
+   },
+   "7155593134764035664": {
+      "message": "Število paketov na serijo (cilj):"
+   },
+   "7344649529753624682": {
+      "message": "Predvajaj $V2_APP_DOMAIN$",
+      "placeholders": {
+         "V2_APP_DOMAIN": {
+            "content": "$1"
+         }
+      }
+   },
+   "7433190838776121209": {
+      "message": "Omogočanje funkcij v oblaku"
+   },
+   "7435898358826649826": {
+      "message": "Vsebine predstavnosti ni bilo mogoče zajeti. Poskusite znova."
+   },
+   "7467295073121579516": {
+      "message": "Povezave ni bilo mogoče vzpostaviti."
+   },
+   "7484752158248863804": {
+      "message": "Ustavi predvajanje"
+   },
+   "7496142106423617391": {
+      "message": "Upravljanje naprav za predvajanje"
+   },
+   "7552710358338304275": {
+      "message": "Privzeta domena za pogovore Hangouts:"
+   },
+   "7661531377295243900": {
+      "message": "Znova zaženite napravo. Če s tem ne odpravite težave, se obrnite na proizvajalca."
+   },
+   "7786163844034528352": {
+      "message": "Povratne informacije za Google Cast"
+   },
+   "780135806192376347": {
+      "message": "Zahteva za funkcijo"
+   },
+   "7824803162979416790": {
+      "message": "Računalnik in Chromecast v različnih omrežjih Wi-Fi (npr. 2,4 GHz in 5 GHz)"
+   },
+   "7864119253243497594": {
+      "message": "Preverite, ali je naprava povezana."
+   },
+   "7867182504906675090": {
+      "message": "Kakovost predvajanja vsebine zavihkov"
+   },
+   "7885431863671390745": {
+      "message": "Samodejno pošiljanje statističnih podatkov o uporabi razširitve Google Cast Googlu."
+   },
+   "7911160566398057890": {
+      "message": "Omogoči neblokirajoč V/I v sistemu Windows:"
+   },
+   "7911416166208830577": {
+      "message": "Pomoč"
+   },
+   "801495004830452095": {
+      "message": "Vključeni so dnevniki iz naprave $_EXTERNALDEVICENAME_$.",
+      "placeholders": {
+         "_EXTERNALDEVICENAME_": {
+            "content": "$1"
+         }
+      }
+   },
+   "801495004830452095_ph": {
+      "message": "{{externalDeviceName}}"
+   },
+   "8023322445192355344": {
+      "message": "Različica API-ja za strežnik za pogovore Hangouts:"
+   },
+   "8025420827457681102": {
+      "message": "Ali lahko vidite Chromecast v namestitvenem programu za Windows/Mac OS?"
+   },
+   "8130895852484727514": {
+      "message": "Ni mogoče vzpostaviti povezave z nekaterimi napravami. (napaka $ERROR$)",
+      "placeholders": {
+         "ERROR": {
+            "content": "$1"
+         }
+      }
+   },
+   "8189622236075700665": {
+      "message": "Ali želite zavreči povratne informacije?"
+   },
+   "8190621044561219027": {
+      "message": "Najmanjša bitna hitrost:"
+   },
+   "819996403327805209": {
+      "message": "Več o tem"
+   },
+   "8242882361224206357": {
+      "message": "O čem pošiljate povratne informacije?"
+   },
+   "8254879137669712236": {
+      "message": "Omogočanje samodejnega omejevanja velikosti/hitrosti sličic"
+   },
+   "8288732448265345962": {
+      "message": "Prekliči"
+   },
+   "8304164664901068767": {
+      "message": "Z razširitvijo za Google Cast lahko v napravi Chromecast poiščete in predvajate vsebino iz brskalnika Chrome.\nTo je preskusna različica (*BETA*) razširitve za Google Cast. Namenjena je razvijalcem in zahtevnejšim uporabnikom, ki želijo dostop do prihodnjih API-jev in funkcij pred javno objavo. Večina uporabnikov naj namesti stabilno razširitev za Google Cast (https://chrome.google.com/webstore/detail/google-cast/boadgeojelhgndaghljhdicfkmllpafd). Preskusna različica je običajno manj stabilna in vsebuje napake.\nČe namestite ta izdelek, se strinjate z Googlovimi pogoji storitve in pravilnikom o zasebnosti na https://www.google.com/intl/sl/policies/."
+   },
+   "8314352943658679563": {
+      "message": "Predvajanje v pogovorih Hangouts je onemogočeno. Zaenkrat je podprta samo domena @google.com."
+   },
+   "8351230089123629067": {
+      "message": "Grafična kartica/GPE:"
+   },
+   "8432562579042371182": {
+      "message": "Možnosti"
+   },
+   "8436497523209458720": {
+      "message": "Pošljite povratne informacije ..."
+   },
+   "8444501525238416559": {
+      "message": "Največja zakasnitev:"
+   },
+   "845494741086179740": {
+      "message": "Računalnik v žičnem omrežju, Chromecast v omrežju Wi-Fi"
+   },
+   "8491974984518503778": {
+      "message": "Znova naloži"
+   },
+   "8500110749168055241": {
+      "message": "Migeta"
+   },
+   "8700054488486244094": {
+      "message": "Možnosti razširitve za Google Cast"
+   },
+   "872641383564597641": {
+      "message": "Povezava z napravo je prekinjena."
+   },
+   "8745478539067058731": {
+      "message": "Predstavite zavihke, okna ali namizje v pogovoru Hangout."
+   },
+   "8808326359642865369": {
+      "message": "(preskusno)"
+   },
+   "8847227464712783239": {
+      "message": "Izbrana naprava ne deluje pravilno"
+   },
+   "8879729374562274188": {
+      "message": "Pri tem je prišlo do napake."
+   },
+   "8887833628383960193": {
+      "message": "Odličen – HD"
+   },
+   "8906884849462126639": {
+      "message": "Onemogočanje pregleda v ozadju:"
+   },
+   "8948441291106678529": {
+      "message": "Možnosti razširitve za Google Cast"
+   },
+   "897566596634286067": {
+      "message": "Tukaj vnesite povratne informacije (obvezno)."
+   },
+   "8998179362936748717": {
+      "message": "V redu"
+   },
+   "9021642677831414701": {
+      "message": "Način pretočnega predvajanja predstavnosti:"
+   },
+   "9039563863590019196": {
+      "message": "Spreminjanje velikosti okna ni podprto"
+   },
+   "9059560719840598868": {
+      "message": "Pošlji povratne informacije"
+   },
+   "9120942669794506861": {
+      "message": "Ali imate nameščeno posebno omrežje VPN, strežnik proxy, požarni zid ali programsko opremo NAS?"
+   },
+   "MSG_CAPTURE_ERROR": {
+      "message": "578821942116253728"
+   },
+   "MSG_CAPTURE_ERROR_DESCRIPTION": {
+      "message": "7435898358826649826"
+   },
+   "MSG_CASTOUTS_DISABLED": {
+      "message": "8314352943658679563"
+   },
+   "MSG_CASTOUTS_INITIALIZED": {
+      "message": "5773074680866649953"
+   },
+   "MSG_CASTOUTS_TIMED_OUT": {
+      "message": "2618451236056129793"
+   },
+   "MSG_CHROME_TOO_OLD_FOR_V2": {
+      "message": "1443898800503846063"
+   },
+   "MSG_CHROME_TOO_OLD_FOR_V2_DESCRIPTION": {
+      "message": "4157951843472785441"
+   },
+   "MSG_DEVICE_CHANNEL_ERROR": {
+      "message": "4511372876817255492"
+   },
+   "MSG_DEVICE_CHANNEL_ERROR_DESCRIPTION": {
+      "message": "8130895852484727514"
+   },
+   "MSG_GC_BETA_EXTENSION_DESCRIPTION": {
+      "message": "8304164664901068767"
+   },
+   "MSG_GC_CANCEL_BUTTON": {
+      "message": "8288732448265345962"
+   },
+   "MSG_GC_CASTING": {
+      "message": "5590598097041702454"
+   },
+   "MSG_GC_CASTING_LABEL": {
+      "message": "4014224501758376361"
+   },
+   "MSG_GC_CAST_APP": {
+      "message": "5056298333685549098"
+   },
+   "MSG_GC_CAST_APP_OPTION": {
+      "message": "7344649529753624682"
+   },
+   "MSG_GC_CAST_ENTIRE_SCREEN": {
+      "message": "5163000733818237380"
+   },
+   "MSG_GC_CAST_TAB": {
+      "message": "6046507125919556913"
+   },
+   "MSG_GC_CAST_TAB_AUDIO": {
+      "message": "1189144544819350763"
+   },
+   "MSG_GC_CAST_THIS_APP": {
+      "message": "1717149362663359343"
+   },
+   "MSG_GC_CAST_THIS_TAB": {
+      "message": "3278102219211539720"
+   },
+   "MSG_GC_DEVICE_BAD": {
+      "message": "8847227464712783239"
+   },
+   "MSG_GC_DEVICE_BAD_RESOLUTION": {
+      "message": "7661531377295243900"
+   },
+   "MSG_GC_DEVICE_CONNECTION_CHECK_ONLINE": {
+      "message": "7864119253243497594"
+   },
+   "MSG_GC_DEVICE_CONNECTION_ERROR_FIXING": {
+      "message": "3873469728089727547"
+   },
+   "MSG_GC_DEVICE_CONNECTION_LOST": {
+      "message": "872641383564597641"
+   },
+   "MSG_GC_DEVICE_NOT_ONLINE": {
+      "message": "4687947362658561907"
+   },
+   "MSG_GC_DEVICE_NOT_ONLINE_RESOLUTION": {
+      "message": "2942203478948533213"
+   },
+   "MSG_GC_DEVICE_UNABLE_TO_CAST": {
+      "message": "1104234694810969409"
+   },
+   "MSG_GC_DEVICE_UNABLE_TO_CAST_RESOLUTION": {
+      "message": "2884726392788153618"
+   },
+   "MSG_GC_DISMISS_BUTTON": {
+      "message": "2081143677025752994"
+   },
+   "MSG_GC_ENTER_HANGOUT_NAME": {
+      "message": "3203240389500117801"
+   },
+   "MSG_GC_EXTENSION_DESCRIPTION": {
+      "message": "3202350311251778009"
+   },
+   "MSG_GC_EXTENSION_SHORT_DESCRIPTION": {
+      "message": "6392731103614271560"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_ACCEPTABLE": {
+      "message": "482442943064110817"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_GOOD": {
+      "message": "5745355507138230213"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_PERFECT": {
+      "message": "7029426286291560071"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_POOR": {
+      "message": "4272010402571776761"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_UNINTELLIGIBLE": {
+      "message": "6118473811359442709"
+   },
+   "MSG_GC_FEEDBACK_DISCARD_CONFIRMATION": {
+      "message": "8189622236075700665"
+   },
+   "MSG_GC_FEEDBACK_DISCLAIMER": {
+      "message": "1878364533704855528"
+   },
+   "MSG_GC_FEEDBACK_NA": {
+      "message": "5823878688587296398"
+   },
+   "MSG_GC_FEEDBACK_PAGE_TITLE": {
+      "message": "7786163844034528352"
+   },
+   "MSG_GC_FEEDBACK_RESENDING": {
+      "message": "6295154563386647404"
+   },
+   "MSG_GC_FEEDBACK_SENDING": {
+      "message": "6018881802001125637"
+   },
+   "MSG_GC_FEEDBACK_SEND_FAIL": {
+      "message": "4865676252029097872"
+   },
+   "MSG_GC_FEEDBACK_SEND_SUCCESS": {
+      "message": "6988652234001902672"
+   },
+   "MSG_GC_FEEDBACK_TYPE_BUG_OR_ERROR": {
+      "message": "4089994756445820175"
+   },
+   "MSG_GC_FEEDBACK_TYPE_DISCOVERY": {
+      "message": "2076488708707463944"
+   },
+   "MSG_GC_FEEDBACK_TYPE_FEATURE_REQUEST": {
+      "message": "780135806192376347"
+   },
+   "MSG_GC_FEEDBACK_TYPE_OTHER": {
+      "message": "3996247341169314250"
+   },
+   "MSG_GC_FEEDBACK_TYPE_PROJECTION_QUALITY": {
+      "message": "2438859709710567679"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_ACCEPTABLE": {
+      "message": "4324962226715124466"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_FREEZES": {
+      "message": "7053128562708856478"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_GOOD": {
+      "message": "6039331491778328245"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_GREAT": {
+      "message": "8887833628383960193"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_JERKY": {
+      "message": "8500110749168055241"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_PERFECT": {
+      "message": "4584454172263179470"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_POOR": {
+      "message": "2377419936291389581"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_SMOOTH": {
+      "message": "4224760847878375792"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_STUTTER": {
+      "message": "3844709005265884931"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_UNWATCHABLE": {
+      "message": "7008828272760191653"
+   },
+   "MSG_GC_GENERIC_ERROR": {
+      "message": "8879729374562274188"
+   },
+   "MSG_GC_LEARN_MORE_LINK": {
+      "message": "5849296180435940955"
+   },
+   "MSG_GC_MIRROR_QUALITY_AUTO": {
+      "message": "6807464445011823029"
+   },
+   "MSG_GC_MIRROR_QUALITY_HIGH": {
+      "message": "3681271501407987946"
+   },
+   "MSG_GC_MIRROR_QUALITY_HIGHEST": {
+      "message": "1403598074357445300"
+   },
+   "MSG_GC_MIRROR_QUALITY_LOW": {
+      "message": "6236792503803747284"
+   },
+   "MSG_GC_OK_BUTTON": {
+      "message": "4223394109936547558"
+   },
+   "MSG_GC_OPTIONS_PAGE_TITLE": {
+      "message": "8700054488486244094"
+   },
+   "MSG_GC_RETRY_BUTTON": {
+      "message": "1318160328466758792"
+   },
+   "MSG_GC_SHARE_YOUR_THOUGHTS": {
+      "message": "3594579793458243987"
+   },
+   "MSG_GC_SHARE_YOUR_THOUGHTS_DESCRIPTION": {
+      "message": "232164743503663377"
+   },
+   "MSG_GC_STOP_CASTING": {
+      "message": "7484752158248863804"
+   },
+   "MSG_GC_SUBMIT_FEEDBACK": {
+      "message": "6514896123802924361"
+   },
+   "MSG_HANGOUT_ERROR": {
+      "message": "1588576801511256206"
+   },
+   "MSG_HANGOUT_ERROR_DESCRIPTION": {
+      "message": "5728295142929105913"
+   },
+   "MSG_HANGOUT_INACTIVE": {
+      "message": "4102291180899400833"
+   },
+   "MSG_HANGOUT_INACTIVE_DESCRIPTION": {
+      "message": "1696531255551038655"
+   },
+   "MSG_HANGOUT_INVALID": {
+      "message": "48395364426353647"
+   },
+   "MSG_HANGOUT_INVALID_DESCRIPTION": {
+      "message": "3658695798711423870"
+   },
+   "MSG_LOAD_FAILED": {
+      "message": "3254351313955764967"
+   },
+   "MSG_UPDATE_REQUIRED": {
+      "message": "3485206350043289145"
+   },
+   "MSG_WEBRTC_CONNECTION_ERROR": {
+      "message": "7467295073121579516"
+   },
+   "MSG_WINDOW_RESIZE_UNSUPPORTED": {
+      "message": "9039563863590019196"
+   },
+   "MSG_WINDOW_RESIZE_UNSUPPORTED_DESCRIPTION": {
+      "message": "57055743185823882"
+   },
+   "autoThrottlingEnabled": {
+      "message": "8254879137669712236"
+   },
+   "auto_stats_collection_description": {
+      "message": "3188239202899052784"
+   },
+   "auto_stats_collection_dismiss": {
+      "message": "8998179362936748717"
+   },
+   "auto_stats_collection_title": {
+      "message": "4585326301657856848"
+   },
+   "cast_feedback_audio_quality": {
+      "message": "4741643884742469674"
+   },
+   "cast_feedback_comments": {
+      "message": "5671949584911040143"
+   },
+   "cast_feedback_description_required_label": {
+      "message": "897566596634286067"
+   },
+   "cast_feedback_discovery_did_not_try": {
+      "message": "6585975561839203683"
+   },
+   "cast_feedback_discovery_network": {
+      "message": "1213957982723875920"
+   },
+   "cast_feedback_discovery_network_wifi_diff_networks": {
+      "message": "7824803162979416790"
+   },
+   "cast_feedback_discovery_network_wifi_same": {
+      "message": "5385436389563925676"
+   },
+   "cast_feedback_discovery_network_wifi_wired": {
+      "message": "845494741086179740"
+   },
+   "cast_feedback_discovery_no": {
+      "message": "3542042671420335679"
+   },
+   "cast_feedback_discovery_not_sure": {
+      "message": "6997602168024654529"
+   },
+   "cast_feedback_discovery_setup": {
+      "message": "8025420827457681102"
+   },
+   "cast_feedback_discovery_vpn": {
+      "message": "9120942669794506861"
+   },
+   "cast_feedback_discovery_yes": {
+      "message": "2807800733729323332"
+   },
+   "cast_feedback_general_description": {
+      "message": "3633167042592070329"
+   },
+   "cast_feedback_gpu": {
+      "message": "8351230089123629067"
+   },
+   "cast_feedback_mirroring_cancel": {
+      "message": "2159130950882492111"
+   },
+   "cast_feedback_mirroring_disclaimer": {
+      "message": "5750542272329616142"
+   },
+   "cast_feedback_mirroring_ok": {
+      "message": "4187599066116404890"
+   },
+   "cast_feedback_mirroring_submit": {
+      "message": "9059560719840598868"
+   },
+   "cast_feedback_processor": {
+      "message": "4563873836363331434"
+   },
+   "cast_feedback_quality_details": {
+      "message": "7028436125721806572"
+   },
+   "cast_feedback_request": {
+      "message": "2517473004427269018"
+   },
+   "cast_feedback_required_parens": {
+      "message": "2083306153840951484"
+   },
+   "cast_feedback_thankyou": {
+      "message": "3593576714633990163"
+   },
+   "cast_feedback_title": {
+      "message": "6604600094360523853"
+   },
+   "cast_feedback_topic": {
+      "message": "8242882361224206357"
+   },
+   "cast_feedback_url": {
+      "message": "5229573508420009298"
+   },
+   "cast_feedback_video_quality": {
+      "message": "5395332831907227403"
+   },
+   "cast_feedback_video_smoothness": {
+      "message": "2009563581399507712"
+   },
+   "cast_popup_back_to_list": {
+      "message": "6214031582604719501"
+   },
+   "cast_popup_cast_audio": {
+      "message": "1877856983727558507"
+   },
+   "cast_popup_cast_screen": {
+      "message": "4072556140582099509"
+   },
+   "cast_popup_cast_screen_experimental": {
+      "message": "8808326359642865369"
+   },
+   "cast_popup_cast_tab": {
+      "message": "2932348398128569497"
+   },
+   "cast_popup_casting_to": {
+      "message": "2076769487302164340"
+   },
+   "cast_popup_device_missing": {
+      "message": "3885666702463386029"
+   },
+   "cast_popup_feedback_link": {
+      "message": "8436497523209458720"
+   },
+   "cast_popup_help_link": {
+      "message": "7911416166208830577"
+   },
+   "cast_popup_high_quality_video": {
+      "message": "3634893929360744610"
+   },
+   "cast_popup_high_quality_video_details": {
+      "message": "130855611855008194"
+   },
+   "cast_popup_high_quality_video_dismiss": {
+      "message": "464916539454098167"
+   },
+   "cast_popup_loading": {
+      "message": "3894950702316166331"
+   },
+   "cast_popup_options_link": {
+      "message": "8432562579042371182"
+   },
+   "cast_popup_playing_on": {
+      "message": "2588174729923512180"
+   },
+   "castouts_user_email_info": {
+      "message": "7019403272859304206"
+   },
+   "donge_no_cast_device_found": {
+      "message": "5339913305209531244"
+   },
+   "goog_cast_feedback_fine_logs_warning": {
+      "message": "7075073555752965346"
+   },
+   "goog_cast_feedback_get_external_logs_error": {
+      "message": "2554687737930512120"
+   },
+   "goog_cast_feedback_got_external_logs": {
+      "message": "801495004830452095"
+   },
+   "goog_cast_feedback_mirroring_external_logs_button": {
+      "message": "5107389855082704624"
+   },
+   "goog_cast_feedback_mirroring_external_logs_error_device_not_found": {
+      "message": "2673108145745625398"
+   },
+   "goog_cast_feedback_mirroring_external_logs_error_device_not_supported": {
+      "message": "5202323856319464688"
+   },
+   "goog_cast_feedback_mirroring_logs_button": {
+      "message": "2016072788708608077"
+   },
+   "goog_cast_feedback_retrieving_external_logs": {
+      "message": "3630200699826211171"
+   },
+   "options_additional_receiver_ips": {
+      "message": "3577676426589935803"
+   },
+   "options_castouts_description": {
+      "message": "8745478539067058731"
+   },
+   "options_castouts_in_progress": {
+      "message": "6750793691943336560"
+   },
+   "options_castouts_learn_more": {
+      "message": "819996403327805209"
+   },
+   "options_castouts_manual_entry": {
+      "message": "4848910232094031059"
+   },
+   "options_castouts_signed_in": {
+      "message": "4816591726282520264"
+   },
+   "options_castouts_signed_out": {
+      "message": "6529598361108234608"
+   },
+   "options_change_effect": {
+      "message": "2638991638737993114"
+   },
+   "options_custom_mirroring_settings": {
+      "message": "3181069857560875169"
+   },
+   "options_default_hangout_domain": {
+      "message": "7552710358338304275"
+   },
+   "options_default_hangout_domain_description": {
+      "message": "5382938928138155999"
+   },
+   "options_developer_settings_sesison_title": {
+      "message": "1942272259363289202"
+   },
+   "options_devices": {
+      "message": "1206604611937086300"
+   },
+   "options_devices_link": {
+      "message": "7496142106423617391"
+   },
+   "options_disable_scan": {
+      "message": "8906884849462126639"
+   },
+   "options_dscp": {
+      "message": "5477887796261084791"
+   },
+   "options_enable_cloud": {
+      "message": "7433190838776121209"
+   },
+   "options_enable_cloud_signed_out": {
+      "message": "2697071986776077166"
+   },
+   "options_hangout_version": {
+      "message": "8023322445192355344"
+   },
+   "options_hangouts_version_changed_description": {
+      "message": "5284888875943777523"
+   },
+   "options_image_resolution": {
+      "message": "4076870975160614320"
+   },
+   "options_max_bitrate": {
+      "message": "3695617262415720740"
+   },
+   "options_max_capture_frame_rate": {
+      "message": "1313855295453056101"
+   },
+   "options_max_latency": {
+      "message": "8444501525238416559"
+   },
+   "options_media_streaming_mode": {
+      "message": "9021642677831414701"
+   },
+   "options_min_bitrate": {
+      "message": "8190621044561219027"
+   },
+   "options_min_latency": {
+      "message": "2880373984418075735"
+   },
+   "options_non_blocking_io": {
+      "message": "7911160566398057890"
+   },
+   "options_pacing_max": {
+      "message": "2242261874100835789"
+   },
+   "options_pacing_target": {
+      "message": "7155593134764035664"
+   },
+   "options_receiver_ip_deletion": {
+      "message": "2456043080471762298"
+   },
+   "options_reload": {
+      "message": "8491974984518503778"
+   },
+   "options_send_usage": {
+      "message": "7885431863671390745"
+   },
+   "options_setup_link": {
+      "message": "4906762558811440847"
+   },
+   "options_stop_casting": {
+      "message": "3374149466144554646"
+   },
+   "options_tab_casting_quality_warning": {
+      "message": "2741789927660626901"
+   },
+   "options_tab_castouts": {
+      "message": "3400233096253425149"
+   },
+   "options_tab_cloud_settings": {
+      "message": "6142008190583061028"
+   },
+   "options_tab_proj_quality": {
+      "message": "7867182504906675090"
+   },
+   "options_title": {
+      "message": "8948441291106678529"
+   },
+   "stats_collect_prompt_option": {
+      "message": "4822504808490979258"
+   }
+}

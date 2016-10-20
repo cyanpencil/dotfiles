@@ -1,0 +1,1221 @@
+{
+   "1104234694810969409": {
+      "message": "無法投放到裝置上。"
+   },
+   "1189144544819350763": {
+      "message": "將這個分頁 (音訊) 投放至..."
+   },
+   "1206604611937086300": {
+      "message": "Cast 裝置"
+   },
+   "1213957982723875920": {
+      "message": "下列何者最符合您的網路使用情形？"
+   },
+   "130855611855008194": {
+      "message": "按一下這個網站上的投放圖示，即可獲得最佳投放體驗。"
+   },
+   "1313855295453056101": {
+      "message": "最高擷取畫面格速率："
+   },
+   "1318160328466758792": {
+      "message": "重試"
+   },
+   "1403598074357445300": {
+      "message": "最高 (高位元率 720p)"
+   },
+   "1443898800503846063": {
+      "message": "Chrome 版本過舊"
+   },
+   "1588576801511256206": {
+      "message": "發生非預期的 Hangouts 錯誤。"
+   },
+   "1696531255551038655": {
+      "message": "Hangouts 參與者人數不足，無法繼續使用。"
+   },
+   "1717149362663359343": {
+      "message": "投放 $V2_APP_DOMAIN$",
+      "placeholders": {
+         "V2_APP_DOMAIN": {
+            "content": "$1"
+         }
+      }
+   },
+   "1877856983727558507": {
+      "message": "投放這個分頁 (音訊最佳化)"
+   },
+   "1878364533704855528": {
+      "message": "除了以上您選擇提交的資訊外，您的 Chrome 版本、作業系統版本、Cast 擴充功能選項、鏡像成效統計資料和通訊頻道診斷紀錄也會一併提交。我們會使用您提交的意見回饋來診斷問題，並協助改善擴充功能。其中的個人資訊 (不論明確提交或不慎提交) 一律會依隱私權政策規定受到妥善保護。提交意見回饋即表示您同意 Google 使用您所提供的意見回饋改善任何 Google 產品或服務。"
+   },
+   "1942272259363289202": {
+      "message": "開發人員設定"
+   },
+   "2009563581399507712": {
+      "message": "視訊流暢度："
+   },
+   "2016072788708608077": {
+      "message": "附加 Cast 擴充功能紀錄 - 請勾選這個核取方塊，協助我們對問題進行偵錯"
+   },
+   "2076488708707463944": {
+      "message": "探索裝置"
+   },
+   "2076769487302164340": {
+      "message": "目前投放裝置："
+   },
+   "2081143677025752994": {
+      "message": "關閉"
+   },
+   "2083306153840951484": {
+      "message": "(必填)"
+   },
+   "2159130950882492111": {
+      "message": "取消"
+   },
+   "2242261874100835789": {
+      "message": "每批次封包數 (上限)："
+   },
+   "232164743503663377": {
+      "message": "歡迎您將投放功能的使用心得與我們分享！"
+   },
+   "2377419936291389581": {
+      "message": "不佳"
+   },
+   "2438859709710567679": {
+      "message": "分頁/桌面投影品質"
+   },
+   "2456043080471762298": {
+      "message": "刪除"
+   },
+   "2517473004427269018": {
+      "message": "您的工作階段已持續超過一分鐘，希望您能與我們的小組分享使用意見。如果使用過程中發生任何問題，請點選方塊附上 Cast 擴充功能紀錄和外部紀錄。"
+   },
+   "2554687737930512120": {
+      "message": "無法擷取這部裝置的紀錄。"
+   },
+   "2588174729923512180": {
+      "message": "目前播放裝置："
+   },
+   "2618451236056129793": {
+      "message": "「投放至 Hangouts」設定已逾時。請參閱 go/castouts-dogfood#TOC-Known-Issues"
+   },
+   "2638991638737993114": {
+      "message": "您的變更將於下次投放分頁時生效。"
+   },
+   "2673108145745625398": {
+      "message": "Chrome 找不到已連接的裝置。"
+   },
+   "2697071986776077166": {
+      "message": "您必須$START_LINK$登入$END_LINK$ Chrome 才可使用雲端功能。",
+      "placeholders": {
+         "END_LINK": {
+            "content": "$1"
+         },
+         "START_LINK": {
+            "content": "$2"
+         }
+      }
+   },
+   "2697071986776077166_ph": {
+      "message": "\u003C/a>\u003Ca ng-click=\"triggerSignIn()\" href=\"\">"
+   },
+   "2741789927660626901": {
+      "message": "不建議非進階使用者自行調整設定。設定「分頁投放品質」會重設這些值。"
+   },
+   "2807800733729323332": {
+      "message": "是"
+   },
+   "2880373984418075735": {
+      "message": "最短延遲時間："
+   },
+   "2884726392788153618": {
+      "message": "發生未預期的錯誤，請進行以下動作：\u003Cul>\u003Cli>嘗試重新投放\u003C/li>\u003Cli>確認網路連線狀態\u003C/li>\u003C/ul>"
+   },
+   "2932348398128569497": {
+      "message": "投放這個分頁"
+   },
+   "2942203478948533213": {
+      "message": "請選取其他裝置。"
+   },
+   "3181069857560875169": {
+      "message": "自訂鏡像設定"
+   },
+   "3188239202899052784": {
+      "message": "您是否願意將匿名的 Cast 使用資訊提供給 Google，協助改善 Cast 服務品質？我們十分重視您的隱私權，而且您隨時可以透過 [選項] 更改這項設定。"
+   },
+   "3202350311251778009": {
+      "message": "安裝 Google Cast 擴充功能後，只要透過 Chrome 瀏覽器找到想看的內容，就可以直接投放到 Chromecast 裝置上播放。\n已針對 Cast 進行最佳化的網站上會提供一些新選項。透過這些選項，您可以將自己的電腦當做遙控器來觀看影片並控制播放功能，並且透過 Chromecast 在電視上播放影片。\n此外，您也可以將 Chrome 中的任何分頁投放到電視上，透過家中畫質最棒的螢幕盡情瀏覽網站、欣賞相片，甚至觀看影片。請注意，這項功能目前仍在測試階段，而且需要搭配高速的電腦和 Wi-Fi 網路才能使用。\n您必須具備 Chromecast 硬體，才能使用這項擴充功能。如需瞭解詳情，請造訪 http://google.com/chromecast。\n安裝這個擴充功能即表示您同意遵守 Google 的《服務條款》和《隱私權政策》(詳情請見 https://www.google.com/intl/zh-TW/policies/)。"
+   },
+   "3203240389500117801": {
+      "message": "輸入 Hangouts 名稱"
+   },
+   "3254351313955764967": {
+      "message": "糟糕！好像發生了技術相關問題，請過幾分鐘後再試一次。"
+   },
+   "3278102219211539720": {
+      "message": "投放這個分頁"
+   },
+   "3374149466144554646": {
+      "message": "立即停止投放"
+   },
+   "3400233096253425149": {
+      "message": "投放至 Hangouts"
+   },
+   "3485206350043289145": {
+      "message": "您必須先關閉 Chrome 瀏覽器，然後再重新啟動該瀏覽器，才能取得近期推出的更新內容。"
+   },
+   "3542042671420335679": {
+      "message": "否"
+   },
+   "3577676426589935803": {
+      "message": "其他接收端 IP："
+   },
+   "3593576714633990163": {
+      "message": "感謝您試用 Cast 鏡像功能。"
+   },
+   "3594579793458243987": {
+      "message": "分享您的想法"
+   },
+   "3630200699826211171": {
+      "message": "正在嘗試納入「$_EXTERNALDEVICENAME_$」的紀錄。",
+      "placeholders": {
+         "_EXTERNALDEVICENAME_": {
+            "content": "$1"
+         }
+      }
+   },
+   "3630200699826211171_ph": {
+      "message": "{{externalDeviceName}}"
+   },
+   "3633167042592070329": {
+      "message": "您的寶貴意見可協助我們讓 Google Cast 更臻完美。請注意，對於使用者透過意見回饋提交的任何問題，我們不會給予個別回應。如果您有 Chromecast 相關問題想直接洽詢 Google，請參閱$START_LINK$這個網頁$END_LINK$的說明。",
+      "placeholders": {
+         "END_LINK": {
+            "content": "$1"
+         },
+         "START_LINK": {
+            "content": "$2"
+         }
+      }
+   },
+   "3633167042592070329_ph": {
+      "message": "\u003C/a>\u003Ca href=\"https://support.google.com/chromecast/troubleshooter/2995236?ref_topic=2994245\">"
+   },
+   "3634893929360744610": {
+      "message": "高畫質投放"
+   },
+   "3658695798711423870": {
+      "message": "請檢查名稱，然後再試一次。"
+   },
+   "3681271501407987946": {
+      "message": "高 (720p)"
+   },
+   "3695617262415720740": {
+      "message": "最高位元速率："
+   },
+   "3844709005265884931": {
+      "message": "不時間斷"
+   },
+   "3873469728089727547": {
+      "message": "請檢查您的裝置是否靠近無線存取點。\u003C/br>然後再試一次。"
+   },
+   "3885666702463386029": {
+      "message": "(找不到裝置嗎？)"
+   },
+   "3894950702316166331": {
+      "message": "載入中..."
+   },
+   "3996247341169314250": {
+      "message": "其他"
+   },
+   "4014224501758376361": {
+      "message": "正在投放至 $RECEIVER_NAME$",
+      "placeholders": {
+         "RECEIVER_NAME": {
+            "content": "$1"
+         }
+      }
+   },
+   "4072556140582099509": {
+      "message": "投放螢幕/視窗"
+   },
+   "4076870975160614320": {
+      "message": "解析度："
+   },
+   "4089994756445820175": {
+      "message": "問題或錯誤"
+   },
+   "4102291180899400833": {
+      "message": "閒置中的 Hangouts 已經中斷連線。"
+   },
+   "4157951843472785441": {
+      "message": "必須更新 Chrome 才能投放這個網站。"
+   },
+   "4187599066116404890": {
+      "message": "確定！"
+   },
+   "4223394109936547558": {
+      "message": "確定"
+   },
+   "4224760847878375792": {
+      "message": "流暢"
+   },
+   "4272010402571776761": {
+      "message": "不佳"
+   },
+   "4324962226715124466": {
+      "message": "可以接受"
+   },
+   "4511372876817255492": {
+      "message": "無法連線至裝置。"
+   },
+   "4563873836363331434": {
+      "message": "處理器："
+   },
+   "4584454172263179470": {
+      "message": "完美"
+   },
+   "4585326301657856848": {
+      "message": "協助改善 Cast"
+   },
+   "464916539454098167": {
+      "message": "瞭解！"
+   },
+   "4687947362658561907": {
+      "message": "選取的裝置已不在線上。"
+   },
+   "4741643884742469674": {
+      "message": "音訊品質："
+   },
+   "4816591726282520264": {
+      "message": "您以 $START_STRONG$$_USEREMAIL_$$END_STRONG$ 身分登入了 Chrome，並將以相同帳戶投放內容到 Hangouts。",
+      "placeholders": {
+         "END_STRONG": {
+            "content": "$1"
+         },
+         "START_STRONG": {
+            "content": "$2"
+         },
+         "_USEREMAIL_": {
+            "content": "$3"
+         }
+      }
+   },
+   "4816591726282520264_ph": {
+      "message": "\u003C/strong>\u003Cstrong>{{userEmail}}"
+   },
+   "4822504808490979258": {
+      "message": "自動將 Cast 擴充功能使用統計資料傳送給 Google"
+   },
+   "482442943064110817": {
+      "message": "可以接受 - FM"
+   },
+   "48395364426353647": {
+      "message": "無法解析 Hangouts 名稱。"
+   },
+   "4848910232094031059": {
+      "message": "透過會議名稱或 ID 尋找 Hangouts"
+   },
+   "4865676252029097872": {
+      "message": "無法送出意見，請稍後再試。"
+   },
+   "4906762558811440847": {
+      "message": "設定新的 Cast 裝置"
+   },
+   "5056298333685549098": {
+      "message": "將 $V2_APP_DOMAIN$ 投放到...",
+      "placeholders": {
+         "V2_APP_DOMAIN": {
+            "content": "$1"
+         }
+      }
+   },
+   "5107389855082704624": {
+      "message": "附加裝置紀錄 - 請勾選這個核取方塊，協助我們對問題進行偵錯"
+   },
+   "5163000733818237380": {
+      "message": "將螢幕/視窗投放到..."
+   },
+   "5202323856319464688": {
+      "message": "您所使用的裝置不提供紀錄。"
+   },
+   "5229573508420009298": {
+      "message": "(選填) 您投放的內容/網址為何？"
+   },
+   "5284888875943777523": {
+      "message": "重新載入後即可使用新版 Hangouts。"
+   },
+   "5339913305209531244": {
+      "message": "找不到 Cast 裝置。"
+   },
+   "5382938928138155999": {
+      "message": "您可以指定預設網域，並透過這個網域加入 Hangouts。如果您輸入的自訂 Hangouts 名稱未包括網域，系統會使用指定的網域。"
+   },
+   "5385436389563925676": {
+      "message": "PC 和 Chromecast 使用相同的 Wi-Fi 網路"
+   },
+   "5395332831907227403": {
+      "message": "視訊品質："
+   },
+   "5477887796261084791": {
+      "message": "DSCP："
+   },
+   "5590598097041702454": {
+      "message": "投放中..."
+   },
+   "5671949584911040143": {
+      "message": "其他意見："
+   },
+   "57055743185823882": {
+      "message": "調整您正在投放的視窗大小可能會導致裝置不穩定。"
+   },
+   "5728295142929105913": {
+      "message": "請提交意見 (附上紀錄)，然後再試一次。"
+   },
+   "5745355507138230213": {
+      "message": "良好"
+   },
+   "5750542272329616142": {
+      "message": "除了以上您選擇提交的資訊外，您的 Chrome 版本、作業系統版本、Cast 擴充功能選項、鏡像成效統計資料和通訊頻道診斷紀錄也會一併提交。我們會使用您提交的意見回饋來診斷問題並改善擴充功能，其中的個人資訊 (不論明確提交或不慎提交) 一律會依隱私權政策規定受到妥善保護。提交意見回饋即表示您同意 Google 使用您所提供的意見回饋改善任何 Google 產品或服務。$END_BOLD$",
+      "placeholders": {
+         "END_BOLD": {
+            "content": "$1"
+         }
+      }
+   },
+   "5750542272329616142_ph": {
+      "message": "\u003C/b>"
+   },
+   "5773074680866649953": {
+      "message": "「投放至 Hangouts」功能已成功初始化！"
+   },
+   "578821942116253728": {
+      "message": "無法擷取媒體"
+   },
+   "5823878688587296398": {
+      "message": "不適用"
+   },
+   "5849296180435940955": {
+      "message": "瞭解詳情"
+   },
+   "6018881802001125637": {
+      "message": "正在送出意見..."
+   },
+   "6039331491778328245": {
+      "message": "良好 - DVD"
+   },
+   "6046507125919556913": {
+      "message": "將這個分頁投放至..."
+   },
+   "6118473811359442709": {
+      "message": "無法辨識"
+   },
+   "6142008190583061028": {
+      "message": "雲端設定"
+   },
+   "6214031582604719501": {
+      "message": "返回裝置清單"
+   },
+   "6236792503803747284": {
+      "message": "標準 (480p)"
+   },
+   "6295154563386647404": {
+      "message": "無法傳送意見回饋，正在重試中 (第 $ATTEMPT_NUMBER$ 次)...",
+      "placeholders": {
+         "ATTEMPT_NUMBER": {
+            "content": "$1"
+         }
+      }
+   },
+   "6392731103614271560": {
+      "message": "將內容傳送到您的 Chromecast 和其他支援 Google Cast 的裝置。"
+   },
+   "6514896123802924361": {
+      "message": "提交意見"
+   },
+   "6529598361108234608": {
+      "message": "您必須$START_LINK$登入$END_LINK$ Chrome 才可使用這項功能。",
+      "placeholders": {
+         "END_LINK": {
+            "content": "$1"
+         },
+         "START_LINK": {
+            "content": "$2"
+         }
+      }
+   },
+   "6529598361108234608_ph": {
+      "message": "\u003C/a>\u003Ca ng-click=\"triggerSignIn()\" href=\"\" id=\"triggerSignIn\">"
+   },
+   "6585975561839203683": {
+      "message": "沒有試過"
+   },
+   "6604600094360523853": {
+      "message": "Google Cast 意見回饋"
+   },
+   "6750793691943336560": {
+      "message": "如要啟用「投放至 Hangouts」功能，請登入帳戶並接受系統所提示的權限要求。權限要求提示可能會被其他視窗擋住。"
+   },
+   "6807464445011823029": {
+      "message": "自動 (最高：1080p，5 Mbps)"
+   },
+   "6988652234001902672": {
+      "message": "感謝您提供意見。"
+   },
+   "6997602168024654529": {
+      "message": "不確定"
+   },
+   "7008828272760191653": {
+      "message": "無法觀看"
+   },
+   "7019403272859304206": {
+      "message": "以 $START_STRONG$$_USEREMAIL_$$END_STRONG$ 身分投放",
+      "placeholders": {
+         "END_STRONG": {
+            "content": "$1"
+         },
+         "START_STRONG": {
+            "content": "$2"
+         },
+         "_USEREMAIL_": {
+            "content": "$3"
+         }
+      }
+   },
+   "7019403272859304206_ph": {
+      "message": "\u003C/strong>\u003Cstrong>{{userEmail}}"
+   },
+   "7028436125721806572": {
+      "message": "鏡像品質詳細資訊"
+   },
+   "7029426286291560071": {
+      "message": "完美"
+   },
+   "7053128562708856478": {
+      "message": "畫面凍結"
+   },
+   "7075073555752965346": {
+      "message": "警告：詳細記錄功能已啟用；以下紀錄可能包含網址或其他機密資訊。請檢閱並確認您是否同意提交這些資訊。"
+   },
+   "7155593134764035664": {
+      "message": "每批次封包數 (目標)："
+   },
+   "7344649529753624682": {
+      "message": "投放 $V2_APP_DOMAIN$",
+      "placeholders": {
+         "V2_APP_DOMAIN": {
+            "content": "$1"
+         }
+      }
+   },
+   "7433190838776121209": {
+      "message": "啟用雲端功能"
+   },
+   "7435898358826649826": {
+      "message": "無法擷取媒體內容，請再試一次。"
+   },
+   "7467295073121579516": {
+      "message": "我們無法連線。"
+   },
+   "7484752158248863804": {
+      "message": "停止投放"
+   },
+   "7496142106423617391": {
+      "message": "管理 Cast 裝置"
+   },
+   "7552710358338304275": {
+      "message": "Hangouts 預設網域："
+   },
+   "7661531377295243900": {
+      "message": "請重新啟動您的裝置。如果仍然無法解決問題，請與裝置製造商聯絡。"
+   },
+   "7786163844034528352": {
+      "message": "Google Cast 意見回饋"
+   },
+   "780135806192376347": {
+      "message": "功能建議"
+   },
+   "7824803162979416790": {
+      "message": "PC 和 Chromecast 使用不同的 Wi-Fi 網路 (例如分別使用 2.4GHz 和 5GHz)"
+   },
+   "7864119253243497594": {
+      "message": "請檢查您的裝置是否在線上。"
+   },
+   "7867182504906675090": {
+      "message": "分頁投放品質"
+   },
+   "7885431863671390745": {
+      "message": "自動將 Cast 擴充功能使用統計資料傳送給 Google。"
+   },
+   "7911160566398057890": {
+      "message": "在 Windows 上啟用非阻塞式 IO："
+   },
+   "7911416166208830577": {
+      "message": "説明"
+   },
+   "801495004830452095": {
+      "message": "已納入「$_EXTERNALDEVICENAME_$」的紀錄。",
+      "placeholders": {
+         "_EXTERNALDEVICENAME_": {
+            "content": "$1"
+         }
+      }
+   },
+   "801495004830452095_ph": {
+      "message": "{{externalDeviceName}}"
+   },
+   "8023322445192355344": {
+      "message": "Hangouts Server API 版本："
+   },
+   "8025420827457681102": {
+      "message": "您可以在 Windows/Mac 設定應用程式中看到自己的 Chromecast 嗎？"
+   },
+   "8130895852484727514": {
+      "message": "無法連線至部分裝置 (錯誤 $ERROR$)。",
+      "placeholders": {
+         "ERROR": {
+            "content": "$1"
+         }
+      }
+   },
+   "8189622236075700665": {
+      "message": "您要捨棄這則意見嗎？"
+   },
+   "8190621044561219027": {
+      "message": "最低位元速率："
+   },
+   "819996403327805209": {
+      "message": "瞭解詳情"
+   },
+   "8242882361224206357": {
+      "message": "您想要提供哪方面的意見？"
+   },
+   "8254879137669712236": {
+      "message": "啟用影格大小/速率自動調節功能："
+   },
+   "8288732448265345962": {
+      "message": "取消"
+   },
+   "8304164664901068767": {
+      "message": "安裝 Google Cast 擴充功能後，只要透過 Chrome 瀏覽器找到想看的內容，就可以直接投放到 Chromecast 裝置上播放。\n本擴充功能為 Google Cast 擴充功能的*測試版*，可讓開發人員和進階使用者先行體驗即將公開發佈的 API 和各項功能。我們建議大部分使用者安裝穩定版的 Google Cast 擴充功能 (https://chrome.google.com/webstore/detail/google-cast/boadgeojelhgndaghljhdicfkmllpafd)，因為測試版通常穩定性較低，較有可能出現錯誤。\n安裝這個擴充功能即表示您同意遵守 Google 的《服務條款》和《隱私權政策》(詳情請見 https://www.google.com/intl/zh-TW/policies/)。"
+   },
+   "8314352943658679563": {
+      "message": "「投放至 Hangouts」功能已停用。目前僅支援 @google.com"
+   },
+   "8351230089123629067": {
+      "message": "顯示卡/影像處理器："
+   },
+   "8432562579042371182": {
+      "message": "選項"
+   },
+   "8436497523209458720": {
+      "message": "傳送意見..."
+   },
+   "8444501525238416559": {
+      "message": "最長延遲時間："
+   },
+   "845494741086179740": {
+      "message": "PC 使用有線網路，Chromecast 則使用 Wi-Fi 網路"
+   },
+   "8491974984518503778": {
+      "message": "立即重新載入"
+   },
+   "8500110749168055241": {
+      "message": "畫面不穩定"
+   },
+   "8700054488486244094": {
+      "message": "Google Cast 擴充功能選項"
+   },
+   "872641383564597641": {
+      "message": "裝置連線已中斷。"
+   },
+   "8745478539067058731": {
+      "message": "將您的分頁、視窗或桌面顯示在 Hangouts。"
+   },
+   "8808326359642865369": {
+      "message": "(實驗性)"
+   },
+   "8847227464712783239": {
+      "message": "選取的裝置無法正常運作"
+   },
+   "8879729374562274188": {
+      "message": "這項活動發生錯誤。"
+   },
+   "8887833628383960193": {
+      "message": "極佳 - HD 高畫質"
+   },
+   "8906884849462126639": {
+      "message": "停用背景掃描："
+   },
+   "8948441291106678529": {
+      "message": "Google Cast 擴充功能選項"
+   },
+   "897566596634286067": {
+      "message": "請在此輸入您的意見 (必填)。"
+   },
+   "8998179362936748717": {
+      "message": "確定"
+   },
+   "9021642677831414701": {
+      "message": "媒體串流模式："
+   },
+   "9039563863590019196": {
+      "message": "不支援調整視窗大小"
+   },
+   "9059560719840598868": {
+      "message": "送出意見"
+   },
+   "9120942669794506861": {
+      "message": "您有安裝任何特殊的 VPN、Proxy、防火牆或 NAS 軟體嗎？"
+   },
+   "MSG_CAPTURE_ERROR": {
+      "message": "578821942116253728"
+   },
+   "MSG_CAPTURE_ERROR_DESCRIPTION": {
+      "message": "7435898358826649826"
+   },
+   "MSG_CASTOUTS_DISABLED": {
+      "message": "8314352943658679563"
+   },
+   "MSG_CASTOUTS_INITIALIZED": {
+      "message": "5773074680866649953"
+   },
+   "MSG_CASTOUTS_TIMED_OUT": {
+      "message": "2618451236056129793"
+   },
+   "MSG_CHROME_TOO_OLD_FOR_V2": {
+      "message": "1443898800503846063"
+   },
+   "MSG_CHROME_TOO_OLD_FOR_V2_DESCRIPTION": {
+      "message": "4157951843472785441"
+   },
+   "MSG_DEVICE_CHANNEL_ERROR": {
+      "message": "4511372876817255492"
+   },
+   "MSG_DEVICE_CHANNEL_ERROR_DESCRIPTION": {
+      "message": "8130895852484727514"
+   },
+   "MSG_GC_BETA_EXTENSION_DESCRIPTION": {
+      "message": "8304164664901068767"
+   },
+   "MSG_GC_CANCEL_BUTTON": {
+      "message": "8288732448265345962"
+   },
+   "MSG_GC_CASTING": {
+      "message": "5590598097041702454"
+   },
+   "MSG_GC_CASTING_LABEL": {
+      "message": "4014224501758376361"
+   },
+   "MSG_GC_CAST_APP": {
+      "message": "5056298333685549098"
+   },
+   "MSG_GC_CAST_APP_OPTION": {
+      "message": "7344649529753624682"
+   },
+   "MSG_GC_CAST_ENTIRE_SCREEN": {
+      "message": "5163000733818237380"
+   },
+   "MSG_GC_CAST_TAB": {
+      "message": "6046507125919556913"
+   },
+   "MSG_GC_CAST_TAB_AUDIO": {
+      "message": "1189144544819350763"
+   },
+   "MSG_GC_CAST_THIS_APP": {
+      "message": "1717149362663359343"
+   },
+   "MSG_GC_CAST_THIS_TAB": {
+      "message": "3278102219211539720"
+   },
+   "MSG_GC_DEVICE_BAD": {
+      "message": "8847227464712783239"
+   },
+   "MSG_GC_DEVICE_BAD_RESOLUTION": {
+      "message": "7661531377295243900"
+   },
+   "MSG_GC_DEVICE_CONNECTION_CHECK_ONLINE": {
+      "message": "7864119253243497594"
+   },
+   "MSG_GC_DEVICE_CONNECTION_ERROR_FIXING": {
+      "message": "3873469728089727547"
+   },
+   "MSG_GC_DEVICE_CONNECTION_LOST": {
+      "message": "872641383564597641"
+   },
+   "MSG_GC_DEVICE_NOT_ONLINE": {
+      "message": "4687947362658561907"
+   },
+   "MSG_GC_DEVICE_NOT_ONLINE_RESOLUTION": {
+      "message": "2942203478948533213"
+   },
+   "MSG_GC_DEVICE_UNABLE_TO_CAST": {
+      "message": "1104234694810969409"
+   },
+   "MSG_GC_DEVICE_UNABLE_TO_CAST_RESOLUTION": {
+      "message": "2884726392788153618"
+   },
+   "MSG_GC_DISMISS_BUTTON": {
+      "message": "2081143677025752994"
+   },
+   "MSG_GC_ENTER_HANGOUT_NAME": {
+      "message": "3203240389500117801"
+   },
+   "MSG_GC_EXTENSION_DESCRIPTION": {
+      "message": "3202350311251778009"
+   },
+   "MSG_GC_EXTENSION_SHORT_DESCRIPTION": {
+      "message": "6392731103614271560"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_ACCEPTABLE": {
+      "message": "482442943064110817"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_GOOD": {
+      "message": "5745355507138230213"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_PERFECT": {
+      "message": "7029426286291560071"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_POOR": {
+      "message": "4272010402571776761"
+   },
+   "MSG_GC_FEEDBACK_AUDIO_UNINTELLIGIBLE": {
+      "message": "6118473811359442709"
+   },
+   "MSG_GC_FEEDBACK_DISCARD_CONFIRMATION": {
+      "message": "8189622236075700665"
+   },
+   "MSG_GC_FEEDBACK_DISCLAIMER": {
+      "message": "1878364533704855528"
+   },
+   "MSG_GC_FEEDBACK_NA": {
+      "message": "5823878688587296398"
+   },
+   "MSG_GC_FEEDBACK_PAGE_TITLE": {
+      "message": "7786163844034528352"
+   },
+   "MSG_GC_FEEDBACK_RESENDING": {
+      "message": "6295154563386647404"
+   },
+   "MSG_GC_FEEDBACK_SENDING": {
+      "message": "6018881802001125637"
+   },
+   "MSG_GC_FEEDBACK_SEND_FAIL": {
+      "message": "4865676252029097872"
+   },
+   "MSG_GC_FEEDBACK_SEND_SUCCESS": {
+      "message": "6988652234001902672"
+   },
+   "MSG_GC_FEEDBACK_TYPE_BUG_OR_ERROR": {
+      "message": "4089994756445820175"
+   },
+   "MSG_GC_FEEDBACK_TYPE_DISCOVERY": {
+      "message": "2076488708707463944"
+   },
+   "MSG_GC_FEEDBACK_TYPE_FEATURE_REQUEST": {
+      "message": "780135806192376347"
+   },
+   "MSG_GC_FEEDBACK_TYPE_OTHER": {
+      "message": "3996247341169314250"
+   },
+   "MSG_GC_FEEDBACK_TYPE_PROJECTION_QUALITY": {
+      "message": "2438859709710567679"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_ACCEPTABLE": {
+      "message": "4324962226715124466"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_FREEZES": {
+      "message": "7053128562708856478"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_GOOD": {
+      "message": "6039331491778328245"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_GREAT": {
+      "message": "8887833628383960193"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_JERKY": {
+      "message": "8500110749168055241"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_PERFECT": {
+      "message": "4584454172263179470"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_POOR": {
+      "message": "2377419936291389581"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_SMOOTH": {
+      "message": "4224760847878375792"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_STUTTER": {
+      "message": "3844709005265884931"
+   },
+   "MSG_GC_FEEDBACK_VIDEO_UNWATCHABLE": {
+      "message": "7008828272760191653"
+   },
+   "MSG_GC_GENERIC_ERROR": {
+      "message": "8879729374562274188"
+   },
+   "MSG_GC_LEARN_MORE_LINK": {
+      "message": "5849296180435940955"
+   },
+   "MSG_GC_MIRROR_QUALITY_AUTO": {
+      "message": "6807464445011823029"
+   },
+   "MSG_GC_MIRROR_QUALITY_HIGH": {
+      "message": "3681271501407987946"
+   },
+   "MSG_GC_MIRROR_QUALITY_HIGHEST": {
+      "message": "1403598074357445300"
+   },
+   "MSG_GC_MIRROR_QUALITY_LOW": {
+      "message": "6236792503803747284"
+   },
+   "MSG_GC_OK_BUTTON": {
+      "message": "4223394109936547558"
+   },
+   "MSG_GC_OPTIONS_PAGE_TITLE": {
+      "message": "8700054488486244094"
+   },
+   "MSG_GC_RETRY_BUTTON": {
+      "message": "1318160328466758792"
+   },
+   "MSG_GC_SHARE_YOUR_THOUGHTS": {
+      "message": "3594579793458243987"
+   },
+   "MSG_GC_SHARE_YOUR_THOUGHTS_DESCRIPTION": {
+      "message": "232164743503663377"
+   },
+   "MSG_GC_STOP_CASTING": {
+      "message": "7484752158248863804"
+   },
+   "MSG_GC_SUBMIT_FEEDBACK": {
+      "message": "6514896123802924361"
+   },
+   "MSG_HANGOUT_ERROR": {
+      "message": "1588576801511256206"
+   },
+   "MSG_HANGOUT_ERROR_DESCRIPTION": {
+      "message": "5728295142929105913"
+   },
+   "MSG_HANGOUT_INACTIVE": {
+      "message": "4102291180899400833"
+   },
+   "MSG_HANGOUT_INACTIVE_DESCRIPTION": {
+      "message": "1696531255551038655"
+   },
+   "MSG_HANGOUT_INVALID": {
+      "message": "48395364426353647"
+   },
+   "MSG_HANGOUT_INVALID_DESCRIPTION": {
+      "message": "3658695798711423870"
+   },
+   "MSG_LOAD_FAILED": {
+      "message": "3254351313955764967"
+   },
+   "MSG_UPDATE_REQUIRED": {
+      "message": "3485206350043289145"
+   },
+   "MSG_WEBRTC_CONNECTION_ERROR": {
+      "message": "7467295073121579516"
+   },
+   "MSG_WINDOW_RESIZE_UNSUPPORTED": {
+      "message": "9039563863590019196"
+   },
+   "MSG_WINDOW_RESIZE_UNSUPPORTED_DESCRIPTION": {
+      "message": "57055743185823882"
+   },
+   "autoThrottlingEnabled": {
+      "message": "8254879137669712236"
+   },
+   "auto_stats_collection_description": {
+      "message": "3188239202899052784"
+   },
+   "auto_stats_collection_dismiss": {
+      "message": "8998179362936748717"
+   },
+   "auto_stats_collection_title": {
+      "message": "4585326301657856848"
+   },
+   "cast_feedback_audio_quality": {
+      "message": "4741643884742469674"
+   },
+   "cast_feedback_comments": {
+      "message": "5671949584911040143"
+   },
+   "cast_feedback_description_required_label": {
+      "message": "897566596634286067"
+   },
+   "cast_feedback_discovery_did_not_try": {
+      "message": "6585975561839203683"
+   },
+   "cast_feedback_discovery_network": {
+      "message": "1213957982723875920"
+   },
+   "cast_feedback_discovery_network_wifi_diff_networks": {
+      "message": "7824803162979416790"
+   },
+   "cast_feedback_discovery_network_wifi_same": {
+      "message": "5385436389563925676"
+   },
+   "cast_feedback_discovery_network_wifi_wired": {
+      "message": "845494741086179740"
+   },
+   "cast_feedback_discovery_no": {
+      "message": "3542042671420335679"
+   },
+   "cast_feedback_discovery_not_sure": {
+      "message": "6997602168024654529"
+   },
+   "cast_feedback_discovery_setup": {
+      "message": "8025420827457681102"
+   },
+   "cast_feedback_discovery_vpn": {
+      "message": "9120942669794506861"
+   },
+   "cast_feedback_discovery_yes": {
+      "message": "2807800733729323332"
+   },
+   "cast_feedback_general_description": {
+      "message": "3633167042592070329"
+   },
+   "cast_feedback_gpu": {
+      "message": "8351230089123629067"
+   },
+   "cast_feedback_mirroring_cancel": {
+      "message": "2159130950882492111"
+   },
+   "cast_feedback_mirroring_disclaimer": {
+      "message": "5750542272329616142"
+   },
+   "cast_feedback_mirroring_ok": {
+      "message": "4187599066116404890"
+   },
+   "cast_feedback_mirroring_submit": {
+      "message": "9059560719840598868"
+   },
+   "cast_feedback_processor": {
+      "message": "4563873836363331434"
+   },
+   "cast_feedback_quality_details": {
+      "message": "7028436125721806572"
+   },
+   "cast_feedback_request": {
+      "message": "2517473004427269018"
+   },
+   "cast_feedback_required_parens": {
+      "message": "2083306153840951484"
+   },
+   "cast_feedback_thankyou": {
+      "message": "3593576714633990163"
+   },
+   "cast_feedback_title": {
+      "message": "6604600094360523853"
+   },
+   "cast_feedback_topic": {
+      "message": "8242882361224206357"
+   },
+   "cast_feedback_url": {
+      "message": "5229573508420009298"
+   },
+   "cast_feedback_video_quality": {
+      "message": "5395332831907227403"
+   },
+   "cast_feedback_video_smoothness": {
+      "message": "2009563581399507712"
+   },
+   "cast_popup_back_to_list": {
+      "message": "6214031582604719501"
+   },
+   "cast_popup_cast_audio": {
+      "message": "1877856983727558507"
+   },
+   "cast_popup_cast_screen": {
+      "message": "4072556140582099509"
+   },
+   "cast_popup_cast_screen_experimental": {
+      "message": "8808326359642865369"
+   },
+   "cast_popup_cast_tab": {
+      "message": "2932348398128569497"
+   },
+   "cast_popup_casting_to": {
+      "message": "2076769487302164340"
+   },
+   "cast_popup_device_missing": {
+      "message": "3885666702463386029"
+   },
+   "cast_popup_feedback_link": {
+      "message": "8436497523209458720"
+   },
+   "cast_popup_help_link": {
+      "message": "7911416166208830577"
+   },
+   "cast_popup_high_quality_video": {
+      "message": "3634893929360744610"
+   },
+   "cast_popup_high_quality_video_details": {
+      "message": "130855611855008194"
+   },
+   "cast_popup_high_quality_video_dismiss": {
+      "message": "464916539454098167"
+   },
+   "cast_popup_loading": {
+      "message": "3894950702316166331"
+   },
+   "cast_popup_options_link": {
+      "message": "8432562579042371182"
+   },
+   "cast_popup_playing_on": {
+      "message": "2588174729923512180"
+   },
+   "castouts_user_email_info": {
+      "message": "7019403272859304206"
+   },
+   "donge_no_cast_device_found": {
+      "message": "5339913305209531244"
+   },
+   "goog_cast_feedback_fine_logs_warning": {
+      "message": "7075073555752965346"
+   },
+   "goog_cast_feedback_get_external_logs_error": {
+      "message": "2554687737930512120"
+   },
+   "goog_cast_feedback_got_external_logs": {
+      "message": "801495004830452095"
+   },
+   "goog_cast_feedback_mirroring_external_logs_button": {
+      "message": "5107389855082704624"
+   },
+   "goog_cast_feedback_mirroring_external_logs_error_device_not_found": {
+      "message": "2673108145745625398"
+   },
+   "goog_cast_feedback_mirroring_external_logs_error_device_not_supported": {
+      "message": "5202323856319464688"
+   },
+   "goog_cast_feedback_mirroring_logs_button": {
+      "message": "2016072788708608077"
+   },
+   "goog_cast_feedback_retrieving_external_logs": {
+      "message": "3630200699826211171"
+   },
+   "options_additional_receiver_ips": {
+      "message": "3577676426589935803"
+   },
+   "options_castouts_description": {
+      "message": "8745478539067058731"
+   },
+   "options_castouts_in_progress": {
+      "message": "6750793691943336560"
+   },
+   "options_castouts_learn_more": {
+      "message": "819996403327805209"
+   },
+   "options_castouts_manual_entry": {
+      "message": "4848910232094031059"
+   },
+   "options_castouts_signed_in": {
+      "message": "4816591726282520264"
+   },
+   "options_castouts_signed_out": {
+      "message": "6529598361108234608"
+   },
+   "options_change_effect": {
+      "message": "2638991638737993114"
+   },
+   "options_custom_mirroring_settings": {
+      "message": "3181069857560875169"
+   },
+   "options_default_hangout_domain": {
+      "message": "7552710358338304275"
+   },
+   "options_default_hangout_domain_description": {
+      "message": "5382938928138155999"
+   },
+   "options_developer_settings_sesison_title": {
+      "message": "1942272259363289202"
+   },
+   "options_devices": {
+      "message": "1206604611937086300"
+   },
+   "options_devices_link": {
+      "message": "7496142106423617391"
+   },
+   "options_disable_scan": {
+      "message": "8906884849462126639"
+   },
+   "options_dscp": {
+      "message": "5477887796261084791"
+   },
+   "options_enable_cloud": {
+      "message": "7433190838776121209"
+   },
+   "options_enable_cloud_signed_out": {
+      "message": "2697071986776077166"
+   },
+   "options_hangout_version": {
+      "message": "8023322445192355344"
+   },
+   "options_hangouts_version_changed_description": {
+      "message": "5284888875943777523"
+   },
+   "options_image_resolution": {
+      "message": "4076870975160614320"
+   },
+   "options_max_bitrate": {
+      "message": "3695617262415720740"
+   },
+   "options_max_capture_frame_rate": {
+      "message": "1313855295453056101"
+   },
+   "options_max_latency": {
+      "message": "8444501525238416559"
+   },
+   "options_media_streaming_mode": {
+      "message": "9021642677831414701"
+   },
+   "options_min_bitrate": {
+      "message": "8190621044561219027"
+   },
+   "options_min_latency": {
+      "message": "2880373984418075735"
+   },
+   "options_non_blocking_io": {
+      "message": "7911160566398057890"
+   },
+   "options_pacing_max": {
+      "message": "2242261874100835789"
+   },
+   "options_pacing_target": {
+      "message": "7155593134764035664"
+   },
+   "options_receiver_ip_deletion": {
+      "message": "2456043080471762298"
+   },
+   "options_reload": {
+      "message": "8491974984518503778"
+   },
+   "options_send_usage": {
+      "message": "7885431863671390745"
+   },
+   "options_setup_link": {
+      "message": "4906762558811440847"
+   },
+   "options_stop_casting": {
+      "message": "3374149466144554646"
+   },
+   "options_tab_casting_quality_warning": {
+      "message": "2741789927660626901"
+   },
+   "options_tab_castouts": {
+      "message": "3400233096253425149"
+   },
+   "options_tab_cloud_settings": {
+      "message": "6142008190583061028"
+   },
+   "options_tab_proj_quality": {
+      "message": "7867182504906675090"
+   },
+   "options_title": {
+      "message": "8948441291106678529"
+   },
+   "stats_collect_prompt_option": {
+      "message": "4822504808490979258"
+   }
+}
