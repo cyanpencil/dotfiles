@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">4</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">db45b152-f7da-49d7-84ec-649ac4cb8c60</dc:identifier>
+        <dc:title>Introduction: Confessions of a</dc:title>
+        <dc:creator opf:file-as="u0045430" opf:role="aut">u0045430</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (2.59.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2006-10-30T23:36:18+00:00</dc:date>
+        <dc:language>it</dc:language>
+        <meta content="{&quot;u0045430&quot;: &quot;&quot;}" name="calibre:author_link_map"/>
+        <meta content="2016-08-11T16:34:18.742215+00:00" name="calibre:timestamp"/>
+        <meta content="Introduction: Confessions of a" name="calibre:title_sort"/>
+    </metadata>
+    <guide>
+        <reference href="cover.jpg" title="Copertina" type="cover"/>
+    </guide>
+</package>
