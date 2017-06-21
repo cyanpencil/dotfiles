@@ -1,0 +1,2 @@
+Directory inp.6 either does not exist or does not have read/execute permissions
+100

@@ -1,0 +1,132 @@
+\documentclass[a4paper,10pt]{article} %default
+\usepackage{geometry}
+\usepackage{fontspec}
+\usepackage[normalem]{ulem}
+\geometry{top = 3mm, lmargin=5mm, rmargin=5mm, bottom=3mm}
+\pagestyle{empty}
+
+\newcommand{\specialcell}[2][c]{%
+    \begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
+\newcommand{\dimo}[1]{%
+    \par \hfill\begin{minipage}{0.99\linewidth}{ \tiny {\textbf{\em{Dim.}}} {#1} }\end{minipage}}
+\newcommand{\mtheorem}[1]{%
+    {\hspace*{-10pt} \textsc {#1}}}
+\newcommand{\malgorithm}[1]{%
+    {\textbf {#1}}}
+\newcommand{\msection}[1]{%
+    {\normalsize \textsc {#1}\\[1ex]}}
+\renewcommand{\b}[1]{%
+    {\textbf{#1}}}
+\renewcommand{\v}[1]{%
+    {\underline{#1}}}
+
+\begin{document}
+
+\scriptsize
+
+\section{Definizioni}
+- Un \b{gruppo} è una coppia $(A, *)$ tale che $A$ è un insieme non vuoto, e $*$ un'operazione su $A$ dotata della propietà associativa, di elemento neutro e di reciproco per ogni elemento.\\
+- L' \b{ordine del gruppo} è la cardinalità dell'insieme $A$. Un gruppo è detto commutativo se $*$ soddisfa la propietà commutativa.\\
+- In un gruppo, l'elemento neutro è unico; il reciproco di ogni elemento è unico; vale la legge di cancellazione; il reciproco di un prodotto è il prodotto dei reciproci in ordine inverso.\\
+- Un \b{sottogruppo} è un insieme non vuoto $B \subseteq A$ tale che $(B, *)$ è un gruppo rispetto alla stessa operazione $*$ di $A$. I sottogruppi banali di $A$ sono $A$ e $\{ e \}$.\\
+- Un \b{anello} è una terna $(A, +, \cdot)$ tale che $A$ è non vuoto, $(A, +)$ è un gruppo commutativo, l'operazione $\cdot$ è associativa, e vale la legge distributiva tra $+ e \cdot$.\\
+- Un anello è detto unitario se il prodotto $\cdot$ ha elemento neutro (unico). E' detto commutativo se il prodotto $\cdot$ è commutativo.
+- Un \b{campo} è un anello tale che $(A, \cdot)$ è un gruppo commutativo; cioè è un anello commutativo unitario tale che $\forall a \in A \; \exists \; a^{-1} \in A$ (cioè l'inverso di $a$).\\
+- Un \b{sottoanello} è un insieme non vuoto $B \subseteq A$ tale che $(B, +, \cdot)$ è un anello rispetto alle stesse operazioni $+$ e $\cdot$ di $A$. Se $A$ e $B$ sono campi, $B$ è un sottocampo di $A$.\\
+- Un \b{$K$-spazio vettoriale} è un insieme non vuoto $V$ se dotato di $+$ tale che $(V, +)$ è gruppo commutativo e definita operazione $K \times V \rightarrow V$ tale che (varie operazioni).\\
+- Un \b{$K$-sottospazio vettoriale} di $V$ è un insieme non vuoto $W \subseteq V$ se $W$ è un $K$-spazio vettoriale su cui sono definite le stesse operazioni di $V$.\\
+- $V$ e $\{ \v{0} \}$ sono sottospazi vettoriali banali di $V$.\\
+- Una \b{matrice} a valori in $K$ a $m$ righe e $n$ colonne è un insieme ordinato $A$ di $mn$ elementi di $K$ disposti su $m$ righe e $n$ colonne.\\
+- La matrice \b{trasposta} di $A$ è la matrice $B \in M_{n,m}(K)$ definita come $b_{ij} = a_{ij}, \quad \forall i = 1 \ldots n, \quad \forall j = 1 \ldots m$.\\
+- Una matrice è detta diagonale se è triangolare superiore e inferiore. E' simmetrica se $A = \,^tA$, antisimmetrica se $A = -^tA$.\\
+- Il prodotto righe per colonne tra due matrici è definito solo se le colonne di $A$ sono quante le righe di $B$. Definito come $c_{ij} = \sum_{k=1}^n a_{ik}b_{kj}$.\\
+- Le matrici quadrate sono dotate di struttura ad anello (non integro) grazie al prodotto righe per colonne. Il prodotto righe per colonne è associativo.\\
+- Gli elementi invertibili di un anello unitario formano un gruppo. Le matrici quadrate invertibili di ordine $n$ formano il gruppo generale lineare di ordine $n$, cioè \b{GL}$_n(K)$.\\
+- Il \b{MCD$(a,b)$} è un intero $d$ tale che $d|a$, $d|b$, $\forall c$ tale che $c|a$ e $c|b$, risulta che $c|d$.\\
+- La relazione $\equiv _n$ è compatibile con le operazioni di somma e prodotto in $Z$. $(Z_n, \cdot, +)$ è un anello commutativo unitario. Se è un campo, allora $n$ è primo.\\
+- La \b{funzione di Eulero} $\varphi : N \rightarrow N$ è definita come $\varphi(n) = |\{k \in Z : 1 \leq k \leq n$ e $k , n$ sono coprimi $\}|$.\\
+- Un' \b{omomoforfismo di gruppi} è un'applicazione $f : G \rightarrow H$ tale che $f(a_1) \cdot f(a_2) = f(a_1 * a_2)$, dove $(G,*)$ e $(H,\cdot)$ sono due gruppi.\\
+- $W$ è un $K$-sottospazio vettoriale di $V \Leftrightarrow a_1\v{w}_1 + a_2\v{w}_2 \in W, \forall \v{w}_1, \v{w}_2 \in W, \forall a_1, a_2 \in K$.\\
+- Il \b{nucleo} di un omomorfismo $f : G \rightarrow G'$ la controimmagine in $G$ dell'elemento neutro $G'$. $Ker(f)$ è un sottogruppo di $G$, e $Im(f)$ è un sottogruppo di $G'$.\\
+- $f$ è iniettivo $\Leftrightarrow Ker(f) = \{ 1_G \}$. \quad $f$ è suriettivo $\Leftrightarrow Im(f) = G'$.\\ 
+- I vettori $\v{v}_1 \ldots \v{v}_n$ sono \b{linearmente indipendenti} se non esistono $c_1 \ldots c_n$ non tutti nulli tali che $c_1\v{v}_1 + \ldots + c_n\v{v}_n = \v{0}$\\
+- $\v{v}_1 \ldots \v{v}_n$ sono linearmente dipendenti $\Leftrightarrow$ almeno uno di essi è combinazione lineare degli altri.\\
+- Il \b{sottospazio generato} dai vettori $\v{u}_1 \ldots \v{u}_t$ è l'insieme di tutte le loro combinazioni lineari, cioè $\langle \v{u}_1 \ldots \v{u}_t \rangle = \{ \sum_{i=1}^t a_i\v{u}_i, \forall a_i \in K \}$.\\
+- I vettori $\v{u}_1 \ldots \v{u}_t \in V$ con $V$ un $K$-spazio vettoriale sono detti \b{sistema di generatori} di $V$ se il sottospazio da essi generato coincide con $V$.\\
+- I vettori $\v{u}_1 \ldots \v{u}_n \in V$ con $V$ un $K$-spazio vettoriale sono detti \b{base} di $V$ se sono linearmente indipendenti e formano un sistema di generatori per $V$.\\
+- $\{\v{u}_1 \ldots \v{u}_n \}$ è una base di $V \Leftrightarrow$ ogni vettore $\v{v} \in V$ si scrive in modo unico come combinazione lineare dei vettori $\v{u}_1 \ldots \v{u}_n$.\\
+- La \b{dimensione} di un $K$-spazio vettoriale $V$ è il numero di vettori di una base di $V$. Lo spazio vettoriale nullo $\{\v{0}\}$ non ha basi, e ha dimensione 0.\\
+- Dato $dim_K(V) = n$, $n$ vettori linearmente indipendenti formano una base; un sistema di generatori di $V$ formato da $n$ vettori è una base.\\
+- Un elemento $a \in A$ si dice \b{divisore dello zero} se $a\cdot b = 0$ per qualche $b \neq 0$.\\
+- Un anello commutativo unitario si dice \b{dominio d'integrità} se non ha divisori dello zero.\\
+- L'insieme $\Sigma$ delle soluizoni di un sistema lineare è un sottospazio vettoriale di $K^n$ se il sistema è omogeneo.\\
+- Le soluzioni di un sistema lineare sono in corrispondenza biunivoca con quelle dell'omogeneo associato. $\Sigma = \v{z}_0 + \Sigma_0$.\\
+- Ogni sistema lineare a scala è compatibile e ha $\infty^{n-m}$ soluzioni.\\
+- Se $A$ è diagonale, $det(A) = \prod a_{ii}$. In particolare, $det(I_n) = 1$. \quad Se $A$ ha una riga o una colonna nulla, $det(A) = 0$. \quad $det(A) = det(^tA)$. \quad Se $A \in GL_n(K)$, allora $det(A^{-1}) = 1 / det(A)$. \quad Scambiando fra loro due righe o due colonne, il determinante cambia segno. \quad $det(AB) = det(A)det(B)$ (teorema di Binet). \quad Se due righe o colonne sono uguali o proporzionali, allora $det(A) = 0$.\\
+- Se $A \in M_n(K)$, con $n \geq 2$, vale che $A \in GL_n(K) \Leftrightarrow$ $det(A) \neq 0$.\\
+- Il rango per colonne di una matrice $A \in M_{m,n}(K)$ è la dimensione del $K$-sottospazio vettoriale di $M_{1,n}(K)$ generato dalle righe di $A$, cioè $r_A = dim(\langle A^1, \ldots A^m \rangle)$.\\
+- Per ogni matrice $A \in M_{m,n}$, risulta che il rango per colonne è uguale al rango per righe.\\
+- $rg(A) = rg(^tA)$. Inoltre, se $A \in GL_n(K) \Leftrightarrow det(A) \neq 0 \Leftrightarrow rg(A) = n$.\\
+- Ogni sistema lineare omogeneo è sempre compatibile (la soluzione banale $\v{0}$). Ma vale che: il sistema è privo di autosoluzioni $\Leftrightarrow n = rg(A)$ (teorema rouchè-capelli).\\
+- Per ottenere la matrice del cambiamento da una base $F$ a una $E$, basta esprimere i vettori di $F$ come combinazioni lineari di quelli di $E$, e poi scrivere i coefficienti per colonna.\\
+- Il nucleo di una matrice $A$ è un autospazio se e solo se ci sta un autovalore $0$.\\
+- L'autospazio di un autovalore sono tutti gli $X$ tali che $AX = \lambda X$.\\
+- Gli autovettori sono i vettori non nulli che compongono l'autospazio.\\
+- Gli autovettori relativi a autovettori diversi sono perforza indipendenti.\\
+- Una matrice di rotazione non ha autovettori. Gli autovalori sono quei fattori con cui la matrice $A$ può moltiplicare un certo vettore. Se ce ne sono più di uno, si moltiplica il vettore in base alla combinazione degli autovettori.\\
+- Se una matrice che ha determinante $0$, vuol dire che un autovalore è uguale a $0$, e non è invertibile: infatti vuol dire che una delle sue colonne è dipendente dalle altre; cioè in altre parole rappresenta un'applicazione non suriettiva, $R^n \rightarrow R^{n - rg(A)}$. Se una matrice ha determinante diverso da $0$, allora il suo rango è $n$.\\
+- Due matrici si dicono \b{simili} se esiste una matrice $C \in GL_n(K)$ tale che $B = C^{-1}AC$, o che $CB = AC$.\\
+- Per ogni applicazione lineare, sia il nucleo che l'immagine sono sottospazi vettoriali. Vale quindi che l'immaine e controimmagine di sottospazi vettoriali di un'applicazione lineare, sono sottospazi vettoriali.\\
+- Due matrici diagonalizzabili che hanno gli stessi autovalori sono simili fra loro, in quanto sono simili alla stessa matrice diagonale.\\
+- Se due matrici hanno determinante diverso, non sono simili. Se due matrici hanno traccia diversa, non sono simili.\\
+- Un vettore $\v{v}$ si dice \b{autovettore} se data un'applicazione lineare $T$ esiste un autovalore $\lambda$ tale che $T(\v{v}) = \lambda \v{v}$.\\
+- Un sottospazio vettoriale definito come $E_{\lambda} = Ker(T - \lambda I)$ dove $\lambda$ è un autovalore si chiama \b{autospazio} relativo a $\lambda$. La molteplicità geometrica di $\lambda$ è la dimensione di $E_{\lambda}$.\\
+- Un operatore lineare $T$ è detto \b{diagonalizzabile} se ammette una base di autovettori di $T$.\\
+- Un autovalore ha \b{molteplicità algebrica} $h$ se nel polinomio caratteristico appare un fattore $(\lambda - \lambda_0)^h$.\\
+- Il determinante di una matrice $A \in M_2(K)$ rappresenta l'area del parallelogramma formato dai due vettori formati dalle colonne della matrice.\\
+- Il nucleo di una matrice $A$ ha come dimensione $n - rg(A)$.\\
+- L'immagine di una matrie $A$ è lo spazio vettoriale generato dai vettori le cui coordinate sono le colonne di $A$. La dimensione dell'immagine di $A$ è quindi il rango di $A$.\\
+- Un \b{sottogruppo ciclico} è un sottogruppo del gruppo $(G, \cdot)$ e definito come l'insieme $\{x^h, \forall h \in Z \}$, dove $x$ è un elemento di $G$. L'ordine del sottogruppo è il periodo di $x$.\\
+- Il \b{periodo} di un elemento $x$ di un gruppo $(G, \cdot)$ è il minimo intero positivo $t$ tale che $x^t = 1$.\\
+- Se in un sistema lineare la matrice dei coefficienti ha determinante $0$, vuol dire che ammette una sola soluzione. Se è $0$, potrebbe avere infinite soluzioni o nessuna soluzione.\\
+- Per trovare l'autospazio relativo a $\lambda$: $AX = \lambda X \rightarrow AX - \lambda X = 0 \rightarrow (A - \lambda I)X = 0 \rightarrow Ker(A - \lambda I)$.\\
+- Un sistema lineare non omogeneo non ha mai uno spazio vettoriale come soluzioni, poichè $\v{0} \not \in \Sigma$.\\
+
+\section{Teoremi}
+\mtheorem{Teorema 1}\\
+    \emph{Siano $a, b \in Z$ con $b \neq 0$. Esiste un' unica $(q, r) \in Z \times Z$ tale che $a = bq + r, \; \; 0 \leq r < |b|$.}\\
+\mtheorem{Identità di Bezout}\\
+    \emph{Siano $a, b \in Z$ non nulli. Se $d = MCD(a,b)$, esistono $x, y \in Z$ tali che $d = ax + by$.}\\
+\mtheorem{Lemma 1}\\
+    \emph{Siano $a, b \in Z$ con $b \neq 0$. Sia $a = bq + r$ con $0 \leq r < |b|$. Risulta che $MCD(a,b) = MCD(b,r)$.}\\
+\mtheorem{Teorema fondamentale dell'aritmetica}\\
+    \emph{Ogni naturale $n \geq 2$ è prodotto di un numero finito di primi. Tale scrittura è unica a meno dell'ordine dei fattori.}\\
+\mtheorem{Teorema di Eulero-Fermat}\\
+    \emph{Sia $n \geq 2$ e sia $a$ coprimo con $n$. Risulta che $a^{\varphi(n)} \equiv 1 (mod\ n)$.}\\
+\mtheorem{Piccolo teorema di Fermat}\\
+    \emph{Siano $a, p$ interi coprimi. Se $p$ è primo, risulta che $a^{p-1} \equiv 1 (mod\ n)$.}\\
+\mtheorem{Teorema della dimensione}\\
+    \emph{Se un $K$-spazio vettoriale $V$ ha una base formata da $n$ vettori, ogni altra base di $V$ è formata da $n$ vettori.}\\
+\mtheorem{Teorema del completamento}\\
+    \emph{Sia $dim_K(V) = n$ e siano $\v{u}_1 \ldots \v{u}_t \in V$ vettori linearmente indipendenti, con $t < n$. Esistono $n - t$ vettori $\v{u}_{t+1} \ldots \v{u}_n \in V$ tali che $\{ \v{u}_1 \ldots \v{u}_t, \v{u}_{t+1} \ldots \v{u}_n\}$ è una base di $V$.}\\
+\mtheorem{Teorema dell'estrazione di una base}\\
+    \emph{Sia $dim_K(V) = n$ e sia $\{ \v{u}_1 \ldots \v{u}_m \}$ un sistema di generatori di $V$. Esistono $n$ vettori distinti $\v{u}_{i_1} \ldots \v{u}_{i_n} \in \{ \v{u}_1 \ldots \v{u}_m \}$ formanti una base di $V$.}\\
+\mtheorem{Formula di Grassmann}\\
+    \emph{Siano $W_1, W_2$ due sottospazi vettoriali di $V$, con $dim_K(V)$ finita. Risulta che $dim_K(W_1) + dim_K(W_2) = dim_K(W_1 + W_2) + dim_K(W_1 \cap W_2)$.}
+    \dimo{Sia $n_1 = dim_K(W_1), n_2 = dim_K(W_2)$ e $i = dim(W_1 \cap W_2)$. Sia $\{\v{z}_1 \ldots \v{z}_i\}$ una base di $W_1 \cap W_2$. Dato che $W_1 \cap W_2$ è un sottospazio di $W_1$, possiamo completare fino a ottenere $\{\v{z}_1 \ldots \v{z}_i, \v{u}_1 \ldots \v{u}_{n_1 - i} \}$, una base di $W_1$, e $\{\v{z}_1 \ldots \v{z}_i, \v{v}_1 \ldots \v{v}_{n_1 - i} \}$, una base di $W_2$. Tutti i vettori insieme sono gli $\v{z}, \v{u}, \v{v}$, e sono $i + (n_1 - i) + (n_2 - i) = n_1 + n_2 - i$. Se dimostriamo che formano una base di $W_1 + W_2$, abbiamo dimostrato la formula. Banalmente, formano un sistema di generatori di $V$ (per ogni vettore $w_1 + w_2$, $w_1$ è combinazione lineare degli $\v{z}, \v{u}$, mentre $w_2$ è combinazione lineare degli $\v{z}, \v{v}$). 
+    }
+\mtheorem{Teorema 5}\\
+    \emph{Sia $\{ e_1 \ldots e_n\}$ una base di $V$. L'applicazione $f : V \rightarrow K^n$, tale che $\forall \v{v} \in V:$ $f(\v{v}) = (c_1 \ldots c_n)$, se $\v{v} = \sum_{i=1}^n c_i\v{e}_i$, è un isomorfismo di spazi vettoriali. Quindi due spazi vettoriali $n$-dimensionali sono isomorfi.}\\
+\mtheorem{Teorema di Laplace}\\
+    \emph{Sia $A \in M_n(K)$, con $n \geq 2$. Risulta, $\forall i, j \in \{ 1 \ldots n \}$, che $det(A) = \sum_{t=1}^n a_{it} \alpha_{it}$ e $det(A) = \sum_{t=1}^n a_{tj} \alpha_{tj}$, dove $\alpha$ è il complemento algebrico.}\\
+\mtheorem{Teorema di Cramer}\\
+    \emph{Dato un sistema lineare $AX = b$ con $A\in GL_n(K)$, il sistema ammette una sola soluzione: $(1/det(A)) (det(B_1), \ldots, det(B_n))$, dove $B_i$ è ottenuta sostituendo i termini noti $b$ all'i-esima colonna di $A$.}\\
+\mtheorem{Teorema di Rouchè-Capelli}\\
+    \emph{Dato un sistema lineare $AX = b$, risulta: E' compatibile $\Leftrightarrow rg(A) = rg((A\ b))$, dove $((A\ b))$ è la matrice completa. Se è compatibile, ammette $\infty^{n - rg(A)}$ soluzioni.}\\
+\mtheorem{Teorema 6}\\
+    \emph{Data un'applicazione lineare $T : V \rightarrow W$. Risulta che $dim(Ker(T)) + dim(Im(T)) = dim(V)$.}\\
+\mtheorem{Teorema 7}\\
+    \emph{Data un'applicazione lineare $T : V \rightarrow W$. Se $dim(V) = dim(W)$, allora risulta che $T$ è iniettiva $\Leftrightarrow T$ è suriettiva.}\\
+
+
+\end{document}

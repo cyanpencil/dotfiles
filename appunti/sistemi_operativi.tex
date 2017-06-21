@@ -1,0 +1,122 @@
+\documentclass[a4paper,10pt]{article} %default
+\usepackage{geometry}
+\usepackage{fontspec}
+\usepackage[normalem]{ulem}
+\usepackage{color}
+\usepackage{listings}
+%\usepackage{tikz}
+%\usetikzlibrary{arrows.meta}
+%\usetikzlibrary{graphs,graphdrawing}
+%\usegdlibrary{force}
+\geometry{top = 3mm, lmargin=5mm, rmargin=5mm, bottom=3mm}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\lstset{
+    basicstyle=\ttfamily,
+    numberstyle=\ttfamily,
+    numbers=left,
+    backgroundcolor=\color[rgb]{0.9,0.9,0.9},
+    columns=fullflexible,
+    keepspaces=true,
+    frame=lr,
+    framesep=8pt,
+    framerule=0pt,
+    xleftmargin=20pt,
+    xrightmargin=30pt,
+    mathescape
+}
+
+\newcommand{\specialcell}[2][c]{%
+    \begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
+\newcommand{\dimo}[1]{%
+    \smallskip \par \hfill\begin{minipage}{0.97\linewidth}{ \scriptsize {\textbf{\em{Dim.}}} {#1} }\end{minipage} \smallskip \par}
+\newcommand{\mtheorem}[1]{%
+    {\hspace*{-10pt} \textsc {#1}}}
+\newcommand{\malgorithm}[1]{%
+    {\bigskip \par \hspace*{-10pt} \underline{\textbf {#1}}}}
+\newcommand{\msection}[1]{%
+    {\bigskip \par \normalsize \textsc {#1}}\par}
+\renewcommand{\b}[1]{%
+    {\textbf{#1}}}
+\renewcommand{\t}[1]{%
+    {\texttt{#1}}}
+\newcommand{\mdef}[1]{%
+    {\smallskip\par\begin{tabular}{ll} \textbf{Def.} & \begin{minipage}[c]{0.8\columnwidth}\normalsize  {#1}\end{minipage}\tabularnewline \end{tabular}}\smallskip\par}
+\newcommand{\mcomment}[1]{%
+    {\hfill \scriptsize {#1}}}
+\newcommand{\mprop}[1]{%
+    {\smallskip\par\begin{tabular}{ll} \textbf{Prop.} & \begin{minipage}[c]{0.8\columnwidth}\emph  {#1}\end{minipage}\tabularnewline \end{tabular}}\smallskip\par}
+
+\begin{document}
+
+\msection{Dati}
+
+\msection{mer 01/03/2017}
+Le informazioni sugli utenti sono nel file \texttt{/etc/passwd}, scritte con il campo \texttt{utente:x:userId:groupId:description:userDirectory}  
+
+La \t{x} è un campo storico, perchè prima c'era scritta la password. Ora invece le password vengono tenute nel file \t{/etc/shadow}, disponibile solo a root.
+
+Le informazioni dei gruppi sono nel file \t{/etc/group}.
+
+Il \b{link simbolico} è un file, dove ci sta scritto l'indirizzo di un altro file (o directory). Se io cancello il file puntato, non succede nulla; il link continua a puntare a un file non esistente.
+
+Un \b{link hardware} invece è una situazione particolare in cui ho due path che puntano allo stesso file con path diversi ma con lo stesso inode. Quando cancello uno di questi file, il link count diminuisce di uno. Se è minore o uguale a zero, allora il file non esiste più nel sistema. In pratica l'hardlink sarebbe un file con nome diverso ma con inode uguale rispetto a un altro file. Ogni cartella ha due hardlink standard, cioè \t{"."} e \t{".."}.
+
+Con i link software, potrebbe succere che il file puntato non esiste. Non può succedere con i link hardware.
+
+\par
+
+Ogni file ha 4 terne per desciverne l'accesso: \t{sSt,rwx,rwx,rwx}. Il primo bit, il \t{setuid} bit, significa che quando viene eseguito il processo che lo esegue, quel processo ha i privilegi del propietario del file. Questo consente all'utente normale di eseguire operazione di root controllate attraverso binari. Esempio: \t{/usr/bin/passwd}. Invece il secondo, il \t{groudid} bit, permette l'accesso al file agli utenti che appartengono agli stessi gruppi secondari del propietario. Il terzo lo \t{sticky} bit, significa che quel file deve essere lasciato in memoria una volta caricato. Nei sistemi moderni non viene quasi più usato. Le altre tre terne sono i permessi del propietario, del gruppo del propietario e degli altri. L'ultimo bit, l'esecuzione di "altri", può essere usato per mappare anche la terna sSt: se è s, allora significa suid o sgid + eseguibile. Se è t, allora significa sticky + eseguibile. S significa suid o sgid - eseguibile; T significa sticky - eseguibile.
+
+La directory \t{tmp} è una directory speciale: tutti hanno permessi in quella directory. (Cioè possono cancellare e inserire file, ma non modificarli, perchè ogni file ha i suoi permessi.)
+
+Quando faccio \t{ls -la} ho anche il tipo di file, che può essere -(file normale), d(directory), p(file a pipe), l(link), c(boh), b(file a blocchi)
+
+Un comando utile per vedere tutte le informazione su un file è \t{stat}, che mi dice tutte le cose esplicitamente.
+
+Alcuni comandi molto comuni non hanno la man page. Questo è perchè sono funzionalità interne al terminale (bash). Quindi dobbiamo fare \t{man bash} per vedere le cose relative ad essi.
+
+\msection{06/03/2017}
+
+Usare il comando \t{stat -f} per avere informazioni sul filysistem invece che sul file singolo. 
+
+Imparare a usare gli alias.
+
+Con \t{mkdir -p} si posso creare alberi di cartelle.
+
+Con il comando \t{touch -t} si possono cambiare le date di accesso / modifica dei singoli file.
+
+Una directory eseguibile significa che è possibile accedere(leggere) il suo contenuto.
+
+Il comando \t{cp -u} copia solo i file la cui data di sorgente è più recente della data di destinazione (utile per sincronizzazioni). Il comando \t{cp -a} serve a preservare le modalità di accesso del file sorgente in quello creato.
+
+\msection{13/03/2017}
+
+Certi comandi vengono riconosciuti dalla shell (bash) e eseguiti come builtin, come \t{cd}, cioè non sono programmi presenti dentro /bin. Questo  implica che non viene creato un nuovo processo, ma è lo stesso processo della shell che esegue quel comando. Per capire se un comando è builtin oppure no, allora basta fare \t{type cd}.
+
+
+Quando faccio \t{top}, ogni processo ha tre coppie di informazioni di userID: real (l'utente che ha fatto partire il programma), effective (l'utente che il programma sta impersonando, cioè per esempio è root se eseguo passwd), saved(non ho capito bene.). Inoltre ho anche le informazinoi \t{cwd}, cioè la cartella su cui sta lavorando, \t{umask}, ?, e \t{niceness}, un valore indirettamente proporzionale alla priorità del processo. Ogni utente può solo aumentare la niceness dei suoi processi, non la può abbassare. (quindi ogni processo può solo cedere priorità.). Inoltre top fornisce anche lo stato del processo, che può essere (running, runnable, sleeping, zombie e stopped).
+
+\t{init} diventa il padre di tutti i processi orfani.
+
+I segnali sono lo strumento rudimentale di coordinazione fra processi. Ogni programma definisce all'inizio il comportamento che assumerà all'arrivo di ogni segnale. Questa parte si chiama installazione dei segnali. Tuttavia, non posso ridefinire tutti i segnali, come SIGKILL, che mi chiude perforza il processo..
+
+Il comando \t{ps} lista i processi del terminale corrente. Il comando \t{ps -e} lista tutti i processi del sistema. Il comando \t{ps -efl} lista tutti i processi del sistema dando tantissime informazioni per ogni processo.
+
+Possiamo eseguire un comando in background mettendo la \t{\&} alla fine del comando. Il comando \t{jobs} lista tutti i processi in background.
+
+Mentre il comando \t{nice -n 10 sleep 100} crea un processo con niceness 10 in più rispetto alla niceness dell'utente, il comando \t{renice -n 10} cambia la niceness di un processo già in esecuzione, ma gli assegna la niceness assoluta 10, non quella relativa.
+
+Il comando \t{strace}
+
+Il comando \t{od} serve per fare il dump di un file in ottale.
+
+Attenzione! un file \b{binario} non significa un file scritto in binario, ma un file non codificato in ASCII, cioè un eseguibile.
+
+Il comando \t{cmp} serve a trovare le differenze fra due file
+
+La \b{patch} di un programma è il \t{diff} di due versioni diverse di file.
+
+
+\end{document}

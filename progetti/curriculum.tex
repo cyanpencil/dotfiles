@@ -1,0 +1,178 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper,10pt]{article} % Default font size and paper size
+
+\usepackage{fontspec} % For loading fonts
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin} % Main document font
+%\setmainfont[SmallCapsFont = FontinSmallCaps]{Fontin} % Main document font
+
+\usepackage{geometry}
+\geometry{lmargin=50pt, rmargin=50pt}
+
+
+\usepackage{eurosym}
+\usepackage{xunicode,xltxtra,url,parskip} % Formatting packages
+
+\usepackage[usenames,dvipsnames]{xcolor} % Required for specifying custom colors
+
+%\usepackage[big]{layaureo} % Margin formatting of the A4 page, an alternative to layaureo can be \usepackage{fullpage}
+% To reduce the height of the top margin uncomment: \addtolength{\voffset}{-1.3cm}
+
+\usepackage{hyperref} % Required for adding links	and customizing them
+\definecolor{linkcolour}{rgb}{0,0.2,0.6} % Link color
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour} % Set link colors throughout the document
+
+\usepackage{titlesec} % Used to customize the \section command
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule] % Text formatting of sections
+\titlespacing{\section}{0pt}{3pt}{3pt} % Spacing around sections
+
+\begin{document}
+
+\pagestyle{empty} % Removes page numbering
+
+\font\fb=''[cmr10]'' % Change the font of the \LaTeX command under the skills section
+
+\bigskip
+\bigskip
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\par{\centering{\Huge Luca \textsc{Di Bartolomeo}}\bigskip\par} % Your name
+
+\section{Personal Data}
+
+\begin{tabular}{rl}
+\textsc{Place and Date of Birth:} & Rome, Italy  | 23 September 1996 \\
+\textsc{Address:} & Via Apuania 13, Rome, Italy \\
+\textsc{Phone:} & 0039 06 44291462\\
+\textsc{Mobile:} & 0039 339 3440236\\
+\textsc{email:} & \href{lucadb96@gmail.com}{lucadb96@gmail.com}
+\end{tabular}
+
+\bigskip
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+\begin{tabular}{rl}	
+\textsc{2015 - now} & Bachelor's Degree in \textsc{}\textsc{Computer Science} at \textbf{La Sapienza} university of Rome.\\
+&Expected graduation date: mid June 2018\\
+\textsc{2010 - 2015} & High school diploma at \textbf{Liceo Scientifico ``Augusto Righi''}, in Rome
+\end{tabular}
+
+\bigskip
+%----------------------------------------------------------------------------------------
+%	SKILLS 
+%----------------------------------------------------------------------------------------
+
+\section{Skills}
+\begin{tabular}{rl}
+Programming Languages: & Java, C/C++, Python, JavaScript, Processing\\
+Tools/Technologies: & Vim, Git, Arduino, Android, Google Cardboard, Raspberry Pi\\
+Operating Systems: & Windows, Linux (Ubuntu, Arch Linux)\\
+Spoken Languages: & Italian (Native), English (Fluent), Spanish (Basic)\\
+\end{tabular}
+
+\bigskip
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE 
+%----------------------------------------------------------------------------------------
+
+\section{Work Experience}
+%\begin{tabular}{r|p{11cm}}
+    \begin{tabular}{rl}	
+        2016 & Speaker at Codemotion Rome 2016, talk: "You Turing Complete me – turing completeness in videogames"\\
+        %\multicolumn{2}{c}{} \\
+        2015 & Coding teacher at Codemotion Kids \\
+    \end{tabular}
+
+\bigskip
+
+%----------------------------------------------------------------------------------------
+%	COMPETITION EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\section{Project / Competition Experience (Solo)}
+\begin{tabular}{rl}
+2016 & \textbf{Voronoi stippling}: I wrote a program in Python to emulate the stippling painting \\
+     & technique using weighted voronois. I was supervised by my Programming Fundamentals \\
+     & professor, but it was an extracurricular activity. \\
+2015 & \textbf{Italian Olympiads in Mathematics}: I got the bronze medal in the national finals. \\
+     & It was an high school individual competition, which revolved around solving both \\
+     & numerical and demonstration problems. \\
+2014 &  \textbf{Musical Floppies}: developed for my high school thesis, I connected 8 old floppy \\
+     & drives with an Arduino, and by moving their stepper motors at precise frequences \\
+     & I was able to play simple tunes with the noise they produced.\\
+2014 &  \textbf{Italian Olympiads in Informatics}: I got the 12th place in the national finals \\
+     & and got a silver medal. It was an high school competition that revolved around \\
+     & the solution and C++ implementation of algorithmical problems. I was also \\
+     & selected for the IOI training camps. \\
+\end{tabular}
+
+%----------------------------------------------------------------------------------------
+%	COMPETITION EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\section{Project / Competition Experience (Team)}
+\begin{tabular}{rl}
+2016 & \textbf{SWERC 2016}: I partecipated as a member of the "Sapienza" team, held in Porto\\
+     & in November 2016.\\
+2015 & \textbf{Exhibitor at Codemotion Rome}: I was the main coder of "Pico", a Google Cardboard \\
+     & flight simulator for Android in which the player controlled the wings of the plane \\
+     & by holding two Wii controllers (connected via bluetooth to the Android phone) in \\
+     & his hands and tilting them accordignly. The game got featured and exhibited at \\
+     & Codemotion Rome 2015.\\
+2015 & \textbf{Global Game Jam Rome}: I won first prize in the "Graphics" category and second prize \\
+     & for "Gameplay" category. Partecipated together with my sister. Our game, "Poopfest",\\
+     & featured handmade watercoulour drawings.\\
+2013-2015 & \textbf{Italian Olympiads in Mathematics}: I partecipated three times in the national finals\\
+     & of the team competition of the Italian Olympiads. We got two medals: a bronze medal \\
+     & in 2013 (for the 3rd place), and a silver medal in 2015 (for the 2nd place). In 2013\\
+     & and 2014, I was only a member of the team, while in 2015 I was the captain.\\
+2013-2015 & \textbf{Ludum Dare Game Jam}: I partecipated five times in this team competition in which you have\\
+     & to code a game in 72 hours. In all of those five times I partecipated with my sister;\\
+     & I was the main coder, while she was both the artist and the secondary coder. We got \\
+     & occasional help from friends for the music. All of our games where made in Java, using \\
+     & the Processing library. One of our games got the first place in the "Most Funny" \\
+     & category, and 6th place in the "Overall" category (the number of games sent every \\
+     & competition floats around a thousand).\\
+2013 & \textbf{Cleanweb Hackaton}: I won the first prize by developing a prototype of an application\\
+     & to help people visualize if they reduced their electricity consumption in their houses.\\
+\end{tabular}
+
+
+%----------------------------------------------------------------------------------------
+%	GRADE TABLES
+%----------------------------------------------------------------------------------------
+
+\bigskip
+\bigskip
+
+\section{Exams Taken}
+\begin{center}
+\begin{tabular}{llc}
+\multicolumn{1}{c}{\textsc{Exam}} & \multicolumn{1}{c}{\textsc{Grade}} &\textsc{Credit Hrs}\\ 
+Calcolo differenziale (Differential Calculus): &                              30/30, with honors & 6 \\
+Calcolo integrale (Integral Calculus): &                                      30/30 & 6 \\
+Progettazione di sistemi digitali (Design of digital systems): &              30/30, with honors & 6 \\
+Architettura degli elaboratori (Architecture of digital systems): &           30/30 & 6 \\
+Introduzione agli algoritmi (Introduction to algorithms): &                   30/30, with honors & 6 \\
+Metodi mat. per l'informatica (Math. methods for informatics): &              30/30, with honors & 6 \\
+Fondamenti di programmazione (Programming fundamentals): &                    30/30, with honors & 9 \\
+Metodologia di programmazione (Programming metodologies): &                   30/30, with honors & 9 \\
+\end{tabular}
+\end{center}
+I have been selected to take part in the "Excellence Path", a special set of courses aimed at the best students of the faculty, which will start in 2017.
+
+
+\bigskip
+
+\section{Hobbies and Interests}
+During my spare time I enjoy playing chess, listening to music (in particular when programming), and going out with friends.
+I am not a bookworm, but if I stumble upon a book I like, I can't go to sleep unless I've finished it.
+\end{document}
