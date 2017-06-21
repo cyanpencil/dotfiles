@@ -39,7 +39,7 @@ echo "Adding files to repository..."
 git add ** .
 
 echo "Committing..."
-data=$(date +%Y/%m/%d %H:%M)
+data=$(date +%Y/%m/%d\ %H:%M)
 git commit -am "Auto backup $data"
 
 echo "Pushing..."
