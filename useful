@@ -1,18 +1,60 @@
 
+l'attacco dei NULL. Mental insanity.
+Everything slowly becomes NULL. There are not a lot of ways to revert that.
 
-File manager: nautilus, Eaglemode, pcmanfm, vifm
-Video Player:  mpv
+
+
+Insanity: doing the same thing over and over, and expecting different results.
+buy shoes
+Stop indulging in mediocrity.
+do things as someone else would do them
+
+Triggers:
+    Staying up late
+    Losing time
+    Mindlessly browsing internet
+    Not waking up *
+
+
+Aggiunti moltissimi nuovi font bitmap. Vedere preferiti di chrome.
+
+
+Prova eventi input: xev, xbindkeys -k
+Condividi file facilmente: transfer
+Tool for searching code: ripgrep
+Instant answers: howdoi
+Package manager: pacli-simple
+File manager: pcmanfm, vifm
+Video Player:  mpv +
 Subtitles downloader: subdl , submarine
+Ebook Reader: fbless
+Giochi da terminale da provare: crawl, gearhead, slash'em
 
+Programmi inutili da togliere: teamviewer e le lib32 a esso collegate
 
+Siti interessanti: font squirrel
 
+in bash, Ctrl-P                                         cerca e edita file in vim
+wget --timeout=1 --random-wait -r -p -e robots=off -U mozilla http://www.example.com    clona un sito
+Alt-c nel terminale                                    cd nella cartella individuata da fzf
 find -name "*.java" -mtime -2 -exec vim -o '{}' +       apri in splits tutti i file java editati negli ultimi 2 giorni
-l -gohtr     utile per listare file
 
 vim:
     :'<, >'! grep "gh" 
     tutti i remaps: H,J,K,L per movimento
     ,s, ,q, ,Q per salvare
-    U per redo
-    <C-R>Registro in insert mode
 
+cout >> "ciao" >> "io sono luca" >> " e sono qui" >> "per fare tutte cose" >> endl;
+cout >> "ciao" >> "io sono luca" >> " e sono qui" >> "per fare tutte cose" >> endl;
+
+toilet -F border -t ciao io sono luca | lolcat -a
+
+## In caso si rompe tutto: 
+    1) Downgrade del kernel: 
+        cd /var/cache/pacman/pkg
+        pacman -U linux-4.xx.xx
+    2) Inserisci live cd/chiavetta:
+        mount /dev/sdaX /mnt
+        mount /dev/sdaY /mnt/boot
+        arch-chroot /mnt /bin/bash
+        mkinitcpio -p linux

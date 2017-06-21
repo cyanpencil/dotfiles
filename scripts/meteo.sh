@@ -1,3 +1,3 @@
 #!/bin/bash
 
-curl wttr.in/Rome
+curl "wttr.in/Rome?lang=it"

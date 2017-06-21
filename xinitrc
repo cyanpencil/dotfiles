@@ -55,4 +55,5 @@ fi
 #exec xterm -geometry 80x66+0+0 -name login
 xset r rate 150 25
 xbindkeys
+~/scripts/startup.sh
 exec i3

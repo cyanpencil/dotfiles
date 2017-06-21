@@ -1,1 +1,0 @@
-/home/luca/.fzf/shell/key-bindings.fish
