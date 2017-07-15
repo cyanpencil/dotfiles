@@ -12,6 +12,7 @@ dark_blue = 1
 black = 2
 brown = 3
 trail_color = [5,6,7,8]
+inventory_color = 9
 curses.init_pair(light_blue, 33, -1)
 curses.init_pair(dark_blue, 17, -1)
 curses.init_pair(black, 16, -1)
@@ -20,6 +21,7 @@ curses.init_pair(trail_color[0], 39, -1)
 curses.init_pair(trail_color[1], 27, -1)
 curses.init_pair(trail_color[2], 20, -1)
 curses.init_pair(trail_color[3], 17, -1)
+curses.init_pair(inventory_color, 21, -1)
 curses.curs_set(0)
 myscreen.keypad(1)
 
@@ -30,9 +32,19 @@ x = 50
 y = 50
 frame = 0
 
+inventory = ["Erba", "Droga"]
+
 def draw_status():
     myscreen.addstr(1, 2, "Score: " + str(frame))
     myscreen.addstr(3, 1, "-" * (max_x - 2), curses.A_UNDERLINE)
+
+def draw_inventory():
+    myscreen.addstr(max_y - 10, 0, "*----Inventory-----*")
+    for i in range(1, 10):
+        myscreen.addstr(max_y - 10 + i, 0, "|                  |")
+    for i, e in enumerate(inventory):
+        myscreen.addstr(max_y - 8 + i, 2, inventory[i], curses.color_pair(inventory_color))
+    myscreen.addstr(max_y -1, 0, "*------------------*")
 
 def redraw():
     global myscreen
@@ -47,6 +59,7 @@ def redraw():
         myscreen.addstr(ast[1], ast[0], 'x', curses.color_pair(brown))
     myscreen.addstr(y, x, 'o', curses.color_pair(light_blue) | curses.A_BOLD)
     draw_status()
+    draw_inventory()
 
 def select(selection):
     if selection == 1:

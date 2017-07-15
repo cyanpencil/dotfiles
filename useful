@@ -16,9 +16,12 @@ Triggers:
     Not waking up *
 
 
+udev rules: /etc/udev/rules.d/...
+
 Aggiunti moltissimi nuovi font bitmap. Vedere preferiti di chrome.
 
 
+Visual xrandr: arandr
 Prova eventi input: xev, xbindkeys -k
 Condividi file facilmente: transfer
 Tool for searching code: ripgrep

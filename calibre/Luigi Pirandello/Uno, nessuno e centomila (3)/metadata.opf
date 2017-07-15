@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">3</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">819f2fd9-d924-47df-a887-23a71b8efd1c</dc:identifier>
+        <dc:title>Uno, nessuno e centomila</dc:title>
+        <dc:creator opf:file-as="Pirandello, Luigi" opf:role="aut">Luigi Pirandello</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (2.83.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-03-02T11:29:58+00:00</dc:date>
+        <dc:identifier opf:scheme="MOBI-ASIN">2ce5dc49-bd24-428a-b13d-d63f77351a64</dc:identifier>
+        <dc:language>ita</dc:language>
+        <meta content="{&quot;Luigi Pirandello&quot;: &quot;&quot;}" name="calibre:author_link_map"/>
+        <meta content="2017-06-29T09:53:22.816303+00:00" name="calibre:timestamp"/>
+        <meta content="Uno, nessuno e centomila" name="calibre:title_sort"/>
+    </metadata>
+    <guide>
+        <reference href="cover.jpg" title="Copertina" type="cover"/>
+    </guide>
+</package>

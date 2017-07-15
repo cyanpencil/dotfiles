@@ -1,5 +1,5 @@
 [global]
-font = termsyn 8
+font = Misc Termsyn 8
 
 # Allow a small subset of html markup in notifications and formats:
 #   <b>bold</b>

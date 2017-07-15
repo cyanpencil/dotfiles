@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">4</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">cbe735c1-66d7-4ab1-aaaf-4b78964cc9e0</dc:identifier>
+        <dc:title>Comma 22</dc:title>
+        <dc:creator opf:file-as="Heller, Joseph" opf:role="aut">Joseph Heller</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (2.83.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>1974-04-17T22:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;è il più acuto, esilarante, intelligente libro mai scritto sulle follie 
+del militarismo. Ambientato in una base militare USA al tempo della II 
+guerra mondiale, presenta una compagnia dell'aviazione i cui componenti,
+ a vari livelli di abbrutimento e di pazzia, sono costretti a 
+confrontarsi con il Comma 22, l'essenza di tutti i cavilli burocratici 
+di tutti i codici legali del mondo...negli Stati Uniti il termine "catch
+ 22" è addirittura entrato nell'uso comune per indicare un assurdo 
+burocratico.&lt;/p&gt;</dc:description>
+        <dc:language>ita</dc:language>
+        <meta content="{&quot;Joseph Heller&quot;: &quot;&quot;}" name="calibre:author_link_map"/>
+        <meta content="8" name="calibre:rating"/>
+        <meta content="2017-06-29T09:53:23.327137+00:00" name="calibre:timestamp"/>
+        <meta content="Comma 22" name="calibre:title_sort"/>
+    </metadata>
+    <guide>
+        <reference href="cover.jpg" title="Copertina" type="cover"/>
+    </guide>
+</package>
