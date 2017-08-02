@@ -75,3 +75,4 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore cache --ignore .c
 bind -x '"\C-p": vim $(fzf);'
 
 setxkbmap -option "ctrl:swapcaps"
+setxkbmap -option "ctrl:nocaps"

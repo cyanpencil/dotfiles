@@ -282,7 +282,7 @@ endfunction
 
 function! SettingsPython()
     nnoremap <F4> :wa <CR> :!python % <CR>
-    nnoremap <F5> :wa <CR> :!python % <CR>
+    nnoremap <F5> :wa <CR> :!python /home/luca/progetti/eccellenza/sentimentanalysis/spiketrap/lib/classifier_example.py <CR>
 endfunction
 
 function! SettingsLatex()
