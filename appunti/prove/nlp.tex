@@ -4,9 +4,13 @@
 \usepackage[normalem]{ulem}
 \usepackage{color}
 \usepackage{listings}
+\usepackage{amsmath}
+\usepackage{multicol}
 \geometry{top = 3mm, lmargin=10mm, rmargin=10mm, bottom=3mm}
 \pagestyle{empty}
 \setlength{\parindent}{-10pt}
+\setlength{\multicolsep}{0.5em}
+\setlength{\columnsep}{0.7cm}
 
 \lstset{
     basicstyle=\ttfamily,
@@ -37,6 +41,8 @@
     {\textbf{#1}}}
 \renewcommand{\t}[1]{%
     {\texttt{#1}}}
+\renewcommand{\v}[1]{%
+    {\underline{#1}}}
 \newcommand{\mdef}[1]{%
     {\smallbreak\par\begin{tabular}{ll} \textbf{Def.$\;\;$} & \begin{minipage}[t]{0.80\columnwidth}\normalsize  {#1}\end{minipage}\tabularnewline \end{tabular}}\smallskip\par}
 \newcommand{\mcomment}[1]{%
@@ -47,14 +53,19 @@
 \begin{document}
 
 
+
 \msection{Natural Language Processing}
 \bigbreak
+
+
+\begin{multicols}{2} 
 
 In sentiment analysis, an accuracy of 80\% is considered the to-be-expected value
 
 Words are usually considered into groups of 2, 3 or even more words (bigrams, trigrams, n-grams) to account for the presence of senteces like "very funny" and "not very funny).  Also, in a dataset there is a removal of stopwords (words without noticeable meaning)
 
 If words are rapresented as one-hot vectors (every word is a vector of the size of the dictionary of words and only one bit is set to "1"), they are all equidistant. So we introduce \b{word vectors}, using the fascinating work of \t{word2vec}, a program that uses a neural network to predict relationship between words (example: "Athens is to Greece what Oslo is to...?" or "walking is to walked what swim is to...?). However, when using this model, we don't use one vector per word, but we use one vector per document which is the result of the average of the single word vectors. Unfortunately, this gives a worse performance than the one-hot encoded vectors.
+
 
 \b{recall}: how many positives reviews detected divided by how many positive reviews are there.
 
@@ -80,9 +91,62 @@ I lexicons sono dei dizionari disponibili online con delle parole già classific
 
 chi\_squared test: $X^2 = \sum \frac{(obs - exp)^2}{exp}$. Un chi2 molto alto significa che l'ipotesi nulla è falsa. Nel nostro caso, l'ipotesi nulla è che una parola non è collegata con la frequenza con cui sta in una classe.
 
+\end{multicols}
 \bigbreak
 \hrule
+\medbreak
+\centerline{Algoritmi:}
+\begin{multicols}{2} 
+\parindent=0pt
+
+\b{Linear multiple regression:} cerco il minimo della residual sum of squares (RSS). Il gradiente è molto facile da calcolare, infatti RSS = $\sum\limits_{i=1}^N (y_i - (mx_i + b))^2$, e la sua derivata è $\dfrac{\delta}{\delta m} = \sum\limits_{i=1}^N -x_i(y_i - (mx_i + b))$
+
+\b{Stochastic gradient descent:} Lo stochastic gradient descent è un normalissimo gradient descent solo che invece di usare tutti i training samples per aggiornare i parametri a ogni iterazione ne uso solo una parte (mini-batch). In pratica aggiorno i parametri a ogni mini-batch (che può essere composto anche da un solo sample)
+
+\b{Logistic Regression:} Nella logistic regression uso la funzione sigmoide: $\sigma (x) = \dfrac{1}{1 + e^{-mx}}$, che mi restituisce valori compresi tra 0 e 1. Quindi faccio la cara vecchia regressione lineare sapendo che $\sigma ' (x) = \sigma (x) (1 - \sigma (x))$. Ricordati che il risultato esprime una probabilità di appartenere a una certa classe (come le mail di spam), e tutti i label y sono o 0 o 1.
+
+\end{multicols}
 \bigbreak
+\hrule
+\medbreak
+\centerline{Activation Functions:}
+\begin{multicols}{2} 
+
+\parindent=0pt
+
+\b{ReLU}: $f(x) = max(0, x)$. Range: $( 0, \infty)$. Approssimazione buona: \emph{softplus}: $f(x) = log(1 + e^x)$, la cui derivata è la sigmoide $\dfrac{1}{1 + e^{-x}}$.
+
+\b{Logistic}: $\sigma(x) = \dfrac{1}{1 + e^{-x}}$. Range: $(0, 1)$.\\ Derivata: $\sigma'(x) = \sigma(x)(1 - \sigma(x))$.
+
+\columnbreak
+
+\b{TanH}: $f(x) = \dfrac{2}{1 + e^{-2x}} - 1$. Range: $(-1, 1)$. Derivata: $f(x) = 1 - f(x)^2$.
+
+\b{Softmax}: $f(\v{x}) = \dfrac{e^{x_j}}{\sum^K_{k=1} e^{x_k}}$ for $j \in \{1 \ldots K \}$. Range: $(0, 1)$.
+
+\end{multicols}
+\bigbreak
+\hrule
+\medbreak
+\centerline{Important Concepts:}
+\begin{multicols}{2} 
+
+\parindent=0pt
+
+\b{L2 Regularization}: aggiunge alla Cost function la somma dei quadrati pesi di ogni parametro, favorendo quindi pesi piccoli rispetto a quelli grandi (cioè modelli semplici rispetto a complessi). Riduce overfitting.
+
+\b{L1 Regularization}: invece dei quadrati, aggiunge i pesi lineari alla cost function. Non è computationally efficient, ma ha una built-in feature-selection.
+
+    \b{Bias Trick}: Se nell'input data aggiungo una colonna di $1$, allora il parametro (o i parametri, se è un problema di classificazione) corrispondente a quella colonna diventa il bias.
+
+\end{multicols}
+\medbreak
+\hrule
+\medbreak
+\begin{multicols}{2} 
+
+
+\end{multicols}
 
 L'altro collaboratore si chiama Antonio Norelli, fa il quinto anno della magistrale, e fa il secondo anno di magistrale a fisica. E' uno studente della ssas. Il suo numero di matricola è 1612487. Il suo username su slack (e su youtube) è \t{noranta4}.
 
@@ -245,63 +309,12 @@ Il Tfidf fa schifo, lascia perdere. Molto meglio avere le occorrenze binarie del
 
 
 \msection{Idee }
+############ TRY WITH MUCH MORE NODES
 
-Giocare molto, \b{molto} con i possibili argomenti di countVectorizer. Ad esempio min\_df e max\_df potrebbero essere utili.
+############ WEIGHT INITIALIZERS
 
-La cosa che ha detto Chierichetti: non si può avere un train data fatto bene; bisogna assegnare un punteggio ai commenti, non una categoria.
+############ EARLY STOPPING
 
-Devo proprio mettere shuffle=False in classifier\_report()?
+############ TRY A LOT OF CHARGRAMS
 
-LE COSE NON SHUFFLATE FANNO CAGARE RISPETTO ALLE COSE SHUFFLATE.
-
-Provare word vectors invece che bag-of-words
-
-Provare Keras.
-
-\bigbreak
-
-Cambiando parametri del machine learning cambia veramente poco. Molto di più il countVectorizer.
-
-Il countVectorizer è molto lento; invece la logistic regression no. Perchè?
-
-Qual è la parte dell'algortimo che usa multithreading e quale no?
-
-Perchè fate un estimator fatto da voi invece che usare normalmente la logistic regression?
-
-\b{Domande:}
-
-
-I commenti che l'algoritmo trova sbagliati sono spesso e volentieri sbagliati. Perchè?
-
-Spesso capita che le probabilità sono molto vicine tra loro e l'algoritmo sbaglia poco.
-
-Le lettere in aggiunta potrebbero essere parole sbagliate.
-
-Perchè i dati sono una sparse matrix?
-
-Perchè la sparse matrix va scalata?
-
-Non si potrebbero fare classificatori diversi per ogni sito?
-
-Matrix correlation?? Glove dataset. 
-
-Perchè avete filtrato via gli hashtags?
-
-Posso toccare la funzione build\_dataset()? E Tagger?
-
-Ho parlato con Flavio Chierichetti.
-
-Ciao gabriele, 
-
-
-
-multilayer perception (rete neurale di base)
-
-1 - Keras (tensorflow o teano)
-2 - Videolezioni
-3 - Ristruttura codice
-4 - Scheda grafica (CUDA)
-
-
-da testare selectKbest con chi2
 \end{document}
