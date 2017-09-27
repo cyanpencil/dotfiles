@@ -37,7 +37,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -68,7 +68,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+o split h
+#bindsym $mod+o split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -77,9 +77,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -88,22 +88,22 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+mod1+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
 
 
 set $workspace1 "1 "
-set $workspace2 "2 "
-set $workspace3 "3 "
-set $workspace4 "4 "
-set $workspace5 "5 "
-set $workspace6 "6 "
-set $workspace7 "7 "
-set $workspace8 "8 "
-set $workspace9 "9 "
-set $workspace10 "10 "
+set $workspace2 number 2 "2 "
+set $workspace3 number 3 "3 "
+set $workspace4 number 4 "4 "
+set $workspace5 number 5 "5 "
+set $workspace6 number 6 "6 "
+set $workspace7 number 7 "7 "
+set $workspace8 number 8 "8 "
+set $workspace9 number 9 "9 "
+set $workspace10 number 10 "10 "
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -129,7 +129,32 @@ bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
 bindsym $mod+0 workspace $workspace10
 
-workspace_auto_back_and_forth yes
+bindsym $mod+Escape exec i3-msg workspace $workspace1
+bindsym $mod+q exec i3-msg workspace $workspace2
+bindsym $mod+w exec i3-msg workspace $workspace3
+bindsym $mod+e exec i3-msg workspace $workspace4
+bindsym $mod+r exec i3-msg workspace $workspace5
+bindsym $mod+t exec i3-msg workspace $workspace6
+bindsym $mod+y exec i3-msg workspace $workspace7
+bindsym $mod+u exec i3-msg workspace $workspace8
+bindsym $mod+i exec i3-msg workspace $workspace9
+bindsym $mod+o exec i3-msg workspace $workspace10"
+
+
+bindsym $mod+Shift+Tab exec "i3-msg move container to workspace number 1"
+bindsym $mod+Shift+a exec "i3-msg move container to workspace number 2"
+bindsym $mod+Shift+s exec "i3-msg move container to workspace number 3"
+bindsym $mod+Shift+d exec "i3-msg move container to workspace number 4"
+bindsym $mod+Shift+f exec "i3-msg move container to workspace number 5"
+bindsym $mod+Shift+g exec "i3-msg move container to workspace number 6"
+
+bindsym $mod+n workspace prev
+bindsym $mod+p workspace next
+
+bindsym $mod+Shift+n move container to workspace prev
+bindsym $mod+Shift+p move container to workspace next
+
+#workspace_auto_back_and_forth yes
 bindsym $mod+space workspace back_and_forth
 
 # reload the configuration file
@@ -163,7 +188,9 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+m mode "resize"
+
+
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -210,8 +237,8 @@ exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
 #exec --no-startup-id spotify
 
 #exec --no-startup-id compton -f
-bindsym $mod+n exec notify-send "<u><b>Notes</b>:</u>" "$(jot -n)"
-bindsym $mod+m exec notify-send "<u>Meteo Roma:</u>" "$(meteo.sh)"
+#bindsym $mod+n exec notify-send "<u><b>Notes</b>:</u>" "$(jot -n)"
+#bindsym $mod+m exec notify-send "<u>Meteo Roma:</u>" "$(meteo.sh)"
 
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
@@ -225,6 +252,6 @@ for_window [class="Zathura"] fullscreen enable
 exec --no-startup-id urxvt -name metask
 for_window [instance="metask"] floating enable;
 for_window [instance="metask"] move scratchpad; [instance="metask"] scratchpad show; move position 75px 22px; resize shrink height 0px; resize grow width 600px; move scratchpad
-bindsym $mod+t [instance="metask"] scratchpad show
+bindsym $mod+s [instance="metask"] scratchpad show
 
 exec --no-startup-id xmodmap -e "keysym ograve = BackSpace"

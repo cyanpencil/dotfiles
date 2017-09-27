@@ -155,7 +155,6 @@ Plug 'majutsushi/tagbar'
 Plug 'ervandew/supertab'
 Plug 'airblade/vim-rooter'
 Plug 'takac/vim-hardtime'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'godlygeek/tabular'
 Plug 'rhysd/clever-f.vim'
 Plug 'scrooloose/nerdcommenter'
@@ -163,8 +162,12 @@ Plug 'EinfachToll/DidYouMean'
 Plug 'Konfekt/FastFold'
 Plug 'mileszs/ack.vim'
 Plug 'Shougo/neocomplete.vim'
-Plug 'chrisbra/histwin.vim'
 Plug 'matze/vim-move'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/vim-peekaboo'
+Plug 'junegunn/vim-slash'
+
 
 Plug 'xuhdev/vim-latex-live-preview'
 
@@ -176,6 +179,8 @@ Plug 'vim-airline/vim-airline-themes'
 "
 Plug 'xolox/vim-misc'
 
+"Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'chrisbra/histwin.vim'
 "Plug 'metakirby5/codi.vim'
 "Plug 'xolox/vim-colorscheme-switcher'
 "Plug 'wkentaro/conque.vim' 
@@ -201,9 +206,15 @@ let g:ackprg = 'ag --vimgrep --smart-case'
 let g:ack_use_cword_for_empty_search = 1
 let g:livepreview_previewer='zathura'
 let g:livepreview_engine='xelatex'
+let g:limelight_conceal_ctermfg = '236'
 let python_highlight_all=1
+
 "supertab
 set completeopt=menuone,preview
+
+"use LimeLight when starting Goyo
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 colorscheme alduin
 "colorscheme Dev_Delight
@@ -282,7 +293,7 @@ endfunction
 
 function! SettingsPython()
     nnoremap <F4> :wa <CR> :!python % <CR>
-    nnoremap <F5> :wa <CR> :!python /home/luca/progetti/eccellenza/sentimentanalysis/spiketrap/lib/classifier_example.py <CR>
+    nnoremap <F5> :wa <CR> :!python spiketrap/lib/classifier_example.py <CR>
 endfunction
 
 function! SettingsLatex()
