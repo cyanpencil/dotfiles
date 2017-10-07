@@ -1,0 +1,437 @@
+\documentclass[a4paper,10pt]{article} %default
+\usepackage{geometry}
+\usepackage{fontspec}
+\usepackage[normalem]{ulem}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\geometry{top = 3mm, lmargin=10mm, rmargin=10mm, bottom=3mm}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\multicolsep}{0.5em}
+\setlength{\columnsep}{0.7cm}
+
+
+\lstset{
+    basicstyle=\ttfamily,
+    numberstyle=\ttfamily,
+    numbers=left,
+    backgroundcolor=\color[rgb]{0.9,0.9,0.9},
+    columns=fullflexible,
+    keepspaces=true,
+    frame=lr,
+    framesep=8pt,
+    framerule=0pt,
+    xleftmargin=20pt,
+    xrightmargin=30pt,
+    mathescape
+}
+
+\newcommand{\specialcell}[2][c]{%
+    \begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
+\newcommand{\dimo}[1]{%
+    \smallbreak \par \hfill\begin{minipage}{0.92\linewidth}{ \scriptsize {\textbf{\em{Dim.}}} {#1} }\end{minipage} \smallskip \par}
+\newcommand{\mtheorem}[1]{%
+    {\hspace*{-10pt} \textsc {#1}}}
+\newcommand{\malgorithm}[1]{%
+    {\bigbreak \par \hspace*{4pt} \underline{\textbf {#1}}}}
+\newcommand{\msection}[1]{%
+    {\newpage\bigbreak \bigbreak \par \hfil \huge \textsc {#1}}\par}
+\renewcommand{\b}[1]{%
+    {\textbf{#1}}}
+\renewcommand{\t}[1]{%
+    {\texttt{#1}}}
+\renewcommand{\v}[1]{%
+    {\underline{#1}}}
+\newcommand{\mdef}[1]{%
+    {\smallbreak\par\begin{tabular}{ll} \textbf{Def.$\;\;$} & \begin{minipage}[t]{0.80\columnwidth}\normalsize  {#1}\end{minipage}\tabularnewline \end{tabular}}\smallskip\par}
+\newcommand{\ldef}[1]{%
+    {\smallbreak\par\normalsize\textbf{\underline{Def.}} {#1} \smallbreak}}
+\newcommand{\lprop}[1]{%
+    {\smallbreak\par\normalsize\textbf{\underline{Prop.}} {#1} \smallbreak}}
+\newcommand{\ltheorem}[1]{%
+    {\smallbreak\par\normalsize\textbf{\underline{Th.}} {#1} \smallbreak\par}}
+\newcommand{\ldim}[1]{%
+    {\smallbreak\par\scriptsize\emph{\textbf{Dimostrazione}} {#1} \par}}
+\newcommand{\loss}[1]{%
+    {\smallbreak\par\scriptsize\emph{\textbf{Osservazione}} {#1} \par}}
+\newcommand{\mcomment}[1]{%
+    {\hfill \scriptsize {#1}}}
+\newcommand{\mprop}[1]{%
+    {\smallbreak\par\begin{tabular}{ll} \textbf{Prop.} & \begin{minipage}[t]{0.8\columnwidth}\emph  {#1}\end{minipage}\tabularnewline \end{tabular}}\smallskip\par}
+
+\makeatletter
+\g@addto@macro\normalsize{%
+  \setlength{\abovedisplayskip}{4.0pt plus 10.0pt minus 5.0pt}%
+  \setlength{\belowdisplayskip}{4.0pt plus 10.0pt minus 5.0pt}%
+}
+\makeatother
+
+
+\begin{document}
+
+
+
+\msection{Analisi Vettoriale 2017}
+%\center{Ultima revisione: \today}
+
+\begin{multicols}{2} 
+
+\ldef{
+Lo spazio di tutte le $n-uple$ di numeri reali forma uno \b{spazio vettoriale} di dimensione $n$ su $\mathbb{R}$, indicato con $\mathbb{R}^n$. 
+Su esso sono definite le operazioni di somma e prodotto: 
+\begin{align}
+    \b{x} + \b{y} =&\; (x_1 + y_1, x_2 + y_2, \dots) \\
+    \emph{a}\b{x} =&\; (ax_1, ax_2, \dots) 
+\end{align}
+}
+
+\ldef{Il \b{prodotto scalare} si definisce in questo modo:
+Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine: 
+\begin{align}
+    \langle \b{x, y} \rangle &= \langle \b{y, x} \rangle \\
+    \langle \b{x + a, y} \rangle &= \langle \b{x, y} \rangle + \langle \b{a, y} \rangle 
+\end{align}
+}
+
+
+\ldef{ Una \b{norma} \`{e} una funzione che assegna ad ogni vettore dello spazio vettoriale, tranne lo zero, una lunghezza positiva. Segue le seguenti proprieta':
+    \begin{align}
+    ||x||  &\geq  0 \\
+    ||x||  &=  0  \Leftrightarrow x = 0 \\
+    ||\lambda x|| &=  |\lambda| ||x|| \\
+    ||x + y|| &\leq  ||x|| + ||y|| 
+    \end{align}
+    Alcune norme esemplari sono la norma 1: $\displaystyle ||x||_1 = \sum |x_i|$ \par
+    e la norma 2 (euclidea): $\displaystyle ||x||_2 = \sqrt{\sum x_i^2}$
+    \loss{
+        Due norme $|| \cdot ||_1,|| \cdot ||_2$  si dicono equivalenti se $ \exists c_1, c_2$ tali che $c||x||_1 \leq ||x||_2 \leq C||x||_1, \; \forall x \in V$
+    }
+    \loss{
+        In $\mathbb{R}^n$, tutte le norme sono equivalenti.
+    }
+}
+
+
+\ldef{ La \b{distanza} \`{e} una qualsiasi funzione $d: X \times X \rightarrow \mathbb{R}$ che soddisfa le seguenti proprieta':
+    \begin{align}
+        d(x,y) &\geq 0 \\
+        d(x,y) &= 0 \Leftrightarrow x = y \\
+        d(x,y) &= d(y,x) \\
+        d(x,y) &\leq d(x,z) + d(z,y) 
+    \end{align}
+    In realta' basta che sono verificate la seconda e la quarta per verificare anche la prima e la terza. 
+    Se una distanza segue queste proprieta':
+    \begin{align}
+        d(x,y) &= d(x+a, y+a) \\
+        d(\lambda x, \lambda y) &= |\lambda| d(x,y) 
+    \end{align}
+    Allora la funzione $||x|| := d(x, 0)$ \`{e} una norma.
+    \loss{
+        La norma euclidea induce una distanza: $d(x,y) = || \, x - y \, ||_2$
+    }
+}
+
+
+\ldef{Uno \b{spazio metrico} \`{e} un insieme di elementi detti punti, nel quale \`{e} definita una funzione distanza, detta anche metrica.
+}
+
+\ldef{La disugualianza di \b{Cauchy-Schwartz} dice che il valore assoluto del prodotto scalare di due elementi \`{e} minore o uguale al prodotto delle loro norme:
+    $|\langle \b{x,y} \rangle| \leq ||\b{x}|| \cdot ||\b{y}||$
+}
+
+
+
+\ldef{La successione ${f_n(x)}$ \b{converge} per $x \in E$ alla funzione $f(x)$ se $\forall x_0 \in E$ la successione numerica ${f_n(x_0)}$ converge a $f(x_0)$, cio\`{e}:
+    \begin{equation}
+        |f_n(x_0) - f(x_0)| < \epsilon \quad \forall \epsilon > 0, \forall x_0 \in E
+    \end{equation}
+}
+
+\ldef{La successione ${f_n(x)}$\b{converge uniformemente} alla funzione $f(x)$ se $\forall \epsilon > 0$ esiste un'unica soglia $n_\epsilon$ valida per tutti i punti $x_0$, cio\`{e}:
+    \begin{gather}
+        |f_n(x_0) - f(x_0)| < \epsilon \quad \forall \epsilon > 0 , \forall x_0 \in E, \forall n > n_\epsilon \\
+         \text{oppure: } \max_{x\in E} |f_n(x) - f(x)| < \epsilon
+    \end{gather}
+}
+
+\ltheorem{Il teorema di \b{Bolzano-Weierstrass} afferma che in uno spazio euclideo finito dimensionale $\mathbb{R}^n$ ogni successione reale limitata ammette almeno una sottosuccessione convergente.
+}
+
+\ltheorem{Il teorema della continuita' del limite afferma che il limite $f(x)$ di una successione ${f(x)}$ di funzioni continue uniformemente convergenti in un intervallo $I$ \`{e} una funzione continua in $I$.
+    \ldim{
+        Prendiamo due punti $x_1 \simeq x_2$, e poich\`{e} stiamo parlando di funzioni continue, vale che $f(x_1) \simeq f(x_2)$. \\
+        Per la proprieta' triangolare si ha che:
+        $$|f(x_1) - f(x_2)| \leq |f(x_1) - f_n(x_2)| + |f_n(x_1) - f_n(x_2)| + +f_n(x_2) - f(x_2)|$$
+        Siccome il primo e il terzo modulo a secondo membro sono minori di $\epsilon$:
+        $$|f(x_1) - f(x_2)| \leq 2\epsilon + |f_n(x_1) - f_n(x_2)|$$
+        Quindi anche la funzione limite $f(x)$ possiede il requisito tipico delle funzioni continue di prendere \emph{valori vicini su punti vicini}
+    }
+}
+
+\ltheorem{Passaggio al limite sotto il segno di integrale:\\
+    Sia ${f_n}$ una successione di funzioni continue su $[a,b]$ tali che $f_n \rightrightarrows f$ (uniformemente), allora:
+    $$
+        \lim_{n \rightarrow \infty} \int_E f_n(x)dx = \int_E \lim_{n \rightarrow \infty} f_n(x)dx 
+    $$
+    \ldim{
+        Bisogna dimostrare che $ \forall \epsilon > 0, \quad \exists n_\epsilon$ tale che::
+        $$
+            \left| \int_a^b f_n(x)dx - \int_a^b f(x)dx \right| < \epsilon , \quad
+            \forall n \geq n_\epsilon 
+        $$
+        Siccome le $f_n$ sono continue, sono tutte integrabili. Inoltre, siccomeme $f_n \rightrightarrows f$, per il teorema di continuit\'{a} del limite, $f$ \`{e} continua e quindi integrabile
+        \begin{gather}
+            \left| \int_a^b f_n(x)dx - \int_a^b f(x)dx \right| \leq \int_a^b \left| f_n(x) - f(x) \right| dx \\
+            \leq \int_a^b \sup_{x\in [a,b]} \mid f_n(x) - f(x) \mid dx \\
+            \leq  \; \mid b - a \mid \sup_{x\in [a,b]} \mid f_n(x) - f(x) \mid 
+            \quad \rightarrow 0
+        \end{gather}
+    }
+}
+
+\ltheorem{Passaggio al limite sotto il segno di derivata:
+    $$
+        f'(x) = \lim_{n \rightarrow \infty} f'_n(x)
+    $$
+    \ldim{
+        Manca!
+    }
+}
+
+\ldef{
+    Una successione ${x_n}$ in uno spazio metrico $(X,d)$ prende il nome di \b{successione di Cauchy} se esiste un $N$ tale che:
+        $$
+        d(x_m, x_n) < \epsilon \quad \forall m,n \geq N, \forall \epsilon > 0
+        $$
+    In sostanza significa che al tendere all'infinito, lo spazio tra due elementi della successione tende ad annullarsi.
+}
+
+\ldef{
+    Uno \b{spazio metrico completo} è uno spazio in cui tutte le successioni di Cauchy sono convergenti ad un elemento dello spazio. 
+    Viene anche chiamato \b{spazio di Banach}.
+    \loss{
+        Lo spazio metrico $\mathbb{Q}$ dei razionali con la metrica standard non è completo. Infatti, se prendo la successione i troncamenti di $\sqrt{2}$ definita come $x_n = \frac{\lfloor 10^n \sqrt{2}\rfloor}{10^n}$, è una successione di Cauchy $(1, 1.4, 1.41, \dots)$ che converge a $\sqrt{2}$, un numero non razionale.\\
+        Invece, un qualsiasi sottoinsieme chiuso di $\mathbb{R}^n$ è completo.
+    }
+    \loss{
+        $\mathbb{R}^n$ \'{e} completo con la norma euclidea. Siccome poi in $\mathbb{R}^n$ tutte le norme sono equivalenti, qualunque spazio normato in $\mathbb{R}^n$ \'{e} completo. \\
+        Segue anche che tutti gli spazi metrici in $\mathbb{R}^n$ in cui la distanza proviene da una norma sono completi.
+    }
+}
+
+\ldef{
+    Una \b{funzione lipschitziana} è una funzione di variabile reale caratterizzata da \emph{crescita limitata}, nel senso che il rapporto tra variazione di ordinata e variazione di ascissa non può mai superare un valore fissato definito come costante di Lipshitz.
+}
+
+\ldef{
+    Si definisce \b{contrazione} una funzione $f : X \rightarrow X$ tale che esiste $L$ che soddisfa:
+    $$
+    d(f(x), f(y)) \leq Ld(x,y), \quad L < 1
+    $$
+    In altre parole, $f$ è una contrazione se \emph{contrae} la distanza tra due elementi $x$ e $y$.
+    \loss{
+        Ogni contrazione è lipschitziana, e quindi anche continua!
+    }
+}
+
+\ltheorem{
+    Il \b{teorema di Banach-Cacciopolli} dice che dato uno spazio metrico completo non vuoto $(X, d)$, e una sua contrazione $f$, allora la mappa $f$ ammette uno e un solo punto fisso $x^* \in X \mid x^* = f(x^*) $
+    \ldim{
+        1) Dimostriamo prima l'esistenza, definendo la successione ricorrente:
+        $$ x_1 = f(x_0), \quad x_2 = f(x_1), \dots, x_n = f(x_{n-1}) $$
+        Usiamo la contrazione per valutare la distanza tra due elementi successivi:
+        \begin{gather}
+        \begin{split}
+        d(x_n, x_{n+1}) = d(f(x_{n-1}), f(x_n)) \leq Ld(x_{n-1}, x_n) = \\
+        Ld(f(x_{n-2}), f(x_{n-1})) \leq L^2 d(x_{n-2},x_{n-1}) \leq \dots \leq L^n d(x_0, x_1) 
+        \end{split}
+        \end{gather}
+        Prendiamo due numeri $m, n \in \mathbb{N}, m < n$, e con la disugualianza triangolare:
+        \begin{gather}
+        \begin{split}
+        d(x_n, x_m) \leq d(x_n, x_{n-1}) + d(x_{n-1}, x_m) \leq \sum_{i=m}^{n-1} d(x_i, x_{i+1}) \leq \\
+        \leq d(x_0, x_1) \sum_{i=m}^{n-1} = d(x_0, x_1) \sum_{i=0}^{n-m-1} L^{i+m} = L^m d(x_0, x_1) \sum_{i=0}^{n-m-1} L^i
+        \end{split}
+        \end{gather}
+        Siccome $0 < L < 1$, la serie geometrica converge:
+        $$ d(x_n, x_m) \leq d(x_0, x_1) \frac{L^m}{1 - L} \rightarrow 0 \quad \text{per} \quad m \rightarrow 0 $$
+        che soddisfa il criterio di Cauchy per le successioni. Dato che per ipotesi $X$ \`{e} completo, 
+        sappiamo che la successione converge. Siccome $f$ \`{e} un'applicazione continua:
+        $$ x^* = \lim_{n \rightarrow \infty} x_n \quad \implies \quad f(x^*) = \lim_{n \rightarrow \infty} f(x_n) = \lim_{n \rightarrow \infty} x_{n+1} = x^* $$
+        Percio' abbiamo dimostrato che $f(x^*) = x^*$. \\
+        2) Passiamo ora all'unicita', che dimostriamo per assurdo dicendo che esiste un secondo punto $f(y^*) = y^*$:
+        $$ d(x^*, y^*) \leq d(f(x^*), f(y^*)) \leq Ld(x^*, y^*) \quad   L \geq 1 $$
+        che contraddice l'ipotesi della contrazione $L < 1$.
+    }
+}
+
+\ldef{
+    La \b{serie} di funzioni $\displaystyle \sum_{k=1}^{+\infty} f_k$ non \'{e} altro che la successione $\{s_n\}_k$ delle sue somme parziali.
+}
+
+\ldef{
+    La \b{convergenza puntuale per le serie} di funzioni si verifica se $\forall x \in I, \forall \epsilon > 0, \exists n_{\epsilon, x} \in \mathbb{N}$ tale che 
+        $$ \left| \sum_{k=n+1}^{+\infty} f_k(x) \right| < \epsilon, \quad \forall n > n_\epsilon $$
+}
+
+\ldef{
+    La \b{convergenza uniforme delle serie} di funzioni si verifica se 
+    $ \forall \epsilon > 0, \quad \exists n_\epsilon \in \mathbb{N}$ tale che
+    $$ \sup_{x\in I} \left| \sum_{k=n+1}^{+\infty} f_k(x) \right| < \epsilon $$
+
+    \loss{
+        La convergenza uniforme implica quella puntuale.
+    }
+}
+
+\ldef{
+    La serie $\displaystyle \sum_{k=1}^{+\infty} f_k(x)$  \b{converge assolutamente} in $I$ se converge (puntualmente) in I la serie $\displaystyle \sum_{k=1}^{+\infty} \mid f_k(x) \mid < + \infty $
+
+    \loss{
+        La convergenza assoluta implica quella puntuale. \\ Questo \'{e} verificabile poich\`{e} per il teorema del confronto di serie, vale che 
+            $ -\mid f_k(x) \mid \leq f_k(x) \leq \mid f_k(x) \mid $
+    }
+
+    \loss{
+        Se $ f_k \geq 0$, allora la convergenza puntuale \'{e} uguale a quella assoluta.
+    }
+
+}
+
+\ldef{
+    La serie $f_k$ si dice \b{totalmente convergente} in I se $\forall k, \exists M_k \geq 0 $ tale che 
+        $$ \sum_{k=1}^{+\infty} M_k < \infty \quad \text{e} \quad \mid f_k(x) \mid \leq M_k, \quad \forall x \in I $$
+
+    \loss{
+        La serie \'{e} totalmente convergente se e solo se posso prendere $\displaystyle M_k = \sup_{x\in I} \mid f_k(x) \mid $, cosa che poi mi \'{e} molto utile fare quasi sempre.
+    }
+}
+
+\ldef{
+    Il \b{criterio di Cauchy per le serie} dice che la successione $\{s_n\}_n$ converge se e solo se \'{e} di Cauchy.
+}
+
+\lprop{
+    Se una serie converge totalmente, allora converge anche uniformemente.
+    \ldim{
+        Sia $ M_k \geq 0$ tale che $ M_k < + \infty$ e $\mid f_k(x) \mid \leq M_k \forall x \in I$. \\
+        Uso il criterio di Cauchy uniforme:
+        \begin{gather}
+        \begin{split}
+            \left| \sum_{k=n+1}^{+\infty} f_k(x) \right| \quad \leq \quad \mid f_{n+1}(x) \mid + \dots + \mid f_{n+p}(x) \mid \quad \leq \\
+            \leq M_{n+1} + \dots + M_{n+p} = \sum_{k=n+1}^{n+p} M_k
+        \end{split}
+        \end{gather}
+        Ma dato che quest'ultima serie converge in $\mathbb{R}$ uso cauchy per serie numeriche: $\forall \epsilon > 0,  \exists n_\epsilon$ tale che $\displaystyle \sum_{k=n+1}^{n+p} M_k < \epsilon, \quad \forall n > n_\epsilon, \quad \forall p \in \mathbb{N}$\\
+        E quindi $\displaystyle \sum_{k=n+1}^{n+p} M_k < \epsilon, \quad  \forall \epsilon > 0, \quad \exists n_\epsilon \text{t.c.} \quad \forall x \in I, \; \forall n > n_\epsilon, \; \forall p \in \mathbb{N}$
+    }
+}
+
+\ltheorem{
+    Il \b{teorema della continuita' del limite per le serie di funzioni} dice che la somma di una serie di funzioni continue ( cio\`{e} $f_k$ continua $\forall k$) che converge uniformemente \'{e} una funzione continua. Questa somma \'{e} $ s(x) = \sum_{k=1}^{+\infty} f_k(x) $
+}
+
+\ltheorem{
+    Il \b{teorema di integrazione per serie} dice che se
+    $ f_k [a,b] \rightarrow \mathbb{R} $ continue, e se $ s_n(x) \rightrightarrows s(x) \text{ in } \left[a,b\right] $, allora:
+    $$ \int_a^b s(x)dx = \int_a^b \sum_{k=1}^{+\infty} f_k(x) dx = \sum_{k=1}^{+\infty} \int_a^b f_k(x) dx $$
+}
+
+\ltheorem{
+    Il \b{teorema di derivazione per serie} dice che data $f_k : I \rightarrow \mathbb{R}$, con
+    $ f_k \in C^1(I)$, e dato $S_n(x) = \sum_{k=1}^n f_k(x)$, se $S'_n = \sum_{k=1}^n f'_k(x)_k$
+    converge uniformemente, e $ \exists x_0 \in I $ tale che $ S_n(x_0) $ converge (in 
+    $\mathbb{R}$), allora: 
+    $$
+    S_n(x) \rightrightarrows \sum_{k=1}^\infty f'_k(x)  \text{, \quad e \quad }
+    \left( \sum_{k=1}^\infty f_k(x) \right)' = \sum_{k=1}^\infty f'_k(x)
+    $$
+}
+
+\ldef{
+    Si dice \b{serie di potenze} una serie di funzioni di questo genere:
+    $$ 
+        \sum_{k=0}^\infty a^k (x - x_0)^k
+    $$
+    Assumiamo $x_0 = 0$, altrimenti basta fissare $y = (x - x_0)$
+    \loss{
+        Una serie di potenze converge sempre in $ x = 0 $.
+    }
+    \loss{
+        Se una serie di potenze converge in $ \xi \in \mathbb{R} $, allora converge (assolutamente) in $ |x| < |\xi|$.\\
+        Analogamente, se \emph{non} converge in $ \xi'  \in \mathbb{R} $, allora non converge in $ |x| > |\xi'|$.
+    }
+    L'insieme dei valori dove la serie converge prende il nome di \b{insieme di convergenza}. 
+    \loss{
+        L'insieme di convergenza pu\'{o} essere solo delle seguenti forme: 
+        $\{0\}, (-\rho, \rho), [-\rho, \rho), \left[-\rho, \rho\right], (-\rho, \rho], \mathbb{R}$, dove $\rho$ \'{e} il raggio di convergenza
+    }
+    \loss{
+        La definizione formale del raggio di convergenza \'{e} questa:
+        $ \rho = \sup \{ |x| \mid x \in A \}$, dove $A$ \'{e} l'insieme di convergenza.
+    }
+}
+
+\ldef{
+    Il \b{criterio della radice} dice che il raggio di convergenza $ \rho \geq 0 $ di una serie 
+    di potenze \'{e} uguale a $\frac{1}{l}$ dove 
+    $$
+    l = \limsup_{k\to\infty} \sqrt[k]{\vphantom{\sum} \left| a_k \right| }
+    $$
+    \loss{
+        Il limsup \'{e} il limite maggiore di tutte le possibili sottosuccessioni. Per il teorema di Bolzano-Weierstrass, esiste sempre almeno una sottosuccessione convergente, e quindi esiste sempre il limsup.
+        }
+}
+
+\ldef{
+    Il \b{criterio del rapporto} dice che data una serie di potenze, se esiste
+    $$
+        l = \lim_{k\to+\infty} \frac{|a_{k+1}|}{|a_k|}
+    $$
+    allora il raggio di convergenza \'{e} $ \rho = \frac{1}{l}$
+}
+
+\ltheorem{
+    Il \b{teorema di Abel} dice che se una serie numerica $ \sum_k^\infty a_k \rho^k $ con $ \rho > 0 $ converge, allora la serie di potenze $ \sum_k^\infty a_k x^k$ converge uniformemente in $[-\rho + \delta, \rho ], \; \forall \delta > 0$. \\
+    Se invece $ \rho < 0$, allora la serie converge uniformemente in $[-\rho, \rho - \delta], \; \forall \delta > 0$.
+}
+
+\ldef{
+    Data una serie di potenze, si dice \b{serie derivata } la serie:
+    $$
+    \sum_k^\infty k a_k x^{k-1}
+    $$
+}
+
+\ltheorem{
+    Il \b{raggio di una serie e della sua derivata} \'{e} lo stesso.
+    \ldim{
+        Consideriamo $\sum k a_k k^k = x \sum k a_k x^{k-1}$.
+        Il raggio di convergenza di queste due serie \'{e} lo stesso poich\'{e} la parte indipendente da $x$ \'{e} la stessa. Confrontiamo $\sum k a_k x^k$ con $\sum a_k x^k$, usando il criterio della radice. Anche qui i due raggi di convergenza sono uguali poich\'{e} $\limsup_{k\to\infty} \sqrt[k]{|a_k|} = \limsup_{k\to\infty} \sqrt[k]{k|a_k|}$
+    }
+}
+
+\ltheorem{
+    Se una serie ha raggio di convergenza $ \rho > 0$, allora sia la derivata che l'integrale della somma della serie hanno lo stesso raggio di convergenza $\rho$.
+}
+
+
+
+%:set iskeyword+={,},,,(,),^,*,+,-,_,<,>,\,/,$,
+%:set iskeyword=30-200
+%:set updatetime=500
+
+%\begin{multicols}{2} 
+\end{multicols}
+%\bigbreak
+%\hrule
+%\medbreak
+%\centerline{Algoritmi:}
+
+%\begin{multicols}{2} 
+
+%\end{multicols}
+\end{document}

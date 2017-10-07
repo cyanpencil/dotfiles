@@ -53,7 +53,7 @@ fi
 #xterm -geometry 80x50+494+51 &
 #xterm -geometry 80x20+494-0 &
 #exec xterm -geometry 80x66+0+0 -name login
-xset r rate 150 25
+xset r rate 250 40
 xbindkeys
 ~/scripts/startup.sh
 exec i3

@@ -99,7 +99,11 @@ XF86Tools
 "xte 'keydown BackSpace"
 ograve
 
+"xte 'key 0x31'"
+Mod4 + Super_L 
 
+"xdotool key --delay 0 --clearmodifiers 1"
+Mod4 + d + release
 
 
 ##################################

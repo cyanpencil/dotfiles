@@ -138,15 +138,18 @@ bindsym $mod+t exec i3-msg workspace $workspace6
 bindsym $mod+y exec i3-msg workspace $workspace7
 bindsym $mod+u exec i3-msg workspace $workspace8
 bindsym $mod+i exec i3-msg workspace $workspace9
-bindsym $mod+o exec i3-msg workspace $workspace10"
+bindsym $mod+o exec i3-msg workspace $workspace10
 
-
-bindsym $mod+Shift+Tab exec "i3-msg move container to workspace number 1"
-bindsym $mod+Shift+a exec "i3-msg move container to workspace number 2"
-bindsym $mod+Shift+s exec "i3-msg move container to workspace number 3"
-bindsym $mod+Shift+d exec "i3-msg move container to workspace number 4"
-bindsym $mod+Shift+f exec "i3-msg move container to workspace number 5"
-bindsym $mod+Shift+g exec "i3-msg move container to workspace number 6"
+bindsym $mod+Shift+Escape exec i3-msg move container to workspace $workspace1
+#bindsym $mod+Shift+q exec i3-msg move container to workspace $workspace2
+bindsym $mod+Shift+w exec i3-msg move container to workspace $workspace3
+bindsym $mod+Shift+e exec i3-msg move container to workspace $workspace4
+bindsym $mod+Shift+r exec i3-msg move container to workspace $workspace5
+bindsym $mod+Shift+t exec i3-msg move container to workspace $workspace6
+bindsym $mod+Shift+y exec i3-msg move container to workspace $workspace7
+bindsym $mod+Shift+u exec i3-msg move container to workspace $workspace8
+bindsym $mod+Shift+i exec i3-msg move container to workspace $workspace9
+bindsym $mod+Shift+o exec i3-msg move container to workspace $workspace10
 
 bindsym $mod+n workspace prev
 bindsym $mod+p workspace next
@@ -160,9 +163,9 @@ bindsym $mod+space workspace back_and_forth
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+s restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -255,3 +258,40 @@ for_window [instance="metask"] move scratchpad; [instance="metask"] scratchpad s
 bindsym $mod+s [instance="metask"] scratchpad show
 
 exec --no-startup-id xmodmap -e "keysym ograve = BackSpace"
+
+
+smart_gaps on
+
+gaps inner 0
+gaps outer 0
+
+for_window [class="^.*"] border pixel 0
+
+
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: j|k|0 
+set $mode_gaps_inner Inner Gaps: j|k|0 
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym k gaps inner all plus 5
+        bindsym j gaps inner all minus 5
+        bindsym 0 gaps inner all set 0
+
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym k gaps outer all plus 5
+        bindsym j gaps outer all minus 5
+        bindsym 0 gaps outer all set 0
+
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+b exec i3-msg bar hidden_state toggle

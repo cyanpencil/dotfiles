@@ -9,6 +9,7 @@ set incsearch
 set hlsearch
 set number
 set cindent
+set ignorecase
 set smartcase
 set autowrite
 set showbreak=\ \ \>>\ 
@@ -110,12 +111,13 @@ cmap w!! w !sudo tee > /dev/null %
 
 nnoremap gv `[v`]
 
+"remove whitespace
 nnoremap ,W :%s/\s\+$//<cr>:let @/=''<CR>
 
 iab <expr> dts strftime("%c")
 iab <expr> todo "// TODO ".strftime('%Y/%m/%d %H:%M')." - "
 
-nnoremap ,v :vs $MYVIMRC<CR>
+nnoremap ,v :tabnew $MYVIMRC<CR>
 
 "execute command
 nnoremap ,p 0ik:r!<ESC>"cdd@c 
@@ -129,6 +131,10 @@ nnoremap <c-l> :nohl<cr><c-l>
 
 "close quickfix window
 nnoremap ,x :ccl<CR>
+
+"surround with \b{}
+vnoremap ,b "9di\b{}<ESC>Pll
+
 
 "                   === AUTO COMMANDS ===
 
@@ -206,7 +212,8 @@ let g:ackprg = 'ag --vimgrep --smart-case'
 let g:ack_use_cword_for_empty_search = 1
 let g:livepreview_previewer='zathura'
 let g:livepreview_engine='xelatex'
-let g:limelight_conceal_ctermfg = '236'
+let g:limelight_conceal_ctermfg = '239'
+let g:goyo_width = '90%'
 let python_highlight_all=1
 
 "supertab
