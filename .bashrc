@@ -74,6 +74,7 @@ transfer() {
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore cache --ignore .cache --ignore Cache --depth 10 -g ""'
 bind -x '"\C-p": vim $(fzf);'
 
-setxkbmap -option "ctrl:swapcaps"
-setxkbmap -option "ctrl:nocaps"
+setxkbmap us
+#setxkbmap -option "ctrl:nocaps"
+setxkbmap -option "compose:caps"
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"

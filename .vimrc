@@ -31,8 +31,8 @@ set foldmethod=syntax
 set foldlevel=99
 set foldcolumn=1
 
-set backupdir=~/.vim_backup,.
-set directory=~/.vim_backup,.
+set backupdir=~/.vim_backup//,.
+set directory=~/.vim_backup//,.
 
 set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
 
@@ -96,7 +96,6 @@ nnoremap P [p
 nnoremap ,p "+]p
 nnoremap ,P "+]P
 
-inoremap {<CR> {<CR><CR>}<ESC>kcc
 
 nnoremap U <C-R>
 nnoremap ,s :w<CR>
@@ -134,6 +133,7 @@ nnoremap ,x :ccl<CR>
 
 "surround with \b{}
 vnoremap ,b "9di\b{}<ESC>Pll
+vnoremap ,v "9di\v{}<ESC>Pll
 
 
 "                   === AUTO COMMANDS ===
@@ -155,7 +155,6 @@ call plug#begin('~/.vim/bundle')
 Plug 'godlygeek/csapprox'
 Plug 'flazz/vim-colorschemes'
 Plug 'jnurmine/Zenburn'
-Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
 Plug 'ervandew/supertab'
@@ -174,7 +173,6 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/vim-slash'
 
-
 Plug 'xuhdev/vim-latex-live-preview'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -185,6 +183,7 @@ Plug 'vim-airline/vim-airline-themes'
 "
 Plug 'xolox/vim-misc'
 
+"Plug 'altercation/vim-colors-solarized'
 "Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'chrisbra/histwin.vim'
 "Plug 'metakirby5/codi.vim'
@@ -276,6 +275,7 @@ function! SettingsCpp()
     abbr vi vector<int>
     abbr vvi vector<vector<int> >
     abbr fori for(int i = 0; i < n; i++) {<CR>
+    inoremap {<CR> {<CR><CR>}<ESC>kcc
 endfunction
 
 function! SettingsJava()
@@ -309,8 +309,10 @@ function! SettingsLatex()
     setlocal nocursorline
     set foldmethod=manual
     set regexpengine=1
-    syn sync minlines=10
-    syn sync maxlines=50
+    "syn sync minlines=10
+    "syn sync maxlines=50
     :NoMatchParen
     setlocal updatetime=1000
+    abbr ,a \begin{align*}<CR><CR>\end{align*}<UP>
+    inoremap {<CR> {<CR><CR>}<ESC>kcc
 endfunction

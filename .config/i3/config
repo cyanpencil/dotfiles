@@ -31,7 +31,7 @@ font xft: Droid Sans 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec i3-sensible-terminal -e fish
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -95,15 +95,15 @@ bindsym $mod+mod1+space focus mode_toggle
 
 
 set $workspace1 "1 "
-set $workspace2 number 2 "2 "
-set $workspace3 number 3 "3 "
-set $workspace4 number 4 "4 "
-set $workspace5 number 5 "5 "
-set $workspace6 number 6 "6 "
-set $workspace7 number 7 "7 "
-set $workspace8 number 8 "8 "
-set $workspace9 number 9 "9 "
-set $workspace10 number 10 "10 "
+set $workspace2 "2 "
+set $workspace3 "3 "
+set $workspace4 "4 "
+set $workspace5 "5 "
+set $workspace6 "6 "
+set $workspace7 "7 "
+set $workspace8 "8 "
+set $workspace9 "9 "
+set $workspace10 "10 "
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -200,8 +200,10 @@ bindsym $mod+m mode "resize"
 bar {
     #font xft: Droid Sans 8
     font xft: Ctrld 9
-status_command i3blocks -c ~/.config/i3/i3blocks.conf
-#status_command i3status
+    #i3blocksbar -non rimuovere questo commento.
+#status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    #i3statusbar -non rimuovere questo commento. 
+status_command i3status
     colors {
         separator #268bd2
 	    background #002b36
@@ -249,15 +251,14 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 for_window [class="Nautilus" instance="file_progress"] floating enable
 for_window [class="Xmessage"] floating enable
 for_window [title="Find"] floating enable
-for_window [class="Zathura"] fullscreen enable
+#for_window [class="Zathura"] fullscreen enable
 
 
 exec --no-startup-id urxvt -name metask
 for_window [instance="metask"] floating enable;
-for_window [instance="metask"] move scratchpad; [instance="metask"] scratchpad show; move position 75px 22px; resize shrink height 0px; resize grow width 600px; move scratchpad
+for_window [instance="metask"] move scratchpad; [instance="metask"] scratchpad show; move position 75px 22px; resize set height 0px; resize set width 600px; move scratchpad
 bindsym $mod+s [instance="metask"] scratchpad show
 
-exec --no-startup-id xmodmap -e "keysym ograve = BackSpace"
 
 
 smart_gaps on
@@ -294,4 +295,4 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+b exec i3-msg bar hidden_state toggle
+bindsym $mod+b exec i3-msg bar mode toggle

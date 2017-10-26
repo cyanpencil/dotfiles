@@ -105,7 +105,6 @@ Mod4 + Super_L
 "xdotool key --delay 0 --clearmodifiers 1"
 Mod4 + d + release
 
-
 ##################################
 # End of xbindkeys configuration #
 ##################################

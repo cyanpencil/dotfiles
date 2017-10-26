@@ -1,0 +1,25 @@
+\input{incluso.tex}
+
+\begin{document}
+
+
+Nell'homework vanno convertiti da sRGB solo i canali r, g, b.
+Il canale alpha va solo diviso per 255.
+
+Tutti gli algoritmi vanno fatti con i float da 0 a 1, altrimenti non funzionano.
+
+
+\bigbreak
+
+il $ \max(0, n \cdot l) $ ci sta poichè così le luci sotto la superficie hanno coseno negativo, e quindi vanno escluse.
+
+l ' \epsilon che metto per evitare errori di calcoli nell'ombra è dell'ordine di grandezza di millimetri se la mia scena è in metri.
+
+$ || v + l || $ significa normalizzare $ v + l $.
+
+
+
+
+
+\end{document}
+

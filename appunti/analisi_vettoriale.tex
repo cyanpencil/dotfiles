@@ -1,74 +1,5 @@
-\documentclass[a4paper,10pt]{article} %default
-\usepackage{geometry}
-\usepackage{fontspec}
-\usepackage[normalem]{ulem}
-\usepackage{color}
-\usepackage{listings}
-\usepackage{multicol}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\geometry{top = 3mm, lmargin=10mm, rmargin=10mm, bottom=3mm}
-\pagestyle{empty}
-\setlength{\parindent}{0pt}
-\setlength{\multicolsep}{0.5em}
-\setlength{\columnsep}{0.7cm}
 
-
-\lstset{
-    basicstyle=\ttfamily,
-    numberstyle=\ttfamily,
-    numbers=left,
-    backgroundcolor=\color[rgb]{0.9,0.9,0.9},
-    columns=fullflexible,
-    keepspaces=true,
-    frame=lr,
-    framesep=8pt,
-    framerule=0pt,
-    xleftmargin=20pt,
-    xrightmargin=30pt,
-    mathescape
-}
-
-\newcommand{\specialcell}[2][c]{%
-    \begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
-\newcommand{\dimo}[1]{%
-    \smallbreak \par \hfill\begin{minipage}{0.92\linewidth}{ \scriptsize {\textbf{\em{Dim.}}} {#1} }\end{minipage} \smallskip \par}
-\newcommand{\mtheorem}[1]{%
-    {\hspace*{-10pt} \textsc {#1}}}
-\newcommand{\malgorithm}[1]{%
-    {\bigbreak \par \hspace*{4pt} \underline{\textbf {#1}}}}
-\newcommand{\msection}[1]{%
-    {\newpage\bigbreak \bigbreak \par \hfil \huge \textsc {#1}}\par}
-\renewcommand{\b}[1]{%
-    {\textbf{#1}}}
-\renewcommand{\t}[1]{%
-    {\texttt{#1}}}
-\renewcommand{\v}[1]{%
-    {\underline{#1}}}
-\newcommand{\mdef}[1]{%
-    {\smallbreak\par\begin{tabular}{ll} \textbf{Def.$\;\;$} & \begin{minipage}[t]{0.80\columnwidth}\normalsize  {#1}\end{minipage}\tabularnewline \end{tabular}}\smallskip\par}
-\newcommand{\ldef}[1]{%
-    {\smallbreak\par\normalsize\textbf{\underline{Def.}} {#1} \smallbreak}}
-\newcommand{\lprop}[1]{%
-    {\smallbreak\par\normalsize\textbf{\underline{Prop.}} {#1} \smallbreak}}
-\newcommand{\ltheorem}[1]{%
-    {\smallbreak\par\normalsize\textbf{\underline{Th.}} {#1} \smallbreak\par}}
-\newcommand{\ldim}[1]{%
-    {\smallbreak\par\scriptsize\emph{\textbf{Dimostrazione}} {#1} \par}}
-\newcommand{\loss}[1]{%
-    {\smallbreak\par\scriptsize\emph{\textbf{Osservazione}} {#1} \par}}
-\newcommand{\mcomment}[1]{%
-    {\hfill \scriptsize {#1}}}
-\newcommand{\mprop}[1]{%
-    {\smallbreak\par\begin{tabular}{ll} \textbf{Prop.} & \begin{minipage}[t]{0.8\columnwidth}\emph  {#1}\end{minipage}\tabularnewline \end{tabular}}\smallskip\par}
-
-\makeatletter
-\g@addto@macro\normalsize{%
-  \setlength{\abovedisplayskip}{4.0pt plus 10.0pt minus 5.0pt}%
-  \setlength{\belowdisplayskip}{4.0pt plus 10.0pt minus 5.0pt}%
-}
-\makeatother
-
+\input{incluso.tex}
 
 \begin{document}
 
@@ -285,6 +216,27 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
     \loss{
         La convergenza uniforme implica quella puntuale.
     }
+    \loss{
+        Se voglio dimostrare che una serie non converge, basta che trovo 
+        un $n$ per cui il sup non é 0:
+        \[
+            \sup_{x\in I} \mid f_{n+1}(x) \mid \nrightarrow 0
+        \]
+    }
+    \loss{
+        Se ho una serie della forma 
+        \[
+            \sum_{k=0}^\infty (-1)^k f_k(x), \quad \text{con} \quad
+            f_k(x) \geq 0, f_{k+1}(x) \geq f_k(x), f_k(x) \rightarrow 0
+        \]
+        allora converge puntualmente $\forall x$ per Leibnitz.\\
+        Tuttavia, se ho che $f_k(x) \rightrightarrows 0$, allora converge
+        anche uniformemente, poiché  
+        \[ 
+            \displaystyle \left| \sum_{k=n+1}  (-1)^k f_k(x) \right| \leq \sup \mid f_{n+1} (x) \mid \rightarrow 0
+        \]
+        
+    }
 }
 
 \ldef{
@@ -303,7 +255,7 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
 
 \ldef{
     La serie $f_k$ si dice \b{totalmente convergente} in I se $\forall k, \exists M_k \geq 0 $ tale che 
-        $$ \sum_{k=1}^{+\infty} M_k < \infty \quad \text{e} \quad \mid f_k(x) \mid \leq M_k, \quad \forall x \in I $$
+        \[ \sum_{k=1}^{+\infty} M_k < \infty \quad \text{e} \quad \mid f_k(x) \mid \leq M_k, \quad \forall x \in I \]
 
     \loss{
         La serie \'{e} totalmente convergente se e solo se posso prendere $\displaystyle M_k = \sup_{x\in I} \mid f_k(x) \mid $, cosa che poi mi \'{e} molto utile fare quasi sempre.
@@ -337,7 +289,7 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
 \ltheorem{
     Il \b{teorema di integrazione per serie} dice che se
     $ f_k [a,b] \rightarrow \mathbb{R} $ continue, e se $ s_n(x) \rightrightarrows s(x) \text{ in } \left[a,b\right] $, allora:
-    $$ \int_a^b s(x)dx = \int_a^b \sum_{k=1}^{+\infty} f_k(x) dx = \sum_{k=1}^{+\infty} \int_a^b f_k(x) dx $$
+    \[ \int_a^b s(x)dx = \int_a^b \sum_{k=1}^{+\infty} f_k(x) dx = \sum_{k=1}^{+\infty} \int_a^b f_k(x) dx \]
 }
 
 \ltheorem{
@@ -345,17 +297,17 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
     $ f_k \in C^1(I)$, e dato $S_n(x) = \sum_{k=1}^n f_k(x)$, se $S'_n = \sum_{k=1}^n f'_k(x)_k$
     converge uniformemente, e $ \exists x_0 \in I $ tale che $ S_n(x_0) $ converge (in 
     $\mathbb{R}$), allora: 
-    $$
+    \[
     S_n(x) \rightrightarrows \sum_{k=1}^\infty f'_k(x)  \text{, \quad e \quad }
     \left( \sum_{k=1}^\infty f_k(x) \right)' = \sum_{k=1}^\infty f'_k(x)
-    $$
+    \]
 }
 
 \ldef{
     Si dice \b{serie di potenze} una serie di funzioni di questo genere:
-    $$ 
+    \[
         \sum_{k=0}^\infty a^k (x - x_0)^k
-    $$
+    \]
     Assumiamo $x_0 = 0$, altrimenti basta fissare $y = (x - x_0)$
     \loss{
         Una serie di potenze converge sempre in $ x = 0 $.
@@ -367,7 +319,7 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
     L'insieme dei valori dove la serie converge prende il nome di \b{insieme di convergenza}. 
     \loss{
         L'insieme di convergenza pu\'{o} essere solo delle seguenti forme: 
-        $\{0\}, (-\rho, \rho), [-\rho, \rho), \left[-\rho, \rho\right], (-\rho, \rho], \mathbb{R}$, dove $\rho$ \'{e} il raggio di convergenza
+        $ \{0\}, (-\rho, \rho), [-\rho, \rho), \left[-\rho, \rho\right], (-\rho, \rho], \mathbb{R}$, dove $\rho$ \'{e} il raggio di convergenza
     }
     \loss{
         La definizione formale del raggio di convergenza \'{e} questa:
@@ -378,9 +330,9 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
 \ldef{
     Il \b{criterio della radice} dice che il raggio di convergenza $ \rho \geq 0 $ di una serie 
     di potenze \'{e} uguale a $\frac{1}{l}$ dove 
-    $$
+    \[
     l = \limsup_{k\to\infty} \sqrt[k]{\vphantom{\sum} \left| a_k \right| }
-    $$
+    \]
     \loss{
         Il limsup \'{e} il limite maggiore di tutte le possibili sottosuccessioni. Per il teorema di Bolzano-Weierstrass, esiste sempre almeno una sottosuccessione convergente, e quindi esiste sempre il limsup.
         }
@@ -388,9 +340,9 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
 
 \ldef{
     Il \b{criterio del rapporto} dice che data una serie di potenze, se esiste
-    $$
+    \[
         l = \lim_{k\to+\infty} \frac{|a_{k+1}|}{|a_k|}
-    $$
+    \]
     allora il raggio di convergenza \'{e} $ \rho = \frac{1}{l}$
 }
 
@@ -419,13 +371,752 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
 }
 
 
+\ldef{
+    Una funzione $f : I \rightarrow \mathbb{R}; \quad f \in C^\infty (I) $, si dice \b{sviluppabile in serie di Taylor} se \'{e} possibile scriverla nella forma 
+    $$ f(x) = \sum_{k=0}^\infty a_k ( x - x_0 )^k $$
+    con $x_0$ fissato e $ x \in ( x_0 - \rho, x_0 + \rho )$, per $\rho > 0$.\\
+    Se in particolare $x_0 = 0$, allora prende il nome di \b{serie di MacLaurin}.
+    \loss{
+        Calcolando le derivate in $x_0$ otteniamo i termini $a_k$:
+        \[
+            a_k = \frac{f^{(k)} (x_0)}{k!}, \quad \forall k > 0
+        \]
+    }
+    \loss{
+        Esempi di funzioni sviluppabili in Taylor:
+        \begin{align*}
+            log(1+x)=&\sum \frac{(-1)^k x^{k+1}}{k+1} &\frac{1}{1+x}& = \sum x^k, \quad x \in (-1, 1)\\
+            \frac{1}{1+x^2} = &\sum x^{2k} &arctan(x)&= \sum \frac { (-1)^k x^{2k + 1}}{ 2k+1}\\
+            \frac{-1}{(1 - x)^{-2}} = &\sum kx^{k-1} & e^x &= \sum \frac{x^n}{n!}\\
+            sin(x) =&\sum\frac{(-1)^{n-1}x^{2n -1}}{(2n -1)!} & cos(x) &= \sum\frac{(-1)^{n}2^n}{(2n)!}
+        \end{align*}
+        Notare che l'ultima \'{e} stata ottenuta integrando la terza.\\
+        In linea di massima, ognuna di queste pu\'{o} essere derivata/integrata a piacere.
+    }
+}
+
+\ltheorem{
+    Il \b{teorema di sviluppabilit\'{a} in serie di Taylor} dice che se $f$ \'{e} dotata delle derivate di ogni ordine e se $\exists M, L > 0$ tali che 
+    \[
+    \left| f^{(k)} (x) \right| \leq M\cdot L^k, \quad \forall k = 0,1,2 \dots, \quad \forall x \in (a,b)
+    \]
+    allora $f$ \'{e} sviluppabile in $x_0$ per ogni $x_0 \in (a, b)$, per $x \in (a,b)$.
+    \ldim{
+        Vogliamo dimostrare che il resto dello sviluppo di Taylor tende a 0:
+        \[
+        R(n) = f(x) - \sum_{k=0}^n \frac{f^{(k)} (x_0)}{k!} (x - x_0)^k \quad \longrightarrow 0, \quad n \rightarrow \infty
+        \]
+        Ora scriviamolo in forma di Lagrange:
+        \[
+        R_n(x) = \frac{\left| f^{(n+1)} (\xi) \right| } { (n + 1)!} (x - x_0)^{n + 1}, \quad \xi \in (x, x_0)
+        \]
+        Siccome il valore massimo di $(x - x_0)$ \'{e} in $(b - a)$:
+        \[
+        \left| R_n(x) \right| \leq \frac{ \left| f^{(n + 1)} (\xi) \right|} { (n + 1) !} ( b - a)^{n+1} 
+        \leq \frac{ML^{n+1}}{(n+1)!} (b-a)^{n+1} \longrightarrow 0
+        \]
+} 
+}
+
+\ldef{
+    Una \b{curva} \'{e} un'applicazione continua $\varphi : I \rightarrow \mathbb{R}^d, d\in \mathbb{N}$. L'immagine della curva, anche detto \b{sostegno}, \'{e} l'insieme dei punti per cui passa la curva, definito come $\{\varphi(t) \in \mathbb{R} | t \in I \}$.
+    \loss{
+        $\varphi$ \'{e} continua se $t \rightarrow \varphi_i(t) \text{ \'{e} continua } \forall i = 1,2,3,\dots$
+    }
+    \loss{
+        A uno stesso sostegno possono appartenere varie curve.
+    }
+}
+
+\ldef{
+    Una curva di dice \b{semplice} se non si auto interseca, cio\'{e} se $\varphi : \mathring{I} \longrightarrow \mathbb{R}^d$ \'{e} iniettiva, dove $\mathring{I}$ \'{e} $I$ senza estremi.
+}
+
+\ldef{
+    Una curva è derivabile se ogni componente è derivabile. Il vettore $\varphi' (t) = (\varphi_1'(t), \varphi_2'(t), \dots, \varphi_d'(t))$ è detto \b{vettore velocit\'{a}.}
+}
+
+\ldef{
+    Una curva si dice \b{regolare} se $ \varphi'(t) \neq 0 \quad \forall t \in \mathring{I} $
+}
+
+\ldef{
+    Il versore $\displaystyle T(t) = \frac{\varphi'(t)}{ | \varphi'(t)|}$ è detto \b{tangente}.
+}
+
+\ldef{
+    La \b{lunghezza di una curva} è definita nel seguente modo:
+    \[
+        L(\varphi) = \sup 
+        \begin{cases}
+            L(\pi) \mid \pi \text{ è una poligonale inscritta} \\
+            \text{con punti } t_0< t_1< \dots < t_k < \infty 
+        \end{cases}
+    \]
+    Dove la poligonale è una curva fatta di segmenti, e una poligonale inscritta è una poligonale che passa per tutti i punti di una data curva (con segmenti infinitesimali)
+
+}
+
+\ltheorem{
+    Se $\varphi \colon [a,b] \longrightarrow \mathbb{R}^d$ è una curva regolare, allora:
+    \[
+        L(\varphi) = \int_a^b \mid \varphi'(t) \mid dt < +\infty
+    \]
+    \loss{
+        Il teorema vale anche se la curva è regolare solo a tratti.
+        In questo caso dovr\'{o} spezzare l'integrale nei vari tratti.
+    }
+    \loss{
+        La lunghezza della curva non è la lunghezza del sostegno.
+        Infatti, una curva potrebbe fare vari giri.
+    }
+}
+
+
+\ldef {
+    Le curve \b{cartesiane} hanno il sostegno che è una funzione 
+    $f \colon  \mathbb{R} \rightarrow \mathbb{R}$
+    Quindi sono curve definite in questo modo: 
+    $\varnothing(t) = (t, f(t))$.
+    \loss{
+        Tutte le curve cartesiane sono semplici, in quanto essendo $f$ una funzione,
+        non pu\'{o} avere due risultati diversi sulla stessa $x$.
+    }
+    \loss{
+        Se $f \in C^1$, allora $\varnothing$ è regolare: $\varnothing' (t) = (1, f'(t)) \neq 0$.
+    }
+    \loss{
+        La lunghezza delle curve cartesiane si calcola come:
+        \[
+            L(\varnothing) = \int_a^b \sqrt{1 + (f'(t))^2} dt
+        \]
+    }
+}
+
+\ldef{
+    Le curve \b{polari} sono quelle curve che si possono esprimere come 
+    funzione dell'angolo con l'origine $\rho(\theta) \colon \rightarrow (0, +\infty)$.
+    Quindi la curva è definita come:
+    $\varnothing(\theta) = (\rho(\theta)\cos\theta, \rho(\theta)\sin\theta)$
+    \loss{
+        Tutte le curve polari sono regolari, in quanto l'angolo cambia sempre.
+    }
+    \loss{
+        La lunghezza delle curve polari si calcola come:
+        \[
+            L(\varnothing) = \int_a^b \sqrt{\rho(\theta)^2 + \rho'(\theta)^2} d\theta
+        \]
+    }
+ 
+}
+
+\ldef{
+    Si definiscono le seguenti \b{funzioni iperboliche}:
+    \begin{align*}
+        \cosh &= \frac{e^t + e^{-t}}{2},&& \text{pari},& 
+        \text{Immagine:}\quad& [1, +\infty]
+       \\
+        \sinh &= \frac{e^t - e^{-t}}{2},&& \text{dispari},& 
+        \text{Immagine:}\quad& [-\infty,  +\infty]
+    \end{align*}
+    Si chiamano iperbolici perch\'{e} se applico la seguente mappatura:
+    \begin{align*}
+        \cos &\rightarrow \cosh
+        &\sin &\rightarrow \sinh
+        \\
+        \cos^2 &\rightarrow \cosh^2
+        &\sin^2 &\rightarrow -\sinh^2
+    \end{align*}
+    Tutte le identit\'{a} trigonometriche sono ancora verificate.
+    \loss{
+        \[
+            \cosh' = \sinh \quad \quad \sinh' = \cosh
+        \]
+    }
+    \vspace{-1em}
+    \loss{
+        \begin{gather*}
+            arccosh(x) = log(x + \sqrt{x^2 - 1})
+            \\
+            arcsinh(x) = log(x + \sqrt{x^2 + 1})
+        \end{gather*}
+    }
+}
+
+\ldef{
+    Due curve 
+    $\varnothing \colon [a, b] \rightarrow \mathbb{R}^d $ e 
+    $\varphi \colon [c, d] \rightarrow \mathbb{R}^d $
+    si dicono \b{equivalenti} se esiste una funzione 
+    $h \colon [c, d] \rightarrow [a, b]$
+    continua e univoca tale che 
+    $\varnothing(h(t)) = \varphi(t), \quad \forall t \in [c,d]$.
+}
+
+\ltheorem{
+    Due curve equivalenti hanno la stessa lunghezza.
+}
+
+
+\ldef{
+    $\v{P}$ é \b{punto interno} di $E$ se
+    $\exists r > 0 $ t.c. $ B(\v{P}, r) \subseteq E$.\\
+    $\v{P}$ é \b{punto esterno} di $E$ se $\v{P}$ é interno a $E^c$.\\
+    $\v{P}$ é \b{punto di frontiera} se 
+    $\forall r > 0, B(\v{P})$ contiene sia punti di E che del complementare.\\
+    $\v{P}$ é \b{punto di accumulazione} per $E$ se 
+    $\forall r > 0, (B(\v{P}, r) \backslash \{\v{P}\} \; \cap E \neq \emptyset  $.
+    \\
+    Ogni punto di $E$ che non é di accumulazione si dice \b{punto isolato}.
+}
+
+\ldef{
+    Un insieme $E$ si dice \b{aperto} se ogni suo punto é interno.\\
+    Un insieme $E$ si dice \b{chiuso} se il suo complementare é aperto.\\
+    Un insieme $E$ é \b{limitato} se $\exists r > 0$ t.c. 
+    $E \subseteq B(\v{0}, r)$.\\
+    La \b{chiusura} di un insieme $E$ é il piú piccolo insieme chiuso 
+    $E'$ tale che $E \subseteq E'$.
+    \loss{
+        L'unione e l'intersezione di due insiemi aperti é un insieme aperto.
+        L'unione e l'intersezione di due insiemi chiusi é un insieme chiuso.
+    }
+}
+
+
+
+
+
+\end{multicols}
+\msection{Funzioni a piú variabili}
+\begin{multicols}{2} 
+
+
+
+
+\ldef{
+    Tutte le funzioni del tipo 
+    $f \colon \mathbb{R}^n \longrightarrow \mathbb{R}^d$
+    si chiamano \b{vettoriali} se $n > 1$, e \b{a piú variabili} se $d > 1$.
+}
+
+\ldef{
+    Sia $\v{x_0} \in A \subseteq \mathbb{R}^n$, con $\v{x_0}$ punto di 
+    accumulazione di $A$.
+    Sia $f\colon \mathbb{R}^n \longrightarrow \mathbb{R}^d$, e sia
+    $\v{L} = (L_1, \ldots, L_d) \in \mathbb{R}^d$ .
+    Definiamo:
+    \begin{gather*}
+        \lim_{\v{x}\rightarrow\v{x_0}} f(\v{x}) = \v{L} \quad \text{se}\\
+        \forall \epsilon > 0, \exists \delta > 0 \text{ tale che se } 
+        | \v{x} - \v{x_0} | \; < \delta \text{ allora } 
+        | f(\v{x}) - \v{L} | < \epsilon
+    \end{gather*}
+    \loss{
+        $f(\v{x}) \rightarrow \v{L}$ se e solo se $f_i(x) \rightarrow L_i, 
+        \quad \forall i = 1,\dots,d$\\
+        Manca la dimostrazione!
+    }
+    \loss{
+        Per dimostrare che non esiste il limite devo trovare due successioni 
+        $\v{P_n} \rightarrow c $ e $\v{Q_n} \rightarrow c $ tali che 
+        $f(\v{P_n}) \rightarrow \v{l} $ e $ f(\v{Q_n}) \rightarrow \v{l'}$.
+        Se $\v{l} \neq \v{l'}$, allora il limite non esiste.
+    }
+    \loss{
+        Se bisogna calcolare un limite per $(x,y) \rightarrow (x_0, y_0)$ 
+        invece che $(x, y) \rightarrow (0,0)$, basta che impongo
+        $x' = x - x_0, y' = y - y_0$, e scrivo la funzione $f(x,y) = f'(x',y')$.
+        Poi calcolo il limite di $f'$ per $(x', y') \rightarrow (0,0)$.
+    }
+    \loss{
+        Per calcolare il limite di una funzione a piú variabili spesso
+        aiuta molto imporre $y = x^\beta$, con il giusto $\beta$.
+    }
+}
+
+\ldef{
+    In $\mathbb{R}^2$, si definisce il limite a infinito:
+    \begin{gather*}
+        \lim_{|(x,y)| \rightarrow \infty} f(x,y) = l \quad \text{se}\\
+        \forall \epsilon > 0, \exists R > 0 \text{ tale che se } 
+        | (x,y) | \geq R \text{ allora } 
+        | f(x,y) - l | < \epsilon
+    \end{gather*}
+}
+
+\ldef{
+    In $\mathbb{R}^2$, se il limite a un punto $(x_0, y_0)$ tende a $\pm\infty$:
+    \begin{gather*}
+        \lim_{(x,y) \rightarrow (x_0, y_0)} f(x,y) = \pm\infty\quad\text{se}\\
+        \forall M > 0, \exists \delta > 0 \text{ tale che se } 
+        | (x,y) - (x_0, y_0) | < \delta \text{ allora } \\
+        f(x,y) - l > M \text{ (oppure $< -M$ nel caso di $-\infty$)}
+    \end{gather*}
+}
+
+\ldef{
+    In $\mathbb{R}^2$, se il limite a $\pm\infty$ tende a $\pm\infty$:
+    \begin{gather*}
+        \lim_{(x,y) \rightarrow (x_0, y_0)} f(x,y) = \pm\infty\quad\text{se}\\
+        \forall M > 0, \exists N > 0 \text{ tale che se } 
+        | (x,y) - (x_0, y_0) | > N \text{ allora } \\
+        f(x,y) - l > M \text{ (oppure $< -M$ nel caso di $-\infty$)}
+    \end{gather*}
+}
+
+
+\ldef{
+    Un punto $(x, y)$ puó essere espresso anche in base a un altro $(x_0, y_0)$
+    attraverso le coordinate polari. In questo caso, si ottiene::
+    \begin{align*}
+        x &= x_0 + \rho \cos\theta \\
+        y &= y_0 + \rho \sin\theta
+    \end{align*}
+    Quindi $(x,y) \rightarrow (x_0, y_0) \equiv | (x - x_0, y - y_0) | 
+    \rightarrow 0 \equiv \rho \rightarrow 0$ .
+    \loss{
+        Attenzione! Non si fissare $\theta$ e poi ottenere il limite, poiché il 
+        limite deve essere costante per ogni $\theta$! \\
+        Se il limite non é costante,  é molto probabile che non esiste.
+    }
+}
+
+\ldef {
+    Sia $f:\in \mathbb{R}^n \rightarrow \mathbb{R}^d$ e $\v{c}$ punto di accumulazione in $A$ (con 
+    $\v{c} \in A$. Si dice che $f$ é \b{continua} in $A$ se:
+    \[
+        \forall \epsilon > 0, \exists \delta > 0 \text{ tale che se } | \v{x} - \v{c} | < \delta 
+        \text{ allora } |f(\v{x}) - f(\v{c}) |_{\mathbb{R}^d} < \epsilon
+    \]
+    \loss {
+        Come per i limiti, vale che $f : A \in \mathbb{R}^n \rightarrow \mathbb{R}^d$
+        é continua in $\v{c} \in A$ se e solo se $f_i : \mathbb{R} \rightarrow \mathbb{R} $ 
+        é continua $ \forall i = 1, 2, \dots d$ , cioé se sono continue tutte le sue 
+        componenti.
+    }
+    \loss {
+        Data $f : A \in \mathbb{R}^n \rightarrow \mathbb{R}^d$, con $A$ aperto \slash chiuso, 
+        si ha che se $f$ é continua, allora anche $f^{-1}$ é aperto \slash chiuso, rispettivamente.
+    }
+}
+
+\ldef{
+    Data $ f :  A \in \mathbb{R}^n \rightarrow \mathbb{R}$, con $ \v{x}_0 $ punto interno, 
+    e dato $\v{v} \in \mathbb{R}^n$, con $ |v| = 1$, allora la \b{derivata direzionale} di $f$ in 
+    $x_0$ verso $\v{v}$ é il seguente limite (se esiste):
+    \[
+        \lim_{t \rightarrow 0} \frac{ f(\v{x}_0 + t\v{v}) - f(\v{x}_0)  }{t} \equiv D_\v{v} f(x_0) \equiv 
+        \frac{df}{d\v{v}} (\v{x}_0) \equiv d_\v{v} f (\v{x}_0) 
+    \]
+    \loss{
+        Potrebbe essere comodo scrivere $\v{v} = (\cos \theta , \sin\theta )$.
+    }
+    \loss {
+        Ponendo $\varphi(t) = f(\v{x}_0 + t\v{v})$, si ottiene $ D_\v{v} f(x_0) = \varphi'(0)$.
+    }
+}
+
+\ldef{
+    Prende il nome di \b{derivata parziale} di $f$ in $x_0$ rispetto alla variabile $ x_i$ la 
+    derivata direzionale usando $ \v{v} = (0, 0, \dots, 1, \dots, 0, 0)$, con l'1 all'i-esima 
+    posizione.
+}
+
+\ldef{
+    Se nel punto $x_0$ esistono tutte le derivate parziali (quindi $f$ é derivabile lungo tutti 
+    gli assi), allora si dice che $f$ é \b{derivabile} in $x_0$.
+    Se risulta derivabile per $\forall x_0 \in A$, allora si dice derivabile in $A$.
+}
+
+\ldef{
+    Il \b{gradiente} é il vettore formato dalle derivate parziali:
+    \[
+        D f(x_0) = \triangledown f(x_0) = (
+            \frac{df}{d\v{x_0}} f(x_0),
+            \frac{df}{d\v{x_1}} f(x_0),
+            \dots,
+            \frac{df}{d\v{x_n}} f(x_0))
+    \]
+}
+
+\ldef{
+    Data $ f : \mathbb{R}^n \rightarrow \mathbb{R} $ si dice $f \in C^1$ in $x_0$ se é derivabile 
+    e $ \triangledown f $ é continuo in $x_0$ .
+    \loss{
+        Ricordarsi che il gradiente é continuo se e solo se tutte le derivate parziali sono continue!
+    }
+}
+
+\ldef{
+    Il piano tangente a una superficie si trova con:
+    \[
+        z = f(x_0, y_0) + \frac{df}{dx} (x_0, y_0)(x - x_0) + \frac{df}{dy} (x_0, y_0)(y - y_0)
+    \]
+    \loss{
+        In sostanza mi fermo al primo passo di approssimazione dello sviluppo di Taylor, dove 
+        approssimo una superficie con un piano
+    }
+}
+
+\ldef{
+    Data $ f : A \in \mathbb{R}^n \rightarrow \mathbb{R}$, con $A$ aperto, con $x_0 \in A$, $f$ si 
+    dice \b{differenziabile} in $x_0$ se esiste $\v{a} \in \mathbb{R}^n $ tale che:
+    \[
+        f(\v{x}_0 + \v{h}) - f(\v{x}_0) = \v{a} \cdot \v{h} + o(|\v{h}|), 
+        \text{ dove } \v{h} \in \mathbb{R}^n \text{ e } \v{h} \rightarrow 0
+    \]
+    Inoltre, $f$ si dice differenziabile in $A$ se é differenziabile in $\forall x_0 \in A$.
+}
+
+\ldef{
+    Il \b{differenziale} di $f$ in $x_0$ é l'applicazione lineare 
+    $d f(\v{x}_0) : \mathbb{R}^n \rightarrow \mathbb{R} \quad 
+    \quad \v{h} \rightarrow \v{a} \cdot \v{h}$
+}
+
+\ltheorem{
+    Data $ f:A\in\mathbb{R}^n\rightarrow\mathbb{R}$, con $A$ aperto, con $\v{x}_0\in A$, se $f$ é differenziabile in $\v{x}_0$, allora vale che:
+
+    - $f$ é continua in $\v{x}_0$
+    \ldim{
+        $ f(\v{x}_0 + \v{h}) - f(\v{x}_0) = \v{a}\cdot \v{h} + o(|\v{h}|) \rightarrow 0$
+        $ \implies \lim_{t \rightarrow 0} f(\v{x}_0 + \v{h}) = f(\v{x}_0)$
+    }
+
+    - $f$ é derivabile direzionalmente in $\v{x}_0$, in particolare é derivabile e 
+    $\v{a} = \triangledown f(\v{x_0})$.
+    \ldim{
+        Pongo $\v{h} = t\v{e}_j$, $t \in \mathbb{R} $, $t \rightarrow 0$, $ \v{e}_j = (0, 0, \dots , 1, \dots )$ con un 1 alla j-esima posizione.
+        \begin{gather*}
+            f(\v{x}_0 + t\v{v}) - f(\v{x}_0) = \v{a} \cdot t \v{e}_j + o(|t|) \implies \\
+            \frac{1}{t} (f(\v{x}_0 + t\v{e}_j) - f(\v{x}_0)) = \v{a}\,\v{e}_j + \frac{o(|t|)}{t}\implies \\
+            \lim_{t \rightarrow 0} f(\v{x}_0 + t\v{e}_j) - f(\v{x}_0) = \v{a}_j
+        \end{gather*}
+        Tuttavia, questo dimostra solo la derivabilitá.
+        Per dimostrare che é derivabile direzionalmente, vedere la prossima dimostrazione.
+        
+    }
+
+    - $ D_\v{v} f(\v{x}_0) = \triangledown f(\v{x}_0) \cdot \v{v} $
+    \ldim{
+        Pongo $ \v{h} = t\v{v})$, $ \implies f(x_0 + tv) - f(x_0) = \triangledown f(x_0) \cdot tv + o(|t|)$
+        Dividendo entrambi i membri per $t \implies D_\v{v} f(x_0) = \triangledown f(x_0) \cdot v, 
+        \forall v \in \mathbb{R}^n $.
+        (In pratica ho dimostrato che la derivata direzionale esiste sempre, e che quindi la $f$ é derivabile direzionalmente)
+    }
+}
+
+
+\ldef{
+    Data $f:A\in\mathbb{R}^n\rightarrow\mathbb{R}$, con $\v{x}_0 \in A$, con $f$ 
+    differenziabile in $\v{x}_0$, allora: 
+    \[
+        D_\v{v} f(\v{x}_0) = \triangledown f(\v{x}_0)) \cdot \v{v} = 
+        | \triangledown f(\v{x}_0)) | |\v{v}| \cos\beta = | \triangledown f(\v{x}_0)) | \cos\beta
+    \]
+    é massimo quando $ \cos\beta = 1$, cioé quando $ \beta = 0$, cioé quando 
+    $ \triangledown f(\v{x}_0)) $ é parallelo a $\v{v}$ (e hanno lo stesso verso).
+    In questo caso vorrá dire che:
+    \[
+        \v{v} = \frac{\triangledown f(\v{x}_0))} { |\triangledown f(\v{x}_0))|}
+    \]
+}
+
+\ldef{
+    Se $f$ é differenziabile in $\v{x}_0$, allora l'iperpiano tangernte si ottiene come:
+    \[
+        x_{n+1} = f(\v{x}_0)) + \triangledown f(\v{x}_0)) (\v{x} - \v{x})
+    \]
+    \ldim{
+        Sapevamo che:
+        \[
+            f(\v{x}_0) - \v{h}) = f(\v{x}_0) + \triangledown f(\v{x}_0) \cdot \v{h} + o(|h|) 
+        \]
+        Tuttavia se poniamo $ \v{h} = (\v{x} - \v{x}_0)$:
+        \[
+            f(\v{x}) = f(\v{x}_0) + \triangledown f(\v{x}_0) (\v{x} - \v{x}_0 ) + o(| \v{x} - \v{x}_0 |)
+        \]
+    }
+}
+
+\ltheorem{
+    Il teorema del \b{differenziale totale} dice che data $f:A\in\mathbb{R}^n\rightarrow\mathbb{R}$, 
+    con $\v{x}_0 \in A$, se $f \in C^1 $ in $\v{x}_0$, allora $f$ é differenziabile in $\v{x}_0$.
+}
+
+\end{multicols}
+\msection{Funzioni a piú variabili 2 la vendetta}
+\begin{multicols}{2} 
+
+\ltheorem{ 
+    Il teorema del \b{differenziale totale} dice che data $f:A\in\mathbb{R}^n\rightarrow\mathbb{R}$, 
+    se $f$ é derivabile e $f_{x_1}, f_{x_2}, \dots, f_{x_n}$ sono continue in $\v{x}_0$, allora
+    $f$ é differenziabile in $\v{x}_0$.
+
+    \v{Corollario}: se $f \in C^1 (A)$, allora $f$ é differenziabile in $A$.
+
+
+
+    \ldim{
+        Il teorema verrá dimostrato per $n_2$:
+        \begin{gather*}
+            f(x_0 + h, y_0 + k) - f(x_0 , y_0) =\\ f(x_0 + h, y_0 + k) - f(x_0, y_0 + k) + f(x_0, y_0 + k) - f(x_0, y_0)
+        \end{gather*}
+        Adesso poniamo $ g(h) = f(x_0 + h, y_0 + k)$.\\
+        Siccome per ipotesi $g$ é derivabile, uso il teorema di Lagrange:
+        \[
+            g(h) - g(0) = g'(x_h)(h - 0), \text{ con } x_h \in (0, h)
+        \]
+        Poniamo inoltre $ l(k) = f(x_0, y_0 + k)$\\
+        Siccome anche $l$ é derivabile, sempre per Lagrange:
+        \[ 
+            l(h) - l(0) = l\,'(y_k)(k-0) \text{ con } y_k \in (0, k)
+        \]
+        Svolgiamo le derivate in entrambi i membri per $l$ e $k$:
+        \[
+            g'(x_h) = \frac{df}{dx} (x_0 + x_h, y_0 + k), \quad \quad
+            l\,'(y_k) = \frac{df}{dy}(x_0, y_0 + y_k)
+        \]
+        Impostiamo $\varepsilon_h = x_0 + x_h$, e $ \varepsilon_k = y_0 + y_k$:
+        \[
+            f(x_0 +h, y_0 + k) - f(x_0, y_0) = \frac{df}{dx} (\varepsilon_h, y_0 + k)h +
+            \frac{df}{dy} (x_0, \varepsilon_k)k
+        \]
+        Adesso dobbiamo dimostrare che il seguente limite valga 0:
+        \begin{gather*}
+            \lim_{(h,k) \rightarrow (0,0)} 
+                \frac{
+                    f(x_0 +h, y_0 + k) - f(x_0, y_0) - 
+                    \frac{df}{dx} (x_0 , y_0 + k)h + \frac{df}{dy} (x_0, y_0 )k
+                }{
+                    \sqrt{h^2 + k^2}
+                } = \\
+                \frac{
+                    (\frac{df}{dx} (\varepsilon_h, y_0 + k) - \frac{df}{dx} (x_0, y_0 ))h +
+                    (\frac{df}{dy} (x_0, \varepsilon_k) - \frac{df}{dy} (x_0, y_0 ))k
+                }{
+                    \sqrt{h^2 + k^2}
+                } \rightarrow 0?
+        \end{gather*}
+        Siccome dobbiamo verificare che il limite vada a 0, possiamo maggiorare il limite con la 
+        sommma dei moduli: 
+        \begin{align*}
+            \leq
+            \left| \frac{df}{dx} (\varepsilon_h, y_0 + k) - \frac{df}{dx} (x_0, y_0 ) \right| 
+            \frac{
+                |h|
+            }{
+                \sqrt{h^2 + k^2}
+            }  \\
+            \left| \frac{df}{dy} (x_0, \varepsilon_k) - \frac{df}{dy} (x_0, y_0 ) \right|
+            \frac{
+                |k|
+            }{
+                \sqrt{h^2 + k^2}
+            } 
+        \end{align*}
+        Ora abbiamo che $\varepsilon_h \rightarrow 0$, $(y_0 + k) \rightarrow 0$, 
+        $\varepsilon_k \rightarrow 0$, $ \frac{|h|}{\sqrt{h^2 + k^2}} \rightarrow 1$,\\
+        perció tutto il limite tende a 0.
+    }
+
+    \loss{
+        Tutte le $f \in C^1$ sono differenziabili. Non é detto il contrario.
+    }
+    \loss{
+        Il teorema dice che se $f$ é differenziabile in $\v{x}_0$, allora 
+        \[
+            D_v f(\v{x}_0) = \triangledown f(\v{x}_0) \cdot \v{v}, \quad \forall\v{v} 
+        \]
+        Questo vuol dire che se il gradiente é 0, e una delle derivate direzionali é diversa
+        da 0, allora vuol dire che la funzione non é differenziabile.
+    }
+}
+
+\ldef{
+    Data $f:A\in\mathbb{R}^n\rightarrow\mathbb{R}^k$, si dice che $f$ é derivabile/differenziabile
+    /$C^m$ se lo é componente per componente.
+}
+
+\ldef{
+    Siano le seguenti funzioni:
+    \begin{align*}
+        f&:A\subseteq\mathbb{R}^n\rightarrow B\subseteq\mathbb{R}^k && \text{ con }
+        f \text{ differenziabile in } A
+        \\
+        g&:B\subseteq\mathbb{R}^k\rightarrow \mathbb{R}^d && \text{ con }
+        g \text{ differenziabile in } B
+    \end{align*}
+    Se $f$ é derivabile, allora si definisce \b{jacobiana} la matrice $k \times n$  delle derivate parziali:
+    \[
+        J_f(x_0) =
+        \begin{bmatrix}
+            \frac{df_1}{dx_1} &
+            \dots &
+            \frac{df_1}{dx_n} & \\
+            \dots &
+            \dots &
+            \dots & \\
+            \frac{df_k}{dx_1} &
+            \dots &
+            \frac{df_k}{dx_n} & \\
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            \triangledown f_1(x_0) \\
+            \dots  \\
+            \triangledown f_k(x_0) \ \
+        \end{bmatrix}
+
+    \]
+    Sia $h:A \subseteq \mathbb{R}^n \rightarrow \mathbb{R}^d$, definita
+    come $\v{x} \rightarrow g(f(\v{x}))$.\\
+    Allora $h$ é differenziabile in $A$ e inoltre:
+    \[
+        J_h(\v{x}) = J_g(f(\v{x})) \cdot J_f(\v{x}) =
+        \begin{bmatrix}
+            \dots &
+            \dots &
+            \dots & \\
+            \dots & 
+            \frac{dh_i}{dx_j} & 
+            \dots & \\
+            \dots &
+            \dots &
+            \dots & \\
+        \end{bmatrix}
+    \]
+    A questo punto possiamo calcolarci l'elemento generico:
+    \[
+        \frac{dh_i}{dx_j} =
+        \sum_{s = 1}^k d_sg_i(f(\v{x})) \cdot d_jf_s(\v{x}), 
+        \quad \forall i = 1, \dots, d
+        \quad \forall j = 1, \dots, n
+    \]
+}
+
+\ldef{
+    Data $g:\mathbb{R}^2 \rightarrow \mathbb{R} $, con $g \in C^1$, 
+    si definisce \b{l'insieme di livello} come:
+    \[
+        \left\{ (x,y) \in \mathbb{R}^2 \mid g(x,y) = c \right\}
+        \text{ con } c \in \mathbb{R}
+    \]
+    \loss{
+        Per valori di $c$ "buoni", l'insieme di livello é il sostegno
+        di una curva regolare.
+    }
+
+    Parametrizziamo la curva:
+    \[
+        \varnothing : [a, b] \rightarrow \mathbb{R}^2 \quad t \rightarrow
+        \begin{cases}
+            x(t)\\
+            y(t)
+        \end{cases}
+        \text{ con } Im(\varnothing) = \{ g(x,y) = c \}
+    \]
+    Il processo é simile a quello di tagliare a "fette" la funzione.\\
+    Per costruzione abbiamo che $c = g(x(t), y(t))$.\\
+    Se deriviamo rispetto a $t$:
+    \[
+        \triangledown g(\varnothing(t)) \cdot \varnothing'(t) = 0
+    \]
+    Che significa che $ \triangledown g$ é ortogonale alla tangente
+    in $t$ dell'insieme di livello. (Poiché il prodotto scalare é 0
+    solo se i vettori sono ortogonali).\\
+    Ora proviamo la stessa identica cosa in $\mathbb{R}^3$.
+    Definiamo $g : \mathbb{R}^3 \rightarrow \mathbb{R}$, 
+    e il suo insieme di livello $\{ (x,y,z) \mid g(x,y,z) = c \}$.\\
+    Questo insieme adesso é rappresentato da una superficie regolare, 
+    che parametrizziamo in questo modo:
+    \[
+        \pi : \mathbb{R}^2 \rightarrow \mathbb{R}^3 \quad
+        (s, t) \rightarrow 
+        \begin{cases}
+            x(s, t)\\
+            y(s, t)\\
+            z(s, t)
+        \end{cases} 
+    \]
+    Il piano tangente dell'insieme di livello é generato da
+    \[
+        \left( 
+        \frac{\delta x(s,t)}{\delta s}, 
+        \frac{\delta y(s,t)}{\delta s}, 
+        \frac{\delta z(s,t)}{\delta s}
+        \right) \text{ e }
+        \left( 
+        \frac{\delta x}{\delta t}, 
+        \frac{\delta y}{\delta t}, 
+        \frac{\delta z}{\delta t}
+        \right) 
+    \]
+    Definiamo $h : \mathbb{R}^2 \rightarrow \mathbb{R}$ come
+    \[
+        h(s, t):= g(\pi(s, t)); \quad c = h(s,t) = g(\pi(s,t))
+    \]
+    Facendo la derivata:
+    \[
+        J_h(s,t) = J_g(\pi(s,t)) \cdot J_\pi(s,t) =
+        \triangledown g(\pi(s,t)) \cdot
+        \begin{bmatrix}
+            \frac{\delta x}{\delta s} &
+            \frac{\delta y}{\delta s} \\
+            \frac{\delta z}{\delta s} & 
+            \frac{\delta x}{\delta t} \\
+            \frac{\delta y}{\delta t} &
+            \frac{\delta z}{\delta t} 
+        \end{bmatrix} = (0, 0)
+    \]
+    Cioé $ \triangledown g$ é ortogonale ai due vettori che generano
+    il piano tangente alla superficie di livello, e quindi
+    $ \triangledown g$ é ortogonale alla superficie di livello.
+}
+
+
+
+
+
+
+
+
+
+\end{multicols}
+\msection{Personal reminders}
+\begin{multicols}{2} 
+
+\b{integrali}
+
+
+$\sin(x)$ \'{e} una funzione \b{dispari}
+
+
+$\cos(x)$ \'{e} una funzione \b{pari}
+
+
+\smallbreak
+
+
+\end{multicols}
+
+\center
+\Huge{ 
+\b{Rigurda gli spazi topologici.}
+
+\b{PRIMA dell'esonero.}
+
+}
+
+
 
 %:set iskeyword+={,},,,(,),^,*,+,-,_,<,>,\,/,$,
-%:set iskeyword=30-200
+    %:set iskeyword=30-200
 %:set updatetime=500
 
 %\begin{multicols}{2} 
-\end{multicols}
+%\end{multicols}
 %\bigbreak
 %\hrule
 %\medbreak
@@ -435,3 +1126,21 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
 
 %\end{multicols}
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
