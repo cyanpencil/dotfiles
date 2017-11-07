@@ -633,6 +633,11 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
         Per calcolare il limite di una funzione a piú variabili spesso
         aiuta molto imporre $y = x^\beta$, con il giusto $\beta$.
     }
+    \loss{
+        Quando si deve calcolare anche il limite in base a un dato valore
+        $\alpha$, attenzione a non fare maggiorazioni improprie perché
+        si potrebbero perdere alcuni valori di $\alpha$.
+    }
 }
 
 \ldef{
@@ -727,6 +732,10 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
     Se nel punto $x_0$ esistono tutte le derivate parziali (quindi $f$ é derivabile lungo tutti 
     gli assi), allora si dice che $f$ é \b{derivabile} in $x_0$.
     Se risulta derivabile per $\forall x_0 \in A$, allora si dice derivabile in $A$.
+    \loss{
+        Per verificare l'esistenza delle derivate parziali, bisogna usare
+        il limite del rapporto incrementale.
+    }
 }
 
 \ldef{
@@ -767,6 +776,12 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
         \text{ dove } \v{h} \in \mathbb{R}^n \text{ e } \v{h} \rightarrow 0
     \]
     Inoltre, $f$ si dice differenziabile in $A$ se é differenziabile in $\forall x_0 \in A$.
+    \loss{
+        Per verificare la differenziabilit\'{a} di una funzione in un punto $\v{x}_0$, verificare che il seguente limite valga 0:
+        \[
+            \lim_{\v{h} \rightarrow 0} \frac{f(\v{x}_0 + \v{h}) - f(\v{x}_0) - \triangledown f(\v{x}_0) \cdot \v{h} }{|\v{h}|}
+        \]
+    }
 }
 
 \ldef{
@@ -893,31 +908,35 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
                     \sqrt{h^2 + k^2}
                 } = \\
                 \frac{
-                    (\frac{df}{dx} (\varepsilon_h, y_0 + k) - \frac{df}{dx} (x_0, y_0 ))h +
-                    (\frac{df}{dy} (x_0, \varepsilon_k) - \frac{df}{dy} (x_0, y_0 ))k
+                    (\frac{df}{dx} (\varepsilon_h, y_0 + k) - \frac{df}{dx}
+                    (x_0, y_0 ))h + (\frac{df}{dy} (x_0, \varepsilon_k) -
+                    \frac{df}{dy} (x_0, y_0 ))k
                 }{
                     \sqrt{h^2 + k^2}
                 } \rightarrow 0?
         \end{gather*}
-        Siccome dobbiamo verificare che il limite vada a 0, possiamo maggiorare il limite con la 
-        sommma dei moduli: 
+        Siccome dobbiamo verificare che il limite vada a 0, possiamo maggiorare
+        il limite con la sommma dei moduli: 
         \begin{align*}
             \leq
-            \left| \frac{df}{dx} (\varepsilon_h, y_0 + k) - \frac{df}{dx} (x_0, y_0 ) \right| 
+            \left| \frac{df}{dx} (\varepsilon_h, y_0 + k) - 
+            \frac{df}{dx} (x_0, y_0 ) \right| 
             \frac{
                 |h|
             }{
                 \sqrt{h^2 + k^2}
             }  \\
-            \left| \frac{df}{dy} (x_0, \varepsilon_k) - \frac{df}{dy} (x_0, y_0 ) \right|
+            \left| \frac{df}{dy} (x_0, \varepsilon_k) - \frac{df}{dy} 
+            (x_0, y_0 ) \right|
             \frac{
                 |k|
             }{
                 \sqrt{h^2 + k^2}
             } 
         \end{align*}
-        Ora abbiamo che $\varepsilon_h \rightarrow 0$, $(y_0 + k) \rightarrow 0$, 
-        $\varepsilon_k \rightarrow 0$, $ \frac{|h|}{\sqrt{h^2 + k^2}} \rightarrow 1$,\\
+        Ora abbiamo che $\varepsilon_h\rightarrow 0$, $(y_0+k)\rightarrow 0$,
+        $\varepsilon_k \rightarrow 0$, $ \frac{|h|}{\sqrt{h^2 + k^2}}
+        \rightarrow 1$,\\
         perció tutto il limite tende a 0.
     }
 
@@ -927,40 +946,43 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
     \loss{
         Il teorema dice che se $f$ é differenziabile in $\v{x}_0$, allora 
         \[
-            D_v f(\v{x}_0) = \triangledown f(\v{x}_0) \cdot \v{v}, \quad \forall\v{v} 
+            D_v f(\v{x}_0) = \triangledown f(\v{x}_0) \cdot \v{v}, 
+            \quad \forall\v{v} 
         \]
-        Questo vuol dire che se il gradiente é 0, e una delle derivate direzionali é diversa
-        da 0, allora vuol dire che la funzione non é differenziabile.
+        Questo vuol dire che se il gradiente é 0, e una delle derivate
+        direzionali é diversa da 0, allora vuol dire che la funzione non é
+        differenziabile.
     }
 }
 
 \ldef{
-    Data $f:A\in\mathbb{R}^n\rightarrow\mathbb{R}^k$, si dice che $f$ é derivabile/differenziabile
-    /$C^m$ se lo é componente per componente.
+    Data $f:A\in\mathbb{R}^n\rightarrow\mathbb{R}^k$, si dice che $f$ é
+    derivabile/differenziabile /$C^m$ se lo é componente per componente.
 }
 
 \ldef{
     Siano le seguenti funzioni:
     \begin{align*}
-        f&:A\subseteq\mathbb{R}^n\rightarrow B\subseteq\mathbb{R}^k && \text{ con }
-        f \text{ differenziabile in } A
+        f&:A\subseteq\mathbb{R}^n\rightarrow B\subseteq\mathbb{R}^k && 
+        \text{ con } f \text{ differenziabile in } A
         \\
         g&:B\subseteq\mathbb{R}^k\rightarrow \mathbb{R}^d && \text{ con }
         g \text{ differenziabile in } B
     \end{align*}
-    Se $f$ é derivabile, allora si definisce \b{jacobiana} la matrice $k \times n$  delle derivate parziali:
+    Se $f$ é derivabile, allora si definisce \b{jacobiana} la matrice $k \times
+    n$  delle derivate parziali:
     \[
         J_f(x_0) =
         \begin{bmatrix}
-            \frac{df_1}{dx_1} &
+            \frac{\delta f_1}{\delta x_1} &
             \dots &
-            \frac{df_1}{dx_n} & \\
+            \frac{\delta f_1}{\delta x_n} & \\
             \dots &
             \dots &
             \dots & \\
-            \frac{df_k}{dx_1} &
+            \frac{\delta f_k}{\delta x_1} &
             \dots &
-            \frac{df_k}{dx_n} & \\
+            \frac{\delta f_k}{\delta x_n} & \\
         \end{bmatrix}
         =
         \begin{bmatrix}
@@ -968,7 +990,6 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
             \dots  \\
             \triangledown f_k(x_0) \ \
         \end{bmatrix}
-
     \]
     Sia $h:A \subseteq \mathbb{R}^n \rightarrow \mathbb{R}^d$, definita
     come $\v{x} \rightarrow g(f(\v{x}))$.\\
@@ -980,7 +1001,7 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
             \dots &
             \dots & \\
             \dots & 
-            \frac{dh_i}{dx_j} & 
+            \frac{\delta h_i}{\delta x_j} & 
             \dots & \\
             \dots &
             \dots &
@@ -1007,8 +1028,13 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
         Per valori di $c$ "buoni", l'insieme di livello é il sostegno
         di una curva regolare.
     }
+}
+\lprop{
+    Il gradiente di una funzione é ortogonale al suo insieme di livello.
 
-    Parametrizziamo la curva:
+    \ldim{ 
+    Lavoriamo prima in $\mathbb{R}^2$, e parametrizziamo la curva
+    rappresentante l'insieme di livello:
     \[
         \varnothing : [a, b] \rightarrow \mathbb{R}^2 \quad t \rightarrow
         \begin{cases}
@@ -1062,25 +1088,329 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
         J_h(s,t) = J_g(\pi(s,t)) \cdot J_\pi(s,t) =
         \triangledown g(\pi(s,t)) \cdot
         \begin{bmatrix}
-            \frac{\delta x}{\delta s} &
-            \frac{\delta y}{\delta s} \\
-            \frac{\delta z}{\delta s} & 
-            \frac{\delta x}{\delta t} \\
-            \frac{\delta y}{\delta t} &
-            \frac{\delta z}{\delta t} 
+            \sfrac{\delta x}{\delta s} &
+            \sfrac{\delta y}{\delta s} \\
+            \sfrac{\delta z}{\delta s} & 
+            \sfrac{\delta x}{\delta t} \\
+            \sfrac{\delta y}{\delta t} &
+            \sfrac{\delta z}{\delta t} 
         \end{bmatrix} = (0, 0)
     \]
     Cioé $ \triangledown g$ é ortogonale ai due vettori che generano
     il piano tangente alla superficie di livello, e quindi
     $ \triangledown g$ é ortogonale alla superficie di livello.
+    }
+}
+
+\ldef{
+    Se esistono tutte le derivate seconde parziali, la funzione si dice
+    \b{derivabile due volte}. \\
+    La notazione usata é la seguente:
+    \[
+        \frac{d}{dx_j} ( \frac{df}{dx_i} ) = \frac{d^2}{dx_idx_j} =
+        f_{x_i,x_j}
+    \]
+}
+
+\ldef{
+    Si dice matrice \b{Hessiana} la matrice formata da tutte le possibili
+    derivate seconde:
+    \[
+        H_f(\v{x}) = 
+        \begin{bmatrix}
+            f_{x_ix_j}(\v{x}) & \dots & f_{x_ix_j}(\v{x}) \\
+            f_{x_ix_j}(\v{x}) & \dots & f_{x_ix_j}(\v{x}) \\
+            f_{x_ix_j}(\v{x}) & \dots & f_{x_ix_j}(\v{x}) \\
+        \end{bmatrix}
+    \]
+    \loss{
+        In generale, la matrice non é simmetrica!
+    }
+}
+
+\ldef{
+    Data $f:A\in\mathbb{R}^n\rightarrow\mathbb{R}$, con $A$ aperto,
+    si dice che $ f \in C^2$, se \'{e} derivabile due volte e le derivate
+    seconde sono continue in $A$
+}
+
+\ltheorem{ 
+    Il \b{Teorema di Schwartz} dice che se $f \in C^2$, l'ordine di 
+    derivazione non conta e la matrice Hessian é simmetrica. In generale
+    $ f \in C^k $ le derivate di ordine $k$ non dipendono dall'ordine
+    di derivazione.
+}
+
+\ltheorem{
+    Il \b{teorema di Lagrange} dice che: 
+    sia $f:A\in\mathbb{R}^n\rightarrow\mathbb{R}$, con $A$ aperto,
+    $f \in C^1(A)$, se $\v{x}_0 \in A$, $ \v{x} \in A$, tale che il 
+    segmento é in $A$, $ \exists \sigma $ appartenente al segmento
+    $ \v{x}, \v{x}_0 $ tale che:
+    \[
+        f(\v{x}) = f(\v{x}_0) + \triangledown f (\sigma) (\v{x} - \v{x}_0)
+    \]
+    Che non é altro che lo sviluppo di Taylor al primo ordine con resto
+    di Lagrange. 
+    \ldim{
+        Poniamo 
+        \[
+            \v{h} = \v{x} - \v{x}_0
+        \]
+        In modo tale che il segmento sia rappresentato da $\v{x}_0 + t\v{h}$.
+        Allora
+        \[
+            F \colon [0,2 ] \rightarrow \mathbb{R},
+            \quad \quad 
+            F(t) \colon = f(\v{x} + t\v{h})
+        \]
+        Se abbiamo che $f \in C^1$, allora applicando Lagrange:
+        \[
+            F(1) - F(0) = F'(\varepsilon) (1 - 0) = F'(\varepsilon),
+            \quad \text{ con } \varepsilon \in (0, 1)
+        \]
+        Applicando ancora Lagrange:
+        \begin{gather*} 
+            f(\v{x}) - f(\v{x}_0) = 
+            \triangledown f(\v{x}_0 + \varepsilon \v{h} ) \cdot \v{h} =
+            \\
+            \sum f_{x_i} (\v{x}_0 + \varepsilon \v{h}_i) \cdot\v{h}_i 
+        \end{gather*} 
+        Dove $\v{x}_0 + \varepsilon \v{h}_i$ rappresenta un punto 
+        del segmento.
+    }
 }
 
 
+\ltheorem{ 
+    Il \b{teorema di Lagrange} dice che: 
+    sia $f:A\in\mathbb{R}^n\rightarrow\mathbb{R}$, con $A$ aperto,
+    $f \in C^2(A)$, se $\v{x}_0 \in A$, $ \v{x} \in A$, tale che il 
+    segmento é in $A$, $ \exists \sigma $ appartenente al segmento
+    $ \v{x}, \v{x}_0 $ tale che:
+    \[
+        f(\v{x}) = f(\v{x}_0) + \triangledown f (\sigma) (\v{x} - \v{x}_0)
+        + \frac{1}{2} ( H_f(\v{x}_0 + \varepsilon
+        (\v{x} - \v{x}_0))(\v{x} - \v{x}_0)) (\v{x} - \v{x}_0)
+    \]
+    Che non é altro che lo sviluppo di Taylor al secondo ordine con resto
+    di Lagrange. 
+    \loss{
+        con il resto di Peano:
+        \[
+            f(\v{x}_0) + \triangledown f (\sigma) (\v{x} - \v{x}_0)
+            + \frac{1}{2} ( H_f(x_0 + \varepsilon
+            (x - x_0))(x - x_0)) (x - x_0) +
+            o(| \v{x} - \v{x}_0 |^2)
+        \]
+    }
+    \ldim{
+        Se $f \in C^2(A) \implies F \in C^2([0, 1]) $, e quindi
+        \[
+            F(t) = F(0) + F'(0)t + \frac{1}{2}F''(\varepsilon)t^2 \text{ con }
+            \quad \varepsilon \in (0, t)
+        \]
+        Imponendo $t = 1$:
+        \begin{eqnarray*}
+            f(\v{x}) &=& f(\v{x}_0) + \triangledown f(\v{x}_0)(\v{x} - \v{x}_0) 
+            + \frac{1}{2} F''(\varepsilon)
+            \\
+            &=& f(\v{x}_0) + \triangledown f(\v{x}_0)(\v{x} - \v{x}_0) +
+            \frac{1}{2}(H_f(\v{x}_0 + \varepsilon 
+            (\v{x} - \v{x}_0)) (\v{x} - \v{x}_0))(\v{x} - \v{x}_0)
+        \end{eqnarray*}
+    }
+}
+
+\ldef{
+    Un insieme $ A \subseteq R^n$ si dice \b{connesso} se le condizioni
+    \[
+        \exists A_1, A_2 \text{ aperti t.c. } \quad A_1 \cup A_2 = A, \quad
+        A_1 \cap A_2 = \emptyset 
+    \]
+    implicano che uno dei due insiemi aperti é vuoto.
+}
+
+\ltheorem {
+    Dato $A \subseteq \mathbb{R}^n $ aperto e connesso, allora $\forall \v{x},
+    \v{y} \in A $ esiste una curva $\varnothing \in C^1$, definita come
+    $\varnothing : [0, 1] \rightarrow A$ che collega $\v{x}$ con $\v{y}$, cioé
+    $\varnothing (0) = \v{x}, \varnothing (1) = \v{y}$. $A$ allora é un insieme
+    \b{connesso ad archi}.
+}
+
+\lprop {
+    $f:A\in\mathbb{R}^n\rightarrow\mathbb{R}$, con $A$ aperto e connesso, con
+    $f$ differenziabile su $A$, se $\triangledown f = 0$ in $A$ allora $f$ é
+    costante su $A$.
+    \ldim{
+        Fisso $x, y \in A$. Per il teorema precedente, esiste una curva
+        $\varnothing$ che li connette.  Definiamo $g(t) = f(\varnothing (t)),
+        \; \; t \in [0, 1]$. \\
+        $g$ é derivabile perché composizione di funzioni derivabili. Ora:
+        \[
+            f(y) - f(x) = g(1) - g(0) = g'(\varepsilon)(1 - 0) =
+            g'(\varepsilon)) = \triangledown f(\varnothing(\varepsilon)) 
+            \cdot \varnothing'(\varepsilon) = 0
+        \]
+        E con questo abbiamo dimostrato che $f$ é sempre costante su tutto $A$.
+    }
+}
+
+\ldef{
+    $x_0 \in A$ si dice punto di massimo/minimo relativo (o locale) se
+    \[
+        f(x) \geq f(x_0) \text{ oppure } f(x) \leq f(x_0), \quad 
+        \forall x \in B_\delta(x_0) \cap A
+    \]
+    Dove $B_\delta(x_0)$ é una palla di raggio $\delta$ di centro $x_0$.
+}
+
+\lprop{
+    Se $x_0$ é punto di massimo/minimo, e punto interno di $A$, e $f$ é
+    derivabile in $A$ allora $\triangledown f(x_0) = 0$
+    \ldim{
+        Definisco
+        \[
+            g_i(t) = f(x_0 + te_i), \quad \text{ dove } e_i = (0, 0, \dots , 0, 1, 0, \dots)
+        \]
+        Sappiamo che $g_i$ é derivabile perché lo é anche $f$, e ha
+        massimo/minimo in $t = 0$.  Svolgendo:
+        \[
+            0 = g'(0) = \triangledown f(x_0 + 0 \cdot e_i  ) \cdot e_i = 
+            \frac{\delta f}{ \delta x_i} (x_0)
+        \]
+        E questo vale $\forall i$; cioé, qualunque sia la componente, la
+        derivata é nulla, e quindi anche il gradiente é nullo.
+    }
+    \loss{
+        Non vale il viceversa! Se il gradiente é nullo, potrebbe anche essere
+        che $x_0$ non é punto di massimo/minimo!
+    }
+}
 
 
+\ldef{
+    Se $\triangledown f(x_0) = 0$ ma $x_0$ non é punto di massimo/minimo,
+    allora si dice che $x_0$ é \b{punto di sella}.
+}
+
+\ldef{
+    Introduciamo la seguente notazione:
+    \[
+        (H\v{v}) \cdot \v{v} = (H\v{v}, \v{v}) = \sum_{i,j=1}^n h_{i,j}v_iv_j
+    \]
+}
+
+\lprop {
+    Se la matrice $H$ é simmetrica, allora é diagonalizzabile e ha autovalori
+    $\lambda_1, \lambda_2, \dots, \lambda_n$.
+}
+
+\ldef{
+    La matrice $H$ si dice:\\
+    \small
+    \begin{tabular}{@{}lll@{}}
+    \b{Definita positiva} & se $(H\v{v}, \v{v}) > 0,  \forall \v{v}$ 
+        & cioé se $\lambda_i > 0, \forall i$\\
+    \b{Definita negativa} & se $(H\v{v}, \v{v}) < 0,  \forall \v{v}$ 
+        & cioé se $\lambda_i < 0, \forall i$\\
+    \b{Semidefinita positiva} & se $(H\v{v}, \v{v}) \geq 0,  \forall \v{v}$ 
+        & cioé se $\lambda_i \geq 0, \forall i$\\
+    \b{Semidefinita negativa} & se $(H\v{v}, \v{v}) \leq 0,  \forall \v{v}$ 
+        & cioé se $\lambda_i \leq 0, \forall i$\\
+        \multirow{2}{*}{\b{Indefinita}} & \multicolumn{2}{l}{ se 
+            $\exists v,w$ t.c. $(Hv,v)>0$ e $(H\v{w}, \v{w}) < 0$, }\\
+        & \multicolumn{2}{l}{cioé se 
+            $\exists \lambda_1, \lambda_2$ t.c. $\lambda_1 \lambda_2 < 0$}
+    \end{tabular}
+}
+
+\lprop{
+    \small
+    Se $H$ é definita positiva, allora 
+    $(H\v{v}, \v{v}) \geq \lambda_{min} |\v{v}|^2, \forall \v{v}$.\\
+    Se $H$ é definita negativa, allora 
+    $(H\v{v}, \v{v}) \leq \lambda_{max} |\v{v}|^2, \forall \v{v}$.
+}
+
+\lprop{
+    Se $f \in C^2$, $x_0 \in A$, $x_0$ punto interno e 
+    $\triangledown f(x_0)=0$:
+    \small
+    Se $x_0$ é un minimo locale, allora $H_f(x_0)$ é semidefinita positiva.\\
+    Se $x_0$ é un massimo locale, allora $H_f(x_0)$ é semidefinita negativa.
+    \ldim{
+        Manca!
+    }
+    Se $H_f(x_0)$ é definita positiva, allora $x_0$ é un massimo locale.\\
+    Se $H_f(x_0)$ é definita negativa, allora $x_0$ é un minimo locale.
+    \ldim{
+        Manca!
+    }
+    Se $H_f(x_0)$ é indefinita, allora $x_0$ é un punto di sella.
+    \ldim{
+        Manca!
+    }
+}
+
+\lprop{
+    Per n = 2, $ A = \begin{bmatrix} a & b \\ c & d \end{bmatrix} \\
+        ac - b^2 = \text{det A} = \lambda_1 \lambda_2, \quad \quad 
+        a + c = \text{tr(A)} = \lambda_1 + \lambda_2$ \\
+    Se detA $<  $, A è indefinita, e $\v{x}_0$ punto di sella.\\
+    Se detA $=0$, sappiamo che un autovalore è 0, ma niente altro. 
+    (al massimo sappiamo che A è semidefinita positiva o negativa)\\
+    Se detA $>0$, e tr(A) $>0$, A è definita positivamente,
+    e $\v{x}_0$ è punto di minimo.\\
+    Se detA $>0$, e tr(A) $<0$, A è definita negativamente,
+    e $\v{x}_0$ è punto di massimo.
+
+    \loss{
+        Se detA $ > 0 \implies ac > b^2 \implies $ $a$ e $c$ hanno lo stesso
+        segno.  Quindi, per vedere il segno della traccia, mi basta osservare
+        semplicemente il segno di $a$.
+    }
+    \loss{
+        Vale anche il viceversa, cioè\\ 
+        Se $\v{x}_0$ è punto di minimo, allora detA $\geq0$, tr(A) $\geq 0$\\ 
+        Se $\v{x}_0$ è punto di massimo allora detA $\leq0$, tr(A) $\leq 0$.\\ 
+    }
+    \loss{
+        La matrice A è simmetrica poichè per ipotesi $f \in C^2$.
+    }
+}
+
+\ldef{
+    I \b{minimi} principali \b{nord-ovest} di una matrice sono le sottomatrici
+    quadrate formate a partire dall'angolo in alto a sinistra:
+    \[
+        A_1=\begin{bmatrix} a_{11} \end{bmatrix}, \quad
+        A_2=\begin{bmatrix} a_{11}&a_{12}\\a_{21}&a_{22}  \end{bmatrix}, \quad
+        A_3=\begin{bmatrix} 
+            a_{11} & a_{12} & a_{13} \\
+            a_{21} & a_{22} & a_{23} \\
+            a_{31} & a_{32} & a_{33} \\
+        \end{bmatrix}\dots
+    \]
+}
+
+\lprop {
+    Se A è simmetrica, sappiamo che:\\
+    A è definita positiva $ \Leftrightarrow $ det$A_k > 0 $ per $k = 1 \dots n$.\\
+    A è definita negativa $ \Leftrightarrow $ det$A_k (-1)^k > 0 $ per $k = 1
+    \dots n$.
+}
+
+\ldef{
+    Data $f:A\in\mathbb{R}^n\rightarrow\mathbb{R}$, $x_m \in A$ è punto di
+    \b{minimo assoluto} per $f$ in $A$ se $f(\v{x}_m) \leq f(\v{x}), \forall
+    \v{x} \in A$ e $m = f(\v{x}_m)$ è detto minimo assoluto. Uguale per il
+    massimo.
+}
 
 
-
+\textbf{ciao} 
 
 
 \end{multicols}
@@ -1094,6 +1424,7 @@ $\sin(x)$ \'{e} una funzione \b{dispari}
 
 
 $\cos(x)$ \'{e} una funzione \b{pari}
+ciao io son oluca
 
 
 \smallbreak

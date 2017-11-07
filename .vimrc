@@ -110,6 +110,7 @@ cmap w!! w !sudo tee > /dev/null %
 
 nnoremap gv `[v`]
 
+
 "remove whitespace
 nnoremap ,W :%s/\s\+$//<cr>:let @/=''<CR>
 
@@ -134,6 +135,9 @@ nnoremap ,x :ccl<CR>
 "surround with \b{}
 vnoremap ,b "9di\b{}<ESC>Pll
 vnoremap ,v "9di\v{}<ESC>Pll
+
+"join lines
+vnoremap ,j :join<CR>
 
 
 "                   === AUTO COMMANDS ===
@@ -212,7 +216,7 @@ let g:ack_use_cword_for_empty_search = 1
 let g:livepreview_previewer='zathura'
 let g:livepreview_engine='xelatex'
 let g:limelight_conceal_ctermfg = '239'
-let g:goyo_width = '90%'
+let g:goyo_width = '93%'
 let python_highlight_all=1
 
 "supertab
@@ -308,11 +312,16 @@ function! SettingsLatex()
     nnoremap <F5> :wa <CR> :!zathura %:r.pdf <CR>
     setlocal nocursorline
     set foldmethod=manual
-    set regexpengine=1
+    set foldcolumn=0
+    "set regexpengine=1
+    set colorcolumn=80
     "syn sync minlines=10
     "syn sync maxlines=50
     :NoMatchParen
     setlocal updatetime=1000
     abbr ,a \begin{align*}<CR><CR>\end{align*}<UP>
     inoremap {<CR> {<CR><CR>}<ESC>kcc
+    set conceallevel=2
+    set concealcursor=nvc
+    let g:tex_conceal="adgms"
 endfunction

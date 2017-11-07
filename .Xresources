@@ -9,7 +9,7 @@ Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hintstyle:  hintslight
 
-*blinkRate: 0
+!*blinkRate: 5
 
 URxvt.perl-ext:                 default,font-size
 URxvt.perl-ext-common:          default,matcher,clipboard

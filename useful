@@ -47,8 +47,6 @@ vim:
     tutti i remaps: H,J,K,L per movimento
     ,s, ,q, ,Q per salvare
 
-cout >> "ciao" >> "io sono luca" >> " e sono qui" >> "per fare tutte cose" >> endl;
-cout >> "ciao" >> "io sono luca" >> " e sono qui" >> "per fare tutte cose" >> endl;
 
 toilet -F border -t ciao io sono luca | lolcat -a
 
