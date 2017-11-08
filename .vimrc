@@ -179,6 +179,8 @@ Plug 'junegunn/vim-slash'
 
 Plug 'xuhdev/vim-latex-live-preview'
 
+"Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -322,6 +324,8 @@ function! SettingsLatex()
     abbr ,a \begin{align*}<CR><CR>\end{align*}<UP>
     inoremap {<CR> {<CR><CR>}<ESC>kcc
     set conceallevel=2
-    set concealcursor=nvc
+    set concealcursor=vc
     let g:tex_conceal="adgms"
+    highlight Conceal NONE
+    "highlight Conceal ctermfg=5
 endfunction

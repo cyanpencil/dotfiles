@@ -201,9 +201,9 @@ bar {
     #font xft: Droid Sans 8
     font xft: Ctrld 9
     #i3blocksbar -non rimuovere questo commento.
-#status_command i3blocks -c ~/.config/i3/i3blocks.conf
+status_command i3blocks -c ~/.config/i3/i3blocks.conf
     #i3statusbar -non rimuovere questo commento. 
-status_command i3status
+#status_command i3status
     colors {
         separator #268bd2
 	    background #002b36

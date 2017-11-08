@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Arch Linux) (preloaded format=xelatex 2017.11.1)  7 NOV 2017 13:05
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Arch Linux) (preloaded format=xelatex 2017.11.1)  8 NOV 2017 17:55
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -839,12 +839,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 ] [2] [3]
-Overfull \hbox (3.99837pt too wide) in paragraph at lines 651--651
+Overfull \hbox (3.99837pt too wide) in paragraph at lines 701--701
 [] 
  []
 
 
-Overfull \hbox (3.42615pt too wide) detected at line 707
+Overfull \hbox (3.42615pt too wide) detected at line 757
 \OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 ^^O > \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; \O
 MS/cmsy/m/n/10 9\OML/cmm/m/it/10 ^^N > \OT1/cmr/m/n/10 0[]\OMS/cmsy/m/n/10 j[] 
 ^^@ []j \OML/cmm/m/it/10 < ^^N[]\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 f\OT1/cmr/m/
@@ -853,12 +853,12 @@ m/n/10 j[] \OML/cmm/m/it/10 < ^^O
  []
 
 [4]
-Overfull \hbox (5.30981pt too wide) in paragraph at lines 950--950
+Overfull \hbox (5.30981pt too wide) in paragraph at lines 1006--1006
 [] 
  []
 
 
-Overfull \hbox (2.32498pt too wide) detected at line 1011
+Overfull \hbox (2.32498pt too wide) detected at line 1068
 [] \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 d[]g[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
 0 f\OT1/cmr/m/n/10 ([])) \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 d[]f[]\OT1/cmr/m
 /n/10 ([])\OML/cmm/m/it/10 ;  \OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 i \OT1/cmr/m/n
@@ -866,34 +866,34 @@ Overfull \hbox (2.32498pt too wide) detected at line 1011
 m/n/10 = 1\OML/cmm/m/it/10 ; [] ; n
  []
 
-LaTeX Font Info:    Calculating math sizes for size <4.89998> on input line 109
-6.
+LaTeX Font Info:    Calculating math sizes for size <4.89998> on input line 115
+3.
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <3.42996> not available
-(Font)              size <5> substituted on input line 1096.
+(Font)              size <5> substituted on input line 1153.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <2.44998> not available
-(Font)              size <5> substituted on input line 1096.
+(Font)              size <5> substituted on input line 1153.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <3.42996> not available
-(Font)              size <5> substituted on input line 1096.
+(Font)              size <5> substituted on input line 1153.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <2.44998> not available
-(Font)              size <5> substituted on input line 1096.
+(Font)              size <5> substituted on input line 1153.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <3.42996> not available
-(Font)              size <5> substituted on input line 1096.
+(Font)              size <5> substituted on input line 1153.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <2.44998> not available
-(Font)              size <5> substituted on input line 1096.
+(Font)              size <5> substituted on input line 1153.
 
 
-Overfull \hbox (23.99171pt too wide) detected at line 1215
+Overfull \hbox (23.99171pt too wide) detected at line 1273
 \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 ([]) = \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 ([][
 ]) + \U/msa/m/n/10 O\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^[\OT1
 /cmr/m/n/10 )([] \OMS/cmsy/m/n/10 ^^@ [][]\OT1/cmr/m/n/10 ) + [](\OML/cmm/m/it/
@@ -903,32 +903,58 @@ Overfull \hbox (23.99171pt too wide) detected at line 1215
  []
 
 
-Overfull \hbox (13.37267pt too wide) in alignment at lines 1215--1215
+Overfull \hbox (13.37267pt too wide) in alignment at lines 1273--1273
  [][][] []
  []
 
 [5]
-Overfull \hbox (18.69316pt too wide) in paragraph at lines 1317--1317
+Overfull \hbox (18.69316pt too wide) in paragraph at lines 1378--1378
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1317--1317
+Underfull \hbox (badness 10000) in paragraph at lines 1378--1378
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1372--1372
+Underfull \hbox (badness 10000) in paragraph at lines 1433--1433
 
  []
 
 
-Overfull \hbox (5.94188pt too wide) detected at line 1386
+Overfull \hbox (5.94188pt too wide) detected at line 1447
 \OML/cmm/m/it/10 A[] \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 ;  A[] \OT1/cmr/m/n/
 10 = [] \OML/cmm/m/it/10 ;  A[] \OT1/cmr/m/n/10 = [] []
  []
 
-[6] [7] (./analisi_vettoriale.aux)
+
+Overfull \hbox (2.1712pt too wide) detected at line 1569
+\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^Ux \OT1/cmr/m/n/10 + (1 \
+OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^U\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 y\OT1
+/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 ^^Uf\OT1/cmr/m/n/10 (\OML/c
+mm/m/it/10 x\OT1/cmr/m/n/10 ) + (1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^U\OT
+1/cmr/m/n/10 )\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 y\OT1/cmr/m/n
+/10 )\OML/cmm/m/it/10 ;  \OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 x; y \OMS/cmsy/m/n/
+10 2 \OML/cmm/m/it/10 A;  \OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 ^^U \OMS/cmsy/m/n/
+10 2 \OT1/cmr/m/n/10 [0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1]
+ []
+
+
+Overfull \vbox (49.85051pt too high) has occurred while \output is active []
+
+
+[6] [7]
+Overfull \hbox (58.30875pt too wide) in paragraph at lines 1586--1589
+[]\TU/lmr/bx/n/24.88 Rigurda gli spazi topologici. PRIMA dell’esonero.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1586--1589
+
+ []
+
+[8] (./analisi_vettoriale.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 3.25002pt have occurred.
@@ -937,10 +963,10 @@ LaTeX Font Warning: Size substitutions with differences
 Here is how much of TeX's memory you used:
  14054 strings out of 492998
  292891 string characters out of 6139961
- 443724 words of memory out of 5000000
+ 451724 words of memory out of 5000000
  17922 multiletter control sequences out of 15000+600000
  539233 words of font info for 84 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  37i,17n,33p,10405b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on analisi_vettoriale.pdf (7 pages).
+Output written on analisi_vettoriale.pdf (8 pages).

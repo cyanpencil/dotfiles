@@ -23,22 +23,29 @@ Su esso sono definite le operazioni di somma e prodotto:
 Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine: 
 \begin{align}
     \langle \b{x, y} \rangle &= \langle \b{y, x} \rangle \\
-    \langle \b{x + a, y} \rangle &= \langle \b{x, y} \rangle + \langle \b{a, y} \rangle 
+    \langle \b{x + a, y} \rangle &= \langle \b{x, y} \rangle + \langle \b{a, y}
+    \rangle 
 \end{align}
 }
 
 
-\ldef{ Una \b{norma} \`{e} una funzione che assegna ad ogni vettore dello spazio vettoriale, tranne lo zero, una lunghezza positiva. Segue le seguenti proprieta':
+\ldef{
+    Una \b{norma} \`{e} una funzione che assegna ad ogni vettore dello spazio
+    vettoriale, tranne lo zero, una lunghezza positiva. Segue le seguenti
+    proprieta':
     \begin{align}
     ||x||  &\geq  0 \\
     ||x||  &=  0  \Leftrightarrow x = 0 \\
     ||\lambda x|| &=  |\lambda| ||x|| \\
     ||x + y|| &\leq  ||x|| + ||y|| 
     \end{align}
-    Alcune norme esemplari sono la norma 1: $\displaystyle ||x||_1 = \sum |x_i|$ \par
-    e la norma 2 (euclidea): $\displaystyle ||x||_2 = \sqrt{\sum x_i^2}$
+    Alcune norme esemplari sono la norma 1: $\displaystyle ||x||_1 = \sum
+    |x_i|$ \par e la norma 2 (euclidea): $\displaystyle ||x||_2 = \sqrt{\sum
+    x_i^2}$
     \loss{
-        Due norme $|| \cdot ||_1,|| \cdot ||_2$  si dicono equivalenti se $ \exists c_1, c_2$ tali che $c||x||_1 \leq ||x||_2 \leq C||x||_1, \; \forall x \in V$
+        Due norme $|| \cdot ||_1,|| \cdot ||_2$  si dicono equivalenti se $
+        \exists c_1, c_2$ tali che $c||x||_1 \leq ||x||_2 \leq C||x||_1, \;
+        \forall x \in V$
     }
     \loss{
         In $\mathbb{R}^n$, tutte le norme sono equivalenti.
@@ -46,15 +53,16 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
 }
 
 
-\ldef{ La \b{distanza} \`{e} una qualsiasi funzione $d: X \times X \rightarrow \mathbb{R}$ che soddisfa le seguenti proprieta':
+\ldef{ La \b{distanza} \`{e} una qualsiasi funzione $d: X \times X \rightarrow
+    \mathbb{R}$ che soddisfa le seguenti proprieta':
     \begin{align}
         d(x,y) &\geq 0 \\
         d(x,y) &= 0 \Leftrightarrow x = y \\
         d(x,y) &= d(y,x) \\
         d(x,y) &\leq d(x,z) + d(z,y) 
     \end{align}
-    In realta' basta che sono verificate la seconda e la quarta per verificare anche la prima e la terza. 
-    Se una distanza segue queste proprieta':
+    In realta' basta che sono verificate la seconda e la quarta per verificare
+    anche la prima e la terza.  Se una distanza segue queste proprieta':
     \begin{align}
         d(x,y) &= d(x+a, y+a) \\
         d(\lambda x, \lambda y) &= |\lambda| d(x,y) 
@@ -66,39 +74,64 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
 }
 
 
-\ldef{Uno \b{spazio metrico} \`{e} un insieme di elementi detti punti, nel quale \`{e} definita una funzione distanza, detta anche metrica.
+\ldef{
+    Uno \b{spazio metrico} \`{e} un insieme di elementi detti punti, nel quale
+    \`{e} definita una funzione distanza, detta anche metrica.
 }
 
-\ldef{La disugualianza di \b{Cauchy-Schwartz} dice che il valore assoluto del prodotto scalare di due elementi \`{e} minore o uguale al prodotto delle loro norme:
+\ldef{
+    La disugualianza di \b{Cauchy-Schwartz} dice che il valore assoluto del
+    prodotto scalare di due elementi \`{e} minore o uguale al prodotto delle
+    loro norme:
     $|\langle \b{x,y} \rangle| \leq ||\b{x}|| \cdot ||\b{y}||$
 }
 
 
 
-\ldef{La successione ${f_n(x)}$ \b{converge} per $x \in E$ alla funzione $f(x)$ se $\forall x_0 \in E$ la successione numerica ${f_n(x_0)}$ converge a $f(x_0)$, cio\`{e}:
+\ldef{
+    La successione ${f_n(x)}$ \b{converge} per $x \in E$ alla funzione $f(x)$
+    se $\forall x_0 \in E$ la successione numerica ${f_n(x_0)}$ converge a
+    $f(x_0)$, cio\`{e}:
     \begin{equation}
-        |f_n(x_0) - f(x_0)| < \epsilon \quad \forall \epsilon > 0, \forall x_0 \in E
+        |f_n(x_0) - f(x_0)| < \epsilon \quad \forall \epsilon > 0, \forall x_0
+        \in E
     \end{equation}
 }
 
-\ldef{La successione ${f_n(x)}$\b{converge uniformemente} alla funzione $f(x)$ se $\forall \epsilon > 0$ esiste un'unica soglia $n_\epsilon$ valida per tutti i punti $x_0$, cio\`{e}:
+\ldef{
+    La successione ${f_n(x)}$\b{converge uniformemente} alla funzione $f(x)$ se
+    $\forall \epsilon > 0$ esiste un'unica soglia $n_\epsilon$ valida per tutti
+    i punti $x_0$, cio\`{e}:
     \begin{gather}
-        |f_n(x_0) - f(x_0)| < \epsilon \quad \forall \epsilon > 0 , \forall x_0 \in E, \forall n > n_\epsilon \\
-         \text{oppure: } \max_{x\in E} |f_n(x) - f(x)| < \epsilon
+        |f_n(x_0) - f(x_0)| < \epsilon \quad \forall \epsilon > 0 , \forall x_0
+        \in E, \forall n > n_\epsilon \\ \text{oppure: } \max_{x\in E} |f_n(x)
+        - f(x)| < \epsilon
     \end{gather}
 }
 
-\ltheorem{Il teorema di \b{Bolzano-Weierstrass} afferma che in uno spazio euclideo finito dimensionale $\mathbb{R}^n$ ogni successione reale limitata ammette almeno una sottosuccessione convergente.
+\ltheorem{
+    Il teorema di \b{Bolzano-Weierstrass} afferma che in uno spazio euclideo
+    finito dimensionale $\mathbb{R}^n$ ogni successione reale limitata ammette
+    almeno una sottosuccessione convergente.
 }
 
-\ltheorem{Il teorema della continuita' del limite afferma che il limite $f(x)$ di una successione ${f(x)}$ di funzioni continue uniformemente convergenti in un intervallo $I$ \`{e} una funzione continua in $I$.
+\ltheorem{
+    Il teorema della continuita' del limite afferma che il limite $f(x)$ di una
+    successione ${f(x)}$ di funzioni continue uniformemente convergenti in un
+    intervallo $I$ \`{e} una funzione continua in $I$.
     \ldim{
-        Prendiamo due punti $x_1 \simeq x_2$, e poich\`{e} stiamo parlando di funzioni continue, vale che $f(x_1) \simeq f(x_2)$. \\
+        Prendiamo due punti $x_1 \simeq x_2$, e poich\`{e} stiamo parlando di
+        funzioni continue, vale che $f(x_1) \simeq f(x_2)$. \\
         Per la proprieta' triangolare si ha che:
-        $$|f(x_1) - f(x_2)| \leq |f(x_1) - f_n(x_2)| + |f_n(x_1) - f_n(x_2)| + +f_n(x_2) - f(x_2)|$$
-        Siccome il primo e il terzo modulo a secondo membro sono minori di $\epsilon$:
-        $$|f(x_1) - f(x_2)| \leq 2\epsilon + |f_n(x_1) - f_n(x_2)|$$
-        Quindi anche la funzione limite $f(x)$ possiede il requisito tipico delle funzioni continue di prendere \emph{valori vicini su punti vicini}
+        $$|f(x_1) - f(x_2)| \leq |f(x_1) - f_n(x_2)| + |f_n(x_1) - f_n(x_2)| +
+        +f_n(x_2) - f(x_2)|$$
+        Siccome il primo e il terzo modulo a secondo membro sono minori di
+        $\epsilon$: $$|f(x_1) - f(x_2)| \leq 2\epsilon + |f_n(x_1) -
+        f_n(x_2)|$$
+        Quindi anche la funzione limite $f(x)$ possiede il requisito tipico
+        delle funzioni continue di prendere \emph{valori vicini su punti
+        vicini
+        }
     }
 }
 
@@ -607,7 +640,7 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
     $\v{L} = (L_1, \ldots, L_d) \in \mathbb{R}^d$ .
     Definiamo:
     \begin{gather*}
-        \lim_{\v{x}\rightarrow\v{x_0}} f(\v{x}) = \v{L} \quad \text{se}\\
+        \lim_{\v{x} \rightarrow \v{x_0}} f(\v{x}) = \v{L} \quad \text{se}\\
         \forall \epsilon > 0, \exists \delta > 0 \text{ tale che se } 
         | \v{x} - \v{x_0} | \; < \delta \text{ allora } 
         | f(\v{x}) - \v{L} | < \epsilon
@@ -637,6 +670,23 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
         Quando si deve calcolare anche il limite in base a un dato valore
         $\alpha$, attenzione a non fare maggiorazioni improprie perché
         si potrebbero perdere alcuni valori di $\alpha$.
+    }
+    \loss{
+        Alcune maggiorazioni utili:
+        \begin{gather*}
+            2xy \leq x^2 + y^2 \quad \text{(poich\'e} (x-y)^2 \geq 0)
+        \end{gather*}
+    }
+    \loss{
+        Alcuni limiti notevoli utili:
+        \begin{gather*}
+            \lim_{x \rightarrow 0} \frac{1-\cos x}{x} =
+            \frac{1 - \cos x(1+\cos x)}{x(1+\cos x)} =
+            \frac{\sin^2 x}{x(1+\cos x)} =
+            \frac{\sin x}{1+\cos x} = 0 \\
+            \lim_{x \rightarrow 0} \frac{1-\cos x}{x^2} =
+            \frac{1}{2}
+        \end{gather*}
     }
 }
 
@@ -1235,7 +1285,8 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
     Dato $A \subseteq \mathbb{R}^n $ aperto e connesso, allora $\forall \v{x},
     \v{y} \in A $ esiste una curva $\varnothing \in C^1$, definita come
     $\varnothing : [0, 1] \rightarrow A$ che collega $\v{x}$ con $\v{y}$, cioé
-    $\varnothing (0) = \v{x}, \varnothing (1) = \v{y}$. $A$ allora é un insieme
+    $\varnothing (0) = \v{x}, \varnothing (1) = \v{y}$.
+    $A$ allora é un insieme
     \b{connesso ad archi}.
 }
 
@@ -1397,10 +1448,12 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
 
 \lprop {
     Se A è simmetrica, sappiamo che:\\
-    A è definita positiva $ \Leftrightarrow $ det$A_k > 0 $ per $k = 1 \dots n$.\\
+    A è definita positiva $\Leftrightarrow$ det$A_k > 0 $ per $k = 1 \dots n$.\\
     A è definita negativa $ \Leftrightarrow $ det$A_k (-1)^k > 0 $ per $k = 1
     \dots n$.
 }
+
+
 
 \ldef{
     Data $f:A\in\mathbb{R}^n\rightarrow\mathbb{R}$, $x_m \in A$ è punto di
@@ -1410,7 +1463,113 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
 }
 
 
-\textbf{ciao} 
+\ltheorem{
+    Il \b{Teorema di Weierstrass} dice che $f:K \in \mathbb{R}^n \rightarrow
+    \mathbb{R}$, con $f$ continua, con $K$ compatto di $\mathbb{R}^n$ 
+    (cio\'e chiuso e limitato), allora $f$ ammette massimo e minimo 
+    assoluti in $K$.
+    \ldim{
+        L'idea della dimostrazione \'e di usare la stessa dimostrazione
+        di Weierstrass in $\mathbb{R}^1$, estendendola a pi\'u dimensioni.
+        Infatti, il teorema di Bolzano Weierstrass funziona anche con
+        successioni in $\mathbb{R}^n$
+    }
+}
+
+\ldef{
+    Data $f:\mathbb{R}^n\rightarrow\mathbb{R}$, se 
+    $\displaystyle \lim_{|x| \rightarrow \infty} f(x) = + \infty$
+    allora la funzione si dice \b{coerciva}.
+}
+
+\lprop{
+    Un corollario al teorema di Weierstrass: se una funzione \'e coerciva,
+    allora ammette minimo assoluto. (Vale anche il viceversa: se una
+    funzione \'e coerciva a $ - \infty$, allora ammette massimo assoluto).
+    \ldim{
+        \[
+            \forall N > 0, \exists R_N > 0, \text{ t.c. } f(x) > N, \quad 
+            \forall x \text{ t.c. } |x| > R_N
+        \]
+        Consideriamo $f(\v{0}) = N$. 
+        Per questo $N$, sia
+        $\displaystyle \min_{B_{R_N}(0)} f = f(x_0)$ per Weierstrass.
+        L'insieme $k = \{|\v{x}| \leq R_N\}$ \'e compatto. Quindi,
+        \begin{gather*}
+            f(x) > N = f(0) \geq f(x_0), \quad \forall x \in \mathbb{R}^n
+            \backslash B_{R_N} (0) \\
+            f(x) \geq f(x_0), \quad \forall x \in B_{R_N}(0) \\
+            f(x) \geq f(x_0), \quad \forall x \in \mathbb{R}^n \implies
+            x_0 \text{ \'e punto di min assoluto}
+        \end{gather*} 
+    }
+}
+
+\ltheorem{
+    Il \b{Teorema dei valori intermedi} dice che data
+    $f:A\in\mathbb{R}^n\rightarrow\mathbb{R}$ continua, con $A$ connesso,
+    e dati $x$ e $y \in A$ (supponendo $f(x) \leq f(y)$). Allora:
+    \[
+        \forall c \in [f(x), f(y)], \quad \exists z\in A \text{ t.c. } f(z)=c
+    \]
+    \ldim{
+        $\exists \varnothing: [0, 1] \rightarrow A$ continua t.c.  $
+        \varnothing(0) = x, \varnothing(1)=y$\\
+        Definiamo $g:[0,1] \rightarrow \mathbb{R}$, come $t \rightarrow
+        f(\varnothing(t))$, continua per comp. di funzioni continue.
+        Applico il teorema dei valori intermedi a $g$:
+        \[
+            \text{Dato } c \in [g(0), g(1)], \; \exists \theta \in [0, 1] 
+            \text{ t.c. } g(\theta) = c
+        \]
+        Ma allora $f(\varnothing(\theta)) = c$ e vale la tesi con 
+        $z = \varnothing(\theta)$
+    }
+}
+
+\ldef{
+    Un insieme $A \subseteq \mathbb{R}^n$ \'e convesso se dati 
+    due punti dell'insieme, il segmento che li unisce \'e tutto compreso
+    nell'insieme. Formalmente:
+    \[
+        (\lambda x + (1 - \lambda) y) \in A, \quad \forall x, y \in A, \quad
+        \forall \lambda \in [0, 1]
+    \]
+}
+
+\ldef{
+    Una funzione $f:A\in\mathbb{R}^n\rightarrow\mathbb{R}$, con $A$
+    aperto e connesso, si dice \b{convessa} se 
+    \[
+        f(\lambda x+(1-\lambda)y) \leq \lambda f(x) + (1-\lambda)f(y)
+        ,\; \forall x, y \in A, \quad \forall \lambda \in [0, 1]
+    \]
+    cio\'e se tutti i valori della funzione stanno sotto il segmento 
+    che collega $x$ e $y$.
+    \loss{
+        - se $f$ \'e convessa, allora $f$ \'e continua.\\
+        - se $f$ \'e convessa e differenziabile, allora il piano
+        tangente alla funzione sta tutto sotto alla funzione.
+        Formalmente $f(x) \geq f(x_0) + \triangledown f (x_0)(x - x_0),
+        \quad \forall x, x_0 \in A$. \\
+        - se $f$ \'e convessa ed \'e anche $C^2(A)$, allora $H_f(x)$ \'e
+        semidefinita positiva.
+    }
+    \loss{
+        se $f$ \'e convessa, e ha un minimo, allora quel minimo \'e assoluto
+        (Per esempio se $f \in C^1$ allora in $x_0$ punto minimo
+        $\triangledown f(x_0) = 0$ e $f(x) \geq f(x_0)$ per osservazione
+        precedente)
+    }
+    \loss{
+        In generale, se $g:\mathbb{R} \rightarrow \mathbb{R}$ \'e convessa
+        e crescente, allora la funzione in $\mathbb{R}^n$ definita come
+        $f(x) = g (|x|)$ \'e convessa.
+    }
+}
+
+
+
 
 
 \end{multicols}
@@ -1418,44 +1577,19 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
 \begin{multicols}{2} 
 
 \b{integrali}
-
-
 $\sin(x)$ \'{e} una funzione \b{dispari}
-
-
 $\cos(x)$ \'{e} una funzione \b{pari}
-ciao io son oluca
-
-
 \smallbreak
-
-
 \end{multicols}
 
-\center
 \Huge{ 
 \b{Rigurda gli spazi topologici.}
-
 \b{PRIMA dell'esonero.}
-
 }
 
 
-
-%:set iskeyword+={,},,,(,),^,*,+,-,_,<,>,\,/,$,
-    %:set iskeyword=30-200
+%:set iskeyword=30-200
 %:set updatetime=500
-
-%\begin{multicols}{2} 
-%\end{multicols}
-%\bigbreak
-%\hrule
-%\medbreak
-%\centerline{Algoritmi:}
-
-%\begin{multicols}{2} 
-
-%\end{multicols}
 \end{document}
 
 
