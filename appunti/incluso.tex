@@ -35,6 +35,8 @@
     \begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
 \newcommand{\dimo}[1]{%
     \smallbreak \par \hfill\begin{minipage}{0.92\linewidth}{ \scriptsize {\textbf{\em{Dim.}}} {#1} }\end{minipage} \smallskip \par}
+\newcommand{\mdim}[1]{%
+    \smallbreak \par \hfill\begin{minipage}{0.95\linewidth}{ \scriptsize {\textbf{\em{Dim.}}} {#1} }\end{minipage} \smallskip \par}
 \newcommand{\mtheorem}[1]{%
     {\hspace*{-10pt} \textsc {#1}}}
 \newcommand{\malgorithm}[1]{%
@@ -66,7 +68,7 @@
 
 \makeatletter
 \g@addto@macro\normalsize{%
-  \setlength{\abovedisplayskip}{4.0pt plus 10.0pt minus 5.0pt}%
-  \setlength{\belowdisplayskip}{4.0pt plus 10.0pt minus 5.0pt}%
+  \setlength{\abovedisplayskip}{3.0pt plus 2.0pt minus 5.0pt}%
+  \setlength{\belowdisplayskip}{3.0pt plus 2.0pt minus 5.0pt}%
 }
 \makeatother

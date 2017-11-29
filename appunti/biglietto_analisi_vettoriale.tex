@@ -1,81 +1,168 @@
-\input{incluso.tex}
+\documentclass[a4paper,10pt]{article} %default
+%\usepackage{geometry}
+\usepackage[paperwidth=16.6in, paperheight=11.7in]{geometry}
+\usepackage{fontspec}
+\usepackage[normalem]{ulem}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xfrac}
+\usepackage{multirow}
+\geometry{top = 3mm, lmargin=10mm, rmargin=10mm, bottom=3mm}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\multicolsep}{0.5em}
+\setlength{\columnsep}{0.7cm}
+
+
+\lstset{
+    basicstyle=\ttfamily,
+    numberstyle=\ttfamily,
+    numbers=left,
+    backgroundcolor=\color[rgb]{0.9,0.9,0.9},
+    columns=fullflexible,
+    keepspaces=true,
+    frame=lr,
+    framesep=8pt,
+    framerule=0pt,
+    xleftmargin=20pt,
+    xrightmargin=30pt,
+    mathescape
+}
+
+
+\newcommand{\mdim}[1]{%
+    \smallbreak \par \hfill\begin{minipage}{0.95\linewidth}{ \scriptsize {\textbf{\em{Dim.}}} {#1} }\end{minipage} \smallskip \par}
+\newcommand{\msection}[1]{%
+    {\newpage\par \hfil }}
+\renewcommand{\b}[1]{%
+    {\textbf{#1}}}
+\renewcommand{\v}[1]{%
+    {\underline{#1}}}
+
+
+%\newcommand{\ldef}[1]{%
+    %{\smallbreak\par\normalsize\textbf{\underline{Def.}} {#1} \smallbreak}}
+%\newcommand{\lprop}[1]{%
+    %{\smallbreak\par\normalsize\textbf{\underline{Prop.}} {#1} \smallbreak}}
+%\newcommand{\ltheorem}[1]{%
+    %{\smallbreak\par\normalsize\textbf{\underline{Th.}} {#1} \smallbreak\par}}
+
+
+%\newcommand{\ldef}[1]{%
+    %{\smallbreak\par\scriptsize\textbf{\underline{Def.}} {#1} \smallbreak}}
+%\newcommand{\lprop}[1]{%
+    %{\smallbreak\par\scriptsize\textbf{\underline{Prop.}} {#1} \smallbreak}}
+%\newcommand{\ltheorem}[1]{%
+    %{\smallbreak\par\scriptsize\textbf{\underline{Th.}} {#1} \smallbreak\par}}
+
+
+\newcommand{\ldef}[1]{%
+    {\smallbreak\par\tiny\textbf{\underline{Def.}} {#1} \smallbreak}}
+\newcommand{\lprop}[1]{%
+    {\smallbreak\par\tiny\textbf{\underline{Prop.}} {#1} \smallbreak}}
+\newcommand{\ltheorem}[1]{%
+    {\smallbreak\par\tiny\textbf{\underline{Th.}} {#1} \smallbreak\par}}
+
+
+
+
+
+%\newcommand{\ldim}[1]{%
+    %{\smallbreak\par\scriptsize\emph{\textbf{Dimostrazione}} {#1} \par}}
+%\newcommand{\loss}[1]{%
+    %{\smallbreak\par\scriptsize\emph{\textbf{Osservazione}} {#1} \par}}
+
+\newcommand{\ldim}[1]{%
+    {\smallbreak\par\tiny\emph{\textbf{Dimostrazione}} {#1} \par}}
+\newcommand{\loss}[1]{%
+    {\smallbreak\par\tiny\emph{\textbf{Osservazione}} {#1} \par}}
+
+\makeatletter
+\g@addto@macro\normalsize{%
+  \setlength{\abovedisplayskip}{3.0pt plus 2.0pt minus 5.0pt}%
+  \setlength{\belowdisplayskip}{3.0pt plus 2.0pt minus 5.0pt}%
+}
+\makeatother
+
+\renewcommand{\ldim}[1]{{}}
 
 \begin{document}
 
 
+\msection{}
+\begin{multicols}{6} 
 
-\msection{Analisi Vettoriale 2017}
-%\center{Ultima revisione: \today}
+%\ldef{
+    %Lo spazio di tutte le $n-uple$ di numeri reali forma uno \b{spazio vettoriale} di dimensione $n$ su $\mathbb{R}$, indicato con $\mathbb{R}^n$. 
+    %Su esso sono definite le operazioni di somma e prodotto: 
+    %\begin{align*}
+        %\b{x} + \b{y} =&\; (x_1 + y_1, x_2 + y_2, \dots) \\
+        %\emph{a}\b{x} =&\; (ax_1, ax_2, \dots) 
+    %\end{align*}
+%}
 
-\begin{multicols}{2} 
-\ldef{
-Lo spazio di tutte le $n-uple$ di numeri reali forma uno \b{spazio vettoriale} di dimensione $n$ su $\mathbb{R}$, indicato con $\mathbb{R}^n$. 
-Su esso sono definite le operazioni di somma e prodotto: 
-\begin{align*}
-    \b{x} + \b{y} =&\; (x_1 + y_1, x_2 + y_2, \dots) \\
-    \emph{a}\b{x} =&\; (ax_1, ax_2, \dots) 
-\end{align*}
-}
-
-\ldef{Il \b{prodotto scalare} si definisce in questo modo:
-Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine: 
-\begin{align*}
-    \langle \b{x, y} \rangle &= \langle \b{y, x} \rangle \\
-    \langle \b{x + a, y} \rangle &= \langle \b{x, y} \rangle + \langle \b{a, y}
-    \rangle 
-\end{align*}
-}
+%\ldef{Il \b{prodotto scalare} si definisce in questo modo:
+%Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine: 
+%\begin{align*}
+    %\langle \b{x, y} \rangle &= \langle \b{y, x} \rangle \\
+    %\langle \b{x + a, y} \rangle &= \langle \b{x, y} \rangle + \langle \b{a, y}
+    %\rangle 
+%\end{align*}
+%}
 
 
-\ldef{
-    Una \b{norma} \`{e} una funzione che assegna ad ogni vettore dello spazio
-    vettoriale, tranne lo zero, una lunghezza positiva. Segue le seguenti
-    proprieta':
-    \begin{align*}
-    ||x||  &\geq  0 \\
-    ||x||  &=  0  \Leftrightarrow x = 0 \\
-    ||\lambda x|| &=  |\lambda| ||x|| \\
-    ||x + y|| &\leq  ||x|| + ||y|| 
-    \end{align*}
-    Alcune norme esemplari sono la norma 1: $\displaystyle ||x||_1 = \sum
-    |x_i|$ \par e la norma 2 (euclidea): $\displaystyle ||x||_2 = \sqrt{\sum
-    x_i^2}$
-    \loss{
-        Due norme $|| \cdot ||_1,|| \cdot ||_2$  si dicono equivalenti se $
-        \exists c_1, c_2$ tali che $c||x||_1 \leq ||x||_2 \leq C||x||_1, \;
-        \forall x \in V$
-    }
-    \loss{
-        In $\mathbb{R}^n$, tutte le norme sono equivalenti.
-    }
-}
+%\ldef{
+    %Una \b{norma} \`{e} una funzione che assegna ad ogni vettore dello spazio
+    %vettoriale, tranne lo zero, una lunghezza positiva. Segue le seguenti
+    %proprieta':
+    %\begin{align*}
+    %||x||  &\geq  0 \\
+    %||x||  &=  0  \Leftrightarrow x = 0 \\
+    %||\lambda x|| &=  |\lambda| ||x|| \\
+    %||x + y|| &\leq  ||x|| + ||y|| 
+    %\end{align*}
+    %Alcune norme esemplari sono la norma 1: $\displaystyle ||x||_1 = \sum
+    %|x_i|$ \par e la norma 2 (euclidea): $\displaystyle ||x||_2 = \sqrt{\sum
+    %x_i^2}$
+    %\loss{
+        %Due norme $|| \cdot ||_1,|| \cdot ||_2$  si dicono equivalenti se $
+        %\exists c_1, c_2$ tali che $c||x||_1 \leq ||x||_2 \leq C||x||_1, \;
+        %\forall x \in V$
+    %}
+    %\loss{
+        %In $\mathbb{R}^n$, tutte le norme sono equivalenti.
+    %}
+%}
 
 
-\ldef{ La \b{distanza} \`{e} una qualsiasi funzione $d: X \times X \rightarrow
-    \mathbb{R}$ che soddisfa le seguenti proprieta':
-    \begin{align*}
-        d(x,y) &\geq 0 \\
-        d(x,y) &= 0 \Leftrightarrow x = y \\
-        d(x,y) &= d(y,x) \\
-        d(x,y) &\leq d(x,z) + d(z,y) 
-    \end{align*}
-    In realta' basta che sono verificate la seconda e la quarta per verificare
-    anche la prima e la terza.  Se una distanza segue queste proprieta':
-    \begin{align*}
-        d(x,y) &= d(x+a, y+a) \\
-        d(\lambda x, \lambda y) &= |\lambda| d(x,y) 
-    \end{align*}
-    Allora la funzione $||x|| := d(x, 0)$ \`{e} una norma.
-    \loss{
-        La norma euclidea induce una distanza: $d(x,y) = || \, x - y \, ||_2$
-    }
-}
+%\ldef{ La \b{distanza} \`{e} una qualsiasi funzione $d: X \times X \rightarrow
+    %\mathbb{R}$ che soddisfa le seguenti proprieta':
+    %\begin{align*}
+        %d(x,y) &\geq 0 \\
+        %d(x,y) &= 0 \Leftrightarrow x = y \\
+        %d(x,y) &= d(y,x) \\
+        %d(x,y) &\leq d(x,z) + d(z,y) 
+    %\end{align*}
+    %In realta' basta che sono verificate la seconda e la quarta per verificare
+    %anche la prima e la terza.  Se una distanza segue queste proprieta':
+    %\begin{align*}
+        %d(x,y) &= d(x+a, y+a) \\
+        %d(\lambda x, \lambda y) &= |\lambda| d(x,y) 
+    %\end{align*}
+    %Allora la funzione $||x|| := d(x, 0)$ \`{e} una norma.
+    %\loss{
+        %La norma euclidea induce una distanza: $d(x,y) = || \, x - y \, ||_2$
+    %}
+%}
 
 
-\ldef{
-    Uno \b{spazio metrico} \`{e} un insieme di elementi detti punti, nel quale
-    \`{e} definita una funzione distanza, detta anche metrica.
-}
+%\ldef{
+    %Uno \b{spazio metrico} \`{e} un insieme di elementi detti punti, nel quale
+    %\`{e} definita una funzione distanza, detta anche metrica.
+%}
 
 \ldef{
     La disugualianza di \b{Cauchy-Schwartz} dice che il valore assoluto del
@@ -105,9 +192,9 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
     }
 }
 
-\ldef{
-    Una \b{funzione lipschitziana} è una funzione di variabile reale caratterizzata da \emph{crescita limitata}, nel senso che il rapporto tra variazione di ordinata e variazione di ascissa non può mai superare un valore fissato definito come costante di Lipshitz.
-}
+%\ldef{
+    %Una \b{funzione lipschitziana} è una funzione di variabile reale caratterizzata da \emph{crescita limitata}, nel senso che il rapporto tra variazione di ordinata e variazione di ascissa non può mai superare un valore fissato definito come costante di Lipshitz.
+%}
 
 \ldef{
     Si definisce \b{contrazione} una funzione $f : X \rightarrow X$ tale che esiste $L$ che soddisfa:
@@ -150,6 +237,13 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
         che contraddice l'ipotesi della contrazione $L < 1$.
     }
 }
+
+
+
+
+\medbreak\dotfill\medbreak
+
+
 
 
 \ldef{
@@ -292,13 +386,11 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
     La serie $\displaystyle \sum_{k=1}^{+\infty} f_k(x)$  \b{converge
     assolutamente} in $I$ se converge (puntualmente) in $I$ la serie
     $\displaystyle \sum_{k=1}^{+\infty} \mid f_k(x) \mid$ converge.
-
     \loss{
         La convergenza assoluta implica quella puntuale. \\ Questo \'{e}
         verificabile poich\`{e} per il teorema del confronto di serie, vale che
         $ -\mid f_k(x) \mid \leq f_k(x) \leq \mid f_k(x) \mid $
     }
-
     \loss{
         Se $ f_k \geq 0$, allora la convergenza puntuale \'{e} uguale a quella
         assoluta.
@@ -325,25 +417,25 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
     }
 }
 
-\ldef{
-    Il \b{criterio di Cauchy per le serie} dice che la successione $\{s_n\}_n$ converge se e solo se \'{e} di Cauchy.
-}
+%\ldef{
+    %Il \b{criterio di Cauchy per le serie} dice che la successione $\{s_n\}_n$ converge se e solo se \'{e} di Cauchy.
+%}
 
-\lprop{
-    Se una serie converge totalmente, allora converge anche uniformemente.
-    \ldim{
-        Sia $ M_k \geq 0$ tale che $ M_k < + \infty$ e $\mid f_k(x) \mid \leq M_k \forall x \in I$. \\
-        Uso il criterio di Cauchy uniforme:
-        \begin{gather*}
-        \begin{split}
-            \left| \sum_{k=n+1}^{+\infty} f_k(x) \right| \quad \leq \quad \mid f_{n+1}(x) \mid + \dots + \mid f_{n+p}(x) \mid \quad \leq \\
-            \leq M_{n+1} + \dots + M_{n+p} = \sum_{k=n+1}^{n+p} M_k
-        \end{split}
-        \end{gather*}
-        Ma dato che quest'ultima serie converge in $\mathbb{R}$ uso cauchy per serie numeriche: $\forall \epsilon > 0,  \exists n_\epsilon$ tale che $\displaystyle \sum_{k=n+1}^{n+p} M_k < \epsilon, \quad \forall n > n_\epsilon, \quad \forall p \in \mathbb{N}$\\
-        E quindi $\displaystyle \sum_{k=n+1}^{n+p} M_k < \epsilon, \quad  \forall \epsilon > 0, \quad \exists n_\epsilon \text{t.c.} \quad \forall x \in I, \; \forall n > n_\epsilon, \; \forall p \in \mathbb{N}$
-    }
-}
+%\lprop{
+    %Se una serie converge totalmente, allora converge anche uniformemente.
+    %\ldim{
+        %Sia $ M_k \geq 0$ tale che $ M_k < + \infty$ e $\mid f_k(x) \mid \leq M_k \forall x \in I$. \\
+        %Uso il criterio di Cauchy uniforme:
+        %\begin{gather*}
+        %\begin{split}
+            %\left| \sum_{k=n+1}^{+\infty} f_k(x) \right| \quad \leq \quad \mid f_{n+1}(x) \mid + \dots + \mid f_{n+p}(x) \mid \quad \leq \\
+            %\leq M_{n+1} + \dots + M_{n+p} = \sum_{k=n+1}^{n+p} M_k
+        %\end{split}
+        %\end{gather*}
+        %Ma dato che quest'ultima serie converge in $\mathbb{R}$ uso cauchy per serie numeriche: $\forall \epsilon > 0,  \exists n_\epsilon$ tale che $\displaystyle \sum_{k=n+1}^{n+p} M_k < \epsilon, \quad \forall n > n_\epsilon, \quad \forall p \in \mathbb{N}$\\
+        %E quindi $\displaystyle \sum_{k=n+1}^{n+p} M_k < \epsilon, \quad  \forall \epsilon > 0, \quad \exists n_\epsilon \text{t.c.} \quad \forall x \in I, \; \forall n > n_\epsilon, \; \forall p \in \mathbb{N}$
+    %}
+%}
 
 \ltheorem{
     Il \b{teorema della continuita' del limite per le serie di funzioni} dice che la somma di una serie di funzioni continue ( cio\`{e} $f_k$ continua $\forall k$) che converge uniformemente \'{e} una funzione continua. Questa somma \'{e} $ s(x) = \sum_{k=1}^{+\infty} f_k(x) $
@@ -452,29 +544,29 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
 }
 
 
-\ldef{
-    Una funzione $f : I \rightarrow \mathbb{R}; \quad f \in C^\infty (I) $, si dice \b{sviluppabile in serie di Taylor} se \'{e} possibile scriverla nella forma 
-    $$ f(x) = \sum_{k=0}^\infty a_k ( x - x_0 )^k $$
-    con $x_0$ fissato e $ x \in ( x_0 - \rho, x_0 + \rho )$, per $\rho > 0$.\\
-    Se in particolare $x_0 = 0$, allora prende il nome di \b{serie di MacLaurin}.
-    \loss{
-        Calcolando le derivate in $x_0$ otteniamo i termini $a_k$:
-        \[
-            a_k = \frac{f^{(k)} (x_0)}{k!}, \quad \forall k > 0
-        \]
-    }
-    \loss{
-        Esempi di funzioni sviluppabili in Taylor:
-        \begin{align*}
-            log(1+x)=&\sum \frac{(-1)^k x^{k+1}}{k+1} &\frac{1}{1+x}& = \sum x^k, \quad x \in (-1, 1)\\
-            \frac{1}{1+x^2} = &\sum x^{2k} &arctan(x)&= \sum \frac { (-1)^k x^{2k + 1}}{ 2k+1}\\
-            \frac{-1}{(1 - x)^{-2}} = &\sum kx^{k-1} & e^x &= \sum \frac{x^n}{n!}\\
-            sin(x) =&\sum\frac{(-1)^{n-1}x^{2n -1}}{(2n -1)!} & cos(x) &= \sum\frac{(-1)^{n}2^n}{(2n)!}
-        \end{align*}
-        Notare che l'ultima \'{e} stata ottenuta integrando la terza.\\
-        In linea di massima, ognuna di queste pu\'{o} essere derivata/integrata a piacere.
-    }
-}
+%\ldef{
+    %Una funzione $f : I \rightarrow \mathbb{R}; \quad f \in C^\infty (I) $, si dice \b{sviluppabile in serie di Taylor} se \'{e} possibile scriverla nella forma 
+    %$$ f(x) = \sum_{k=0}^\infty a_k ( x - x_0 )^k $$
+    %con $x_0$ fissato e $ x \in ( x_0 - \rho, x_0 + \rho )$, per $\rho > 0$.\\
+    %Se in particolare $x_0 = 0$, allora prende il nome di \b{serie di MacLaurin}.
+    %\loss{
+        %Calcolando le derivate in $x_0$ otteniamo i termini $a_k$:
+        %\[
+            %a_k = \frac{f^{(k)} (x_0)}{k!}, \quad \forall k > 0
+        %\]
+    %}
+    %\loss{
+        %Esempi di funzioni sviluppabili in Taylor:
+        %\begin{align*}
+            %log(1+x)=&\sum \frac{(-1)^k x^{k+1}}{k+1} &\frac{1}{1+x}& = \sum x^k, \quad x \in (-1, 1)\\
+            %\frac{1}{1+x^2} = &\sum x^{2k} &arctan(x)&= \sum \frac { (-1)^k x^{2k + 1}}{ 2k+1}\\
+            %\frac{-1}{(1 - x)^{-2}} = &\sum kx^{k-1} & e^x &= \sum \frac{x^n}{n!}\\
+            %sin(x) =&\sum\frac{(-1)^{n-1}x^{2n -1}}{(2n -1)!} & cos(x) &= \sum\frac{(-1)^{n}2^n}{(2n)!}
+        %\end{align*}
+        %Notare che l'ultima \'{e} stata ottenuta integrando la terza.\\
+        %In linea di massima, ognuna di queste pu\'{o} essere derivata/integrata a piacere.
+    %}
+%}
 
 \ltheorem{
     Il \b{teorema di sviluppabilit\'{a} in serie di Taylor} dice che se $f$ \'{e} dotata delle derivate di ogni ordine e se $\exists M, L > 0$ tali che 
@@ -498,6 +590,17 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
         \]
 } 
 }
+
+
+
+
+
+\medbreak\dotfill\medbreak
+
+
+
+
+
 
 \ldef{
     Una \b{curva} \'{e} un'applicazione continua $\varphi : I \rightarrow \mathbb{R}^d, d\in \mathbb{N}$. L'immagine della curva, anche detto \b{sostegno}, \'{e} l'insieme dei punti per cui passa la curva, definito come $\{\varphi(t) \in \mathbb{R} | t \in I \}$.
@@ -664,22 +767,11 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
     }
 }
 
-
-
-
-
-\end{multicols}
-\msection{Funzioni a piú variabili}
-\begin{multicols}{2} 
-
-
-
-
-\ldef{
-    Tutte le funzioni del tipo 
-    $f \colon \mathbb{R}^n \longrightarrow \mathbb{R}^d$
-    si chiamano \b{vettoriali} se $n > 1$, e \b{a piú variabili} se $d > 1$.
-}
+%\ldef{
+    %Tutte le funzioni del tipo 
+    %$f \colon \mathbb{R}^n \longrightarrow \mathbb{R}^d$
+    %si chiamano \b{vettoriali} se $n > 1$, e \b{a piú variabili} se $d > 1$.
+%}
 
 \ldef{
     Sia $\v{x_0} \in A \subseteq \mathbb{R}^n$, con $\v{x_0}$ punto di 
@@ -743,35 +835,35 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
     }
 }
 
-\ldef{
-    In $\mathbb{R}^2$, si definisce il limite a infinito:
-    \begin{gather*}
-        \lim_{| (x , y) | \rightarrow \infty} f(x,y) = l \quad \text{se}\\
-        \forall \epsilon > 0, \exists R > 0 \text{ tale che se } 
-        | (x,y) | \geq R \text{ allora } 
-        | f(x,y) - l | < \epsilon
-    \end{gather*}
-}
+%\ldef{
+    %In $\mathbb{R}^2$, si definisce il limite a infinito:
+    %\begin{gather*}
+        %\lim_{| (x , y) | \rightarrow \infty} f(x,y) = l \quad \text{se}\\
+        %\forall \epsilon > 0, \exists R > 0 \text{ tale che se } 
+        %| (x,y) | \geq R \text{ allora } 
+        %| f(x,y) - l | < \epsilon
+    %\end{gather*}
+%}
 
-\ldef{
-    In $\mathbb{R}^2$, se il limite a un punto $(x_0, y_0)$ tende a $\pm\infty$:
-    \begin{gather*}
-        \lim_{(x,y) \rightarrow (x_0, y_0)} f(x,y) = \pm\infty\quad\text{se}\\
-        \forall M > 0, \exists \delta > 0 \text{ tale che se } 
-        | (x,y) - (x_0, y_0) | < \delta \text{ allora } \\
-        f(x,y) - l > M \text{ (oppure $< -M$ nel caso di $-\infty$)}
-    \end{gather*}
-}
+%\ldef{
+    %In $\mathbb{R}^2$, se il limite a un punto $(x_0, y_0)$ tende a $\pm\infty$:
+    %\begin{gather*}
+        %\lim_{(x,y) \rightarrow (x_0, y_0)} f(x,y) = \pm\infty\quad\text{se}\\
+        %\forall M > 0, \exists \delta > 0 \text{ tale che se } 
+        %| (x,y) - (x_0, y_0) | < \delta \text{ allora } \\
+        %f(x,y) - l > M \text{ (oppure $< -M$ nel caso di $-\infty$)}
+    %\end{gather*}
+%}
 
-\ldef{
-    In $\mathbb{R}^2$, se il limite a $\pm\infty$ tende a $\pm\infty$:
-    \begin{gather*}
-        \lim_{(x,y) \rightarrow (x_0, y_0)} f(x,y) = \pm\infty\quad\text{se}\\
-        \forall M > 0, \exists N > 0 \text{ tale che se } 
-        | (x,y) - (x_0, y_0) | > N \text{ allora } \\
-        f(x,y) - l > M \text{ (oppure $< -M$ nel caso di $-\infty$)}
-    \end{gather*}
-}
+%\ldef{
+    %In $\mathbb{R}^2$, se il limite a $\pm\infty$ tende a $\pm\infty$:
+    %\begin{gather*}
+        %\lim_{(x,y) \rightarrow (x_0, y_0)} f(x,y) = \pm\infty\quad\text{se}\\
+        %\forall M > 0, \exists N > 0 \text{ tale che se } 
+        %| (x,y) - (x_0, y_0) | > N \text{ allora } \\
+        %f(x,y) - l > M \text{ (oppure $< -M$ nel caso di $-\infty$)}
+    %\end{gather*}
+%}
 
 
 \ldef{
@@ -875,6 +967,16 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
     }
 }
 
+
+
+
+
+\medbreak\dotfill\medbreak
+
+
+
+
+
 \ldef{
     Data $ f : A \in \mathbb{R}^n \rightarrow \mathbb{R}$, con $A$ aperto, con $x_0 \in A$, $f$ si 
     dice \b{differenziabile} in $x_0$ se esiste $\v{a} \in \mathbb{R}^n $ tale che:
@@ -945,11 +1047,13 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
     \]
 }
 
+
+
 \ldef{
     Se $f$ é differenziabile in $\v{x}_0$, allora l'iperpiano tangernte si
     ottiene come:
     \[
-        x_{n+1} = f(\v{x}_0)) + \triangledown f(\v{x}_0)) (\v{x} - \v{x})
+        x_{n+1} = f(\v{x}_0) + \triangledown f(\v{x}_0) (\v{x} - \v{x_0})
     \]
     \ldim{
         Sapevamo che:
@@ -965,15 +1069,6 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
     }
 }
 
-\ltheorem{
-    Il teorema del \b{differenziale totale} dice che data
-    $f:A\in\mathbb{R}^n\rightarrow\mathbb{R}$, con $\v{x}_0 \in A$, se $f \in
-    C^1 $ in $\v{x}_0$, allora $f$ é differenziabile in $\v{x}_0$.
-}
-
-\end{multicols}
-\msection{Funzioni a piú variabili 2 la vendetta}
-\begin{multicols}{2} 
 
 \ltheorem{ 
     Il teorema del \b{differenziale totale} dice che data
@@ -1053,7 +1148,7 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
     }
 
     \loss{
-        Tutte le $f \in C^1$ sono differenziabili. Non é detto il contrario.
+        Non è detto che se $ f \not \in C^1$ allora non è differenziabile.
     }
     \loss{
         Il teorema dice che se $f$ é differenziabile in $\v{x}_0$, allora 
@@ -1214,15 +1309,15 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
     }
 }
 
-\ldef{
-    Se esistono tutte le derivate seconde parziali, la funzione si dice
-    \b{derivabile due volte}. \\
-    La notazione usata é la seguente:
-    \[
-        \frac{d}{dx_j} ( \frac{df}{dx_i} ) = \frac{d^2}{dx_idx_j} =
-        f_{x_i,x_j}
-    \]
-}
+%\ldef{
+    %Se esistono tutte le derivate seconde parziali, la funzione si dice
+    %\b{derivabile due volte}. \\
+    %La notazione usata é la seguente:
+    %\[
+        %\frac{d}{dx_j} ( \frac{df}{dx_i} ) = \frac{d^2}{dx_idx_j} =
+        %f_{x_i,x_j}
+    %\]
+%}
 
 \ldef{
     Si dice matrice \b{Hessiana} la matrice formata da tutte le possibili
@@ -1370,8 +1465,14 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
     }
 }
 
+
+
+\medbreak\dotfill\medbreak
+
+
+
 \ldef{
-    $x_0 \in A$ si dice punto di massimo/minimo relativo (o locale) se
+    $x_0 \in A$ si dice punto di \b{massimo/minimo relativo} (o locale) se
     \[
         f(x) \geq f(x_0) \text{ oppure } f(x) \leq f(x_0), \quad 
         \forall x \in B_\delta(x_0) \cap A
@@ -1630,144 +1731,162 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
     }
 }
 
-\ltheorem{
-    Il \b{Teorema del Dini} dice che data
-    $f:A\in\mathbb{R}^2\rightarrow\mathbb{R}$, con $A$ aperto, con $F \in
-    C^1$, se prendo $(x_0, y_0) \in A$ tale che
-    $F(x_0, y_0) =0$ e $F_y(x_0, y_0)\neq 0$ allora esistono $r, \epsilon > 0$
-    tali che $F(x,y) =0$ definisce implicitamente un'unica 
-    \[g:[x_0-r, x_0+r] \rightarrow [y_0 - \epsilon, y_0 + \epsilon]\] tale che
-    $F(x, g(x)) = 0, \; \forall x \in [x_0 - r, x_0 + r]$.\\
-    Inoltre, $g\in C^1$ e $g'(x) = - \frac{F_x(x, g(x))}{F_y(x, g(x))}$
-    \ldim{
-        Siccome $F(x_0, y_0) = 0, F_y(x_0, y_0) \neq 0$, definiamo \\
-        $G(x, y)=y- \frac{F(x,y)}{F_y(x_0,y_0)}$, in modo tale
-        che $G(x_0, y_0) = 0$.\\
-        $F(x,y)=0$ solo quando $ \frac{F(x,y)}{F_y(x_0,y_0)} = 0$, solo
-        quando $y - \frac{F(x,y)}{F_y(x_0,y_0)} = y$ che non \'e altro
-        che $G(x,y)$. In pratica, gli zeri di $F$ corrispondono ai 
-        punti fissi di $G$ (rispetto alla seconda variabile).\\
-        Prendiamo ora un insieme $X$ definito come: \[ X =
-        \{\varphi: [x_0-r,x_0+r]\rightarrow[y_0-\varepsilon,y_0+\varepsilon] \mid
-        \varphi \text{ \'e continua }\} \]
-        $d_\infty$ \'e la distanza indotta dalla norma del sup
-        $||\cdot||_\infty$. Dimostriamo ora che $(X,d_\infty)$ \'e uno
-        spazio metrico completo:
+%\ltheorem{
+    %Il \b{Teorema del Dini} dice che data
+    %$f:A\in\mathbb{R}^2\rightarrow\mathbb{R}$, con $A$ aperto, con $F \in
+    %C^1$, se prendo $(x_0, y_0) \in A$ tale che
+    %$F(x_0, y_0) =0$ e $F_y(x_0, y_0)\neq 0$ allora esistono $r, \epsilon > 0$
+    %tali che $F(x,y) =0$ definisce implicitamente un'unica 
+    %\[g:[x_0-r, x_0+r] \rightarrow [y_0 - \epsilon, y_0 + \epsilon]\] tale che
+    %$F(x, g(x)) = 0, \; \forall x \in [x_0 - r, x_0 + r]$.\\
+    %Inoltre, $g\in C^1$ e $g'(x) = - \frac{F_x(x, g(x))}{F_y(x, g(x))}$
+    %\ldim{
+        %Siccome $F(x_0, y_0) = 0, F_y(x_0, y_0) \neq 0$, definiamo \\
+        %$G(x, y)=y- \frac{F(x,y)}{F_y(x_0,y_0)}$, in modo tale
+        %che $G(x_0, y_0) = 0$.\\
+        %$F(x,y)=0$ solo quando $ \frac{F(x,y)}{F_y(x_0,y_0)} = 0$, solo
+        %quando $y - \frac{F(x,y)}{F_y(x_0,y_0)} = y$ che non \'e altro
+        %che $G(x,y)$. In pratica, gli zeri di $F$ corrispondono ai 
+        %punti fissi di $G$ (rispetto alla seconda variabile).\\
+        %Prendiamo ora un insieme $X$ definito come: \[ X =
+        %\{\varphi: [x_0-r,x_0+r]\rightarrow[y_0-\varepsilon,y_0+\varepsilon] \mid
+        %\varphi \text{ \'e continua }\} \]
+        %$d_\infty$ \'e la distanza indotta dalla norma del sup
+        %$||\cdot||_\infty$. Dimostriamo ora che $(X,d_\infty)$ \'e uno
+        %spazio metrico completo:
+        %\mdim{
+            %$\{\varphi_n\}_n \subseteq X$ \'e di Cauchy, poich\'e
+            %$(C^0( [x_0-r,x_0+r] ), ||\cdot||_\infty)$
+            %\'e completo $\exists \varphi \in C^0( [x_0-r,x_0+r] )$
+            %tale che $||\varphi_n - \varphi||_\infty \rightarrow 0$ per 
+            %$h \rightarrow 0$. Dobbiamo dimostrare che $\varphi \in X$, 
+            %cio\'e che $||\varphi(x) - y_0||_\infty \leq \varepsilon$:
+            %\[ ||\varphi(x) - y_0|| \leq ||\varphi(x) -
+            %\varphi_n(x)||_\infty + ||\varphi_n - y_0||_\infty \leq
+            %||\varphi - \varphi_n||_\infty + \varepsilon \rightarrow
+            %\varepsilon\]
+            %Se per assurdo fosse che $||\varphi(x) - y_0||_\infty >
+            %\varepsilon $, otterremmo che $\varepsilon < \varepsilon$, 
+            %che \'e assurdo. Perci\'o abbiamo appena dimostrato che
+            %$||\varphi(x) - y_0||_\infty \leq \varepsilon$.
+        %}
+        %Sia $H: X \rightarrow X$, definita come $w \rightarrow H[w]$ 
+        %(dove $H[w]$ \'e una funzione).
+        %Abbiamo allora che $H[w](x) = G(x, w(x))$. Prima di andare avanti
+        %, dobbiamo dimostrare che $H$ \'e ben posta:
+        %\mdim{
+            %Bisogna dimostrare che $H[w] \in X$, cio\'e che:\\
+            %- $H[w]$ \'e continua su $ [x_0-r,x_0+r] $ (per comp.
+            %di funzioni continue)\\
+            %- $||H[w](x) - y_0||_\infty \leq \varepsilon$, e lo dimostriamo subito:
+            %\[ ||H[w](x) - y_0||_\infty = || G(x, w(x)) - y_0||_\infty\]
+            %per definizione. Ora applichiamo la disugualianza triangolare
+            %:
+            %\[ || G(x, w(x)) - y_0||_\infty \leq || G(x, w(x)) -
+            %G(x,y_0)||_\infty + || G(x, y_0) - G(x_0,y_0)||_\infty \]
+            %Per quanto riguarda il primo addendo:
+            %\begin{align*}
+                %&\quad|| G(x, w(x)) - G(x,y_0)||_\infty 
+                %\leq ||G_y(x, \varsigma_y)(w(x)-y_0)||_\infty 
+                %\\
+                %&\quad \leq \sup_{\varsigma\in
+                %[y_0 - \varepsilon , y_0+\varepsilon]} \left|G_y(x,
+                %\varsigma_y)\right|||w(x) - y_0||_\infty 
+                %= \sup_{\varsigma\in [y_0-\varepsilon,y_0+\varepsilon]}
+                %\left| 1 - \frac{F_y(x,\varsigma)}{F_y(x_0,y_0)}
+                %\right| 
+                %\\
+                %&\quad \leq \frac{1}{2} \text{ (per valori sufficientemente
+                %piccoli)}
+            %\end{align*}
+            %Il secondo addendo invece:
+            %\[ || G(x, y_0) - G(x_0,y_0)||_\infty =
+            %\frac{||F(x,y_0)||_\infty}{|F_y(x_0,y_0)|} \leq 
+            %\frac{\varepsilon}{2}\]
+            %Quindi entrambi gli addendi sono minori di $\varepsilon$, e
+            %quindi $H$ \'e ben posta.
+        %}
+        %Infine, ci manca solo da dimostrare che $H$ \'e una contrazione:
+        %\mdim{
+            %Per dimostrare che $H$ \'e una contrazione, dobbiamo
+            %mostrare che $||H[w] - H[v]||_\infty \leq
+            %L||v-w ||\infty$ per $L<1, \; \forall v,w \in X$.\\
+            %Prendiamo $\varepsilon , r > 0$ tali che $ [x_0-r,x_0+r]
+            %\times [y_0-\varepsilon,y_0+\varepsilon] \subseteq A$:
+            %\[ ||G(x,w(x))-G(x,v(x))||_\infty \leq
+            %\sup_{\varsigma\in [y_0-\varepsilon,y_0+\varepsilon]}
+            %\left| G_y(x, \varsigma) \right| ||w-v||_\infty   \]
+            %che si risolve usando lo stesso ragionamento di prima
+            %sostituendo $v$ al posto di $y_0$ e imponendo $v(x) \in
+            %[y_0-\varepsilon,y_0+\varepsilon]$.\\
+            %Quindi, $||G(x,w(x))-G(x,v(x))||_\infty \leq \frac{1}{2}
+            %||v-w||_\infty$, per cui $H$ \'e una contrazione.
+        %}
+        %Ora, sia $g(x)$ un punto fisso di $H$ (che esiste per Caccioppoli).
+        %\[ H[g](x) = g(x) = G(x,g(x)) = g(x) - \frac{F(x,g(x))}{F_y(x,g(x))}
+        %\implies F(x,g(x)) = 0 \]
+        %Non dimostriamo che $g \in C^1$.\\
+        %Ma per completezza calcoliamo il valore di $g'(x)$:
+        %\begin{align*}
+            %F(x,g(x)) = 0 &\implies F'(x) = F_x(x,g(x)) +
+            %F_y(x,g(x))g'(x)=0 \\
+            %&\implies g'(x) = \frac{-F_x(x,g(x))}{F_y(x,g(x))} 
+        %\end{align*}
+    %}
 
-        \mdim{
-            $\{\varphi_n\}_n \subseteq X$ \'e di Cauchy, poich\'e
-            $(C^0( [x_0-r,x_0+r] ), ||\cdot||_\infty)$
-            \'e completo $\exists \varphi \in C^0( [x_0-r,x_0+r] )$
-            tale che $||\varphi_n - \varphi||_\infty \rightarrow 0$ per 
-            $h \rightarrow 0$. Dobbiamo dimostrare che $\varphi \in X$, 
-            cio\'e che $||\varphi(x) - y_0||_\infty \leq \varepsilon$:
-            \[ ||\varphi(x) - y_0|| \leq ||\varphi(x) -
-            \varphi_n(x)||_\infty + ||\varphi_n - y_0||_\infty \leq
-            ||\varphi - \varphi_n||_\infty + \varepsilon \rightarrow
-            \varepsilon\]
-            Se per assurdo fosse che $||\varphi(x) - y_0||_\infty >
-            \varepsilon $, otterremmo che $\varepsilon < \varepsilon$, 
-            che \'e assurdo. Perci\'o abbiamo appena dimostrato che
-            $||\varphi(x) - y_0||_\infty \leq \varepsilon$.
-        }
-        Sia $H: X \rightarrow X$, definita come $w \rightarrow H[w]$ 
-        (dove $H[w]$ \'e una funzione).
-        Abbiamo allora che $H[w](x) = G(x, w(x))$. Prima di andare avanti
-        , dobbiamo dimostrare che $H$ \'e ben posta:
-        \mdim{
-            Bisogna dimostrare che $H[w] \in X$, cio\'e che:\\
-            - $H[w]$ \'e continua su $ [x_0-r,x_0+r] $ (per comp.
-            di funzioni continue)\\
-            - $||H[w](x) - y_0||_\infty \leq \varepsilon$, e lo dimostriamo subito:
-            \[ ||H[w](x) - y_0||_\infty = || G(x, w(x)) - y_0||_\infty\]
-            per definizione. Ora applichiamo la disugualianza triangolare
-            :
-            \[ || G(x, w(x)) - y_0||_\infty \leq || G(x, w(x)) -
-            G(x,y_0)||_\infty + || G(x, y_0) - G(x_0,y_0)||_\infty \]
-            Per quanto riguarda il primo addendo:
-            \begin{align*}
-                &\quad|| G(x, w(x)) - G(x,y_0)||_\infty 
-                \leq ||G_y(x, \varsigma_y)(w(x)-y_0)||_\infty 
-                \\
-                &\quad \leq \sup_{\varsigma\in
-                [y_0 - \varepsilon , y_0+\varepsilon]} \left|G_y(x,
-                \varsigma_y)\right|||w(x) - y_0||_\infty 
-                = \sup_{\varsigma\in [y_0-\varepsilon,y_0+\varepsilon]}
-                \left| 1 - \frac{F_y(x,\varsigma)}{F_y(x_0,y_0)}
-                \right| 
-                \\
-                &\quad \leq \frac{1}{2} \text{ (per valori sufficientemente
-                piccoli)}
-            \end{align*}
-            Il secondo addendo invece:
-            \[ || G(x, y_0) - G(x_0,y_0)||_\infty =
-            \frac{||F(x,y_0)||_\infty}{|F_y(x_0,y_0)|} \leq 
-            \frac{\varepsilon}{2}\]
-            Quindi entrambi gli addendi sono minori di $\varepsilon$, e
-            quindi $H$ \'e ben posta.
-        }
-
-        Infine, ci manca solo da dimostrare che $H$ \'e una contrazione:
-        \mdim{
-            Per dimostrare che $H$ \'e una contrazione, dobbiamo
-            mostrare che $||H[w] - H[v]||_\infty \leq
-            L||v-w ||\infty$ per $L<1, \; \forall v,w \in X$.\\
-            Prendiamo $\varepsilon , r > 0$ tali che $ [x_0-r,x_0+r]
-            \times [y_0-\varepsilon,y_0+\varepsilon] \subseteq A$:
-            \[ ||G(x,w(x))-G(x,v(x))||_\infty \leq
-            \sup_{\varsigma\in [y_0-\varepsilon,y_0+\varepsilon]}
-            \left| G_y(x, \varsigma) \right| ||w-v||_\infty   \]
-            che si risolve usando lo stesso ragionamento di prima
-            sostituendo $v$ al posto di $y_0$ e imponendo $v(x) \in
-            [y_0-\varepsilon,y_0+\varepsilon]$.\\
-            Quindi, $||G(x,w(x))-G(x,v(x))||_\infty \leq \frac{1}{2}
-            ||v-w||_\infty$, per cui $H$ \'e una contrazione.
-        }
-        Ora, sia $g(x)$ un punto fisso di $H$ (che esiste per Caccioppoli).
-        \[ H[g](x) = g(x) = G(x,g(x)) = g(x) - \frac{F(x,g(x))}{F_y(x,g(x))}
-        \implies F(x,g(x)) = 0 \]
-        Non dimostriamo che $g \in C^1$.\\
-        Ma per completezza calcoliamo il valore di $g'(x)$:
-        \begin{align*}
-            F(x,g(x)) = 0 &\implies F'(x) = F_x(x,g(x)) +
-            F_y(x,g(x))g'(x)=0 \\
-            &\implies g'(x) = \frac{-F_x(x,g(x))}{F_y(x,g(x))} 
-        \end{align*}
-    }
-
-}
+%}
 
 
 
 
 
 \end{multicols}
-\msection{Personal reminders}
-\begin{multicols}{2} 
+\msection{}
+\begin{multicols}{4} 
 
 \b{integrali}
-$\sin(x)$ \'{e} una funzione \b{dispari}
-$\cos(x)$ \'{e} una funzione \b{pari}
+    $\sin(x)$ \'{e} una funzione \b{dispari}
+    $\cos(x)$ \'{e} una funzione \b{pari}
 \smallbreak
 \end{multicols}
 
 \Huge{ 
 \b{Rigurda gli spazi topologici.}
 \b{PRIMA dell'esonero.}
-
-$c = ab - \frac{a + b}{2} + 1$
-
-$c = a(b - 1/2) - b/2 + 1$
-
-$c = a(b - 1/2) - b/2 + 1/4 + 3/4$
-
-$c = a(b - 1/2) - 1/2(b - 1/2) + 3/4$
-
-$c - 3/4 = (a - 1/2) (b - 1/2)$
-
-$4c - 3 = (2a - 1) (2b - 1)$
 }
 
+Alcuni limiti notevoli utili:
+\begin{gather*}
+    \lim_{x \rightarrow 0} \frac{1-\cos x}{x} =
+    \frac{1 - \cos x(1+\cos x)}{x(1+\cos x)} =
+    \frac{\sin^2 x}{x(1+\cos x)} =
+    \frac{\sin x}{1+\cos x} = 0 \\
+    \lim_{x \rightarrow 0} \frac{1-\cos x}{x^2} =
+    \frac{1}{2}
+\end{gather*}
+
+Alcune maggiorazioni utili:
+\begin{gather*}
+    2xy \leq x^2 + y^2 \quad \text{(poich\'e} (x-y)^2 \geq 0)
+\end{gather*}
+
+
+Esempi di funzioni sviluppabili in Taylor:
+\begin{align*}
+    log(1+x)=&\sum \frac{(-1)^k x^{k+1}}{k+1} 
+    &\frac{1}{1+x}& = \sum x^k, \quad x \in (-1, 1)
+    \\
+    \frac{1}{1+x^2} = &\sum (-1)^k x^{2k} 
+    &arctan(x)&= \sum \frac { (-1)^k x^{2k + 1}}{ 2k+1}
+    \\
+    \frac{-1}{(1 - x)^{-2}} = &\sum kx^{k-1} 
+    &e^x &= \sum \frac{x^n}{n!}
+    \\
+    sin(x) =&\sum\frac{(-1)^{n+1}x^{2n +1}}{(2n +1)!} 
+    &cos(x) &= \sum\frac{(-1)^{n}2^n}{(2n)!}
+\end{align*}
+Notare che l'ultima \'{e} stata ottenuta integrando la terza.\\
+In linea di massima, ognuna di queste pu\'{o} essere derivata/integrata a piacere.
 
 %:set iskeyword=30-200
 %:set updatetime=500

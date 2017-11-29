@@ -39,6 +39,13 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
 set listchars=eol:⏎,tab:>-,trail:.,nbsp:.
 hi NonText ctermfg=black guifg=black
 
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+
+set guicursor+=a:blinkon0
+
+
 
 "                   === MOVEMENT MACROS === 
 
@@ -192,7 +199,7 @@ Plug 'xolox/vim-misc'
 "Plug 'altercation/vim-colors-solarized'
 "Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'chrisbra/histwin.vim'
-"Plug 'metakirby5/codi.vim'
+Plug 'metakirby5/codi.vim'
 "Plug 'xolox/vim-colorscheme-switcher'
 "Plug 'wkentaro/conque.vim' 
 "Plug 'vim-scripts/Gundo'
@@ -282,6 +289,7 @@ function! SettingsCpp()
     abbr vvi vector<vector<int> >
     abbr fori for(int i = 0; i < n; i++) {<CR>
     inoremap {<CR> {<CR><CR>}<ESC>kcc
+    set foldmethod=manual
 endfunction
 
 function! SettingsJava()
@@ -310,7 +318,8 @@ function! SettingsPython()
 endfunction
 
 function! SettingsLatex()
-    nnoremap <F4> :wa <CR> :!xelatex --shell-escape % <CR>
+    "nnoremap <F4> :wa <CR> :!xelatex --shell-escape % <CR>
+    nnoremap <F4> :wa <CR> :!pdflatex --shell-escape % <CR>
     nnoremap <F5> :wa <CR> :!zathura %:r.pdf <CR>
     setlocal nocursorline
     set foldmethod=manual

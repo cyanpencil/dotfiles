@@ -1,12 +1,12 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Arch Linux) (preloaded format=xelatex 2017.11.1)  22 NOV 2017 10:33
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Arch Linux) (preloaded format=xelatex 2017.11.1)  12 NOV 2017 01:12
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**analisi_vettoriale.tex
-(./analisi_vettoriale.tex
+**biglietto_analisi_vettoriale.tex
+(./biglietto_analisi_vettoriale.tex
 LaTeX2e <2017-04-15>
 Babel <3.12> and hyphenation patterns for 84 language(s) loaded.
-(./incluso.tex (/usr/share/texmf-dist/tex/latex/base/article.cls
+(/usr/share/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
@@ -711,45 +711,46 @@ Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
 \multirow@cntb=\count279
 \multirow@dima=\skip57
 \bigstrutjot=\dimen178
-))
-(./analisi_vettoriale.aux)
-\openout1 = `analisi_vettoriale.aux'.
+)
+(./biglietto_analisi_vettoriale.aux)
+\openout1 = `biglietto_analisi_vettoriale.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 3.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 3.
- (/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 92.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 92.
+
+(/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    ... okay on input line 92.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
 * driver: xetex
-* paper: a4paper
+* paper: custom
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(28.45274pt, 540.60239pt, 28.45274pt)
-* v-part:(T,H,B)=(8.53581pt, 827.97522pt, 8.53581pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=540.60239pt
-* \textheight=827.97522pt
+* h-part:(L,W,R)=(28.45274pt, 1142.77695pt, 28.45274pt)
+* v-part:(T,H,B)=(8.53581pt, 828.48715pt, 8.53581pt)
+* \paperwidth=1199.68243pt
+* \paperheight=845.55878pt
+* \textwidth=1142.77695pt
+* \textheight=828.48715pt
 * \oddsidemargin=-43.81725pt
 * \evensidemargin=-43.81725pt
 * \topmargin=-100.73418pt
@@ -777,213 +778,194 @@ LaTeX Font Info:    ... okay on input line 3.
 .................................................
 \symlegacymaths=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 3.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 3.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 3.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 3.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 3.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 3.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 3.
-LaTeX Font Info:    Redeclaring math accent \check on input line 3.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 3.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 3.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 3.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 3.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 92.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 92.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 92.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 92.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 92.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 92.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 92.
+LaTeX Font Info:    Redeclaring math accent \check on input line 92.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 92.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 92.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 92.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 92.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 92.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 92.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 92.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 92.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 92.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 92.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 92.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 92.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 92.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 92.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 92.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 92.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 3.
+(Font)              `operators' in the math version `normal' on input line 92.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 3.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 92.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 3.
+(Font)              `operators' in the math version `bold' on input line 92.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 3.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 92.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 3.
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 92.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 3.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 92.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 3.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 92.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 3.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 92.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 3.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 92.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/lmr/m/n --> TU/lmr/bx/n on input line 3.
+(Font)                  TU/lmr/m/n --> TU/lmr/bx/n on input line 92.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmr/bx/it on input line 3.
+(Font)                  OT1/cmr/bx/it --> TU/lmr/bx/it on input line 92.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 3.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 92.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 3.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 92.
 \c@lstlisting=\count280
-LaTeX Font Info:    Try loading font information for U+msa on input line 19.
+LaTeX Font Info:    Try loading font information for U+msa on input line 172.
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 19.
+LaTeX Font Info:    Try loading font information for U+msb on input line 172.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+Overfull \hbox (19.01056pt too wide) detected at line 383
+[]\OT1/cmr/m/n/5 (\OMS/cmsy/m/n/5 ^^@\OT1/cmr/m/n/5 1)[]\OML/cmm/m/it/5 f[]\OT1
+/cmr/m/n/5 (\OML/cmm/m/it/5 x\OT1/cmr/m/n/5 )\OML/cmm/m/it/5 ;  [] f[]\OT1/cmr/
+m/n/5 (\OML/cmm/m/it/5 x\OT1/cmr/m/n/5 ) \OMS/cmsy/m/n/5 ^^U \OT1/cmr/m/n/5 0\O
+ML/cmm/m/it/5 ; f[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x\OT1/cmr/m/n/5 ) \OMS/cmsy/
+m/n/5 ^^U \OML/cmm/m/it/5 f[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x\OT1/cmr/m/n/5 )\
+OML/cmm/m/it/5 ; f[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x\OT1/cmr/m/n/5 ) \OMS/cmsy
+/m/n/5 ! \OT1/cmr/m/n/5 0
+ []
 
-] [2] [3]
-Overfull \hbox (3.99837pt too wide) in paragraph at lines 755--755
+
+Overfull \hbox (11.89551pt too wide) in paragraph at lines 836--836
 [] 
  []
 
 
-Overfull \hbox (3.42615pt too wide) detected at line 815
-\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 ^^O > \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; \O
-MS/cmsy/m/n/10 9\OML/cmm/m/it/10 ^^N > \OT1/cmr/m/n/10 0[]\OMS/cmsy/m/n/10 j[] 
-^^@ []j \OML/cmm/m/it/10 < ^^N[]\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 f\OT1/cmr/m/
-n/10 ([]) \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 ([])\OMS/cmsy/
-m/n/10 j[] \OML/cmm/m/it/10 < ^^O
- []
-
-
-Overfull \vbox (13.0884pt too high) has occurred while \output is active []
-
-
-[4] [5]
-Overfull \hbox (5.30981pt too wide) in paragraph at lines 1069--1069
+Overfull \hbox (37.81036pt too wide) in paragraph at lines 836--836
 [] 
  []
 
 
-Overfull \hbox (2.32498pt too wide) detected at line 1131
-[] \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 d[]g[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
-0 f\OT1/cmr/m/n/10 ([])) \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 d[]f[]\OT1/cmr/m
-/n/10 ([])\OML/cmm/m/it/10 ;  \OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 i \OT1/cmr/m/n
-/10 = 1\OML/cmm/m/it/10 ; [] ; d \OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 j \OT1/cmr/
-m/n/10 = 1\OML/cmm/m/it/10 ; [] ; n
- []
-
-LaTeX Font Info:    Calculating math sizes for size <4.89998> on input line 121
-6.
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <3.42996> not available
-(Font)              size <5> substituted on input line 1216.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <2.44998> not available
-(Font)              size <5> substituted on input line 1216.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <3.42996> not available
-(Font)              size <5> substituted on input line 1216.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <2.44998> not available
-(Font)              size <5> substituted on input line 1216.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <3.42996> not available
-(Font)              size <5> substituted on input line 1216.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <2.44998> not available
-(Font)              size <5> substituted on input line 1216.
-
-
-Overfull \hbox (23.99171pt too wide) detected at line 1336
-\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 ([]) = \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 ([][
-]) + \U/msa/m/n/10 O\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^[\OT1
-/cmr/m/n/10 )([] \OMS/cmsy/m/n/10 ^^@ [][]\OT1/cmr/m/n/10 ) + [](\OML/cmm/m/it/
-10 H[]\OT1/cmr/m/n/10 ([][] + \OML/cmm/m/it/10 "\OT1/cmr/m/n/10 ([] \OMS/cmsy/m
-/n/10 ^^@ [][]\OT1/cmr/m/n/10 ))([] \OMS/cmsy/m/n/10 ^^@ [][]\OT1/cmr/m/n/10 ))
-([] \OMS/cmsy/m/n/10 ^^@ [][]\OT1/cmr/m/n/10 )
+Overfull \hbox (14.89948pt too wide) detected at line 906
+\OMS/cmsy/m/n/5 8\OML/cmm/m/it/5 ^^O > \OT1/cmr/m/n/5 0\OML/cmm/m/it/5 ; \OMS/c
+msy/m/n/5 9\OML/cmm/m/it/5 ^^N > \OT1/cmr/m/n/5 0[]\OMS/cmsy/m/n/5 j[] ^^@ []j 
+\OML/cmm/m/it/5 < ^^N[]\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 f\OT1/cmr/m/n/5 ([]) \O
+MS/cmsy/m/n/5 ^^@ \OML/cmm/m/it/5 f\OT1/cmr/m/n/5 ([])\OMS/cmsy/m/n/5 j[] \OML/
+cmm/m/it/5 < ^^O
  []
 
 
-Overfull \hbox (13.37267pt too wide) in alignment at lines 1336--1336
- [][][] []
+Overfull \hbox (5.16402pt too wide) detected at line 922
+[] [] \OMS/cmsy/m/n/5 ^^Q \OML/cmm/m/it/5 D[]f\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x
+[]\OT1/cmr/m/n/5 ) \OMS/cmsy/m/n/5 ^^Q []\OT1/cmr/m/n/5 ([][]) \OMS/cmsy/m/n/5 
+^^Q \OML/cmm/m/it/5 d[]f\OT1/cmr/m/n/5 ([][])
  []
 
-[6]
-Overfull \hbox (18.69316pt too wide) in paragraph at lines 1441--1441
+
+Overfull \hbox (10.53954pt too wide) detected at line 949
+\OML/cmm/m/it/5 Df\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x[]\OT1/cmr/m/n/5 ) = \U/msa/
+m/n/5 O\OML/cmm/m/it/5 f\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x[]\OT1/cmr/m/n/5 ) = (
+[]\OML/cmm/m/it/5 f\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x[]\OT1/cmr/m/n/5 )\OML/cmm/
+m/it/5 ; []f\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x[]\OT1/cmr/m/n/5 )\OML/cmm/m/it/5 
+; [] ; []f\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x[]\OT1/cmr/m/n/5 ))
+ []
+
+
+Overfull \hbox (9.4239pt too wide) detected at line 1048
+\OML/cmm/m/it/5 D[]f\OT1/cmr/m/n/5 ([][]) = \U/msa/m/n/5 O\OML/cmm/m/it/5 f\OT1
+/cmr/m/n/5 ([][])) \OMS/cmsy/m/n/5 ^^A [] \OT1/cmr/m/n/5 = \OMS/cmsy/m/n/5 j\U/
+msa/m/n/5 O\OML/cmm/m/it/5 f\OT1/cmr/m/n/5 ([][]))\OMS/cmsy/m/n/5 jj[]j [] \OML
+/cmm/m/it/5 ^^L \OT1/cmr/m/n/5 = \OMS/cmsy/m/n/5 j\U/msa/m/n/5 O\OML/cmm/m/it/5
+ f\OT1/cmr/m/n/5 ([][]))\OMS/cmsy/m/n/5 j [] \OML/cmm/m/it/5 ^^L
+ []
+
+
+Overfull \hbox (17.69788pt too wide) detected at line 1225
+[] \OT1/cmr/m/n/5 = [] \OML/cmm/m/it/5 d[]g[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 f\
+OT1/cmr/m/n/5 ([])) \OMS/cmsy/m/n/5 ^^A \OML/cmm/m/it/5 d[]f[]\OT1/cmr/m/n/5 ([
+])\OML/cmm/m/it/5 ;  \OMS/cmsy/m/n/5 8\OML/cmm/m/it/5 i \OT1/cmr/m/n/5 = 1\OML/
+cmm/m/it/5 ; [] ; d \OMS/cmsy/m/n/5 8\OML/cmm/m/it/5 j \OT1/cmr/m/n/5 = 1\OML/c
+mm/m/it/5 ; [] ; n
+ []
+
+
+Overfull \hbox (28.05658pt too wide) detected at line 1430
+\OML/cmm/m/it/5 f\OT1/cmr/m/n/5 ([]) = \OML/cmm/m/it/5 f\OT1/cmr/m/n/5 ([][]) +
+ \U/msa/m/n/5 O\OML/cmm/m/it/5 f\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 ^^[\OT1/cmr/m/n
+/5 )([] \OMS/cmsy/m/n/5 ^^@ [][]\OT1/cmr/m/n/5 ) + [](\OML/cmm/m/it/5 H[]\OT1/c
+mr/m/n/5 ([][] + \OML/cmm/m/it/5 "\OT1/cmr/m/n/5 ([] \OMS/cmsy/m/n/5 ^^@ [][]\O
+T1/cmr/m/n/5 ))([] \OMS/cmsy/m/n/5 ^^@ [][]\OT1/cmr/m/n/5 ))([] \OMS/cmsy/m/n/5
+ ^^@ [][]\OT1/cmr/m/n/5 )
+ []
+
+
+Overfull \hbox (45.23466pt too wide) detected at line 1430
+\OML/cmm/m/it/5 f\OT1/cmr/m/n/5 ([][]) + \U/msa/m/n/5 O\OML/cmm/m/it/5 f\OT1/cm
+r/m/n/5 (\OML/cmm/m/it/5 ^^[\OT1/cmr/m/n/5 )([] \OMS/cmsy/m/n/5 ^^@ [][]\OT1/cm
+r/m/n/5 ) + [](\OML/cmm/m/it/5 H[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x[] \OT1/cmr/
+m/n/5 + \OML/cmm/m/it/5 "\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x \OMS/cmsy/m/n/5 ^^@ 
+\OML/cmm/m/it/5 x[]\OT1/cmr/m/n/5 ))(\OML/cmm/m/it/5 x \OMS/cmsy/m/n/5 ^^@ \OML
+/cmm/m/it/5 x[]\OT1/cmr/m/n/5 ))(\OML/cmm/m/it/5 x \OMS/cmsy/m/n/5 ^^@ \OML/cmm
+/m/it/5 x[]\OT1/cmr/m/n/5 ) + \OML/cmm/m/it/5 o\OT1/cmr/m/n/5 (\OMS/cmsy/m/n/5 
+j[] ^^@ [][]j[]\OT1/cmr/m/n/5 )
+ []
+
+
+Overfull \hbox (105.17049pt too wide) in paragraph at lines 1541--1541
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1441--1441
+Underfull \hbox (badness 10000) in paragraph at lines 1541--1541
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1496--1496
+Underfull \hbox (badness 10000) in paragraph at lines 1596--1596
 
  []
 
 
-Overfull \hbox (5.94188pt too wide) detected at line 1510
-\OML/cmm/m/it/10 A[] \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 ;  A[] \OT1/cmr/m/n/
-10 = [] \OML/cmm/m/it/10 ;  A[] \OT1/cmr/m/n/10 = [] []
+Overfull \hbox (26.9734pt too wide) detected at line 1610
+\OML/cmm/m/it/5 A[] \OT1/cmr/m/n/5 = [] \OML/cmm/m/it/5 ;  A[] \OT1/cmr/m/n/5 =
+ [] \OML/cmm/m/it/5 ;  A[] \OT1/cmr/m/n/5 = [] []
  []
 
 
-Overfull \hbox (2.1712pt too wide) detected at line 1632
-\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^Ux \OT1/cmr/m/n/10 + (1 \
-OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^U\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 y\OT1
-/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 ^^Uf\OT1/cmr/m/n/10 (\OML/c
-mm/m/it/10 x\OT1/cmr/m/n/10 ) + (1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^U\OT
-1/cmr/m/n/10 )\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 y\OT1/cmr/m/n
-/10 )\OML/cmm/m/it/10 ;  \OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 x; y \OMS/cmsy/m/n/
-10 2 \OML/cmm/m/it/10 A;  \OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 ^^U \OMS/cmsy/m/n/
-10 2 \OT1/cmr/m/n/10 [0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1]
+Overfull \hbox (9.86395pt too wide) detected at line 1732
+\OML/cmm/m/it/5 f\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 ^^Ux \OT1/cmr/m/n/5 + (1 \OMS/
+cmsy/m/n/5 ^^@ \OML/cmm/m/it/5 ^^U\OT1/cmr/m/n/5 )\OML/cmm/m/it/5 y\OT1/cmr/m/n
+/5 ) \OMS/cmsy/m/n/5 ^^T \OML/cmm/m/it/5 ^^Uf\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x\
+OT1/cmr/m/n/5 ) + (1 \OMS/cmsy/m/n/5 ^^@ \OML/cmm/m/it/5 ^^U\OT1/cmr/m/n/5 )\OM
+L/cmm/m/it/5 f\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 y\OT1/cmr/m/n/5 )\OML/cmm/m/it/5 
+;  \OMS/cmsy/m/n/5 8\OML/cmm/m/it/5 x; y \OMS/cmsy/m/n/5 2 \OML/cmm/m/it/5 A;  
+\OMS/cmsy/m/n/5 8\OML/cmm/m/it/5 ^^U \OMS/cmsy/m/n/5 2 \OT1/cmr/m/n/5 [0\OML/cm
+m/m/it/5 ; \OT1/cmr/m/n/5 1]
  []
 
-[7]
-Overfull \hbox (11.7938pt too wide) detected at line 1737
-\OMS/cmsy/m/n/7 jj\OML/cmm/m/it/7 G\OT1/cmr/m/n/7 (\OML/cmm/m/it/7 x; w\OT1/cmr
-/m/n/7 (\OML/cmm/m/it/7 x\OT1/cmr/m/n/7 )) \OMS/cmsy/m/n/7 ^^@ \OML/cmm/m/it/7 
-y[]\OMS/cmsy/m/n/7 jj[] ^^T jj\OML/cmm/m/it/7 G\OT1/cmr/m/n/7 (\OML/cmm/m/it/7 
-x; w\OT1/cmr/m/n/7 (\OML/cmm/m/it/7 x\OT1/cmr/m/n/7 )) \OMS/cmsy/m/n/7 ^^@ \OML
-/cmm/m/it/7 G\OT1/cmr/m/n/7 (\OML/cmm/m/it/7 x; y[]\OT1/cmr/m/n/7 )\OMS/cmsy/m/
-n/7 jj[] \OT1/cmr/m/n/7 + \OMS/cmsy/m/n/7 jj\OML/cmm/m/it/7 G\OT1/cmr/m/n/7 (\O
-ML/cmm/m/it/7 x; y[]\OT1/cmr/m/n/7 ) \OMS/cmsy/m/n/7 ^^@ \OML/cmm/m/it/7 G\OT1/
-cmr/m/n/7 (\OML/cmm/m/it/7 x[]; y[]\OT1/cmr/m/n/7 )\OMS/cmsy/m/n/7 jj[]
- []
+[1
 
-
-Overfull \hbox (25.0219pt too wide) in paragraph at lines 1737--1737
-[] 
- []
-
-
-Overfull \hbox (12.00395pt too wide) in paragraph at lines 1737--1737
-[] $[]$
- []
-
-[8]
-Overfull \hbox (58.30875pt too wide) in paragraph at lines 1754--1756
-[]\TU/lmr/bx/n/24.88 Rigurda gli spazi topologici. PRIMA dell’esonero. 
- []
-
-[9] (./analisi_vettoriale.aux)
-
-LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 3.25002pt have occurred.
-
- ) 
+] [2] (./biglietto_analisi_vettoriale.aux) ) 
 Here is how much of TeX's memory you used:
- 14077 strings out of 492998
- 293262 string characters out of 6139961
- 466781 words of memory out of 5000000
- 17942 multiletter control sequences out of 15000+600000
- 543879 words of font info for 103 fonts, out of 8000000 for 9000
+ 14008 strings out of 492998
+ 292013 string characters out of 6139961
+ 575503 words of memory out of 5000000
+ 17887 multiletter control sequences out of 15000+600000
+ 539937 words of font info for 76 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 37i,17n,33p,10405b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 35i,10n,33p,10395b,303s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on analisi_vettoriale.pdf (9 pages).
+Output written on biglietto_analisi_vettoriale.pdf (2 pages).

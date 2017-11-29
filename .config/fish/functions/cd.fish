@@ -1,3 +1,3 @@
 function cd
-    builtin cd $argv; j;
+    builtin cd $argv;
 end
