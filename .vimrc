@@ -24,12 +24,14 @@ set softtabstop =4
 set shiftwidth  =4
 set scrolloff   =4
 
-set cursorline
+"set cursorline "too slow!
+set nocursorline
+set lazyredraw
 
 set foldenable
 set foldmethod=syntax
-set foldlevel=99
-set foldcolumn=1
+set foldlevel=1
+set foldcolumn=0
 
 set backupdir=~/.vim_backup//,.
 set directory=~/.vim_backup//,.
@@ -44,6 +46,8 @@ set guioptions-=T
 set guioptions-=r
 
 set guicursor+=a:blinkon0
+
+set guifont=profont\ Medium\ Semi-Condensed\ 10
 
 
 
@@ -165,41 +169,43 @@ autocmd BufWinEnter *.* silent loadview
 call plug#begin('~/.vim/bundle')
 Plug 'godlygeek/csapprox'
 Plug 'flazz/vim-colorschemes'
-Plug 'jnurmine/Zenburn'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
 Plug 'ervandew/supertab'
-Plug 'airblade/vim-rooter'
-Plug 'takac/vim-hardtime'
 Plug 'godlygeek/tabular'
 Plug 'rhysd/clever-f.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'EinfachToll/DidYouMean'
 Plug 'Konfekt/FastFold'
-Plug 'mileszs/ack.vim'
 Plug 'Shougo/neocomplete.vim'
 Plug 'matze/vim-move'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-peekaboo'
-Plug 'junegunn/vim-slash'
-
 Plug 'xuhdev/vim-latex-live-preview'
+
+
+
+"Plug 'airblade/vim-rooter'
+"Plug 'takac/vim-hardtime'
+"Plug 'mileszs/ack.vim'
+"Plug 'jnurmine/Zenburn'
+"Plug 'junegunn/vim-slash'
 
 "Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'junegunn/fzf.vim'
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 "
-Plug 'xolox/vim-misc'
+"Plug 'xolox/vim-misc'
 
 "Plug 'altercation/vim-colors-solarized'
 "Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'chrisbra/histwin.vim'
-Plug 'metakirby5/codi.vim'
+"Plug 'metakirby5/codi.vim'
 "Plug 'xolox/vim-colorscheme-switcher'
 "Plug 'wkentaro/conque.vim' 
 "Plug 'vim-scripts/Gundo'
@@ -215,7 +221,7 @@ call plug#end()
 "                   === PLUGIN OPTIONS ===
 
 let g:airline_theme = "zenburn"
-let g:move_key_modifier = 'C'
+let g:move_key_modifier = 'C' "vim-move keybinding
 let g:JavaComplete_SourcesPath = "~/progetti/silvestri/java-project/gapp"
 let g:syntastic_mode_map = {"mode": "passive","active_filetypes": [],"passive_filetypes":[]}
 let g:ctrlp_cmd = 'CtrlPMRUFiles'
@@ -285,6 +291,8 @@ function! SettingsCpp()
     nnoremap <F4> :wa <CR> :!g++ % -o comp_%:r ;  ./comp_%:r < input.txt <CR>
     "nnoremap <F6> :wa <CR> :!make;  cygstart ./run <CR>
 
+    setlocal foldcolumn=1
+
     abbr vi vector<int>
     abbr vvi vector<vector<int> >
     abbr fori for(int i = 0; i < n; i++) {<CR>
@@ -315,26 +323,30 @@ endfunction
 function! SettingsPython()
     nnoremap <F4> :wa <CR> :!python % <CR>
     nnoremap <F5> :wa <CR> :!python spiketrap/lib/classifier_example.py <CR>
+    setlocal foldcolumn=1
 endfunction
 
 function! SettingsLatex()
-    "nnoremap <F4> :wa <CR> :!xelatex --shell-escape % <CR>
-    nnoremap <F4> :wa <CR> :!pdflatex --shell-escape % <CR>
+    nnoremap <F4> :wa <CR> :!xelatex --shell-escape % <CR>
+    "nnoremap <F4> :wa <CR> :!pdflatex --shell-escape % <CR>
     nnoremap <F5> :wa <CR> :!zathura %:r.pdf <CR>
     setlocal nocursorline
     set foldmethod=manual
     set foldcolumn=0
     "set regexpengine=1
     set colorcolumn=80
+    highlight ColorColumn ctermbg=DarkGrey guibg=lightgrey
+
     "syn sync minlines=10
     "syn sync maxlines=50
+
     :NoMatchParen
     setlocal updatetime=1000
     abbr ,a \begin{align*}<CR><CR>\end{align*}<UP>
     inoremap {<CR> {<CR><CR>}<ESC>kcc
+
     set conceallevel=2
     set concealcursor=vc
     let g:tex_conceal="adgms"
     highlight Conceal NONE
-    "highlight Conceal ctermfg=5
 endfunction

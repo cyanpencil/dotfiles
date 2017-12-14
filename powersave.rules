@@ -1,0 +1,2 @@
+KERNEL=="AC", SUBSYSTEM=="power_supply", ATTR{online}=="1", RUN+="/home/luca/scripts/charger_udev.sh true"
+KERNEL=="AC", SUBSYSTEM=="power_supply", ATTR{online}=="0", RUN+="/home/luca/scripts/charger_udev.sh false"

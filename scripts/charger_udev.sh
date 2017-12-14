@@ -1,10 +1,19 @@
 #!/bin/bash
 
-#export DISPLAY=:0 
-#export XAUTHORITY=/home/luca/.Xauthority
-#export XAUTHORITY=/tmp/serverauth.FOXgx0jcUS
 
-#sux luca notify-send aaaaaaaaaaa
+if [ "$EUID" -ne 0 ]
+    then echo "Please run as root"
+    exit
+fi
+
+plugged_in="true"
+
+if [[ $# -eq 0 ]]; then
+    plugged_in=$(acpi --ac-adapter | sed -r "s/.*: (.*)-line\$/\1/g")
+else 
+    plugged_in=$1
+fi
+
 
 pid=$(pgrep -t tty$(fgconsole) xinit)
 pid=$(pgrep -P $pid -n)
@@ -20,11 +29,11 @@ import_environment() {
 
 import_environment XAUTHORITY USER DISPLAY DBUS_SESSION_BUS_ADDRESS
 
-if [[ $1 == "true" ]]; then
+if [[ $plugged_in == "true" ]]; then
     su luca -c 'DISPLAY=:0.0 notify-send "Charger plugged in!"'
-    su luca -c 'compton -i 0.8 -b -d :0'
-    su luca -c 'xbacklight -set 80'
     su luca -c '~/scripts/switch_bar.sh i3blocks'
+    su luca -c 'xbacklight -set 80'
+    su luca -c 'compton -i 0.8 -b'
 else
     su luca -c 'DISPLAY=:0 notify-send "Charger plugged off!"'
     su luca -c 'xbacklight -set 10'

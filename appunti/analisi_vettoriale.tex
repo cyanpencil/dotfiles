@@ -710,6 +710,7 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
         $x' = x - x_0, y' = y - y_0$, e scrivo la funzione $f(x,y) = f'(x',y')$.
         Poi calcolo il limite di $f'$ per $(x', y') \rightarrow (0,0)$.
     }
+
     \loss{
         Per calcolare il limite di una funzione a piú variabili spesso
         aiuta molto imporre $y = x^\beta$, con il giusto $\beta$.
@@ -828,6 +829,7 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
         Ponendo $\varphi(t) = f(\v{x}_0 + t\v{v})$, si ottiene $ D_\v{v} f(x_0) = \varphi'(0)$.
     }
 }
+
 
 \ldef{
     Prende il nome di \b{derivata parziale} di $f$ in $x_0$ rispetto alla variabile $ x_i$ la 
@@ -1106,6 +1108,7 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
     Sia $h:A \subseteq \mathbb{R}^n \rightarrow \mathbb{R}^d$, definita
     come $\v{x} \rightarrow g(f(\v{x}))$.\\
     Allora $h$ é differenziabile in $A$ e inoltre:
+
     \[
         J_h(\v{x}) = J_g(f(\v{x})) \cdot J_f(\v{x}) =
         \begin{bmatrix}
@@ -1192,6 +1195,7 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
         \right) 
     \]
     Definiamo $h : \mathbb{R}^2 \rightarrow \mathbb{R}$ come
+
     \[
         h(s, t):= g(\pi(s, t)); \quad c = h(s,t) = g(\pi(s,t))
     \]
@@ -1316,6 +1320,7 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
             o(| \v{x} - \v{x}_0 |^2)
         \]
     }
+
     \ldim{
         Se $f \in C^2(A) \implies F \in C^2([0, 1]) $, e quindi
         \[
@@ -1674,6 +1679,7 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
         (dove $H[w]$ \'e una funzione).
         Abbiamo allora che $H[w](x) = G(x, w(x))$. Prima di andare avanti
         , dobbiamo dimostrare che $H$ \'e ben posta:
+
         \mdim{
             Bisogna dimostrare che $H[w] \in X$, cio\'e che:\\
             - $H[w]$ \'e continua su $ [x_0-r,x_0+r] $ (per comp.
@@ -1734,11 +1740,173 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
             &\implies g'(x) = \frac{-F_x(x,g(x))}{F_y(x,g(x))} 
         \end{align*}
     }
-
 }
 
+\ldef{
+    Sia  $f:A\subseteq\mathbb{R}^2\rightarrow\mathbb{R}$, con $A$ aperto, $F \in C^1$, $z = \{ (x,y) \in A | F(x,y) = 0\}$, allora:\\
+    un punto $(x_0,y_0) \in z$ si dice \b{punto regolare} se $\triangledown F(x_0, y_0) \neq (0,0)$.\\
+    Un punto $(x_0,y_0) \in z$ si dice \b{punto singolare} se $\triangledown F(x_0, y_0) = (0,0)$.
+    \loss{
+        Se un punto \'e regolare, allora posso applicarci Dini. Inoltre, $z$ \'e il sostegno di 
+        una curva.
+    }
+    \loss{
+        Se un punto invece \'e singolare, non \'e detto che non ci posso applicare Dini.
+    }
+}
+
+\ldef{
+    Equazione retta tangente a una funzione implicita:
+    \[ F_x(x_0, y_0)(x - x_0) + D_y (x_0, y_0)(y - y_0) = 0 \]
+    \[\text{ oppure  } y = g(x_0) + g'(x_0)(x - x_0) \]
+}
+
+\lprop{
+    Preso un insieme di livello $\{ F(x,y) = c \}$, con $F \in C^1$, allora se $(x_0, y_0)$ \'e 
+    un punto regolare, allora posso esprimere $y = g(x)$ oppure $ x = h(y)$ (in un intorno
+    di $(x_0, y_0)$, poich\'e dato che \'e regolare vuol dire che almeno una delle due
+    derivate parziali \'e diversa da zero. 
+}
+
+\ltheorem{
+    Dini generale.
+    Manca!
+    \ldim{
+        Manca!
+    }
+}
+
+\ldef{
+    Le coordinate sferiche sono definite in questo modo:
+    \begin{tabular}{cc} 
+            $\begin{cases}
+                x(\rho, \theta, \varphi) = \rho \cos \theta \sin \varphi\\
+                y(\rho, \theta, \varphi) = \rho \sin \theta \sin \varphi\\
+                z(\rho, \theta, \varphi) = \rho \cos \varphi
+            \end{cases}$
+    &
+        $\begin{aligned}
+            \rho &= \text{ raggio della sfera} \\
+            \theta &\in [0, 2\pi] \\
+            \varphi &\in [0, \pi] 
+        \end{aligned}$
+    \end{tabular}
+}
+
+\ltheorem{
+    Il \b{teorema dei moltiplicatori di Lagrange} dice che:
+    dati $f, F: A \subseteq \mathbb{R}^n \rightarrow \mathbb{R}$, entrambi
+    $C^1$, se $x_0$ \'e un punto critico di $f$, e $\triangledown f(x_0) \neq 0$,
+    allora esiste $\lambda_0 \in \mathbb{R}$ tale che 
+    \[
+        \triangledown f(x_0) = \lambda_0 \triangledown F(x_0) \text{ per }
+        \begin{cases}
+            \triangledown f(x_0) = \lambda_0 \triangledown F(x_0)\\
+            F(x_0) = 0
+        \end{cases}
+    \]
+    Quel $\lambda_0$ prende il nome di moltiplicatore di Lagrange.
+    \loss{
+        Ponendo $L(\v{x}, \lambda) = f(x) - \lambda F(x)$, otteniamo 
+        \[\triangledown L(\v{x}, \lambda) = (\triangledown f(\v{x}) -
+        \lambda\triangledown F(\v{x}), -F(x))\]
+        e questo gradiente si annulla quando $\triangledown f(\v{x}) = \lambda
+        \triangledown F(\v{x})$ e $f(x) = 0$.  Quindi i punti critici di $f(x)$
+        sul vincolo $F(x)$ sono gli stessi di $L(x, \lambda)$.
+    }
+
+    \ldim{
+        Dimostriamolo solo nel caso di due dimensioni: Sapendo che
+        $\triangledown F(x_0, y_0) \neq 0$, supponendo che $F_y \neq 0$ (ma
+        potrebbe anche essere $F_x \neq 0$, basta che una delle due derivate
+        parziali sia $\neq 0$), allora per Dini:\\ $\exists g \in C^1$ tale che
+        $F(x,y) = 0 \Leftrightarrow y = g(x)$ in un intorno di $(x_0, y_0)$.
+        Consideriamo $\varphi(t) = f(t, g(t))$. poich\'e $t \rightarrow (t,
+        g(t))$ \'e una parametrizzazione del bordo $(F(x,y) = 0)$, abbiamo che $\varphi(t)
+        \in C^1$. Inolre, $(x_0, y_0)$ \'e punto di estremo relativo per
+        $f_{|\{F=0\}}$, e $t=x_0$ \'e punto di estremo relativo di $\varphi$.
+        Quindi per il teorema di Fermat:\\ $\varphi'(x_0) = 0 \implies
+        \triangledown f(x_0, g(x_0)) \cdot (1, g'(x_0)) = 0 \implies\\
+        \triangledown f(x_0, y_0) \cdot (1, g'(x_0)) = 0$.  Quindi significa
+        che $\triangledown f(x_0, y_0) = 0 $ oppurre $\triangledown f(x_0, y_0)
+        \perp (1, g'(x_0))$.  Sempre per Dini, $\varphi(t) := f(t, g(t)) = 0$
+        per $t$ in un intorno di $x_0$. Quindi $\varphi'(x_0) = 0 \implies
+        \triangledown F(x_0, g(x_0))(1, g'(x_0)) = 0  \implies \triangledown F
+        (x_0, y_0)(1, g'(x_0)) = 0 \implies \triangledown F(x_0, y_0) \perp (1,
+        g'(x_0)) \implies \triangledown F(x_0, y_0) \;//\; \triangledown
+        f(x_0, y_0)$ oppure $\triangledown f(x_0, y_0) = 0$.
+        Dato che sono paralleli $\exists \lambda_0$ tale che
+        $\triangledown f(x_0, y_0) = \lambda_0 \triangledown F(x_0, y_0)$.
+        Il $\lambda_0$ viene messo al membro di destra per includere il caso
+        $\triangledown f(x_0, y_0) = 0$.
+
+    }
+}
+
+{\large mancano gli appunti di venus qui}
+
+\ltheorem{
+    Il teorema di Dini per sistemi in $\mathbb{R}^3$:\\
+    Siano $F, G \colon A \subseteq \mathbb{R}^3 \rightarrow \mathbb{R}$ di classe
+    $C^1$, con $A$ aperto. Sia $(x_0, y_0, z_0) \in A$ tale che 
+    $\begin{cases} F(x_0,y_0,z_0) = 0 \\ G(x_0,y_0,z_0) = 0 \end{cases}$
+    e $\begin{bmatrix} F_y & F_z \\ G_y & G_z \end{bmatrix} (x_0,y_0,z_0) \neq 0$
+    Allora esiste un intorno $I$ di $x_0$, e un intorno $J$ di $(y_0, z_0)$ e 
+    esistono $\varphi : I \rightarrow J, x \rightarrow (f(x), g(x))$, cio\'e 
+    esistono $f$ e $g$ tali che 
+    $I\times J\colon  \begin{cases} F(x_0,y_0,z_0) = 0 \iff z = f(x)  \\
+    G(x_0,y_0,z_0) = 0 \iff y = g(x) \end{cases}$,
+    inoltre $f, g \in C^1$, e 
+    $f(x) = -\frac{\begin{bmatrix}F_x&F_z\\G_x&G_z\end{bmatrix}
+        }{\begin{bmatrix}F_y&F_z\\G_y&G_z\end{bmatrix}}, 
+    g(x) = -\frac{\begin{bmatrix}F_y&F_x\\G_y&G_x\end{bmatrix}
+        }{\begin{bmatrix}F_y&F_z\\G_y&G_z\end{bmatrix}}$ 
+}
+
+{\large Manca un bel pezzo anche qui.}
 
 
+\ldef{
+    Un \b{diffeomorfismo} \'e una funzione sia $C^1$, sia invertibile.
+    \loss{
+        E quindi anche la funzione inversa \'e $C^1$!
+    }
+}
+
+\ltheorem {
+    Siano $A,B$ due aperti di $\mathbb{R}^2$.
+    Data una funzione $\varphi : A \rightarrow B$, definita come 
+    $(u, v) \rightarrow (X(u, v), Y(u, v))$, in modo tale che $x = X(u, v)$
+    e $y = Y(u, v)$, allora se $E \subseteq B$, e $A$ \'e un insieme
+    misurabile, allora :
+    \[
+        \iint\limits_E f(x,y)\,dx\,dy = \iint\limits_{\varphi^{-1}(E)}
+        f(X(u,v), Y(u,v)) \,| J_\varphi (u,v) | \,du\,dv
+    \]
+    cio\'e, per lasciare invariato il valore dell'integrale dopo
+    un cambio di variabile, bisogna moltiplicare per il determinante
+    della Jacobiana del cambio di variabile $\varphi(u,v)$
+    \ldim{
+        La dimostrazione \'e troppo impegnativa, non richiesta.
+    }
+}
+
+\ldef{
+    Le \b{Coordinate polari per integrali multipli}:\\
+    \'E un cambio di variabile in cui $(u, v)$ sono $(\rho, \theta)$:\\
+    \begin{equation*} \varphi(u, v) \rightarrow \begin{cases}
+        x = \rho \cos\theta \quad \rho \in [0, +\infty]\\
+        y = \rho \sin\theta \,\quad \theta \in [0, 2\pi]
+    \end{cases} \end{equation*}
+    \loss{
+        Il determinante della jacobiana $J_\varphi(\rho, \theta)$ \'e sempre 
+        $\rho$.
+    }
+    \loss{
+        In realt\'a, $\varphi$ non \'e sempre invertibile, in quanto ha problemi
+        nella retta $y = 0$.
+    }
+}
 
 
 \end{multicols}
@@ -1771,22 +1939,5 @@ $4c - 3 = (2a - 1) (2b - 1)$
 
 %:set iskeyword=30-200
 %:set updatetime=500
+
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

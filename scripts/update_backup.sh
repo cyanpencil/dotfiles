@@ -3,7 +3,7 @@ syncpath="/home/luca/sync/dotfiles"
 homefiles=".bashrc .vimrc .Xresources .xbindkeysrc useful .fzf.bash .inputrc"
 configdirs="i3 dunst fish"
 homedirs="progetti scripts appunti calibre"
-others="/etc/X11/xinit/xinitrc"
+others="/etc/X11/xinit/xinitrc /etc/udev/rules.d/powersave.rules"
 
 
 cd $syncpath

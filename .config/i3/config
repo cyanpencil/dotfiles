@@ -241,8 +241,9 @@ for_window [title="Find"] floating enable
 
 exec --no-startup-id urxvt -name metask
 for_window [instance="metask"] floating enable;
-    for_window [instance="metask"] move scratchpad; [instance="metask"] scratchpad show; move position 75px 22px; resize grow height 80px; resize grow width 800px; move scratchpad;
-for_window [instance="metask"] resize set width 1200px
+#for_window [instance="metask"] move scratchpad; [instance="metask"] scratchpad show; move position 75px 22px; resize grow height 80px; resize grow width 800px; move scratchpad;
+for_window [title="metask"] move scratchpad; floating enable; resize shrink width 10000px; resize grow width 400px; resize shrink height 10000px; resize grow height 200px;
+#for_window [instance="metask"] resize set width 1200px
 bindsym $mod+s [instance="metask"] scratchpad show
 
 
