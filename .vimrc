@@ -160,8 +160,8 @@ augroup reload_vimrc " {
 augroup END " }
 
 "auto reload folds
-autocmd BufWinLeave *.* mkview!
-autocmd BufWinEnter *.* silent loadview
+"autocmd BufWinLeave *.* mkview!
+"autocmd BufWinEnter *.* silent loadview
 
 "                   === PLUGIN LIST ===
 
@@ -188,7 +188,7 @@ Plug 'xuhdev/vim-latex-live-preview'
 
 "Plug 'airblade/vim-rooter'
 "Plug 'takac/vim-hardtime'
-"Plug 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'
 "Plug 'jnurmine/Zenburn'
 "Plug 'junegunn/vim-slash'
 
@@ -291,7 +291,7 @@ function! SettingsCpp()
     nnoremap <F4> :wa <CR> :!g++ % -o comp_%:r ;  ./comp_%:r < input.txt <CR>
     "nnoremap <F6> :wa <CR> :!make;  cygstart ./run <CR>
 
-    setlocal foldcolumn=1
+    "setlocal foldcolumn=1
 
     abbr vi vector<int>
     abbr vvi vector<vector<int> >
