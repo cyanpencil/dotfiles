@@ -29,7 +29,7 @@ set nocursorline
 set lazyredraw
 
 set foldenable
-set foldmethod=syntax
+set foldmethod=manual
 set foldlevel=1
 set foldcolumn=0
 
@@ -61,6 +61,8 @@ nnoremap l <C-w>l
 "change tabs
 nnoremap H gT
 nnoremap L gt
+nnoremap n gT
+nnoremap p gt
 
 nmap - /
 nmap _ ?
@@ -184,7 +186,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'xuhdev/vim-latex-live-preview'
 
-
+Plug 'tikhomirov/vim-glsl' "enables syntax highlight in shader files
 
 "Plug 'airblade/vim-rooter'
 "Plug 'takac/vim-hardtime'
@@ -288,8 +290,10 @@ endfunction
 
 function! SettingsCpp()
     nnoremap <F5> :wa <CR> :!g++ % -o comp_%:r ;  ./comp_%:r <CR>
-    nnoremap <F4> :wa <CR> :!g++ % -o comp_%:r ;  ./comp_%:r < input.txt <CR>
+    "nnoremap <F4> :wa <CR> :!g++ % -o comp_%:r ;  ./comp_%:r < input.txt <CR>
     "nnoremap <F6> :wa <CR> :!make;  cygstart ./run <CR>
+
+    nnoremap <F4> :wa <CR> :!./build.sh; cd bin; ./myview; <CR>
 
     "setlocal foldcolumn=1
 
@@ -334,8 +338,8 @@ function! SettingsLatex()
     set foldmethod=manual
     set foldcolumn=0
     "set regexpengine=1
-    set colorcolumn=80
-    highlight ColorColumn ctermbg=DarkGrey guibg=lightgrey
+    "set colorcolumn=80
+    "highlight ColorColumn ctermbg=DarkGrey guibg=lightgrey
 
     "syn sync minlines=10
     "syn sync maxlines=50

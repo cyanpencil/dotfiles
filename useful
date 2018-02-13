@@ -1,8 +1,5 @@
-
-l'attacco dei NULL. Mental insanity.
-Everything slowly becomes NULL. There are not a lot of ways to revert that.
-
-
+Se pacman rompe il cazzo per le chiavi esegui:
+    sudo pacman -S archlinux-keyring
 
 telnet mapscii.me (Assurdo)
 terminal-parrot :)
@@ -21,6 +18,7 @@ udev rules: /etc/udev/rules.d/...
 Aggiunti moltissimi nuovi font bitmap. Vedere preferiti di chrome.
 
 
+Make gif of screencast: peek
 Visual xrandr: arandr
 Prova eventi input: xev, xbindkeys -k
 Condividi file facilmente: transfer
@@ -59,3 +57,27 @@ toilet -F border -t ciao io sono luca | lolcat -a
         mount /dev/sdaY /mnt/boot
         arch-chroot /mnt /bin/bash
         mkinitcpio -p linux
+
+
+ -- CALENDARIO --
+
+Manca solo l'orale di analisi e quello di combinatoria e ho finito :)
+
+
+ -- ETH --
+
+L'application online deve essere compilata entro il 31 marzo.
+Tutti i documenti cartacei necessari devono arrivare entro il 4 Aprile 2018.
+Le lezioni cominciano il 18 settembre 2018!!
+I documenti _non_ devono essere tradotti, se sono in italiano, inglese, tedesco o francese (da confermare).
+Documenti necessari:
+    -Una copia stampata e firmata dell'application form
+    -Una copia del diploma di liceo.
+    -Transcript degli esami
+    -Certificato di iscrizione con durata degli studi 
+    -Certificato d'inglese (livello C1)
+    -2 lettere di raccomandazione 
+    -GRE test score (opzionale)
+    -Curriculum vitae
+    -Scan del passaporto o della carta d'identità
+    -Prova del pagamento avvenuto

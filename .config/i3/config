@@ -236,6 +236,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 for_window [class="Nautilus" instance="file_progress"] floating enable
 for_window [class="Xmessage"] floating enable
 for_window [title="Find"] floating enable
+for_window [title="yview"] floating enable
 #for_window [class="Zathura"] fullscreen enable
 
 

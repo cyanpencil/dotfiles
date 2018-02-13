@@ -45,11 +45,11 @@ printf "%.2f%%\n", $cpu_usage;
 #printf "%.2f%%\n", $cpu_usage;
 
 # Print color, if needed
-if ($cpu_usage >= $t_crit) {
-    print "#FF0000\n";
-    exit 33;
-} elsif ($cpu_usage >= $t_warn) {
-    print "#FFFC00\n";
-}
+#if ($cpu_usage >= $t_crit) {
+    #print "#FF0000\n";
+    #exit 33;
+#} elsif ($cpu_usage >= $t_warn) {
+    #print "#FFFC00\n";
+#}
 
 exit 0;

@@ -7,8 +7,10 @@
 \usepackage{multicol}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{mathtools}
 \usepackage{xfrac}
 \usepackage{multirow}
+\usepackage{abraces}
 \geometry{top = 3mm, lmargin=10mm, rmargin=10mm, bottom=3mm}
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
@@ -65,6 +67,7 @@
     {\hfill \scriptsize {#1}}}
 \newcommand{\mprop}[1]{%
     {\smallbreak\par\begin{tabular}{ll} \textbf{Prop.} & \begin{minipage}[t]{0.8\columnwidth}\emph  {#1}\end{minipage}\tabularnewline \end{tabular}}\smallskip\par}
+\newcommand{\shortoverbrace}[2]{\aoverbrace[U]{#1}^{\mathclap{#2}}}%
 
 \makeatletter
 \g@addto@macro\normalsize{%

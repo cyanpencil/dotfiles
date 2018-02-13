@@ -2080,6 +2080,7 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
     \loss{
         Lo jacobiano di una superficie regolare ha sempre rango 2.
     }
+
     \loss{
         Il cono non \'e una superficie regolare, in quanto nel
         vertice non \'e $C^1$.
@@ -2218,11 +2219,65 @@ Ha la proprieta' simmetrica, ed \`{e} lineare rispetto al primo termine:
     $A, B : E \longrightarrow \mathbb{R}$, con $\overline{D} \subseteq E
     \subseteq \mathbb{R}^2$, con $E$ aperto e $A, B \in C^1$.
     $\underbrace{Allora}_\text{ciao}$ valgono:
-    \begin{align*}
+   \begin{align*}
         \iint\limits_D A_x(x,y)\,dx\,dy = \int\limits_{\delta^+D} A(x,y)\,dy \\
         \iint\limits_D B_y(x,y)\,dx\,dy = \int\limits_{\delta^+D} A(x,y)\,dx
     \end{align*}
 }
+
+\lprop{
+    L'area di una regione di piano interna a una curva polare si ottiene nel seguente
+    modo:
+    \[
+        \iint\limits_D 1 \,dx\,dy  \overset{\text{polari}}{\implies}
+        \int_0^{2\pi}  \int_0^{\rho(\theta)} \rho \, d\rho \,d\theta =
+        \frac{1}{2} \int_0^{2\pi} \rho(\theta)^2 \, d\theta
+    \]
+}
+
+\lprop{
+    In generale, dato il piano di equazione $ax + by + cz = 0$, il vettore 
+    $(a, b, c)$ \'e normale al piano.
+}
+
+\lprop{
+    In una sfera, la normale uscente in un punto \'e 
+    \[
+        n = \left(\frac{x}{|r|} ,\frac{y}{|r|} ,\frac{z}{|r|}\right)
+        \text{ dove } r = (x, y, z)
+    \]
+}
+
+\lprop{
+    In generale, se $+\delta \Sigma = + \delta \Sigma'$, cio\'e se due superfici
+    hanno lo stesso bordo, vale che
+    \[
+        \int_\Sigma rot F \cdot n \, \delta \varsigma = 
+        \int_{\Sigma'} rot F \cdot n' \, \delta \varsigma'
+    \]
+}
+
+\lprop{ 
+    Nelle coordinate sferiche vale che:
+    \[
+        |r_\theta \times r_\varphi | = \sin \varphi
+    \]
+}
+
+\ldef {
+    \b{Superfici di rotazione}: Data una curva $\gamma$ semplice e regolare,
+    nel semipiano $\{y = 0, x > 0\}$, ruotando $\gamma$ attorno 
+    all' asse z ottengo una superficie. Sappiamo tuttavia che 
+    \begin{align*}
+        r_\theta &= (-x(t) \sin\theta, x(t) \cos\theta, 0) \\
+        r_t &= (-x'(t) \cos\theta, x'(t)\sin\theta, z'(t)) \\
+        |r_\theta \times r_t | &= x(t)|\gamma'(t)| \\
+        \text{Area}(D) &= \int_\varsigma 1\, d\sigma = \int_0^{\theta_0}\int_a^b x(t) |\gamma'(t)| \, dt\,d\theta = \\
+        &= \theta_0 \int_\gamma x \, ds = \theta_0 \cdot \shortoverbrace{x_B}^{\mathclap{\text{baricentro}}} \cdot \underbracket{L(x)}_{\mathclap{\text{lunghezza}}}
+    \end{align*}
+
+}
+
 
 \end{multicols}
 %\msection{Personal reminders}
