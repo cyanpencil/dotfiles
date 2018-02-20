@@ -75,9 +75,4 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore cache --ignore .c
 bind -x '"\C-p": vim $(fzf);'
 
 
-#setxkbmap us
-#setxkbmap -option "ctrl:nocaps"
-#setxkbmap -option "compose:caps"
-setxkbmap us
 xset r rate 150 25
-alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"

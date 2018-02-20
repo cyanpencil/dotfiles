@@ -247,6 +247,8 @@ for_window [title="metask"] move scratchpad; floating enable; resize shrink widt
 #for_window [instance="metask"] resize set width 1200px
 bindsym $mod+s [instance="metask"] scratchpad show
 
+bindsym $mod+x exec --no-startup-id nautilus
+
 
 
 smart_gaps on

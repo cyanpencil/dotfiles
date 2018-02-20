@@ -49,6 +49,8 @@ set guicursor+=a:blinkon0
 
 set guifont=profont\ Medium\ Semi-Condensed\ 10
 
+filetype plugin indent on
+
 
 
 "                   === MOVEMENT MACROS === 
