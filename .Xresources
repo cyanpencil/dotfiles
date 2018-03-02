@@ -79,61 +79,99 @@ URxvt.cursorUnderline:      false
 ! Pointer
 URxvt.pointerBlank:         true
 
-#define S_base03        #002b36
-!#define S_base02        #073642
-#define S_base02        #000000
-#define S_base01        #586e75
-#define S_base00        #657b83
-!#define S_base0         #839496
-#define S_base0         #ffffff
-#define S_base1         #93a1a1
-#define S_base2         #eee8d5
-#define S_base3         #fdf6e3
+!#define S_base03        #002b36
+!!#define S_base02        #073642
+!#define S_base02        #000000
+!#define S_base01        #586e75
+!#define S_base00        #657b83
+!!#define S_base0         #839496
+!#define S_base0         #ffffff
+!#define S_base1         #93a1a1
+!#define S_base2         #eee8d5
+!#define S_base3         #fdf6e3
 
-*background:            S_base03
-*foreground:            S_base0
-*fadeColor:             S_base03
-*cursorColor:           S_base1
-*pointerColorBackground:S_base01
-*pointerColorForeground:S_base1
+!*background:            S_base03
+!*foreground:            S_base0
+!*fadeColor:             S_base03
+!*cursorColor:           S_base1
+!*pointerColorBackground:S_base01
+!*pointerColorForeground:S_base1
 
-#define S_yellow        #b58900
-#define S_orange        #cb4b16
-#define S_red           #dc322f
-#define S_magenta       #d33682
-#define S_violet        #6c71c4
-#define S_blue          #268bd2
-#define S_cyan          #2aa198
-#define S_green         #859900
+!#define S_yellow        #b58900
+!#define S_orange        #cb4b16
+!#define S_red           #dc322f
+!#define S_magenta       #d33682
+!#define S_violet        #6c71c4
+!#define S_blue          #268bd2
+!#define S_cyan          #2aa198
+!#define S_green         #859900
 
-!! black dark/light
-*color0:                S_base02
-*color8:                S_base03
+!!! black dark/light
+!*color0:                S_base02
+!*color8:                S_base03
 
-!! red dark/light
-*color1:                S_red
-*color9:                S_orange
+!!! red dark/light
+!*color1:                S_red
+!*color9:                S_orange
 
-!! green dark/light
-*color2:                S_green
-*color10:               S_base01
+!!! green dark/light
+!*color2:                S_green
+!*color10:               S_base01
 
-!! yellow dark/light
-*color3:                S_yellow
-*color11:               S_base00
+!!! yellow dark/light
+!*color3:                S_yellow
+!*color11:               S_base00
 
-!! blue dark/light
-*color4:                S_blue
-*color12:               S_base0
+!!! blue dark/light
+!*color4:                S_blue
+!*color12:               S_base0
 
-!! magenta dark/light
-*color5:                S_magenta
-*color13:               S_violet
+!!! magenta dark/light
+!*color5:                S_magenta
+!*color13:               S_violet
 
-!! cyan dark/light
-*color6:                S_cyan
-*color14:               S_base1
+!!! cyan dark/light
+!*color6:                S_cyan
+!*color14:               S_base1
 
-!! white dark/light
-*color7:                S_base2
-*color15:               S_base3
+!!! white dark/light
+!*color7:                S_base2
+!*color15:               S_base3
+
+
+! Special
+*background:    #1e2832
+*foreground:    #caf0ec
+*.cursorColor:  #4a3139
+
+! Black
+*color0:       #3d3d3d
+*color8:       #4b4b4b
+
+! Red
+*color1:       #ea7c67
+*color9:       #ea9e90
+
+! Green
+*color2:       #78aaa4
+*color10:      #9bdcd3
+
+! Yellow
+*color3:       #b79d7d
+*color11:      #e9cfaf
+
+! Blue
+*color4:       #3288aa
+*color12:      #40b0dc
+
+! Magenta
+*color5:       #837ca3
+*color13:      #9c98ae
+
+! Cyan
+*color6:       #569aa9
+*color14:      #6fc7db
+
+! White
+*color7:       #9eb2cb
+*color15:      #cae5ff

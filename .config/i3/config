@@ -253,10 +253,10 @@ bindsym $mod+x exec --no-startup-id nautilus
 
 smart_gaps on
 
-gaps inner 0
+gaps inner 5
 gaps outer 0
 
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2
 
 
 set $mode_gaps Gaps: (o) outer, (i) inner

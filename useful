@@ -1,6 +1,9 @@
 Se pacman rompe il cazzo per le chiavi esegui:
     sudo pacman -S archlinux-keyring
 
+Le applicazioni di default stanno in .config/mimeapps.list
+Per vedere quale applicazione viene aperta di default: xdg-mime query default image/png
+
 telnet mapscii.me (Assurdo)
 terminal-parrot :)
 python .asciimatics/samples/particles.py

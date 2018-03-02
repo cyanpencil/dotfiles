@@ -1,3 +1,3 @@
 #!/bin/bash
 
-xrdb .Xresources
+xrdb ~/.Xresources
