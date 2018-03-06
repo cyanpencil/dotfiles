@@ -232,6 +232,8 @@ let g:ctrlp_cmd = 'CtrlPMRUFiles'
 let g:fzf_action = {'ctrl-t': 'tab split','ctrl-x': 'split','ctrl-v': 'vsplit' }
 let g:ackprg = 'ag --vimgrep --smart-case'
 let g:ack_use_cword_for_empty_search = 1
+let g:ack_autoclose = 1
+let g:ack_autofold_results = 1
 let g:livepreview_previewer='zathura'
 let g:livepreview_engine='xelatex'
 let g:limelight_conceal_ctermfg = '239'
@@ -356,3 +358,14 @@ function! SettingsLatex()
     let g:tex_conceal="adgms"
     highlight Conceal NONE
 endfunction
+
+
+
+
+""" ROBA PER RADARE "
+setl cindent
+setl tabstop=8
+setl noexpandtab
+setl shiftwidth=8
+setl softtabstop=8
+setl cino=:0,+0,(2,J0,{1,}0,>4,)1,m2
