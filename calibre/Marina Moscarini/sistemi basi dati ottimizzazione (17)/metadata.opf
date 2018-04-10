@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">17</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">c7895289-9159-417a-a6d4-1dad1954cd49</dc:identifier>
+        <dc:title>sistemi basi dati ottimizzazione</dc:title>
+        <dc:creator opf:file-as="Moscarini, Marina" opf:role="aut">Marina Moscarini</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (3.17.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:language>it</dc:language>
+        <meta content="{&quot;Marina Moscarini&quot;: &quot;&quot;}" name="calibre:author_link_map"/>
+        <meta content="2018-04-02T18:07:01+00:00" name="calibre:timestamp"/>
+        <meta content="sistemi basi dati ottimizzazione" name="calibre:title_sort"/>
+    </metadata>
+    <guide>
+        <reference href="cover.jpg" title="Copertina" type="cover"/>
+    </guide>
+</package>

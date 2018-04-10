@@ -16,7 +16,9 @@ URxvt.perl-ext-common:          default,matcher,clipboard
 URxvt.keysym.C-V:               perl:clipboard:paste
 URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
 
-URxvt*font: xft:xos4 Terminus:size=10
+
+URxvt*font: -*-tamzen-medium-*-*-*-12-*-*-*-*-*-*-*
+!URxvt*font: xft:xos4 Terminus:size=9
 !URxvt*font: xft:Terminus:size=10
 !URxvt*font: xft:Termsyn:size=10
 !URxvt*font: xft:Misc Termsyn:size=20

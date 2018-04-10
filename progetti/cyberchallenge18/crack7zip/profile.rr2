@@ -1,0 +1,3 @@
+#!/usr/bin/rarun2
+arg0=ciao
+stdout=out

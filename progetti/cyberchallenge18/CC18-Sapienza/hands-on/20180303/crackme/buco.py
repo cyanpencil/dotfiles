@@ -13,45 +13,33 @@ io.sendline("0 207")
 print io.recv(400)
 io.sendline("1 0")
 print io.recv(400)
-io.interactive()
-# io.sendline("flyers")
-# print io.recv(400)
+io.sendline("\x09\x0F\x0E\x05\x06\x07")
+print io.recv(400)
 
 
 # io.interactive()
 
 """
-two inputs, second one <= 14
+tutti i numeri <= 6
+ogni numero diverso da tutti quelli successivi
 
-eax = 2
-edx = 14
-esi = 0
-edi = input
 
-eax = edx
-eax -= 0
-ecx = eax (= edx = 14)
-ecx >> 31
-eax += ecx
-eax >> 1 (arithmetic)
-ecx = addrof (rax + rsi)
-if (ecx <= edi) {
-    eax = 0
-    if (ecx >= edi) {
-        end;
-    }
-    else {
-        esi = addrof (rcx + 1)
-        func4()
-        eax = addrof (rax*2 + 1)
-        end;
-    }
-}
-else {
-    edx = addrof (rcx - 1)
-    func4()
-    eax += eax
-    end;
-}
+for (int i = 0, i < 6, i++)
+    num_i = 7 - num_i
+
+for (int i = 0, i < 6, i++) 
+    rdx = obj.node1
+    if (num_i > 1)
+        for (j = 1, j < num_i, j++)
+            rdx = [rdx + 8]
+
+    [rsp + 0x20 + i*2] = rdx
+
+rcx = [num_0]
+for (int i = 1, i < 6, i++) 
+    rdx = [num_i + 8]
+    [rcx + 8] = rdx
+    rcx = rdx
+
 """
 

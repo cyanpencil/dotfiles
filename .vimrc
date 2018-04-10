@@ -18,11 +18,12 @@ set fileformat=unix
 set encoding=utf-8
 set noequalalways
 
-set expandtab
-set tabstop     =4
-set softtabstop =4
-set shiftwidth  =4
+set noexpandtab
+set tabstop     =8
+set softtabstop =8
+set shiftwidth  =8
 set scrolloff   =4
+set cino=:0,+0,(2,J0,{1,}0,>4,)1,m2
 
 "set cursorline "too slow!
 set nocursorline
@@ -50,7 +51,6 @@ set guicursor+=a:blinkon0
 set guifont=profont\ Medium\ Semi-Condensed\ 10
 
 filetype plugin indent on
-
 
 
 "                   === MOVEMENT MACROS === 
@@ -163,6 +163,10 @@ augroup reload_vimrc " {
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
 
+"keep clipboard on exit
+autocmd VimLeave * call system("xsel -ib", getreg('+'))
+
+
 "auto reload folds
 "autocmd BufWinLeave *.* mkview!
 "autocmd BufWinEnter *.* silent loadview
@@ -189,6 +193,16 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'xuhdev/vim-latex-live-preview'
 
 Plug 'tikhomirov/vim-glsl' "enables syntax highlight in shader files
+
+Plug 'wilywampa/vim-ipython' 
+
+" ---- experimental
+Plug 'kshenoy/vim-signature'
+Plug 'tpope/vim-obsession'
+Plug 'dag/vim-fish'
+" ---- experimental
+
+
 
 "Plug 'airblade/vim-rooter'
 "Plug 'takac/vim-hardtime'
@@ -233,7 +247,6 @@ let g:fzf_action = {'ctrl-t': 'tab split','ctrl-x': 'split','ctrl-v': 'vsplit' }
 let g:ackprg = 'ag --vimgrep --smart-case'
 let g:ack_use_cword_for_empty_search = 1
 let g:ack_autoclose = 1
-let g:ack_autofold_results = 1
 let g:livepreview_previewer='zathura'
 let g:livepreview_engine='xelatex'
 let g:limelight_conceal_ctermfg = '239'
@@ -289,7 +302,18 @@ autocmd filetype tex call SettingsLatex()
 autocmd BufNewFile *.cpp r ~/.vim/usaco_template.cpp
 
 function! SettingsC()
+    """ ROBA PER RADARE "
+    set cindent
+    set tabstop=8
+    set noexpandtab
+    set shiftwidth=8
+    set softtabstop=8
+    set cino=:0,+0,(2,J0,{1,}0,>4,)1,m2
     nnoremap <F4> :wa <CR> :!g++ % -o comp_%:r ;  ./comp_%:r <CR>
+
+    set list
+    set listchars=space:.,tab:>-,trail:.,nbsp:.  
+    hi SpecialKey ctermfg=236
 endfunction
 
 function! SettingsCpp()
@@ -297,7 +321,7 @@ function! SettingsCpp()
     "nnoremap <F4> :wa <CR> :!g++ % -o comp_%:r ;  ./comp_%:r < input.txt <CR>
     "nnoremap <F6> :wa <CR> :!make;  cygstart ./run <CR>
 
-    nnoremap <F4> :wa <CR> :!./build.sh; cd bin; ./myview; <CR>
+    "nnoremap <F4> :wa <CR> :!./build.sh; cd bin; ./myview; <CR>
 
     "setlocal foldcolumn=1
 
@@ -329,6 +353,7 @@ function! SettingsJava()
 endfunction
 
 function! SettingsPython()
+    nnoremap <F3> :wa <CR> :!python2 % <CR>
     nnoremap <F4> :wa <CR> :!python % <CR>
     nnoremap <F5> :wa <CR> :!python spiketrap/lib/classifier_example.py <CR>
     setlocal foldcolumn=1
@@ -360,12 +385,19 @@ function! SettingsLatex()
 endfunction
 
 
+"--- ascii color values
+"BLACK= "\u001b[30m"
+"RED= "\u001b[31m"
+"GREEN= "\u001b[32m"
+"YELLOW= "\u001b[33m"
+"BLUE= "\u001b[34m"
+"MAGENTa= "\u001b[35m"
+"CYAN= "\u001b[36m"
+"WHITE= "\u001b[37m"
+"RESET= "\u001b[0m"
+"BOLD = '\033[1m'
+"UNDERLINE = '\033[4m'
+
+"loading = ["-", "\\", "|", "/"]
 
 
-""" ROBA PER RADARE "
-setl cindent
-setl tabstop=8
-setl noexpandtab
-setl shiftwidth=8
-setl softtabstop=8
-setl cino=:0,+0,(2,J0,{1,}0,>4,)1,m2

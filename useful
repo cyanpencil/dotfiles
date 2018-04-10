@@ -47,6 +47,7 @@ vim:
     :'<, >'! grep "gh" 
     tutti i remaps: H,J,K,L per movimento
     ,s, ,q, ,Q per salvare
+    :browse oldfiles 
 
 
 toilet -F border -t ciao io sono luca | lolcat -a
@@ -108,3 +109,50 @@ Documenti necessari:
 22 giugno: fine sessione estiva (per laureandi a luglio)
 13 luglio: scadenza caricamento tesi su infostud (10 giorni prima sessione di laurea)
 23-27 luglio: sessione di laurea
+
+
+
+
+
+reddit/netsec
+
+w3challs.com
+overthewire.org/wargames/vortex
+smashthestack.org
+
+it-sec-catalog
+shellphish/how2heap
+
+
+commands:
+	readelf
+	ent - per guardare entropia (sopra il 7 è packato)
+	ldd/objdump -p BIN | grep NEEDED
+	strace/ltrace
+	file
+	strings
+	man ascii
+	ndisasm
+	parallel
+	wget curl
+	010 editor
+	/proc
+	readelf
+	elfparser-cli
+	objcopy
+
+Viper framework
+
+/proc/self/status
+"_" envinronment variable
+
+guarda se le sezioni sono eseguibili con elfparser
+
+eh_frame sgama funzioni anche se l'ELF è stato strippato
+
+:%!xxd  e :%!xxd -r
+
+
+
+tainted analysis per capire dove sono gli exploit (e.g. se l'instruction pointer è tainted allora posso fare qualcosa)
+

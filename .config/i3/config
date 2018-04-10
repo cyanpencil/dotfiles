@@ -186,9 +186,9 @@ bar {
     #font xft: Droid Sans 8
     font xft: Ctrld 9
     #i3blocksbar -non rimuovere questo commento.
-status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#status_command i3blocks -c ~/.config/i3/i3blocks.conf
     #i3statusbar -non rimuovere questo commento. 
-#status_command i3status
+status_command i3status
     colors {
         separator #268bd2
 	    background #002b36
@@ -240,11 +240,8 @@ for_window [title="yview"] floating enable
 #for_window [class="Zathura"] fullscreen enable
 
 
-exec --no-startup-id urxvt -name metask
-for_window [instance="metask"] floating enable;
-#for_window [instance="metask"] move scratchpad; [instance="metask"] scratchpad show; move position 75px 22px; resize grow height 80px; resize grow width 800px; move scratchpad;
+exec -name metask --no-startup-id "urxvt -e fish"
 for_window [title="metask"] move scratchpad; floating enable; resize shrink width 10000px; resize grow width 400px; resize shrink height 10000px; resize grow height 200px;
-#for_window [instance="metask"] resize set width 1200px
 bindsym $mod+s [instance="metask"] scratchpad show
 
 bindsym $mod+x exec --no-startup-id nautilus
