@@ -1,0 +1,13 @@
+1) Setta breakpoint a:
+
+0x40132C
+0x401359
+0x4014AD
+0x402445
+
+2) Fai partire il debugger
+
+- quando arrivi a 0x40132C: setta IP a 0x40134F per evitare la call a regSetValue che installerebbe una chiave per la persistenza di enfal
+- quando arrivi a 0x401359: setta eax a PID del processo corrent
+- quando arrivi a 0x4014AD: salvati il valore di EAX => $buffer
+- quando arrivi a 0x402445: setta EDI=$buffer, EBX=0x402BB0 (funzione thread 1

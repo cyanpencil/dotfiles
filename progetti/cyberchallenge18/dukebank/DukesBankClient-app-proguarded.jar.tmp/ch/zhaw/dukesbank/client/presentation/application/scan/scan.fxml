@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.zhaw.dukesbank.client.presentation.application.scan.ScanPresenter">
+   <center>
+      <ImageView fx:id="qrCode" disable="true" fitHeight="400.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <effect>
+            <DropShadow />
+         </effect></ImageView>
+   </center>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <bottom>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Scan the following QR code to authenticate your mobile application" BorderPane.alignment="CENTER" />
+   </bottom>
+   <top>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <buttons>
+          <Button mnemonicParsing="false" onAction="#refresh" text="Refresh" />
+        </buttons>
+      </ButtonBar>
+   </top>
+</BorderPane>

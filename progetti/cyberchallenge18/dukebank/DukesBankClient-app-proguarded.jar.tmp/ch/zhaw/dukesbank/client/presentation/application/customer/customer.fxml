@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.zhaw.dukesbank.client.presentation.application.customer.CustomerPresenter">
+   <center>
+      <GridPane hgap="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="240.0" BorderPane.alignment="TOP_CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="ID" />
+            <Label text="Gender" GridPane.rowIndex="1" />
+            <Label text="Firstname" GridPane.rowIndex="2" />
+            <Label text="Lastname" GridPane.rowIndex="3" />
+            <Label text="Street" GridPane.rowIndex="4" />
+            <Label text="City" GridPane.rowIndex="5" />
+            <Label text="ZIP" GridPane.rowIndex="6" />
+            <Label text="Country Code" GridPane.columnIndex="2" />
+            <Label text="Country" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label text="Email" GridPane.rowIndex="7" />
+            <Label text="Username" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label text="Phone" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label text="Phone Country Code" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Label text="Birthday" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Label text="Credit Cart Type" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <TextField fx:id="id" editable="false" GridPane.columnIndex="1" />
+            <TextField fx:id="gender" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="firstname" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="lastname" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="street" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="city" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="zip" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="countryCode" editable="false" GridPane.columnIndex="3" />
+            <TextField fx:id="country" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="email" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <TextField fx:id="username" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <TextField fx:id="phone" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <TextField fx:id="phoneCountryNumber" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <TextField fx:id="birthday" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <TextField fx:id="ccType" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+         </children>
+      </GridPane>
+   </center>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <top>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <buttons>
+          <Button mnemonicParsing="false" onAction="#refresh" text="Refresh" />
+        </buttons>
+      </ButtonBar>
+   </top>
+</BorderPane>

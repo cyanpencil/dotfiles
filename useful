@@ -7,6 +7,7 @@ Per vedere quale applicazione viene aperta di default: xdg-mime query default im
 telnet mapscii.me (Assurdo)
 terminal-parrot :)
 python .asciimatics/samples/particles.py
+ternimal
 
 
 Triggers:
@@ -39,7 +40,7 @@ Programmi inutili da togliere: teamviewer e le lib32 a esso collegate
 Siti interessanti: font squirrel
 
 in bash, Ctrl-P                                         cerca e edita file in vim
-wget --timeout=1 --random-wait -r -p -e robots=off -U mozilla http://www.example.com    clona un sito
+wget --timeout=1 --random-wait -r -p -e robots=off -U mozilla http://www.example.com -l {depth}    clona un sito
 Alt-c nel terminale                                    cd nella cartella individuata da fzf
 find -name "*.java" -mtime -2 -exec vim -o '{}' +       apri in splits tutti i file java editati negli ultimi 2 giorni
 
@@ -155,4 +156,56 @@ eh_frame sgama funzioni anche se l'ELF è stato strippato
 
 
 tainted analysis per capire dove sono gli exploit (e.g. se l'instruction pointer è tainted allora posso fare qualcosa)
+
+
+
+
+---- malware analysis 2 ----
+i primi passi di un'applicazione sono spesso il parsing degli argomenti di command line
+Se si crea un mutex spesso è per garantire che è l'unica istanza in esecuzione del virus.
+
+---- denial of service -----
+digitalattackmap.com
+HTTP-Unbearable-Load-King (HULK) denial of service
+Tor's Hammer
+R-U-Dead-Yet (RUDY) denial of service
+SYN spoofing attack
+Low orbit Ion Cannon
+Reflection and amplification attacks
+hping3 - network tool able to send custom TCP or IP  packets and to display target replies
+
+
+---- ROP -------------------
+usa pwndbg con "set disable-randomization off" per vedere gli indirizzi randomizzati
+execve syscall:
+	EAX = 0xb
+	EBX = "pointer to /bin/sh"
+	ECX = 0
+	EDX = 0
+
+usa ROPgadget oppure ropper!
+ci sta un opzione che ti fa le ropchain in automatico (--ropchain)
+
+le syscall da usare sono execve oppure su x64 ci sta proprio il comando syscall
+
+
+IMPORTANTE: in x86, i parametri a funzione vengono mandati sullo stack (esp + 4...), mentre in x64, i parametri a funzione li mando sui registri rdi, rsi, rdx, rcx, r8, r9
+
+
+----- web security --------------------
+cerca errori 404 per trovare info magari sulla versione di apache
+
+---- radare
+eco "colortheme"
+pwd
+src.rainbow
+anal.jmptbl
+hud V_
+bit editor Vd1
+flag spaces VF
+types Vt
+alias $foo=x
+macro (foo name, f $0=$$+rax) .(foo test)
+script . foo.r2 | foo.py
+current offset $$
 

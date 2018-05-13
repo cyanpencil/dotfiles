@@ -199,10 +199,10 @@ status_command i3status
 	    urgent_workspace #d33682 #d33682 #fdf6e3
 	  }
 }
-client.focused #6c71c4 #6c71c4 #fdf6e3 #6c71c4
+client.focused		#ffffff #ffffff #fdf6e3 #6c71c4
 client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
-client.unfocused #073642 #073642 #93a1a1 #586e75
-client.urgent #d33682 #d33682 #fdf6e3 #dc322f
+client.unfocused	#073642 #073642 #93a1a1 #586e75
+client.urgent		#d33682 #d33682 #fdf6e3 #dc322f
 
 new_window 1pixel
 
@@ -240,7 +240,8 @@ for_window [title="yview"] floating enable
 #for_window [class="Zathura"] fullscreen enable
 
 
-exec -name metask --no-startup-id "urxvt -e fish"
+exec "xset +fp /usr/share/fonts/local/"
+exec -name metask --no-startup-id urxvt
 for_window [title="metask"] move scratchpad; floating enable; resize shrink width 10000px; resize grow width 400px; resize shrink height 10000px; resize grow height 200px;
 bindsym $mod+s [instance="metask"] scratchpad show
 

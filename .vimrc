@@ -78,8 +78,8 @@ map ][ /}<CR>b99]}
 map ]] j0[[%/{<CR>
 map [] k$][%?}<CR>
 
-nnoremap H g^
-nnoremap L g$
+nnoremap H gT
+nnoremap L gt
 vnoremap H g^
 vnoremap L g$
 
@@ -199,7 +199,8 @@ Plug 'wilywampa/vim-ipython'
 " ---- experimental
 Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-obsession'
-Plug 'dag/vim-fish'
+Plug 'dag/vim-fish' "support for fish file editing
+Plug 'airblade/vim-gitgutter'
 " ---- experimental
 
 
@@ -248,7 +249,7 @@ let g:ackprg = 'ag --vimgrep --smart-case'
 let g:ack_use_cword_for_empty_search = 1
 let g:ack_autoclose = 1
 let g:livepreview_previewer='zathura'
-let g:livepreview_engine='xelatex'
+let g:livepreview_engine='pdflatex'
 let g:limelight_conceal_ctermfg = '239'
 let g:goyo_width = '93%'
 let python_highlight_all=1
@@ -308,8 +309,11 @@ function! SettingsC()
     set noexpandtab
     set shiftwidth=8
     set softtabstop=8
-    set cino=:0,+0,(2,J0,{1,}0,>4,)1,m2
+    set cino=:0,+0,(2,J0,{1,}0,>8,)1,m2
     nnoremap <F4> :wa <CR> :!g++ % -o comp_%:r ;  ./comp_%:r <CR>
+
+    """ for the gitgutter plugin
+    set updatetime=600
 
     set list
     set listchars=space:.,tab:>-,trail:.,nbsp:.  
@@ -360,7 +364,7 @@ function! SettingsPython()
 endfunction
 
 function! SettingsLatex()
-    nnoremap <F4> :wa <CR> :!xelatex --shell-escape % <CR>
+    nnoremap <F4> :wa <CR> :!pdflatex --shell-escape % <CR>
     "nnoremap <F4> :wa <CR> :!pdflatex --shell-escape % <CR>
     nnoremap <F5> :wa <CR> :!zathura %:r.pdf <CR>
     setlocal nocursorline
