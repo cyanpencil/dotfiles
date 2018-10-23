@@ -53,7 +53,12 @@ fi
 #xterm -geometry 80x50+494+51 &
 #xterm -geometry 80x20+494-0 &
 #exec xterm -geometry 80x66+0+0 -name login
-xset r rate 150 25
+
+xset r rate 150 49
 xbindkeys
-~/scripts/startup.sh
+xinput set-prop "SynPS/2 Synaptics TouchPad" "Coordinate Transformation Matrix" 0.6, 0, 0, 0, 0.5, 0, 0, 0, 1
+xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Accel Speed" 0.5
+xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+xinput disable "Melfas LGD AIT Touch Controller"
+
 exec i3

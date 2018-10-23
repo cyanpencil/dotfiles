@@ -1,6 +1,6 @@
 #!/bin/bash
 syncpath="/home/luca/sync/dotfiles"
-homefiles=".bashrc .bash_profile .vimrc .Xresources .xbindkeysrc useful .fzf.bash .inputrc"
+homefiles=".bashrc .bash_profile .vimrc .Xresources .xbindkeysrc useful .fzf.bash .inputrc .gitconfig"
 configdirs="i3 dunst fish"
 homedirs="progetti scripts appunti calibre"
 others="/etc/X11/xinit/xinitrc /etc/udev/rules.d/powersave.rules"
