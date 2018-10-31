@@ -1,5 +1,6 @@
-syntax on
+"                      === GLOBAL OPTIONS ===
 set nocompatible
+syntax on
 set ai
 set backspace=indent,eol,start
 set history=50
@@ -12,16 +13,19 @@ set cindent
 set ignorecase
 set smartcase
 set autowrite
-set showbreak=\ \ \>>\ 
-set breakindent
+set showbreak=\|------>
+"set breakindent    " TODO: to change
 set fileformat=unix
 set encoding=utf-8
 set noequalalways
+set wildmenu
+set wildmode=longest:full,full
+set wildignore+=*.d,*.o
 
 set noexpandtab
-set tabstop     =8
-set softtabstop =8
-set shiftwidth  =8
+set tabstop     =4
+set softtabstop =4
+set shiftwidth  =4
 set scrolloff   =4
 set cino=:0,+0,(2,J0,{1,}0,>4,)1,m2
 
@@ -34,12 +38,16 @@ set foldmethod=manual
 set foldlevel=1
 set foldcolumn=0
 
+"sublime text-like indentation lines
+set listchars=tab:\|\  "<--- there is a space here
+set list
+
 set backupdir=~/.vim_backup//,.
 set directory=~/.vim_backup//,.
 
 set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
 
-set listchars=eol:⏎,tab:>-,trail:.,nbsp:.
+"set listchars=eol:⏎,tab:>-,trail:.,nbsp:.
 hi NonText ctermfg=black guifg=black
 
 set guioptions-=m
@@ -53,7 +61,7 @@ set guifont=profont\ Medium\ Semi-Condensed\ 10
 filetype plugin indent on
 
 
-"                   === MOVEMENT MACROS === 
+"                       === MOVEMENT MACROS ===
 
 nnoremap h <C-w>h
 nnoremap j <C-w>j
@@ -61,8 +69,6 @@ nnoremap k <C-w>k
 nnoremap l <C-w>l
 
 "change tabs
-nnoremap H gT
-nnoremap L gt
 nnoremap n gT
 nnoremap p gt
 
@@ -72,14 +78,17 @@ vmap - /
 vmap _ ?
 nmap c- c/
 
+set foldcolumn=1
+
+
 "move to next/previous function
 map [[ ?{<CR>w99[{
 map ][ /}<CR>b99]}
 map ]] j0[[%/{<CR>
 map [] k$][%?}<CR>
 
-nnoremap H gT
-nnoremap L gt
+nnoremap H g^
+nnoremap L g$
 vnoremap H g^
 vnoremap L g$
 
@@ -95,6 +104,8 @@ nnoremap k gk
 
 map <ScrollWheelUp> <C-Y><C-Y>
 map <ScrollWheelDown> <C-E><C-E>
+
+"nnoremap <silent>   :exe "tabn ".g:lasttab<cr> "breaks if pressing esc two times
 
 "                   === EDITING MACROS ===
 
@@ -117,14 +128,17 @@ nnoremap ,s :w<CR>
 nnoremap ,q :wq<CR>
 nnoremap ,Q :q!<CR>
 
-nnoremap q/ q/i
-
 "                   === COMMAND MACROS ===
 
 cmap w!! w !sudo tee > /dev/null %
 
+nnoremap ,w :w<CR>
+
 nnoremap gv `[v`]
 
+vnoremap Y "+y
+nnoremap Y "+y
+nnoremap YY "+yy
 
 "remove whitespace
 nnoremap ,W :%s/\s\+$//<cr>:let @/=''<CR>
@@ -146,6 +160,10 @@ nnoremap <c-l> :nohl<cr><c-l>
 
 "close quickfix window
 nnoremap ,x :ccl<CR>
+nmap q :ccl<CR>
+
+"record macro
+nnoremap Q q
 
 "surround with \b{}
 vnoremap ,b "9di\b{}<ESC>Pll
@@ -164,8 +182,16 @@ augroup reload_vimrc " {
 augroup END " }
 
 "keep clipboard on exit
-autocmd VimLeave * call system("xsel -ib", getreg('+'))
+augroup my_clipboard
+	autocmd!
+	autocmd VimLeave * call system("xsel -ib", getreg('+'))
+augroup END
 
+"to switch to last active tab
+augroup my_tab
+	autocmd!
+	au TabLeave * let g:lasttab = tabpagenr()
+augroup END
 
 "auto reload folds
 "autocmd BufWinLeave *.* mkview!
@@ -173,7 +199,6 @@ autocmd VimLeave * call system("xsel -ib", getreg('+'))
 
 "                   === PLUGIN LIST ===
 
-"ATTENZIONE! Needs plugin vim-plug
 call plug#begin('~/.vim/bundle')
 Plug 'godlygeek/csapprox'
 Plug 'flazz/vim-colorschemes'
@@ -201,7 +226,11 @@ Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-obsession'
 Plug 'dag/vim-fish' "support for fish file editing
 Plug 'airblade/vim-gitgutter'
+Plug 'severin-lemaignan/vim-minimap'
+Plug 'jeaye/color_coded'
 " ---- experimental
+"  --- oooh
+Plug 'artur-shaik/vim-javacomplete2'
 
 
 
@@ -221,7 +250,7 @@ Plug 'mileszs/ack.vim'
 "
 "Plug 'xolox/vim-misc'
 
-"Plug 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 "Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'chrisbra/histwin.vim'
 "Plug 'metakirby5/codi.vim'
@@ -235,6 +264,14 @@ Plug 'mileszs/ack.vim'
 "Plug 'tmhedberg/SimpylFold'
 "Plug 'vim-scripts/indentpython.vim'
 "Plug 'hdima/python-syntax'
+"
+Plug 'markonm/traces.vim' "real time preview of substitutions
+
+
+
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'idanarye/vim-vebugger'
+
 call plug#end()
 
 "                   === PLUGIN OPTIONS ===
@@ -245,14 +282,16 @@ let g:JavaComplete_SourcesPath = "~/progetti/silvestri/java-project/gapp"
 let g:syntastic_mode_map = {"mode": "passive","active_filetypes": [],"passive_filetypes":[]}
 let g:ctrlp_cmd = 'CtrlPMRUFiles'
 let g:fzf_action = {'ctrl-t': 'tab split','ctrl-x': 'split','ctrl-v': 'vsplit' }
-let g:ackprg = 'ag --vimgrep --smart-case'
+let g:ackprg = 'ag --vimgrep --smart-case --ignore-dir shlr'
 let g:ack_use_cword_for_empty_search = 1
 let g:ack_autoclose = 1
 let g:livepreview_previewer='zathura'
-let g:livepreview_engine='pdflatex'
+let g:livepreview_engine='pdflatex --shell-escape'
 let g:limelight_conceal_ctermfg = '239'
 let g:goyo_width = '93%'
 let python_highlight_all=1
+let g:vebugger_leader='\'
+"let g:solarized_termcolors=256
 
 "supertab
 set completeopt=menuone,preview
@@ -262,7 +301,14 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
 colorscheme alduin
+hi SpecialKey ctermfg=236
 "colorscheme Dev_Delight
+
+
+"javacomplete
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+
 
 "                   === PLUGIN MACROS ===
 
@@ -287,8 +333,8 @@ vmap ,cm <Leader>cm
 vmap ,cs <Leader>cs
 vmap ,C <Leader>c<Space>
 
-nnoremap ,w :AckWindow!<Space>
 nnoremap ,f :Ack!<Space>
+nnoremap ,F :Ack!<Space>""<Left>
 
 
 
@@ -299,10 +345,12 @@ autocmd filetype cpp call SettingsCpp()
 autocmd filetype java call SettingsJava()
 autocmd filetype python call SettingsPython()
 autocmd filetype tex call SettingsLatex()
+autocmd filetype html call SettingsHTML()
 
 autocmd BufNewFile *.cpp r ~/.vim/usaco_template.cpp
 
-function! SettingsC()
+"			==== C ====
+function! SettingsC() 
     """ ROBA PER RADARE "
     set cindent
     set tabstop=8
@@ -315,15 +363,23 @@ function! SettingsC()
     """ for the gitgutter plugin
     set updatetime=600
 
-    set list
-    set listchars=space:.,tab:>-,trail:.,nbsp:.  
-    hi SpecialKey ctermfg=236
+    "set list
+    "set listchars=space:.,tab:>-,trail:.,nbsp:.  
+    "hi SpecialKey ctermfg=236
 endfunction
 
-function! SettingsCpp()
+"			==== C++ ====
+function! SettingsCpp() 
+	"the parentesis are needed to combine the output of the two commands
+	set makeprg=(g++\ %\ -o\ comp_%:r\ &&\ ./comp_%:r\ <\ input.txt)
+	nnoremap <F4> :wa <CR> :silent make\|redraw!\|copen<CR>
     nnoremap <F5> :wa <CR> :!g++ % -o comp_%:r ;  ./comp_%:r <CR>
-    "nnoremap <F4> :wa <CR> :!g++ % -o comp_%:r ;  ./comp_%:r < input.txt <CR>
-    "nnoremap <F6> :wa <CR> :!make;  cygstart ./run <CR>
+    nnoremap <F6> :wa <CR> :!g++ -lCGAL -lmpfr -lgmp -frounding-math % -o comp_%:r ; ./comp_%:r <CR>
+    nnoremap <F7> :wa <CR> :!g++ -lCGAL -lmpfr -lgmp -frounding-math % -o comp_%:r ; ./comp_%:r < hiking-maps/hiking-maps-1.in<CR>
+    nnoremap <F10> :wa <CR> :!python ~/submitter.py %; <CR>
+
+	"gdb debugging
+	nnoremap <F11> :!g++ -g %<CR>:VBGstartGDB a.out<CR>:VBGrawWrite break main<CR>:VBGrawWrite run < input.txt<CR>:VBGtoggleTerminalBuffer<CR><C-w>H
 
     "nnoremap <F4> :wa <CR> :!./build.sh; cd bin; ./myview; <CR>
 
@@ -336,7 +392,8 @@ function! SettingsCpp()
     set foldmethod=manual
 endfunction
 
-function! SettingsJava()
+"			==== Java  ====
+function! SettingsJava() 
     "autocmd FileType java setlocal omnifunc=javacomplete#Complete
     "autocmd filetype Java set completefunc=javacomplete#CompleteParamsInfo
     abbr print System.out.println();<Esc>hh
@@ -354,16 +411,22 @@ function! SettingsJava()
     map <F10> <Esc>:cprevious<Return>
     map <F11> <Esc>:cnext<Return>
     map <F12> <Esc>:silent :!java -cp ~/comp gapp.ulg.test.slideNewTry<CR>
+
+	set shiftwidth=4
+	set softtabstop=4
+	set tabstop=4
 endfunction
 
-function! SettingsPython()
+"			==== Python ====
+function! SettingsPython() 
     nnoremap <F3> :wa <CR> :!python2 % <CR>
     nnoremap <F4> :wa <CR> :!python % <CR>
     nnoremap <F5> :wa <CR> :!python spiketrap/lib/classifier_example.py <CR>
     setlocal foldcolumn=1
 endfunction
 
-function! SettingsLatex()
+"			==== Latex ====
+function! SettingsLatex() 
     nnoremap <F4> :wa <CR> :!pdflatex --shell-escape % <CR>
     "nnoremap <F4> :wa <CR> :!pdflatex --shell-escape % <CR>
     nnoremap <F5> :wa <CR> :!zathura %:r.pdf <CR>
@@ -388,6 +451,29 @@ function! SettingsLatex()
     highlight Conceal NONE
 endfunction
 
+"			==== HTML ====
+function! SettingsHTML()  
+map <F9> :!google-chrome-stable % 2> /dev/null > /dev/null &<CR><CR><C-L>
+	" ROBA PER RADARE "
+	set cindent
+	set tabstop=2
+	set noexpandtab
+	set shiftwidth=2
+	set softtabstop=2
+	set cino=:0,+0,(2,J0,{1,}0,>8,)1,m2
+    set foldmethod=manual
+    set foldcolumn=0
+endfunction "====
+
+
+"                  === OTHER THINGS ===
+
+" ==== auto-install vim -plug ====
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs " ======== ciao ========
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC " ========
+endif " ====
 
 "--- ascii color values
 "BLACK= "\u001b[30m"
@@ -404,4 +490,5 @@ endfunction
 
 "loading = ["-", "\\", "|", "/"]
 
-
+"" vim:fdm=expr:fdl=0
+"" vim:fde=getline(v\:lnum)=~'==*$'?(getline(v\:lnum)=~'==\\+[^=]\\+==.*'?'>'\:'<').(strlen(matchstr(getline(v\:lnum),'==*$'))-2)\:'='

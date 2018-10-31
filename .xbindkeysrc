@@ -58,8 +58,6 @@
 #"rxvt"
 #  Control + b:2 + Release
 
-"urxvt"
-XF86Launch1
 
 "amixer -q set Master 2000+ unmute"
 XF86AudioRaiseVolume 
@@ -88,22 +86,58 @@ Mod1 + Down
 Mod1 + Left
 
 
-"onboard"
-XF86RotateWindows
-"i3 kill"
-XF86TaskPane
+"nautilus"
+XF86Search
+
+#"urxvt -e ~/scripts/wifi.sh"
+"urxvt -title floating -e /home/luca/scripts/wifi.sh"
+XF86LaunchA
+
+"urxvt -title floating -e nmtui-connect"
+XF86Explorer
+
+#"onboard"
+#XF86RotateWindows
+#"i3 kill"
+#XF86TaskPane
 
 "systemctl suspend"
 XF86Tools
 
-"xte 'keydown BackSpace"
-ograve
+#"xbacklight -inc 5"
+ #b:6
+#"xbacklight -dec 5"
+ #b:7
+#
 
-"xte 'key 0x31'"
-Mod4 + Super_L 
+#"xte 'keyup Alt_L' 'key Left' 'keydown Alt_L'"
+#Mod1 + h + release
 
-"xdotool key --delay 0 --clearmodifiers 1"
-Mod4 + d + release
+#"xte 'keyup Alt_L' 'key Down' 'keydown Alt_L'"
+#Mod1 + j + release
+
+#"xte 'keyup Alt_L' 'key Up' 'keydown Alt_L'"
+#Mod1 + k + release
+
+#"xte 'keyup Alt_L' 'key Right' 'keydown Alt_L'"
+#Mod1 + l + release
+
+ # thumb wheel down => previous tab
+#"sleep 0.1; xte 'keydown Control_L' 'key Page_Down' 'keyup Control_L'"
+#b:6
+
+# thumb wheel up => next tab
+#"sleep 0.1; xte 'keydown Control_L' 'key Page_Up' 'keyup Control_L'"
+#b:7
+
+#"xte 'keydown BackSpace"
+#ograve
+
+#"xte 'key 0x31'"
+#Mod4 + Super_L 
+
+#"xdotool key --delay 0 --clearmodifiers 1"
+#Mod4 + d + release
 
 ##################################
 # End of xbindkeys configuration #

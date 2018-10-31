@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 export PATH=$PATH:~/scripts
-export TERMINAL=termite
+export TERMINAL=urxvt
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
@@ -74,5 +74,4 @@ transfer() {
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore cache --ignore .cache --ignore Cache --depth 10 -g ""'
 bind -x '"\C-p": vim $(fzf);'
 
-
-xset r rate 150 25
+alias scrotclip="scrot -s -e 'xclip -selection clipboard -t "image/png" < $f'"

@@ -1,9 +1,10 @@
 #!/bin/bash
-syncpath="/home/luca/sync/dotfiles"
+syncpath="/home/luca/dotfiles"
 homefiles=".bashrc .bash_profile .vimrc .Xresources .xbindkeysrc useful .fzf.bash .inputrc .gitconfig"
 configdirs="i3 dunst fish"
 homedirs="progetti scripts appunti calibre"
-others="/etc/X11/xinit/xinitrc /etc/udev/rules.d/powersave.rules"
+others="/etc/X11/xinit/xinitrc /etc/udev/rules.d/powersave.rules\
+	/etc/udev/rules.d/80-keyboard.rules /etc/X11/xinit/xserverrc"
 
 
 cd $syncpath

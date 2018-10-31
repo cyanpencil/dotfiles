@@ -16,10 +16,18 @@ import_environment() {
 
 import_environment XAUTHORITY USER DISPLAY DBUS_SESSION_BUS_ADDRESS
 
-xinput disable 'AT Translated Set 2 keyboard'
-xinput disable 'TPPS/2 IBM TrackPoint'
 
+if [[ $1 -eq 0 ]]; then
+	xinput disable 'AT Translated Set 2 keyboard'
+	#xinput disable 'TPPS/2 IBM TrackPoint' #disabled to make touchpad buttons work
+	su luca -c 'notify-send "Keyboard plugged in!"' &
+	su luca -c "setxkbmap us" &
+	su luca -c "xset r rate 150 25" &
+else
+	xinput enable 'AT Translated Set 2 keyboard'
+	xinput enable 'TPPS/2 IBM TrackPoint'
+	su luca -c 'notify-send "Keyboard plugged out!"' &
+	su luca -c "setxkbmap us" &
+
+fi
 #Those are overridden by udev...
-su luca -c 'DISPLAY=:0.0 notify-send "Keyboard plugged in!"' &
-su luca -c "setxkbmap us" &
-su luca -c "xset r rate 150 25" &

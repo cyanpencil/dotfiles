@@ -4,6 +4,10 @@ Se pacman rompe il cazzo per le chiavi esegui:
 Le applicazioni di default stanno in .config/mimeapps.list
 Per vedere quale applicazione viene aperta di default: xdg-mime query default image/png
 
+mtr is the new traceroute
+iftop to monitor where goes traffic (by IP)
+nethogs to montior traffic by process
+
 telnet mapscii.me (Assurdo)
 terminal-parrot :)
 python .asciimatics/samples/particles.py
@@ -208,4 +212,8 @@ alias $foo=x
 macro (foo name, f $0=$$+rax) .(foo test)
 script . foo.r2 | foo.py
 current offset $$
+
+
+Le configurazioni di base di X server sono in /etc/X11/xinit/xserverrc
+(come arinterval e ardelay per la tastiera)
 
