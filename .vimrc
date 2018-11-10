@@ -210,23 +210,23 @@ Plug 'rhysd/clever-f.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'EinfachToll/DidYouMean'
 Plug 'Konfekt/FastFold'
-Plug 'Shougo/neocomplete.vim'
+"Plug 'Shougo/neocomplete.vim'
 Plug 'matze/vim-move'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'junegunn/vim-peekaboo'
+Plug 'junegunn/vim-peekaboo'			"display register values
 Plug 'xuhdev/vim-latex-live-preview'
 
-Plug 'tikhomirov/vim-glsl' "enables syntax highlight in shader files
+"Plug 'tikhomirov/vim-glsl'				"enables syntax highlight in shader files
 
-Plug 'wilywampa/vim-ipython' 
+"Plug 'wilywampa/vim-ipython' 
 
 " ---- experimental
-Plug 'kshenoy/vim-signature'
-Plug 'tpope/vim-obsession'
-Plug 'dag/vim-fish' "support for fish file editing
-Plug 'airblade/vim-gitgutter'
-Plug 'severin-lemaignan/vim-minimap'
+Plug 'kshenoy/vim-signature'			"display marks
+"Plug 'tpope/vim-obsession'
+Plug 'dag/vim-fish'						"support for fish file editing
+"Plug 'airblade/vim-gitgutter'
+"Plug 'severin-lemaignan/vim-minimap'
 Plug 'jeaye/color_coded'
 " ---- experimental
 "  --- oooh
@@ -253,9 +253,9 @@ Plug 'mileszs/ack.vim'
 Plug 'altercation/vim-colors-solarized'
 "Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'chrisbra/histwin.vim'
-"Plug 'metakirby5/codi.vim'
+"Plug 'metakirby5/codi.vim'				"real time python preview
 "Plug 'xolox/vim-colorscheme-switcher'
-"Plug 'wkentaro/conque.vim' 
+"Plug 'wkentaro/conque.vim'				"shell inside a buffer
 "Plug 'vim-scripts/Gundo'
 "Plug 'scrooloose/syntastic'
 "Plug 'artur-shaik/vim-javacomplete2'
@@ -265,7 +265,7 @@ Plug 'altercation/vim-colors-solarized'
 "Plug 'vim-scripts/indentpython.vim'
 "Plug 'hdima/python-syntax'
 "
-Plug 'markonm/traces.vim' "real time preview of substitutions
+Plug 'markonm/traces.vim'				"real time preview of substitutions
 
 
 
@@ -470,9 +470,9 @@ endfunction "====
 
 " ==== auto-install vim -plug ====
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs " ======== ciao ========
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs 
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC " ========
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC 
 endif " ====
 
 "--- ascii color values
