@@ -72,11 +72,11 @@ nnoremap l <C-w>l
 nnoremap n gT
 nnoremap p gt
 
-nmap - /
-nmap _ ?
-vmap - /
-vmap _ ?
-nmap c- c/
+"nmap - /
+"nmap _ ?
+"vmap - /
+"vmap _ ?
+"nmap c- c/
 
 set foldcolumn=1
 
@@ -166,11 +166,14 @@ nmap q :ccl<CR>
 nnoremap Q q
 
 "surround with \b{}
-vnoremap ,b "9di\b{}<ESC>Pll
-vnoremap ,v "9di\v{}<ESC>Pll
+vnoremap ,b "9da\b{}<ESC>Pll
+vnoremap ,v "9da\v{}<ESC>Pll
+vnoremap ,t "9da\t{}<ESC>Pll
 
 "join lines
 vnoremap ,j :join<CR>
+
+nnoremap ,S :!clear && shellcheck %<CR>
 
 
 "                   === AUTO COMMANDS ===
@@ -282,11 +285,12 @@ let g:JavaComplete_SourcesPath = "~/progetti/silvestri/java-project/gapp"
 let g:syntastic_mode_map = {"mode": "passive","active_filetypes": [],"passive_filetypes":[]}
 let g:ctrlp_cmd = 'CtrlPMRUFiles'
 let g:fzf_action = {'ctrl-t': 'tab split','ctrl-x': 'split','ctrl-v': 'vsplit' }
-let g:ackprg = 'ag --vimgrep --smart-case --ignore-dir shlr'
+let g:ackprg = 'ag --vimgrep --smart-case --ignore-dir shlr -Q'
 let g:ack_use_cword_for_empty_search = 1
 let g:ack_autoclose = 1
 let g:livepreview_previewer='zathura'
-let g:livepreview_engine='pdflatex --shell-escape'
+"let g:livepreview_engine='pdflatex --shell-escape'
+let g:livepreview_engine='xelatex'
 let g:limelight_conceal_ctermfg = '239'
 let g:goyo_width = '93%'
 let python_highlight_all=1
@@ -297,8 +301,8 @@ let g:vebugger_leader='\'
 set completeopt=menuone,preview
 
 "use LimeLight when starting Goyo
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
+"autocmd! User GoyoEnter Limelight
+"autocmd! User GoyoLeave Limelight!
 
 colorscheme alduin
 hi SpecialKey ctermfg=236
@@ -375,7 +379,7 @@ function! SettingsCpp()
 	nnoremap <F4> :wa <CR> :silent make\|redraw!\|copen<CR>
     nnoremap <F5> :wa <CR> :!g++ % -o comp_%:r ;  ./comp_%:r <CR>
     nnoremap <F6> :wa <CR> :!g++ -lCGAL -lmpfr -lgmp -frounding-math % -o comp_%:r ; ./comp_%:r <CR>
-    nnoremap <F7> :wa <CR> :!g++ -lCGAL -lmpfr -lgmp -frounding-math % -o comp_%:r ; ./comp_%:r < hiking-maps/hiking-maps-1.in<CR>
+    nnoremap <F7> :wa <CR> :!g++ --std=c++11 -lCGAL -lmpfr -lgmp -frounding-math % -o comp_%:r ; ./comp_%:r < input.txt<CR>
     nnoremap <F10> :wa <CR> :!python ~/submitter.py %; <CR>
 
 	"gdb debugging

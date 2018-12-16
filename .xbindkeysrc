@@ -76,14 +76,14 @@ XF86AudioPlay
 XF86AudioPrev
 
 
-"playerctl next"
-Mod1 + Right
+#"playerctl next"
+#Mod1 + Right
 
-"playerctl play-pause"
-Mod1 + Down
+#"playerctl play-pause"
+#Mod1 + Down
 
-"playerctl previous"
-Mod1 + Left
+#"playerctl previous"
+#Mod1 + Left
 
 
 "nautilus"

@@ -226,3 +226,15 @@ disconnect wifi:
 
 what is my ip
 	dig +short @resolver1.opendns.com myip.opendns.com
+
+mount polybox
+	sudo mount -t davfs https://polybox.ethz.ch/remote.php/webdav /mnt/sshdir
+	sudo rsync -aHAXS / /mnt/sshdir/backup --exclude={"/dev/*","/proc/*","/tmp/*","/sys/*","/run/*","/mnt/*","/lost+found/*"} --max-size=100MB -v -z
+
+monitor disk health: sudo smartctl -a /dev/sda
+
+compile on change:
+	ag -l | entr -s 'make && make test'
+
+redirect audio to hdmi:
+	./hdmi_audio_toggle.sh   #uses hdmi audio if possible, falling back to normal otherwise
