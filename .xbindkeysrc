@@ -1,64 +1,3 @@
-# For the benefit of emacs users: -*- shell-script -*-
-###########################
-# xbindkeys configuration #
-###########################
-#
-# Version: 1.8.6
-#
-# If you edit this file, do not forget to uncomment any lines
-# The pound(#) symbol may be used anywhere for comments.
-# that you change.
-#
-# To specify a key, you can use 'xbindkeys --key' or
-# 'xbindkeys --multikey' and put one of the two lines in this file.
-#
-# The format of a command line is:
-#    "command to start"
-#       associated key
-#
-#
-# A list of keys is in /usr/include/X11/keysym.h and in
-# /usr/include/X11/keysymdef.h
-# The XK_ is not needed.
-#
-# List of modifier:
-#   Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock),
-#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
-#
-
-# The release modifier is not a standard X modifier, but you can
-# use it if you want to catch release events instead of press events
-
-# By defaults, xbindkeys does not pay attention with the modifiers
-# NumLock, CapsLock and ScrollLock.
-# Uncomment the lines above if you want to pay attention to them.
-
-#keystate_numlock = enable
-#keystate_capslock = enable
-#keystate_scrolllock= enable
-
-# Examples of commands:
-
-"xbindkeys_show" 
-  control+shift + q
-
-
-#"xterm -geom 50x20+20+20"
-#   Shift+Mod2+alt + s
-#
-## set directly keycode (here control+alt+mod2 + f with my keyboard)
-#"xterm"
-#  alt + c:0x29 + m:4 + mod2
-#
-## Control+Shift+a  release event starts rxvt
-#"rxvt"
-#  release+control+shift + a
-#
-## Control + mouse button 2 release event starts rxvt
-#"rxvt"
-#  Control + b:2 + Release
-
-
 "amixer -q set Master 2000+ unmute"
 XF86AudioRaiseVolume 
 "amixer -q set Master 2000- unmute"
@@ -89,56 +28,12 @@ XF86AudioPrev
 "nautilus"
 XF86Search
 
-#"urxvt -e ~/scripts/wifi.sh"
 "urxvt -title floating -e /home/luca/scripts/wifi.sh"
 XF86LaunchA
 
 "urxvt -title floating -e nmtui-connect"
 XF86Explorer
 
-#"onboard"
-#XF86RotateWindows
-#"i3 kill"
-#XF86TaskPane
-
 "systemctl suspend"
 XF86Tools
 
-#"xbacklight -inc 5"
- #b:6
-#"xbacklight -dec 5"
- #b:7
-#
-
-#"xte 'keyup Alt_L' 'key Left' 'keydown Alt_L'"
-#Mod1 + h + release
-
-#"xte 'keyup Alt_L' 'key Down' 'keydown Alt_L'"
-#Mod1 + j + release
-
-#"xte 'keyup Alt_L' 'key Up' 'keydown Alt_L'"
-#Mod1 + k + release
-
-#"xte 'keyup Alt_L' 'key Right' 'keydown Alt_L'"
-#Mod1 + l + release
-
- # thumb wheel down => previous tab
-#"sleep 0.1; xte 'keydown Control_L' 'key Page_Down' 'keyup Control_L'"
-#b:6
-
-# thumb wheel up => next tab
-#"sleep 0.1; xte 'keydown Control_L' 'key Page_Up' 'keyup Control_L'"
-#b:7
-
-#"xte 'keydown BackSpace"
-#ograve
-
-#"xte 'key 0x31'"
-#Mod4 + Super_L 
-
-#"xdotool key --delay 0 --clearmodifiers 1"
-#Mod4 + d + release
-
-##################################
-# End of xbindkeys configuration #
-##################################
