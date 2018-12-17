@@ -1,23 +1,19 @@
-!-------------------------------------------------------------------------------
-! Xft settings
-! -------------------------------------------------------------------------------
-!
+
+
+! === Xft settings ===
 
 !Xft.dpi:        96
 !Xft.antialias:  false
 Xft.rgba:       rgb
-Xft.hinting:    false
+!setting hinting to true may crash st terminal transparency
+Xft.hinting:    false		
 Xft.hintstyle:  hintslight
 
-!*blinkRate: 5
+!===
 
-URxvt.perl-ext:                 default,font-size
-URxvt.perl-ext-common:          default,matcher,clipboard
-URxvt.keysym.C-V:               perl:clipboard:paste
-URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
+! === URxvt Font ===
 
-
-URxvt*font: -*-tamzen-medium-*-*-*-12-*-*-*-*-*-*-*
+URxvt*font: -*-tamzen-medium-*-*-*-14-*-*-*-*-*-*-*
 !URxvt*font: -*-montecarlo-*-*-*-*-*-12-*-*-*-*-*-*
 !URxvt*font: xft:xos4 Terminus:size=9
 !URxvt*font: xft:MonteCarlo:size=9
@@ -26,238 +22,123 @@ URxvt*font: -*-tamzen-medium-*-*-*-12-*-*-*-*-*-*-*
 !URxvt*font: xft:Misc Termsyn:size=20
 !URxvt*font: xft:TamzenForPowerline:size=10
 
+!===
+
+! === URxvt Extensions ===
+
+URxvt.perl-ext:                 default,font-size
+URxvt.perl-ext-common:          default,matcher,clipboard
+URxvt.keysym.C-V:               perl:clipboard:paste
+URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
+URxvt.matcher.button:       2
+URxvt.urlLauncher:          google-chrome-stable
+
 URxvt.keysym.C-Up:     font-size:increase
 URxvt.keysym.C-Down:   font-size:decrease
 URxvt.keysym.C-S-Up:   font-size:incglobal
 URxvt.keysym.C-S-Down: font-size:decglobal
+!===
 
-!xscreensaver.multiSample: true
-!*multiSample: true
-
-!-------------------------------------------------------------------------------
-! URxvt settings
-! Colours lifted from Solarized (http://ethanschoonover.com/solarized)
-! More info at:
-! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod
-!-------------------------------------------------------------------------------
+! === URxvt options and colors ===
 
 URxvt.depth:                32
 URxvt.geometry:             90x30
 URxvt.transparent:          false
 URxvt.fading:               0
-! URxvt.urgentOnBell:         true
-! URxvt.visualBell:           true
 URxvt.loginShell:           true
 URxvt.saveLines:            5550
 URxvt.internalBorder:       0
 URxvt.lineSpace:            0
 URxvt*imLocale: en_US.UTF-8
-
-
-! Fonts
-!URxvt.allow_bold:           false
-!/* URxvt.font:                 -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1 */
-!URxvt*font: xft:Monospace:pixelsize=14
-!URxvt*boldFont: xft:Monospace:pixelsize=14
-
-! Fix font space
 URxvt*letterSpace: 0
-
-! Scrollbar
 URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
-
-! Perl extensions
-URxvt.matcher.button:       2
-URxvt.urlLauncher:          google-chrome-stable
-
-! Cursor
 URxvt.cursorBlink:          false
-!URxvt.cursorColor:          #657b83
 URxvt.cursorColor:          #22ff22
 URxvt.cursorUnderline:      false
-
-! Pointer
 URxvt.pointerBlank:         true
 
-!#define S_base03        #002b36
-!!#define S_base02        #073642
-!#define S_base02        #000000
-!#define S_base01        #586e75
-!#define S_base00        #657b83
-!!#define S_base0         #839496
-!#define S_base0         #ffffff
-!#define S_base1         #93a1a1
-!#define S_base2         #eee8d5
-!#define S_base3         #fdf6e3
-
-!*background:            S_base03
-!*foreground:            S_base0
-!*fadeColor:             S_base03
-!*cursorColor:           S_base1
-!*pointerColorBackground:S_base01
-!*pointerColorForeground:S_base1
-
-!#define S_yellow        #b58900
-!#define S_orange        #cb4b16
-!#define S_red           #dc322f
-!#define S_magenta       #d33682
-!#define S_violet        #6c71c4
-!#define S_blue          #268bd2
-!#define S_cyan          #2aa198
-!#define S_green         #859900
-
-!!! black dark/light
-!*color0:                S_base02
-!*color8:                S_base03
-
-!!! red dark/light
-!*color1:                S_red
-!*color9:                S_orange
-
-!!! green dark/light
-!*color2:                S_green
-!*color10:               S_base01
-
-!!! yellow dark/light
-!*color3:                S_yellow
-!*color11:               S_base00
-
-!!! blue dark/light
-!*color4:                S_blue
-!*color12:               S_base0
-
-!!! magenta dark/light
-!*color5:                S_magenta
-!*color13:               S_violet
-
-!!! cyan dark/light
-!*color6:                S_cyan
-!*color14:               S_base1
-
-!!! white dark/light
-!*color7:                S_base2
-!*color15:               S_base3
-
-
-
-
-
-
-
-
+! Colours from Solarized (http://ethanschoonover.com/solarized)
 ! Special
-*background:    #1e2832
-*foreground:    #caf0ec
-*.cursorColor:  #4a3139
+	*background:    #1e2832
+	*foreground:    #caf0ec
+	*.cursorColor:  #4a3139
 
 ! Black
-*color0:       #3d3d3d
-*color8:       #4b4b4b
+	*color0:       #3d3d3d
+	*color8:       #4b4b4b
 
 ! Red
-*color1:       #ea7c67
-*color9:       #ea9e90
+	*color1:       #ea7c67
+	*color9:       #ea9e90
 
 ! Green
-*color2:       #78aaa4
-*color10:      #9bdcd3
+	*color2:       #78aaa4
+	*color10:      #9bdcd3
 
 ! Yellow
-*color3:       #b79d7d
-*color11:      #e9cfaf
+	*color3:       #b79d7d
+	*color11:      #e9cfaf
 
 ! Blue
-*color4:       #3288aa
-*color12:      #40b0dc
+	*color4:       #3288aa
+	*color12:      #40b0dc
 
 ! Magenta
-*color5:       #837ca3
-*color13:      #9c98ae
+	*color5:       #837ca3
+	*color13:      #9c98ae
 
 ! Cyan
-*color6:       #569aa9
-*color14:      #6fc7db
+	*color6:       #569aa9
+	*color14:      #6fc7db
 
 ! White
-*color7:       #9eb2cb
-*color15:      #cae5ff
+	*color7:       #9eb2cb
+	*color15:      #cae5ff
+
+!===
+
+! === Config for flying ranger (win + r) ===
+
+	flying_ranger*font: xft:erus erusfont:size=9
+	flying_ranger.perl-ext:                 default,font-size
+	flying_ranger.perl-ext-common:          default,clipboard
+	flying_ranger.keysym.C-V:               perl:clipboard:paste
+	flying_ranger.keysym.Shift-Control-C:   perl:clipboard:copy
+	flying_ranger.depth:                32
+	flying_ranger.geometry:             80x25
+	flying_ranger.loginShell:           true
+	flying_ranger.saveLines:            500
+	flying_ranger.internalBorder:       10
+	flying_ranger.lineSpace:            0
+	flying_ranger*imLocale: en_US.UTF-8
+	flying_ranger.allow_bold:           true
+	flying_ranger*letterSpace: 0
+	flying_ranger.scrollStyle:          rxvt
+	flying_ranger.scrollBar:            false
+	flying_ranger.cursorBlink:          false
+	flying_ranger.cursorColor:          #22ff22
+	flying_ranger.cursorUnderline:      false
+	flying_ranger.pointerBlank:         true
+
+	flying_ranger.background:   [70]#1e2832
+	flying_ranger.color0: #3f3f3f
+	flying_ranger.color1: #705050
+	flying_ranger.color2: #60b48a
+	flying_ranger.color3: #dfaf8f
+	flying_ranger.color4: #506070
+	flying_ranger.color5: #dc8cc3
+	flying_ranger.color6: #8cd0d3
+	flying_ranger.color7: #dcdccc
+	flying_ranger.color8: #709080
+	flying_ranger.color9: #dca3a3
+	flying_ranger.color10: #c3bf9f
+	flying_ranger.color11: #f0dfaf
+	flying_ranger.color12: #94bff3
+	flying_ranger.color13: #ec93d3
+	flying_ranger.color14: #93e0e3
+	flying_ranger.color15: #ffffff
 
 
-
-
-
-
-
-
-
-
-
-flying_ranger.perl-ext:                 default,font-size
-flying_ranger.perl-ext-common:          default,clipboard
-flying_ranger.keysym.C-V:               perl:clipboard:paste
-flying_ranger.keysym.Shift-Control-C:   perl:clipboard:copy
-
-
-!flying_ranger*font: -*-tamzen-medium-*-*-*-12-*-*-*-*-*-*-*
-!flying_ranger*font: -*-montecarlo-*-*-*-*-*-12-*-*-*-*-*-*
-!flying_ranger*font: xft:xos4 Terminus:size=9
-!flying_ranger*font: MonteCarlo
-flying_ranger*font: xft:erus erusfont:size=9
-!flying_ranger*font: xft:DejaVu Sans Mono:size=9
-!flying_ranger*font: xft:Misc Termsyn:size=20
-!flying_ranger*font: xft:TamzenForPowerline:size=10
-
-flying_ranger.keysym.C-Up:     font-size:increase
-flying_ranger.keysym.C-Down:   font-size:decrease
-flying_ranger.keysym.C-S-Up:   font-size:incglobal
-flying_ranger.keysym.C-S-Down: font-size:decglobal
-
-flying_ranger.depth:                32
-flying_ranger.geometry:             80x25
-flying_ranger.loginShell:           true
-flying_ranger.saveLines:            500
-flying_ranger.internalBorder:       10
-flying_ranger.lineSpace:            0
-flying_ranger*imLocale: en_US.UTF-8
-
-
-flying_ranger.allow_bold:           true
-
-! Fix font space
-flying_ranger*letterSpace: 0
-
-! Scrollbar
-flying_ranger.scrollStyle:          rxvt
-flying_ranger.scrollBar:            false
-
-
-! Cursor
-flying_ranger.cursorBlink:          false
-flying_ranger.cursorColor:          #22ff22
-flying_ranger.cursorUnderline:      false
-
-! Pointer
-flying_ranger.pointerBlank:         true
-
-
-! Special
-flying_ranger.background:   [70]#1e2832
-
-flying_ranger.color0: #3f3f3f
-flying_ranger.color1: #705050
-flying_ranger.color2: #60b48a
-flying_ranger.color3: #dfaf8f
-flying_ranger.color4: #506070
-flying_ranger.color5: #dc8cc3
-flying_ranger.color6: #8cd0d3
-flying_ranger.color7: #dcdccc
-flying_ranger.color8: #709080
-flying_ranger.color9: #dca3a3
-flying_ranger.color10: #c3bf9f
-flying_ranger.color11: #f0dfaf
-flying_ranger.color12: #94bff3
-flying_ranger.color13: #ec93d3
-flying_ranger.color14: #93e0e3
-flying_ranger.color15: #ffffff
-
+!! vim:fdm=expr:fdl=0
+!! vim:fde=getline(v\:lnum)=~'==*$'?(getline(v\:lnum)=~'==\\+[^=]\\+==.*'?'>'\:'<').(strlen(matchstr(getline(v\:lnum),'==*$'))-2)\:'='

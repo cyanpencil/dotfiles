@@ -1,27 +1,50 @@
-#
 # ~/.bashrc
-#
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export PATH=$PATH:~/scripts
-export TERMINAL=urxvt
+#                               === env vars ===
 
-alias ls='ls --color=auto'
+export PATH=$PATH:~/scripts
+export TERMINAL=st
 PS1='[\u@\h \W]\$ '
 
+# ===
+
+#                               === aliases ===
+
+alias ls='ls --color=auto'
 alias l='ls -lt --color=auto'
-alias write='~/Downloads/Write/Write'
 alias spotify='LD_PRELOAD=libcurl.so.3 /usr/share/spotify/spotify --force-device-scale-factor=1.0000001 "$@"'
-alias genymotion='sudo genymotion'
-alias yaourt='yaourt --noconfirm'
+alias scrotclip="scrot -s -e 'xclip -selection clipboard -t "image/png" < $f'"
 
+# ===
 
-# -----------------------------------------------------------------------------
+#                               === fzf ===
+
+if [[ -f ~/.fzf.bash ]]; then source ~/.fzf.bash; fi
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore cache --ignore .cache --ignore Cache --depth 10 -g ""'
+bind -x '"\C-p": vim $(fzf);'
+
+# ===
+
+#                               === colorize man pages ===
+
+# from: https://wiki.archlinux.org/index.php/Color_output_in_console#man
+export LESS_TERMCAP_mb=$'\e[1;31m'     # begin bold
+export LESS_TERMCAP_md=$'\e[1;33m'     # begin blink
+export LESS_TERMCAP_so=$'\e[01;44;37m' # begin reverse video
+export LESS_TERMCAP_us=$'\e[01;37m'    # begin underline
+export LESS_TERMCAP_me=$'\e[0m'        # reset bold/blink
+export LESS_TERMCAP_se=$'\e[0m'        # reset reverse video
+export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
+export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
+
+#===
+
+#                               === functions ===
+
 # E[xtr]act any file
 # based on https://github.com/xvoland/Extract
-# -----------------------------------------------------------------------------
 function xtr {
   if [ -z "$1" ]; then
 	# display usage if no parameters given
@@ -69,20 +92,10 @@ transfer() {
     rm -f $tmpfile; 
 } 
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-#export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore cache --ignore .cache --ignore Cache --depth 10 -g ""'
-bind -x '"\C-p": vim $(fzf);'
 
-alias scrotclip="scrot -s -e 'xclip -selection clipboard -t "image/png" < $f'"
 
-# Have less display colours
-# from: https://wiki.archlinux.org/index.php/Color_output_in_console#man
-export LESS_TERMCAP_mb=$'\e[1;31m'     # begin bold
-export LESS_TERMCAP_md=$'\e[1;33m'     # begin blink
-export LESS_TERMCAP_so=$'\e[01;44;37m' # begin reverse video
-export LESS_TERMCAP_us=$'\e[01;37m'    # begin underline
-export LESS_TERMCAP_me=$'\e[0m'        # reset bold/blink
-export LESS_TERMCAP_se=$'\e[0m'        # reset reverse video
-export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
-export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
+
+
+# vim:fdm=expr:fdl=0
+# vim:fde=getline(v\:lnum)=~'==*$'?(getline(v\:lnum)=~'==\\+[^=]\\+==.*'?'>'\:'<').(strlen(matchstr(getline(v\:lnum),'==*$'))-2)\:'='
+

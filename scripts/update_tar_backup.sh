@@ -7,6 +7,8 @@ read -s password
 echo
 
 
+# First we check if pass is correct
+# By uploading a dummy file to the server
 echo "prova" > try_auth
 success=$(curl -T try_auth "https://polybox.ethz.ch/remote.php/dav/files/lucadib/backup/try_auth" --user "lucadib:$password" 2>/dev/null)
 

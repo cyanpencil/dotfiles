@@ -1,3 +1,7 @@
+
+
+
+
 "                      === GLOBAL OPTIONS ===
 set nocompatible
 syntax on
@@ -478,6 +482,20 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC 
 endif " ====
+
+" ==== custom folds ====
+function! NeatFoldText()
+	let line = '['.substitute(getline(v:foldstart), '["#\/%!]*\s\+=\+\s*', '','g').']'
+	let lines_count = v:foldend - v:foldstart + 1
+	let lines_count_text = '| ' . printf("%10s", lines_count . ' lines') . ' |'
+	let foldtextstart = strpart(' ' . repeat('-', (v:foldlevel-1)*2) . line, 0, (winwidth(0)*2)/3)
+	let foldtextend = lines_count_text . repeat(' ', 8)
+	let foldtextlength = strlen(foldtextstart . foldtextend) + &foldcolumn
+	return foldtextstart . repeat(' ', winwidth(0)-foldtextlength) . foldtextend
+endfunction
+
+set foldtext=NeatFoldText()
+" ====
 
 "--- ascii color values
 "BLACK= "\u001b[30m"

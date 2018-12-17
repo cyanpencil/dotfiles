@@ -115,7 +115,7 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
     /* gruvbox dark, hard contrast */
-	"#1d2021", /* hard contrast: #1d2021 / soft contrast: #32302f */
+	"#1d2021", 
 	"#cc241d",
 	"#98971a",
 	"#d79921",
@@ -131,7 +131,12 @@ static const char *colorname[] = {
 	"#d3869b",
 	"#8ec07c",
 	"#ebdbb2",
+	[255]=0,       // necessary because of horrible hack in xloadcolor()
+	"black",
 };
+
+/* bg opacity */
+unsigned int alpha = 0xaa;
 
 
 /*
@@ -139,7 +144,7 @@ static const char *colorname[] = {
  * foreground, background, cursor, reverse cursor
  */
 unsigned int defaultfg = 15;
-unsigned int defaultbg = 0;
+unsigned int defaultbg = 256;
 static unsigned int defaultcs = 15;
 static unsigned int defaultrcs = 0;
 
