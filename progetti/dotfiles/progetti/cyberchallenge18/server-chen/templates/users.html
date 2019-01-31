@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+  <h3>Hall of Fame</h3>
+  <br>
+  <ol class="list-group list-group-flush">
+    {% for user in users %}
+      <a href="/user/{{user[0]}}">
+        <li class="list-group-item">
+          <span class="badge">{{user[1]}} soldi</span> <span>{{user[0]}}</span>
+        </li>
+      </a>
+    {% endfor %}
+  </ol>
+{% endblock %}

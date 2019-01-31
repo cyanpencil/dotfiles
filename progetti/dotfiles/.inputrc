@@ -1,0 +1,6 @@
+set completion-ignore-case on
+set completion-prefix-display-length 2
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+#Control-j: menu-complete #removed to make vim-codi work
+Control-k: menu-complete-backward

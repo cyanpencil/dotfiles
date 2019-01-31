@@ -1,8 +1,6 @@
 Se pacman rompe il cazzo per le chiavi esegui:
     sudo pacman -S archlinux-keyring
 
-Le applicazioni di default stanno in .config/mimeapps.list
-Per vedere quale applicazione viene aperta di default: xdg-mime query default image/png
 
 mtr is the new traceroute
 iftop to monitor where goes traffic (by IP)
@@ -225,7 +223,7 @@ disconnect wifi:
 	sudo airmon-ng stop wlp4s0mon
 
 what is my ip
-	dig +short @resolver1.opendns.com myip.opendns.com
+	curl ifconfig.me
 
 mount polybox
 	sudo mount -t davfs https://polybox.ethz.ch/remote.php/webdav /mnt/sshdir
@@ -238,3 +236,14 @@ compile on change:
 
 redirect audio to hdmi:
 	./hdmi_audio_toggle.sh   #uses hdmi audio if possible, falling back to normal otherwise
+
+check which programs keep files open:
+	lsof +D /path
+	fuser <file>
+
+applicazioni di default:
+	xdg-mime query defualt image/png
+	xdg-mime query filetype <file>
+	xdg-mime default tixati.desktop application/x-bittorrent
+	.config/mimeapps.list (sometimes not working)
+	.local/share/applications/mimeapps.list

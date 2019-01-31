@@ -1,8 +1,4 @@
-
-
-
-
-"                      === GLOBAL OPTIONS ===
+"                      === global options ===
 set nocompatible
 syntax on
 set ai
@@ -46,6 +42,7 @@ set foldcolumn=0
 set listchars=tab:\|\  "<--- there is a space here
 set list
 
+
 set backupdir=~/.vim_backup//,.
 set directory=~/.vim_backup//,.
 
@@ -64,8 +61,13 @@ set guifont=profont\ Medium\ Semi-Condensed\ 10
 
 filetype plugin indent on
 
+let &t_SI = "\<Esc>[3 q"
+let &t_SR = "\<Esc>[1 q"
+let &t_EI = "\<Esc>[1 q"
 
-"                       === MOVEMENT MACROS ===
+" ===
+
+"                       === movement macros ===
 
 nnoremap h <C-w>h
 nnoremap j <C-w>j
@@ -111,7 +113,9 @@ map <ScrollWheelDown> <C-E><C-E>
 
 "nnoremap <silent>   :exe "tabn ".g:lasttab<cr> "breaks if pressing esc two times
 
-"                   === EDITING MACROS ===
+"===
+
+"                   === editing macros ===
 
 inoremap jk <Esc>
 inoremap kj <Esc>
@@ -120,8 +124,8 @@ inoremap JK <Esc>
 
 nnoremap <space> za
 
-noremap p ]p
-nnoremap P [p
+nmap p ]p
+nmap P [p
 
 nnoremap ,p "+]p
 nnoremap ,P "+]P
@@ -132,13 +136,15 @@ nnoremap ,s :w<CR>
 nnoremap ,q :wq<CR>
 nnoremap ,Q :q!<CR>
 
-"                   === COMMAND MACROS ===
+" ===
+
+"                   === command macros ===
 
 cmap w!! w !sudo tee > /dev/null %
 
 nnoremap ,w :w<CR>
 
-nnoremap gv `[v`]
+nnoremap gV `[v`]
 
 vnoremap Y "+y
 nnoremap Y "+y
@@ -179,8 +185,9 @@ vnoremap ,j :join<CR>
 
 nnoremap ,S :!clear && shellcheck %<CR>
 
+" ===
 
-"                   === AUTO COMMANDS ===
+"                   === auto commands ===
 
 "auto reload vim_rc
 augroup reload_vimrc " {
@@ -188,10 +195,11 @@ augroup reload_vimrc " {
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
 
-"keep clipboard on exit
+"keep clipboard on exit + set cursor on start
 augroup my_clipboard
 	autocmd!
 	autocmd VimLeave * call system("xsel -ib", getreg('+'))
+	autocmd VimEnter * silent !echo -ne "\e[1 q"
 augroup END
 
 "to switch to last active tab
@@ -204,7 +212,9 @@ augroup END
 "autocmd BufWinLeave *.* mkview!
 "autocmd BufWinEnter *.* silent loadview
 
-"                   === PLUGIN LIST ===
+" ===
+
+"                   === plugin list ===
 
 call plug#begin('~/.vim/bundle')
 Plug 'godlygeek/csapprox'
@@ -276,12 +286,14 @@ Plug 'markonm/traces.vim'				"real time preview of substitutions
 
 
 
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'idanarye/vim-vebugger'
+
+Plug 'wsdjeg/FlyGrep.vim'
 
 call plug#end()
 
-"                   === PLUGIN OPTIONS ===
+" ===
+
+"                   === plugin options ===
 
 let g:airline_theme = "zenburn"
 let g:move_key_modifier = 'C' "vim-move keybinding
@@ -298,27 +310,22 @@ let g:livepreview_engine='xelatex'
 let g:limelight_conceal_ctermfg = '239'
 let g:goyo_width = '93%'
 let python_highlight_all=1
-let g:vebugger_leader='\'
-"let g:solarized_termcolors=256
+let g:FlyGrep_input_delay=200
 
-"supertab
+  "supertab
 set completeopt=menuone,preview
-
-"use LimeLight when starting Goyo
-"autocmd! User GoyoEnter Limelight
-"autocmd! User GoyoLeave Limelight!
-
 colorscheme alduin
 hi SpecialKey ctermfg=236
 "colorscheme Dev_Delight
 
 
-"javacomplete
+  "javacomplete
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
 
+" ===
 
-"                   === PLUGIN MACROS ===
+"                   === plugin macros ===
 
 nnoremap ,n :NERDTreeToggle<Enter>
 nnoremap ,t :TagbarToggle<Enter>
@@ -345,80 +352,73 @@ nnoremap ,f :Ack!<Space>
 nnoremap ,F :Ack!<Space>""<Left>
 
 
+" ===
 
-"                   === FILETYPE SETTINGS ===
-
-autocmd filetype c call SettingsC()
-autocmd filetype cpp call SettingsCpp()
-autocmd filetype java call SettingsJava()
-autocmd filetype python call SettingsPython()
-autocmd filetype tex call SettingsLatex()
-autocmd filetype html call SettingsHTML()
-
-autocmd BufNewFile *.cpp r ~/.vim/usaco_template.cpp
+"                   === filetype settings ===
 
 "			==== C ====
 function! SettingsC() 
-    """ ROBA PER RADARE "
-    set cindent
-    set tabstop=8
-    set noexpandtab
-    set shiftwidth=8
-    set softtabstop=8
-    set cino=:0,+0,(2,J0,{1,}0,>8,)1,m2
-    nnoremap <F4> :wa <CR> :!g++ % -o comp_%:r ;  ./comp_%:r <CR>
+	""" ROBA PER RADARE "
+	set cindent
+	set tabstop=8
+	set noexpandtab
+	set shiftwidth=8
+	set softtabstop=8
+	set cino=:0,+0,(2,J0,{1,}0,>8,)1,m2
+	nnoremap <F4> :wa <CR> :!g++ % -o comp_%:r ;  ./comp_%:r <CR>
 
-    """ for the gitgutter plugin
-    set updatetime=600
+	""" for the gitgutter plugin
+	set updatetime=600
 
-    "set list
-    "set listchars=space:.,tab:>-,trail:.,nbsp:.  
-    "hi SpecialKey ctermfg=236
+	"set list
+	"set listchars=space:.,tab:>-,trail:.,nbsp:.  
+	"hi SpecialKey ctermfg=236
 endfunction
 
 "			==== C++ ====
 function! SettingsCpp() 
 	"the parentesis are needed to combine the output of the two commands
-	set makeprg=(g++\ %\ -o\ comp_%:r\ &&\ ./comp_%:r\ <\ input.txt)
+	set makeprg=(g++\ %\ -o\ comp_%:r\ -O2\ -g\ &&\ ./comp_%:r\ <\ input.txt)
 	nnoremap <F4> :wa <CR> :silent make\|redraw!\|copen<CR>
-    nnoremap <F5> :wa <CR> :!g++ % -o comp_%:r ;  ./comp_%:r <CR>
-    nnoremap <F6> :wa <CR> :!g++ -lCGAL -lmpfr -lgmp -frounding-math % -o comp_%:r ; ./comp_%:r <CR>
-    nnoremap <F7> :wa <CR> :!g++ --std=c++11 -lCGAL -lmpfr -lgmp -frounding-math % -o comp_%:r ; ./comp_%:r < input.txt<CR>
-    nnoremap <F10> :wa <CR> :!python ~/submitter.py %; <CR>
+	nnoremap <F5> :wa <CR> :!g++ % -o comp_%:r ;  ./comp_%:r <CR>
+	nnoremap <F6> :wa <CR> :!g++ -lCGAL -lmpfr -lgmp -frounding-math % -o comp_%:r && ./comp_%:r <CR>
+	nnoremap <F7> :wa <CR> :!g++ --std=c++11 -g -lCGAL -lmpfr -lgmp -frounding-math % -o comp_%:r -O2 && ./comp_%:r < input.txt<CR>
+	nnoremap <F8> :wa <CR> :!g++ -g -lasan --std=c++11 -lCGAL -lmpfr -lgmp -frounding-math % -o comp_%:r -O2; ./comp_%:r < input.txt<CR>
+	nnoremap <F10> :wa <CR> :!python ~/submitter.py %; <CR>
 
 	"gdb debugging
 	nnoremap <F11> :!g++ -g %<CR>:VBGstartGDB a.out<CR>:VBGrawWrite break main<CR>:VBGrawWrite run < input.txt<CR>:VBGtoggleTerminalBuffer<CR><C-w>H
 
-    "nnoremap <F4> :wa <CR> :!./build.sh; cd bin; ./myview; <CR>
+	"nnoremap <F4> :wa <CR> :!./build.sh; cd bin; ./myview; <CR>
 
-    "setlocal foldcolumn=1
+	"setlocal foldcolumn=1
 
-    abbr vi vector<int>
-    abbr vvi vector<vector<int> >
-    abbr fori for(int i = 0; i < n; i++) {<CR>
-    inoremap {<CR> {<CR><CR>}<ESC>kcc
-    set foldmethod=manual
+	abbr vi vector<int>
+	abbr vvi vector<vector<int> >
+	abbr fori for(int i = 0; i < n; i++) {<CR>
+	inoremap {<CR> {<CR><CR>}<ESC>kcc
+	set foldmethod=manual
 endfunction
 
 "			==== Java  ====
 function! SettingsJava() 
-    "autocmd FileType java setlocal omnifunc=javacomplete#Complete
-    "autocmd filetype Java set completefunc=javacomplete#CompleteParamsInfo
-    abbr print System.out.println();<Esc>hh
-    "//	nnoremap <F4> :wa <CR> :!/c/progetti/android/LOL/build.sh; /c/progetti/android/LOL/run.sh <CR>
-    "nnoremap <F5> :wa <CR> :!/c/progetti/android/RajawaliVRCardboard/build_and_run.sh <CR>
+	"autocmd FileType java setlocal omnifunc=javacomplete#Complete
+	"autocmd filetype Java set completefunc=javacomplete#CompleteParamsInfo
+	abbr print System.out.println();<Esc>hh
+	"//	nnoremap <F4> :wa <CR> :!/c/progetti/android/LOL/build.sh; /c/progetti/android/LOL/run.sh <CR>
+	"nnoremap <F5> :wa <CR> :!/c/progetti/android/RajawaliVRCardboard/build_and_run.sh <CR>
 
-    nnoremap <F4> :wa <CR> :!javac %; java Main < input.txt <CR>
-    nnoremap <F5> :wa <CR> :!javac %; java %:r <CR>
-    "setlocal omnifunc=javacomplete#Complete
-    "set makeprg=javac\ -d\ \~\/comp\ $(find\ gapp\ -name\ \"\*\.java\"\)
-    set makeprg=javac\ -d\ \~\/comp\ $(find\ -name\ \"\*\.java\"\)
-    "cp -r resources/* ~/comp/resources/; javac -d ~/comp (find gapp -name "*.java"); java -cp ~/comp gapp.ulg.test.slideNewTry
-    set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
-    map <F9>  <Esc>:silent :make<Return>:copen<Return><C-l>
-    map <F10> <Esc>:cprevious<Return>
-    map <F11> <Esc>:cnext<Return>
-    map <F12> <Esc>:silent :!java -cp ~/comp gapp.ulg.test.slideNewTry<CR>
+	nnoremap <F4> :wa <CR> :!javac %; java Main < input.txt <CR>
+	nnoremap <F5> :wa <CR> :!javac %; java %:r <CR>
+	"setlocal omnifunc=javacomplete#Complete
+	"set makeprg=javac\ -d\ \~\/comp\ $(find\ gapp\ -name\ \"\*\.java\"\)
+	set makeprg=javac\ -d\ \~\/comp\ $(find\ -name\ \"\*\.java\"\)
+	"cp -r resources/* ~/comp/resources/; javac -d ~/comp (find gapp -name "*.java"); java -cp ~/comp gapp.ulg.test.slideNewTry
+	set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
+	map <F9>  <Esc>:silent :make<Return>:copen<Return><C-l>
+	map <F10> <Esc>:cprevious<Return>
+	map <F11> <Esc>:cnext<Return>
+	map <F12> <Esc>:silent :!java -cp ~/comp gapp.ulg.test.slideNewTry<CR>
 
 	set shiftwidth=4
 	set softtabstop=4
@@ -427,36 +427,36 @@ endfunction
 
 "			==== Python ====
 function! SettingsPython() 
-    nnoremap <F3> :wa <CR> :!python2 % <CR>
-    nnoremap <F4> :wa <CR> :!python % <CR>
-    nnoremap <F5> :wa <CR> :!python spiketrap/lib/classifier_example.py <CR>
-    setlocal foldcolumn=1
+	nnoremap <F3> :wa <CR> :!python2 % <CR>
+	nnoremap <F4> :wa <CR> :!python % <CR>
+	nnoremap <F5> :wa <CR> :!python spiketrap/lib/classifier_example.py <CR>
+	setlocal foldcolumn=1
 endfunction
 
 "			==== Latex ====
 function! SettingsLatex() 
-    nnoremap <F4> :wa <CR> :!pdflatex --shell-escape % <CR>
-    "nnoremap <F4> :wa <CR> :!pdflatex --shell-escape % <CR>
-    nnoremap <F5> :wa <CR> :!zathura %:r.pdf <CR>
-    setlocal nocursorline
-    set foldmethod=manual
-    set foldcolumn=0
-    "set regexpengine=1
-    "set colorcolumn=80
-    "highlight ColorColumn ctermbg=DarkGrey guibg=lightgrey
+	nnoremap <F4> :wa <CR> :!pdflatex --shell-escape % <CR>
+	"nnoremap <F4> :wa <CR> :!pdflatex --shell-escape % <CR>
+	nnoremap <F5> :wa <CR> :!zathura %:r.pdf <CR>
+	setlocal nocursorline
+	set foldmethod=manual
+	set foldcolumn=0
+	"set regexpengine=1
+	"set colorcolumn=80
+	"highlight ColorColumn ctermbg=DarkGrey guibg=lightgrey
 
-    "syn sync minlines=10
-    "syn sync maxlines=50
+	"syn sync minlines=10
+	"syn sync maxlines=50
 
-    :NoMatchParen
-    setlocal updatetime=1000
-    abbr ,a \begin{align*}<CR><CR>\end{align*}<UP>
-    inoremap {<CR> {<CR><CR>}<ESC>kcc
+	:NoMatchParen
+	setlocal updatetime=1000
+	abbr ,a \begin{align*}<CR><CR>\end{align*}<UP>
+	inoremap {<CR> {<CR><CR>}<ESC>kcc
 
-    set conceallevel=2
-    set concealcursor=vc
-    let g:tex_conceal="adgms"
-    highlight Conceal NONE
+	set conceallevel=2
+	set concealcursor=vc
+	let g:tex_conceal="adgms"
+	highlight Conceal NONE
 endfunction
 
 "			==== HTML ====
@@ -469,14 +469,32 @@ map <F9> :!google-chrome-stable % 2> /dev/null > /dev/null &<CR><CR><C-L>
 	set shiftwidth=2
 	set softtabstop=2
 	set cino=:0,+0,(2,J0,{1,}0,>8,)1,m2
-    set foldmethod=manual
-    set foldcolumn=0
+	set foldmethod=manual
+	set foldcolumn=0
 endfunction "====
+"			==== Bash ====
+function! SettingsSh()
+	map <F4> :!./%<CR>
+endfunction
 
 
-"                  === OTHER THINGS ===
+" ====
 
-" ==== auto-install vim -plug ====
+autocmd filetype c call SettingsC()
+autocmd filetype cpp call SettingsCpp()
+autocmd filetype java call SettingsJava()
+autocmd filetype python call SettingsPython()
+autocmd filetype tex call SettingsLatex()
+autocmd filetype html call SettingsHTML()
+autocmd filetype sh call SettingsSh()
+
+autocmd BufNewFile *.cpp r ~/.vim/usaco_template.cpp
+
+" ===
+
+"                  === other things ===
+
+" ==== auto-install vim-plug ====
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs 
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -485,10 +503,11 @@ endif " ====
 
 " ==== custom folds ====
 function! NeatFoldText()
-	let line = '['.substitute(getline(v:foldstart), '["#\/%!]*\s\+=\+\s*', '','g').']'
+	let line = ' '.substitute(getline(v:foldstart), '["#\/%!]*\s\+=\+\s*', '','g').' '
+	let line = repeat('[', v:foldlevel) . line . repeat(']', v:foldlevel)
 	let lines_count = v:foldend - v:foldstart + 1
 	let lines_count_text = '| ' . printf("%10s", lines_count . ' lines') . ' |'
-	let foldtextstart = strpart(' ' . repeat('-', (v:foldlevel-1)*2) . line, 0, (winwidth(0)*2)/3)
+	let foldtextstart = strpart(repeat('  ',v:foldlevel) . line , 0, (winwidth(0)*2)/3)
 	let foldtextend = lines_count_text . repeat(' ', 8)
 	let foldtextlength = strlen(foldtextstart . foldtextend) + &foldcolumn
 	return foldtextstart . repeat(' ', winwidth(0)-foldtextlength) . foldtextend

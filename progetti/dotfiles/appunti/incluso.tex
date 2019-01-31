@@ -1,0 +1,77 @@
+\documentclass[a4paper,10pt]{article} %default
+\usepackage{geometry}
+\usepackage{fontspec}
+\usepackage[normalem]{ulem}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{xfrac}
+\usepackage{multirow}
+\usepackage{abraces}
+\geometry{top = 3mm, lmargin=10mm, rmargin=10mm, bottom=3mm}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\multicolsep}{0.5em}
+\setlength{\columnsep}{0.7cm}
+
+
+\lstset{
+    basicstyle=\ttfamily,
+    numberstyle=\ttfamily,
+    numbers=left,
+    backgroundcolor=\color[rgb]{0.9,0.9,0.9},
+    columns=fullflexible,
+    keepspaces=true,
+    frame=lr,
+    framesep=8pt,
+    framerule=0pt,
+    xleftmargin=20pt,
+    xrightmargin=30pt,
+    mathescape
+}
+
+\newcommand{\specialcell}[2][c]{%
+    \begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
+\newcommand{\dimo}[1]{%
+    \smallbreak \par \hfill\begin{minipage}{0.92\linewidth}{ \scriptsize {\textbf{\em{Dim.}}} {#1} }\end{minipage} \smallskip \par}
+\newcommand{\mdim}[1]{%
+    \smallbreak \par \hfill\begin{minipage}{0.95\linewidth}{ \scriptsize {\textbf{\em{Dim.}}} {#1} }\end{minipage} \smallskip \par}
+\newcommand{\mtheorem}[1]{%
+    {\hspace*{-10pt} \textsc {#1}}}
+\newcommand{\malgorithm}[1]{%
+    {\bigbreak \par \hspace*{4pt} \underline{\textbf {#1}}}}
+\newcommand{\msection}[1]{%
+    {\newpage\bigbreak \bigbreak \par \hfil \huge \textsc {#1}}\par}
+\renewcommand{\b}[1]{%
+    {\textbf{#1}}}
+\renewcommand{\t}[1]{%
+    {\texttt{#1}}}
+\renewcommand{\v}[1]{%
+    {\underline{#1}}}
+\newcommand{\mdef}[1]{%
+    {\smallbreak\par\begin{tabular}{ll} \textbf{Def.$\;\;$} & \begin{minipage}[t]{0.80\columnwidth}\normalsize  {#1}\end{minipage}\tabularnewline \end{tabular}}\smallskip\par}
+\newcommand{\ldef}[1]{%
+    {\smallbreak\par\normalsize\textbf{\underline{Def.}} {#1} \smallbreak}}
+\newcommand{\lprop}[1]{%
+    {\smallbreak\par\normalsize\textbf{\underline{Prop.}} {#1} \smallbreak}}
+\newcommand{\ltheorem}[1]{%
+    {\smallbreak\par\normalsize\textbf{\underline{Th.}} {#1} \smallbreak\par}}
+\newcommand{\ldim}[1]{%
+    {\smallbreak\par\scriptsize\emph{\textbf{Dimostrazione}} {#1} \par}}
+\newcommand{\loss}[1]{%
+    {\smallbreak\par\scriptsize\emph{\textbf{Osservazione}} {#1} \par}}
+\newcommand{\mcomment}[1]{%
+    {\hfill \scriptsize {#1}}}
+\newcommand{\mprop}[1]{%
+    {\smallbreak\par\begin{tabular}{ll} \textbf{Prop.} & \begin{minipage}[t]{0.8\columnwidth}\emph  {#1}\end{minipage}\tabularnewline \end{tabular}}\smallskip\par}
+\newcommand{\shortoverbrace}[2]{\aoverbrace[U]{#1}^{\mathclap{#2}}}%
+
+\makeatletter
+\g@addto@macro\normalsize{%
+  \setlength{\abovedisplayskip}{3.0pt plus 2.0pt minus 5.0pt}%
+  \setlength{\belowdisplayskip}{3.0pt plus 2.0pt minus 5.0pt}%
+}
+\makeatother

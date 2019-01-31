@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n+nf}{ldh} \PYG{p}{[}\PYG{l+m+mi}{12}\PYG{p}{]}
+	\PYG{n+nf}{jne} \PYG{err}{\PYGZsh{}}\PYG{l+m+mh}{0x800}\PYG{p}{,} \PYG{n+nv}{drop}
+	\PYG{n+nf}{ldb} \PYG{p}{[}\PYG{l+m+mi}{23}\PYG{p}{]}
+	\PYG{n+nf}{jneq} \PYG{err}{\PYGZsh{}}\PYG{l+m+mi}{6}\PYG{p}{,} \PYG{n+nv}{drop}
+	\PYG{n+nf}{ret} \PYG{err}{\PYGZsh{}}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}
+	\PYG{n+nl}{drop:} \PYG{n+nf}{ret} \PYG{err}{\PYGZsh{}}\PYG{l+m+mi}{0}
+\end{Verbatim}

@@ -23,6 +23,5 @@ find / -size +100M 2>/dev/null >/backup/files_too_large
 newname="final_backup_$(date +'%Y-%m-%d').tar.gz"
 sudo tar -I pigz -cvpf $newname --exclude={"/dev/*","/proc/*","/tmp/*","/sys/*","/run/*","/mnt/*","/lost+found/*","/home/luca/.cache/*","/backup/*","/var/cache/pacman/pkg/*"} --exclude-from=/backup/files_too_large /
 
-curl -T $newname "https://polybox.ethz.ch/remote.php/dav/files/lucadib/backup/$newname" --user "lucadib:$password" >curl_result
-cat curl_result
-
+# upload file, redirecting to dev null to show progress meter
+curl -T $newname "https://polybox.ethz.ch/remote.php/dav/files/lucadib/backup/$newname" --user "lucadib:$password" -o /dev/null 

@@ -1,0 +1,188 @@
+.vertical-separator .line {
+  -fx-border-color: linear-gradient(#686868 0%, #232723 25%, #373837 75%, #ffffff00 100%) ;
+  -fx-border-width: 0 0 0 1 ;
+}
+
+
+.vertical-separator-completelyfaded .line {
+  -fx-border-color: linear-gradient(#ffffff00 5%, #232723 25%, #373837 75%, #ffffff00 95%) ;
+  -fx-border-width: 0 0 0 1 ;
+}
+
+.vertical-separator-faded .line {
+  -fx-border-color: linear-gradient(#ffffff00 10%, #232723 25%, #373837 75%, #ffffff00 90%) ;
+  -fx-border-width: 0 0 0 1 ;
+}
+
+
+.horizontal-separator-total .line {
+	-fx-border-color: linear-gradient(to right, #000000 10%, #232723 35%, #373837 65%, #000000 90%);
+  /* -fx-border-color:  linear-gradient(#ffffff00 0%, #232723 25%, #373837 75%, #ffffff00 100%); */
+  -fx-border-width: 1 0 0 0 ;
+}
+
+
+.horizontal-separator .line {
+	-fx-border-color: linear-gradient(to right, #ffffff00 10%, #232723 35%, #373837 65%, #ffffff00 90%);
+  /* -fx-border-color:  linear-gradient(#ffffff00 0%, #232723 25%, #373837 75%, #ffffff00 100%); */
+  -fx-border-width: 1 0 0 0 ;
+}
+
+.horizontal-separator-middleleft .line {
+	-fx-border-color: linear-gradient(to right, #ffffff00 10%, #232723 35%, #373837 65%, #000000 90%);
+  /* -fx-border-color:  linear-gradient(#ffffff00 0%, #232723 25%, #373837 75%, #ffffff00 100%); */
+  -fx-border-width: 1 0 0 0 ;
+}
+
+.horizontal-separator-middleright .line {
+	-fx-border-color: linear-gradient(to right, #000000 10%, #232723 35%, #373837 65%, #ffffff00 90%);
+  /* -fx-border-color:  linear-gradient(#ffffff00 0%, #232723 25%, #373837 75%, #ffffff00 100%); */
+  -fx-border-width: 1 0 0 0 ;
+}
+
+.horizontal-separator-left .line {
+  -fx-border-color: linear-gradient(to right, #232723 0%, #373837 65%, #ffffff00 100%);
+  /* -fx-border-color:  linear-gradient(#ffffff00 0%, #232723 25%, #373837 75%, #ffffff00 100%); */
+  -fx-border-width: 1 0 0 0 ;
+}
+
+.horizontal-separator-right .line {
+  -fx-border-color: linear-gradient(to right, #ffffff00 0%, #373837 65%, #232723 100%);
+  /* -fx-border-color:  linear-gradient(#ffffff00 0%, #232723 25%, #373837 75%, #ffffff00 100%); */
+  -fx-border-width: 1 0 0 0 ;
+}
+
+.second-horizontal-separator .line {
+	-fx-border-color: linear-gradient(to right, #ffffff00 0%, #232723 35%, #373837 65%, #ffffff00 100%);
+  /* -fx-border-color:  linear-gradient(#ffffff00 0%, #232723 25%, #373837 75%, #ffffff00 100%); */
+  -fx-border-width: 1 0 0 0 ;
+}
+
+.horizontal-separator-description .line {
+    -fx-border-color: linear-gradient(to right, #ffffff00 30%, #232723 35%, #373837 65%, #ffffff00 70%);
+  /* -fx-border-color:  linear-gradient(#ffffff00 0%, #232723 25%, #373837 75%, #ffffff00 100%); */
+  -fx-border-width: 1 0 0 0 ;
+  -fx-border-style: dashed;
+}
+
+.paramTextContainer {
+	/* -fx-background-color: #ff0000; */
+	-fx-alignment: top-right;
+	-fx-margin: 0 2 0 0;
+}
+
+.paramTextContainer .text {
+	-fx-font-color: #708294;
+	-fx-font-size: 20;
+	-fx-font-family: "Comfortaa Light";
+}
+
+.valueTextContainer .text{
+	-fx-font-color: #708294;
+	-fx-font-size: 12;
+	-fx-font-family: "Comfortaa Light";
+}
+
+.descriptionTextContainer .text {
+    -fx-font-color: #708294;
+    -fx-font-size: 15;
+    -fx-font-family: "Comfortaa Light";
+}
+
+
+.description {
+    -fx-font-color: #708294;
+    -fx-font-size: 15;
+    -fx-font-family: "Comfortaa Light";
+}
+
+/*.text-field {
+    -fx-background-color: #a9a9a9 , white , white;
+    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
+    -fx-font-size: 20;
+    -fx-text-alignment: center;
+}
+
+.text-field:focused {
+    -fx-background-color: #a9a9a9 , white , white;
+    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
+}
+*/
+
+.bplayers-cerchio {
+    -fx-background-color: #686868;
+    -fx-background-radius: 50px;
+}
+
+.bplayers-sfondo {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 20px;
+}
+
+.bplayers-text {
+    -fx-fill: gainsboro;
+    -fx-font-size: 22;
+    -fx-font-family: "Comfortaa Light";
+}
+
+.scatoletta {
+    -fx-background-color: brown;
+}
+
+.coordsText {
+    -fx-fill: #F0D9B5;
+    -fx-font-size: 15;
+    -fx-font-family: "☞ChronicaPro-Bold";
+}
+
+.timer {
+    -fx-border-color: gray;
+    -fx-border-width: 1px;
+    -fx-border-style: segments(5, 5, 5, 5) line-cap round;
+    -fx-font-family: "Comfortaa Light";
+    -fx-font-size: 30;
+    -fx-background-color: lightgray;
+}
+
+.board_circle{
+  -fx-border-color: black;
+  -fx-border-style: dashed;
+  -fx-border-width: 1px;
+  -fx-background-color: red;
+}
+
+/*  Bisogna pensare se queste cose vanno inserite qui o nel file di configurazione */
+
+.playerNameActive{
+    -fx-font-family: "☞ChronicaPro-Bold";
+    -fx-font-size: 30;
+    -fx-fill: #000000;
+}
+
+
+.playerNameInactive{
+    -fx-font-family: "☞ChronicaPro-Bold";
+    -fx-font-size: 30;
+    -fx-fill: #747474;
+}
+
+.dialogBoxTitle {
+    -fx-font-family: "Junction Bold";
+    -fx-font-size: 14;
+    -fx-fill: #ffffff;
+}
+
+.winner{
+    -fx-font-family: "☞ChronicaPro-Bold";
+    -fx-font-size: 30;
+    -fx-fill: red;
+}
+
+
+.game {
+    -fx-font-family: "☞ChronicaPro-Bold";
+    -fx-font-size: 16;
+    -fx-fill: #000000
+}
+
+

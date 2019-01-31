@@ -1,0 +1,21 @@
+/*
+The Duke's Next Generation Bank Application
+2016 (C) ZHAW School of Engineering, InIT Institute of Applied Information Technology
+*/
+
+/* 
+ * This file can be manually injected into your file transaction.fxml via:
+ * 
+ * <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.zhaw.dukesbank.client.presentation.transaction.TransactionPresenter">
+ *     <stylesheets>
+ *         <URL value="@transaction.css"/>
+ *     </stylesheets>
+ * </AnchorPane>
+ * 
+ * The above shown soucecode will be automatically generated if you have the
+ * options to create (and to inject) the 'optional' .css file into your 
+ * file transaction.fxml selected in the page 'Optional Files'.
+ * 
+ * Created on : 19.05.2016, 08:58:12
+ * Author     : Damiano Esposito <espo@zhaw.ch>
+ */

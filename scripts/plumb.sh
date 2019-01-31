@@ -11,8 +11,9 @@ if [[ -f $1 ]]; then
 		*.cpp|*.c|*.py|*.java|*.js|*.txt|*.html|*.h|*.sh|*.tex)
 			st -e vim $1
 		;;
-		*.png|*.jpg|*.gif)
-			feh -^ floating $1
+		*.png|*.jpg|*.jpeg|*.gif)
+			#feh -^ floating $1
+			sxiv -N floating $1
 		;;
 		*)
 			st -e vim $1

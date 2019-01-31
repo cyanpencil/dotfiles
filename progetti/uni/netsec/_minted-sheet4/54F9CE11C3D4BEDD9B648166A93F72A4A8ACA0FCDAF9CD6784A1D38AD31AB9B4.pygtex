@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+iptables \PYGZhy{}A FORWARD \PYGZhy{}o vpn0 \PYGZhy{}p tcp \PYGZhy{}m tcp \PYGZbs{}
+        \PYGZhy{}\PYGZhy{}tcp\PYGZhy{}flags SYN,RST SYN \PYGZhy{}j TCPMSS \PYGZhy{}\PYGZhy{}set\PYGZhy{}mss 1360
+\end{Verbatim}

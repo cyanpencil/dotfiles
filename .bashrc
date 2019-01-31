@@ -6,6 +6,7 @@
 
 export PATH=$PATH:~/scripts
 export TERMINAL=st
+export BROWSER=google-chrome-stable
 PS1='[\u@\h \W]\$ '
 
 # ===
@@ -23,7 +24,7 @@ alias scrotclip="scrot -s -e 'xclip -selection clipboard -t "image/png" < $f'"
 
 if [[ -f ~/.fzf.bash ]]; then source ~/.fzf.bash; fi
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore cache --ignore .cache --ignore Cache --depth 10 -g ""'
-bind -x '"\C-p": vim $(fzf);'
+bind -x '"\C-p": file=$(fzf) && vim $file;'
 
 # ===
 

@@ -1,0 +1,52 @@
+Chess | Scacchi
+Reversi | Othello
+Time | Tempo
+Board | Scacchiera
+Time limit for a OthelloMoveSituation | Limite di tempo per una mossa di Othello
+No limit | Illimitato
+Board size | Grandezza della scacchiera
+Board width | Larghezza della scacchiera
+Board height | Altezza della scacchiera
+Length of line | Lunghezza della linea
+MaxBlockTimeExpl | Definisce il tempo massimo di attesa per i metodi relativi ai giocatori come setGame() e moved(). Se il valore inserito è minore di zero nessun tempo limite verrà applicato. Il tempo è espresso in millisecondi.
+tolExpl | Definisce il tempo di tolleranza applicato a un giocatore che ha infranto il limite massimo di tempo imposto per calcolare la sua mossa. Se il valore inserito è minore di zero il giocatore non ha alcun tempo di tolleranza. Il tempo è espresso in millisecondi.
+timeoutExpl | Definisce il tempo massimo di attesa per i metodi relativi ai giocatori come setGame() e moved(). Se il valore inserito è minore di zero nessun limite di tempo verrà applicato. Questa proprietà ha una priorità inferiore rispetto al Tempo di blocco massimo. Il tempo è espresso in millisecondi
+minTimeExpl | Definisce il tempo minimo che un giocatore deve attendere prima di eseguire la propria mossa. Se il valore è minore o uguale a zero i giocatori non sono obbligati ad attendere. Il tempo è espresso in millisecondi.
+maxThExpl | Definisce il massimo numero di threads addizionali concessi ai giocatori per eseguire il calcolo delle proprie mosse. Se il valore è minore di zero i giocatore possono generare un numero infinito di thread.
+fjpSizeExpl | Definisce il massimo numero di thread che i giocatori sono autorizzati a creare nella ForkJoinPool a loro assegnata. Se il valore è zero i giocatori non possono usare la ForkJoinPool. Se il valore è minore di zero i giocatori non solo possono usare un numero di thread infinito nella ForkJoinPool a loro assegnata, ma possono anche usare la Common Pool.
+bgExecSizeExpl | Definisce il massimo numero di thread in background che i giocatori possono sfruttare per calcolare le proprie mosse. Se il valore è zero i giocatori non sono autorizzati ad effettuare calcoli in background. Se il valore è minore di zero i giocatori possono generare un numero infinito di thread in background.
+ciao | ti rompo il culo
+Choose Player One | Scegli il primo giocatore
+Choose Player Two | Scegli il secondo giocatore
+Optimal Player | Optimal Player
+Monte-Carlo Tree Search Player | Monte-Carlo Tree Search Player
+Random Player | Giocatore Casuale
+Name | Nome
+Player | Giocatore
+Directory | Cartella
+No Directory | Nessuna Cartella
+Select | Seleziona
+Parallel | Parallelo
+Execution | Esecuzione
+Compute Strategy | Calcola Strategia
+Previous | Precedente
+Next | Prossimo
+Sequential | Sequenziale
+Options | Opzioni
+Show board coordinates | Mosta coordinate scacchiera
+Highlight valid moves | Evidenzia mosse valide
+Language | Lingua
+Graphics | Grafica
+Main Menu | Menu Principale
+Pass | Passa
+Back selection | Indietro
+Resign | Arrenditi
+New Game | Ricomincia
+Score | Punti
+Options | Opzioni
+Winner | Vincitore
+Confirm new game | Conferma nuova partita
+The current match is going to be terminated. Continue? | La partita in corso sta per essere terminata. Proseguire?
+are you sure you want to surrender? | sei sicuro di volerti arrendere?
+Confirm surrender | Conferma resa
+Pieces style | Stile dei pezzi

@@ -1,0 +1,280 @@
+{% extends "base.html" %}
+{% block content %}
+
+  {% if error %}
+  <div class="alert alert-danger">
+    <strong>{{error}}</strong>
+  </div>
+  {% endif %}
+  {% if win %}
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: rgba(0, 0, 0, 0);
+        overflow: hidden;
+      }
+
+      .pyro > .before, .pyro > .after {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
+        -moz-animation: 1s bang ease-out 3 backwards, 1s gravity ease-in 3 backwards, 5s position linear 3 backwards;
+        -webkit-animation: 1s bang ease-out 3 backwards, 1s gravity ease-in 3 backwards, 5s position linear 3 backwards;
+        -o-animation: 1s bang ease-out 3 backwards, 1s gravity ease-in 3 backwards, 5s position linear 3 backwards;
+        -ms-animation: 1s bang ease-out 3 backwards, 1s gravity ease-in 3 backwards, 5s position linear 3 backwards;
+        animation: 1s bang ease-out 3 backwards, 1s gravity ease-in 3 backwards, 5s position linear 3 backwards;
+      }
+
+      .pyro > .after {
+        -moz-animation-delay: 1.25s, 1.25s, 1.25s;
+        -webkit-animation-delay: 1.25s, 1.25s, 1.25s;
+        -o-animation-delay: 1.25s, 1.25s, 1.25s;
+        -ms-animation-delay: 1.25s, 1.25s, 1.25s;
+        animation-delay: 1.25s, 1.25s, 1.25s;
+        -moz-animation-duration: 1.25s, 1.25s, 6.25s;
+        -webkit-animation-duration: 1.25s, 1.25s, 6.25s;
+        -o-animation-duration: 1.25s, 1.25s, 6.25s;
+        -ms-animation-duration: 1.25s, 1.25s, 6.25s;
+        animation-duration: 1.25s, 1.25s, 6.25s;
+      }
+
+      @-webkit-keyframes bang {
+        to {
+          box-shadow: 11px -140.6666666667px #00ff2f, -14px -202.6666666667px #002bff, 153px -329.6666666667px #ff6200, -190px -1.6666666667px #00ffb3, -51px -332.6666666667px #005eff, 145px -129.6666666667px #0009ff, -74px -71.6666666667px #33ff00, -68px -24.6666666667px #00ff55, -65px -255.6666666667px #0077ff, 122px -225.6666666667px #ffb700, 33px -95.6666666667px #e1ff00, -65px 7.3333333333px #ff00a2, -112px -137.6666666667px #ff00d0, -217px -8.6666666667px #ff00e1, -95px -397.6666666667px #00a2ff, 231px -186.6666666667px #5100ff, -49px -35.6666666667px #00b3ff, 202px -255.6666666667px #44ff00, 232px 29.3333333333px #0073ff, 143px -64.6666666667px #00ff6a, 50px -196.6666666667px #003cff, 22px -55.6666666667px #bf00ff, -221px -371.6666666667px #5900ff, -173px 36.3333333333px #48ff00, -76px -299.6666666667px #00ff8c, -91px -251.6666666667px #002fff, -25px -360.6666666667px #ff0900, -21px -316.6666666667px #ff0048, -133px -92.6666666667px #ff2200, 240px -119.6666666667px #5e00ff, 155px 17.3333333333px #ff006a, -141px -160.6666666667px #007bff, -212px 65.3333333333px #ff00aa, 143px -398.6666666667px #ff0066, -204px -384.6666666667px #ffbb00, -105px 4.3333333333px #5100ff, -148px -113.6666666667px #ff1500, -167px -239.6666666667px #9900ff, -238px 79.3333333333px #ff004d, -136px 62.3333333333px cyan, 104px -412.6666666667px #44ff00, 108px -407.6666666667px #0d00ff, -82px -329.6666666667px #ff4400, 174px -184.6666666667px #ea00ff, 141px 9.3333333333px #a6ff00, 119px 13.3333333333px #55ff00, 60px -194.6666666667px #0051ff, -194px -261.6666666667px #00ffae, 84px -175.6666666667px #b300ff, 69px -241.6666666667px #ff2200, -177px -179.6666666667px #ff0044;
+        }
+      }
+      @-moz-keyframes bang {
+        to {
+          box-shadow: 11px -140.6666666667px #00ff2f, -14px -202.6666666667px #002bff, 153px -329.6666666667px #ff6200, -190px -1.6666666667px #00ffb3, -51px -332.6666666667px #005eff, 145px -129.6666666667px #0009ff, -74px -71.6666666667px #33ff00, -68px -24.6666666667px #00ff55, -65px -255.6666666667px #0077ff, 122px -225.6666666667px #ffb700, 33px -95.6666666667px #e1ff00, -65px 7.3333333333px #ff00a2, -112px -137.6666666667px #ff00d0, -217px -8.6666666667px #ff00e1, -95px -397.6666666667px #00a2ff, 231px -186.6666666667px #5100ff, -49px -35.6666666667px #00b3ff, 202px -255.6666666667px #44ff00, 232px 29.3333333333px #0073ff, 143px -64.6666666667px #00ff6a, 50px -196.6666666667px #003cff, 22px -55.6666666667px #bf00ff, -221px -371.6666666667px #5900ff, -173px 36.3333333333px #48ff00, -76px -299.6666666667px #00ff8c, -91px -251.6666666667px #002fff, -25px -360.6666666667px #ff0900, -21px -316.6666666667px #ff0048, -133px -92.6666666667px #ff2200, 240px -119.6666666667px #5e00ff, 155px 17.3333333333px #ff006a, -141px -160.6666666667px #007bff, -212px 65.3333333333px #ff00aa, 143px -398.6666666667px #ff0066, -204px -384.6666666667px #ffbb00, -105px 4.3333333333px #5100ff, -148px -113.6666666667px #ff1500, -167px -239.6666666667px #9900ff, -238px 79.3333333333px #ff004d, -136px 62.3333333333px cyan, 104px -412.6666666667px #44ff00, 108px -407.6666666667px #0d00ff, -82px -329.6666666667px #ff4400, 174px -184.6666666667px #ea00ff, 141px 9.3333333333px #a6ff00, 119px 13.3333333333px #55ff00, 60px -194.6666666667px #0051ff, -194px -261.6666666667px #00ffae, 84px -175.6666666667px #b300ff, 69px -241.6666666667px #ff2200, -177px -179.6666666667px #ff0044;
+        }
+      }
+      @-o-keyframes bang {
+        to {
+          box-shadow: 11px -140.6666666667px #00ff2f, -14px -202.6666666667px #002bff, 153px -329.6666666667px #ff6200, -190px -1.6666666667px #00ffb3, -51px -332.6666666667px #005eff, 145px -129.6666666667px #0009ff, -74px -71.6666666667px #33ff00, -68px -24.6666666667px #00ff55, -65px -255.6666666667px #0077ff, 122px -225.6666666667px #ffb700, 33px -95.6666666667px #e1ff00, -65px 7.3333333333px #ff00a2, -112px -137.6666666667px #ff00d0, -217px -8.6666666667px #ff00e1, -95px -397.6666666667px #00a2ff, 231px -186.6666666667px #5100ff, -49px -35.6666666667px #00b3ff, 202px -255.6666666667px #44ff00, 232px 29.3333333333px #0073ff, 143px -64.6666666667px #00ff6a, 50px -196.6666666667px #003cff, 22px -55.6666666667px #bf00ff, -221px -371.6666666667px #5900ff, -173px 36.3333333333px #48ff00, -76px -299.6666666667px #00ff8c, -91px -251.6666666667px #002fff, -25px -360.6666666667px #ff0900, -21px -316.6666666667px #ff0048, -133px -92.6666666667px #ff2200, 240px -119.6666666667px #5e00ff, 155px 17.3333333333px #ff006a, -141px -160.6666666667px #007bff, -212px 65.3333333333px #ff00aa, 143px -398.6666666667px #ff0066, -204px -384.6666666667px #ffbb00, -105px 4.3333333333px #5100ff, -148px -113.6666666667px #ff1500, -167px -239.6666666667px #9900ff, -238px 79.3333333333px #ff004d, -136px 62.3333333333px cyan, 104px -412.6666666667px #44ff00, 108px -407.6666666667px #0d00ff, -82px -329.6666666667px #ff4400, 174px -184.6666666667px #ea00ff, 141px 9.3333333333px #a6ff00, 119px 13.3333333333px #55ff00, 60px -194.6666666667px #0051ff, -194px -261.6666666667px #00ffae, 84px -175.6666666667px #b300ff, 69px -241.6666666667px #ff2200, -177px -179.6666666667px #ff0044;
+        }
+      }
+      @-ms-keyframes bang {
+        to {
+          box-shadow: 11px -140.6666666667px #00ff2f, -14px -202.6666666667px #002bff, 153px -329.6666666667px #ff6200, -190px -1.6666666667px #00ffb3, -51px -332.6666666667px #005eff, 145px -129.6666666667px #0009ff, -74px -71.6666666667px #33ff00, -68px -24.6666666667px #00ff55, -65px -255.6666666667px #0077ff, 122px -225.6666666667px #ffb700, 33px -95.6666666667px #e1ff00, -65px 7.3333333333px #ff00a2, -112px -137.6666666667px #ff00d0, -217px -8.6666666667px #ff00e1, -95px -397.6666666667px #00a2ff, 231px -186.6666666667px #5100ff, -49px -35.6666666667px #00b3ff, 202px -255.6666666667px #44ff00, 232px 29.3333333333px #0073ff, 143px -64.6666666667px #00ff6a, 50px -196.6666666667px #003cff, 22px -55.6666666667px #bf00ff, -221px -371.6666666667px #5900ff, -173px 36.3333333333px #48ff00, -76px -299.6666666667px #00ff8c, -91px -251.6666666667px #002fff, -25px -360.6666666667px #ff0900, -21px -316.6666666667px #ff0048, -133px -92.6666666667px #ff2200, 240px -119.6666666667px #5e00ff, 155px 17.3333333333px #ff006a, -141px -160.6666666667px #007bff, -212px 65.3333333333px #ff00aa, 143px -398.6666666667px #ff0066, -204px -384.6666666667px #ffbb00, -105px 4.3333333333px #5100ff, -148px -113.6666666667px #ff1500, -167px -239.6666666667px #9900ff, -238px 79.3333333333px #ff004d, -136px 62.3333333333px cyan, 104px -412.6666666667px #44ff00, 108px -407.6666666667px #0d00ff, -82px -329.6666666667px #ff4400, 174px -184.6666666667px #ea00ff, 141px 9.3333333333px #a6ff00, 119px 13.3333333333px #55ff00, 60px -194.6666666667px #0051ff, -194px -261.6666666667px #00ffae, 84px -175.6666666667px #b300ff, 69px -241.6666666667px #ff2200, -177px -179.6666666667px #ff0044;
+        }
+      }
+      @keyframes bang {
+        to {
+          box-shadow: 11px -140.6666666667px #00ff2f, -14px -202.6666666667px #002bff, 153px -329.6666666667px #ff6200, -190px -1.6666666667px #00ffb3, -51px -332.6666666667px #005eff, 145px -129.6666666667px #0009ff, -74px -71.6666666667px #33ff00, -68px -24.6666666667px #00ff55, -65px -255.6666666667px #0077ff, 122px -225.6666666667px #ffb700, 33px -95.6666666667px #e1ff00, -65px 7.3333333333px #ff00a2, -112px -137.6666666667px #ff00d0, -217px -8.6666666667px #ff00e1, -95px -397.6666666667px #00a2ff, 231px -186.6666666667px #5100ff, -49px -35.6666666667px #00b3ff, 202px -255.6666666667px #44ff00, 232px 29.3333333333px #0073ff, 143px -64.6666666667px #00ff6a, 50px -196.6666666667px #003cff, 22px -55.6666666667px #bf00ff, -221px -371.6666666667px #5900ff, -173px 36.3333333333px #48ff00, -76px -299.6666666667px #00ff8c, -91px -251.6666666667px #002fff, -25px -360.6666666667px #ff0900, -21px -316.6666666667px #ff0048, -133px -92.6666666667px #ff2200, 240px -119.6666666667px #5e00ff, 155px 17.3333333333px #ff006a, -141px -160.6666666667px #007bff, -212px 65.3333333333px #ff00aa, 143px -398.6666666667px #ff0066, -204px -384.6666666667px #ffbb00, -105px 4.3333333333px #5100ff, -148px -113.6666666667px #ff1500, -167px -239.6666666667px #9900ff, -238px 79.3333333333px #ff004d, -136px 62.3333333333px cyan, 104px -412.6666666667px #44ff00, 108px -407.6666666667px #0d00ff, -82px -329.6666666667px #ff4400, 174px -184.6666666667px #ea00ff, 141px 9.3333333333px #a6ff00, 119px 13.3333333333px #55ff00, 60px -194.6666666667px #0051ff, -194px -261.6666666667px #00ffae, 84px -175.6666666667px #b300ff, 69px -241.6666666667px #ff2200, -177px -179.6666666667px #ff0044;
+        }
+      }
+      @-webkit-keyframes gravity {
+        to {
+          transform: translateY(200px);
+          -moz-transform: translateY(200px);
+          -webkit-transform: translateY(200px);
+          -o-transform: translateY(200px);
+          -ms-transform: translateY(200px);
+          opacity: 0;
+        }
+      }
+      @-moz-keyframes gravity {
+        to {
+          transform: translateY(200px);
+          -moz-transform: translateY(200px);
+          -webkit-transform: translateY(200px);
+          -o-transform: translateY(200px);
+          -ms-transform: translateY(200px);
+          opacity: 0;
+        }
+      }
+      @-o-keyframes gravity {
+        to {
+          transform: translateY(200px);
+          -moz-transform: translateY(200px);
+          -webkit-transform: translateY(200px);
+          -o-transform: translateY(200px);
+          -ms-transform: translateY(200px);
+          opacity: 0;
+        }
+      }
+      @-ms-keyframes gravity {
+        to {
+          transform: translateY(200px);
+          -moz-transform: translateY(200px);
+          -webkit-transform: translateY(200px);
+          -o-transform: translateY(200px);
+          -ms-transform: translateY(200px);
+          opacity: 0;
+        }
+      }
+      @keyframes gravity {
+        to {
+          transform: translateY(200px);
+          -moz-transform: translateY(200px);
+          -webkit-transform: translateY(200px);
+          -o-transform: translateY(200px);
+          -ms-transform: translateY(200px);
+          opacity: 0;
+        }
+      }
+      @-webkit-keyframes position {
+        0%, 19.9% {
+          margin-top: 10%;
+          margin-left: 40%;
+        }
+        20%, 39.9% {
+          margin-top: 40%;
+          margin-left: 30%;
+        }
+        40%, 59.9% {
+          margin-top: 20%;
+          margin-left: 70%;
+        }
+        60%, 79.9% {
+          margin-top: 30%;
+          margin-left: 20%;
+        }
+        80%, 99.9% {
+          margin-top: 30%;
+          margin-left: 80%;
+        }
+      }
+      @-moz-keyframes position {
+        0%, 19.9% {
+          margin-top: 10%;
+          margin-left: 40%;
+        }
+        20%, 39.9% {
+          margin-top: 40%;
+          margin-left: 30%;
+        }
+        40%, 59.9% {
+          margin-top: 20%;
+          margin-left: 70%;
+        }
+        60%, 79.9% {
+          margin-top: 30%;
+          margin-left: 20%;
+        }
+        80%, 99.9% {
+          margin-top: 30%;
+          margin-left: 80%;
+        }
+      }
+      @-o-keyframes position {
+        0%, 19.9% {
+          margin-top: 10%;
+          margin-left: 40%;
+        }
+        20%, 39.9% {
+          margin-top: 40%;
+          margin-left: 30%;
+        }
+        40%, 59.9% {
+          margin-top: 20%;
+          margin-left: 70%;
+        }
+        60%, 79.9% {
+          margin-top: 30%;
+          margin-left: 20%;
+        }
+        80%, 99.9% {
+          margin-top: 30%;
+          margin-left: 80%;
+        }
+      }
+      @-ms-keyframes position {
+        0%, 19.9% {
+          margin-top: 10%;
+          margin-left: 40%;
+        }
+        20%, 39.9% {
+          margin-top: 40%;
+          margin-left: 30%;
+        }
+        40%, 59.9% {
+          margin-top: 20%;
+          margin-left: 70%;
+        }
+        60%, 79.9% {
+          margin-top: 30%;
+          margin-left: 20%;
+        }
+        80%, 99.9% {
+          margin-top: 30%;
+          margin-left: 80%;
+        }
+      }
+      @keyframes position {
+        0%, 19.9% {
+          margin-top: 10%;
+          margin-left: 40%;
+        }
+        20%, 39.9% {
+          margin-top: 40%;
+          margin-left: 30%;
+        }
+        40%, 59.9% {
+          margin-top: 20%;
+          margin-left: 70%;
+        }
+        60%, 79.9% {
+          margin-top: 30%;
+          margin-left: 20%;
+        }
+        80%, 99.9% {
+          margin-top: 30%;
+          margin-left: 80%;
+        }
+      }
+
+    </style>
+    <div class="pyro">
+      <div class="before"></div>
+      <div class="after"></div>
+    </div>
+    <div class="alert alert-success">
+      <strong>Hai vinto {{win}} soldi!</strong>
+    </div>
+  {% endif %}
+  <h3>Lotto</h3>
+  {% if winning %}
+    <!-- {{winning}} -->
+    <p>Numeri vincenti</p>
+    <table class="table">
+      <tr>
+        
+        {% for winner in winning %}
+          <td>
+            <span>
+              {{winner}}
+            </span>
+          </td>
+        {% endfor %}
+      </tr>
+    </table>
+  {% endif %}
+  
+  <form action="/lotto" method="post">
+    <table class="table">
+      {% for i in range(6) %}
+        <tr>
+          {% for j in range(15) %}
+            <td class="mynum"> 
+              {% if bet and i * 15 + j + 1 in bet %}
+                <input checked style="display: none;" name="num{{i * 15 + j + 1}}" id="num{{i * 15 + j + 1}}" type="checkbox"><label for="num{{i * 15 + j + 1}}">{{i * 15 + j + 1}}</label>
+              {% else %}
+                <input style="display: none;" name="num{{i * 15 + j + 1}}" id="num{{i * 15 + j + 1}}" type="checkbox"><label for="num{{i * 15 + j + 1}}">{{i * 15 + j + 1}}</label>
+              {% endif %}
+            </td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </table>
+    <p>
+      <input type="number" value="5" name="amount" min="1" max="10">
+    </p>
+    <p>
+      <input class="btn btn-primary" value="Conferma" type="submit">
+    </p>
+  </form>
+{% endblock %}

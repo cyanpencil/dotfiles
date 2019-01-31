@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rigged Casino</title>
+    <meta charset="UTF-8	">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+      .container {
+        padding-top: 50px;
+      }
+    </style>
+    <style>
+      .mynum input[type="checkbox"] + label {
+        background-color: rgba(255, 255, 255, 0);
+        color: rgba(0, 0, 0, 0.9);
+        border-radius: 50%;
+        width: 2em;
+        height: 2em;
+        text-align: center;
+        vertical-align: middle;
+      }
+      .mynum input[type="checkbox"]:checked + label {
+        background-color: rgb(59, 153, 252);
+        color: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        width: 2em;
+        height: 2em;        
+        text-align: center;    
+        vertical-align: middle;            
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <span class="navbar-text">Rigged Casinó</span>
+          </div>
+          <a href="/login"><span class="navbar-text">Login</span></a>
+          <a href="/register"><span class="navbar-text">Register</span></a>
+          <a href="/user"><span class="navbar-text">Classifica</span></a>
+          <a href="/lotto"><span class="navbar-text">Lotto</span></a>
+          <a href="/slot"><span class="navbar-text">Slot</span></a>
+          <a href="/coin"><span class="navbar-text">Coin</span></a>
+        </div>
+        {% if user %}
+          <a href="/user/{{user}}"><span class="navbar-right navbar-text">Profilo {{user}}</span></a>     
+        {% endif %}
+        {% if money %}
+          <span class="navbar-right navbar-text">Saldo {{money}} soldi</span>
+        {% endif %}
+      </nav>
+    <div class="container">
+      <br>
+      {% block content %}{% endblock %}
+      <br>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

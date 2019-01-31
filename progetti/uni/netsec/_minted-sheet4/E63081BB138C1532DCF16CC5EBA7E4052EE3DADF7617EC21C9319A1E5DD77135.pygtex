@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void} \PYG{n+nf}{exploit}\PYG{p}{()\PYGZob{}}
+	\PYG{k+kt}{int} \PYG{n}{a} \PYG{o}{=} \PYG{n}{load\PYGZus{}part\PYGZus{}a}\PYG{p}{();}
+	\PYG{k+kt}{int} \PYG{n}{b} \PYG{o}{=} \PYG{n}{load\PYGZus{}part\PYGZus{}b}\PYG{p}{();}
+	\PYG{k}{if}\PYG{p}{(}\PYG{n}{a}\PYG{o}{==}\PYG{l+m+mi}{42}\PYG{p}{)\PYGZob{}}
+		\PYG{n}{run\PYGZus{}exploit\PYGZus{}internal}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,}\PYG{n}{b}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k}{return}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

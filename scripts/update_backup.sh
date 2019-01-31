@@ -17,25 +17,21 @@ fi
 for f in $homefiles; do
     echo "Copying $f"
     rsync -rav --exclude=".git" ~/$f .
-    #cp ~/$f .
 done
 
 for f in $homedirs; do
     echo "Copying $f"
     rsync -rav --exclude=".git" ~/$f .
-    #cp -r ~/$f .
 done
 
 for f in $configdirs; do
     echo "Copying $f"
     rsync -rav --exclude=".git" ~/.config/$f .config
-    #cp -r ~/.config/$f .config
 done
 
 for f in $others; do
     echo "Copying $f"
     rsync -rav --exclude=".git" $f .
-    #cp $f .
 done
 
 

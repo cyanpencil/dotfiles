@@ -1,0 +1,18 @@
+
+struct.o:     file format elf32-i386
+
+
+Disassembly of section .text:
+
+00000000 <sum>:
+   0:	8b 44 24 08          	mov    0x8(%esp),%eax
+   4:	03 44 24 04          	add    0x4(%esp),%eax
+   8:	c3                   	ret    
+
+00000009 <foo>:
+   9:	8b 44 24 04          	mov    0x4(%esp),%eax
+   d:	8b 54 24 08          	mov    0x8(%esp),%edx
+  11:	89 10                	mov    %edx,(%eax)
+  13:	8b 54 24 0c          	mov    0xc(%esp),%edx
+  17:	89 50 04             	mov    %edx,0x4(%eax)
+  1a:	c2 04 00             	ret    $0x4

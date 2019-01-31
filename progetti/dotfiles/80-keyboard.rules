@@ -1,0 +1,2 @@
+SUBSYSTEM=="usb", ENV{ID_VENDOR_ID}=="feed", ACTION=="add",    RUN+="/home/luca/scripts/disable_keyboard_udev.sh 0"
+SUBSYSTEM=="hid", ENV{HID_NAME}=="OLKB Planck", ACTION=="remove",    RUN+="/home/luca/scripts/disable_keyboard_udev.sh 1"

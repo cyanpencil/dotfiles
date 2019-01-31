@@ -1,0 +1,5 @@
+main.sh: line 47: kill: (25994) - No such process
+main.sh: line 49: kill: (25996) - No such process
+main.sh: line 50: kill: (25997) - No such process
+main.sh: line 51: kill: (25998) - No such process
+main.sh: line 52: kill: (25999) - No such process
