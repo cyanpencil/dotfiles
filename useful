@@ -28,11 +28,11 @@ Make gif of screencast: peek
 Visual xrandr: arandr
 Prova eventi input: xev, xbindkeys -k
 Condividi file facilmente: transfer
-Tool for searching code: ripgrep
+Tool for searching code: ripgrep, ag
 Instant answers: howdoi
-Package manager: pacli
-File manager: pcmanfm, vifm
-Video Player:  mpv +
+Package manager: pacli, yay
+File manager: pcmanfm, vifm, ranger
+Video Player:  mpv
 Subtitles downloader: subdl , submarine
 Ebook Reader: fbless
 Giochi da terminale da provare: crawl, gearhead, slash'em
@@ -223,7 +223,8 @@ disconnect wifi:
 	sudo airmon-ng stop wlp4s0mon
 
 what is my ip
-	curl ifconfig.me
+	curl ifconfig.me 
+	curl ipinfo.io    # even more info
 
 mount polybox
 	sudo mount -t davfs https://polybox.ethz.ch/remote.php/webdav /mnt/sshdir
@@ -247,3 +248,22 @@ applicazioni di default:
 	xdg-mime default tixati.desktop application/x-bittorrent
 	.config/mimeapps.list (sometimes not working)
 	.local/share/applications/mimeapps.list
+
+
+docker:
+	docker images           # list installed docker images
+	docker run --rm -ti alpine /bin/bash # install alpine, delete it when done
+	docker -H <ip> ps       # run ps command on ip's docker
+	docker image rm <image> # delete image
+
+il cazzo di wifi:
+	0 - ip netns add phyns
+	1 - iw phy phy0 set netns name phyns
+	2 - netctl start <profile> 
+	3 - ip netns exec phyns openvpn airvpn...
+	4 - ip netns exec phyns ip l s tun0 netns 1
+	5 - ip l s tun0 up
+	6 - ip addr add dev tun0 10.7.248.224/24 broadcast 10.7.248.255
+	6.- ip -6 addr add fde6:7a:7d20:3f8::10de/64 dev tun0
+	6.- ip -6 r a default dev tun0
+	7 - ip r a default dev tun0 via 10.7.248.1

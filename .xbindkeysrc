@@ -28,12 +28,8 @@ XF86AudioPrev
 "nautilus"
 XF86Search
 
-"urxvt -title floating -e /home/luca/scripts/wifi.sh"
-XF86LaunchA
-
-"urxvt -title floating -e nmtui-connect"
-XF86Explorer
+#"urxvt -title floating -e nmtui-connect"
+#XF86Explorer
 
 "systemctl suspend"
 XF86Tools
-
