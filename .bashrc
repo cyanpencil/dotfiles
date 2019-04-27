@@ -6,7 +6,7 @@
 
 export PATH=$PATH:~/scripts
 export TERMINAL=st
-export BROWSER=google-chrome-stable
+export BROWSER=firefox
 PS1='[\u@\h \W]\$ '
 
 # ===

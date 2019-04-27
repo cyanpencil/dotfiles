@@ -65,6 +65,8 @@ let &t_SI = "\<Esc>[3 q"
 let &t_SR = "\<Esc>[1 q"
 let &t_EI = "\<Esc>[1 q"
 
+let &t_ut=''
+
 " ===
 
 "                       === movement macros ===
@@ -151,7 +153,7 @@ nnoremap Y "+y
 nnoremap YY "+yy
 
 "remove whitespace
-nnoremap ,W :%s/\s\+$//<cr>:let @/=''<CR>
+"nnoremap ,W :%s/\s\+$//<cr>:let @/=''<CR>
 
 iab <expr> dts strftime("%c")
 iab <expr> todo "// TODO ".strftime('%Y/%m/%d %H:%M')." - "
@@ -253,14 +255,14 @@ Plug 'artur-shaik/vim-javacomplete2'
 
 "Plug 'airblade/vim-rooter'
 "Plug 'takac/vim-hardtime'
-Plug 'mileszs/ack.vim'
+"Plug 'mileszs/ack.vim'
 "Plug 'jnurmine/Zenburn'
 "Plug 'junegunn/vim-slash'
 
 "Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
 
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
 
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
@@ -311,6 +313,8 @@ let g:limelight_conceal_ctermfg = '239'
 let g:goyo_width = '93%'
 let python_highlight_all=1
 let g:FlyGrep_input_delay=200
+let g:NERDAltDelims_c=1
+let g:NERDAltDelims_java=1
 
   "supertab
 set completeopt=menuone,preview
@@ -348,8 +352,9 @@ vmap ,cm <Leader>cm
 vmap ,cs <Leader>cs
 vmap ,C <Leader>c<Space>
 
-nnoremap ,f :Ack!<Space>
-nnoremap ,F :Ack!<Space>""<Left>
+nnoremap ,f "pyiw::Ag<Space><C-R>p<CR>
+nnoremap ,,f "pyiw::Tags<Space><C-R>p<CR>
+nnoremap ,F :Files<CR>
 
 
 " ===
@@ -366,6 +371,15 @@ function! SettingsC()
 	set softtabstop=8
 	set cino=:0,+0,(2,J0,{1,}0,>8,)1,m2
 	nnoremap <F4> :wa <CR> :!g++ % -o comp_%:r ;  ./comp_%:r <CR>
+
+	""" ROBA per barrelfish
+	set tabstop=4
+	set expandtab
+	set shiftwidth=4
+	set softtabstop=4
+    setlocal foldnestmax=1
+
+    nnoremap <F5> :wa <CR> :silent !killall qemu-system-arm -15; echo make qemu_a15ve_4 > build/fifo<CR> :redraw!<CR>
 
 	""" for the gitgutter plugin
 	set updatetime=600
@@ -397,7 +411,6 @@ function! SettingsCpp()
 	abbr vvi vector<vector<int> >
 	abbr fori for(int i = 0; i < n; i++) {<CR>
 	inoremap {<CR> {<CR><CR>}<ESC>kcc
-	set foldmethod=manual
 endfunction
 
 "			==== Java  ====
@@ -439,7 +452,7 @@ function! SettingsLatex()
 	"nnoremap <F4> :wa <CR> :!pdflatex --shell-escape % <CR>
 	nnoremap <F5> :wa <CR> :!zathura %:r.pdf <CR>
 	setlocal nocursorline
-	set foldmethod=manual
+    set foldmethod=manual
 	set foldcolumn=0
 	"set regexpengine=1
 	"set colorcolumn=80
@@ -469,7 +482,7 @@ map <F9> :!google-chrome-stable % 2> /dev/null > /dev/null &<CR><CR><C-L>
 	set shiftwidth=2
 	set softtabstop=2
 	set cino=:0,+0,(2,J0,{1,}0,>8,)1,m2
-	set foldmethod=manual
+    set foldmethod=manual
 	set foldcolumn=0
 endfunction "====
 "			==== Bash ====
@@ -481,6 +494,7 @@ endfunction
 " ====
 
 autocmd filetype c call SettingsC()
+autocmd filetype h call SettingsC()
 autocmd filetype cpp call SettingsCpp()
 autocmd filetype java call SettingsJava()
 autocmd filetype python call SettingsPython()

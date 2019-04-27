@@ -3,15 +3,27 @@ function fish_prompt
     # so it has to be saved asap.
     set -l last_status $status
 
-    # c0 to c4 progress from dark to bright
+    # c0 to c4 progress from dark to bright (more or less)
     # ce is the error colour
-    set -g c0 (set_color 005284)
-    set -g c1 (set_color 0075cd)
-    set -g c2 (set_color 009eff)
-    set -g c3 (set_color 6dc7ff)
-    set -g c4 (set_color ffffff)
-    set -g ce (set_color $fish_color_error)
-    set -g cn "\\033[0m"
+	if echo $TERM | grep st-256color -q
+		set -g c0 (set_color 928374)
+		set -g c1 (set_color a89984)
+		set -g c2 (set_color 83a598)
+		set -g c3 (set_color ebdbb2)
+		set -g c4 (set_color fbf1c7)
+		set -g ce (set_color $fish_color_error)
+		set -g cn "\\033[0m"
+	else
+		set -g c0 (set_color 005284)
+		set -g c1 (set_color 0075cd)
+		set -g c2 (set_color 009eff)
+		set -g c3 (set_color 6dc7ff)
+		set -g c4 (set_color ffffff)
+		set -g ce (set_color $fish_color_error)
+		set -g cn "\\033[0m"
+	end
+
+
 
     # Clear the line because fish seems to emit the prompt twice. The initial
     # display, then when you press enter.

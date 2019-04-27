@@ -1,0 +1,1 @@
+[ build library { target = "monitor", cFiles = [ "monitor.c" ] } ]

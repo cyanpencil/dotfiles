@@ -1,6 +1,9 @@
 #!/bin/bash
+
+if [[ $EUID -ne 0 ]]; then echo "Please run as root"; exit 1; fi
+
 syncpath="/home/luca/dotfiles"
-homefiles=".bashrc .bash_profile .vimrc .Xresources .xbindkeysrc useful .fzf.bash .inputrc .gitconfig"
+homefiles=".bashrc .bash_profile .vimrc .Xresources .xbindkeysrc useful .fzf.bash .inputrc .gitconfig .zshrc"
 configdirs="i3 dunst fish"
 homedirs="progetti scripts appunti calibre st"
 others="/etc/X11/xinit/xinitrc /etc/udev/rules.d/powersave.rules\
@@ -16,17 +19,17 @@ fi
 
 for f in $homefiles; do
     echo "Copying $f"
-    rsync -rav --exclude=".git" ~/$f .
+    rsync -rav --exclude=".git" /home/luca/$f .
 done
 
 for f in $homedirs; do
     echo "Copying $f"
-    rsync -rav --exclude=".git" ~/$f .
+    rsync -rav --exclude=".git" /home/luca/$f .
 done
 
 for f in $configdirs; do
     echo "Copying $f"
-    rsync -rav --exclude=".git" ~/.config/$f .config
+    rsync -rav --exclude=".git" /home/luca/.config/$f .config
 done
 
 for f in $others; do
