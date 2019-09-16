@@ -9,6 +9,8 @@
 
 # ctags
 tags
+*inciuc*
+**node_modules
 
 .settings
 /.dist-buildwrapper
@@ -55,3 +57,6 @@ bin/
 
 # VSCode
 .vscode
+
+env/
+*.vim

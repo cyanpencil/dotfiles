@@ -34,6 +34,7 @@ void* dlist_tail(dlinked_list_t* list);
 void dlist_insert(dlinked_list_t* list, void* _node, void* _prev, void* _next);
 void dlist_head_insert(dlinked_list_t* list, void* _node);
 void dlist_tail_insert(dlinked_list_t* list, void* _node);
+void* dlist_next(void* node);
 dlinked_node_t* dlist_find(dlinked_list_t* list, bool (*filter)(dlinked_node_t*));
 void dlist_remove(dlinked_list_t* list, void* _node);
 void dlist_print(dlinked_list_t* list, void (*print_node)(void*));

@@ -1,0 +1,4 @@
+interpolation:
+
+fixed delay: 20ms
+linear component: 1/5

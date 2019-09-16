@@ -42,8 +42,6 @@ bindsym Print exec scrotclip.sh
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+s restart
 
-bindsym $mod+y exec rofi -show ssh
-#bindsym $mod+z exec rofi -show window rofi -show run -lines 10 -eh 1 -width 30 -padding 20 -opacity "85" -bw 5 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "xos4 terminus 12" -fuzzy -separator-style dash -scrollbar-width 2 -location 0 
 bindsym $mod+g exec rofi -show run rofi -show run -lines 5 -eh 1 -width 30 -padding 20 -opacity "85" -bw 5 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "xos4 terminus 12" -fuzzy -separator-style dash -scrollbar-width 2 -location 0 -columns 3
 
 bindsym $mod+Shift+Z exec pass clip --rofi
@@ -52,7 +50,8 @@ bindsym $mod+z exec rofi-pass
 bindsym $mod+r exec st -t flying_ranger -e ranger
 bindsym $mod+o exec urxvt -name flying_ranger -title flying_ranger -e ranger
 
-bindsym $mod+s exec "cmd=$(ls ~/scripts | rofi -dmenu) && st -t floating -e bash -c \\" $cmd ; sh\\""
+bindsym $mod+s exec rofi -show ssh
+bindsym $mod+y exec "cmd=$(ls ~/scripts | rofi -dmenu) && st -t floating -e bash -c \\" $cmd ; sh\\""
 
 bindsym XF86LaunchA exec "xautolock -locknow"
 
@@ -113,16 +112,16 @@ set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9 "
 set $workspace10 "10 "
-set $workspace11 "A1 ASL"
-set $workspace12 "A2 ASL"
-set $workspace13 "[3] python"
-set $workspace14 "14"
-set $workspace15 "[5] report"
-set $workspace16 "16"
-set $workspace17 "17"
-set $workspace18 "18"
-set $workspace19 "[9] radare"
-set $workspace20 "[0] vbox"
+#set $workspace11 "A1 ASL"
+#set $workspace12 "A2 ASL"
+#set $workspace13 "[3] python"
+#set $workspace14 "14"
+#set $workspace15 "[5] report"
+#set $workspace16 "16"
+#set $workspace17 "17"
+#set $workspace18 "18"
+#set $workspace19 "[9] radare"
+#set $workspace20 "[0] vbox"
 
 bindsym $mod+Shift+1 move container to workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2
@@ -134,16 +133,16 @@ bindsym $mod+Shift+7 move container to workspace $workspace7
 bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
-bindsym $mod+Ctrl+1 move container to workspace $workspace11
-bindsym $mod+Ctrl+2 move container to workspace $workspace12
-bindsym $mod+Ctrl+3 move container to workspace $workspace13
-bindsym $mod+Ctrl+4 move container to workspace $workspace14
-bindsym $mod+Ctrl+5 move container to workspace $workspace15
-bindsym $mod+Ctrl+6 move container to workspace $workspace16
-bindsym $mod+Ctrl+7 move container to workspace $workspace17
-bindsym $mod+Ctrl+8 move container to workspace $workspace18
-bindsym $mod+Ctrl+9 move container to workspace $workspace19
-bindsym $mod+Ctrl+0 move container to workspace $workspace20
+#bindsym $mod+Ctrl+1 move container to workspace $workspace11
+#bindsym $mod+Ctrl+2 move container to workspace $workspace12
+#bindsym $mod+Ctrl+3 move container to workspace $workspace13
+#bindsym $mod+Ctrl+4 move container to workspace $workspace14
+#bindsym $mod+Ctrl+5 move container to workspace $workspace15
+#bindsym $mod+Ctrl+6 move container to workspace $workspace16
+#bindsym $mod+Ctrl+7 move container to workspace $workspace17
+#bindsym $mod+Ctrl+8 move container to workspace $workspace18
+#bindsym $mod+Ctrl+9 move container to workspace $workspace19
+#bindsym $mod+Ctrl+0 move container to workspace $workspace20
 
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
@@ -155,16 +154,16 @@ bindsym $mod+7 workspace $workspace7
 bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
 bindsym $mod+0 workspace $workspace10
-bindsym mod1+1 workspace $workspace11
-bindsym mod1+2 workspace $workspace12
-bindsym mod1+3 workspace $workspace13
-bindsym mod1+4 workspace $workspace14
-bindsym mod1+5 workspace $workspace15
-bindsym mod1+6 workspace $workspace16
-bindsym mod1+7 workspace $workspace17
-bindsym mod1+8 workspace $workspace18
-bindsym mod1+9 workspace $workspace19
-bindsym mod1+0 workspace $workspace20
+#bindsym mod1+1 workspace $workspace11
+#bindsym mod1+2 workspace $workspace12
+#bindsym mod1+3 workspace $workspace13
+#bindsym mod1+4 workspace $workspace14
+#bindsym mod1+5 workspace $workspace15
+#bindsym mod1+6 workspace $workspace16
+#bindsym mod1+7 workspace $workspace17
+#bindsym mod1+8 workspace $workspace18
+#bindsym mod1+9 workspace $workspace19
+#bindsym mod1+0 workspace $workspace20
 
 bindsym $mod+n workspace prev
 bindsym $mod+p workspace next

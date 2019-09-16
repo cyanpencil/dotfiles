@@ -67,6 +67,10 @@ void dlist_tail_insert(dlinked_list_t* list, void* _node) {
     if (list->head == NULL) list->head = node;
 }
 
+void* dlist_next(void* node) {
+    return ((dlinked_node_t*) node)->next;
+}
+
 dlinked_node_t* dlist_find(dlinked_list_t* list, bool (*filter)(dlinked_node_t*)) {
     dlinked_node_t* node = list->head;
     while (node != NULL) {

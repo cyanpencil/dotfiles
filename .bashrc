@@ -4,6 +4,7 @@
 
 #                               === env vars ===
 
+export HISTCONTROL=ignoredups
 export PATH=$PATH:~/scripts
 export TERMINAL=st
 export BROWSER=firefox
@@ -17,6 +18,8 @@ alias ls='ls --color=auto'
 alias l='ls -lt --color=auto'
 alias spotify='LD_PRELOAD=libcurl.so.3 /usr/share/spotify/spotify --force-device-scale-factor=1.0000001 "$@"'
 alias scrotclip="scrot -s -e 'xclip -selection clipboard -t "image/png" < $f'"
+alias lsd='exa --group-directories-first -l -snew --time-style=iso'
+
 
 # ===
 
@@ -97,6 +100,16 @@ transfer() {
 
 
 
+#perl  shit down here, you can delete if you want
+
+PATH="/home/luca/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/luca/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/luca/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/luca/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/luca/perl5"; export PERL_MM_OPT;
+
+
 # vim:fdm=expr:fdl=0
 # vim:fde=getline(v\:lnum)=~'==*$'?(getline(v\:lnum)=~'==\\+[^=]\\+==.*'?'>'\:'<').(strlen(matchstr(getline(v\:lnum),'==*$'))-2)\:'='
+
 

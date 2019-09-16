@@ -101,6 +101,8 @@ errval_t mm_init(struct mm *mm, enum objtype objtype,
 {
         assert(mm != NULL);
 
+        thread_mutex_init(&mm->big_mm_lock);
+
         /* Initialize the slabs struct */
         slab_init(&mm->slabs, 
                   sizeof (struct mmnode),
@@ -284,6 +286,7 @@ errval_t mm_alloc_from_master(struct mm *mm, size_t size, size_t alignment, stru
             master = master->next;
         }
     }
+
     return MM_ERR_NOT_FOUND;
 }
 
@@ -297,6 +300,7 @@ errval_t mm_alloc_from_master(struct mm *mm, size_t size, size_t alignment, stru
  */
 errval_t mm_alloc_aligned(struct mm *mm, size_t size, size_t alignment, struct capref *retcap)
 {
+    thread_mutex_lock_nested(&mm->big_mm_lock);
     /**
      * Here we look through the list of mmnodes, trying to find one
      * that is large enough (>= size). If the found node is exactly
@@ -311,7 +315,10 @@ errval_t mm_alloc_aligned(struct mm *mm, size_t size, size_t alignment, struct c
     node = mm_bucket_find(mm, size, alignment, retcap);
     if (!node) {
         err = mm_alloc_from_master(mm, size, alignment, retcap, &node);
-        DBGERR(err, "Failed alloc from master");
+        if (err_is_fail(err)) {
+            thread_mutex_unlock(&mm->big_mm_lock);
+            DBGERR(err, "Failed alloc from master");
+        }
     } else {
         dlist_remove(&mm->free_buckets[node->bucket], node);
         node->type = NodeType_Allocated;
@@ -325,6 +332,7 @@ errval_t mm_alloc_aligned(struct mm *mm, size_t size, size_t alignment, struct c
     dlist_head_insert(&mm->head_dlist, (dlinked_node_t*) node);
     *retcap = node->cap.cap;
 
+    thread_mutex_unlock(&mm->big_mm_lock);
     return SYS_ERR_OK;
 }
 

@@ -20,7 +20,7 @@
 #include <aos/deferred.h>
 #include <aos/aos_rpc.h>
 
-#define THREADS_NO 2000
+#define THREADS_NO 100
 #define MALLOCS_NO 20
 static volatile bool threads_started = false;
 
@@ -41,7 +41,6 @@ __unused static void waste_slots(void) {
             if (! (i % 50)) debug_printf("Wasting slot %d\n", i);
             struct capref ram;
             frame_alloc(&ram, BASE_PAGE_SIZE, NULL);
-            //aos_rpc_get_ram_cap(get_init_rpc(), BASE_PAGE_SIZE, BASE_PAGE_SIZE, &ram, NULL);
     }
 }
 
@@ -64,7 +63,7 @@ int main(int argc, char *argv[]) {
             debug_printf("Error joining with thread #%d\n", i);
     }
 
-    waste_slots();
+    // waste_slots();
 
     debug_printf("Bye finished\n");
     return err;

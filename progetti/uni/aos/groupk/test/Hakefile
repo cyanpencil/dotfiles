@@ -10,7 +10,7 @@
 --
 --------------------------------------------------------------------------
 
-[ build library { target = "test", cFiles = [ "test.c" ], addLibraries = [ "test_mm", "test_paging", "test_proc" , "test_rpc", "test_cores"] } ]
+[ build library { target = "test", cFiles = [ "test.c" ], addLibraries = [ "test_mm", "test_paging", "test_proc" , "test_rpc", "test_cores", "test_filesystem", "test_nm" ] } ]
 
 -- [ build application { target = "in",
 --                       cFiles = [

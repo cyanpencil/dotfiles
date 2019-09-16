@@ -18,5 +18,6 @@
 struct spawn_domain_params;
 errval_t barrelfish_init_onthread(struct spawn_domain_params *params);
 void barrelfish_libc_glue_init(void);
+void handle_uart_getchar_interrupt(void *args);
 
 #endif

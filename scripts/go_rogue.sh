@@ -1,5 +1,15 @@
 #!/bin/bash
 
+
+function clean_lock {
+	echo "Cleaning up..."
+	rm /tmp/namespace
+	exit 0
+}
+
+
+FZF_FLAGS="--border --reverse --margin=0,1,0 --height=10 --inline-info"
+
 if [[ $EUID != 0 ]]; then echo "Not running as root!"; exit 1; fi
 
 
@@ -12,33 +22,50 @@ else
 	if [[ $(ip netns | grep phyns -c) -eq 0 ]]; then 
 		echo "Namespace phyns not found; creating it..."
 		ip netns add phyns
+		mkdir /etc/netns/phyns
 	fi
 
 	echo "Moving $IFACE to namespace phyns"
 	iw phy0 set netns name phyns
 fi
 
+while [[ -f /tmp/namespace ]]; do echo "Waiting for /tmp/namespace lock..."; sleep 2; done
+touch /tmp/namespace
+chmod 777 /tmp/namespace
+trap clean_lock INT
+
 if [[ $# -eq 1 ]]; then 
+	if [[ $(ip netns | grep $1 -c) -eq 0 ]]; then 
+		ip netns add $1
+		mkdir /etc/netns/$1
+		echo "nameserver 10.4.0.1" > /etc/netns/$1/resolv.conf
+	fi
 	echo -e "Setting up on namespace \x1b[31m$1\x1b[0m"
 	echo $1 > /tmp/namespace
+	OVPN=$(fd . /home -d 5 -e ovpn --no-ignore | fzf $FZF_FLAGS --prompt "Select openvpn profile: ")
+else
+
+	PROFILE=$(netctl list | fzf $FZF_FLAGS --color=prompt:196 --prompt "Select wifi profile: " | tr '*+' '  ')
+	OVPN=$(fd . /home -d 5 -e ovpn --no-ignore | fzf $FZF_FLAGS --prompt "Select openvpn profile: ")
+	WIREGUARD=$(echo -e "true\nfalse" | fzf $FZF_FLAGS --prompt "Do you want to setup wg0 too?")
+
+	if [[ -z $OVPN ]]; then echo "No vpn selected..."; rm /tmp/namespace; exit 1; fi
+
+	
+	netctl stop-all
+
+	echo "Starting profile $PROFILE"
+
+	netctl start $PROFILE
+
+	if [[ $? -ne 0 ]]; then echo "Something went wrong..."; rm /tmp/namespace; exit 1; fi
+
+	echo "Waiting to be connected..."
+
+	netctl wait-online $PROFILE
+
+	[[ $WIREGUARD == "true" ]] && wireguard.sh
 fi
 
-PROFILE=$(netctl list | fzf --height=10 --prompt "Select wifi profile: " | tr '*' ' ')
-OVPN=$(fd . /home -d 5 -e ovpn --no-ignore | fzf --height=10 --prompt "Select openvpn profile: ")
 
-if [[ -z $OVPN ]]; then echo "No vpn selected..."; exit 1; fi
-
-netctl stop-all
-
-echo "Starting profile $PROFILE"
-
-netctl start $PROFILE
-
-if [[ $? -ne 0 ]]; then echo "Something went wrong..."; exit 1; fi
-
-echo "Waiting to be connected..."
-
-netctl wait-online $PROFILE
-
-
-ip netns exec phyns openvpn $OVPN
+ip netns exec phyns openvpn  $OVPN

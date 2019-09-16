@@ -10,8 +10,9 @@
 #include <spawn/spawn.h>
 #include <aos/paging.h>
 #include <aos/aos_rpc.h>
+#include <fs/fs.h>
 
-extern struct bootinfo *bi;
+struct bootinfo *bi;
 
 void print_spawned_proc(void* _node) {
     spawned_proc_t* proc = (spawned_proc_t*) _node;
@@ -24,8 +25,7 @@ void print_spawned_proc(void* _node) {
  * \brief Mapping capability to child 
  *
  * A callback that copies the capability from 
- * our CSpace to the child's CSpace
- *
+ * our CSpace to the child's CSpace *
  */
 static errval_t child_mapping_cb(void* _si, struct capref cap) {
     struct spawninfo* si = (struct spawninfo*) _si;
@@ -93,7 +93,6 @@ static errval_t spawn_setup_cspace(struct spawninfo *si) {
     
     // get big RAM cap for L2_CNODE_SLOTS BASE_PAGE_SIZEd caps
     struct capref ram;
-    // get big RAM cap for L2_CNODE_SLOTS BASE_PAGE_SIZEd caps struct capref ram;
     err = ram_alloc(&ram, L2_CNODE_SLOTS*BASE_PAGE_SIZE);
     DBGERR(err, "Error allocating RAM cap\n");
 
@@ -201,6 +200,7 @@ static errval_t spawn_setup_dispatcher(struct spawninfo *si,
     disp_gen->core_id   = core_id;
     disp->udisp         = spawn_dispatcher_base;
     disp->disabled      = 1;
+    disp->fd            = si->fd;
     /*disp->fpu_trap      = 1;*/ //FIXME: Wait for instructions from the TAs
     /*Copy the name for debugging*/
     const char *copy_name = strrchr(name, '/');
@@ -212,10 +212,10 @@ static errval_t spawn_setup_dispatcher(struct spawninfo *si,
     strncpy(disp->name, copy_name, DISP_NAME_LEN);
 
     //debug_printf("Program counter: 0x%"PRIxGENPADDR"\n", si->entry_point);
-    disabled_area->named.pc = si->entry_point; // FIXME: Here we set the program counter where it should start to execute
+    disabled_area->named.pc = si->entry_point;
 
     //Initialize offset registers
-    disp_arm->got_base = si->got_base; // FIXME: Address of .got in child VSPace
+    disp_arm->got_base = si->got_base;
     si->enabled_area->regs[REG_OFFSET(PIC_REGISTER)] = si->got_base; // FIXME: ?
     disabled_area->regs[REG_OFFSET(PIC_REGISTER)] = si->got_base; // FIXME: ?
 
@@ -234,7 +234,7 @@ static errval_t elf_allocator_section(void* state, genvaddr_t base, size_t bytes
 {
     errval_t err;
 
-    debug_printf("Mapping a region at base %"PRIxGENVADDR" size %d with flags R:%d W:%d X:%d\n", base, bytes, (flags & VREGION_FLAGS_READ) > 0, (flags & VREGION_FLAGS_WRITE) > 0, (flags & VREGION_FLAGS_EXECUTE) > 0);
+    // debug_printf("Mapping a region at base %"PRIxGENVADDR" size %d with flags R:%d W:%d X:%d\n", base, bytes, (flags & VREGION_FLAGS_READ) > 0, (flags & VREGION_FLAGS_WRITE) > 0, (flags & VREGION_FLAGS_EXECUTE) > 0);
 
     size_t off = base % BASE_PAGE_SIZE;
     base -= off;
@@ -278,10 +278,9 @@ static errval_t spawn_load_elf(struct spawninfo *si, lvaddr_t elf_vaddr, size_t 
  * \param argv   Command-line arguments, NULL-terminated
  * \param envp   Environment, NULL-terminated
  */
-static errval_t spawn_setup_env(struct spawninfo *si, struct mem_region* mr) {
+static errval_t spawn_setup_env(struct spawninfo *si, const char * args) {
     errval_t err;
     // 1. Get args (as string).
-    const char*     args       = multiboot_module_opts(mr);
     const size_t    args_len   = strlen(args);
     /*Here we copy the arguments in the child vspace and we setup its VSpace*/
 
@@ -444,41 +443,121 @@ errval_t register_to_process_manager(struct spawninfo* si, char* binary_name) {
 }
 
 
+
 // TODO(M2): Implement this function such that it starts a new process
 // TODO(M4): Build and pass a messaging channel to your child process
 errval_t spawn_load_by_name(void * binary_name, struct spawninfo * si) {
+    return spawn_load_by_name_fd(binary_name, si, 0);
+}
+
+errval_t spawn_load_by_name_fd(void * binary_name, struct spawninfo * si, uint8_t fd) {
+    const char* args = NULL;
+    errval_t err = SYS_ERR_OK;
     debug_printf("spawn start_child: starting: %s\n", binary_name);
 
     if (!binary_name || ! ((char *) binary_name)[0] ) {
-        debug_printf("Waring: refuseing to spawn, no name\n");
+        //debug_printf("Waring: refusing to spawn, no name\n");
         return SPAWN_ERR_FIND_MODULE;
     }
-        
 
-    errval_t err = SYS_ERR_OK;
+    // Fast hack: if name contains space,
+    // use arguments from invocation: temporarly put a
+    // null terminator after the name, remove it before
+    // the setup_env call
+    // XXX: if the string is RO, this fails miserably
+    // so memcpy it (quick fix)
+
+    char * tmp = malloc(strlen(binary_name)+1);
+    if (!tmp) {
+        USER_PANIC("Cannot alloc name");
+    }
+    memcpy(tmp, binary_name, strlen(binary_name)+1);
+    binary_name = tmp;
+
+    char* it = binary_name;
+    while (*it++ != '\0') {
+        if (*it == ' ') {
+            *it = '\0';
+            args = binary_name;
+            break;
+        }
+    }
 
     // Init spawninfo
     memset(si, 0, sizeof(*si));
     si->binary_name = binary_name;
+    si->fd = fd;
 
-    // - Get the binary from multiboot image
-    struct mem_region * mb;
-    mb = multiboot_find_module(bi, binary_name);
-    if (!mb) {
-        return SPAWN_ERR_LOAD;
+    char* elf_file;
+    size_t elf_size;
+    //debug_printf("File in SD %s ? %d (%d, %s)\n", binary_name, sd_mountpoint_len > 0 && is_entity_in_sd(binary_name), sd_mountpoint_len, binary_name);
+    if (sd_mountpoint_len > 0 && is_entity_in_sd(binary_name)) {
+        FILE *f = fopen(binary_name, "r");
+        if (f == NULL) {
+            return FS_ERR_OPEN;
+        }
+
+        /* obtain the file size */
+        size_t res = fseek (f , 0 , SEEK_END);
+        if (res) {
+            return FS_ERR_INVALID_FH;
+        }
+
+        elf_size = ftell (f);
+        rewind (f);
+
+        //debug_printf("Elf size is %zu\n", elf_size);
+
+        elf_file = calloc(elf_size, sizeof(char));
+        if (elf_file == NULL) {
+            return LIB_ERR_MALLOC_FAIL;
+        }
+
+        size_t read = fread(elf_file, 1, elf_size, f);
+
+        if (read != elf_size) {
+            return FS_ERR_READ;
+        }
+
+        res = fclose(f);
+        if (res) {
+            return FS_ERR_CLOSE;
+        }
+        if (!args) {
+            args = "";
+        } else {
+            *it = ' ';
+        }
+    } else {
+        // - Get the binary from multiboot image
+        struct mem_region * mb;
+        mb = multiboot_find_module(bi, binary_name);
+        if (!mb) {
+            return SPAWN_ERR_LOAD;
+        }
+        elf_size = mb->mrmod_size;
+
+        struct capref child_frame = {
+            .cnode = cnode_module,
+            .slot = mb->mrmod_slot,
+        };
+
+        // - Map multiboot module in your address space
+        //gensize_t elf_size = mb->mr_bytes;
+        err = paging_map_frame_attr(get_current_paging_state(),
+                (void **)&elf_file, elf_size, child_frame,
+                VREGION_FLAGS_READ, NULL, NULL);
+        if (err_is_fail(err)) {
+            return err;
+        }
+
+        if (!args) {
+            args = multiboot_module_opts(mb);
+        } else {
+            *it = ' ';
+        }
     }
 
-    struct capref child_frame = {
-        .cnode = cnode_module,
-        .slot = mb->mrmod_slot,
-    };
-
-    // - Map multiboot module in your address space
-    lvaddr_t elf_file;
-    //gensize_t elf_size = mb->mr_bytes;
-    err = paging_map_frame_attr(get_current_paging_state(),
-            (void **)&elf_file, mb->mrmod_size, child_frame,
-            VREGION_FLAGS_READ, NULL, NULL);
 
     if (strncmp("\x7f""ELF", (char *) elf_file, 4)) {
         return SPAWN_ERR_ELF_MAP;
@@ -493,13 +572,13 @@ errval_t spawn_load_by_name(void * binary_name, struct spawninfo * si) {
     DBGERR(err, "Error setting up vspace\n");
 
     // - Load the ELF binary
-    err = spawn_load_elf(si, (lvaddr_t) elf_file, mb->mrmod_size);
+    err = spawn_load_elf(si, (lvaddr_t) elf_file, elf_size);
     DBGERR(err, "Error loading elf\n");
 
     // - Setup dispatcher
     spawn_setup_dispatcher(si, si->core_id, binary_name, si->entry_point, NULL);
     // - Setup environment
-    spawn_setup_env(si, mb);
+    spawn_setup_env(si, args);
     // - Setup LMP
     spawn_setup_lmp(si);
 
@@ -521,6 +600,6 @@ errval_t spawn_load_by_name(void * binary_name, struct spawninfo * si) {
             dispatcher_frame_child, true);
     DBGERR(err, "Error invoking dispatcher\n");
 
-
+    free(tmp);
     return err;
 }

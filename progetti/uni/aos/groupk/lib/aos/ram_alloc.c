@@ -19,7 +19,7 @@
 /* remote (indirect through a channel) version of ram_alloc, for most domains */
 static errval_t ram_alloc_remote(struct capref *ret, size_t size, size_t alignment)
 {
-    return aos_rpc_get_ram_cap(get_init_rpc(), size, alignment, ret, NULL);
+    return aos_rpc_get_ram_cap(aos_rpc_get_memory_channel(), size, alignment, ret, NULL);
 }
 
 
@@ -93,7 +93,8 @@ errval_t ram_alloc_aligned(struct capref *ret, size_t size, size_t alignment)
  */
 errval_t ram_alloc(struct capref *ret, size_t size)
 {
-    return ram_alloc_aligned(ret, size, BASE_PAGE_SIZE);
+    errval_t err = ram_alloc_aligned(ret, size, BASE_PAGE_SIZE);
+    return err;
 }
 
 errval_t ram_available(genpaddr_t *available, genpaddr_t *total)

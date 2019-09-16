@@ -15,7 +15,7 @@ import_environment() {
 
 cd /backup
 
-last=$(find *.tar.gz -mtime -15 | wc -l)
+last=$(find -mtime -15 | wc -l)
 
 if [[ $last -eq 0 ]]; then
 	import_environment DBUS_SESSION_BUS_ADDRESS

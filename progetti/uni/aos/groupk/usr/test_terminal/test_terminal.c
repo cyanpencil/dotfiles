@@ -16,8 +16,8 @@
 #include <aos/deferred.h>
 #include <aos/aos_rpc.h>
 
-void spawn_service(void);
-void spawn_service(void) {
+void spawn_service(coreid_t core);
+void spawn_service(coreid_t core) {
     printf("Input name of service to spawn: ");
     fflush(stdout);
     char name[1024];
@@ -29,7 +29,7 @@ void spawn_service(void) {
     printf("Launching it up...\n");
 
     domainid_t pid;
-    aos_rpc_process_spawn(get_init_rpc(), name, 0, &pid);
+    aos_rpc_process_spawn(get_init_rpc(), name, core, &pid);
     debug_printf("SPAWNED CHILD WITH PID: %d\n", pid);
 }
 
@@ -56,7 +56,12 @@ void calculator(void) {
     while (true) {
         int a, b, res = 0;
         char expr;
-        scanf("%d %c %d", &a, &expr, &b);
+        int ret = scanf("%d %c %d", &a, &expr, &b);
+        if (ret < 3) {
+            scanf("%c");
+            printf("Enter a valid expression\n");
+            continue;
+        }
 
         switch (expr) {
             case '+':
@@ -80,6 +85,29 @@ void calculator(void) {
 #include "../../lib/aos/include/threads_priv.h"
 
 int main(int argc, char *argv[]) {
+
+    aos_rpc_register_service(get_init_rpc(), "terminal");
+
+
+    if (false && disp_get_current_core_id() != 1) {
+        printf("\n\n\t\t\t                        _.'.__\n\
+\t\t\t                      _.'      .\n\
+\t\t\t':'.               .''   __ __  .\n\
+\t\t\t  '.:._          ./  _ ''     \"-'.__\n\
+\t\t\t.'''-: \"\"\"-._    | .                \"-\"._\n\
+\t\t\t '.     .    \"._.'                       \"\n\
+\t\t\t    '.   \"-.___ .        .'          .  :o'.\n\
+\t\t\t      |   .----  .      .           .'     (\n\
+\t\t\t       '|  ----. '   ,.._                _-'\n\
+\t\t\t        .' .---  |.\"\"  .-:;.. _____.----'\n\
+\t\t\t        |   .-\"\"\"\"    |      '\n\
+\t\t\t      .'  _'  CORE0  .'    _'\n\
+\t\t\t     |_.-' Barrelfish '-.'\n\n\n");
+        debug_printf("Not running terminal interactively on core 0...\n");
+        return 0;
+    }
+
+
     while (true) {
         printf("\n\n\t\t\t                        _.'.__\n\
 \t\t\t                      _.'      .\n\
@@ -92,13 +120,13 @@ int main(int argc, char *argv[]) {
 \t\t\t       '|  ----. '   ,.._                _-'\n\
 \t\t\t        .' .---  |.\"\"  .-:;.. _____.----'\n\
 \t\t\t        |   .-\"\"\"\"    |      '\n\
-\t\t\t      .'  _'         .'    _'\n\
-\t\t\t     |_.-' Barrelfish '-.'\n\n\n");
+\t\t\t      .'  _'  CORE%.1d  .'    _'\n\
+\t\t\t     |_.-' Barrelfish '-.'\n\n\n", disp_get_current_core_id());
         /*printf("> Barrelfish OS admin menu \n");*/
         printf("> Please select your choice: \n");
         printf("1. Parrot\n");
         printf("2. Ghost calculator\n");
-        printf("3. Spawn a process\n");
+        printf("3. Spawn a process (on core 0)\n");
         printf("4. Quit\n");
 
 
@@ -115,7 +143,7 @@ int main(int argc, char *argv[]) {
                 calculator();
                 break;
             case '3':
-                spawn_service();
+                spawn_service(!disp_get_current_core_id());
                 break;
             case '4':
                 goto exit;

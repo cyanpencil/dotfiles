@@ -57,6 +57,8 @@ struct dispatcher_shared_generic {
 
     uint64_t    systime_frequency;              ///< Systime frequency
     coreid_t    curr_core_id;                   ///< Core id of current core, in this part so kernel can update
+    uint8_t     fd;                             ///< false descriptor
+    char        filename[32];                             ///< false descriptor
 #ifdef __k1om__
     uint8_t     xeon_phi_id;
 #endif

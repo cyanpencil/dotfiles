@@ -4,106 +4,12 @@
 #include <target/arm/barrelfish_kpi/arm_core_data.h>
 #include <spawn/multiboot.h>
 
-#include <machine/atomic.h>
-
-
-#define URPC_STRUCT_SIZE sizeof(urpc_cbuf_u)
-#define URPC_BUF_SIZE (URPC_STRUCT_SIZE - sizeof(struct cbuf_s_hdr))
-
-extern struct bootinfo* bi;
-
-struct cbuf_s_hdr {
-    uint32_t to_read;
-    uint32_t to_write;
-};
-
-struct cbuf_s {
-    uint32_t to_read;
-    uint32_t to_write;
-    char buf[];
-};
-
-typedef union _cbuf_u {
-    struct cbuf_s s;
-    char bytes[BASE_PAGE_SIZE/2];
-} urpc_cbuf_u;
-
-typedef struct _urpc_rwbuf_s {
-    urpc_cbuf_u r;
-    urpc_cbuf_u w;
-} urpc_rwbuf_s;
-
-struct urpc_msg {
-    uint32_t len;
-    char buf[];
-};
-
+#include "../urpc/urpc_int.h"
 #define __SC_INT
 #include <spawncore.h>
+#include <urpc.h>
 
-size_t read(urpc_s * src_buf, char * dest, size_t n) {
-    size_t read = 0;
-    urpc_cbuf_u * r_buf = src_buf->rbuf; 
-    size_t * cursor = &src_buf->rcursor;
-    while (read < n && *cursor != r_buf->s.to_read) {
-        // Read data byte
-        dest[read++] = r_buf->s.buf[(*cursor)++];
-
-        // Memory barrier
-        dmb();
-
-        // Advance shared cursor
-        size_t tmp = (r_buf->s.to_write + 1) % URPC_BUF_SIZE;
-        r_buf->s.to_write  = tmp; // Atomic if 32bit in armv7
-
-        // Memory barrier
-        dmb();
-
-        // Advance own cursor
-        *cursor %= URPC_BUF_SIZE;
-    }
-
-    return read;
-}
-
-size_t write(urpc_s * dest_buf, char * src, size_t n) {
-    urpc_cbuf_u * s_buf = dest_buf->wbuf;
-    size_t * cursor = &dest_buf->wcursor;
-    size_t wrote = 0;
-    while (wrote < n && *cursor != s_buf->s.to_write) {
-        // Write data byte
-        s_buf->s.buf[(*cursor)++] = src[wrote++];
-
-        // Memory barrier
-        dmb();
-
-        // Advance shared cursor
-        size_t tmp = (s_buf->s.to_read + 1 ) % URPC_BUF_SIZE;
-        s_buf->s.to_read = tmp; // Atomic if 32bit in armv7
-
-        // Memory barrier
-        dmb();
-
-        // Advance own cursor
-        *cursor %= URPC_BUF_SIZE;
-    }
-
-    return wrote;
-}
-
-void b_read(urpc_s * src_buf, char * dest, size_t n) {
-    size_t recv = 0;
-    while (recv < n) {
-        recv += read(src_buf, dest + recv, n - recv);
-    }
-}
-
-void b_write(urpc_s * dest_buf, char * src, size_t n) {
-    size_t recv = 0;
-    while (recv < n) {
-        recv += write(dest_buf, src + recv, n - recv);
-    }
-}
+extern int HARDWARE;
 
 static errval_t setup_core_urpc(struct arm_core_data* core_data_s, urpc_rwbuf_s ** urpc_buffer) {
     // Allocating frame for URPC of other core
@@ -125,9 +31,6 @@ static errval_t setup_core_urpc(struct arm_core_data* core_data_s, urpc_rwbuf_s 
     err = paging_map_frame_attr(get_current_paging_state(), (void **) urpc_buffer, 0x1000,
             cap_urpc, VREGION_FLAGS_READ_WRITE, NULL, NULL);
     DBGERR(err, "Urpc frame mapping failed");
-
-    (*urpc_buffer)->r.s.to_write = URPC_BUF_SIZE - 1;
-    (*urpc_buffer)->w.s.to_write = URPC_BUF_SIZE - 1;
 
     return SYS_ERR_OK;
 }
@@ -196,14 +99,14 @@ static errval_t setup_core_monitor(struct arm_core_data* core_data_s,
             2*ARM_CORE_DATA_PAGES*BASE_PAGE_SIZE, 
             &retbytes);
     DBGERR(err, "Error allocating frame for init on core boot\n");
-    debug_printf("Here it is: 0x%zx\n", retbytes);
+    //debug_printf("Here it is: 0x%zx\n", retbytes);
 
     //Setup core data init fields
     struct frame_identity init_fi;
     err = frame_identify(init_frame, &init_fi);
     DBGERR(err, "Error identifying init frame\n");
     strncpy(core_data_s->init_name, monitor_name, DISP_NAME_LEN + 1);
-    debug_printf("[Mem] 0x%llx/0x%llx \n", init_fi.bytes, 2*ARM_CORE_DATA_PAGES*BASE_PAGE_SIZE);
+    //debug_printf("[Mem] 0x%llx/0x%llx \n", init_fi.bytes, 2*ARM_CORE_DATA_PAGES*BASE_PAGE_SIZE);
     core_data_s->memory_base_start  = init_fi.base;
     core_data_s->memory_bytes       = init_fi.bytes;
 
@@ -215,8 +118,16 @@ static errval_t setup_core_monitor(struct arm_core_data* core_data_s,
 
 static errval_t setup_cpu_driver(void** cpu_driver_addr, void** reloc_seg_addr, struct arm_core_data* core_data_s) {
     errval_t err;
-    struct mem_region* cpu_driver_mm_reg = multiboot_find_module(bi, "cpu_omap44xx");
-    //struct mem_region* cpu_driver_mm_reg = multiboot_find_module(bi, "cpu_a15ve");
+    struct mem_region* cpu_driver_mm_reg;
+    
+    if ((cpu_driver_mm_reg = multiboot_find_module(bi, "cpu_omap44xx")) != NULL) {
+        HARDWARE = 1;
+    } else if ((cpu_driver_mm_reg = multiboot_find_module(bi, "cpu_a15ve")) != NULL) {
+        HARDWARE = 0;
+    } else {
+        USER_PANIC("Unknown hardware\n");
+    }
+
     struct capref cpu_driver_frame = {
         .cnode  = cnode_module,
         .slot   = cpu_driver_mm_reg->mrmod_slot,
@@ -263,24 +174,6 @@ static errval_t setup_cpu_driver(void** cpu_driver_addr, void** reloc_seg_addr, 
 //        DEBUG_ERR(err, "bpp");
 //        *((char *) buffo) = 'a';
 //    }
-inline static void urpc_s_init(urpc_rwbuf_s * urpcrw, urpc_s * urpc, bool reversed) {
-    urpc->buf = (void *) urpcrw;
-    urpc->rbuf = reversed ? &((urpc_rwbuf_s *) urpcrw)->w : &((urpc_rwbuf_s *) urpcrw)->r;
-    urpc->wbuf = reversed ? &((urpc_rwbuf_s *) urpcrw)->r : &((urpc_rwbuf_s *) urpcrw)->w;
-    urpc->rcursor = 0;
-    urpc->wcursor = 0;
-}
-
-errval_t urpc_map(struct capref _cap_urpc, urpc_s * urpc) {
-    errval_t err;
-    urpc_rwbuf_s * urpcrw;
-    err = paging_map_frame_attr(get_current_paging_state(), (void *) &urpcrw, 0x1000,
-            cap_urpc, VREGION_FLAGS_READ_WRITE, NULL, NULL);
-    DBGERR(err, "Mapping urpc failed");
-
-    urpc_s_init(urpcrw, urpc, true);
-    return err;
-}
 
 errval_t spawn_core(int my_core_id, int core_id, urpc_s * urpc) {
     errval_t err;

@@ -40,7 +40,7 @@ static unsigned int doubleclicktimeout = 300;
 static unsigned int tripleclicktimeout = 600;
 
 /* alt screens */
-int allowaltscreen = 1;
+int allowaltscreen = 0;
 
 /* frames per second st should at maximum draw to the screen */
 static unsigned int xfps = 120;

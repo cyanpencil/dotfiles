@@ -12,7 +12,7 @@
 
 let
     -- Default list of modules to build/install for all enabled architectures
-    modules_common = [ "init", "hello", "bye", "order", "memeater" , "test_terminal", "test_rpc"]
+    modules_common = [ "init", "hello", "bye", "order", "memeater" , "test_terminal", "test_rpc", "test_binding", "filereader", "mmchs", "network_manager", "uecho", "ping", "bush", "nc" ]
 
     -- ARMv7-a Pandaboard modules
     pandaModules = [ "/sbin/" ++ f | f <- [

@@ -11,9 +11,6 @@
  * If you do not find this file, copies can be found by writing to:
  * ETH Zurich D-INFK, Haldeneggsteig 4, CH-8092 Zurich. Attn: Systems Group.
  */
-
- char* consume_readterm_buf(int count);
-
 #ifndef _LIB_BARRELFISH_AOS_MESSAGES_H
 #define _LIB_BARRELFISH_AOS_MESSAGES_H
 
@@ -39,6 +36,7 @@ void _aos_rpc_set_chan(struct aos_rpc*, struct lmp_chan);
 /**
  * Protocol
  */
+#pragma pack(push, 1)
 #define RPC_MAX_LEN (LMP_MSG_LENGTH*4)
 #define RPC_RESERVED    2
 typedef union rpc_req_union {
@@ -47,12 +45,19 @@ typedef union rpc_req_union {
         uint8_t longreq;
         union {
             uint16_t len;
-            //char * buf;
             char buf[1];
         };
     };
     char bytes[RPC_MAX_LEN];
 } rpc_req;
+
+typedef union rpc_res_union {
+    struct {
+        errval_t err;
+        uint8_t res_type;
+    } args;
+    char bytes[RPC_MAX_LEN];
+} rpc_res;
 
 #define RPC_RAM_CAP_REQ 1
 #define RPC_PUTCHAR_REQ 2
@@ -60,7 +65,16 @@ typedef union rpc_req_union {
 #define RPC_PUTS_REQ 4
 #define RPC_READ_REQ 5
 #define RPC_REQ_PROC_SPAWN 6
+#define RPC_REG_SERVICE 7
+#define RPC_BIND_FRAME 8
+#define RPC_REMOTE_BIND_FRAME 9
+#define RPC_DEV_CAP_REQ 10
+#define RPC_IRQ_CAP_REQ 11
+#define RPC_REMOTE_RES 12
+#define RPC_RUN_TEST 13
 
+// The following types make sense only if the 
+// response is received over URPC
 
 /* RAMCAP */
 // Request
@@ -70,12 +84,55 @@ typedef struct rpc_req_ram_cap_ {
 } rpc_req_ram_cap;
 
 // Response
-typedef union rpc_res_ram_cap_ {
-    struct {
-        errval_t err;
-    } args;
-    char bytes[RPC_MAX_LEN];
-} rpc_res_ram_cap;
+// typedef union rpc_res_ram_cap_ {
+    // struct {
+        // errval_t err;
+    // } args;
+    // char bytes[RPC_MAX_LEN];
+// } rpc_res_ram_cap;
+typedef rpc_res rpc_res_ram_cap;
+
+/* IRQICECAP */
+// Request
+typedef struct rpc_req_irq_cap_ {
+    coreid_t coreid;
+} rpc_req_irq_cap;
+
+/*
+ * DEVICECAP
+ */
+// Request
+typedef struct rpc_req_dev_cap_ {
+    lpaddr_t paddr;
+    size_t bytes;
+    coreid_t coreid;
+} rpc_req_dev_cap;
+
+// Response
+// typedef union rpc_res_dev_cap_ {
+    // struct {
+        // errval_t err;
+    // } args;
+    // char bytes[RPC_MAX_LEN];
+// } rpc_res_dev_cap;
+typedef rpc_res rpc_res_dev_cap;
+
+/*
+ * Binding
+ */
+#define SERVICE_NAME_LEN RPC_MAX_LEN - RPC_RESERVED - sizeof(struct frame_identity)
+typedef struct {
+    struct frame_identity cap_fi;
+    char service_name[SERVICE_NAME_LEN];
+} rpc_remote_bind_req;
+
+// typedef union rpc_remote_bind_res_ {
+    // struct {
+        // errval_t err;
+    // } args;
+    // char bytes[RPC_MAX_LEN];
+// } rpc_remote_bind_res;
+typedef rpc_res rpc_remote_bind_res;
 
 // Read from serial
 typedef struct {
@@ -99,8 +156,9 @@ typedef struct {
 typedef union rpc_res_proc_spawn {
     struct {
         errval_t err;
+        uint8_t res_type;
         domainid_t pid;
-    };
+    } args;
     char bytes[RPC_MAX_LEN];
 } rpc_res_proc_spawn;
 
@@ -113,14 +171,18 @@ typedef struct lmp_chan_send_cb_s {
     struct capref cap;
     uintptr_t words[LMP_MSG_LENGTH];
 } lmp_chan_send_cb_t;
+#pragma pack(pop)
 
 
 errval_t aos_rpc_send_capbuf(struct aos_rpc *chan, const char *str, size_t str_len, struct capref cap);
-errval_t aos_rpc_rec_capbuf(struct aos_rpc *chan, char **buf, size_t* len, struct capref *cap);
+errval_t aos_rpc_rec_capbuf(struct aos_rpc *chan, char *buf, size_t* len, struct capref *cap);
 
 errval_t aos_rpc_send_req(uint8_t type, struct aos_rpc *chan, const char *buf, size_t len, struct capref cap);
-errval_t aos_rpc_rec_req(struct aos_rpc *chan, rpc_req **buf, size_t* len, struct capref *cap);
-//void* aos_rpc_parse_lreq(rpc_req_puts* req, struct capref frame_cap);
+errval_t aos_rpc_rec_req(uint8_t * type, struct aos_rpc *chan, char **buf, size_t* len, struct capref *cap);
+
+char* aos_rpc_receive_bind(void);
+errval_t aos_rpc_new_remote_bind_4ever(char *service_name, size_t size, void** buf);
+errval_t aos_rpc_new_remote_bind(char *service_name, struct capref frame, size_t size, void** res_buf);
 
 void lmp_chan_send_cb(struct aos_rpc *chan, void* _args);
 
@@ -156,6 +218,8 @@ errval_t aos_rpc_serial_read(struct aos_rpc *chan, char **retc, int len);
  */
 errval_t aos_rpc_serial_putchar(struct aos_rpc *chan, char c);
 errval_t aos_rpc_serial_puts(struct aos_rpc *chan, const char* c, int len);
+errval_t aos_rpc_register_service(struct aos_rpc *chan, const char* c);
+    errval_t aos_rpc_bind_frame_with_service(struct aos_rpc *chan, const char* c, struct capref cap);
 
 /**
  * \brief Request process manager to start a new process
@@ -193,8 +257,22 @@ errval_t aos_rpc_process_get_all_pids(struct aos_rpc *chan,
  * \param bytes number of bytes of the device memory
  * \param frame returned devframe
  */
-errval_t aos_rpc_get_device_cap(struct aos_rpc *rpc, lpaddr_t paddr, size_t bytes,
+errval_t aos_rpc_get_device_cap(
+        struct aos_rpc *rpc,
+        lpaddr_t paddr,
+        size_t bytes,
+        struct capref *frame);
+
+/**
+ * \brief Gets a capability to irq
+ * \param rpc  the rpc channel
+ * \param frame returned devframe
+ *
+ * TODO: Implement Access Control for those caps.
+ */
+errval_t aos_rpc_get_irq_cap(struct aos_rpc *rpc,
                                 struct capref *frame);
+
 /**
  * \brief Initialize given rpc channel.
  */
@@ -210,9 +288,9 @@ void aos_rpc_init_f(struct aos_rpc *rpc,
             size_t, struct capref),
         errval_t (*send_req_f)(uint8_t type, struct aos_rpc*, const char *,
             size_t, struct capref),
-        errval_t (*rec_raw_f)(struct aos_rpc*, char **,
+        errval_t (*rec_raw_f)(struct aos_rpc*, char *,
             size_t*, struct capref*),
-        errval_t (*rec_req_f)(struct aos_rpc*, rpc_req **,
+        errval_t (*rec_req_f)(uint8_t* type, struct aos_rpc*, char **,
             size_t*, struct capref*)
         );
 void aos_rpc_init_a(struct aos_rpc *rpc, void * ancillary);
@@ -239,4 +317,5 @@ struct aos_rpc *aos_rpc_get_process_channel(void);
  */
 struct aos_rpc *aos_rpc_get_serial_channel(void);
 
+char* consume_readterm_buf(int count);
 #endif // _LIB_BARRELFISH_AOS_MESSAGES_H

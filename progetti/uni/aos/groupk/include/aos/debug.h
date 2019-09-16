@@ -92,6 +92,16 @@ void user_panic_fn(const char *file, const char *func, int line,
         } \
     } while (0);
 
+/*
+ * Same as the previous ones but just prints the 
+ * error, without returning in case of error
+ */
+#define DBGERRC(e,s) \
+    do { \
+        if (err_is_fail(e)) { \
+            DEBUG_ERR(e, s); \
+        } \
+    } while (0);
 __END_DECLS
 
 #endif //BARRELFISH_DEBUG_H

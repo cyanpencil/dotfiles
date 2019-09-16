@@ -329,6 +329,7 @@ static void free_thread(struct thread *thread)
 #endif
 
     free(thread->stack);
+    // free(thread->exception_stack);
     if (thread->tls_dtv != NULL) {
         free(thread->tls_dtv);
     }

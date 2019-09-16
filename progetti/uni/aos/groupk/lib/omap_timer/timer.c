@@ -22,6 +22,18 @@
 #define OMAP_TIMER_LOW(addr)  ((void *)((char*)(addr) + 0x00))
 #define OMAP_TIMER_HIGH(addr) ((void *)((char*)(addr) + 0x04))
 
+#define OMAP_TIMER_CTRL_FLAG_TIMER_ENABLE       (1<<0)
+#define OMAP_TIMER_CTRL_FLAG_COMP_ENABLE        (1<<1)
+#define OMAP_TIMER_CTRL_FLAG_IRQ_ENABLE         (1<<2)
+#define OMAP_TIMER_CTRL_FLAG_AUTO_INCR_ENABLE   (1<<3)
+
+
+//void omap_timer_unblock_scheduler_interrupts(void)
+//{
+//    volatile uint32_t *ctrl = OMAP_TIMER_CTRL(timer_mem);
+//    *ctrl = (*ctrl | OMAP_TIMER_CTRL_FLAG_COMP_ENABLE);
+//}
+
 //XXX: should do this more general!
 static void *priv_mem = NULL;
 static volatile uint32_t *timer_mem = NULL;
@@ -67,10 +79,10 @@ errval_t omap_timer_init(void)
 
     timer_mem = (uint32_t *)((char*)priv_mem + REGION_OFFSET);
 
-    volatile uint32_t *ctrl = OMAP_TIMER_CTRL(timer_mem);
+    //volatile uint32_t *ctrl = OMAP_TIMER_CTRL(timer_mem);
 
     // disable timer, autoreload, and interrupt
-    *ctrl = (*ctrl & 0xFFFFFFF4) | 0;
+    //*ctrl = (*ctrl & 0xFFFFFFF4) | 0;
 
     return SYS_ERR_OK;
 }
@@ -80,7 +92,7 @@ void omap_timer_ctrl(bool enable)
     volatile uint32_t *ctrl = OMAP_TIMER_CTRL(timer_mem);
     // set enable bit to arg value
     if (enable) {
-        *ctrl = (*ctrl & 0xFFFFFFF4) | 0x1;
+        *ctrl = (*ctrl & 0xFFFFFFF4) | OMAP_TIMER_CTRL_FLAG_TIMER_ENABLE | OMAP_TIMER_CTRL_FLAG_IRQ_ENABLE | OMAP_TIMER_CTRL_FLAG_COMP_ENABLE;
     } else {
         *ctrl = (*ctrl & 0xFFFFFFF4) | 0;
     }

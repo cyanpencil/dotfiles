@@ -12,7 +12,7 @@
 #include <aos/coreboot.h>
 #include <elf/elf.h>
 
-extern struct bootinfo *bi;
+struct bootinfo bi;
 
 errval_t
 load_cpu_relocatable_segment(void *elfdata, void *out, lvaddr_t vbase,

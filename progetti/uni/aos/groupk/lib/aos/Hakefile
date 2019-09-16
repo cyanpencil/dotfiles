@@ -23,8 +23,8 @@
                              "slot_alloc/slot_alloc.c",
                              "slot_alloc/range_slot_alloc.c",
                              "slot_alloc/twolevel_slot_alloc.c",
-                             "aos_dirent.c",
                              "aos_rpc.c",
+                             "benchmark.c",
                              "capabilities.c",
                              "coreboot.c",
                              "coreset.c",
@@ -55,6 +55,7 @@
                   assemblyFiles = [ "arch/arm/entry.S", "arch/arm/syscall.S" ],
                   addIncludes =   [ "include", "include/arch/arm" ],
                   addCFlags = ["-DMORECORE_PAGESIZE=BASE_PAGE_SIZE"],
+                  addLibraries = [ "urpc", "fs", "spawn" ],
                   addGeneratedDependencies = [ "/include/asmoffsets.h" ]
                 }
 ]

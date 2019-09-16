@@ -22,7 +22,6 @@ uint64_t omap_timer_read(void);
 
 static inline uint64_t omap_timer_to_ms(uint64_t time)
 {
-    return (time * 1000.00) / omap_timer_tsc_per_sec();
+    return (time * 1000) / omap_timer_tsc_per_sec();
 }
-
 #endif // __OMAP_TIMER_H

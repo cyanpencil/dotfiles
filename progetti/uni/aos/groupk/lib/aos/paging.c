@@ -156,7 +156,8 @@ void exception_handler(enum exception_type type, int subtype,
         case EXCEPT_PAGEFAULT: {
 
             if ((lvaddr_t) addr <= 0x1000) {
-                debug_printf("PAGEFAULT ON NULL ADDR 0x%x , ABORTING!!", addr);
+                lvaddr_t ip = (lvaddr_t) registers_get_ip(regs);
+                debug_printf("PAGEFAULT ON NULL ADDR 0x%x, @%p, ABORTING!!", addr, ip);
                 thread_exit(1);
             }
 
@@ -167,7 +168,7 @@ void exception_handler(enum exception_type type, int subtype,
             lvaddr_t sp = (lvaddr_t) registers_get_sp(regs);
             struct thread* t = thread_self();
 
-            //debug_printf("[\x1b[32mPage fault handler\x1b[0m] Allocating [0x%zx, 0x%zx] for (%p)\n", base, base + BASE_PAGE_SIZE - 1, addr);
+            // debug_printf("[\x1b[32mPage fault handler\x1b[0m] Allocating [0x%zx, 0x%zx] for (%p)\n", base, base + BASE_PAGE_SIZE - 1, addr);
 
             if ((base <= (lvaddr_t) t->stack + 4*BASE_PAGE_SIZE && base >= (lvaddr_t) t->stack)
               || sp > (lvaddr_t) t->stack_top) {
@@ -180,6 +181,7 @@ void exception_handler(enum exception_type type, int subtype,
             errval_t err = frame_alloc(&frame, BASE_PAGE_SIZE, NULL);
             if (err_is_fail(err)) {
                 debug_printf("Unable to alloc frame\n");
+                DEBUG_ERR(err, "ciao");
                 USER_PANIC("UNABLE TO FIX PAGE FAULT inside exception_handler\n");
             }
             err = paging_map_fixed_attr(NULL, base, frame, BASE_PAGE_SIZE, VREGION_FLAGS_READ_WRITE);
@@ -566,6 +568,7 @@ errval_t mark_chunk_free(struct paging_state *st, lvaddr_t vaddr, size_t bytes, 
 errval_t paging_map_fixed_attr(struct paging_state *st, lvaddr_t vaddr,
         struct capref frame, size_t bytes, int flags)
 {
+    // debug_printf("[%lx, %lx]\n", vaddr, vaddr+bytes);
     if (!st) {
         st = get_current_paging_state(); // FIXME: Shouldn't it be better to let the setting of the paging state explicit and add an assertion to check that is not NULL?
     }

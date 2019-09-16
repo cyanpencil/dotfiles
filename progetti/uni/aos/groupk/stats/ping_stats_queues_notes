@@ -1,0 +1,9 @@
+Implementation with queues does not improve latency significantly - show graphs
+
+What changes a lot is the burst response:
+
+no queues -> 99% packet loss at size 100
+
+queues -> 45% packet loss at size 200, almmost some dropped packets
+           5% packet loss at size 100, almmost no dropped packets
+           

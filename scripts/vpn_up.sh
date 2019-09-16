@@ -14,7 +14,7 @@ echo -e "[\x1b[33m+\x1b[0m] Using \x1b[31m$VPN_NAMESPACE\x1b[0m network namespac
 ln -s /proc/1/ns/net /var/run/netns/default
 
 	# move the tun0 interface from phyns to default namespace
-ip netns exec phyns ip l s tun0 netns 1
+ip netns exec phyns ip l s tun0 netns $VPN_NAMESPACE
 ip netns exec $VPN_NAMESPACE ip l s tun0 up
 
 	# set addresses and subnet masks
@@ -26,4 +26,6 @@ ip netns exec $VPN_NAMESPACE ip -6 a add dev tun0 ${ifconfig_ipv6_local}/${ifcon
 ip netns exec $VPN_NAMESPACE ip r a default dev tun0 via $route_vpn_gateway
 ip netns exec $VPN_NAMESPACE ip -6 r a default dev tun0
 
-. /etc/openvpn/update-resolv-conf
+	# let systemd manage dns (default to 1.1.1.1, see man resolved.conf)
+#. /etc/openvpn/update-resolv-conf
+#if [[ ! -f /etc/netns/$VPN_NAMESPACE ]]; then mkdir /etc/netns/$VPN_NAMESPACE; fi

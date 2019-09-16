@@ -51,6 +51,8 @@ struct spawninfo {
     struct lmp_chan chan;
     struct capref capep;
 
+    uint8_t fd;
+
     coreid_t core_id;
 };
 
@@ -71,5 +73,6 @@ void print_spawned_proc(void* _node);
 dlinked_list_t spawned_proc_list;
 // Start a child process by binary name. Fills in si
 errval_t spawn_load_by_name(void * binary_name, struct spawninfo * si);
+errval_t spawn_load_by_name_fd(void * binary_name, struct spawninfo * si, uint8_t fd);
 
 #endif /* _INIT_SPAWN_H_ */

@@ -17,22 +17,32 @@
         print_test(NAME);\
         FUN(ARG); \
         printf(GREEN_COLOR"Success"END_COLOR"\n"); \
-    } while (0); 
-                
+    } while (0);
+
 
 void spawn_hello(void * useless);
 void spawn_hello(void * useless) {
-    struct capref frame2; 
-    frame_alloc(&frame2, sizeof(struct spawninfo), NULL);
-    struct spawninfo *si2;
-    paging_map_frame_attr(get_current_paging_state(), (void**) &si2, sizeof(*si2), frame2, VREGION_FLAGS_READ_WRITE, NULL, NULL);
-    assert(spawn_load_by_name("order", si2) == SYS_ERR_OK);
+    // frame_alloc(&frame2, sizeof(struct spawninfo), NULL);
+    // paging_map_frame_attr(get_current_paging_state(), (void**) &si2, sizeof(*si2), frame2, VREGION_FLAGS_READ_WRITE, NULL, NULL);
+    // assert(spawn_load_by_name("hello", si2);
 
-    //struct capref frame; 
+    //struct capref frame;
     //frame_alloc(&frame, sizeof(struct spawninfo), NULL);
     //struct spawninfo *si;
     //paging_map_frame_attr(get_current_paging_state(), (void**) &si, sizeof(*si), frame, VREGION_FLAGS_READ_WRITE, NULL, NULL);
     //assert(spawn_load_by_name("hello", si) == SYS_ERR_OK);
+    
+    if (disp_get_current_core_id() == 1) {
+        struct spawninfo *si2;
+        struct capref frame2;
+        frame_alloc(&frame2, sizeof(struct spawninfo), NULL);
+        paging_map_frame_attr(get_current_paging_state(), (void**) &si2, sizeof(*si2), frame2, VREGION_FLAGS_READ_WRITE, NULL, NULL);
+        // FIXME: Why does this fail, if executing it inside the assert?
+        // assert(spawn_load_by_name("bush", si2));
+        errval_t err = spawn_load_by_name("bush", si2);
+        DBGERRC(err, "Error spawning bush\n");
+        assert(err_is_ok(err));
+    }
 }
 
 

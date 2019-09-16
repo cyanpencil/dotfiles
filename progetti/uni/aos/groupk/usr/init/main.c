@@ -11,8 +11,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
 #include <aos/aos.h>
+#include <fs/fs.h>
 #include <aos/inthandler.h>
 #include <aos/waitset.h>
 #include <aos/morecore.h>
@@ -24,6 +24,7 @@
 #include <spawn/spawn.h>
 #include <urpc.h>
 #include <aos/threads.h>
+#include "../../lib/aos/include/init.h"
 
 #include <mm/mm.h>
 #include "mem_alloc.h"
@@ -31,18 +32,32 @@
 #include <test/test.h>
 #include <monitor.h>
 #include <spawncore.h>
+#include <test/test.h>
 
 #define CORES_NO 2
 
-coreid_t my_core_id;
-struct bootinfo *bi;
+volatile bool fs_setup_complete = false;
 
-static errval_t map_regions(struct bootinfo * _bi, urpc_s * urpc) {
+coreid_t my_core_id;
+struct thread_mutex big_ipc_lock;
+urpc_s urpc;
+unit_test_ctx utctx;
+
+__unused static void spawn_terminal(void) {
+    struct capref frame2; 
+    frame_alloc(&frame2, sizeof(struct spawninfo), NULL);
+    struct spawninfo *si2;
+    paging_map_frame_attr(get_current_paging_state(), (void**) &si2, sizeof(*si2), frame2, VREGION_FLAGS_READ_WRITE, NULL, NULL);
+    assert(spawn_load_by_name("test_terminal", si2));
+}
+
+
+static errval_t map_regions(struct bootinfo * _bi, urpc_s * my_urpc) {
     errval_t err;
     size_t len;
 
     struct frame_identity* modstrings_fi;
-    err = urpc_read_msg(urpc, (void**) &modstrings_fi, &len);
+    err = urpc_read_msg(my_urpc, (void**) &modstrings_fi, &len);
     DBGERR(err, "Error receiving message over urpc\n");
 
     struct capref l1c = {
@@ -72,16 +87,16 @@ static errval_t map_regions(struct bootinfo * _bi, urpc_s * urpc) {
     return SYS_ERR_OK;
 }
 
-static errval_t receive_bi(struct bootinfo * _bi, urpc_s * urpc) {
+static errval_t receive_bi(struct bootinfo * _bi, urpc_s * my_urpc) {
     errval_t err;
     size_t len;
-    err = urpc_read_msg(urpc, (void**) &bi, &len);
+    err = urpc_read_msg(my_urpc, (void**) &bi, &len);
     DBGERR(err, "Error receiving message over urpc\n");
 
     return SYS_ERR_OK;
 }
 
-static errval_t map_ram(struct bootinfo * _bi, urpc_s * urpc) {
+static errval_t map_ram(struct bootinfo * _bi, urpc_s * my_urpc) {
     errval_t err;
 
     struct capref mem_cap = {
@@ -103,62 +118,96 @@ static errval_t map_ram(struct bootinfo * _bi, urpc_s * urpc) {
     return SYS_ERR_OK;
 }
 
-static errval_t dummy_recv_raw(struct aos_rpc *chan, char **buf, size_t* len, struct capref *cap) {
+static errval_t dummy_recv_raw(struct aos_rpc *chan, char *buf, size_t* len, struct capref *cap) {
+    USER_PANIC("NYI");
     return SYS_ERR_OK;
 }
 
-static errval_t dummy_recv(struct aos_rpc *chan, rpc_req **buf, size_t* len, struct capref *cap) {
-    errval_t err;
-    rpc_req * req;
-    size_t len2;
-    err = urpc_read_msg((urpc_s *) aos_rpc_get_a(chan), (void **) &req, &len2);
-    err = urpc_read_msg((urpc_s *) aos_rpc_get_a(chan), (void **) buf, len);
+static errval_t dummy_recv(uint8_t* type, struct aos_rpc *chan, char **buf, size_t* len, struct capref *cap) {
+    debug_printf("URPC RPC revc\n");
+    USER_PANIC("What are u doin!?");
 
     return SYS_ERR_OK;
 }
 
+// Function used for LMP responses on URPC
 static errval_t dummy_send_raw(struct aos_rpc *chan, const char *buf, size_t len, struct capref cap) {
+    debug_printf("URPC RPC sendraw\n");
+    debug_printf("URPC RPC sendraw: %d %p %hhd %hhd\n", len, buf, ((rpc_req *) buf)->type, ((rpc_req *) buf)->longreq);
     errval_t err;
-    err = urpc_write_msg((urpc_s *) aos_rpc_get_a(chan), (char *) buf, len);
+
+    size_t req_size = RPC_RESERVED + len;
+    rpc_req * req = malloc(req_size);
+    if (req == NULL) {
+        USER_PANIC("RPC puts: Malloc failed");
+    }
+    req->type = RPC_REMOTE_RES;
+    memcpy(req->buf, buf, len);
+
+    err = urpc_write_msg((urpc_s *) aos_rpc_get_a(chan), (char *) req, req_size);
+    debug_printf("URPC RPC sendraw2\n");
+
+    free(req);
 
     return SYS_ERR_OK;
 }
 
 static errval_t dummy_send(uint8_t type, struct aos_rpc *chan, const char *buf, size_t len, struct capref cap) {
+    // debug_printf("URPC RPC send\n");
     errval_t err;
-    rpc_req req;
 
-    req.type = type;
-    err = urpc_write_msg((urpc_s *) aos_rpc_get_a(chan), req.bytes, sizeof(rpc_req));
-    err = urpc_write_msg((urpc_s *) aos_rpc_get_a(chan), (char *) buf, len);
-    // FIXME: ADD LOCK
+    size_t req_size = RPC_RESERVED + len;
+    rpc_req * req = malloc(req_size);
+    if (req == NULL) {
+        USER_PANIC("RPC puts: Malloc failed");
+    }
+    req->type = RPC_REMOTE_RES;
+    memcpy(req->buf, buf, len);
 
-    return SYS_ERR_OK;
+    err = urpc_write_msg((urpc_s *) aos_rpc_get_a(chan), (char *) req, req_size);
+    // debug_printf("URPC RPC send2\n");
+
+    free(req);
+    // debug_printf("URPC message sent %d %s\n", type, buf + sizeof(struct frame_identity) + 1);
+
+    // debug_printf("URPC RPC send\n");
+    // req.type = type;
+    // err = urpc_write_msg((urpc_s *) aos_rpc_get_a(chan), req.bytes, sizeof(rpc_req));
+    // err = urpc_write_msg((urpc_s *) aos_rpc_get_a(chan), (char *) buf, len);
+    // debug_printf("URPC RPC send2\n");
+
+    return err;
 }
 
-__unused static void urpc_handler(void* args) {
-    urpc_s * urpc = (urpc_s*) args;
+static void urpc_handler(void* args) {
+    urpc_s * my_urpc = (urpc_s*) args;
     struct aos_rpc * rpc = _aos_rpc_chan_alloc();
 
     aos_rpc_init_f(rpc, dummy_send_raw, dummy_send, dummy_recv_raw, dummy_recv);
-    aos_rpc_init_a(rpc, urpc);
+    aos_rpc_init_a(rpc, my_urpc);
 
     rpc_req * req;
 
 
-    debug_printf("BLOCKING ON READ\n");
-    size_t len;
-    urpc_read_msg(urpc, (void **) &req, &len);
-    debug_printf("UNBLOCKED\n");
+    while (true) {
+        // debug_printf("BLOCKING ON READ\n");
+        wait_for_new_message(my_urpc);
+        // debug_printf("UNBLOCKED\n");
+size_t len; urpc_read_msg(my_urpc, (void **) &req, &len);
+        // debug_printf("UNBLOCKED 2\n");
+        ipc_request_handler(req->type, req->buf, rpc, NULL_CAP);
 
-    ipc_request_handler(req->type, req->buf, rpc, NULL_CAP);
-    debug_printf("REQ HANDLED\n");
+        free(req);
+
+        // debug_printf("REQ HANDLED\n");
+    }
 }
 
 int main(int argc, char *argv[])
 {
     errval_t err;
-    urpc_s urpc;
+
+    thread_mutex_init(&big_ipc_lock);
 
     /* Set the core id in the disp_priv struct */
     err = invoke_kernel_get_core_id(cap_kernel, &my_core_id);
@@ -170,15 +219,18 @@ int main(int argc, char *argv[])
     }
     printf("\n");
 
-    unit_test_ctx ut_ctx = { 
+    unit_test_ctx ciao = { 
         .mm   = &aos_mm,
         .bi   = bi,
         .urpc = &urpc
     };
 
+    utctx = ciao;
+
     /* First argument contains the bootinfo location, if it's not set */
     bi = (struct bootinfo*)strtol(argv[1], NULL, 10);
     if (!bi) {
+        //for (volatile int i = 0; i < 100000000; i++); // proof of work
         assert(my_core_id > 0);
 
         urpc_map(cap_urpc, &urpc);
@@ -189,12 +241,6 @@ int main(int argc, char *argv[])
 
     uint32_t regstart = 0 + my_core_id,
              regend  = 1 + my_core_id;
-    if (argc > 2) {
-    //    regstart = strtol(argv[2], NULL, 10),
-    //    regend = strtol(argv[3], NULL, 10);
-    //    // Obtain a range from command line arguments
-
-    }
 
     // Mark all the memory regions outside of the range as
     // consumed (and the ones inside the range as not consumed)
@@ -224,7 +270,7 @@ int main(int argc, char *argv[])
     if(err_is_fail(err)){
         DEBUG_ERR(err, "initialize_ram_alloc");
     }
-    
+
     if (my_core_id != 0 ) {
         map_regions(bi, &urpc);
     }
@@ -243,6 +289,11 @@ int main(int argc, char *argv[])
 
     // Only if we are the main core we spawn other cores
     if (my_core_id == 0) {
+        debug_printf("Starting SD card driver\n");
+        struct spawninfo si;
+        err = spawn_load_by_name("mmchs", &si);
+        DBGERR(err, "Error spawning SD card driver\n");
+
         for (int i = 1; i < CORES_NO; i++) {
             err = spawn_core(my_core_id, i, &urpc);
             DBGERR(err, "Error spawning a core\n");
@@ -258,33 +309,56 @@ int main(int argc, char *argv[])
         err = frame_identify(module_cap, &mod_fi);
         DBGERR(err, "Error identifying module cap\n");
         urpc_write_msg(&urpc, &mod_fi, sizeof(struct frame_identity));
+
     }
 
-    // Test for both cores
-    unit_test_start(&ut_ctx);
-
-    // Spawn a thread 
+    // Spawn a thread to handle the urpc requests
+    // Init the queues to handle requests
+    for (size_t i = 0; i < URPC_CB_REQS_NO; ++i) {
+        dlist_init(&urpc_cb_queues[i]);
+    }
     struct thread* urpc_thread;
     urpc_thread = thread_create((thread_func_t) urpc_handler, (void *) &urpc);
     if (!urpc_thread) debug_printf("Error starting URPC thread\n");
 
-    if (my_core_id == 0) {
-        rpc_req req;
-        req.type = RPC_REQ_PROC_SPAWN;
-        rpc_req_proc_spawn sreq;
-        sreq.core_id = 1;
-        memcpy(req.buf, &sreq, 20);
-        strncpy( (char *) req.buf + offsetof(rpc_req_proc_spawn, name), "order", 20);
-        urpc_write_msg(&urpc, &req, sizeof(rpc_req));
-    } else {
-        rpc_req req;
-        req.type = RPC_REQ_PROC_SPAWN;
-        rpc_req_proc_spawn sreq;
-        sreq.core_id = 0;
-        memcpy(req.buf, &sreq, 20);
-        strncpy( (char *) req.buf + offsetof(rpc_req_proc_spawn, name), "order", 20);
-        urpc_write_msg(&urpc, &req, sizeof(rpc_req));
-    }
+    // if (disp_get_core_id() != 0) {
+        // debug_printf("Setting callback to register to mmchs\n");
+        // struct capref *cap = malloc(sizeof(struct capref));
+        // size_t bytes;
+        // size_t size = BASE_PAGE_SIZE;
+        // err = frame_alloc(cap, size, &bytes);
+        // DBGERR(err, "Error allocating frame\n");
+
+        // struct frame_identity cap_fi;
+        // err = frame_identify(*cap, &cap_fi);
+        // DBGERR(err, "Error identifying module cap\n");
+
+        // urpc_cb_t *cb = malloc(sizeof(urpc_cb_t));
+        // if (cb == NULL) { USER_PANIC("MALLOC FAILED\n"); }
+        // cb->f = cross_core_fs_urpc_cb;
+        // cb->args = cap;
+        // cb->chan = NULL;
+        // dlist_tail_insert(&urpc_cb_queues[URPC_CB_BINDING], cb);
+
+        // rpc_req req;
+        // req.type = RPC_REMOTE_BIND_FRAME;
+        // rpc_remote_bind_req sreq = {0};
+        // sreq.cap_fi = cap_fi;
+        // strncpy(sreq.service_name, "mmchs_service", SERVICE_NAME_LEN);
+        // memcpy(req.buf, &sreq, sizeof(rpc_remote_bind_req));
+        // urpc_write_msg(&urpc, &req, sizeof(rpc_req));
+        // debug_printf("Sent remote bind request for service %s, from %d to other core\n", "mmchs_service", my_core_id);
+
+    // }
+    // while(!fs_setup_complete) {
+        // barrelfish_usleep(1000000);
+    // }
+
+    // Test for both cores
+    unit_test_start(&utctx);
+
+    debug_printf("\x1b[1m[DONE TESTS]\x1b[0m\n");
+
 
     // Hang around
     struct waitset *default_ws = get_default_waitset();

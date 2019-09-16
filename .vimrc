@@ -4,7 +4,6 @@ syntax on
 set ai
 set backspace=indent,eol,start
 set history=50
-set background=dark
 set showcmd
 set incsearch
 set hlsearch
@@ -21,6 +20,7 @@ set noequalalways
 set wildmenu
 set wildmode=longest:full,full
 set wildignore+=*.d,*.o
+set modelineexpr
 
 set noexpandtab
 set tabstop     =4
@@ -192,10 +192,10 @@ nnoremap ,S :!clear && shellcheck %<CR>
 "                   === auto commands ===
 
 "auto reload vim_rc
-augroup reload_vimrc " {
+augroup reload_vimrc 
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
-augroup END " }
+augroup END 
 
 "keep clipboard on exit + set cursor on start
 augroup my_clipboard
@@ -221,6 +221,7 @@ augroup END
 call plug#begin('~/.vim/bundle')
 Plug 'godlygeek/csapprox'
 Plug 'flazz/vim-colorschemes'
+Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
 Plug 'ervandew/supertab'
@@ -229,7 +230,6 @@ Plug 'rhysd/clever-f.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'EinfachToll/DidYouMean'
 Plug 'Konfekt/FastFold'
-"Plug 'Shougo/neocomplete.vim'
 Plug 'matze/vim-move'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
@@ -238,18 +238,15 @@ Plug 'xuhdev/vim-latex-live-preview'
 
 "Plug 'tikhomirov/vim-glsl'				"enables syntax highlight in shader files
 
-"Plug 'wilywampa/vim-ipython' 
-
 " ---- experimental
 Plug 'kshenoy/vim-signature'			"display marks
 "Plug 'tpope/vim-obsession'
 Plug 'dag/vim-fish'						"support for fish file editing
 "Plug 'airblade/vim-gitgutter'
 "Plug 'severin-lemaignan/vim-minimap'
-Plug 'jeaye/color_coded'
-" ---- experimental
-"  --- oooh
-Plug 'artur-shaik/vim-javacomplete2'
+Plug 'jeaye/color_coded'                " C highlighting (somewhat heavy!)
+
+"Plug 'artur-shaik/vim-javacomplete2'
 
 
 
@@ -269,7 +266,6 @@ Plug 'junegunn/fzf.vim'
 "
 "Plug 'xolox/vim-misc'
 
-Plug 'altercation/vim-colors-solarized'
 "Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'chrisbra/histwin.vim'
 "Plug 'metakirby5/codi.vim'				"real time python preview
@@ -283,13 +279,10 @@ Plug 'altercation/vim-colors-solarized'
 "Plug 'tmhedberg/SimpylFold'
 "Plug 'vim-scripts/indentpython.vim'
 "Plug 'hdima/python-syntax'
-"
 Plug 'markonm/traces.vim'				"real time preview of substitutions
 
-
-
-
 Plug 'wsdjeg/FlyGrep.vim'
+Plug 'powerman/vim-plugin-AnsiEsc'      "type :AnsiEsc to hide color escapes
 
 call plug#end()
 
@@ -307,20 +300,19 @@ let g:ackprg = 'ag --vimgrep --smart-case --ignore-dir shlr -Q'
 let g:ack_use_cword_for_empty_search = 1
 let g:ack_autoclose = 1
 let g:livepreview_previewer='zathura'
-"let g:livepreview_engine='pdflatex --shell-escape'
-let g:livepreview_engine='xelatex'
+let g:livepreview_engine='pdflatex --shell-escape '
+"let g:livepreview_engine='xelatex --shell-escape'
 let g:limelight_conceal_ctermfg = '239'
 let g:goyo_width = '93%'
 let python_highlight_all=1
 let g:FlyGrep_input_delay=200
 let g:NERDAltDelims_c=1
 let g:NERDAltDelims_java=1
+let g:tagbar_sort=0
 
   "supertab
 set completeopt=menuone,preview
-colorscheme alduin
 hi SpecialKey ctermfg=236
-"colorscheme Dev_Delight
 
 
   "javacomplete
@@ -379,7 +371,7 @@ function! SettingsC()
 	set softtabstop=4
     setlocal foldnestmax=1
 
-    nnoremap <F5> :wa <CR> :silent !killall qemu-system-arm -15; echo make qemu_a15ve_4 > build/fifo<CR> :redraw!<CR>
+    nnoremap <F5> :wa <CR> :silent !killall qemu-system-arm -15; echo timeout 20 make -j qemu_a15ve_4 > build/fifo<CR> :redraw!<CR>
 
 	""" for the gitgutter plugin
 	set updatetime=600
@@ -449,7 +441,6 @@ endfunction
 "			==== Latex ====
 function! SettingsLatex() 
 	nnoremap <F4> :wa <CR> :!pdflatex --shell-escape % <CR>
-	"nnoremap <F4> :wa <CR> :!pdflatex --shell-escape % <CR>
 	nnoremap <F5> :wa <CR> :!zathura %:r.pdf <CR>
 	setlocal nocursorline
     set foldmethod=manual
@@ -495,7 +486,7 @@ endfunction
 
 autocmd filetype c call SettingsC()
 autocmd filetype h call SettingsC()
-autocmd filetype cpp call SettingsCpp()
+"autocmd filetype cpp call SettingsC()
 autocmd filetype java call SettingsJava()
 autocmd filetype python call SettingsPython()
 autocmd filetype tex call SettingsLatex()
@@ -530,6 +521,67 @@ endfunction
 set foldtext=NeatFoldText()
 " ====
 
+" ==== custom functions ====
+let g:Toggled = 0
+function! Hardtime_toggle()
+	if g:Toggled == 1
+		let g:Toggled = 0
+		nnoremap j j
+		nnoremap k k
+		nnoremap l l
+		nnoremap h h
+	else
+		let g:Toggled = 1
+		nnoremap j <NOP>
+		nnoremap k <NOP>
+		nnoremap l <NOP>
+		nnoremap h <NOP>
+	endif
+endfunction
+" ====
+
+" ==== custom status bar ====
+"
+" borrowed from @jvoisin
+" https://dustri.org/b/lightweight-and-sexy-status-bar-in-vim.html
+set statusline=
+set statusline+=%#DiffAdd#%{(mode()=='n')?'\ \ NORMAL\ ':''}
+set statusline+=%#DiffChange#%{(mode()=='i')?'\ \ INSERT\ ':''}
+set statusline+=%#DiffDelete#%{(mode()=='r')?'\ \ RPLACE\ ':''}
+set statusline+=%#Cursor#%{(mode()=='v')?'\ \ VISUAL\ ':''}
+set statusline+=\ %n\           " buffer number
+set statusline+=%#Visual#       " colour
+set statusline+=%{&paste?'\ PASTE\ ':''}
+set statusline+=%{&spell?'\ SPELL\ ':''}
+set statusline+=%#CursorIM#     " colour
+set statusline+=%R                        " readonly flag
+set statusline+=%M                        " modified [+] flag
+set statusline+=%#Cursor#               " colour
+set statusline+=%#CursorLine#     " colour
+set statusline+=\ %t\                   " short file name
+set statusline+=%=                          " right align
+set statusline+=%#CursorLine#   " colour
+set statusline+=\ %Y\                   " file type
+set statusline+=%#CursorIM#     " colour
+set statusline+=\ %3l:%-2c\         " line + column
+set statusline+=%#Cursor#       " colour
+set statusline+=\ %3p%%\                " percentage
+set laststatus=2
+" ====
+
+" ==== day/night dynamic colors ====
+"
+if strftime('%H') % 19 > 7
+	set background=light
+	colo lightning
+else
+	set background=dark
+	colo alduin
+endif
+" ====
+
+
+
 "--- ascii color values
 "BLACK= "\u001b[30m"
 "RED= "\u001b[31m"
@@ -546,4 +598,4 @@ set foldtext=NeatFoldText()
 "loading = ["-", "\\", "|", "/"]
 
 "" vim:fdm=expr:fdl=0
-"" vim:fde=getline(v\:lnum)=~'==*$'?(getline(v\:lnum)=~'==\\+[^=]\\+==.*'?'>'\:'<').(strlen(matchstr(getline(v\:lnum),'==*$'))-2)\:'='
+"" vim:fde=getline(v\:lnum)=~'===*$'?(getline(v\:lnum)=~'==\\+[^=]\\+==.*'?'>'\:'<').(strlen(matchstr(getline(v\:lnum),'==*$'))-2)\:'='

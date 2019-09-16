@@ -1,0 +1,12 @@
+*.aux
+*.fls
+*.bbl
+*.blg
+*.log
+report.pdf
+*.synctex.gz
+*.swp
+_minted-report
+*.dvi
+*.bak
+*.fdb_latexmk

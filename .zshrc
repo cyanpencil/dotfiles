@@ -6,7 +6,11 @@
 HISTFILE=~/.histfile_zsh
 HISTSIZE=500000
 SAVEHIST=500000
-setopt appendhistory autocd
+setopt appendhistory
+setopt hist_ignore_all_dups
+setopt hist_reduce_blanks
+setopt inc_append_history
+setopt share_history
 unsetopt beep
 bindkey -e
 
@@ -18,24 +22,33 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+vim_ins_mode="%K{blue}[INS]%k"
+vim_cmd_mode="%K{red}[CMD]%k"
+vim_mode=$vim_ins_mode
+
 function zle-line-init zle-keymap-select {
 	case $KEYMAP in
-		vicmd) printf "\x1b[1 q";;
-		viins|main) printf "\x1b[3 q";;
-
+		vicmd) printf "\x1b[1 q"; vim_mode=$vim_cmd_mode;;
+		viins|main) printf "\x1b[3 q"; vim_mode=$vim_ins_mode;;
 	esac
+	zle reset-prompt
 }
 
+function zle-line-finish {
+	vim_mode=""
+	zle reset-prompt
+}
 
 zle -N zle-line-init
 zle -N zle-keymap-select
+zle -N zle-line-finish
 
 export KEYTIMEOUT=10 #for faster ESC key
 bindkey "^?" backward-delete-char #for delete key in insert mode
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+#source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 bindkey kj vi-cmd-mode
 bindkey jk vi-cmd-mode
@@ -81,7 +94,60 @@ prompt_fire_setup () {
 }
 
 prompt_fire_setup 
+setopt PROMPT_SUBST
+RPROMPT='${vim_mode}'
 
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore cache --ignore .cache --ignore Cache --depth 10 -g ""'
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+
+
+
+# E[xtr]act any file
+# based on https://github.com/xvoland/Extract
+function xtr {
+  if [ -z "$1" ]; then
+	# display usage if no parameters given
+	echo "Usage: xtr <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
+  else
+	if [[ -f "$1" ]]; then
+	  NAME=${1%.*}
+	  #mkdir $NAME && cd $NAME
+	  case "$1" in
+		*.tar.bz2)   tar xvjf ./"$1"    ;;
+		*.tar.gz)    tar xvzf ./"$1"    ;;
+		*.tar.xz)    tar xvJf ./"$1"    ;;
+		*.lzma)      unlzma ./"$1"      ;;
+		*.bz2)       bunzip2 ./"$1"     ;;
+		*.rar)       unrar x -ad ./"$1" ;;
+		*.gz)        gunzip ./"$1"      ;;
+		*.tar)       tar xvf ./"$1"     ;;
+		*.tbz2)      tar xvjf ./"$1"    ;;
+		*.tgz)       tar xvzf ./"$1"    ;;
+		*.zip)       unzip ./"$1"       ;;
+		*.Z)         uncompress ./"$1"  ;;
+		*.7z)        7z x ./"$1"        ;;
+		*.xz)        unxz ./"$1"        ;;
+		*.exe)       cabextract ./"$1"  ;;
+		*)           >&2 echo "xtr: '$1' - unknown archive method" ;;
+	  esac
+	else
+	  >&2 echo "'$1' - file does not exist"
+	  return 1
+	fi
+  fi
+}
+
+function transfer { 
+	if [ $# -eq 0 ]; then 
+		echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; 
+		return 1; 
+	fi 
+	tmpfile=$( mktemp -t transferXXX ); 
+	if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); 
+		curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; 
+	else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; 
+	fi; 
+	cat $tmpfile; 
+	rm -f $tmpfile; 
+} 

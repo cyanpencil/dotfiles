@@ -17,24 +17,33 @@
 #include <aos/waitset.h>
 #include <aos/deferred.h>
 #include <aos/aos.h>
+#include <urpc.h>
 #include <stdio.h>
+
+coreid_t my_core_id;
 
 struct aos_rpc {
     struct lmp_chan lc;
     struct waitset* ws;
     struct thread_mutex mutex;
+
     errval_t (*send_raw_f)(struct aos_rpc*, const char *,
             size_t, struct capref);
     errval_t (*send_req_f)(uint8_t type, struct aos_rpc*, const char *,
             size_t, struct capref);
-    errval_t (*rec_raw_f)(struct aos_rpc*, char **,
+    errval_t (*rec_raw_f)(struct aos_rpc*, char *,
             size_t*, struct capref*);
-    errval_t (*rec_req_f)(struct aos_rpc*, rpc_req **,
+    errval_t (*rec_req_f)(uint8_t *, struct aos_rpc*, char **,
             size_t*, struct capref*);
     void * ancillary;
+    
+    bool longreq_urpc_init;
+    urpc_s longreq_urpc;
+    struct capref longreq_frame;
 };
 
 struct aos_rpc rpc_with_init;
+struct aos_rpc rpc_with_mem_svr;
 
 /**
  * CALLBACKS
@@ -167,8 +176,8 @@ static void callback_rec_capbuf (void* args) {
     }
 }
 
-
-static errval_t _aos_rpc_rec_capbuf(struct aos_rpc *chan, char **buf, size_t* len, struct capref *cap) {
+// NOTE: LEGACY
+__unused static errval_t _aos_rpc_rec_capbuf(struct aos_rpc *chan, char **buf, size_t* len, struct capref *cap) {
     struct rec_capbuf *result = malloc(sizeof(struct rec_capbuf)); // FIXME do not use malloc
     if (!result) USER_PANIC("[x] Malloc failed\n");
     result->chan = chan;
@@ -196,7 +205,7 @@ static errval_t _aos_rpc_rec_capbuf(struct aos_rpc *chan, char **buf, size_t* le
     return SYS_ERR_OK;
 }
 
-errval_t aos_rpc_rec_capbuf(struct aos_rpc *chan, char **buf, size_t* len, struct capref *cap) {
+errval_t aos_rpc_rec_capbuf(struct aos_rpc *chan, char *buf, size_t* len, struct capref *cap) {
     if (!chan) {
         USER_PANIC("Null channel!");
     }
@@ -242,7 +251,7 @@ static errval_t _aos_rpc_send_capbuf(struct aos_rpc *chan, const char *str, size
     return SYS_ERR_OK;
 }
 
-errval_t aos_rpc_send_capbuf(struct aos_rpc *chan, const char *str, size_t str_len, struct capref cap) {
+inline errval_t aos_rpc_send_capbuf(struct aos_rpc *chan, const char *str, size_t str_len, struct capref cap) {
     if (!chan) {
         USER_PANIC("Null channel!");
     }
@@ -270,16 +279,25 @@ static errval_t _aos_rpc_send_req(uint8_t type, struct aos_rpc *chan, const char
         req.longreq = true;
         req.len = len;
 
-        struct capref frame;
-        void* sbuf;
-        frame_alloc(&frame, len, NULL);
-        err = paging_map_frame_attr(get_current_paging_state(), &sbuf, len, frame, VREGION_FLAGS_READ_WRITE, NULL, NULL);
-        DBGERR(err, "Send large: mapping failed\n");
+        if (!chan->longreq_urpc_init) {
+            struct capref frame;
+            err = frame_alloc(&frame, BASE_PAGE_SIZE, NULL);
+            DBGERR(err, "Send large: frame alloc\n");
+            chan->longreq_frame = frame;
 
-        memcpy(sbuf, buf, len);
+            err = urpc_map(frame, &chan->longreq_urpc);
+            DBGERR(err, "Send large: urpc mapping failed\n");
 
-        err = aos_rpc_send_capbuf(chan, req.bytes, RPC_MAX_LEN, frame);
-        paging_unmap(get_current_paging_state(), sbuf);
+            err = aos_rpc_send_capbuf(chan, req.bytes, RPC_MAX_LEN, frame);
+            DBGERR(err, "Send large: sending frame failed\n");
+
+            chan->longreq_urpc_init = true;
+        } else {
+            err = aos_rpc_send_capbuf(chan, req.bytes, RPC_MAX_LEN, NULL_CAP);
+            DBGERR(err, "Send large: sending alert\n");
+        }
+
+        urpc_write_msg(&chan->longreq_urpc, (char *) buf, len);
     }
 
     return err;
@@ -304,52 +322,60 @@ void* aos_rpc_parse_lreq(rpc_req_puts* req, struct capref frame_cap) {
 }
 #endif
 
-static errval_t _aos_rpc_rec_req(struct aos_rpc *chan, rpc_req **buf, size_t* len, struct capref *cap) {
+static errval_t _aos_rpc_rec_req(uint8_t* type, struct aos_rpc *chan, char **buf, size_t* len, struct capref *cap) {
     errval_t err;
 
-    rpc_req * req;
+    rpc_req req;
     size_t rlen;
     struct capref frame_cap = NULL_CAP;
-    err = aos_rpc_rec_capbuf(chan, (char**) &req, &rlen, &frame_cap);
+    err = aos_rpc_rec_capbuf(chan, (char *) &req, &rlen, &frame_cap);
 
+    *type = req.type;
 
-    if (!req->longreq) {
-        *buf = req; 
+    if (!req.longreq) {
+        *buf = malloc(RPC_MAX_LEN);
+        memcpy(*buf, req.buf, RPC_MAX_LEN); 
         *cap = frame_cap;
     } else {
-        assert(!capcmp(frame_cap, NULL_CAP));
         *cap = NULL_CAP;
 
-        if (len) *len = req->len;
+        if (!chan->longreq_urpc_init) {
+            assert(!capcmp(frame_cap, NULL_CAP));
+            chan->longreq_frame = frame_cap;
 
-        void * mapped_buf;
-        err = paging_map_frame_attr(get_current_paging_state(), &mapped_buf, req->len, frame_cap, VREGION_FLAGS_READ_WRITE, NULL, NULL);
-        DBGERR(err, "Receive large: mapping failed\n");
-        /* Extremely horryble. Our caller cannot distinguish between 
-         * - this function returning a malloced area
-         * - this function returning a mapped area
-         *
-         * Handled by the aos_rpc_req_free function.
-         */
-        rpc_req * req2 = malloc(sizeof(rpc_req) + req->len);
-        if (!req2) USER_PANIC("[x] Malloc failed\n");
+            void * mapped_buf;
+            err = paging_map_frame_attr(get_current_paging_state(), 
+                    &mapped_buf, BASE_PAGE_SIZE, 
+                    frame_cap, VREGION_FLAGS_READ_WRITE, NULL, NULL);
+            DBGERR(err, "Receive large: mapping failed\n");
 
-        // FIXME PAGING_UNMAP HERE
+            urpc_s_init(mapped_buf, &chan->longreq_urpc, false);
 
-        memcpy(req2, req, sizeof(rpc_req));
-        memcpy(req2->buf, mapped_buf, req->len);
-        *buf = req2;
+            chan->longreq_urpc_init = true;
+        }
+
+        // Note: the sender sends a rpc_req in the frame
+        // here we receive it, allocationg a big enough area
+        // and returning it to the user
+        size_t ulen;
+        urpc_read_msg(&chan->longreq_urpc, (void **) buf, &ulen);
+        if (!*buf) USER_PANIC("[x] Receive large: urpc read failed\n");
+
+        if (len) {
+            *len = req.len;
+        }
     }
 
+    // The caller of this function should free the *buf
     return err;
 }
 
-errval_t aos_rpc_rec_req(struct aos_rpc *chan, rpc_req **buf, size_t* len, struct capref *cap) {
+errval_t aos_rpc_rec_req(uint8_t* type, struct aos_rpc *chan, char **buf, size_t* len, struct capref *cap) {
     if (!chan) {
         USER_PANIC("Null channel!");
     }
 
-    return chan->rec_req_f(chan, buf, len, cap);
+    return chan->rec_req_f(type, chan, buf, len, cap);
 }
 
 errval_t aos_rpc_req_free(rpc_req *req);
@@ -386,7 +412,7 @@ errval_t aos_rpc_get_ram_cap(struct aos_rpc *chan, size_t size, size_t align,
     // Mutex
     //debug_printf("[Thread %d] Trying to acquire lock for get_ram_cap ... \n", thread_get_id(thread_self()));
     thread_mutex_lock_nested(&chan->mutex);
-    //debug_printf("[Thread \x1b[33m%d\x1b[0m] \x1b[31;1mAcquired\x1b[0m lock, getting ram cap ... \n", thread_get_id(thread_self()));
+    // debug_printf("[Thread \x1b[33m%d\x1b[0m] \x1b[31;1mAcquired\x1b[0m lock, getting ram cap ... \n", thread_get_id(thread_self()));
 
     err = aos_rpc_send_capbuf(chan, req.bytes, sizeof(req), NULL_CAP);
     DBGERR(err, "Error sending cap request to init\n");
@@ -415,9 +441,9 @@ errval_t aos_rpc_serial_getchar(struct aos_rpc *chan, char *retc)
     char req;
     aos_rpc_send_req(RPC_GETCHAR_REQ, chan, &req, 1, NULL_CAP);
 
-    char *buf;
+    char buf[RPC_MAX_LEN];
     size_t len;
-    aos_rpc_rec_capbuf(chan, &buf, &len, NULL);
+    aos_rpc_rec_capbuf(chan, (char *) &buf, &len, NULL);
 
     *retc = buf[0];
     return SYS_ERR_OK;
@@ -434,9 +460,9 @@ errval_t aos_rpc_serial_read(struct aos_rpc *chan, char **retc, int len)
     };
     aos_rpc_send_req(RPC_READ_REQ, chan, (char *) &req, sizeof(req), NULL_CAP);
 
-    char *buf;
+    char buf[RPC_MAX_LEN];
     size_t retlen;
-    aos_rpc_rec_capbuf(chan, &buf, &retlen, NULL);
+    aos_rpc_rec_capbuf(chan, (char *) &buf, &retlen, NULL);
 
     *retc = buf;
     return SYS_ERR_OK;
@@ -465,10 +491,36 @@ errval_t aos_rpc_serial_puts(struct aos_rpc *chan, const char* c, int len)
     return SYS_ERR_OK;
 }
 
+errval_t aos_rpc_register_service(struct aos_rpc *chan, const char *c) {
+    int len = strlen(c) + 1;
+    return aos_rpc_send_req(RPC_REG_SERVICE, chan, c, len, NULL_CAP);
+}
+
+errval_t aos_rpc_bind_frame_with_service(struct aos_rpc *chan, const char *c, struct capref cap) {
+    errval_t err = SYS_ERR_OK;
+    int len = strlen(c) + 1;
+ 
+    // Mutex
+    thread_mutex_lock_nested(&chan->mutex);
+
+    err = aos_rpc_send_req(RPC_BIND_FRAME, chan, c, len, cap);
+    DBGERR(err, "Errorn sending frame for bind\n");
+
+    rpc_remote_bind_res res;
+    struct capref null_cap = NULL_CAP;
+
+    err = aos_rpc_rec_capbuf(chan, (char*) &res, NULL, &null_cap);
+    DBGERR(err, "Error receiving response from init\n");
+
+    //Mutex
+    thread_mutex_unlock(&chan->mutex);
+    return res.args.err;
+}
+
 errval_t aos_rpc_process_spawn(struct aos_rpc *chan, char *name,
                                coreid_t core, domainid_t *newpid)
 {
-    assert(strlen(name) <= RPC_REQ_PROC_SPAWN_NAME);
+    // assert(strlen(name) <= RPC_REQ_PROC_SPAWN_NAME);
     errval_t err;
 
     const size_t nlen = strlen(name) + 1; //note: unsafe
@@ -479,24 +531,78 @@ errval_t aos_rpc_process_spawn(struct aos_rpc *chan, char *name,
     strncpy(req->name, name, nlen);
 
     /*debug_printf("Asking init to spawn: %s (proc_type: %d)\n", req.name, req.req_type);*/
+    // FIXME: Shouldn't a lock be here?
     err = aos_rpc_send_req(RPC_REQ_PROC_SPAWN, chan, (char *) req, size, NULL_CAP);
     DBGERR(err, "Error sending cap request to init\n");
 
     free(req);
 
-    rpc_res_proc_spawn * res_args;
+    rpc_res_proc_spawn res_args;
 
     struct capref disp_cap; // NOTE: NOT PASSED TO CHILD
-    err = aos_rpc_rec_capbuf(chan, (char**) &res_args, NULL, &disp_cap);
+    err = aos_rpc_rec_capbuf(chan, (char*) &res_args, NULL, &disp_cap);
     DBGERR(err, "Error receiving response from init\n");
 
     if (newpid != NULL) {
-        *newpid = res_args->pid;
+        *newpid = res_args.args.pid;
     }
-    err = res_args->err;
-    free(res_args);
+    err = res_args.args.err;
+    //free(res_args);
 
     return err;
+}
+
+errval_t aos_rpc_new_remote_bind_4ever(char *service_name, size_t size, void** buf) {
+    errval_t err;
+    struct capref frame;
+    size_t bytes;
+    err = frame_alloc(&frame, size, &bytes);
+    DBGERR(err, "Error allocating frame\n");
+    do {
+        err = aos_rpc_new_remote_bind(service_name, frame, size, (void**) buf);
+        // debug_printf("Trying again in 10us\n");
+        barrelfish_usleep(100);
+    } while (err == LIB_ERR_MONITOR_RPC_SERVICE_NOT_FOUND);
+    return err;
+}
+
+errval_t aos_rpc_new_remote_bind(char *service_name, struct capref frame, size_t size, void** res_buf) {
+    errval_t err;
+    err = aos_rpc_bind_frame_with_service(get_init_rpc(), service_name, frame);
+    if (err_is_fail(err)) {
+        return err;
+    }
+    err = paging_map_frame_attr(get_current_paging_state(), res_buf, size, frame, VREGION_FLAGS_READ_WRITE, NULL, NULL);
+    DBGERRC(err, "Error binding frame with service\n");
+    return err;
+}
+
+char* aos_rpc_receive_bind(void) {
+    errval_t err;
+    char * req;
+    uint8_t type;
+    size_t len;
+    char *buf;
+    struct capref received_cap = NULL_CAP;
+    struct aos_rpc* rpc = get_init_rpc();
+
+    // Mutex
+    thread_mutex_lock_nested(&rpc->mutex);
+
+    err = aos_rpc_rec_req(&type, rpc, &req, &len, &received_cap);  
+    free(req);
+
+    //Mutes
+    thread_mutex_unlock(&rpc->mutex);
+
+    if (!capcmp(received_cap, NULL_CAP)) {
+        struct frame_identity fi;
+        frame_identify(received_cap, &fi);
+        paging_map_frame_attr(get_current_paging_state(), (void**) &buf, fi.bytes, received_cap, VREGION_FLAGS_READ_WRITE, NULL, NULL);
+        return buf;
+    } else {
+        return NULL;
+    }
 }
 
 errval_t aos_rpc_process_get_name(struct aos_rpc *chan, domainid_t pid,
@@ -516,9 +622,42 @@ errval_t aos_rpc_process_get_all_pids(struct aos_rpc *chan,
 
 errval_t aos_rpc_get_device_cap(struct aos_rpc *rpc,
                                 lpaddr_t paddr, size_t bytes,
-                                struct capref *frame)
-{
-    return LIB_ERR_NOT_IMPLEMENTED;
+                                struct capref *frame) {
+    errval_t err;
+    rpc_req_dev_cap req = {
+        .paddr  = paddr,
+        .bytes  = bytes,
+        .coreid = my_core_id
+    };
+    // TODO: Mutex shoulnd't be needed, but adding it won't hurt anyone
+    thread_mutex_lock(&rpc->mutex);
+    aos_rpc_send_req(RPC_DEV_CAP_REQ, rpc, (char *) &req, sizeof(req), NULL_CAP);
+
+    rpc_res_dev_cap res_args;
+    size_t len;
+    err = aos_rpc_rec_capbuf(rpc, (char*) &res_args, &len, frame);
+    DBGERR(err, "Error receiving device capability from init\n");
+    thread_mutex_unlock(&rpc->mutex);
+
+    err = res_args.args.err;
+
+    return err;
+}
+
+errval_t aos_rpc_get_irq_cap(struct aos_rpc *rpc,
+                                struct capref *frame) {
+    errval_t err;
+    rpc_req_irq_cap req = {
+        .coreid = my_core_id
+    };
+    aos_rpc_send_req(RPC_IRQ_CAP_REQ, rpc, (char *) &req, sizeof(req), NULL_CAP);
+
+    size_t len;
+    char buf[RPC_MAX_LEN];
+    err = aos_rpc_rec_capbuf(rpc, (char *) &buf, &len, frame);
+    DBGERR(err, "Error receiving IRQ capability from init\n");
+
+    return SYS_ERR_OK;
 }
 
 void aos_rpc_init_f(struct aos_rpc *rpc, 
@@ -526,9 +665,9 @@ void aos_rpc_init_f(struct aos_rpc *rpc,
             size_t, struct capref),
         errval_t (*send_req_f)(uint8_t type, struct aos_rpc*, const char *,
             size_t, struct capref),
-        errval_t (*rec_raw_f)(struct aos_rpc*, char **,
+        errval_t (*rec_raw_f)(struct aos_rpc*, char *,
             size_t*, struct capref*),
-        errval_t (*rec_req_f)(struct aos_rpc*, rpc_req **,
+        errval_t (*rec_req_f)(uint8_t* type, struct aos_rpc*, char **,
             size_t*, struct capref*)
         ) {
     rpc->send_raw_f = send_raw_f;
@@ -549,7 +688,7 @@ void * aos_rpc_get_a(struct aos_rpc *rpc) {
 static void _aos_rpc_init(struct aos_rpc *rpc) {
     rpc->send_raw_f = _aos_rpc_send_capbuf;
     rpc->send_req_f = _aos_rpc_send_req;
-    rpc->rec_raw_f = _aos_rpc_rec_capbuf;
+    rpc->rec_raw_f = aos_rpc_rec_capbuf_static;
     rpc->rec_req_f = _aos_rpc_rec_req;
 }
 
@@ -600,7 +739,7 @@ struct aos_rpc *aos_rpc_get_init_channel(void)
  */
 struct aos_rpc *aos_rpc_get_memory_channel(void)
 {
-    return get_init_rpc();
+    return &rpc_with_mem_svr;
 }
 
 /**

@@ -73,6 +73,7 @@ struct mm {
     dlinked_list_t head_dlist; ///< Doubly linked list of allocated mmnode*
     dlinked_list_t masters_dlist; ///< Doubly linked list of allocated mmnode*
     dlinked_list_t free_buckets[BUCKETS_NO];
+    struct thread_mutex big_mm_lock;
 };
 
 enum bucket_size bucket_type(gensize_t size);

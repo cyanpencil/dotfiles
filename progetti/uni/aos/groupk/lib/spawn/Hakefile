@@ -14,7 +14,7 @@
     build library {
         target = "spawn",
         cFiles = [ "spawn.c", "multiboot.c" ],
-        addLibraries = ["elf"]
+        addLibraries = ["elf", "fs"]
      }
 ]
 

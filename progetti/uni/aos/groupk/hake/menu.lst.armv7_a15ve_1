@@ -17,6 +17,8 @@ module /armv7/sbin/bye universe !
 module /armv7/sbin/order
 module /armv7/sbin/test_terminal universe !
 module /armv7/sbin/test_rpc
+module /armv7/sbin/test_binding
+module /armv7/sbin/bush
 
 module /armv7/sbin/memeater
 # gem5 simulates 512MB of RAM starting at 0x80000000

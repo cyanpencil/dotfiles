@@ -405,9 +405,9 @@ void disp_pagefault_disabled(dispatcher_handle_t handle, lvaddr_t fault_address,
     struct dispatcher_shared_generic *disp =
         get_dispatcher_shared_generic(handle);
     static char str[256];
-    snprintf(str, 256, "%.*s: page fault WHILE DISABLED"
+    snprintf(str, 256, "%.*s.%d: page fault WHILE DISABLED"
              " (error code 0x%" PRIxPTR ") on %" PRIxPTR " at IP %" PRIxPTR "\n",
-             DISP_NAME_LEN, disp->name, error, fault_address, ip);
+             DISP_NAME_LEN, disp->name, disp->curr_core_id, error, fault_address, ip);
     assert_print(str);
     if(fault_address == 0) {
         assert_print("NULL pointer dereferenced!\n");

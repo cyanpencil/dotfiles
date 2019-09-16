@@ -13,7 +13,9 @@
 BF_SOURCE=$(readlink -f `dirname $0`)
 BF_BUILD=$BF_SOURCE/build
 BF_DOCKER=achreto/barrelfish-ci
-BF_CMD="$@"
+BF_CMD="/bin/bash"
+[ ${#@} -gt 0 ] && BF_CMD="$@"
+
 
 echo "bfdocker: $BF_DOCKER"
 echo "bfsrc: $BF_SOURCE  build: $BF_BUILD"
@@ -27,10 +29,10 @@ mkdir -p $BF_BUILD
 
 # run the command in the docker image
 sudo docker run -u $(id -u) -i -t \
+    --rm \
     --mount type=bind,source=$BF_SOURCE,target=/source \
     --mount type=bind,source=$BF_BUILD,target=/source/build \
     --privileged -v /dev/bus/usb:/dev/bus/usb \
-    $BF_DOCKER /bin/bash -c "(cd /source/build && /bin/bash)"
-    #$BF_DOCKER /bin/bash
+    $BF_DOCKER /bin/bash -c "(cd /source/build; $BF_CMD;)"
 
     #--device=/dev/ttyUSB0 \
