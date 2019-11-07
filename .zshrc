@@ -8,9 +8,11 @@ HISTSIZE=500000
 SAVEHIST=500000
 setopt appendhistory
 setopt hist_ignore_all_dups
+setopt hist_ignore_space
 setopt hist_reduce_blanks
 setopt inc_append_history
 setopt share_history
+setopt interactivecomments  # to use '#' on the command line
 unsetopt beep
 bindkey -e
 
@@ -63,6 +65,9 @@ export EXA_COLORS="gr=37:gw=37:gx=37:tr=37:tw=37:tx=37:ur=37:uw=37:ux=37:ue=37:d
 alias lsd='exa --group-directories-first -l -snew --time-style=iso'
 
 alias sz='du -had 1 | sort -h'
+
+alias buntoohere='sudo docker run -p 3001:3001 -v ${PWD}:/mnt -it buntoo /bin/sh -c "/bin/sh"'
+alias buntoohereX='sudo docker run -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v ~/.Xauthority:/home/luca/.Xauthority -v ${PWD}:/mnt --net=host --user luca -it buntoo_tor /bin/bash -itc "cd ~/tor-browser_en-US; bash"'
 
 
 
@@ -151,3 +156,4 @@ function transfer {
 	cat $tmpfile; 
 	rm -f $tmpfile; 
 } 
+

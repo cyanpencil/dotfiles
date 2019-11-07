@@ -4,6 +4,10 @@
 # ASL-Fall18
 
 
+This is my project for the Advanced Systems Lab class of 2018. 
+I got the maximum grade available. You can see the the grade report in file `grade_report.pdf`.
+
+
 Brief explanation of the directory structure:
 
 

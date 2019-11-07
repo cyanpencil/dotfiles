@@ -29,9 +29,11 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "300x5-30+20"
+    geometry = "450x5-30+20"
 
     # Show how many messages are currently hidden (because of geometry).
+	://www.google.com/search?client=firefox-b-d&q=airvpn+dns+serverjjjj for env in ["dev", "prod"]:
+		url = get_url(team, env)
     indicate_hidden = yes
 
     # Shrink window if it's smaller than the width.  Will be ignored if
@@ -85,7 +87,7 @@
 
     ### Text ###
 
-    font = Ctrld 9
+    font = PxPlus IBM VGA8
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.

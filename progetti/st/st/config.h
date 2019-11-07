@@ -6,7 +6,10 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 //static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
-static char *font = "Office Code Pro:pixelsize=14:antialias=true:autohint=true";
+//static char *font = " Haxor:pixelsize=14:antialias=false:autohint=false";
+//static char *font = "Office Code Pro:pixelsize=14:antialias=true:autohint=true";
+//static char *font = "Input Mono:pixelsize=14:antialias=true:autohint=true";
+static char *font = "Anka/Coder:pixelsize=15:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*

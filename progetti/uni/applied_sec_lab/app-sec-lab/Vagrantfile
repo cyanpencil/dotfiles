@@ -1,0 +1,27 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
+
+Vagrant.configure("2") do |config|
+  config.vm.define "client" do |client|
+    client.vm.hostname = "webserver"
+    client.vm.box = "ubuntu/xenial64"
+
+    client.vm.provider "virtualbox" do |vb|
+      vb.gui = true
+    end
+    client.vm.provision :shell, path: "bootstrap_client.sh"
+
+    client.vm.network :private_network, ip: "192.168.7.7"
+  end
+
+  config.vm.define "webserver" do |webserver|
+    webserver.vm.hostname = "webserver"
+    webserver.vm.box = "ubuntu/xenial64"
+
+    webserver.vm.network :private_network, ip: "192.168.42.42"
+    # webserver.vm.provision :shell, path: "bootstrap_server.sh"
+  end
+
+end

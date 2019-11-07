@@ -1,0 +1,139 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper,10pt]{article} % Default font size and paper size
+
+\usepackage{fontspec} % For loading fonts
+\usepackage{multirow} % For loading fonts
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin} % Main document font
+%\setmainfont[SmallCapsFont = FontinSmallCaps]{Fontin} % Main document font
+
+\usepackage{geometry}
+\geometry{lmargin=50pt, rmargin=50pt, tmargin=50pt, bmargin=50pt}
+
+
+\usepackage{eurosym}
+\usepackage{xunicode,xltxtra,url,parskip} % Formatting packages
+
+\usepackage[usenames,dvipsnames]{xcolor} % Required for specifying custom colors
+
+%\usepackage[big]{layaureo} % Margin formatting of the A4 page, an alternative to layaureo can be \usepackage{fullpage}
+% To reduce the height of the top margin uncomment: \addtolength{\voffset}{-1.3cm}
+
+\usepackage{hyperref} % Required for adding links	and customizing them
+\definecolor{linkcolour}{rgb}{0,0.2,0.6} % Link color
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour} % Set link colors throughout the document
+
+\usepackage{titlesec} % Used to customize the \section command
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule] % Text formatting of sections
+\titlespacing{\section}{0pt}{3pt}{3pt} % Spacing around sections
+
+\newcommand{\mh}[0]{{\hspace*{-1em}}}
+\newcommand{\mH}[0]{{\hspace*{0.5em}}}
+
+
+\begin{document}
+
+\pagestyle{empty} % Removes page numbering
+
+\font\fb=''[cmr10]'' % Change the font of the \LaTeX command under the skills section
+
+\bigskip
+\bigskip
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+%\par{\centering{\Huge \textsc{Luca Di Bartolomeo}}\bigskip\par} % Your name
+
+ 
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{cr}
+	\multirow{3}{*}{\Huge \textsc{\hspace{2em} Luca Di Bartolomeo  \hspace{2em}}} & Zurich, Switzerland \\
+& lucadb96@gmail.com \\
+& +39 339 344 0236 \\
+\end{tabular}
+\end{center}
+\end{table}
+
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+\begin{tabular}{rl}
+\textsc{2018 - now} & Master Degree in \textsc{Computer Science} at \textbf{ETH} Zurich.\\
+&Expected graduation date: January 2021.\\
+\textsc{2015 - 2018} & Bachelor's Degree in \textsc{Computer Science} at \textbf{La Sapienza} university of Rome.\\
+&Final grade: 110/110, with honours. Awarded scolarship for the "Excellence path".\\
+\end{tabular}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\section{Work Experience}
+\begin{tabular}{ll}
+2019 \mH & \mh \textbf{ETH} - \textbf{Teaching Assistant} for the "Algorithms Lab" course, revolving around teaching master students \\ 
+         & competitive programming techniques and the basics of computational geometry. \href{https://www.cadmo.ethz.ch/education/lectures/HS19/algolab/index.html}{Course webpage} \\
+2018 & \mh \textbf{Radareorg} - \textbf{Google Summer of Code scholar}, worked for the \href{http://beta.rada.re/en/latest/}{radare2} reverse-engineering framework.\\
+     & I worked on the terminal user interface, improving the graph drawing algorithm and command syntax, \\
+	 & added UTF-8 compatibility and improving the autocompletion engine. \href{https://gist.github.com/cyanpencil/27db326bf6f9d2747297fa9b943eb65b#file-gsoc_report_final-md}{Short recap of my contributions.}  \\
+2018 & \mh \textbf{La Sapienza} - \textbf{Teaching assistant} for the Competitive programming course, aimed at preparing \\ 
+     & highschool students for the regional contest of the Italian Olympiads in Informatics.  \\
+2017 & \mh \href{http://www.spiketrap.io/}{\textbf{Spiketrap}} - \textbf{Research intern}, focused on sentiment analysis of short internet comments in Python\\
+     & using a variety of machine learning frameworks (sklearn, keras) \\
+2015 & \mh \textbf{Codemotion Kids - Coding teacher} I worked with middle school students to teach them the basics of \\
+     & Java and with primary school children introducing them to programming with Scratch.
+\end{tabular}
+
+
+\section{Awards}
+\begin{tabular}{ll}
+2019 \mH & \mh \textbf{CTF competitions:} Since 2018 I've been an active player in the ETH Capture The Flag team, \\
+     & catching many flags and helping them get some important victories such as the first overall\\
+     & place in the latest Swamp CTF and first academic place (9th overall) in the latest Insomnihack CTF.\\
+     & \href{https://ctftime.org/team/34878}{Link} to our team on CTFtime.\\
+2019 & \mh \textbf{ETH Cybersecurity Codecon:} First place winner of an internal ETH Zurich competition \\
+     & about cybersecurity. Won a trip to New York, where I spent a week working together with \\
+     & Bloomberg's security team. \href{https://blogs.ethz.ch/ETHambassadors/2019/06/27/meeting-michael-bloomberg/}{Here} is an article on ETH's blog describiing the experience.\\
+2018 & \mh \textbf{Google Hashcode:} We got the first place in Italy (out of 300 Italian teams), 85th place in\\
+     & the world (out of 5000 teams) in the Hashcode 2018 competition.\\
+2018 & \mh \textbf{Cyberchallenge.it:} An italian CTF competition for college and high-school students.\\
+     & I placed third on the national scoreboard and first on my college's scoreboard.\\
+2017 & \mh \textbf{ACM-ICPC SWERC}: Honorable mention as a member of the "Sapienza" team,  \\
+     & both in 2016 in Porto and in 2017 in Paris.\\
+2016 & \mh \textbf{Excellence path}: As one of the top 5 ranking students during my bachelor at "La Sapienza",\\
+     & I was awarded the excellence path scholarship. It covered the reimbursement of the tuition fee and \\
+     & the chance to work with professors to do an additional research project. \\
+2015 & \mh \textbf{Italian Olympiads in Mathematics}: I got the bronze medal in the national finals individually,\\
+     & and a silver medal in the national finals competing with a team for which I was the captain. \\
+2014 & \mh \textbf{Italian Olympiads in Informatics}: Awarded the silver medal for obtaining the 12th place nationwide. \\
+     & Thanks to my results, I was admitted to the IOI training camps. \\
+\end{tabular}
+
+\section{Projects / Community involvement}
+\begin{tabular}{ll}
+2019 \mH & \mh \textbf{Tor exit node admin:} In September 2019 I setup a powerful Tor exit node to help increase the\\
+     & bandwidth of the Tor network. It is currently sustaining 0.1\% of all the Tor network\\
+     & outbound connections! \href{https://metrics.torproject.org/rs.html#details/229D865D7AC084D30E5F5016CE5A8C21740F74F4}{Here} you can find some statistics about it. \\
+2018 &  \mh \textbf{Raymarching distance fields:} rendered a procedurally generated volcanic archipelagus \\
+     & entirely made in the fragment shader in GLSL for the final project of the Computer \\
+     & Graphics course. \href{https://drive.google.com/open?id=1U4zynGm8o4i8VodnaWTOjgoayj9rhega}{Link} to short pdf description. 
+       \href{https://www.shadertoy.com/view/4dcyzM}{Link} to live demo on shadertoy. \\
+2016 &  \mh \textbf{Voronoi stippling}: I wrote a program in Python to emulate the stippling painting \\
+     & technique using weighted voronois. I was supervised by my Programming Fundamentals \\
+     & professor, but it was an extracurricular activity. \\
+2015 & \mh \textbf{Exhibitor at Codemotion Rome}: I was the main coder of "Pico", a Google Cardboard flight simulator \\
+     & for Android in which the player controlled the wings of the plane by holding two Wii controllers \\
+     & (connected via bluetooth to the Android phone). The game got featured at Codemotion Rome 2015. \\
+2014 & \mh \textbf{Musical Floppies}: developed for my high school thesis, I connected 8 old floppy \\
+     & drives with an Arduino, and by moving their stepper motors at precise frequences \\
+     & I was able to play tunes with the noise they produced.\\
+\end{tabular}
+
+\end{document}

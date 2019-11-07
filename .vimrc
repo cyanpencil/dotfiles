@@ -40,7 +40,7 @@ set foldcolumn=0
 
 "sublime text-like indentation lines
 set listchars=tab:\|\  "<--- there is a space here
-set list
+"set list
 
 
 set backupdir=~/.vim_backup//,.
@@ -48,16 +48,13 @@ set directory=~/.vim_backup//,.
 
 set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
 
-"set listchars=eol:⏎,tab:>-,trail:.,nbsp:.
-hi NonText ctermfg=black guifg=black
-
 set guioptions-=m
 set guioptions-=T
 set guioptions-=r
 
 set guicursor+=a:blinkon0
 
-set guifont=profont\ Medium\ Semi-Condensed\ 10
+set guifont=Office\ Code\ Pro
 
 filetype plugin indent on
 
@@ -137,6 +134,8 @@ nnoremap U <C-R>
 nnoremap ,s :w<CR>
 nnoremap ,q :wq<CR>
 nnoremap ,Q :q!<CR>
+
+map <F12> :set invpaste<CR>
 
 " ===
 
@@ -300,8 +299,8 @@ let g:ackprg = 'ag --vimgrep --smart-case --ignore-dir shlr -Q'
 let g:ack_use_cword_for_empty_search = 1
 let g:ack_autoclose = 1
 let g:livepreview_previewer='zathura'
-let g:livepreview_engine='pdflatex --shell-escape '
-"let g:livepreview_engine='xelatex --shell-escape'
+"let g:livepreview_engine='pdflatex --shell-escape '
+let g:livepreview_engine='xelatex --shell-escape'
 let g:limelight_conceal_ctermfg = '239'
 let g:goyo_width = '93%'
 let python_highlight_all=1
@@ -309,10 +308,12 @@ let g:FlyGrep_input_delay=200
 let g:NERDAltDelims_c=1
 let g:NERDAltDelims_java=1
 let g:tagbar_sort=0
+let g:solarized_termcolors=256 " to make it work in the terminal
+
 
   "supertab
 set completeopt=menuone,preview
-hi SpecialKey ctermfg=236
+"hi SpecialKey ctermfg=236
 
 
   "javacomplete
@@ -440,7 +441,7 @@ endfunction
 
 "			==== Latex ====
 function! SettingsLatex() 
-	nnoremap <F4> :wa <CR> :!pdflatex --shell-escape % <CR>
+	nnoremap <F4> :wa <CR> :!xelatex --shell-escape % <CR>
 	nnoremap <F5> :wa <CR> :!zathura %:r.pdf <CR>
 	setlocal nocursorline
     set foldmethod=manual
@@ -571,9 +572,9 @@ set laststatus=2
 
 " ==== day/night dynamic colors ====
 "
-if strftime('%H') % 19 > 7
+if strftime('%H') % 17 > 7
 	set background=light
-	colo lightning
+	colo solarized
 else
 	set background=dark
 	colo alduin
@@ -596,6 +597,54 @@ endif
 "UNDERLINE = '\033[4m'
 
 "loading = ["-", "\\", "|", "/"]
+
+
+
+
+" regular expressions that match numbers (order matters .. keep '\d' last!)
+" note: \+ will be appended to the end of each
+let s:regNums = [ '0b[01]', '0x\x', '\d' ]
+
+function! s:inNumber()
+	" select the next number on the line
+	" this can handle the following three formats (so long as s:regNums is
+	" defined as it should be above this function):
+	"   1. binary  (eg: "0b1010", "0b0000", etc)
+	"   2. hex     (eg: "0xffff", "0x0000", "0x10af", etc)
+	"   3. decimal (eg: "0", "0000", "10", "01", etc)
+	" NOTE: if there is no number on the rest of the line starting at the
+	"       current cursor position, then visual selection mode is ended (if
+	"       called via an omap) or nothing is selected (if called via xmap)
+
+	" need magic for this to work properly
+	let l:magic = &magic
+	set magic
+
+	let l:lineNr = line('.')
+
+	" create regex pattern matching any binary, hex, decimal number
+	let l:pat = join(s:regNums, '\+\|') . '\+'
+
+	" move cursor to end of number
+	if (!search(l:pat, 'ce', l:lineNr))
+		" if it fails, there was not match on the line, so return prematurely
+		return
+	endif
+
+	" start visually selecting from end of number
+	normal! v
+
+	" move cursor to beginning of number
+	call search(l:pat, 'cb', l:lineNr)
+
+	" restore magic
+	let &magic = l:magic
+endfunction
+
+" "in number" (next number after cursor on current line)
+xnoremap <silent> in :<c-u>call <sid>inNumber()<cr>
+onoremap <silent> in :<c-u>call <sid>inNumber()<cr>
+
 
 "" vim:fdm=expr:fdl=0
 "" vim:fde=getline(v\:lnum)=~'===*$'?(getline(v\:lnum)=~'==\\+[^=]\\+==.*'?'>'\:'<').(strlen(matchstr(getline(v\:lnum),'==*$'))-2)\:'='

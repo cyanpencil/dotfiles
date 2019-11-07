@@ -4,7 +4,7 @@
 
 #                               === env vars ===
 
-export HISTCONTROL=ignoredups
+export HISTCONTROL=ignoredups:ignorespace
 export PATH=$PATH:~/scripts
 export TERMINAL=st
 export BROWSER=firefox

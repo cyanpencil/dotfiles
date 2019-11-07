@@ -47,7 +47,11 @@ else
 
 	PROFILE=$(netctl list | fzf $FZF_FLAGS --color=prompt:196 --prompt "Select wifi profile: " | tr '*+' '  ')
 	OVPN=$(fd . /home -d 5 -e ovpn --no-ignore | fzf $FZF_FLAGS --prompt "Select openvpn profile: ")
-	WIREGUARD=$(echo -e "true\nfalse" | fzf $FZF_FLAGS --prompt "Do you want to setup wg0 too?")
+    if [[ $(ip l | grep -c wg0) -ge 1 ]]; then
+		echo "Wireguard is already set up."
+	else 
+		WIREGUARD=$(echo -e "true\nfalse" | fzf $FZF_FLAGS --prompt "Do you want to setup wg0 too?")
+	fi
 
 	if [[ -z $OVPN ]]; then echo "No vpn selected..."; rm /tmp/namespace; exit 1; fi
 

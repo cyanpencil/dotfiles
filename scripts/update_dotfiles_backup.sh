@@ -10,6 +10,7 @@ others="/etc/X11/xinit/xinitrc /etc/udev/rules.d/powersave.rules\
 	/etc/udev/rules.d/80-keyboard.rules /etc/X11/xinit/xserverrc"
 
 
+mkdir -p $syncpath
 cd $syncpath
 
 if [[ $? -ne 0 ]]; then 

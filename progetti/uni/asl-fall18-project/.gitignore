@@ -1,3 +1,6 @@
 *.swp
 *.swo
 *.class
+ssh_logs/
+scp_logs/
+report/
