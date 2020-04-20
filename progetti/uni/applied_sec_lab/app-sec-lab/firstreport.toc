@@ -1,0 +1,34 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}System Characterization}{2}{section.1}% 
+\contentsline {subsection}{\numberline {1.1}System Overview}{2}{subsection.1.1}% 
+\contentsline {subsection}{\numberline {1.2}System Functionality}{2}{subsection.1.2}% 
+\contentsline {subsection}{\numberline {1.3}Components}{3}{subsection.1.3}% 
+\contentsline {subsection}{\numberline {1.4}Security Design}{5}{subsection.1.4}% 
+\contentsline {subsection}{\numberline {1.5}Backdoors}{6}{subsection.1.5}% 
+\contentsline {section}{\numberline {2}Risk Analysis and Security Measures}{7}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Assets}{7}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Threat Sources}{12}{subsection.2.2}% 
+\contentsline {subsection}{\numberline {2.3}Risks Definitions}{13}{subsection.2.3}% 
+\contentsline {subsection}{\numberline {2.4}Risk Evaluation}{13}{subsection.2.4}% 
+\contentsline {subsubsection}{\numberline {2.4.1}{\it Physical Asset: \textbf {All Machines}}}{13}{subsubsection.2.4.1}% 
+\contentsline {subsubsection}{\numberline {2.4.2}{\it Physical Asset: \textbf {All machines that handle confidential data}}}{16}{subsubsection.2.4.2}% 
+\contentsline {subsubsection}{\numberline {2.4.3}{\it Physical Asset: \textbf {Firewall}}}{18}{subsubsection.2.4.3}% 
+\contentsline {subsubsection}{\numberline {2.4.4}{\it Physical Asset: \textbf {Web server}}}{18}{subsubsection.2.4.4}% 
+\contentsline {subsubsection}{\numberline {2.4.5}{\it Physical Asset: \textbf {Admin server}}}{19}{subsubsection.2.4.5}% 
+\contentsline {subsubsection}{\numberline {2.4.6}{\it Physical Asset: \textbf {Database}}}{19}{subsubsection.2.4.6}% 
+\contentsline {subsubsection}{\numberline {2.4.7}{\it Physical Asset: \textbf {CoreCA}}}{19}{subsubsection.2.4.7}% 
+\contentsline {subsubsection}{\numberline {2.4.8}{\it Physical Asset: \textbf {Backup Server}}}{19}{subsubsection.2.4.8}% 
+\contentsline {subsubsection}{\numberline {2.4.9}{\it Logical Asset: \textbf {Software}}}{21}{subsubsection.2.4.9}% 
+\contentsline {subsubsection}{\numberline {2.4.10}{\it Logical Asset: \textbf {Information (with low to medium criticality)}}}{22}{subsubsection.2.4.10}% 
+\contentsline {subsubsection}{\numberline {2.4.11}{\it Logical Asset: \textbf {Information (private keys associated with certificates)}}}{23}{subsubsection.2.4.11}% 
+\contentsline {subsubsection}{\numberline {2.4.12}{\it Logical Asset: \textbf {Information (certificate revocation list)}}}{23}{subsubsection.2.4.12}% 
+\contentsline {subsubsection}{\numberline {2.4.13}{\it Logical Asset: \textbf {Information (SSH private keys)}}}{24}{subsubsection.2.4.13}% 
+\contentsline {subsubsection}{\numberline {2.4.14}{\it Logical Asset: \textbf {Information (Passwords)}}}{24}{subsubsection.2.4.14}% 
+\contentsline {subsubsection}{\numberline {2.4.15}{\it People: \textbf {System admins}}}{25}{subsubsection.2.4.15}% 
+\contentsline {subsubsection}{\numberline {2.4.16}{\it People: \textbf {CA admin}}}{26}{subsubsection.2.4.16}% 
+\contentsline {subsubsection}{\numberline {2.4.17}{\it People: \textbf {Normal Employees}}}{26}{subsubsection.2.4.17}% 
+\contentsline {subsubsection}{\numberline {2.4.18}{\it Intangible Goods: \textbf {Trust of whistleblowers}}}{26}{subsubsection.2.4.18}% 
+\contentsline {subsubsection}{\numberline {2.4.19}{\it Intangible Goods: \textbf {Journalistic credibility}}}{28}{subsubsection.2.4.19}% 
+\contentsline {subsubsection}{\numberline {2.4.20}{\it Intangible Goods: \textbf {Exclusivity of information}}}{28}{subsubsection.2.4.20}% 
+\contentsline {subsubsection}{\numberline {2.4.21}{\it Intangible Goods: \textbf {Public reach}}}{28}{subsubsection.2.4.21}% 
+\contentsline {subsubsection}{\numberline {2.4.22}Risk Acceptance}{29}{subsubsection.2.4.22}% 

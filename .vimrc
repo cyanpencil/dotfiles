@@ -34,9 +34,9 @@ set nocursorline
 set lazyredraw
 
 set foldenable
-set foldmethod=manual
+set foldmethod=expr
 set foldlevel=1
-set foldcolumn=0
+set foldcolumn=1
 
 "sublime text-like indentation lines
 set listchars=tab:\|\  "<--- there is a space here
@@ -83,8 +83,6 @@ nnoremap p gt
 "vmap _ ?
 "nmap c- c/
 
-set foldcolumn=1
-
 
 "move to next/previous function
 map [[ ?{<CR>w99[{
@@ -109,6 +107,12 @@ nnoremap k gk
 
 map <ScrollWheelUp> <C-Y><C-Y>
 map <ScrollWheelDown> <C-E><C-E>
+
+"move away from terminal
+tmap h <C-w>h
+tmap j <C-w>j
+tmap k <C-w>k
+tmap l <C-w>l
 
 "nnoremap <silent>   :exe "tabn ".g:lasttab<cr> "breaks if pressing esc two times
 
@@ -144,6 +148,7 @@ map <F12> :set invpaste<CR>
 cmap w!! w !sudo tee > /dev/null %
 
 nnoremap ,w :w<CR>
+nmap     ,r <F4>
 
 nnoremap gV `[v`]
 
@@ -167,7 +172,7 @@ nnoremap <C-\> <C-w>}
 "cscope
 nnoremap ,u yiw:cs find s <C-R>0<CR>:copen<CR>
 
-nnoremap <c-l> :nohl<cr><c-l>
+nnoremap <c-l> :nohl<cr>
 
 "close quickfix window
 nnoremap ,x :ccl<CR>
@@ -283,7 +288,19 @@ Plug 'markonm/traces.vim'				"real time preview of substitutions
 Plug 'wsdjeg/FlyGrep.vim'
 Plug 'powerman/vim-plugin-AnsiEsc'      "type :AnsiEsc to hide color escapes
 
+"Plug 'w0rp/ale'							" error checker (mainly for rust)
+
+Plug 'vim/killersheep'
+
+
+
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
 call plug#end()
+
 
 " ===
 
@@ -299,8 +316,8 @@ let g:ackprg = 'ag --vimgrep --smart-case --ignore-dir shlr -Q'
 let g:ack_use_cword_for_empty_search = 1
 let g:ack_autoclose = 1
 let g:livepreview_previewer='zathura'
-"let g:livepreview_engine='pdflatex --shell-escape '
-let g:livepreview_engine='xelatex --shell-escape'
+let g:livepreview_engine='pdflatex --shell-escape '
+"let g:livepreview_engine='xelatex --shell-escape'
 let g:limelight_conceal_ctermfg = '239'
 let g:goyo_width = '93%'
 let python_highlight_all=1
@@ -313,12 +330,28 @@ let g:solarized_termcolors=256 " to make it work in the terminal
 
   "supertab
 set completeopt=menuone,preview
-"hi SpecialKey ctermfg=236
-
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
   "javacomplete
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+
+
+" ==== vim-lsp ====
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_float_cursor = 1
+let g:lsp_diagnostics_float_delay = 300
+
+if executable('rls')
+  au User lsp_setup call lsp#register_server({
+	  \ 'name': 'rls',
+	  \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
+	  \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
+	  \ 'whitelist': ['rust'],
+	  \ })
+endif
+" ====
+
 
 " ===
 
@@ -349,6 +382,10 @@ nnoremap ,f "pyiw::Ag<Space><C-R>p<CR>
 nnoremap ,,f "pyiw::Tags<Space><C-R>p<CR>
 nnoremap ,F :Files<CR>
 
+"vim-lsp
+nmap ,lh <Plug>(lsp-hover)
+nmap ,ln <Plug>(lsp-next-diagnostic)
+nmap ,lp <Plug>(lsp-prev-diagnostic)
 
 " ===
 
@@ -398,8 +435,6 @@ function! SettingsCpp()
 
 	"nnoremap <F4> :wa <CR> :!./build.sh; cd bin; ./myview; <CR>
 
-	"setlocal foldcolumn=1
-
 	abbr vi vector<int>
 	abbr vvi vector<vector<int> >
 	abbr fori for(int i = 0; i < n; i++) {<CR>
@@ -436,26 +471,27 @@ function! SettingsPython()
 	nnoremap <F3> :wa <CR> :!python2 % <CR>
 	nnoremap <F4> :wa <CR> :!python % <CR>
 	nnoremap <F5> :wa <CR> :!python spiketrap/lib/classifier_example.py <CR>
-	setlocal foldcolumn=1
 endfunction
 
 "			==== Latex ====
 function! SettingsLatex() 
+	nnoremap <F3> :wa <CR> :!pdflatex --shell-escape % <CR>
 	nnoremap <F4> :wa <CR> :!xelatex --shell-escape % <CR>
 	nnoremap <F5> :wa <CR> :!zathura %:r.pdf <CR>
 	setlocal nocursorline
     set foldmethod=manual
 	set foldcolumn=0
-	"set regexpengine=1
+	set regexpengine=1
 	"set colorcolumn=80
 	"highlight ColorColumn ctermbg=DarkGrey guibg=lightgrey
 
 	"syn sync minlines=10
 	"syn sync maxlines=50
-
+ 
 	:NoMatchParen
 	setlocal updatetime=1000
 	abbr ,a \begin{align*}<CR><CR>\end{align*}<UP>
+	abbr ,f \frac{}{}<C-O>2h
 	inoremap {<CR> {<CR><CR>}<ESC>kcc
 
 	set conceallevel=2
@@ -475,13 +511,16 @@ map <F9> :!google-chrome-stable % 2> /dev/null > /dev/null &<CR><CR><C-L>
 	set softtabstop=2
 	set cino=:0,+0,(2,J0,{1,}0,>8,)1,m2
     set foldmethod=manual
-	set foldcolumn=0
-endfunction "====
+endfunction 
 "			==== Bash ====
 function! SettingsSh()
 	map <F4> :!./%<CR>
 endfunction
 
+"			==== Rust ====
+function! SettingsRust()
+	nnoremap <F4> :wa <CR> :call term_sendkeys("bash", "cargo run\n")<CR>
+endfunction
 
 " ====
 
@@ -493,6 +532,7 @@ autocmd filetype python call SettingsPython()
 autocmd filetype tex call SettingsLatex()
 autocmd filetype html call SettingsHTML()
 autocmd filetype sh call SettingsSh()
+autocmd filetype rust call SettingsRust()
 
 autocmd BufNewFile *.cpp r ~/.vim/usaco_template.cpp
 
@@ -641,10 +681,97 @@ function! s:inNumber()
 	let &magic = l:magic
 endfunction
 
-" "in number" (next number after cursor on current line)
+" in number (next number after cursor on current line)
 xnoremap <silent> in :<c-u>call <sid>inNumber()<cr>
 onoremap <silent> in :<c-u>call <sid>inNumber()<cr>
 
 
-"" vim:fdm=expr:fdl=0
-"" vim:fde=getline(v\:lnum)=~'===*$'?(getline(v\:lnum)=~'==\\+[^=]\\+==.*'?'>'\:'<').(strlen(matchstr(getline(v\:lnum),'==*$'))-2)\:'='
+func MyFilter(winid, key)
+	for i in range(0,len(g:regs)-1)
+		if a:key == g:regs[i]
+			let bufnr = winbufnr(a:winid)
+			call win_execute(a:winid, printf('call cursor(%d,0)', g:regs_linenum[g:regs[i]]))
+			return 1
+		endif
+	endfor
+	call popup_close(a:winid)
+	return 1
+endfunc
+
+
+function! Myshit()
+	"let buf = term_start(['/bin/bash', '-c', getline('.')], #{hidden: 1, term_finish: 'open'})
+	"let winid = popup_create("hi", #{minwidth: 50, minheight: 20, border: [], maxwidth: 60, maxheight: 20, time:3000, mapping: 1})
+	try
+		let winid = popup_atcursor("hi", #{pos:"topleft", line: 'cursor+1', col: 'cursor', filter: 'MyFilter', minwidth: 50, minheight: 12, wrap: 0, maxwidth: 40, cursorline: 1})
+		let bufnr = winbufnr(winid)
+		let g:regs = []
+		call extend(g:regs, map(range(0, 4), 'string(v:val)'))
+		let g:regs += ['_']
+		call extend(g:regs, map(range(97, 97 + 2), 'nr2char(v:val)'))
+		echo g:regs
+
+
+		let g:regs_linenum = {}
+
+		let i = 0
+		for r in g:regs
+			try
+				let i += 1
+				if r == '%'     | let val = s:buf_current
+				elseif r == '#' | let val = s:buf_alternate
+				else            | let val = eval('@'.r)[:&columns]
+				endif
+				if empty(val)
+					call setbufline(bufnr, i, "")
+					continue
+				endif
+				"let s:regs[printf('%s', r)] = line('$')
+				let g:regs_linenum[r] = i
+				call setbufline(bufnr, i, printf('%s: %s', r, substitute(val, '^\s*', '', '')))
+			catch
+				echo v:exception
+			endtry
+		endfor
+
+
+	catch
+		echo v:exception
+	endtry
+	"set wincolor=Search
+endfunction
+
+
+" Appends macro list for the specified group to Peekaboo window
+function! s:append_group(bufnr, regs)
+  let s:regs = {}
+  let i = 0
+  for r in a:regs
+	try
+	  if r == '%'     | let val = s:buf_current
+	  elseif r == '#' | let val = s:buf_alternate
+	  else            | let val = eval('@'.r)[:&columns]
+	  endif
+	  if empty(val)
+		continue
+	  endif
+	  let s:regs[printf('%s', r)] = line('$')
+	  call setbufline(a:bufnr, i, printf('%s: %s', r, substitute(val, '^\s*', '', '')))
+	  let i += 1
+	catch
+		echo v:exception
+	endtry
+  endfor
+endfunction
+
+function! Ok()
+	call s:append_group("oddio", map(range(0, 9), 'string(v:val)'))
+endfunction
+
+
+nnoremap _ :<c-u>call Myshit()<cr>
+nnoremap - :<c-u>call Ok()<cr>
+
+
+" vim:fdm=expr:fdl=0
+" vim:fde=getline(v\:lnum)=~'===*$'?(getline(v\:lnum)=~'==\\+[^=]\\+==.*'?'>'\:'<').(strlen(matchstr(getline(v\:lnum),'==*$'))-2)\:'='

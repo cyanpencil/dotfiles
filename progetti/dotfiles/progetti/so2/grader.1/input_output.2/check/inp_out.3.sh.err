@@ -1,5 +1,0 @@
-main.sh: line 46: kill: (26489) - No such process
-main.sh: line 47: kill: (26490) - No such process
-main.sh: line 48: kill: (26491) - No such process
-main.sh: line 50: kill: (26493) - No such process
-main.sh: line 51: 26492 Killed                  ./2 1003948 100 > ../out_tmp.3/res.2.5.txt 2>&1

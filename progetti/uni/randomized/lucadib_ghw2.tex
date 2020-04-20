@@ -1,0 +1,423 @@
+\documentclass[a4paper,german]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\usepackage{hyperref}
+
+
+%This is how you can create a "claim"-environment (or a lemma/Theorem/definition etc environment)
+\newtheorem{claim}{Claim}
+
+%This is how you can create a command of your own, e.g. to simplify the usage signs you often use.
+\newcommand{\E}{\mathbb{E}}
+
+%Titlepage:
+\title{Solutions of GHW 2}
+\author{Luca Di Bartolomeo}
+\date{}
+
+
+\begin{document}
+\maketitle
+
+{
+	\centering
+	Collaborators: Leonardo del Giudice, Anselme Goetschmann
+
+}
+
+\section*{Solution to Exercise 1}
+
+\textbf{Part a} \\
+\emph{Explaination:} 
+We will show that given a complete graph with $2|V(H')|r(H')$ edges, we can always find a way to 
+find a subset of vertices that contain a monochromatic copy of $H$ through some recursive elimination
+of vertices.
+\vspace{1em}
+
+Let's define $n$ as the number of edges of $H'$, and $N$ as the number of edges of $r(H')$. We have to show that
+\begin{align}
+	r(H') &\leq r(H) \\
+	r(H) &\leq 2n \hspace{0.2em} r(H')
+\end{align}
+
+Inequality (1) can be shown by the fact that since $H' \subseteq H$, any complete graph that contains
+a monochromatic copy of $H$ in every two-coloring will also contain a monochromatic copy of $H'$.
+This means that a complete graph with $r(H)$ vertices will always contain a monochromatic copy of 
+$H$ and $H'$, so $r(H') \leq r(H)$.
+
+
+For inequality (2) instead, we have to first make a few observations.
+We start by noticing that if we pick a vertex $v_0$ from the complete graph $K_{2nr(H')}$, for
+any given coloring, at least half of the edges of $v_0$ will be of the same color.
+Let's call this color "red". In other words, any vertex $v_0$ will have at least $nr(H')$ red edges.
+Let's call $K'$ the complete graph composed only of vertices that are linked to $v_0$ through red edges.
+We know that $|V(K')| \geq nr(H')$.
+
+Now, if we consider a vertex $v_1 \neq v_0$ in $K'$, we notice that if it has at least $r(H')$ blue edges, 
+then it means that the subgraph highlighted by those blue edges contains a monochromatic copy of $H'$. 
+If that copy is blue, than adding $v_1$ to that copy will yield a monochromatic copy of $H$. If that 
+copy is red instead, we can add $v_0$ to that copy and still obtain a monochromatic copy of $H$.
+Instead, if our vertex $v_1$ has less than $r(H')$ blue edges, this means that it has at least 
+$(n-1)r(H')$ red edges in $K'$. 
+
+We can remove all vertices that are linked with $v_1$ from $K'$, and obtain a complete graph of
+size $(n-1)r(H')$ for which all vertices are linked through red edges to both $v_0$ and $v_1$. 
+
+We can now repeat various times what we did with $v_1$: pick a vertex $v_i \not
+\in \{v_0 \ldots v_{i-1}\}$ in $K'$ ; if $v_i$ has at least $r(H')$ blue edges,
+we found a monochromatic copy of $H$; otherwise, remove from $K'$ all vertices
+connected to $v_i$ with a blue edge.
+
+Since at a given step $i$ we are left with a complete subgraph
+of size $(n-i)r(H')$, we know that we can repeat this procedure up to $n$
+times. If we never found a $v_i$ that has at least $r(H')$ blue edges, this
+means that we are now left with vertices $\{v_0 \ldots v_n \}$, that is $n+1$
+vertices all linked through blue edges by construction, which are a
+monochromatic copy of $H$. So, in either case, we find a monochromatic copy of
+$H$.
+
+\vspace{3em}
+
+
+%Let's define $A$ as the set of all subgraphs of $K_N$ that are equal to $H'$. Since $K_N$ is a complete
+%graph, we know that $|A| = {N \choose n}$. Also, since every possible two-coloring of $A$ contains
+%a monochromatic copy of $H'$, for the pidgeon-hole principle we know that $|A| \geq 2^e$ where $e$
+%is the number of edges of $H'$, and so ${N \choose n} \geq 2^e$.
+
+%Now, what happens when we add another vertex to $H'$, and we obtain $H$? The number of edges can now
+%go up to $e + n$, since the new vertex could have an edges with all previous $n$ vertices.
+%So, the number of subgraphs in $K_{r(H)}$ equal to $H$ must be \emph{at least} $2^{e+n}$.
+
+%Let's look at what happens to the number of subgraphs equal to $H$ when we multiply the edges of $K_N$ 
+%by $2n$ (exactly like what happens in (2)):
+%\begin{align*}
+  %|A'| = {2n \; N \choose n + 1 }
+%\end{align*}
+%where $A'$ is the set of subgraphs in $K_N$ equal to $H$.
+%If we calculate $\frac{|A'|}{|A|}$, we notice that it is greater than $2^{n}$:
+%\begin{align*}
+	%\frac{|A'|}{|A|} &= {2n \; N \choose n + 1 } \cdot {N \choose n}^{-1} =
+	%\frac{(2nN)!}{(n+1)!(2nN - n - 1)!} \cdot \frac{n!(N-n)!}{N!} = \\
+	%&= \frac{(2nN)!(N-n)!}{(n+1)(2nN - n - 1)!N!} \geq 2^n
+%\end{align*}{\huge TODO}
+
+%This means that $|A'| \geq 2^{e+n}$, so a complete graph that has $2nN$ vertices will
+%contain a monochromatic copy of $H$, for the pidgeon hole principle. So, 
+%we just proved an upper bound for the minimum number of vertices that a complete
+%graph must have to always contain a monochromatic copy of $H$, thus proving (2).
+
+
+
+
+
+
+\vspace{1em}
+\noindent 
+\textbf{Part b} \\
+\emph{Explaination:} We will use the Azuma inequality, in particular Theorem 7.3 from the lecture notes, 
+easily applicable thanks to the result in the previous section.
+
+\vspace{1em}
+
+Let's use the same "grouping" strategy used for Theorem 7.3 in the lecture
+notes: our probability spaces are now defines as $\Omega_i = \{v_i, v_1\},
+\{v_i, v_2\}, \ldots , \{v_i, v_{i-1}\},$ so that our graph $H$ can be
+represented as the product of $\Omega_i$ for $i = 1 \ldots n$. The random
+variable we want to apply Azuma on is $X = log(r(H))$. Let's calculate the
+\emph{effect} of changing a single coordinate (which, in this case, is equal to
+adding/removing a vertex):
+\begin{align*}
+	| \log(r(H)) - \log(r(H')) | = \log( \frac{r(H)}{r(H')}) \leq \log(2n)
+\end{align*}
+using the result we proved in the previous section. Since now we know that the effect is bounded by
+$log(2n)$ we can now apply Azuma and conclude the proof:
+\begin{align*}
+	Pr[X - EX \geq \omega(\sqrt{n} \log n)] = 2e^{- \frac{\omega(\sqrt{n} \log n)^2}{2\sum_{i=0}^{n-1} \log^2 (2n)} } = 2e^{- \frac{\omega(\sqrt{n} \log n)^2}{2(n-1) \log^2 (2n)}} = o(1)
+\end{align*}
+
+
+
+\section*{Solution to Exercise 2}
+\textbf{Part a} \\
+\emph{Explaination:} We are going to use a randomized algorithm that will ensure that each message
+arrives to each destination with a probability of $ \frac{1}{\sqrt[4]{n}}$. Repeating such algorithm
+enough times, we will get to a point where all messages will be delivered correctly with high probability.
+
+\vspace{1em}
+
+The randomized algorithm we will apply is divided in two steps:
+
+\emph{- First step}: Every node creates $ \frac{1}{4} \log n $ copies for each message it needs to send.
+Then, each node will randomly select an outgoing edge and send a copy through that edge, and does
+this for all the copies it made before. Since $S \leq \frac{ n }{\log n}$, at most $ \frac{1}{4} $  of the
+outgoing edges of each node will be occupied sending a message in this round. This means that, for each
+copy of every message, with chance at most $ \frac{ 1 }{4 }$, the sending will fail because the edge
+is already blocked sending something else.
+
+\emph{- Second step}: Now this time each node will send each message to its correct destination. Since
+we know that $R \leq \frac{ n }{\log n}$, and for each message there are at most $ \frac{ 1 }{4 } \log n$ copies
+going around, we know that, for each node, at most $ \frac{ 1 }{4 }$ of its incoming edges will be blocked
+by an arriving message. This means that even here in the second step, each copy has a $ \frac{ 1 }{4 }$ chance
+of failing because it must be routed through an already blocked edge.
+
+For the union bound, a single copy of a message has probability at most $ \frac{1 }{4 } + \frac{1 }{4 } = \frac{1 }{2 } $ of not making it to the 
+destination. Since for each message there are $ \frac{1}{4} \log n $  copies, we can calculate the probability that every copy fails like this:
+\begin{align*}
+	Pr[c_1 \cap c_2 \cap \ldots \cap c_{\frac{1}{4} \log n}]  = 
+	Pr[c_1] Pr[c_2 | c_1] \ldots Pr[c_{\frac{1}{4} \log n} | \ldots c_2,c_1] \leq  \\
+	\leq Pr[c_1] Pr[c_2] \ldots Pr[c_{\frac{1}{4} \log n}]  = \left(\frac{1}{2}\right)^{\frac{1}{4} \log n}
+\end{align*}
+where $c_1$ is the probability that the first copy fails.
+
+So, for each message, the probability that \emph{at least} one of the copies makes it successfully is:
+\begin{align*}
+1 - \left( \frac{1}{2} \right)^{ \frac{1}{4}\log n} = 
+1 - \frac{1}{2^{\log \sqrt[4]{n}}} \geq
+1 - \frac{1}{2^{\log_2 \sqrt[4]{n}}} =
+1 - \frac{1}{\sqrt[4]{n}}
+\end{align*}
+
+We now notice that we can repeat the above algorithm many times to increase the chance of success for each message.
+Let's calculate the chance that \emph{none} of the copies of a message makes it if we repeat the algorithm 20 times:
+\begin{align*}
+	\left( \frac{1}{\sqrt[4]{n}} \right)^{20} =  \frac{ 1 }{n^5}
+\end{align*}
+
+Now, we must ensure that \emph{every} message is delivered succesfully to its
+destination. Again, we use the union bound, and since there are at most $Rn =
+\frac{n}{log n} n \leq n^2$ message to deliver, the probability that \emph{at
+least} one of the messages never makes it over all the runs of the algorithm
+is:
+\begin{align*}
+	\sum_{i=0}^{n^2} \frac{1 }{n^5} = \frac{ 1 }{n^3}
+\end{align*}
+
+So we proved that this algorithm takes a constant time of rounds (20 repetitions, 2 rounds each, so 40 rounds in total) and
+delivers every message correctly with high probability ($ 1 - \frac{ 1 }{n^3}$).
+
+
+
+\vspace{1em}
+\noindent 
+\textbf{Part b} \\
+
+We will mostly reuse the algorithm of part a, but instead of making $ \frac{1}
+{4}\log n$ copies, we will make $ \frac{1} {4}\log \log n$ copies of each
+message. We also need to specify that when a copy of a message cannot be sent
+over an edge because that edge is blocked sending something else, the node
+will not delete that copy but just keep it there for later use. Furthermore,
+we need to add a third step:
+
+\emph{- Third step}: All the copies that could not be sent to their correct destination during the second step will be sent back to their original sender. 
+
+We are guaranteed that there will be no failures during the third step because every copy will go back to the sender using the very same edge it came from during the first step.
+
+We added this third step to have the following property: after running the
+algorithm, every node can check which messages were succesfully delivered by
+counting the copies that came back (adding them up to the copies that never
+left because sending them during the first step failed). So, for example, if a
+node created $k$ copies of a message, and after the execution of a round
+counts $k-1$ copies, then it knows that one of the copies arrived to the
+correct destination.
+
+Using the same reasoning as in part a, we know that after one execution
+of the algorithm, every message will have the following chance that none of
+its copies made it through:
+
+\begin{align*}
+\left( \frac{1}{2} \right)^{ \frac{1}{4}\log \log n} \leq
+\frac{1}{2^{\log_2  \sqrt[4]{\log n}}} =
+\frac{1}{\sqrt[4]{\log n}}
+\end{align*}
+
+To simplify calculations, let's say we run the algorithm four times, so 
+each message will have the following probability of failing:
+
+\begin{align*}
+	\left(\frac{1}{\sqrt[4]{\log n}}\right)^4 = 
+	\frac{1}{\log n}
+\end{align*}
+
+Now, let's call $X$ the number of messages of a single node that were not
+delivered after 4 executions of the algorithm. 
+Let's calculate its expected value:
+\begin{align*}
+ E[X] = R \cdot \frac{1}{\log n} \leq
+	\frac{n}{\log \log n \cdot \log n} \leq
+	\frac{n}{\log n}
+\end{align*}
+
+So, the expected number of messages that still need to be delivered 
+after 4 executions of the algorithm is at most $\frac{n}{\log n}$; furthermore,
+the node will know \emph{which} messages still need to be delivered
+because it is able to count the copies that came back. This means that
+we find ourselves in the very same problem as part a! So, we can 
+run the same algorithm enough times (let's say 20, like in part a), 
+and each message will be delivered correctly with high probability.
+
+We showed that we can solve the problem if the number of 
+messages still to be sent in a node is close to its expected value,
+but we still need to show how often $X$ is close to its expected value.
+
+We know that $X$ is the sum of $R$ Bernoulli variables, each with probability 
+$ \frac{ 1 }{4 }$ (see part a for why), and we would like to use Chernoff
+to show that $X$ is sharply concentrated around the expected value, but
+we have to show that $X$ is made of the sum of negative associated or independent variables.
+
+Actually we know that, for every disjoint subset $A$ and $B$ of $X$ we have:
+\begin{align*}
+ E[A]E[B] \geq E[AB] \;\;\;\;\;\forall \; A,B \in X,  A \cap B = \emptyset
+\end{align*}
+This won't be proven in detail, but intuitively we know that if messages in subset $A$ have 
+a given probability of success, the probability will surely decrease if there are other 
+messages circulating in the graph that block some edges that could have been taken by messages in $A$.
+
+This is not enough to show that $X$ is made of negative associated variables, but it is enough
+to apply Chernoff on $X$. In fact, if we follow the proof of Theorem 6.4 in the lecture notes, 
+we see that in the proof of Chernoff (Theorems 5.1 and 5.3) we only need an upper bound
+on $E[e^{\sum_{i=1}^n t X_i}]$ and we can use
+\begin{align*}
+	E[e^{\sum_{i=1}^n t X_i}] \leq \prod_{i=1}^n E[e^{tX_i}]
+\end{align*}
+as that bound and the proofs still work.
+
+
+
+
+In conclusion, by applying Chernoff in the fourth form of Corollary 5.4 of the lecture
+notes where we set $t = 10 E[X]$:
+\begin{align*}
+	Pr[X \geq t]  &\leq 2^{-t} \\
+	Pr[X \geq 10 E[X]]  &\leq 2^{- 10E[X]} \\
+	Pr[X \geq 10 \frac{n} {\log n}]  &\leq 2^{- \frac{10n}{\log n}} = o(1)
+\end{align*}
+Concluding, with high probability, $X$ will not be greater than $10E[X]$,
+so this means that there exists a constant number of times that we
+need to run the algorithm to deliver all packets successfully with
+high probability.
+
+
+
+
+
+
+\section*{Solution to Exercise 3}
+\textbf{Part a} \\
+Like in section 1.3 of the lecture notes, after having fixed a number $n$ of
+vertices, we can represent a graph as a set of ${n \choose 2}$ Bernoulli
+variables each with probability $p$. The number of edges in this graph is the
+sum of all those Bernoulli variables, so its expected value is ${n \choose 2}
+p$, for the linearity of expectation. Since the maximum cut of a graph cannot
+be bigger than the number of its edges, we have that 
+\begin{align*}
+	E[X] \leq {n \choose 2} p \Longrightarrow E[X] = O(n^2p)
+\end{align*}
+where $X$ is the size of the max cut.
+
+Let's now divide the vertices of our graph in two sets, each with $\frac{n}{2}$ vertices. The number of edges between those two sets is the sum
+of $\frac{n}{2} \cdot \frac{n}{2}$ Bernoulli variables each with probability
+$p$. So, the expected size of a cut between two sets of size $\frac{n}{2}$ is
+$\frac{n^2}{4}p$, for linearity of expectation. Since the max cut, by 
+definition, is the biggest cut, we have that:
+\begin{align*}
+ E[X] \geq \frac{n^2}{4} p \Longrightarrow E[X] = \Omega(n^2p)
+\end{align*}
+
+Combining those two results, we have that $E[X] = \Theta(n^2p)$.
+
+\vspace{1em}
+
+\noindent
+\textbf{Part b} \\
+\emph{Explaination:} We will use Talagrand's inequality, since Azuma's inequality's bounds are not strong enough.
+
+\vspace{1em}
+
+We will use Lemma 8.2 from the lecture notes, but first we need to verify
+if the conditions are met. 
+
+The random variable $X$ representing the max cut is made of the product of ${n
+\choose 2}$ probability spaces, each representing the existence or not of a
+given edge. The effect $c_i$ in $X$ of a change of a coordinate $i$ is at most
+$1$, and we can use $f(r) = r$ as our function $\psi$. In fact, for every
+$\omega \in \Omega $ and $r \in \mathbb{R}$ where $X(\omega) \geq r$ (so where
+$r$ is the value of our max cut), we can fix the coordinates of the edges
+selected by the max cut as our set of coordinates $J$. In this way, the value
+of the max cut will never decrease if we change a coordinate outside $J$.
+In other words, $X(\omega') \geq r$ for all $\omega' \in \Omega$ with 
+$\omega'_i = \omega_i$ when $i \in J$. Also, $\sum_{i \in J} c_i^2 \leq \psi(r)$ is verified too with $\psi(r) = r$.
+
+So, all it's left is to apply the formula from Lemma 8.2:
+\begin{align*}
+	Pr[| X - E[X] | \geq t ] \leq 4e^{-\Omega\left( \frac{t^2}{E[X] + t} \right)}
+\end{align*}
+If we set $t = \varepsilon \cdot E[X]$, with $\varepsilon \in (0,1)$, we have:
+\begin{align*}
+	Pr[| X - E[X] | \geq \varepsilon \cdot E[X] ] &\leq 4e^{-\Omega\left( \frac{\varepsilon^2 E[X]^2}{E[X] + \varepsilon E[X]} \right)} = \\
+	&= 4e^{-\Omega\left( \frac{\varepsilon^2 E[X]}{\varepsilon + 1} \right)} = o(1)
+\end{align*}
+
+
+
+
+
+
+\section*{Solution to Exercise 4}
+\emph{Explaination:} We are going to solve this problem by showing that applying Azuma's theorem we verify the requested
+inequality with any random variable of the sequence, not just the median one.
+
+\vspace{1em}
+
+Let's first observe that given $X$ the weight of a path from $(0,0)$ to $(n,m)$, $E[X] = \frac{n+m}{2}$. This is because 
+every path has exactly $(n+m)$ edges, and so we can see $X$ as the sum of $n+m$ Bernoulli variables each with 
+probability $ \frac{ 1 }{2}$.
+
+To show that, for any $t \geq 0$, there exists constants $C_1, C_2 > 0$ such that:
+\begin{align}
+	Pr\left[| X - \frac{n+m}{2} | \geq \sqrt{n+m}\cdot t\right] \leq C_1 e ^{-C_2 t^2}
+\end{align}
+we can use Azuma's inequality, since $EX = \frac{n+m}{2}$.
+
+But first, we need to define what are our probability spaces.  Every path from
+$(0,0)$ to $(n,m)$ must take exactly $n$ steps to the right, and $m$ steps
+upwards. In our grid, there are $m(n)$ different
+edges to the right and $n(m)$ different edges that go upwards. This means that
+we can define our path as the product of $n$ probability spaces representing
+which edges to the right a path takes (each composed of $m$ events because the
+grid has $m$ columns) and $m$ probability spaces representing which edges
+upwards a path takes (each composed of $n$ events because the grid has $n$
+columns). In total, we have the product $n+m$ probability spaces that define a
+path.
+
+If we notice also that a change in the $i$-th coordinate changes the path
+weight by at most 1, we now verified all conditions for Azuma's inequality
+and we can apply Theorem 7.3 from the lecture notes:
+
+So, we can define $t' = \sqrt{n+m} \cdot t$ and we have:
+\begin{align}
+	Pr\left[| X - \frac{n+m}{2} | \geq  t'\right] \leq 2e^{- \frac{t'^2} {2\sum_{i=0}^{n+m} c_i}} = 2e^{- \frac{(n+m)t^2}{2(n+m)}} = 2e^{\frac{1}{2}t^2}
+\end{align}
+and we get the constants we were looking for, $C_1 = 2, C_2 = \frac{1}{2}$.
+
+We are not done yet, because even though we showed that the inequality
+holds for any possible path $X$ of the set $\mathcal{P}_{n,m}$, it is not guaranteed that the median $X_{med}$ is in the set $\mathcal{P}_{n,m}$.
+
+In fact, if $| \mathcal{P}_{n,m} | $ is even, the median is defined as 
+$X_{med} = \frac{1}{2}(X_{|\mathcal{P}_{n,m}|/2} + X_{|\mathcal{P}_{n,m}|/2-1} )$, which can be outside set $\mathcal{P}_{n,m}$.
+
+However, for how $X_{med}$ is defined, $X_{max} \geq X_{med} \geq X_{min}$.
+So, we have that either
+\begin{align*}
+	| X_{med} - \frac{n+m}{2} | &\leq
+	| X_{min} - \frac{n+m}{2} |  \;\;\; \text{or}\\
+	| X_{med} - \frac{n+m}{2} | &\leq
+	| X_{max} - \frac{n+m}{2} | 
+\end{align*}
+is true. Since the inequality above (4) is verified both for $X_{max}$ and for
+$X_{min}$, it must be verified for $X_{med}$ too.
+
+
+\end{document}

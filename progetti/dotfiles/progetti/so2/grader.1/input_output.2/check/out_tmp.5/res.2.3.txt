@@ -1,2 +1,0 @@
-Starting with 2176 kB allocated
-Killed after 5 seconds and with 8060 kB allocated

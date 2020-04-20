@@ -4,24 +4,101 @@
 ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
 
 Vagrant.configure("2") do |config|
-  config.vm.define "client" do |client|
-    client.vm.hostname = "webserver"
-    client.vm.box = "ubuntu/xenial64"
 
+  config.vm.define "client" do |client|
+    client.vm.hostname = "client"
+    #client.vm.box = "ubuntu/xenial64"
+    #config.vm.box = "halvards/lubuntu1604"
+    client.vm.box = "joaorodrigues/xubuntu32-vivid"
+
+    client.vm.network :private_network, ip: "10.42.7.7", virtualbox__intnet: "internet"
+
+    client.vm.provision "file", source: "client/cert8.db", destination: "cert8.db"
+    client.vm.provision "file", source: "client/certs/admin.pfx", destination: "admin.pfx"
     client.vm.provider "virtualbox" do |vb|
       vb.gui = true
+      vb.customize ["modifyvm", :id, "--usb", "on"]
+      vb.customize ["modifyvm", :id, "--usbehci", "off"]
     end
     client.vm.provision :shell, path: "bootstrap_client.sh"
 
-    client.vm.network :private_network, ip: "192.168.7.7"
+  end
+
+  config.vm.define "firewall" do |firewall|
+    firewall.vm.hostname = "firewall"
+    firewall.vm.box = "ubuntu/xenial64"
+
+
+    firewall.vm.network :private_network, ip: "10.42.7.8", virtualbox__intnet: "internet"
+    firewall.vm.network :private_network, ip: "10.42.42.1", virtualbox__intnet: "dmz"
+    firewall.vm.network :private_network, ip: "10.42.44.1", virtualbox__intnet: "mgmt"
+    firewall.vm.network :private_network, ip: "10.42.45.1", virtualbox__intnet: "dmz2"
+
+    firewall.vm.provision "file", source: "admin/keys/adminkey.pub", destination: "adminkey.pub"
+    firewall.vm.provision :shell, path: "bootstrap_firewall.sh"
+  end
+
+  config.vm.define "adminserver" do |adminserver|
+    adminserver.vm.hostname = "adminserver"
+    adminserver.vm.box = "ubuntu/xenial64"
+
+    adminserver.vm.provision "file", source: "admin/keys/adminkey", destination: "adminkey"
+    adminserver.vm.network :private_network, ip: "10.42.45.2", virtualbox__intnet: "dmz2"
+    adminserver.vm.network :private_network, ip: "10.42.44.6", virtualbox__intnet: "mgmt"
+    adminserver.vm.provision :shell, path: "bootstrap_admin.sh"
   end
 
   config.vm.define "webserver" do |webserver|
     webserver.vm.hostname = "webserver"
     webserver.vm.box = "ubuntu/xenial64"
 
-    webserver.vm.network :private_network, ip: "192.168.42.42"
-    # webserver.vm.provision :shell, path: "bootstrap_server.sh"
+    webserver.vm.network :private_network, ip: "10.42.42.42", virtualbox__intnet: "dmz"
+    webserver.vm.network :private_network, ip: "10.42.43.2", virtualbox__intnet: "intranet"
+    webserver.vm.network :private_network, ip: "10.42.44.5", virtualbox__intnet: "mgmt"
+
+
+    webserver.vm.provision "file", source: "admin/keys/adminkey.pub", destination: "adminkey.pub"
+    webserver.vm.provision :shell, path: "bootstrap_webserver.sh"
+    # webserver.vm.provision "file", source: "webserver/cert/CA.pem", destination: "$HOME/certs/CA.pem"
+    webserver.vm.synced_folder "webserver/certs/", "/home/vagrant/certs/"
+    webserver.vm.synced_folder "webserver/html/", "/var/www/html/"
   end
 
+  config.vm.define "core" do |core|
+    core.vm.hostname = "core"
+    core.vm.box = "ubuntu/xenial64"
+
+    core.vm.network :private_network, ip: "10.42.43.3", virtualbox__intnet: "intranet"
+    core.vm.network :private_network, ip: "10.42.44.4", virtualbox__intnet: "mgmt"
+
+    core.vm.provision "file", source: "admin/keys/adminkey.pub", destination: "adminkey.pub"
+    core.vm.provision :shell, path: "bootstrap_core.sh"
+  end
+
+  config.vm.define "database" do |database|
+    database.vm.hostname = "database"
+    database.vm.box = "ubuntu/xenial64"
+
+    database.vm.network :private_network, ip: "10.42.43.4", virtualbox__intnet: "intranet"
+    database.vm.network :private_network, ip: "10.42.44.3", virtualbox__intnet: "mgmt"
+
+    database.vm.provision "file", source: "admin/keys/adminkey.pub", destination: "adminkey.pub"
+    database.vm.provision :shell, path: "bootstrap_database.sh"
+
+    database.vm.synced_folder "database/", "/opt/database/"
+  end
+
+  config.vm.define "backup" do |backup|
+    backup.vm.hostname = "backup"
+    backup.vm.box = "ubuntu/xenial64"
+    backup.vm.network :private_network, ip: "10.42.44.2", virtualbox__intnet: "mgmt"
+
+    backup.vm.provision "file", source: "admin/keys/adminkey.pub", destination: "adminkey.pub"
+    backup.vm.provision "file", source: "database/keys/id_ecdsa.pub", destination: "database.pub"
+    backup.vm.provision :shell, path: "bootstrap_backup.sh"
+
+
+    backup.vm.synced_folder "backup/", "/stronzo/"
+
+  end
 end

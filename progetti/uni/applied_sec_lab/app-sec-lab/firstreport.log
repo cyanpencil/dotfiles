@@ -1,0 +1,1976 @@
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Arch Linux) (preloaded format=xelatex 2019.9.19)  20 NOV 2019 15:44
+entering extended mode
+ \write18 enabled.
+ %&-line parsing enabled.
+**report/firstreport.tex
+(./report/firstreport.tex
+LaTeX2e <2018-12-01>
+(/usr/share/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2019/04/03 3.29 The Babel package
+
+(/usr/share/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2019/04/03 3.29 Babel switching mechanism
+)
+(/usr/share/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+
+(/usr/share/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2019/04/03 3.29 Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+
+(/usr/share/texmf-dist/tex/generic/babel/xebabel.def
+(/usr/share/texmf-dist/tex/generic/babel/txtbabel.def))
+\bbl@dirlevel=\count89
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 99.
+
+(/usr/share/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
+))
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
+)
+(/usr/share/texmf-dist/tex/latex/base/alltt.sty
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+)
+(/usr/share/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/share/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2016/02/03 v2.11b `tabularx' package (DPC)
+
+(/usr/share/texmf-dist/tex/latex/tools/array.sty
+Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
+\col@sep=\dimen106
+\ar@mcellbox=\box27
+\extrarowheight=\dimen107
+\NC@list=\toks15
+\extratabsurround=\skip43
+\backup@length=\skip44
+\ar@cellbox=\box28
+)
+\TX@col@width=\dimen108
+\TX@old@table=\dimen109
+\TX@old@col=\dimen110
+\TX@target=\dimen111
+\TX@delta=\dimen112
+\TX@cols=\count90
+\TX@ftn=\toks16
+)
+(/usr/share/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)+ FMi change
+\LTleft=\skip45
+\LTright=\skip46
+\LTpre=\skip47
+\LTpost=\skip48
+\LTchunksize=\count91
+\LTcapwidth=\dimen113
+\LT@head=\box29
+\LT@firsthead=\box30
+\LT@foot=\box31
+\LT@lastfoot=\box32
+\LT@cols=\count92
+\LT@rows=\count93
+\c@LT@tables=\count94
+\c@LT@chunks=\count95
+\LT@p@ftn=\toks17
+)
+(/usr/share/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: xetex.def on input line 147.
+)
+(/usr/share/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip49
+\fb@frw=\dimen114
+\fb@frh=\dimen115
+\FrameRule=\dimen116
+\FrameSep=\dimen117
+)
+(/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2018/11/30 v6.88e Hypertext links for LaTeX
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: pdfTeX >= 1.30 not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/share/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+(/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen118
+\Hy@linkcounter=\count96
+\Hy@pagecounter=\count97
+
+(/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2018/11/30 v6.88e Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count98
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4519.
+Package hyperref Info: Link nesting OFF on input line 4524.
+Package hyperref Info: Hyper index ON on input line 4527.
+Package hyperref Info: Plain pages OFF on input line 4534.
+Package hyperref Info: Backreferencing OFF on input line 4539.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4772.
+\c@Hy@tempcnt=\count99
+LaTeX Info: Redefining \url on input line 5125.
+\XeTeXLinkMargin=\dimen119
+\Fld@menulength=\count100
+\Field@Width=\dimen120
+\Fld@charsize=\dimen121
+Package hyperref Info: Hyper figures OFF on input line 6380.
+Package hyperref Info: Link nesting OFF on input line 6385.
+Package hyperref Info: Hyper index ON on input line 6388.
+Package hyperref Info: backreferencing OFF on input line 6395.
+Package hyperref Info: Link coloring OFF on input line 6400.
+Package hyperref Info: Link coloring with OCG OFF on input line 6405.
+Package hyperref Info: PDF/A mode OFF on input line 6410.
+LaTeX Info: Redefining \ref on input line 6450.
+LaTeX Info: Redefining \pageref on input line 6454.
+\Hy@abspage=\count101
+\c@Item=\count102
+\c@Hfootnote=\count103
+)
+Package hyperref Info: Driver (autodetected): hxetex.
+
+(/usr/share/texmf-dist/tex/latex/hyperref/hxetex.def
+File: hxetex.def 2018/11/30 v6.88e Hyperref driver for XeTeX
+
+(/usr/share/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2018/11/30 v6.88e Hyperref: PDF Unicode definition (HO)
+)
+(/usr/share/texmf-dist/tex/generic/oberdiek/stringenc.sty
+Package: stringenc 2016/05/16 v1.11 Convert strings between diff. encodings (HO
+)
+)
+\pdfm@box=\box33
+\c@Hy@AnnotLevel=\count104
+\HyField@AnnotCount=\count105
+\Fld@listcount=\count106
+\c@bookmark@seq@number=\count107
+
+(/usr/share/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip50
+)
+(/usr/share/texmf-dist/tex/latex/todonotes/todonotes.sty
+Package: todonotes 2019/01/24 v1.1.2 Todonotes source and documentation.
+Package: todonotes 2018/11/22
+
+(/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks18
+\XKV@tempa@toks=\toks19
+)
+\XKV@depth=\count108
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 225.
+LaTeX Info: Redefining \color on input line 709.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(/usr/share/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks20
+\pgfutil@tempdima=\dimen122
+\pgfutil@tempdimb=\dimen123
+
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex))
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box34
+
+(/usr/share/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2019/02/02 v3.1.1 (3.1.1)
+))
+Package: pgf 2019/02/02 v3.1.1 (3.1.1)
+
+(/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2019/02/02 v3.1.1 (3.1.1)
+
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks21
+\pgfkeys@temptoks=\toks22
+
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks23
+))
+\pgf@x=\dimen124
+\pgf@y=\dimen125
+\pgf@xa=\dimen126
+\pgf@ya=\dimen127
+\pgf@xb=\dimen128
+\pgf@yb=\dimen129
+\pgf@xc=\dimen130
+\pgf@yc=\dimen131
+\w@pgf@writea=\write3
+\r@pgf@reada=\read1
+\c@pgf@counta=\count109
+\c@pgf@countb=\count110
+\c@pgf@countc=\count111
+\c@pgf@countd=\count112
+\t@pgf@toka=\toks24
+\t@pgf@tokb=\toks25
+\t@pgf@tokc=\toks26
+\pgf@sys@id@count=\count113
+
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2019/02/02 v3.1.1 (3.1.1)
+)
+Driver file for pgf: pgfsys-xetex.def
+
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-xetex.def
+File: pgfsys-xetex.def 2019/02/02 v3.1.1 (3.1.1)
+
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvipdfmx.def
+File: pgfsys-dvipdfmx.def 2019/02/02 v3.1.1 (3.1.1)
+
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2019/02/02 v3.1.1 (3.1.1)
+)
+\pgfsys@objnum=\count114
+)))
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgfsyssoftpath@smallbuffer@items=\count115
+\pgfsyssoftpath@bigbuffer@items=\count116
+)
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2019/02/02 v3.1.1 (3.1.1)
+))
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2019/02/02 v3.1.1 (3.1.1)
+
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen132
+\pgfmath@count=\count117
+\pgfmath@box=\box35
+\pgfmath@toks=\toks27
+\pgfmath@stack@operand=\toks28
+\pgfmath@stack@operation=\toks29
+)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code
+.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.te
+x) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics
+.code.tex))) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count118
+)) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgf@picminx=\dimen133
+\pgf@picmaxx=\dimen134
+\pgf@picminy=\dimen135
+\pgf@picmaxy=\dimen136
+\pgf@pathminx=\dimen137
+\pgf@pathmaxx=\dimen138
+\pgf@pathminy=\dimen139
+\pgf@pathmaxy=\dimen140
+\pgf@xx=\dimen141
+\pgf@xy=\dimen142
+\pgf@yx=\dimen143
+\pgf@yy=\dimen144
+\pgf@zx=\dimen145
+\pgf@zy=\dimen146
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgf@path@lastx=\dimen147
+\pgf@path@lasty=\dimen148
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgf@shorten@end@additional=\dimen149
+\pgf@shorten@start@additional=\dimen150
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgfpic=\box36
+\pgf@hbox=\box37
+\pgf@layerbox@main=\box38
+\pgf@picture@serial@count=\count119
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgflinewidth=\dimen151
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.t
+ex
+File: pgfcoretransformations.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgf@pt@x=\dimen152
+\pgf@pt@y=\dimen153
+\pgf@pt@temp=\dimen154
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.te
+x
+File: pgfcorepathprocessing.code.tex 2019/02/02 v3.1.1 (3.1.1)
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgfarrowsep=\dimen155
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgf@max=\dimen156
+\pgf@sys@shading@range@num=\count120
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2019/02/02 v3.1.1 (3.1.1)
+
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgfexternal@startupbox=\box39
+))
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2019/02/02 v3.1.1 (3.1.1)
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)))
+(/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgfnodeparttextbox=\box40
+)
+(/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)
+(/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2019/02/02 v3.1.1 (3.1.1)
+\pgf@nodesepstart=\dimen157
+\pgf@nodesepend=\dimen158
+)
+(/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2019/02/02 v3.1.1 (3.1.1)
+))
+(/usr/share/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2019/02/02 v3.1.1 (3.1.1)
+
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen159
+\pgffor@skip=\dimen160
+\pgffor@stack=\toks30
+\pgffor@toks=\toks31
+))
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2019/02/02 v3.1.1 (3.1.1)
+
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.te
+x
+File: pgflibraryplothandlers.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgf@plot@mark@count=\count121
+\pgfplotmarksize=\dimen161
+)
+\tikz@lastx=\dimen162
+\tikz@lasty=\dimen163
+\tikz@lastxsaved=\dimen164
+\tikz@lastysaved=\dimen165
+\tikzleveldistance=\dimen166
+\tikzsiblingdistance=\dimen167
+\tikz@figbox=\box41
+\tikz@figbox@bg=\box42
+\tikz@tempbox=\box43
+\tikz@tempbox@bg=\box44
+\tikztreelevel=\count122
+\tikznumberofchildren=\count123
+\tikznumberofcurrentchild=\count124
+\tikz@fig@count=\count125
+ (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgfmatrixcurrentrow=\count126
+\pgfmatrixcurrentcolumn=\count127
+\pgf@matrix@numberofcolumns=\count128
+)
+\tikz@expandcount=\count129
+
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+topaths.code.tex
+File: tikzlibrarytopaths.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)))
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+positioning.code.tex
+File: tikzlibrarypositioning.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+shadows.code.tex
+File: tikzlibraryshadows.code.tex 2019/02/02 v3.1.1 (3.1.1)
+
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+fadings.code.tex
+File: tikzlibraryfadings.code.tex 2019/02/02 v3.1.1 (3.1.1)
+
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
+File: pgflibraryfadings.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)))
+(/usr/share/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count130
+\calc@Bcount=\count131
+\calc@Adimen=\dimen168
+\calc@Bdimen=\dimen169
+\calc@Askip=\skip51
+\calc@Bskip=\skip52
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count132
+\calc@Cskip=\skip53
+)
+\c@@todonotes@numberoftodonotes=\count133
+)
+(/usr/share/texmf-dist/tex/latex/xifthen/xifthen.sty
+Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
+
+(/usr/share/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
+Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
+))
+No file firstreport.aux.
+\openout1 = `firstreport.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+\AtBeginShipoutBox=\box45
+Package hyperref Info: Link coloring OFF on input line 31.
+(/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count134
+)
+LaTeX Info: Redefining \ref on input line 31.
+LaTeX Info: Redefining \pageref on input line 31.
+LaTeX Info: Redefining \nameref on input line 31.
+\@outlinefile=\write4
+\openout4 = `firstreport.out'.
+
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
+ABD: EveryShipout initializing macros
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 33.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 33.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 33.
+\tf@toc=\write5
+\openout5 = `firstreport.toc'.
+
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
+File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
+
+) [1
+
+]
+
+LaTeX Warning: Reference `overview' on page 2 undefined on input line 53.
+
+
+LaTeX Warning: File `diagram.png' not found on input line 62.
+
+! Unable to load picture or PDF file 'diagram.png'.
+<to be read again> 
+                   }
+l.62 ...udegraphics[width=\textwidth]{diagram.png}
+                                                  
+? 
+
+! Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.62 ...udegraphics[width=\textwidth]{diagram.png}
+                                                  
+? 
+File: diagram.png Graphic file (type bmp)
+<diagram.png>
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 76.
+[2]
+Overfull \hbox (6.28601pt too wide) in paragraph at lines 86--86
+\TU/lmr/m/n/10 ubuntu/firefox  
+ []
+
+
+Overfull \hbox (6.28601pt too wide) in paragraph at lines 86--86
+\TU/lmr/m/n/10 ubuntu/firefox  
+ []
+
+
+LaTeX Warning: Marginpar on page 3 moved.
+
+
+LaTeX Warning: Marginpar on page 3 moved.
+
+
+LaTeX Warning: Marginpar on page 3 moved.
+
+[3]
+
+LaTeX Warning: Marginpar on page 4 moved.
+
+
+LaTeX Warning: Marginpar on page 4 moved.
+
+[4]
+Overfull \hbox (8.10602pt too wide) in paragraph at lines 102--102
+\TU/lmr/m/n/10 API/endpoints  
+ []
+
+
+Overfull \hbox (8.10602pt too wide) in paragraph at lines 102--102
+\TU/lmr/m/n/10 API/endpoints  
+ []
+
+
+LaTeX Warning: Marginpar on page 5 moved.
+
+[5]
+Overfull \hbox (5.85999pt too wide) in paragraph at lines 164--164
+[]\TU/lmr/m/n/10 a user with a password easy to guess (\TU/lmtt/m/n/10 guest:pa
+ssword \TU/lmr/m/n/10 or \TU/lmtt/m/n/10 admin:admin
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 164.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 164.
+[6]
+
+LaTeX Warning: Reference `Components' on page 7 undefined on input line 176.
+
+[7] [8] [9] [10] [11]
+
+LaTeX Warning: Reference `Assets' on page 12 undefined on input line 219.
+
+
+LaTeX Warning: Reference `Assets' on page 12 undefined on input line 220.
+
+
+Overfull \hbox (11.29504pt too wide) in paragraph at lines 220--221
+[]\TU/lmr/m/n/10 Skilled Hackers: Competitors may hire skilled hackers to under
+mine iMovies’s
+ []
+
+
+Overfull \hbox (10.43756pt too wide) in paragraph at lines 234--277
+ [] 
+ []
+
+
+Overfull \hbox (0.56755pt too wide) in paragraph at lines 234--277
+ [] 
+ []
+
+[12]
+
+LaTeX Warning: Reference `All_Machines' on page 13 undefined on input line 324.
+
+
+
+LaTeX Warning: Reference `Assets' on page 13 undefined on input line 324.
+
+[13]
+Underfull \hbox (badness 3291) in paragraph at lines 366--366
+[]|\TU/lmr/m/n/8 Fire can cause seri-
+ []
+
+
+Underfull \hbox (badness 2762) in paragraph at lines 366--366
+\TU/lmr/m/n/8 ous damage to peo-
+ []
+
+
+Underfull \hbox (badness 7777) in paragraph at lines 366--366
+\TU/lmr/m/n/8 resulting smoke can
+ []
+
+
+Underfull \hbox (badness 2326) in paragraph at lines 366--366
+\TU/lmr/m/n/8 to different kinds of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--366
+[]|\TU/lmr/m/n/8 Natural catastrophes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--366
+\TU/lmr/m/n/8 like earthquakes or
+ []
+
+
+Underfull \hbox (badness 1789) in paragraph at lines 366--366
+\TU/lmr/m/n/8 flooding may destroy
+ []
+
+
+Underfull \hbox (badness 1354) in paragraph at lines 366--366
+[]|\TU/lmr/m/n/8 An encrypted backup of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--366
+\TU/lmr/m/n/8 generator and enough
+ []
+
+
+Underfull \hbox (badness 5893) in paragraph at lines 366--366
+\TU/lmr/m/n/8 diesel for 72 hours of
+ []
+
+
+Underfull \hbox (badness 2119) in paragraph at lines 366--366
+\TU/lmr/m/n/8 emergency power are in
+ []
+
+
+Underfull \hbox (badness 3460) in paragraph at lines 366--366
+\TU/lmr/m/n/8 internal usage (for own
+ []
+
+
+Underfull \hbox (badness 1337) in paragraph at lines 366--366
+\TU/lmr/m/n/8 tionality of backups etc.
+ []
+
+
+Underfull \hbox (badness 2635) in paragraph at lines 366--366
+\TU/lmr/m/n/8 connectivity during such
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--366
+\TU/lmr/m/n/8 downtime will not be
+ []
+
+
+Underfull \hbox (badness 2903) in paragraph at lines 366--366
+\TU/lmr/m/n/8 a janitor or person-
+ []
+
+
+Underfull \hbox (badness 1635) in paragraph at lines 366--366
+\TU/lmr/m/n/8 with an expensive certi-
+ []
+
+
+Underfull \hbox (badness 1062) in paragraph at lines 366--366
+\TU/lmr/m/n/8 of our company. Addi-
+ []
+
+
+Underfull \hbox (badness 1107) in paragraph at lines 366--366
+\TU/lmr/m/n/8 the room. The camera
+ []
+
+
+Underfull \hbox (badness 6675) in paragraph at lines 366--366
+[]|\TU/lmr/m/n/8 A government orga-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--366
+\TU/lmr/m/n/8 nization manipulates
+ []
+
+
+Underfull \hbox (badness 3260) in paragraph at lines 366--366
+\TU/lmr/m/n/8 new server hardware
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--366
+\TU/lmr/m/n/8 before delivery in
+ []
+
+
+Underfull \hbox (badness 3108) in paragraph at lines 366--366
+\TU/lmr/m/n/8 such a way that it
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--366
+\TU/lmr/m/n/8 fidentiality, integrity
+ []
+
+
+Underfull \hbox (badness 1325) in paragraph at lines 366--366
+\TU/lmr/m/n/8 or availability of the
+ []
+
+
+Underfull \hbox (badness 4108) in paragraph at lines 366--366
+\TU/lmr/m/n/8 hard disks or other
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--366
+\TU/lmr/m/n/8 components of the
+ []
+
+
+Underfull \hbox (badness 2662) in paragraph at lines 366--366
+\TU/lmr/m/n/8 especially hard disks, a
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 366--366
+[][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--368
+
+ []
+
+[14]
+Overfull \vbox (141.69983pt too high) has occurred while \output is active []
+
+
+[15]
+Underfull \hbox (badness 4713) in paragraph at lines 405--405
+[]|\TU/lmr/m/n/8 A skilled hacker, a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 405--405
+\TU/lmr/m/n/8 catastrophe brings
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 405--405
+\TU/lmr/m/n/8 down the Internet
+ []
+
+
+Underfull \hbox (badness 1997) in paragraph at lines 405--405
+\TU/lmr/m/n/8 telecommunications is
+ []
+
+
+Underfull \hbox (badness 1205) in paragraph at lines 405--405
+[]|\TU/lmr/m/n/8 A system admin up-
+ []
+
+
+Underfull \hbox (badness 1303) in paragraph at lines 405--405
+[]|\TU/lmr/m/n/8 Any system will be up-
+ []
+
+
+Underfull \hbox (badness 1688) in paragraph at lines 405--405
+\TU/lmr/m/n/8 a system during up-
+ []
+
+
+Underfull \hbox (badness 5878) in paragraph at lines 405--405
+\TU/lmr/m/n/8 unavailability of the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 405--405
+[]|\TU/lmr/m/n/8 Organizational de-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 405--405
+\TU/lmr/m/n/8 ficiencies lead to
+ []
+
+
+Underfull \hbox (badness 4048) in paragraph at lines 405--405
+\TU/lmr/m/n/8 office supplies where
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 405--405
+\TU/lmr/m/n/8 employees regularly
+ []
+
+
+Underfull \hbox (badness 4205) in paragraph at lines 405--405
+\TU/lmr/m/n/8 nerability in one of
+ []
+
+
+Underfull \hbox (badness 4739) in paragraph at lines 405--405
+\TU/lmr/m/n/8 the software compo-
+ []
+
+
+Underfull \hbox (badness 3019) in paragraph at lines 405--405
+\TU/lmr/m/n/8 nents and installs a
+ []
+
+
+Overfull \hbox (19.61497pt too wide) in alignment at lines 405--405
+[][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 372--407
+
+ []
+
+
+Underfull \hbox (badness 2903) in paragraph at lines 437--437
+\TU/lmr/m/n/8 a janitor or person-
+ []
+
+
+Underfull \hbox (badness 1596) in paragraph at lines 437--437
+\TU/lmr/m/n/8 vice uses electromag-
+ []
+
+
+Underfull \hbox (badness 2334) in paragraph at lines 437--437
+\TU/lmr/m/n/8 nection in the base-
+ []
+
+
+Underfull \hbox (badness 4193) in paragraph at lines 437--437
+\TU/lmr/m/n/8 or Spectre) to read
+ []
+
+
+LaTeX Warning: Reference `SSH_private_keys' on page 16 undefined on input line 
+437.
+
+
+Underfull \hbox (badness 3942) in paragraph at lines 437--437
+\TU/lmr/m/n/8 more secure than pass-
+ []
+
+
+Underfull \hbox (badness 5316) in paragraph at lines 437--437
+\TU/lmr/m/n/8 machines/networks won’t
+ []
+
+
+Overfull \hbox (17.48697pt too wide) in alignment at lines 437--437
+[][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 414--439
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 461--461
+[]|\TU/lmr/m/n/8 Firewall frequently up-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--461
+\TU/lmr/m/n/8 firewall configuration
+ []
+
+
+Underfull \hbox (badness 1325) in paragraph at lines 461--461
+\TU/lmr/m/n/8 or completely disable
+ []
+
+
+Underfull \hbox (badness 2096) in paragraph at lines 461--461
+\TU/lmr/m/n/8 not protect the net-
+ []
+
+
+LaTeX Warning: Reference `System_admins' on page 17 undefined on input line 461
+.
+
+
+Underfull \hbox (badness 5607) in paragraph at lines 461--461
+\TU/lmr/m/n/8 in the firewall configu-
+ []
+
+
+Underfull \hbox (badness 3009) in paragraph at lines 461--461
+\TU/lmr/m/n/8 ration needs to be ap-
+ []
+
+
+Underfull \hbox (badness 2781) in paragraph at lines 461--461
+\TU/lmr/m/n/8 proved by at least one
+ []
+
+
+Overfull \hbox (17.48697pt too wide) in alignment at lines 461--461
+[][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 443--463
+
+ []
+
+[17]
+Underfull \hbox (badness 5022) in paragraph at lines 484--484
+[]|\TU/lmr/m/n/8 A skilled hacker or
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--484
+[]|\TU/lmr/m/n/8 System updated fre-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--484
+\TU/lmr/m/n/8 and certificate requests
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--484
+\TU/lmr/m/n/8 saved and backed up.
+ []
+
+
+Underfull \hbox (badness 5022) in paragraph at lines 484--484
+[]|\TU/lmr/m/n/8 A skilled hacker or
+ []
+
+
+Underfull \hbox (badness 4739) in paragraph at lines 484--484
+[]|\TU/lmr/m/n/8 See countermeasures for
+ []
+
+
+Underfull \hbox (badness 1983) in paragraph at lines 484--484
+[]|\TU/lmr/m/n/8 The firewall only allows
+ []
+
+
+Overfull \hbox (4.08696pt too wide) in alignment at lines 484--484
+[][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 466--486
+
+ []
+
+
+Underfull \hbox (badness 1629) in paragraph at lines 498--498
+\TU/lmr/m/n/8 a misconfiguration of
+ []
+
+
+Underfull \hbox (badness 6675) in paragraph at lines 498--498
+[]|\TU/lmr/m/n/8 The minimum exposure
+ []
+
+
+Underfull \hbox (badness 4647) in paragraph at lines 498--498
+\TU/lmr/m/n/8 machine does not have
+ []
+
+
+Underfull \hbox (badness 7133) in paragraph at lines 498--498
+\TU/lmr/m/n/8 any fancy software in-
+ []
+
+
+Overfull \hbox (4.98297pt too wide) in alignment at lines 498--498
+[][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--500
+
+ []
+
+[18]
+
+LaTeX Warning: Reference `All_Machines' on page 19 undefined on input line 503.
+
+
+
+LaTeX Warning: Reference `All_Machines_confidential' on page 19 undefined on in
+put line 503.
+
+
+LaTeX Warning: Reference `All_Machines' on page 19 undefined on input line 507.
+
+
+
+LaTeX Warning: Reference `All_Machines_confidential' on page 19 undefined on in
+put line 507.
+
+
+LaTeX Warning: Reference `All_Machines' on page 19 undefined on input line 512.
+
+
+
+LaTeX Warning: Reference `All_Machines_confidential' on page 19 undefined on in
+put line 512.
+
+
+Underfull \hbox (badness 5077) in paragraph at lines 550--550
+\TU/lmr/m/n/8 to exploit a known
+ []
+
+
+Underfull \hbox (badness 4132) in paragraph at lines 550--550
+\TU/lmr/m/n/8 weakness of the in-
+ []
+
+
+Underfull \hbox (badness 4132) in paragraph at lines 550--550
+\TU/lmr/m/n/8 weakness of the in-
+ []
+
+
+Underfull \hbox (badness 4353) in paragraph at lines 550--550
+\TU/lmr/m/n/8 promises the update
+ []
+
+
+Underfull \hbox (badness 1715) in paragraph at lines 550--550
+\TU/lmr/m/n/8 Github account of a
+ []
+
+
+Underfull \hbox (badness 3492) in paragraph at lines 550--550
+\TU/lmr/m/n/8 system admins regularly
+ []
+
+
+Underfull \hbox (badness 7344) in paragraph at lines 550--550
+\TU/lmr/m/n/8 or a skilled hacker
+ []
+
+
+Underfull \hbox (badness 1442) in paragraph at lines 550--550
+\TU/lmr/m/n/8 modifies the software
+ []
+
+
+Underfull \hbox (badness 1281) in paragraph at lines 550--550
+\TU/lmr/m/n/8 (e.g., replacing a bi-
+ []
+
+
+Underfull \hbox (badness 1052) in paragraph at lines 550--550
+\TU/lmr/m/n/8 one of the machines.
+ []
+
+
+Underfull \hbox (badness 6859) in paragraph at lines 550--550
+[]|\TU/lmr/m/n/8 An external auditor is
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 550--550
+\TU/lmr/m/n/8 to detect possible errors
+ []
+
+
+Underfull \hbox (badness 2941) in paragraph at lines 550--550
+\TU/lmr/m/n/8 more, the self-developed
+ []
+
+
+Underfull \hbox (badness 2591) in paragraph at lines 550--550
+\TU/lmr/m/n/8 ing development, coding
+ []
+
+
+Underfull \hbox (badness 1253) in paragraph at lines 550--550
+\TU/lmr/m/n/8 developed. In the case
+ []
+
+
+Underfull \hbox (badness 1502) in paragraph at lines 550--550
+\TU/lmr/m/n/8 of open source software,
+ []
+
+
+Underfull \hbox (badness 3058) in paragraph at lines 550--550
+\TU/lmr/m/n/8 Dr. Widmer at ETH
+ []
+
+
+Overfull \hbox (17.48697pt too wide) in alignment at lines 550--550
+[][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 517--552
+
+ []
+
+[19] [20]
+Overfull \vbox (74.35074pt too high) has occurred while \output is active []
+
+
+[21]
+Underfull \hbox (badness 1028) in paragraph at lines 580--580
+\TU/lmr/m/n/8 on the system it in-
+ []
+
+
+Underfull \hbox (badness 1466) in paragraph at lines 580--580
+\TU/lmr/m/n/8 the ASL book). Addi-
+ []
+
+
+Underfull \hbox (badness 7344) in paragraph at lines 580--580
+\TU/lmr/m/n/8 or a skilled hacker
+ []
+
+
+Underfull \hbox (badness 2556) in paragraph at lines 580--580
+\TU/lmr/m/n/8 uses a software vul-
+ []
+
+
+Underfull \hbox (badness 1831) in paragraph at lines 580--580
+\TU/lmr/m/n/8 information with low
+ []
+
+
+Underfull \hbox (badness 1502) in paragraph at lines 580--580
+\TU/lmr/m/n/8 to medium criticality
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 580--580
+\TU/lmr/m/n/8 the hash for a pass-
+ []
+
+
+Underfull \hbox (badness 1874) in paragraph at lines 580--580
+\TU/lmr/m/n/8 ularly audited by exter-
+ []
+
+
+Underfull \hbox (badness 1406) in paragraph at lines 580--580
+\TU/lmr/m/n/8 principles of secure cod-
+ []
+
+
+Underfull \hbox (badness 7344) in paragraph at lines 580--580
+\TU/lmr/m/n/8 or a skilled hacker
+ []
+
+
+Underfull \hbox (badness 2556) in paragraph at lines 580--580
+\TU/lmr/m/n/8 uses a software vul-
+ []
+
+
+Underfull \hbox (badness 7504) in paragraph at lines 580--580
+\TU/lmr/m/n/8 nerability to violate
+ []
+
+
+Underfull \hbox (badness 4416) in paragraph at lines 580--580
+\TU/lmr/m/n/8 the integrity of the
+ []
+
+
+Underfull \hbox (badness 3029) in paragraph at lines 580--580
+\TU/lmr/m/n/8 tacker then proceeds
+ []
+
+
+Underfull \hbox (badness 6510) in paragraph at lines 580--580
+\TU/lmr/m/n/8 possible number of re-
+ []
+
+
+Underfull \hbox (badness 2591) in paragraph at lines 580--580
+\TU/lmr/m/n/8 quests to the webserver
+ []
+
+
+Underfull \hbox (badness 1152) in paragraph at lines 580--580
+\TU/lmr/bx/n/8 config at the end \TU/lmr/m/n/8 re-
+ []
+
+
+Overfull \hbox (19.61497pt too wide) in alignment at lines 580--580
+[][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 557--582
+
+ []
+
+
+Underfull \hbox (badness 4608) in paragraph at lines 599--599
+\TU/lmr/m/n/8 cover a private key
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 599--599
+\TU/lmr/m/n/8 cryptographic standards
+ []
+
+
+Underfull \hbox (badness 1418) in paragraph at lines 599--599
+\TU/lmr/m/n/8 for certificates. We do
+ []
+
+
+Underfull \hbox (badness 2165) in paragraph at lines 599--599
+\TU/lmr/m/n/8 not further address this
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 599--599
+[][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 586--601
+
+ []
+
+[22]
+Underfull \hbox (badness 1968) in paragraph at lines 618--618
+\TU/lmr/m/n/8 certificates that were
+ []
+
+
+Underfull \hbox (badness 3536) in paragraph at lines 618--618
+\TU/lmr/m/n/8 pends benign certifi-
+ []
+
+
+Underfull \hbox (badness 6461) in paragraph at lines 618--618
+\TU/lmr/m/n/8 cates erroneously to
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 618--618
+[][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 605--620
+
+ []
+
+
+Underfull \hbox (badness 2119) in paragraph at lines 639--639
+\TU/lmr/m/n/8 for the admin server is
+ []
+
+
+Underfull \hbox (badness 3780) in paragraph at lines 639--639
+\TU/lmr/m/n/8 learns the SSH pri-
+ []
+
+
+Underfull \hbox (badness 1496) in paragraph at lines 639--639
+\TU/lmr/m/n/8 server which in turn
+ []
+
+
+Underfull \hbox (badness 3942) in paragraph at lines 639--639
+[]|\TU/lmr/m/n/8 The SSH keys are en-
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 639--639
+[][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 625--641
+
+ []
+
+[23]
+
+LaTeX Warning: Reference `SSH_private_keys' on page 24 undefined on input line 
+688.
+
+
+Underfull \hbox (badness 1675) in paragraph at lines 688--688
+\TU/lmr/m/n/8 stored in the bank safe
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 688--688
+[]|\TU/lmr/m/n/8 The system admin is
+ []
+
+
+Underfull \hbox (badness 2096) in paragraph at lines 688--688
+\TU/lmr/m/n/8 information to a person
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 688--688
+\TU/lmr/m/n/8 blackmailing leading
+ []
+
+
+Underfull \hbox (badness 4048) in paragraph at lines 688--688
+\TU/lmr/m/n/8 to disclosing creden-
+ []
+
+
+Underfull \hbox (badness 2158) in paragraph at lines 688--688
+\TU/lmr/m/n/8 tials to unauthorized
+ []
+
+
+Underfull \hbox (badness 3019) in paragraph at lines 688--688
+\TU/lmr/m/n/8 cies, legal repercussions,
+ []
+
+
+Underfull \hbox (badness 6658) in paragraph at lines 688--688
+\TU/lmr/m/n/8 closure critical informa-
+ []
+
+
+Underfull \hbox (badness 4048) in paragraph at lines 688--688
+\TU/lmr/m/n/8 they are less prone to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 688--688
+[]|\TU/lmr/m/n/8 Incompetent system
+ []
+
+
+Underfull \hbox (badness 1221) in paragraph at lines 688--688
+\TU/lmr/m/n/8 admins do not know
+ []
+
+
+Underfull \hbox (badness 1661) in paragraph at lines 688--688
+\TU/lmr/m/n/8 leading to vulnerable
+ []
+
+
+Underfull \hbox (badness 2961) in paragraph at lines 688--688
+\TU/lmr/m/n/8 sure that only qualified
+ []
+
+
+Underfull \hbox (badness 1436) in paragraph at lines 688--688
+\TU/lmr/m/n/8 admins get enough time
+ []
+
+
+Underfull \hbox (badness 1082) in paragraph at lines 688--688
+\TU/lmr/m/n/8 (e.g., using books, mag-
+ []
+
+
+Overfull \hbox (19.61497pt too wide) in alignment at lines 688--688
+[][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 651--690
+
+ []
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 707--707
+\TU/lmr/m/n/8 would unexpectedly
+ []
+
+
+Underfull \hbox (badness 4072) in paragraph at lines 707--707
+\TU/lmr/m/n/8 configurations and pass-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 707--707
+[]|\TU/lmr/m/n/8 Bribery, corruption,
+ []
+
+
+Underfull \hbox (badness 4739) in paragraph at lines 707--707
+\TU/lmr/m/n/8 giving credentials to
+ []
+
+
+Underfull \hbox (badness 1337) in paragraph at lines 707--707
+\TU/lmr/m/n/8 cies., legal repercussions,
+ []
+
+
+Underfull \hbox (badness 6658) in paragraph at lines 707--707
+\TU/lmr/m/n/8 closure critical informa-
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 707--707
+[][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 694--709
+
+ []
+
+[25]
+Underfull \hbox (badness 2134) in paragraph at lines 731--731
+\TU/lmr/m/n/8 CA system including
+ []
+
+
+Underfull \hbox (badness 1769) in paragraph at lines 731--731
+\TU/lmr/m/n/8 sues with availability
+ []
+
+
+Underfull \hbox (badness 1412) in paragraph at lines 731--731
+\TU/lmr/m/n/8 employee is trained spe-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 731--731
+[]|\TU/lmr/m/n/8 Bribery, corruption,
+ []
+
+
+Underfull \hbox (badness 4739) in paragraph at lines 731--731
+\TU/lmr/m/n/8 giving credentials to
+ []
+
+
+Underfull \hbox (badness 3019) in paragraph at lines 731--731
+\TU/lmr/m/n/8 cies, legal repercussions,
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 731--731
+[][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 713--733
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--757
+[]|\TU/lmr/m/n/8 Violations of laws
+ []
+
+
+Underfull \hbox (badness 4621) in paragraph at lines 757--757
+\TU/lmr/m/n/8 reputation, which is
+ []
+
+
+Underfull \hbox (badness 2600) in paragraph at lines 757--757
+\TU/lmr/m/n/8 important for poten-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--757
+[]|\TU/lmr/m/n/8 Any successful
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--757
+\TU/lmr/m/n/8 security-related in-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--757
+\TU/lmr/m/n/8 cident/attack from
+ []
+
+
+Underfull \hbox (badness 3482) in paragraph at lines 757--757
+\TU/lmr/m/n/8 earlier sections (e.g.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--757
+\TU/lmr/m/n/8 government agency
+ []
+
+
+Underfull \hbox (badness 4543) in paragraph at lines 757--757
+\TU/lmr/m/n/8 software vulnerability
+ []
+
+
+Underfull \hbox (badness 4608) in paragraph at lines 757--757
+\TU/lmr/m/n/8 to read out private
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--757
+\TU/lmr/m/n/8 network connection
+ []
+
+
+Underfull \hbox (badness 3861) in paragraph at lines 757--757
+\TU/lmr/m/n/8 information to other
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--757
+\TU/lmr/m/n/8 future whistleblowers
+ []
+
+
+Underfull \hbox (badness 1221) in paragraph at lines 757--757
+\TU/lmr/m/n/8 ally, it should be noted
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--757
+[]|\TU/lmr/m/n/8 Any \TU/lmr/m/it/8 un\TU/lmr/m/n/8 successful
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--757
+\TU/lmr/m/n/8 security-related in-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--757
+\TU/lmr/m/n/8 cident/attack from
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--757
+\TU/lmr/m/n/8 earlier sections de-
+ []
+
+
+Underfull \hbox (badness 4072) in paragraph at lines 757--757
+\TU/lmr/m/n/8 creases the trust of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--757
+\TU/lmr/m/n/8 current or future
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--757
+[]|\TU/lmr/m/n/8 See countermeasure of
+ []
+
+
+Underfull \hbox (badness 2285) in paragraph at lines 757--757
+\TU/lmr/m/n/8 18.2. Furthermore, we
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--757
+\TU/lmr/m/n/8 incident policy, which
+ []
+
+
+Underfull \hbox (badness 3503) in paragraph at lines 757--757
+\TU/lmr/m/n/8 this seems contradictory
+ []
+
+
+Underfull \hbox (badness 3158) in paragraph at lines 757--757
+\TU/lmr/m/n/8 with the goal of being
+ []
+
+
+Underfull \hbox (badness 2726) in paragraph at lines 757--757
+\TU/lmr/m/n/8 trustworthy, but in our
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--757
+\TU/lmr/m/n/8 opinion, whistleblowers
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--757
+\TU/lmr/m/n/8 trust leaking platforms
+ []
+
+
+Underfull \hbox (badness 4108) in paragraph at lines 757--757
+\TU/lmr/m/n/8 more if they are open
+ []
+
+
+Underfull \hbox (badness 5446) in paragraph at lines 757--757
+\TU/lmr/m/n/8 about security incidents
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--757
+\TU/lmr/m/n/8 employee which would
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 757--757
+[][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 739--759
+
+ []
+
+[26]
+Underfull \hbox (badness 7344) in paragraph at lines 773--773
+\TU/lmr/m/n/8 or a skilled hacker
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 773--773
+\TU/lmr/m/n/8 may use knowledge
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 773--773
+\TU/lmr/m/n/8 of attacking this
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 773--773
+\TU/lmr/m/n/8 system (e.g., weak
+ []
+
+
+Underfull \hbox (badness 7576) in paragraph at lines 773--773
+\TU/lmr/m/n/8 reused passwords of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 773--773
+\TU/lmr/m/n/8 employees from the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 773--773
+\TU/lmr/m/n/8 password database
+ []
+
+
+Underfull \hbox (badness 1383) in paragraph at lines 773--773
+\TU/lmr/m/n/8 - note that you can
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 773--773
+\TU/lmr/m/n/8 of weak passwords)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 773--773
+\TU/lmr/m/n/8 on the journalistic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 773--773
+\TU/lmr/m/n/8 infrastructure, e.g.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 773--773
+\TU/lmr/m/n/8 altering leaked doc-
+ []
+
+
+Underfull \hbox (badness 7433) in paragraph at lines 773--773
+\TU/lmr/m/n/8 uments provided by
+ []
+
+
+Underfull \hbox (badness 1448) in paragraph at lines 773--773
+\TU/lmr/m/n/8 whistleblowers to the
+ []
+
+
+Underfull \hbox (badness 4634) in paragraph at lines 773--773
+\TU/lmr/m/n/8 journalists. If the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 773--773
+\TU/lmr/m/n/8 wrong information
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 773--773
+\TU/lmr/m/n/8 is used in one of
+ []
+
+
+Underfull \hbox (badness 4108) in paragraph at lines 773--773
+\TU/lmr/m/n/8 diminish their credi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 773--773
+\TU/lmr/m/n/8 Other countermeasures
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 773--773
+[][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 764--775
+
+ []
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 789--789
+[]|\TU/lmr/m/n/8 See countermeasures in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 789--789
+\TU/lmr/m/n/8 previous sections about
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 789--789
+[][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 780--791
+
+ []
+
+
+Underfull \hbox (badness 1442) in paragraph at lines 805--805
+\TU/lmr/m/n/8 distributing the films
+ []
+
+
+Underfull \hbox (badness 2237) in paragraph at lines 805--805
+\TU/lmr/m/n/8 or SSH keys will never
+ []
+
+
+Underfull \hbox (badness 2005) in paragraph at lines 805--805
+\TU/lmr/m/n/8 be reused in other sys-
+ []
+
+
+Underfull \hbox (badness 1314) in paragraph at lines 805--805
+\TU/lmr/m/n/8 will be reused are com-
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 805--805
+[][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 796--807
+
+ []
+
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 813--860
+
+ []
+
+[29]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 861.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 861.
+ (./firstreport.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 861.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 861.
+
+
+Package rerunfilecheck Warning: File `firstreport.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `firstreport.out':
+(rerunfilecheck)             Before: 
+(rerunfilecheck)             After:  17325D356190F61C8B5DC413D3351BB1.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 861.
+ ) 
+Here is how much of TeX's memory you used:
+ 19845 strings out of 492922
+ 357604 string characters out of 6138851
+ 469675 words of memory out of 5000000
+ 23563 multiletter control sequences out of 15000+600000
+ 6888 words of font info for 43 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 62i,11n,81p,1775b,1014s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on firstreport.pdf (29 pages).

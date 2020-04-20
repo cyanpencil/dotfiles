@@ -1,0 +1,206 @@
+\documentclass[a4paper,german]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\usepackage{hyperref}
+
+
+%This is how you can create a "claim"-environment (or a lemma/Theorem/definition etc environment)
+\newtheorem{claim}{Claim}
+
+%This is how you can create a command of your own, e.g. to simplify the usage signs you often use.
+\newcommand{\E}{\mathbb{E}}
+
+%Titlepage:
+\title{Solutions of GHW 1}
+\author{Luca Di Bartolomeo}
+\date{}
+
+
+\begin{document}
+\maketitle
+
+\section*{Solution to Exercise 1}
+
+Since our $F$ is a 4-CNF with $m$ clauses, we know that $n$ can take a minimum
+value of $4$ (if all clauses use the same $4$ variables) and a maximum value of
+$4m$ (if all clauses use different variables).
+
+We can use a proof analogous as the one for Lemma 2.7 in the lecture notes to
+show that for a 4-SAT formula such as this one there exists an assignment that
+satisfies at least $\frac{15}{16}m$ clauses: if we assign each variable the
+variable 'true' or 'false' with probability $\frac{1}{2}$, then the probability
+that a clause in $F$ will be violated is $1 - 2^{-4} = \frac{15}{16}$; this
+means that the expected number of clauses that will be satisfied, by linearity
+of expectation, is $\frac{15}{16}m$; thus, there exists at least one assignment that
+satisfies $\frac{15}{16}m$ clauses.
+
+If we know consider Theorem 2.8 of the lecture notes, we note that we can apply 
+it even in the case of a 4-SAT formula - by just substituting $\frac{15}{16}m$ 
+instead of $\frac{7}{8}$ as $E[N]$, we can show that the algorithm \textsc{Approx-Max-3-Sat} 
+computes an assignment that satisfies at least $\frac{15}{16}m$ clauses in the case
+of a 4-SAT.
+
+Now let's make a slight modification to the \textsc{Approx-Max-3-Sat}: in line 4
+of the pseudocode, instead of doing: \\
+"\texttt{if $N_0$ \geq $N_1$ $\alpha_i$ := 0}", \\
+We do: \\
+"\texttt{if $N_0$ == $N_1$: continue; elif $N_0$ > $N_1$: $\alpha_i$ := 0}"\\
+In this way, we only set a variable if it helps increasing the expected value of satisfied
+clauses.
+If we take a look at how the modified algorithm works, we note
+that every time it sets the value for a variable, \emph{at least} one more condition
+will be satisfied, and that's because the algorithm chooses a value in a way that
+the expected value of satisfied clauses increases (and it increases at
+least until $\frac{15}{16}m$, as shown before)
+shown in the proof of theorem 2.8 in the lecture notes).
+
+
+If we then run the modified algorithm until $\frac{m}{2}$ variables have been set, we will we know that we will have already satisfied \emph{at least} $\frac{m}{2}$ clauses. Now, if $n \geq \frac{3m}{2}$, 
+the algorithm will only have set $\frac{m}{2} \leq \frac{1}{3}n$ of the available variables. This means that 
+even if all variables were assigned to false, we still have at least $\frac{2}{3}$ of the variables available to be set to true.
+
+So, we just proved that if $n \geq \frac{3m}{2}$, there exists an assignment of the variables 
+that satisfies at least half of the clauses of $F$ and at least $\frac{2}{3}$ of the variables
+are set to true.
+
+
+
+
+
+
+
+
+
+
+
+\section*{Solution to Exercise 2}
+
+\emph{Explaination:} To solve this exercise we will introduce some Bernoulli variables that let us apply the Chernoff bound. Using some inequalities, we show that the expected number of rankings for which the score is higher than $n^{3/2} (\log n)^{1/2}$ is less than one.
+
+\vspace{1em}
+
+Given a fixed ranking $\sigma = \{1,2,\dots, n\}$, we define $X_{ij}$ the
+Bernoulli variable that takes the following values: $1$ if the ranking
+correctly predicted the outcome of the game between $i$ and $j$, $-1$
+otherwise. 
+In this way we can express the \emph{score} $X$ of our ranking in the following way:
+$$ X = \sum_{i,j \in [n]; i<j} X_{ij} $$
+
+Now, let's define another Bernoulli variable, $Y_{ij} = \frac{1}{2}(X_{ij} + 1)$. 
+We note that:
+$$ Y = \sum_{i,j \in [n]; i<j} Y_{ij} = \frac{1}{2} \sum_{i,j \in [n]; i<j} \left( X_{ij} + 1 \right) = 
+\frac{1}{2} X  + \frac{1}{2} { n \choose 2 } $$
+
+Since $Y_{ij}$ are Bernoulli variables that assume value $0$ or $1$ with equal probability $\frac{1}{2}$, we can apply Chernoff Bounds - in particular, we can apply the third formula of Corollary 5.4 of the lecture notes (noting that $E[Y] = \frac{1}{2}{n \choose 2}$):
+\begin{equation}
+\begin{aligned} 
+	Pr [ | Y - \mu | \geq \delta \mu ] &\leq 2 e^{-\mu\delta^2 / 3}  \\
+	Pr [ | Y - \frac{1}{2}{n \choose 2} | \geq \frac{\delta }{2} {n \choose 2} ] &\leq 2 e^{-{n \choose 2}\delta^2 / 6}  \\
+	Pr [ X \geq \delta {n \choose 2} ] &\leq 2 e^{-{n \choose 2}\delta^2 / 6}  \\
+\end{aligned}
+\end{equation}
+
+If we choose $\delta = 4\sqrt{\frac{\log n}{n}}$, and note that $Pr [ X \geq \delta {n \choose 2} ] \geq Pr [ X \geq \delta n^2 ]  $ we have, for $n$ big enough:
+\begin{equation}
+\begin{aligned} 
+	Pr [ X \geq 4n^{3/2}(\log n)^{1/2} ] &\leq 2 e^{-{n \choose 2}\frac{16\log n}{n} / 6} \leq 
+	n^{-\frac{4(n-1)}{3}} < \frac{1}{n!}\\
+\end{aligned}
+\end{equation}
+
+Since there are $n!$ possible rankings, the expected number of rankings for which $X > n^{3/2}(\log n)^{1/2}$ is less than one; this means that there is tournament for which every ranking has a score $X \leq n^{3/2}(\log n)^{1/2}$.
+
+
+
+
+
+\section*{Solution to Exercise 3a}
+
+\emph{Explaination:} To solve this exercise we will introduce a new random variable $X$ which
+rapresents the amount of time a string $T$ appears in $S$, and show that $P(X > 0) > \frac{1}{2}$
+
+\vspace{1em}
+
+Let's define the Bernoulli variable $X_i$ which takes value 1 if the string $T$ is contained by $S$ at index $i$ (that is, the first bit of $T$ matches the $i$-th bit of $S$, and so on), and 0 otherwise. Let's now introduce $X$ as the sum of all possible $X_i$, so we have $X = X_0 + X_1 + \dots + X_{c2^n-n}$. This means that $X$ rapresents the amount of times string $T$ is contained in $S$.
+To calculate $E[X]$, we use the linearity of expectation:
+
+$$ E[X] = E\left[\sum_i X_i \right] = \sum_i E[X_i] = \sum_i p(X_i) = \sum_i \frac{1}{2^n} = 
+\frac{c2^n - n}{2^n} = c - \frac{n}{2^n} $$
+
+We are interested in calculating $P[X > 0]$, the probability that the string $T$ is contained \emph{at least once} in the string $S$. 
+Using the second moment method, we know that:
+\begin{equation}
+\begin{aligned} 
+ P[X > 0] \geq  \frac{E[X]^2}{E[X^2]}
+\end{aligned}
+\end{equation}
+
+(You can find the complete proof of this at the top of Page 2 in the footnote\footnote{\url{https://courses.cs.washington.edu/courses/cse525/13sp/scribe/lec9.pdf}})
+
+We already know that $E[X]^2 = (c - \frac{n}{2^n})^2$, we must know try to calculate $E[X^2]$.
+
+\begin{equation}
+\begin{aligned} 
+	X^2 = \left(\sum_i^{c2^n-n}  X_i\right)^2 &= \sum_i^{c2^n-n} X_i &+ 
+\sum_{i,j \in [c2^n-n]; x \neq j} X_i X_j   \\
+	&= X &+ \sum_{i,j \in [c2^n-n]; x \neq j} X_i X_j 
+\end{aligned}
+\end{equation}
+
+So, for linearity of expectation,
+\begin{equation}
+\begin{aligned} 
+	E[X^2] = E[X] + \sum_{i,j \in [c2^n-n]; x \neq j} E[X_i X_j]
+\end{aligned}
+\end{equation}
+
+Calculating the second term is not simple, because it could happen that $X_i$ and $X_j$ are not independent, in case they would represent an overlap (specifically, if $|j - i| < n$)
+Therefore we analyze first the case in which $X_i$ and $X_j$ are actually independent and do not overlap:
+\begin{equation}
+\begin{aligned} 
+\sum_{\substack{i,j \in [c2^n-n]; x \neq j;\\ |j-i|>=n}} E[X_i X_j] = 
+\sum_{\substack{i,j \in [c2^n-n]; x \neq j;\\ |j-i|>=n}} p(X_i)p(X_j) =   \\
+\sum_{\substack{i,j \in [c2^n-n]; x \neq j;\\ |j-i|>=n}} \frac{1}{2^{2n}} =
+	\frac{(c2^n -n)(c2^n -2n)}{2^{2n}} = c^2 + \frac{2n^2 - 3nc2^n}{2^{2n}}
+\end{aligned}
+\end{equation}
+We can note that this result, as $n$ tends to infinity, will tend to $c^2$. 
+
+When $X_i$ and $X_j$ are not independent, this means that $X_j$ is relative to an interval which shares some bits with the interval of $X_i$, and has some independent bits over the string $S$. Let's define $k$ as the number of bits which $X_j$ has \textbf{not} in common with $X_i$. This means that if we consider both $X_i$ and $X_j$ at the same time, we are interested over $n +k$ bits of the string $S$.
+
+Since we are calculating the denominator of (3), we make the following assumption: if the overlapped $n - 2k$ bits match for $X_i$, they will match for $X_j$ too ($T$ could be a string without repeating patterns, and it could be that the probability of matching on two overlapping intervals is always 0; however, since we are interested in providing an upper bound for $E[X^2]$, we assume that overlapped bits are always matched).
+
+So,
+
+\begin{equation}
+\begin{aligned}
+\sum_{\substack{i,j \in [c2^n-n]; x \neq j;\\ |j-i|<n}} E[X_i X_j] = 
+	\sum_{\substack{i,j \in [c2^n-n]; x \neq j;\\ |j-i|<n}} \frac{1}{2^{n+k}} = \\
+	\sum_{k=1}^{n-1} \frac{(c2^n - n)}{2^{n+k}}  = 
+	\sum_{k=1}^{n-1} \frac{c}{2^k} - \sum_{k=1}^{n-1} \frac{n}{2^{n+k}}
+\end{aligned}
+\end{equation}
+
+
+Putting it all together, we obtain:
+\begin{equation}
+\begin{aligned} 
+ P[X > 0] \geq  \frac{E[X]^2}{E[X^2]} = 
+	\frac{c^2 + \frac{n^2}{2^{2n}} - \frac{2nc}{2^n}}
+		{c^2 + \frac{2n^2}{2^{2n}}- \frac{3nc}{2^{n}} + \sum_{k=1}^{n-1}\frac{c}{2^k} - 
+		\sum_{k=1}^{n-1}\frac{n}{2^{n+k}} }
+\end{aligned}
+\end{equation}
+We can note that all terms containing $2^n$ in the denominator will tend to 0 when $n \rightarrow \infty$; also $\sum_{k=1}^{n-1}\frac{c}{2^k}$ will tend to $c$ as $n \rightarrow \infty$. So,
+\begin{equation}
+\begin{aligned} 
+	P[X > 0] \overset{n \rightarrow \infty}\geq  
+	\frac{c^2 } 
+		{c^2 + c} 
+\end{aligned}
+\end{equation}
+This means that it is possible to find constant $c$ such that a random string $T$ has probability of being in $S$ \emph{at least once} higher than $\frac{1}{2}$ (for example, $c = 1$ is one possible value)
+\end{document}

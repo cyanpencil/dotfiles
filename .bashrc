@@ -10,6 +10,7 @@ export TERMINAL=st
 export BROWSER=firefox
 PS1='[\u@\h \W]\$ '
 
+
 # ===
 
 #                               === aliases ===
@@ -109,7 +110,13 @@ PERL_MB_OPT="--install_base \"/home/luca/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/luca/perl5"; export PERL_MM_OPT;
 
 
+
+
+
+
+
+
+export PATH=$PATH:/opt/android-sdk/platform-tools
+
 # vim:fdm=expr:fdl=0
 # vim:fde=getline(v\:lnum)=~'==*$'?(getline(v\:lnum)=~'==\\+[^=]\\+==.*'?'>'\:'<').(strlen(matchstr(getline(v\:lnum),'==*$'))-2)\:'='
-
-

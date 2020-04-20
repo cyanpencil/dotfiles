@@ -1,0 +1,2 @@
+:1337/newcert?user=<>
+/modify?firstname=&lastname=&email=blah

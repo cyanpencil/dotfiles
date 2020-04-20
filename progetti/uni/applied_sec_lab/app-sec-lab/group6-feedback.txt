@@ -1,0 +1,57 @@
+ASL 2019
+Feedback Group 6:
+Alì El Wahsh, Andi Pfefferle, Anselme Goetschmann, Luca Di Bartolomeo 
+======================================================================
+
+General:
+- progress is good, but be more precise where possible, missing backup
+- be mindful of space - you already use 27 of 30 pages; but 4 of the pages are blank, please fix!
+- group some risk analysis parts together to save space
+
+
+System Characterization/Overview:
+- according to Fig 1 the admin server is in the DMZ with the webserver - intended? webserver in DMZ is expected; please clarify what the different connections mean, and why, via the mgmt network, it looks like the backup is reachable from the internet
+- your text contradicts itself (and fig 1), where it only allows access to webserver from outside through firewall, and later allows access to admin server; make this consistent
+- font size too small in Fig.1
+- where are the private keys stored? 
+
+Components:
+- you should also describe the interfaces between components and other types of components, what does "internal API" mean and how is it secured?
+- why does the webserver need a list of public keys? the keys associated with valid certificates from imovies CA should do, right? a CRL may be needed for revoked certs of course
+- backup: how is this done? cron job? push or pull? append only, but admin has full access - clarify
+- core CA: does it do any validation on requests from webserver?
+- missing session management
+
+
+Security Design
+- use the security principles in the functionality/component description to explain what and why you are doing things - presenting the principles separately makes it hard to connect them to the system
+- how is data protected in transit, and what authentication is used between systems?
+- how is data protected at rest, and what data is kept where?
+- you do not talk about authenticity at all
+
+Assets:
++ missing: some assets' security properties (only availability described mostly)
++ do not describe the functionality offered by certain assets here, this belongs in section 1
++ missing information assets: CRL, CA private keys
++ logical assets
+  + risk evaluation is quite imprecise: please do distinguish different logical assets as they do not all have the same security properties, locations (e.g., DMZ vs intranet) - just 'software' and 'information' is not enough
++ Logical: Information: which keys?
++ what about intangible goods?
+
+Threat sources:
++ malware?
+
+Risk Analysis:
++ please number threats consecutively across subsections: 1, 2, 3, ... (commenting on them is otherwise tedious)
++ 3: this extra backup stored outside should be described in section 1 already
++ 4: you would still lose network connectivity
++242-6: risk acceptance is usually for high risk items only, just change wording
++ you are duplicating a lot of text here for each physical machine where many threats are identical, relating to data center compromise/destruction/etc; collect this kind of problem into a section for ALL machines at once, to reduce duplication
++pages 15,19,22,25 break the allowed format, and use expected whitespace at the bottom, overwriting page number
++ 243-8 countermeasure: ssh keys can be disclosed as well
++ why do you interleave people/person sections with physical assets, reconsider structure
++ risk acceptance section missing at the end, should only be done for all high (possibly medium) risk results
++ logical asset "information", 2.4.10, is very short, especially compared to physical assets
++ risk evaluation of software is missing
++ natural catastrophes on logical asset?
++ illness or death on logical asset?

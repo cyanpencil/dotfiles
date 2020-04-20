@@ -10,25 +10,20 @@ popup_during_fullscreen smart
 
 exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
 exec "xset +fp /usr/share/fonts/local/"
-#exec_always --no-startup-id xautolock -time 1 -corners "++--" -cornerdelay 5 \
-			#-notifier "notify-send -u low -t 4000 'Locking screen...'" -notify 5 \
-			#-locker "lock.sh" 
 
-exec_always xautolock -time 1 -corners "+---" -cornerdelay 5 \
-			-notifier 'dim_screen.sh' -notify 5 \
+exec_always imwheel --kill
+
+exec_always xautolock -time 2 -corners "+---" -cornerdelay 5 \
+			-notifier 'dim_screen.sh' -notify 10 \
 			-locker "lock.sh" 
 	
-#exec_always --no-startup-id xidlehook --not-when-fullscreen --not-when-audio \
-			#--timer normal 60 'echo $(xbacklight -get) > /tmp/oldbacklight; xbacklight -set 10' \
-			#'xbacklight -set $(cat /tmp/oldbacklight)'\
-			#--timer primary 8 '(sleep 0.5; xbacklight -set $(cat /tmp/oldbacklight) ) & lock.sh' ''
 # ===
 
 # === launch keybindings ===
 
 bindsym $mod+Return exec st -e zsh
 bindsym $mod+Shift+Return exec st -t flying_ranger -e zsh
-bindsym $mod+t exec urxvt -e zsh
+#bindsym $mod+t exec urxvt -e zsh
 
 bindsym $mod+Shift+q kill
 
@@ -52,6 +47,8 @@ bindsym $mod+o exec urxvt -name flying_ranger -title flying_ranger -e ranger
 
 bindsym $mod+s exec rofi -show ssh
 bindsym $mod+y exec "cmd=$(ls ~/scripts | rofi -dmenu) && st -t floating -e bash -c \\" $cmd ; sh\\""
+
+bindsym $mod+` exec screen_setup.sh
 
 bindsym XF86LaunchA exec "xautolock -locknow"
 
@@ -173,6 +170,9 @@ bindsym $mod+Shift+p move container to workspace next
 
 bindsym $mod+space workspace back_and_forth
 
+bindsym $mod+t move container to scratchpad
+bindsym $mod+Shift+t scratchpad show
+
 # default workspaces - spotify does not work
 assign [class="Spotify"] $workspace10
 assign [class="Skype"] $workspace9
@@ -214,7 +214,7 @@ bar {
     #i3blocksbar -non rimuovere questo commento.
 status_command i3blocks -c ~/.config/i3/i3blocks.conf
 #i3statusbar -non rimuovere questo commento. 
-status_command i3status
+#status_command i3status
 #status
     colors {
         separator #268bd2
@@ -246,6 +246,7 @@ mode "$mode_gaps" {
         bindsym o      mode "$mode_gaps_outer"
         bindsym i      mode "$mode_gaps_inner"
         bindsym Escape mode "default"
+		bindsym Enter mode "default"
 }
 
 mode "$mode_gaps_inner" {
@@ -254,6 +255,7 @@ mode "$mode_gaps_inner" {
         bindsym 0 gaps inner all set 0
 
         bindsym Escape mode "default"
+		bindsym Enter mode "default"
 }
 
 mode "$mode_gaps_outer" {
@@ -262,6 +264,7 @@ mode "$mode_gaps_outer" {
         bindsym 0 gaps outer all set 0
 
         bindsym Escape mode "default"
+		bindsym Enter mode "default"
 }
 
 # vim:fdm=expr:fdl=0

@@ -2,11 +2,11 @@
 
 - user/employee
   - log in with password, see info in database and download certificate
-  - log in with certificate, edit name and email
-  - log in with password or certificate, revoke certificate, log out and cannot log in with certificate anymore
-- admin
-  - connect via ssh with certificate, see stats (serial number??)
-  - anything else in "remote administration"??
-- admin with physical access
-  - connect to backup machine with user/password, copy backup to external device
-  - connect to database with user/password and restore backup from external device (??)
+  - generate new certificate
+  - log in with certificate, edit name, password and email
+  - log in with password or certificate, revoke any certificate, log out and cannot log in with revoked certificate anymore
+- CA admin
+  - log in on webserver with certificate, see stats (serial number??)
+- system admin
+  - connect on any machine via ssh with certificate and restart the services
+  - download backup archive from backup machine, upload on database and restore

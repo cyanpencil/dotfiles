@@ -66,8 +66,15 @@ alias lsd='exa --group-directories-first -l -snew --time-style=iso'
 
 alias sz='du -had 1 | sort -h'
 
-alias buntoohere='sudo docker run -p 3001:3001 -v ${PWD}:/mnt -it buntoo /bin/sh -c "/bin/sh"'
-alias buntoohereX='sudo docker run -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v ~/.Xauthority:/home/luca/.Xauthority -v ${PWD}:/mnt --net=host --user luca -it buntoo_tor /bin/bash -itc "cd ~/tor-browser_en-US; bash"'
+alias ipa='ip -br -c a'
+alias -g G=" | grep"
+
+alias buntoohere='podman run --rm -p 3001:3001 -v ${PWD}:/mnt -it ubuntu /bin/bash'
+
+alias buntoohereX='podman run --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v ~/.Xauthority:/home/luca/.Xauthority -v ${PWD}:/mnt --net=host --user luca -it buntoox /bin/bash'
+
+#alias buntoohereX='sudo docker run --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v ~/.Xauthority:/home/luca/.Xauthority -v ${PWD}:/mnt --net=host --user luca -it buntoo_tor /bin/bash -itc "cd ~/tor-browser_en-US; bash"'
+
 
 
 
@@ -157,3 +164,4 @@ function transfer {
 	rm -f $tmpfile; 
 } 
 
+source /home/luca/.profile

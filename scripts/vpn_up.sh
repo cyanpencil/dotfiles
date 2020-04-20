@@ -4,6 +4,8 @@
 # as soon as it establishes a connection with the remote
 # vpn server. 
 
+set -ex
+
 if [[ -f /tmp/namespace ]]; then VPN_NAMESPACE=$(cat /tmp/namespace); rm /tmp/namespace; fi
 if [[ -z $VPN_NAMESPACE ]]; then VPN_NAMESPACE="default"; fi
 
@@ -11,7 +13,7 @@ echo -e "[\x1b[33m+\x1b[0m] Using \x1b[31m$VPN_NAMESPACE\x1b[0m network namespac
 
 
 	# horrible hack to give the "default" name to init's namespace
-ln -s /proc/1/ns/net /var/run/netns/default
+[[ -h /var/run/netns/default ]] || ln -s /proc/1/ns/net /var/run/netns/default
 
 	# move the tun0 interface from phyns to default namespace
 ip netns exec phyns ip l s tun0 netns $VPN_NAMESPACE

@@ -14,6 +14,7 @@ if [[ $EUID != 0 ]]; then echo "Not running as root!"; exit 1; fi
 
 
 IFACE=$(iw dev | grep Interface | cut -d ' ' -f 2)
+VPN_DNS="10.4.0.1"
 
 if [[ ${#IFACE} -eq 0 ]]; then 
 	IFACE=$(ip netns exec phyns iw dev | grep Interface | cut -d ' ' -f 2)
@@ -25,6 +26,8 @@ else
 		mkdir /etc/netns/phyns
 	fi
 
+	echo "Setting dns nameserver $VPN_DNS"
+	echo "nameserver $VPN_DNS" > /etc/resolv.conf
 	echo "Moving $IFACE to namespace phyns"
 	iw phy0 set netns name phyns
 fi
@@ -38,15 +41,15 @@ if [[ $# -eq 1 ]]; then
 	if [[ $(ip netns | grep $1 -c) -eq 0 ]]; then 
 		ip netns add $1
 		mkdir /etc/netns/$1
-		echo "nameserver 10.4.0.1" > /etc/netns/$1/resolv.conf
+		echo "nameserver $VPN_DNS" > /etc/netns/$1/resolv.conf
 	fi
 	echo -e "Setting up on namespace \x1b[31m$1\x1b[0m"
 	echo $1 > /tmp/namespace
 	OVPN=$(fd . /home -d 5 -e ovpn --no-ignore | fzf $FZF_FLAGS --prompt "Select openvpn profile: ")
 else
-
 	PROFILE=$(netctl list | fzf $FZF_FLAGS --color=prompt:196 --prompt "Select wifi profile: " | tr '*+' '  ')
 	OVPN=$(fd . /home -d 5 -e ovpn --no-ignore | fzf $FZF_FLAGS --prompt "Select openvpn profile: ")
+
     if [[ $(ip l | grep -c wg0) -ge 1 ]]; then
 		echo "Wireguard is already set up."
 	else 
@@ -55,18 +58,16 @@ else
 
 	if [[ -z $OVPN ]]; then echo "No vpn selected..."; rm /tmp/namespace; exit 1; fi
 
-	
-	netctl stop-all
-
-	echo "Starting profile $PROFILE"
-
-	netctl start $PROFILE
-
-	if [[ $? -ne 0 ]]; then echo "Something went wrong..."; rm /tmp/namespace; exit 1; fi
-
-	echo "Waiting to be connected..."
-
-	netctl wait-online $PROFILE
+	if [[ ! $(netctl is-active $PROFILE) == "active" ]]; then
+		netctl stop-all
+		echo "Starting profile $PROFILE"
+		netctl start $PROFILE
+		if [[ $? -ne 0 ]]; then echo "Something went wrong..."; rm /tmp/namespace; exit 1; fi
+		echo "Waiting to be connected..."
+		netctl wait-online $PROFILE
+	else 
+		echo "Network already set up."
+	fi 
 
 	[[ $WIREGUARD == "true" ]] && wireguard.sh
 fi
