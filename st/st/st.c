@@ -231,7 +231,7 @@ static int cmdfd;
 pid_t pid;
 
 char *cwd = NULL;
-char *plumber_cmd = "plumb.sh";
+char *plumber_cmd = "/home/luca/scripts/plumb.sh";
 
 static uchar utfbyte[UTF_SIZ + 1] = {0x80,    0, 0xC0, 0xE0, 0xF0};
 static uchar utfmask[UTF_SIZ + 1] = {0xC0, 0x80, 0xE0, 0xF0, 0xF8};
