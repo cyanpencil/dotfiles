@@ -6,7 +6,7 @@ if [[ $EUID -ne 0 ]]; then echo "Please run as root"; exit 1; fi
 
 syncpath="/home/luca/stuff/dotfiles"
 homefiles=".bashrc .bash_profile .profile .vimrc .Xresources .xbindkeysrc .gitconfig .zshrc"
-configdirs="i3 dunst ranger"
+configdirs="i3 dunst ranger polybar"
 #homedirs="progetti scripts appunti calibre st"
 homedirs="scripts"
 others="/etc/X11/xinit/xinitrc /etc/udev/rules.d/powersave.rules\
