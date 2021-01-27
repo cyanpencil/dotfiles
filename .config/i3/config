@@ -11,7 +11,11 @@ popup_during_fullscreen smart
 exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
 exec "xset +fp /usr/share/fonts/local/"
 
-exec_always imwheel --kill
+#exec_always imwheel --kill
+
+exec_always xmodmap ~/.xmodmap  # capslock + hjkl
+
+exec_always --no-startup-id autotiling
 
 exec_always xautolock -time 2 -corners "+---" -cornerdelay 5 \
 			-notifier 'dim_screen.sh' -notify 10 \
@@ -21,9 +25,8 @@ exec_always xautolock -time 2 -corners "+---" -cornerdelay 5 \
 
 # === launch keybindings ===
 
-bindsym $mod+Return exec st -e zsh
-bindsym $mod+Shift+Return exec st -t flying_ranger -e zsh
-#bindsym $mod+t exec urxvt -e zsh
+bindsym $mod+Return exec st
+bindsym $mod+Shift+Return exec st -t flying_ranger
 
 bindsym $mod+Shift+q kill
 
@@ -31,26 +34,36 @@ bindsym $mod+d exec dmenu_run
 
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
-bindsym $mod+x exec --no-startup-id nautilus
+bindsym XF86LaunchA exec "xautolock -locknow"
+bindsym $mod+x exec --no-startup-id thunar
 bindsym $mod+b exec i3-msg bar mode toggle
-bindsym Print exec scrotclip.sh 
+bindsym Print exec /home/luca/scripts/scrotclip.sh 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+s restart
-
-bindsym $mod+g exec rofi -show run rofi -show run -lines 5 -eh 1 -width 30 -padding 20 -opacity "85" -bw 5 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "PxPlus IBM VGA8 12" -fuzzy -separator-style dash -scrollbar-width 2 -location 0 -columns 3
-
 bindsym $mod+Shift+Z exec pass clip --rofi
-bindsym $mod+z exec rofi-pass
-
 bindsym $mod+r exec st -t flying_ranger -e ranger
-bindsym $mod+o exec urxvt -name flying_ranger -title flying_ranger -e ranger
+bindsym $mod+z exec rofi -show window
 
-bindsym $mod+s exec rofi -show ssh
-bindsym $mod+y exec "cmd=$(ls ~/scripts | rofi -dmenu) && st -t floating -e bash -c \\" $cmd ; sh\\""
+bindsym $mod+g exec rofi -show run rofi -show run -lines 5 -eh 1 -width 30 -padding 30 -opacity "85" -bw 7 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "PxPlus IBM VGA8 18" -fuzzy -separator-style dash -scrollbar-width 2 -location 0 -columns 3
 
-bindsym $mod+` exec screen_setup.sh
 
-bindsym XF86LaunchA exec "xautolock -locknow"
+bindsym $mod+y exec "cmd=$(find ~/scripts | rofi -dmenu) && st -t floating -e bash -c \\" $cmd ; sh\\""
+
+bindsym $mod+Shift+o exec /home/luca/scripts/screen_setup.sh
+
+
+bindsym $mod+o exec "st -t floating -e vim /home/luca/log.md"
+bindsym $mod+i exec "st -t floating -e gtd.sh"
+
+
+#bindsym $mod+t exec urxvt -e zsh
+#bindsym $mod+o exec urxvt -name flying_ranger -title flying_ranger -e ranger
+#bindsym $mod+s exec rofi -show ssh
+#bindsym $mod+z exec rofi-pass
+#
+
+bindsym $mod+s layout toggle tabbed splith
+bindsym $mod+shift+F  exec "st -e mpv $(/home/luca/scripts/firefox_latest_tab.sh)"
 
 # ===
 
@@ -84,6 +97,12 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+mod1+space focus mode_toggle
 
+#move focused workspace between monitors
+bindsym $mod+Ctrl+h move workspace to output left
+bindsym $mod+Ctrl+j move workspace to output down
+bindsym $mod+Ctrl+k move workspace to output up
+bindsym $mod+Ctrl+l move workspace to output right
+
 mode "resize" {
 		bindsym h resize shrink width 5 px or 5 ppt
 		bindsym j resize grow height 5 px or 5 ppt
@@ -99,17 +118,38 @@ bindsym $mod+m mode "resize"
 
 # === workspaces ===
 
-set $workspace1 "1 "
-set $workspace2 "2 "
-set $workspace3 "3 "
-set $workspace4 "4 "
+#set $workspace1 "1 "
+#set $workspace2 "2 "
+#set $workspace3 "3 "
+#set $workspace4 "4 "
+#set $workspace5 "5"
+#set $workspace6 "6"
+#set $workspace7 "7"
+#set $workspace8 "8"
+#set $workspace9 "9 "
+#set $workspace10 "10 "
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
 set $workspace5 "5"
 set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
-set $workspace9 "9 "
-set $workspace10 "10 "
-#set $workspace11 "A1 ASL"
+set $workspace9 "9"
+set $workspace10 "10"
+set $workspace11 "11"
+set $workspace12 "12"
+set $workspace13 "13"
+set $workspace14 "14"
+set $workspace15 "15"
+set $workspace16 "16"
+set $workspace17 "17"
+set $workspace18 "18"
+set $workspace19 "19"
+set $workspace20 "20"
+#set $workspace12 "A2 ASL"
+#set $workspace12 "A2 ASL"
 #set $workspace12 "A2 ASL"
 #set $workspace13 "[3] python"
 #set $workspace14 "14"
@@ -119,6 +159,9 @@ set $workspace10 "10 "
 #set $workspace18 "18"
 #set $workspace19 "[9] radare"
 #set $workspace20 "[0] vbox"
+#
+
+
 
 bindsym $mod+Shift+1 move container to workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2
@@ -130,16 +173,16 @@ bindsym $mod+Shift+7 move container to workspace $workspace7
 bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
-#bindsym $mod+Ctrl+1 move container to workspace $workspace11
-#bindsym $mod+Ctrl+2 move container to workspace $workspace12
-#bindsym $mod+Ctrl+3 move container to workspace $workspace13
-#bindsym $mod+Ctrl+4 move container to workspace $workspace14
-#bindsym $mod+Ctrl+5 move container to workspace $workspace15
-#bindsym $mod+Ctrl+6 move container to workspace $workspace16
-#bindsym $mod+Ctrl+7 move container to workspace $workspace17
-#bindsym $mod+Ctrl+8 move container to workspace $workspace18
-#bindsym $mod+Ctrl+9 move container to workspace $workspace19
-#bindsym $mod+Ctrl+0 move container to workspace $workspace20
+bindsym mod1+Shift+1 move container to workspace $workspace11
+bindsym mod1+Shift+2 move container to workspace $workspace12
+bindsym mod1+Shift+3 move container to workspace $workspace13
+bindsym mod1+Shift+4 move container to workspace $workspace14
+bindsym mod1+Shift+5 move container to workspace $workspace15
+bindsym mod1+Shift+6 move container to workspace $workspace16
+bindsym mod1+Shift+7 move container to workspace $workspace17
+bindsym mod1+Shift+8 move container to workspace $workspace18
+bindsym mod1+Shift+9 move container to workspace $workspace19
+bindsym mod1+Shift+0 move container to workspace $workspace20
 
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
@@ -151,16 +194,16 @@ bindsym $mod+7 workspace $workspace7
 bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
 bindsym $mod+0 workspace $workspace10
-#bindsym mod1+1 workspace $workspace11
-#bindsym mod1+2 workspace $workspace12
-#bindsym mod1+3 workspace $workspace13
-#bindsym mod1+4 workspace $workspace14
-#bindsym mod1+5 workspace $workspace15
-#bindsym mod1+6 workspace $workspace16
-#bindsym mod1+7 workspace $workspace17
-#bindsym mod1+8 workspace $workspace18
-#bindsym mod1+9 workspace $workspace19
-#bindsym mod1+0 workspace $workspace20
+bindsym mod1+1 workspace $workspace11
+bindsym mod1+2 workspace $workspace12
+bindsym mod1+3 workspace $workspace13
+bindsym mod1+4 workspace $workspace14
+bindsym mod1+5 workspace $workspace15
+bindsym mod1+6 workspace $workspace16
+bindsym mod1+7 workspace $workspace17
+bindsym mod1+8 workspace $workspace18
+bindsym mod1+9 workspace $workspace19
+bindsym mod1+0 workspace $workspace20
 
 bindsym $mod+n workspace prev
 bindsym $mod+p workspace next
@@ -189,10 +232,11 @@ for_window [title="flying_ranger"] floating enable;
 for_window [title="floating"] floating enable; 
 for_window [title="sxiv"] floating enable;  
 
-client.focused		#ffffff #ffffff #fdf6e3 #6c71c4
-client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
-client.unfocused	#073642 #073642 #93a1a1 #586e75
-client.urgent		#d33682 #d33682 #fdf6e3 #dc322f
+#                       border  bground text    indicat child_border  
+client.focused	     	#dddddd #dddddd #073642 #ffffff #ffffff
+client.focused_inactive #073642 #073642 #ffffff #6c71c4
+client.unfocused		#073642 #073642 #608080 #586e75
+client.urgent			#d33682 #d33682 #fdf6e3 #dc322f
 
 new_window 1pixel
 
@@ -210,7 +254,8 @@ for_window [class="^.*"] border pixel 2
 # finds out, if available)
 bar {
 	#font xft: Droid Sans 8
-	font xft:Px437 ATI 8x8, FontAwesome 10
+	#font xft:Px437 ATI 8x8, FontAwesome 10
+	font xft:Px437 IBM CGA 11
     #i3blocksbar -non rimuovere questo commento.
 status_command i3blocks -c ~/.config/i3/i3blocks.conf
 #i3statusbar -non rimuovere questo commento. 
@@ -234,7 +279,7 @@ status_command i3blocks -c ~/.config/i3/i3blocks.conf
 
 #smart_gaps off
 
-gaps inner 20
+gaps inner 10
 gaps outer 0
 
 set $mode_gaps Gaps: (o) outer, (i) inner

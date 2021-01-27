@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 function clean_lock {
 	echo "Cleaning up..."
 	rm /tmp/namespace
@@ -37,6 +36,16 @@ touch /tmp/namespace
 chmod 777 /tmp/namespace
 trap clean_lock INT
 
+
+OVPN=$(fd . /home -d 5 -e ovpn --no-ignore | fzf $FZF_FLAGS --prompt "Select openvpn profile: ")
+if [[ -z $OVPN ]]; then echo "No vpn selected..."; rm /tmp/namespace; exit 1; fi
+
+if [[ $(ip l | grep -c wg0) -ge 1 ]]; then
+	echo "Wireguard is already set up."
+else 
+	WIREGUARD=$(echo -e "true\nfalse" | fzf $FZF_FLAGS --prompt "Do you want to setup wg0 too?")
+fi
+
 if [[ $# -eq 1 ]]; then 
 	if [[ $(ip netns | grep $1 -c) -eq 0 ]]; then 
 		ip netns add $1
@@ -45,18 +54,8 @@ if [[ $# -eq 1 ]]; then
 	fi
 	echo -e "Setting up on namespace \x1b[31m$1\x1b[0m"
 	echo $1 > /tmp/namespace
-	OVPN=$(fd . /home -d 5 -e ovpn --no-ignore | fzf $FZF_FLAGS --prompt "Select openvpn profile: ")
 else
 	PROFILE=$(netctl list | fzf $FZF_FLAGS --color=prompt:196 --prompt "Select wifi profile: " | tr '*+' '  ')
-	OVPN=$(fd . /home -d 5 -e ovpn --no-ignore | fzf $FZF_FLAGS --prompt "Select openvpn profile: ")
-
-    if [[ $(ip l | grep -c wg0) -ge 1 ]]; then
-		echo "Wireguard is already set up."
-	else 
-		WIREGUARD=$(echo -e "true\nfalse" | fzf $FZF_FLAGS --prompt "Do you want to setup wg0 too?")
-	fi
-
-	if [[ -z $OVPN ]]; then echo "No vpn selected..."; rm /tmp/namespace; exit 1; fi
 
 	if [[ ! $(netctl is-active $PROFILE) == "active" ]]; then
 		netctl stop-all
@@ -69,8 +68,8 @@ else
 		echo "Network already set up."
 	fi 
 
-	[[ $WIREGUARD == "true" ]] && wireguard.sh
 fi
 
+[[ $WIREGUARD == "true" ]] && wireguard.sh
 
 ip netns exec phyns openvpn  $OVPN

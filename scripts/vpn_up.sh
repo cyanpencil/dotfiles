@@ -20,8 +20,12 @@ ip netns exec phyns ip l s tun0 netns $VPN_NAMESPACE
 ip netns exec $VPN_NAMESPACE ip l s tun0 up
 
 	# set addresses and subnet masks
+BROADCAST_CMD=""
+[[ -v $ifconfig_broadcast ]] && BROADCAST_CMD="broadcast $ifconfig_broadcast"
+
+
 ip netns exec $VPN_NAMESPACE ip a add dev tun0 ${ifconfig_local}/${ifconfig_netmask} \
-	broadcast $ifconfig_broadcast
+	$BROADCAST_CMD
 ip netns exec $VPN_NAMESPACE ip -6 a add dev tun0 ${ifconfig_ipv6_local}/${ifconfig_ipv6_netbits}
 
 	# set routes to go through tun0

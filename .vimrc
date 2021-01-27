@@ -42,6 +42,10 @@ set foldcolumn=1
 set listchars=tab:\|\  "<--- there is a space here
 "set list
 
+"save undo tree changes
+set undofile
+set undolevels=100
+set undodir=~/.vim_undodir//,.
 
 set backupdir=~/.vim_backup//,.
 set directory=~/.vim_backup//,.
@@ -58,9 +62,9 @@ set guifont=Office\ Code\ Pro
 
 filetype plugin indent on
 
-let &t_SI = "\<Esc>[3 q"
-let &t_SR = "\<Esc>[1 q"
-let &t_EI = "\<Esc>[1 q"
+let &t_SI = "\<Esc>[4 q"
+let &t_SR = "\<Esc>[2 q"
+let &t_EI = "\<Esc>[2 q"
 
 let &t_ut=''
 
@@ -85,10 +89,10 @@ nnoremap p gt
 
 
 "move to next/previous function
-map [[ ?{<CR>w99[{
-map ][ /}<CR>b99]}
-map ]] j0[[%/{<CR>
-map [] k$][%?}<CR>
+nnoremap [[ ?{<CR>w99[{
+nnoremap ][ /}<CR>b99]}
+nnoremap ]] j0[[%/{<CR>
+nnoremap [] k$][%?}<CR>
 
 nnoremap H g^
 nnoremap L g$
@@ -223,9 +227,9 @@ augroup END
 "                   === plugin list ===
 
 call plug#begin('~/.vim/bundle')
-Plug 'godlygeek/csapprox'
+"Plug 'godlygeek/csapprox'
 Plug 'flazz/vim-colorschemes'
-Plug 'altercation/vim-colors-solarized'
+"Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
 Plug 'ervandew/supertab'
@@ -235,8 +239,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'EinfachToll/DidYouMean'
 Plug 'Konfekt/FastFold'
 Plug 'matze/vim-move'
-Plug 'junegunn/limelight.vim'
-Plug 'junegunn/goyo.vim'
+"Plug 'junegunn/limelight.vim'
+"Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-peekaboo'			"display register values
 Plug 'xuhdev/vim-latex-live-preview'
 
@@ -248,7 +252,7 @@ Plug 'kshenoy/vim-signature'			"display marks
 Plug 'dag/vim-fish'						"support for fish file editing
 "Plug 'airblade/vim-gitgutter'
 "Plug 'severin-lemaignan/vim-minimap'
-Plug 'jeaye/color_coded'                " C highlighting (somewhat heavy!)
+"Plug 'jeaye/color_coded'                " C highlighting (somewhat heavy!)
 
 "Plug 'artur-shaik/vim-javacomplete2'
 
@@ -285,21 +289,32 @@ Plug 'junegunn/fzf.vim'
 "Plug 'hdima/python-syntax'
 Plug 'markonm/traces.vim'				"real time preview of substitutions
 
-Plug 'wsdjeg/FlyGrep.vim'
+"Plug 'wsdjeg/FlyGrep.vim'
 Plug 'powerman/vim-plugin-AnsiEsc'      "type :AnsiEsc to hide color escapes
 
-"Plug 'w0rp/ale'							" error checker (mainly for rust)
+Plug 'w0rp/ale'						" error checker (mainly for rust)
+Plug 'liuchengxu/vim-which-key'
+
 
 Plug 'vim/killersheep'
 
 
 
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
+"Plug 'prabirshrestha/async.vim'
+"Plug 'prabirshrestha/vim-lsp'
+"Plug 'prabirshrestha/asyncomplete.vim'
+"Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 call plug#end()
+
+call which_key#register(',', "g:which_key_map")
+nnoremap <silent> , :<c-u>WhichKey ','<CR>
+
+let g:which_key_map = {}
+let g:which_key_map.f = "fuzzy search"
+let g:which_key_map.p = "exec line"
+let g:which_key_map.P = "clipboard paste"
+let g:which_key_map.x = "close quickfix"
 
 
 " ===
@@ -312,7 +327,7 @@ let g:JavaComplete_SourcesPath = "~/progetti/silvestri/java-project/gapp"
 let g:syntastic_mode_map = {"mode": "passive","active_filetypes": [],"passive_filetypes":[]}
 let g:ctrlp_cmd = 'CtrlPMRUFiles'
 let g:fzf_action = {'ctrl-t': 'tab split','ctrl-x': 'split','ctrl-v': 'vsplit' }
-let g:ackprg = 'ag --vimgrep --smart-case --ignore-dir shlr -Q'
+let g:ackprg = 'rg --vimgrep --smart-case --ignore-dir shlr -Q'
 let g:ack_use_cword_for_empty_search = 1
 let g:ack_autoclose = 1
 let g:livepreview_previewer='zathura'
@@ -327,6 +342,7 @@ let g:NERDAltDelims_java=1
 let g:tagbar_sort=0
 let g:solarized_termcolors=256 " to make it work in the terminal
 
+let g:ale_linters = {'asm': []} " disable linters on asm files
 
   "supertab
 set completeopt=menuone,preview
@@ -378,7 +394,7 @@ vmap ,cm <Leader>cm
 vmap ,cs <Leader>cs
 vmap ,C <Leader>c<Space>
 
-nnoremap ,f "pyiw::Ag<Space><C-R>p<CR>
+nnoremap ,f "pyiw::Rg<Space><C-R>p<CR>
 nnoremap ,,f "pyiw::Tags<Space><C-R>p<CR>
 nnoremap ,F :Files<CR>
 
@@ -490,6 +506,10 @@ function! SettingsLatex()
  
 	:NoMatchParen
 	setlocal updatetime=1000
+	autocmd CursorHold,CursorHoldI * update "autosave after 'updatetime'
+	"set fo=aut   "auto formatting
+
+
 	abbr ,a \begin{align*}<CR><CR>\end{align*}<UP>
 	abbr ,f \frac{}{}<C-O>2h
 	inoremap {<CR> {<CR><CR>}<ESC>kcc
@@ -498,6 +518,12 @@ function! SettingsLatex()
 	set concealcursor=vc
 	let g:tex_conceal="adgms"
 	highlight Conceal NONE
+
+	function! Synctex()
+	execute "silent !zathura --synctex-forward " . line('.') . ":" . col('.') . ":" . bufname('%') . " " . bufname('%')[:-5]. ".pdf"
+	redraw!
+	endfunction
+	nnoremap ,r :call Synctex()<CR>
 endfunction
 
 "			==== HTML ====
@@ -771,6 +797,9 @@ endfunction
 
 nnoremap _ :<c-u>call Myshit()<cr>
 nnoremap - :<c-u>call Ok()<cr>
+
+
+iab <expr> ipy "import IPython; IPython.embed()"
 
 
 " vim:fdm=expr:fdl=0

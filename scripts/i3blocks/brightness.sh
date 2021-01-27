@@ -14,5 +14,5 @@ case $BLOCK_BUTTON in
     5) xbacklight -dec 10 ;;
 esac
 
-echo $(xbacklight -get)
+echo -n $(xbacklight -get)
 echo &#xf185; 

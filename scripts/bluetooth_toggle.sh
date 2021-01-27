@@ -1,13 +1,25 @@
 #!/bin/bash
 
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
+
+
+pid=$(pgrep -n xinit)
+pid=$(pgrep -n -P $pid)
+
+export DBUS_SESSION_BUS_ADDRESS='unix:path=/run/user/1000/bus'
+su luca -c "notify-send 'Yo, stupid guy!' 'You should totally update the backup!'"
+
+
 res=$(bluetooth)
 if [[ $(echo $res | grep -c "on") -ge 1 ]]; then
-	echo "Switching off bluetooth..."
-	sudo bluetooth off
+	su luca -c "notify-send 'Switching off bluetooth...'"
+	bluetooth off
 else
-	echo "Switching on bluetooth..."
-	sudo bluetooth on
-	while [[ $(sudo bluetoothctl show | grep -c "Powered") -eq 0 ]]; do sleep 1; done
-	sudo bluetoothctl power on
-	sudo bluetoothctl connect 00:1B:66:88:E8:12
+	su luca -c "notify-send 'Switching on bluetooth...'"
+	bluetooth on
+	while [[ $(bluetoothctl show | grep -c "Powered") -eq 0 ]]; do sleep 0.5; done
+	bluetoothctl power on
 fi

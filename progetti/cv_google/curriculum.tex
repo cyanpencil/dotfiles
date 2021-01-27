@@ -33,6 +33,10 @@
 \newcommand{\mh}[0]{{\hspace*{-1em}}}
 \newcommand{\mH}[0]{{\hspace*{0.5em}}}
 
+\newcommand{\spike}{\href{http://www.spiketrap.io/}{\textbf{Spiketrap}} }
+\newcommand{\ra}{\href{https://gist.github.com/cyanpencil/27db326bf6f9d2747297fa9b943eb65b\#file-gsoc\_report\_final-md}{Short recap of my contributions. } }
+\newcommand{\raa}{\href{http://beta.rada.re/en/latest/}{radare2}}
+\newcommand{\rw}{\href{https://hexhive.epfl.ch/publications/files/20Oakland.pdf}{Retrowrite}}
 
 \begin{document}
 
@@ -66,8 +70,13 @@
 
 \section{Education}
 \begin{tabular}{rl}
-\textsc{2018 - now} & Master Degree in \textsc{Computer Science} at \textbf{ETH} Zurich.\\
-&Expected graduation date: January 2021.\\
+	\textsc{2021 - 2025} & PhD at \textbf{EPFL} Lausanne with the HexHive group. Planned research areas are  \\
+	& binary rewriting, binary defense mechanisms, and side channel attacks. \\
+\textsc{2018 - 2021} & Master Degree in \textsc{Computer Science} at \textbf{ETH} Zurich.\\
+	& My \emph{Master thesis} involves adding support for the ARM architecture to \rw, a binary \\ 
+	& rewriter  that adds memory sanitization and coverage tracing to closed source binaries, with the \\ 
+	& goal of fuzzing proprietary Android kernel modules.\\
+
 \textsc{2015 - 2018} & Bachelor's Degree in \textsc{Computer Science} at \textbf{La Sapienza} university of Rome.\\
 &Final grade: 110/110, with honours. Awarded scolarship for the "Excellence path".\\
 \end{tabular}
@@ -76,19 +85,20 @@
 %	WORK EXPERIENCE
 %----------------------------------------------------------------------------------------
 
+
 \section{Work Experience}
 \begin{tabular}{ll}
-2019 \mH & \mh \textbf{ETH} - \textbf{Teaching Assistant} for the "Algorithms Lab" course, revolving around teaching master students \\ 
+Sep-Dec 2019 \mH & \mh \textbf{ETH} - \textbf{Teaching Assistant} for the "Algorithms Lab" course. I taught master students \\ 
          & competitive programming techniques and the basics of computational geometry. \href{https://www.cadmo.ethz.ch/education/lectures/HS19/algolab/index.html}{Course webpage} \\
-2018 & \mh \textbf{Radareorg} - \textbf{Google Summer of Code scholar}, worked for the \href{http://beta.rada.re/en/latest/}{radare2} reverse-engineering framework.\\
-     & I worked on the terminal user interface, improving the graph drawing algorithm and command syntax, \\
-	 & added UTF-8 compatibility and improving the autocompletion engine. \href{https://gist.github.com/cyanpencil/27db326bf6f9d2747297fa9b943eb65b#file-gsoc_report_final-md}{Short recap of my contributions.}  \\
-2018 & \mh \textbf{La Sapienza} - \textbf{Teaching assistant} for the Competitive programming course, aimed at preparing \\ 
-     & highschool students for the regional contest of the Italian Olympiads in Informatics.  \\
-2017 & \mh \href{http://www.spiketrap.io/}{\textbf{Spiketrap}} - \textbf{Research intern}, focused on sentiment analysis of short internet comments in Python\\
-     & using a variety of machine learning frameworks (sklearn, keras) \\
-2015 & \mh \textbf{Codemotion Kids - Coding teacher} I worked with middle school students to teach them the basics of \\
-     & Java and with primary school children introducing them to programming with Scratch.
+Jun-Sep 2018 & \mh \textbf{Radareorg} - \textbf{Google Summer of Code scholar}, for the \raa reverse-engineering framework.\\
+     & I reworked the terminal user interface, improving the graph drawing algorithm, command syntax, \\
+	 & autocompletion engine, and added UTF-8 compatibility. \ra  \\
+Sep-Dec 2018 & \mh \textbf{La Sapienza} - \textbf{Teaching assistant} for the Competitive programming course, aimed at  \\ 
+     & preparing highschool students for the regional contest of the Italian Olympiads in Informatics.  \\
+Jun-Sep 2017 & \mh \spike - \textbf{Research intern}. Developed a sentiment analysis model for short reddit comments\\
+	  & using a variety of machine learning frameworks (sklearn, keras) \\
+Feb-Oct 2015 & \mh \textbf{Codemotion Kids - Coding teacher} I taught middle school students the basics of Java\\
+     & and introduced primary school children to programming with Scratch.
 \end{tabular}
 
 
@@ -118,16 +128,19 @@
 
 \section{Projects / Community involvement}
 \begin{tabular}{ll}
-2019 \mH & \mh \textbf{Tor exit node admin:} In September 2019 I setup a powerful Tor exit node to help increase the\\
-     & bandwidth of the Tor network. It is currently sustaining 0.1\% of all the Tor network\\
-     & outbound connections! \href{https://metrics.torproject.org/rs.html#details/229D865D7AC084D30E5F5016CE5A8C21740F74F4}{Here} you can find some statistics about it. \\
-2018 &  \mh \textbf{Raymarching distance fields:} rendered a procedurally generated volcanic archipelagus \\
+	%2019 \mH & \mh \textbf{Master Thesis}: My thesis involves adding support for the ARM architecture to \href{https://hexhive.epfl.ch/publications/files/20Oakland.pdf}{Retrowrite}, a binary \\ & rewriter  that adds memory sanitization and coverage tracing to closed source binaries, with the goal \\ & of fuzzing proprietary Android kernel modules\\
+%2019 \mH & \mh \textbf{Tor exit node admin:} In September 2019 I setup a powerful Tor exit node to help increase the\\
+     %& bandwidth of the Tor network. It is currently sustaining 0.1\% of all the Tor network\\
+     %& outbound connections! \href{https://metrics.torproject.org/rs.html#details/229D865D7AC084D30E5F5016CE5A8C21740F74F4}{Here} you can find some statistics about it. \\
+2020 \mH &  \mh \textbf{PokeCTF}: a minimal CTF platform I created for internal trainings in our ETH \\
+	 & Capture the Flag team. \href{https://www.github.com/cyanpencil/pokectf}{Link to the repo}.  \\
+2018  &  \mh \textbf{Raymarching distance fields:} rendered a procedurally generated volcanic archipelagus \\
      & entirely made in the fragment shader in GLSL for the final project of the Computer \\
      & Graphics course. \href{https://drive.google.com/open?id=1U4zynGm8o4i8VodnaWTOjgoayj9rhega}{Link} to short pdf description. 
        \href{https://www.shadertoy.com/view/4dcyzM}{Link} to live demo on shadertoy. \\
-2016 &  \mh \textbf{Voronoi stippling}: I wrote a program in Python to emulate the stippling painting \\
-     & technique using weighted voronois. I was supervised by my Programming Fundamentals \\
-     & professor, but it was an extracurricular activity. \\
+%2016 &  \mh \textbf{Voronoi stippling}: I wrote a program in Python to emulate the stippling painting \\
+     %& technique using weighted voronois. I was supervised by my Programming Fundamentals \\
+     %& professor, but it was an extracurricular activity. \\
 2015 & \mh \textbf{Exhibitor at Codemotion Rome}: I was the main coder of "Pico", a Google Cardboard flight simulator \\
      & for Android in which the player controlled the wings of the plane by holding two Wii controllers \\
      & (connected via bluetooth to the Android phone). The game got featured at Codemotion Rome 2015. \\

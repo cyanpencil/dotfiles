@@ -136,7 +136,7 @@ static const char *colorname[] = {
 };
 
 /* bg opacity */
-unsigned int alpha = 0xaa;
+unsigned int alpha = 0xee;
 
 
 /*

@@ -1,7 +1,9 @@
 #!/bin/bash
 
-pid=$(pgrep -t tty$(fgconsole) xinit)
-pid=$(pgrep -P $pid -n)
+set -eux
+#pid=$(pgrep -t tty$(fgconsole) xinit)
+pid=$(pgrep -n xinit)
+pid=$(pgrep -n -P $pid)
 
 import_environment() {
 		(( pid )) && for var; do
@@ -13,9 +15,8 @@ import_environment() {
 }
 
 
-cd /backup
 
-last=$(find -mtime -15 | wc -l)
+last=$(find /backup -mtime -15 | wc -l)
 
 if [[ $last -eq 0 ]]; then
 	import_environment DBUS_SESSION_BUS_ADDRESS
