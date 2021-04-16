@@ -151,7 +151,7 @@ map <F12> :set invpaste<CR>
 
 cmap w!! w !sudo tee > /dev/null %
 
-nnoremap ,w :w<CR>
+"nnoremap ,w :w<CR>
 nmap     ,r <F4>
 
 nnoremap gV `[v`]
@@ -254,8 +254,6 @@ Plug 'dag/vim-fish'						"support for fish file editing
 "Plug 'severin-lemaignan/vim-minimap'
 "Plug 'jeaye/color_coded'                " C highlighting (somewhat heavy!)
 
-"Plug 'artur-shaik/vim-javacomplete2'
-
 
 
 "Plug 'airblade/vim-rooter'
@@ -269,9 +267,6 @@ Plug 'dag/vim-fish'						"support for fish file editing
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
-"
 "Plug 'xolox/vim-misc'
 
 "Plug 'ctrlpvim/ctrlp.vim'
@@ -281,7 +276,6 @@ Plug 'junegunn/fzf.vim'
 "Plug 'wkentaro/conque.vim'				"shell inside a buffer
 "Plug 'vim-scripts/Gundo'
 "Plug 'scrooloose/syntastic'
-"Plug 'artur-shaik/vim-javacomplete2'
 "Plug 'mbbill/undotree'
 "Plug 'itchyny/lightline.vim'
 "Plug 'tmhedberg/SimpylFold'
@@ -296,7 +290,7 @@ Plug 'w0rp/ale'						" error checker (mainly for rust)
 Plug 'liuchengxu/vim-which-key'
 
 
-Plug 'vim/killersheep'
+Plug 'vimwiki/vimwiki'
 
 
 
@@ -321,18 +315,17 @@ let g:which_key_map.x = "close quickfix"
 
 "                   === plugin options ===
 
-let g:airline_theme = "zenburn"
+let g:vimwiki_conceallevel = 0
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_global_ext = 0 "vimwiki sintax only in vimwiki dir
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown','.mdown': 'markdown'}
 let g:move_key_modifier = 'C' "vim-move keybinding
-let g:JavaComplete_SourcesPath = "~/progetti/silvestri/java-project/gapp"
 let g:syntastic_mode_map = {"mode": "passive","active_filetypes": [],"passive_filetypes":[]}
 let g:ctrlp_cmd = 'CtrlPMRUFiles'
 let g:fzf_action = {'ctrl-t': 'tab split','ctrl-x': 'split','ctrl-v': 'vsplit' }
 let g:ackprg = 'rg --vimgrep --smart-case --ignore-dir shlr -Q'
 let g:ack_use_cword_for_empty_search = 1
 let g:ack_autoclose = 1
-let g:livepreview_previewer='zathura'
-let g:livepreview_engine='pdflatex --shell-escape '
-"let g:livepreview_engine='xelatex --shell-escape'
 let g:limelight_conceal_ctermfg = '239'
 let g:goyo_width = '93%'
 let python_highlight_all=1
@@ -347,10 +340,6 @@ let g:ale_linters = {'asm': []} " disable linters on asm files
   "supertab
 set completeopt=menuone,preview
 let g:SuperTabDefaultCompletionType = "<c-n>"
-
-  "javacomplete
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
 
 
 " ==== vim-lsp ====
@@ -459,15 +448,12 @@ endfunction
 
 "			==== Java  ====
 function! SettingsJava() 
-	"autocmd FileType java setlocal omnifunc=javacomplete#Complete
-	"autocmd filetype Java set completefunc=javacomplete#CompleteParamsInfo
 	abbr print System.out.println();<Esc>hh
 	"//	nnoremap <F4> :wa <CR> :!/c/progetti/android/LOL/build.sh; /c/progetti/android/LOL/run.sh <CR>
 	"nnoremap <F5> :wa <CR> :!/c/progetti/android/RajawaliVRCardboard/build_and_run.sh <CR>
 
 	nnoremap <F4> :wa <CR> :!javac %; java Main < input.txt <CR>
 	nnoremap <F5> :wa <CR> :!javac %; java %:r <CR>
-	"setlocal omnifunc=javacomplete#Complete
 	"set makeprg=javac\ -d\ \~\/comp\ $(find\ gapp\ -name\ \"\*\.java\"\)
 	set makeprg=javac\ -d\ \~\/comp\ $(find\ -name\ \"\*\.java\"\)
 	"cp -r resources/* ~/comp/resources/; javac -d ~/comp (find gapp -name "*.java"); java -cp ~/comp gapp.ulg.test.slideNewTry
@@ -498,6 +484,8 @@ function! SettingsLatex()
     set foldmethod=manual
 	set foldcolumn=0
 	set regexpengine=1
+	set indentexpr=  " to disable automatic indentation
+	set nocindent
 	"set colorcolumn=80
 	"highlight ColorColumn ctermbg=DarkGrey guibg=lightgrey
 

@@ -74,7 +74,7 @@ alias buntoohere='podman run --rm -p 3001:3001 -v ${PWD}:/mnt -it buntoo /bin/ba
 
 alias buntoohereX='podman run --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v ~/.Xauthority:/home/luca/.Xauthority -v ${PWD}:/mnt --net=host -it buntoo /bin/bash'
 
-alias ctfhere='podman run --rm -e DISPLAY -v /home/luca/stuff/containers/arch_ctf:/ -v /tmp/.X11-unix:/tmp/.X11-unix -v ~/.Xauthority:/root/.Xauthority --mount type=bind,src=${PWD},dst=/mnt,relabel=shared --net=host --user=root  --stop-timeout 0 --shm-size=4g --name ctfhere -it alpine /usr/bin/zsh'
+alias ctfhere='podman run --rm -e DISPLAY -v /home/luca/stuff/containers/arch_ctf:/a -v /tmp/.X11-unix:/a/tmp/.X11-unix -v ~/.Xauthority:/a/root/.Xauthority --mount type=bind,src=${PWD},dst=/a/mnt,relabel=shared --net=host --user=root  --stop-timeout 0 --shm-size=4g --name ctfhere -it alpine chroot a zsh'
 
 alias cazzeggio='sudo podman run --rm -e DISPLAY -v /home/luca/stuff/containers/cazzeggio:/ -v /tmp/.X11-unix:/tmp/.X11-unix -v ~/.Xauthority:/root/.Xauthority --mount type=bind,src=${PWD},dst=/mnt,relabel=shared --net=host --user=root --device /dev/dri/card0 --device /dev/snd -v /run/user/1000/pulse:/run/user/1000/pulse -v /var/lib/dbus:/var/lib/dbus --stop-timeout 0 --shm-size=5g --privileged --name ctfhere32 -it alpine /usr/bin/zsh'
 

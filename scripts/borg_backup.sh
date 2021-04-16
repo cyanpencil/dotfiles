@@ -1,11 +1,11 @@
-!/bin/sh
+#!/bin/sh
 
 # Setting this, so the repo does not need to be given on the commandline:
 export BORG_REPO=ssh://luca@jupiter//backup/borg
 
 # Setting this, so you won't be asked for your repository passphrase:
 # or this to ask an external program to supply the passphrase:
-export BORG_PASSCOMMAND='bash -c "su luca pass show borg_backup_key | head -c 40"'
+export BORG_PASSCOMMAND='su luca -c "pass show borg_backup_key | head -c 40"'
 
 # some helpers and error handling:
 info() { printf "\n%s %s\n\n" "$( date )" "$*" >&2; }

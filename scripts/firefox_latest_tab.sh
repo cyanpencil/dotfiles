@@ -32,6 +32,7 @@ for f in files:
                     # Firefox does not 0-index
                     i = t['index'] - 1
                     access_time = t['lastAccessed']
+                    print(t['entries'][i]['url'])
                     if access_time > min_time:
                         min_time = access_time
                         most_recent_url = t['entries'][i]['url']
